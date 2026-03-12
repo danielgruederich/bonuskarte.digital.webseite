@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import WalletMockup from '../components/WalletMockup.astro'
+import LeadForm from '../components/LeadForm.tsx'
+
+// ── Replace with your Formspree form ID after signup at formspree.io ──
+const FORMSPREE_ID = 'YOUR_FORM_ID'
+
+const steps = [
+  { n: '01', title: 'Demo anfordern', desc: 'Trag dich ein. Wir brauchen nur deinen Instagram-Handle.' },
+  { n: '02', title: 'Wir bauen deine Karte', desc: 'In unter 24h erhältst du eine fertige Karte mit deinem Branding.' },
+  { n: '03', title: 'Gäste stempeln lassen', desc: 'Deine Gäste speichern die Karte direkt in Apple oder Google Wallet.' },
+]
+
+const benefits = [
+  { icon: '📱', title: 'Immer dabei', desc: 'Apple Wallet & Google Wallet. Keine App, keine Registrierung für deine Gäste.' },
+  { icon: '🔔', title: 'Push-Nachrichten', desc: 'Erinnere Stammkunden an Aktionen – direkt auf dem Sperrbildschirm.' },
+  { icon: '📊', title: 'Live-Statistiken', desc: 'Sieh in Echtzeit, wie viele Karten aktiv sind und wie oft gestempelt wird.' },
+  { icon: '⚙️', title: 'Zero Aufwand', desc: 'Einmal einrichten, dauerhaft nutzen. Wir kümmern uns um alles Technische.' },
+  { icon: '♻️', title: 'Nachhaltig', desc: 'Kein Papier, keine Plastikkarten, kein Nachdrucken.' },
+  { icon: '💶', title: '90 Tage kostenlos', desc: 'Teste alles in Ruhe, bevor du auch nur einen Cent bezahlst.' },
+]
+
+const faq = [
+  { q: 'Brauchen meine Gäste eine App?', a: 'Nein. Die Karte wird direkt in der nativen Wallet-App von iPhone oder Android gespeichert. Kein Download erforderlich.' },
+  { q: 'Wie stempel ich die Karte ab?', a: 'Mit einem einzigen Klick in deinem Dashboard oder direkt vom Handy aus. Der Stempel landet sofort beim Gast.' },
+  { q: 'Was passiert nach den 90 Tagen?', a: 'Du entscheidest, ob du weitermachen möchtest. Keine automatische Verlängerung ohne deine Zustimmung.' },
+  { q: 'Kann ich die Karte anpassen?', a: 'Ja – Farben, Logo, Stempelanzahl, Belohnungen und Push-Nachrichten sind vollständig individualisierbar.' },
+]
+---
+
+<BaseLayout
+  title="Digitale Stempelkarte für Cafés in Köln – 90 Tage gratis | bonuskarte.digital"
+  description="Mehr Stammgäste für dein Café in Köln. Digitale Stempelkarte direkt in Apple & Google Wallet. 90 Tage kostenlos testen – keine Kreditkarte nötig."
+>
+  <Navbar ctaHref="#demo" ctaLabel="Demo anfordern" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white"></div>
+    <div class="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+      <div>
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
+          <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+          <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+            Jetzt für Cafés in Köln
+          </span>
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl font-extralight text-white leading-[1.1] tracking-tight mb-2">
+          Mehr Stammgäste.
+        </h1>
+        <h1 class="text-5xl sm:text-6xl font-bold leading-[1.1] tracking-tight mb-8">
+          <span class="text-gold-600">Weniger Aufwand.</span>
+        </h1>
+
+        <p class="text-white/50 text-base leading-relaxed mb-6 max-w-md font-light">
+          Die digitale Stempelkarte für dein Café –
+          direkt im Handy deiner Gäste.
+          Apple Wallet, Google Wallet. Kein Papier, keine App.
+        </p>
+
+        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-10">
+          <span class="text-gold-600 text-sm">✦</span>
+          <span class="text-gold-500 text-xs tracking-[0.15em] font-light">
+            90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE
+          </span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#demo"
+            class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
+            Kostenlose Demo anfordern
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#wie-es-funktioniert"
+            class="inline-flex items-center justify-center border border-white/10 hover:border-gold-600/40 text-white/50 hover:text-white px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all">
+            Wie es funktioniert
+          </a>
+        </div>
+
+        <!-- Trust -->
+        <div class="flex flex-wrap gap-5 mt-10">
+          {['🔒 DSGVO', '📱 Apple & Google Wallet', '⚡ Live in 24h', '✅ Kein Risiko'].map(t => (
+            <span class="text-[10px] tracking-widest uppercase text-white/20">{t}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Wallet mockup -->
+      <div class="flex justify-center lg:justify-end">
+        <WalletMockup businessName="Café Sonnenschein" reward="Gratis-Kaffee" stamped={7} total={10} />
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+  </section>
+
+  <!-- ── HOW IT WORKS ──────────────────────────────────────────── -->
+  <section id="wie-es-funktioniert" class="py-24 px-5 sm:px-8 bg-black">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-14">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">In 3 Schritten live</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {steps.map((s) => (
+          <div class="group border border-white/5 hover:border-gold-600/30 p-8 transition-all">
+            <div class="text-4xl font-black text-gold-600/20 group-hover:text-gold-600/40 transition-colors leading-none mb-6">{s.n}</div>
+            <h3 class="font-semibold text-white tracking-wide mb-3 text-sm">{s.title}</h3>
+            <p class="text-white/35 text-sm leading-relaxed font-light">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BENEFITS ──────────────────────────────────────────────── -->
+  <section class="py-24 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+    <div class="relative max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-14">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Features</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {benefits.map(b => (
+          <div class="group border border-white/5 hover:border-gold-600/30 p-7 transition-all">
+            <div class="text-2xl mb-4 group-hover:scale-110 transition-transform inline-block">{b.icon}</div>
+            <h3 class="font-semibold text-white tracking-wide mb-2 text-sm">{b.title}</h3>
+            <p class="text-white/35 text-sm leading-relaxed font-light">{b.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
+  <section id="demo" class="py-24 px-5 sm:px-8 bg-black relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold-600 rounded-full blur-[180px] opacity-5"></div>
+
+    <div class="relative max-w-xl mx-auto">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2 mb-8">
+          <span class="text-gold-600 text-sm">✦</span>
+          <span class="text-gold-500 text-[10px] tracking-[0.3em] uppercase">Exklusiv für Cafés in Köln</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2">
+          Kostenlose Demo
+        </h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">
+          anfordern.
+        </h2>
+        <p class="text-white/40 text-sm font-light leading-relaxed max-w-sm mx-auto">
+          Wir erstellen eine fertige Stempelkarte mit deinem Logo und deinen Farben –
+          in unter 24 Stunden, völlig kostenlos.
+        </p>
+      </div>
+
+      <!-- Form card -->
+      <div class="border border-gold-600/20 bg-ink-950 p-8 sm:p-10">
+        <!-- Corner accents -->
+        <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-gold-600/40"></div>
+        <div class="absolute top-0 right-0 w-5 h-5 border-t border-r border-gold-600/40"></div>
+        <div class="absolute bottom-0 left-0 w-5 h-5 border-b border-l border-gold-600/40"></div>
+        <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-gold-600/40"></div>
+        <LeadForm client:load niche="Café" city="Köln" formspreeId={FORMSPREE_ID} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────────────────── -->
+  <section class="py-20 px-5 sm:px-8 bg-ink-950">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Häufige Fragen</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="divide-y divide-white/5">
+        {faq.map(item => (
+          <details class="group py-5">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <span class="text-sm font-medium tracking-wide text-white/70 group-hover:text-white transition-colors pr-6">
+                {item.q}
+              </span>
+              <svg class="w-4 h-4 text-gold-600 flex-shrink-0 group-open:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/>
+              </svg>
+            </summary>
+            <div class="pt-4 text-sm text-white/30 leading-relaxed font-light">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
+  <section class="py-24 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-2xl mx-auto text-center">
+      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
+      <h2 class="text-4xl font-extralight text-white tracking-tight mb-2">90 Tage gratis.</h2>
+      <h2 class="text-4xl font-bold text-white tracking-tight mb-10">Überzeug dich selbst.</h2>
+      <a href="#demo"
+        class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        Jetzt Demo anfordern
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
