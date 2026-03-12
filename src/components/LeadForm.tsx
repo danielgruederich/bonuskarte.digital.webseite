@@ -9,9 +9,9 @@ interface Props {
 type State = 'idle' | 'submitting' | 'success' | 'error'
 
 const inputClass =
-  'w-full px-4 py-3 bg-black border border-white/10 text-white placeholder-white/20 text-sm tracking-wide focus:outline-none focus:border-gold-600 transition-colors'
+  'w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-white/40 text-sm tracking-wide focus:outline-none focus:border-gold-600 focus:bg-white/8 transition-colors'
 
-const labelClass = 'block text-[10px] font-medium tracking-[0.2em] uppercase text-white/40 mb-2'
+const labelClass = 'block text-[10px] font-medium tracking-[0.2em] uppercase text-white/60 mb-2'
 
 export default function LeadForm({ niche, city, formspreeId }: Props) {
   const [state, setState] = useState<State>('idle')
