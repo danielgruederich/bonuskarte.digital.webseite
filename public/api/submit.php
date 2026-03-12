@@ -50,6 +50,17 @@ $phone     = trim($body['telefon']   ?? $body['phone']     ?? '');
 $kontakt   = trim($body['kontakt']   ?? ''); // LeadFormDoener combined field
 $niche     = strtolower(trim($body['niche'] ?? 'cafe'));
 
+// Normalize display names to template keys
+$nicheAliases = [
+    'café'      => 'cafe',
+    'cafés'     => 'cafe',
+    'cafes'     => 'cafe',
+    'pizzeria'  => 'pizza',
+    'döner'     => 'doener',
+    'doner'     => 'doener',
+];
+$niche = $nicheAliases[$niche] ?? $niche;
+
 // LeadFormDoener: kontakt is either phone or email
 if ($kontakt && !$email && !$phone) {
     if (str_contains($kontakt, '@')) {

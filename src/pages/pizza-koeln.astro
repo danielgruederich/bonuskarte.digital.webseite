@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro'
 import WalletMockup from '../components/WalletMockup.astro'
 import LeadForm from '../components/LeadForm.tsx'
 
-const FORMSPREE_ID = 'mgonyajg'
 const whatsappUrl = 'https://wa.me/491705594140'
 
 const arguments_ = [
@@ -166,7 +165,7 @@ const arguments_ = [
       </div>
 
       <div class="border border-gold-600/20 bg-ink-950 p-8">
-        <LeadForm client:load niche="Pizzeria" city="Köln" formspreeId={FORMSPREE_ID} whatsappUrl={whatsappUrl} />
+        <LeadForm client:load niche="Pizzeria" city="Köln" whatsappUrl={whatsappUrl} />
       </div>
     </div>
   </section>

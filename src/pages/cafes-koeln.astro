@@ -5,8 +5,6 @@ import Footer from '../components/Footer.astro'
 import WalletMockup from '../components/WalletMockup.astro'
 import LeadForm from '../components/LeadForm.tsx'
 
-const FORMSPREE_ID = 'mgonyajg'
-
 const steps = [
   { n: '01', title: 'Demo laden', desc: 'Ein Scan, und die Karte liegt im Wallet. Kein Download, keine Registrierung.' },
   { n: '02', title: 'Wir bauen eure Karte', desc: 'In unter 24h erhält ihr eine fertige Karte mit eurem Branding.' },
@@ -184,7 +182,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
       </div>
 
       <div class="relative border border-gold-600/20 bg-ink-950 p-8 sm:p-10">
-        <LeadForm client:load niche="Café" city="Köln" formspreeId={FORMSPREE_ID} whatsappUrl={whatsappUrl} />
+        <LeadForm client:load niche="Café" city="Köln" whatsappUrl={whatsappUrl} />
       </div>
     </div>
   </section>
