@@ -1,8 +1,14 @@
 import { useState, type FormEvent } from 'react'
 
 interface Props {
-  formspreeId: string
+  formspreeId?: string
   whatsappUrl: string
+  niche?: string
+}
+
+interface CardLinks {
+  installLink: string | null
+  directInstallLink: { universal: string; apple: string; google: string } | null
 }
 
 type State = 'idle' | 'submitting' | 'success' | 'error'
@@ -10,38 +16,85 @@ type State = 'idle' | 'submitting' | 'success' | 'error'
 const inputClass =
   'w-full px-4 py-4 bg-white/5 border border-white/20 text-white placeholder-white/40 text-base focus:outline-none focus:border-gold-600 focus:bg-white/8 transition-colors rounded-none'
 
-export default function LeadFormDoener({ formspreeId, whatsappUrl }: Props) {
+export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props) {
   const [state, setState] = useState<State>('idle')
+  const [card, setCard] = useState<CardLinks | null>(null)
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setState('submitting')
     const form = e.currentTarget
-    const data = new FormData(form)
-    data.append('_subject', 'Neue Anfrage – Döner Köln')
+    const data = Object.fromEntries(new FormData(form))
+
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch('/api/submit.php', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ladenname: data.ladenname,
+          kontakt:   data.kontakt,
+          instagram: data.instagram,
+          niche:     niche,
+        }),
       })
-      setState(res.ok ? 'success' : 'error')
-      if (res.ok) form.reset()
+      const json = await res.json()
+      if (res.ok && json.success) {
+        setCard({
+          installLink: json.installLink,
+          directInstallLink: json.directInstallLink,
+        })
+        setState('success')
+        form.reset()
+      } else {
+        setState('error')
+      }
     } catch {
       setState('error')
     }
   }
 
   if (state === 'success') {
+    const universalLink = card?.directInstallLink?.universal ?? card?.installLink ?? null
+    const appleLink     = card?.directInstallLink?.apple     ?? universalLink
+    const googleLink    = card?.directInstallLink?.google    ?? universalLink
+
     return (
-      <div className="text-center py-10">
-        <div className="text-5xl mb-6">🤝</div>
-        <h3 className="text-2xl font-bold text-white mb-4">
-          Danke, Chef!
+      <div className="text-center py-8">
+        <div className="text-5xl mb-5">🎉</div>
+        <h3 className="text-2xl font-bold text-white mb-3">
+          Deine Demo-Karte ist fertig, Chef!
         </h3>
         <p className="text-white/50 text-base leading-relaxed max-w-sm mx-auto mb-8">
-          Wir melden uns in Kürze per WhatsApp bei Dir.
+          Einfach auf den Button tippen – die Karte landet direkt in deinem Wallet.
         </p>
+
+        {universalLink && (
+          <div className="space-y-3 mb-8">
+            <a
+              href={universalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full group flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black font-black tracking-[0.1em] uppercase text-base py-5 transition-all"
+            >
+              Demo-Karte ins Wallet laden →
+            </a>
+            <div className="flex gap-3">
+              {appleLink && (
+                <a href={appleLink} target="_blank" rel="noopener noreferrer"
+                  className="flex-1 text-center border border-white/10 hover:border-gold-600/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  Apple Wallet
+                </a>
+              )}
+              {googleLink && (
+                <a href={googleLink} target="_blank" rel="noopener noreferrer"
+                  className="flex-1 text-center border border-white/10 hover:border-gold-600/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  Google Wallet
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+
         <a
           href={whatsappUrl}
           target="_blank"
@@ -105,10 +158,10 @@ export default function LeadFormDoener({ formspreeId, whatsappUrl }: Props) {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3"/>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
             </svg>
-            Wird gesendet…
+            Karte wird erstellt…
           </>
         ) : (
-          'Kostenlos starten →'
+          'Demo-Karte erstellen →'
         )}
       </button>
 

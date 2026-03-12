@@ -3,8 +3,14 @@ import { useState, type FormEvent } from 'react'
 interface Props {
   niche: string
   city: string
-  formspreeId: string
+  formspreeId?: string
   whatsappUrl?: string
+}
+
+interface CardLinks {
+  installLink: string | null
+  shareLink: string | null
+  directInstallLink: { universal: string; apple: string; google: string; pwa: string } | null
 }
 
 type State = 'idle' | 'submitting' | 'success' | 'error'
@@ -14,48 +20,99 @@ const inputClass =
 
 const labelClass = 'block text-[10px] font-medium tracking-[0.2em] uppercase text-white/60 mb-2'
 
-export default function LeadForm({ niche, city, formspreeId, whatsappUrl }: Props) {
+export default function LeadForm({ niche, city, whatsappUrl }: Props) {
   const [state, setState] = useState<State>('idle')
+  const [card, setCard] = useState<CardLinks | null>(null)
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setState('submitting')
     const form = e.currentTarget
-    const data = new FormData(form)
-    data.append('_subject', `Neue Anfrage – ${niche} in ${city}`)
+    const data = Object.fromEntries(new FormData(form))
+
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch('/api/submit.php', {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          vorname:   data.vorname,
+          nachname:  data.nachname,
+          business:  data.business,
+          instagram: data.instagram,
+          email:     data.email,
+          telefon:   data.telefon,
+          niche:     niche.toLowerCase(),
+        }),
       })
-      setState(res.ok ? 'success' : 'error')
-      if (res.ok) form.reset()
+      const json = await res.json()
+      if (res.ok && json.success) {
+        setCard({
+          installLink: json.installLink,
+          shareLink: json.shareLink,
+          directInstallLink: json.directInstallLink,
+        })
+        setState('success')
+        form.reset()
+      } else {
+        setState('error')
+      }
     } catch {
       setState('error')
     }
   }
 
   if (state === 'success') {
+    const universalLink = card?.directInstallLink?.universal ?? card?.installLink ?? null
+    const appleLink     = card?.directInstallLink?.apple     ?? universalLink
+    const googleLink    = card?.directInstallLink?.google    ?? universalLink
+
     return (
-      <div className="text-center py-10">
+      <div className="text-center py-8">
         <div className="w-16 h-16 border border-gold-600/40 flex items-center justify-center mx-auto mb-6">
           <svg className="w-8 h-8 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold tracking-wide text-white mb-4">
-          Der erste Schritt zur eigenen Community.
+
+        <h3 className="text-xl font-semibold tracking-wide text-white mb-3">
+          Eure Demo-Karte ist fertig.
         </h3>
-        <p className="text-white/40 text-sm leading-relaxed max-w-sm mx-auto mb-4">
-          Die Demo liegt jetzt in eurem Wallet. So einfach, wie ihr sie gerade geladen habt,
-          werden es eure Gäste lieben.
-        </p>
         <p className="text-white/40 text-sm leading-relaxed max-w-sm mx-auto mb-8">
-          Ein exzellentes Produkt verdient Loyalität. Ich melde mich in den nächsten Tagen
-          bei euch, um zu besprechen, wie wir das digitale Fundament für euren Laden
-          im Veedel gemeinsam hochziehen.
+          Einfach auf den Button tippen – die Karte landet direkt in Apple oder Google Wallet.
+          Kein Download, keine App.
         </p>
+
+        {universalLink && (
+          <div className="space-y-3 mb-8">
+            <a
+              href={universalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full group flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              </svg>
+              Demo-Karte ins Wallet laden
+            </a>
+
+            <div className="flex gap-3">
+              {appleLink && (
+                <a href={appleLink} target="_blank" rel="noopener noreferrer"
+                  className="flex-1 text-center border border-white/10 hover:border-gold-600/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  Apple Wallet
+                </a>
+              )}
+              {googleLink && (
+                <a href={googleLink} target="_blank" rel="noopener noreferrer"
+                  className="flex-1 text-center border border-white/10 hover:border-gold-600/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  Google Wallet
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+
         <p className="text-white/30 text-xs tracking-wide mb-5">
           Fragen oder direkt Nägel mit Köpfen machen?
         </p>
@@ -78,9 +135,6 @@ export default function LeadForm({ niche, city, formspreeId, whatsappUrl }: Prop
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <input type="hidden" name="branche" value={niche} />
-      <input type="hidden" name="stadt" value={city} />
-
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className={labelClass}>Vorname *</label>
@@ -137,11 +191,11 @@ export default function LeadForm({ niche, city, formspreeId, whatsappUrl }: Prop
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3"/>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
             </svg>
-            Wird gesendet…
+            Karte wird erstellt…
           </>
         ) : (
           <>
-            Kostenlose Demo anfordern
+            Demo-Karte erstellen
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
