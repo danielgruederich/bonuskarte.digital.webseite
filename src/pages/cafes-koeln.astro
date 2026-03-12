@@ -55,16 +55,25 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
           <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
           <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
-            Jetzt für Cafés in Köln
+            Cafés in <span id="veedel-eyebrow">Köln</span>
           </span>
         </div>
 
         <h1 class="text-5xl sm:text-6xl font-extralight text-white leading-[1.1] tracking-tight mb-2">
           Macht aus Laufkundschaft
         </h1>
+        <h1 class="text-5xl sm:text-6xl font-bold leading-[1.1] tracking-tight mb-2">
+          <span class="text-gold-600">in <span id="veedel-headline">Köln</span></span>
+        </h1>
         <h1 class="text-5xl sm:text-6xl font-bold leading-[1.1] tracking-tight mb-8">
           <span class="text-gold-600">eine Community.</span>
         </h1>
+
+        <!-- FOMO strip -->
+        <div id="fomo-block" class="hidden items-center gap-3 border border-gold-600/20 bg-gold-600/5 px-4 py-2.5 mb-6">
+          <span class="text-gold-600 text-sm">✦</span>
+          <span id="fomo-text" class="text-gold-500/80 text-xs tracking-[0.1em] font-light"></span>
+        </div>
 
         <p class="text-white/50 text-base leading-relaxed mb-6 max-w-md font-light">
           Digitale Kundenbindung für Kölner Institutionen. Ohne App-Download,
@@ -270,3 +279,22 @@ const whatsappUrl = 'https://wa.me/491705594140'
 
   <Footer />
 </BaseLayout>
+
+<script>
+  const params = new URLSearchParams(window.location.search)
+  const veedel = params.get('veedel')
+  if (veedel) {
+    const eyebrow = document.getElementById('veedel-eyebrow')
+    const headline = document.getElementById('veedel-headline')
+    const fomoBlock = document.getElementById('fomo-block')
+    const fomoText = document.getElementById('fomo-text')
+    if (eyebrow) eyebrow.textContent = veedel
+    if (headline) headline.textContent = veedel
+    if (fomoBlock && fomoText) {
+      // FOMO counts are baked into the veedel hub page; here we show a generic nudge
+      fomoText.textContent = `Andere Cafés in ${veedel} sind bereits dabei. Sei das nächste.`
+      fomoBlock.classList.remove('hidden')
+      fomoBlock.classList.add('flex')
+    }
+  }
+</script>

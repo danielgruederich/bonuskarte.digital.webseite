@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import WalletMockup from '../components/WalletMockup.astro'
+import LeadForm from '../components/LeadForm.tsx'
+
+const FORMSPREE_ID = 'YOUR_FORM_ID'
+const whatsappUrl = 'https://wa.me/491705594140'
+
+const arguments_ = [
+  {
+    icon: '🍕',
+    title: 'Der "Nur noch 1"-Effekt',
+    desc: 'Wenn der Kunde Hunger hat, sieht er: "Nur noch 1 Stempel bis zur Gratis-Pizza". Er bestellt bei Dir – nicht bei der Konkurrenz.',
+  },
+  {
+    icon: '📱',
+    title: 'Im Wallet, nicht im Vergessen',
+    desc: 'Dein Logo auf dem Sperrbildschirm Deines Kunden. Nicht verloren in einer App – direkt in Apple & Google Wallet.',
+  },
+  {
+    icon: '📣',
+    title: 'Push-Nachrichten ohne Social Media',
+    desc: 'Neues Tagesangebot? Direkter Push aufs Handy Deiner Stammkunden. Kein Algorithmus der Dich ausbremst.',
+  },
+]
+---
+
+<BaseLayout
+  title="Digitale Stempelkarte für Pizzerien in Köln – 90 Tage gratis | bonuskarte.digital"
+  description="Digitale Kundenbindung für Kölner Pizzerien & Lieferdienste. Mehr Stammkunden, mehr Bestellungen. 90 Tage komplett kostenlos."
+>
+  <Navbar ctaHref="#start" ctaLabel="90 Tage gratis testen" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white"></div>
+    <div class="absolute top-1/3 -left-40 w-[600px] h-[600px] bg-red-900 rounded-full blur-[200px] opacity-5"></div>
+    <div class="absolute bottom-1/3 -right-40 w-[500px] h-[500px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+      <div>
+        <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
+          <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+          <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+            Pizzerien in <span id="veedel-eyebrow">Köln</span>
+          </span>
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl font-extralight text-white leading-[1.1] tracking-tight mb-2">
+          Die Pizzeria,
+        </h1>
+        <h1 class="text-5xl sm:text-6xl font-bold leading-[1.1] tracking-tight mb-8">
+          <span class="text-gold-600">die man nicht vergisst in <span id="veedel-headline">Köln.</span></span>
+        </h1>
+
+        <!-- FOMO strip -->
+        <div id="fomo-block" class="hidden items-center gap-3 border border-gold-600/20 bg-gold-600/5 px-4 py-2.5 mb-6">
+          <span class="text-gold-600 text-sm">✦</span>
+          <span id="fomo-text" class="text-gold-500/80 text-xs tracking-[0.1em] font-light"></span>
+        </div>
+
+        <p class="text-white/50 text-lg leading-relaxed mb-8 max-w-md">
+          In Köln gibt es Pizza an jeder Ecke. Sorge dafür, dass Deine Kunden
+          immer zu <strong class="text-white">DIR</strong> bestellen.
+          Mit der digitalen Stempelkarte direkt auf dem Handy.
+        </p>
+
+        <a href="#start"
+          class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-sm font-black tracking-[0.15em] uppercase transition-all shadow-xl shadow-gold-900/30">
+          Jetzt 90 Tage gratis testen
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+
+        <div class="flex flex-wrap gap-5 mt-8">
+          {['✅ Kein Vertrag', '💶 0€ Risiko', '⚡ In 24h live', '📱 Apple & Google Wallet'].map(t => (
+            <span class="text-[10px] tracking-widest uppercase text-white/25">{t}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex justify-center lg:justify-end">
+        <WalletMockup businessName="Veedel Pizza" reward="Gratis-Pizza" stamped={9} total={10} />
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+  </section>
+
+  <!-- ── B2B ARGUMENT ──────────────────────────────────────────── -->
+  <section class="py-24 px-5 sm:px-8 bg-black">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Der Vorteil</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2 text-center">
+        Warum Deine Kunden immer wieder
+      </h2>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gold-600 tracking-tight mb-14 text-center">
+        bei Dir bestellen:
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {arguments_.map(a => (
+          <div class="group border border-white/5 hover:border-gold-600/30 p-8 transition-all">
+            <div class="text-4xl mb-5 group-hover:scale-110 transition-transform inline-block">{a.icon}</div>
+            <h3 class="font-bold text-white text-base mb-3">{a.title}</h3>
+            <p class="text-white/40 text-sm leading-relaxed font-light">{a.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OFFER ─────────────────────────────────────────────────── -->
+  <section class="py-24 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="flex items-center gap-4 mb-10">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Das Angebot</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">90 Tage Test.</h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-gold-600 tracking-tight mb-10">0€ Risiko.</h2>
+
+      <p class="text-white/50 text-lg leading-relaxed max-w-xl mx-auto mb-12">
+        Keine Einrichtungsgebühr. Keine versteckten Kosten.
+        Wir wollen, dass Deine Pizzeria die <strong class="text-white">stärkste im Veedel</strong> wird.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+        {[
+          { n: '0€', label: 'Setup-Gebühr', sub: 'Komplett kostenlos starten' },
+          { n: '90', label: 'Tage gratis', sub: 'Kein Risiko, kein Druck' },
+          { n: '∞', label: 'Stammkunden', sub: 'Die immer wiederkommen' },
+        ].map(stat => (
+          <div class="border border-gold-600/20 p-6 text-center">
+            <div class="text-4xl font-black text-gold-600 mb-1">{stat.n}</div>
+            <div class="text-white font-semibold text-sm mb-1">{stat.label}</div>
+            <div class="text-white/30 text-xs">{stat.sub}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
+  <section id="start" class="py-24 px-5 sm:px-8 bg-black relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold-600 rounded-full blur-[180px] opacity-5"></div>
+
+    <div class="relative max-w-lg mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2">Deine Pizzeria.</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gold-600 tracking-tight mb-6">Dein Veedel. Dein Vorteil.</h2>
+        <p class="text-white/40 text-sm font-light leading-relaxed">
+          Trag Dich ein – wir melden uns innerhalb von 24 Stunden per WhatsApp.
+        </p>
+      </div>
+
+      <div class="border border-gold-600/20 bg-ink-950 p-8">
+        <LeadForm client:load niche="Pizzeria" city="Köln" formspreeId={FORMSPREE_ID} whatsappUrl={whatsappUrl} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
+  <section class="py-20 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-2xl mx-auto text-center">
+      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-6">Kein Risiko. Kein Vertrag.</p>
+      <h2 class="text-4xl font-bold text-white tracking-tight mb-10">
+        Werde die stärkste Pizzeria im Veedel.
+      </h2>
+      <a href="#start"
+        class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-black tracking-[0.25em] uppercase transition-all">
+        Jetzt kostenlos starten
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const params = new URLSearchParams(window.location.search)
+  const veedel = params.get('veedel')
+  if (veedel) {
+    const eyebrow = document.getElementById('veedel-eyebrow')
+    const headline = document.getElementById('veedel-headline')
+    const fomoBlock = document.getElementById('fomo-block')
+    const fomoText = document.getElementById('fomo-text')
+    if (eyebrow) eyebrow.textContent = veedel
+    if (headline) headline.textContent = veedel + '.'
+    if (fomoBlock && fomoText) {
+      fomoText.textContent = `Andere Pizzerien in ${veedel} sind bereits dabei. Sei das nächste.`
+      fomoBlock.classList.remove('hidden')
+      fomoBlock.classList.add('flex')
+    }
+  }
+</script>
