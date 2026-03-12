@@ -11,6 +11,7 @@ const blog = defineCollection({
     category: z.enum(['Ratgeber', 'Strategie', 'How-to', 'News']),
     readingTime: z.number(),
     featured: z.boolean().default(false),
+    city: z.string(), // e.g. 'koeln', 'hamburg', 'berlin'
   }),
 })
 
