@@ -32,6 +32,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /public_html/
-          # Adjust server-dir to match your Starthost document root
-          # Common paths: /public_html/ or /bonuskarte.digital/public_html/
+          server-dir: /public_html/bonuskarte.digital website/
