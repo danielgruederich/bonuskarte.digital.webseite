@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+---
+<BaseLayout title="Datenschutz | bonuskarte.digital" description="Datenschutzerklärung von bonuskarte.digital – fuerte.digital, Köln.">
+  <Navbar />
+  <main class="bg-black min-h-screen text-white">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 py-24">
+      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-4">Rechtliches</p>
+      <h1 class="text-3xl font-bold mb-12">Datenschutzerklärung</h1>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">1. Verantwortlicher</h2>
+        <p class="text-white/80 leading-relaxed text-sm">
+          D. Grüderich · fuerte.digital<br />
+          Sülzburgstrasse 234, 50937 Köln<br />
+          E-Mail: <a href="mailto:hello@fuerte.digital" class="hover:text-gold-600 transition-colors">hello@fuerte.digital</a>
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">2. Erhebung und Speicherung personenbezogener Daten</h2>
+        <p class="text-white/80 leading-relaxed text-sm">
+          Beim Absenden des Kontaktformulars erheben wir folgende Daten: Vorname, Nachname, Unternehmensname, E-Mail-Adresse, Telefonnummer und Instagram-Handle. Diese Daten werden ausschließlich zur Kontaktaufnahme und zur Einrichtung Ihrer digitalen Stempelkarte genutzt.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">3. Weitergabe von Daten</h2>
+        <p class="text-white/80 leading-relaxed text-sm">
+          Ihre Daten werden nicht an Dritte verkauft. Zur Bereitstellung der digitalen Stempelkarte nutzen wir den Dienst Boomerang Cards (digitalwallet.cards). Das Hosting erfolgt auf Servern in Deutschland (DSGVO-konform).
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">4. Ihre Rechte</h2>
+        <p class="text-white/80 leading-relaxed text-sm">
+          Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer gespeicherten Daten. Wenden Sie sich dazu jederzeit an: <a href="mailto:hello@fuerte.digital" class="hover:text-gold-600 transition-colors">hello@fuerte.digital</a>
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">5. Cookies</h2>
+        <p class="text-white/80 leading-relaxed text-sm">
+          Diese Website verwendet keine Tracking-Cookies. Es werden keine Analyse- oder Werbe-Cookies eingesetzt.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">6. Hosting & Server-Logs</h2>
+        <p class="text-white/80 leading-relaxed text-sm">
+          Unser Hosting-Anbieter erhebt automatisch Server-Logfiles (IP-Adresse, Browsertyp, Uhrzeit). Diese Daten sind nicht einer bestimmten Person zuordenbar und werden nach spätestens 7 Tagen gelöscht.
+        </p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -26,6 +26,24 @@ const { title, description, ogImage = '/og.png' } = Astro.props
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "fuerte.digital",
+      "url": "https://bonuskarte.digital",
+      "telephone": "+491737130733",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sülzburgstrasse 234",
+        "addressLocality": "Köln",
+        "postalCode": "50937",
+        "addressCountry": "DE"
+      },
+      "areaServed": ["Köln", "Berlin", "Düsseldorf", "Bonn", "Hürth"],
+      "description": "Digitale Stempelkarten für Apple Wallet & Google Wallet. Kein App-Download, kein Aufwand."
+    }
+    </script>
   </head>
   <body class="bg-white text-gray-900 antialiased">
     <slot />
