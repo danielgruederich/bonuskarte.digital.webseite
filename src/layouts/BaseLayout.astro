@@ -40,6 +40,19 @@ const { title, description, ogImage = '/og.png' } = Astro.props
         "postalCode": "50937",
         "addressCountry": "DE"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.9193,
+        "longitude": 6.9430
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
       "areaServed": ["Köln", "Berlin", "Düsseldorf", "Bonn", "Hürth"],
       "description": "Digitale Stempelkarten für Apple Wallet & Google Wallet. Kein App-Download, kein Aufwand."
     }
