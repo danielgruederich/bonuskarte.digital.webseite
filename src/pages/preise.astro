@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import { PricingCard } from '../components/ui/dark-gradient-pricing'
+
+const plans = [
+  {
+    tier: 'Start',
+    price: '€50',
+    benefits: [
+      '1 Standort',
+      '5 Manager-Zugänge',
+      'Referral-Programm',
+      'Client Rating',
+      'Mobile TAN Login',
+    ],
+    highlighted: false,
+  },
+  {
+    tier: 'Business',
+    price: '€100',
+    benefits: [
+      '10 Standorte',
+      '50 Manager-Zugänge',
+      '10 Promotionen',
+      'Custom Rating System',
+      'Push Automation',
+    ],
+    highlighted: true,
+  },
+  {
+    tier: 'Franchise',
+    price: '€250',
+    benefits: [
+      '20 Standorte',
+      '300 Manager-Zugänge',
+      '50 Promotionen',
+      'Custom Domain',
+    ],
+    highlighted: false,
+  },
+  {
+    tier: 'Enterprise',
+    price: 'Individuell',
+    benefits: [
+      'Alle Service-Features',
+      'Keine Manager-Limits',
+      'Keine Promotions-Limits',
+      'API Integration',
+      'SLA',
+    ],
+    highlighted: false,
+  },
+]
+---
+
+<BaseLayout
+  title="Preise – bonuskarte.digital | Digitale Stempelkarte für Gastronomen"
+  description="Transparente Preise für die digitale Kundenkarte. Start ab €50/Monat. 90 Tage kostenlos testen – keine Kreditkarte, kein Vertrag."
+>
+  <Navbar ctaHref="#preise" ctaLabel="Jetzt testen" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="relative bg-black overflow-hidden pt-32 pb-16 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-white"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gold-600 rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-8">
+        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+        <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+          Transparent · Fair · Risikofrei
+        </span>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl font-extralight text-white leading-[1.1] tracking-tight mb-3">
+        Einfache
+      </h1>
+      <h1 class="text-5xl sm:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6">
+        <span class="text-gold-600">Preise.</span>
+      </h1>
+      <p class="text-white/40 text-base font-light leading-relaxed max-w-lg mx-auto mb-10">
+        Starte kostenlos, wachse ohne Risiko. Alle Pläne beinhalten 90 Tage kostenlosen Test –
+        keine Kreditkarte, kein Knebelvertrag.
+      </p>
+
+      <!-- Trust badges -->
+      <div class="flex flex-wrap justify-center gap-6">
+        {['✅ 90 Tage kostenlos', '🔒 DSGVO', '⚡ Live in 24h', '📱 Apple & Google Wallet'].map(t => (
+          <span class="text-[10px] tracking-widest uppercase text-white/25">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING GRID ───────────────────────────────────────── -->
+  <section id="preise" class="py-24 px-5 sm:px-8 bg-black">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {plans.map(plan => (
+          <PricingCard
+            client:load
+            tier={plan.tier}
+            price={plan.price}
+            CTA="Kostenlos testen"
+            benefits={plan.benefits}
+            highlighted={plan.highlighted}
+            ctaHref="/koeln"
+          />
+        ))}
+      </div>
+
+      <!-- Footer note -->
+      <p class="text-center text-white/20 text-xs tracking-widest uppercase mt-10">
+        Alle Preise zzgl. MwSt. · Monatlich kündbar · Keine Einrichtungsgebühr
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────── -->
+  <section class="py-24 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <div class="flex items-center gap-4 mb-14">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Häufige Fragen</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="space-y-px">
+        {[
+          {
+            q: 'Was passiert nach den 90 Tagen?',
+            a: 'Du entscheidest, ob du weitermachst. Kein automatischer Übergang, kein versteckter Vertrag. Wir melden uns vorher bei dir.',
+          },
+          {
+            q: 'Kann ich den Plan wechseln?',
+            a: 'Jederzeit. Upgrade oder Downgrade, monatlich kündbar. Keine Mindestlaufzeit.',
+          },
+          {
+            q: 'Was ist ein "Standort"?',
+            a: 'Ein Standort ist ein Lokal oder eine Filiale. Jeder Standort hat seine eigene Stempelkarte mit eigenem Branding.',
+          },
+          {
+            q: 'Brauchen meine Gäste eine App?',
+            a: 'Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert – kein Download, kein Account.',
+          },
+          {
+            q: 'Was ist Push Automation?',
+            a: 'Automatische Push-Nachrichten an deine Stammkunden – z. B. wenn jemand lange nicht da war, oder bei einer Aktion.',
+          },
+        ].map(item => (
+          <div class="border border-white/5 p-6 hover:border-gold-600/20 transition-colors">
+            <p class="text-white text-sm font-semibold mb-2">{item.q}</p>
+            <p class="text-white/40 text-sm font-light leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ──────────────────────────────────────────── -->
+  <section class="py-28 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-2xl mx-auto text-center">
+      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
+      <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">
+        90 Tage gratis
+      </h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-10">
+        ausprobieren.
+      </h2>
+      <a
+        href="/koeln"
+        class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
+      >
+        Jetzt kostenlos starten
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
