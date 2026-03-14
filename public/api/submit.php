@@ -28,8 +28,10 @@ if (!$body) {
 }
 
 // ── Config ───────────────────────────────────────────────────────────────────
-const BOOMERANG_API_KEY = 'a34f3829b32b7c629059a780a0919a13';
-const BOOMERANG_BASE    = 'https://api.digitalwallet.cards';
+const BOOMERANG_API_KEY  = 'a34f3829b32b7c629059a780a0919a13';
+const BOOMERANG_BASE     = 'https://api.digitalwallet.cards';
+const SALESFLARE_API_KEY = 'Lh1Qucl715Sp6Pwy4DZpoxzlGWt64Ugz7GA3M9G5_NKjm';
+const SALESFLARE_BASE    = 'https://api.salesflare.com';
 
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
@@ -87,14 +89,10 @@ if (!$email && !$phone) {
     exit;
 }
 
-// ── Boomerang API helper ──────────────────────────────────────────────────────
-function boomerang(string $method, string $path, array $data = []): array
+// ── Generic API helper ────────────────────────────────────────────────────────
+function apiRequest(string $method, string $baseUrl, string $path, array $headers, array $data = []): array
 {
-    $ch = curl_init(BOOMERANG_BASE . $path);
-    $headers = [
-        'Content-Type: application/json',
-        'X-API-Key: ' . BOOMERANG_API_KEY,
-    ];
+    $ch = curl_init($baseUrl . $path);
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST  => $method,
@@ -108,6 +106,24 @@ function boomerang(string $method, string $path, array $data = []): array
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
     return ['code' => $httpCode, 'body' => json_decode($raw, true)];
+}
+
+// ── Boomerang API helper ──────────────────────────────────────────────────────
+function boomerang(string $method, string $path, array $data = []): array
+{
+    return apiRequest($method, BOOMERANG_BASE, $path, [
+        'Content-Type: application/json',
+        'X-API-Key: ' . BOOMERANG_API_KEY,
+    ], $data);
+}
+
+// ── Salesflare API helper ─────────────────────────────────────────────────────
+function salesflare(string $method, string $path, array $data = []): array
+{
+    return apiRequest($method, SALESFLARE_BASE, $path, [
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . SALESFLARE_API_KEY,
+    ], $data);
 }
 
 // ── Step 1: Create customer ───────────────────────────────────────────────────
@@ -150,6 +166,31 @@ if ($cardRes['code'] !== 201 || empty($cardRes['body']['data'])) {
 }
 
 $card = $cardRes['body']['data'];
+
+// ── Step 3: Create lead in Salesflare (fire & forget — never blocks response) ─
+try {
+    // Account = the business (instagram handle as name until real name is known)
+    $accountName = $instagram ?: $firstName;
+    $accountTags = array_filter([$niche, 'koeln']);
+
+    $accountRes = salesflare('POST', '/accounts', [
+        'name' => '@' . $accountName,
+        'tags' => array_values($accountTags),
+    ]);
+    $accountId = $accountRes['body']['id'] ?? null;
+
+    // Contact = the person
+    $contactPayload = [
+        'firstname' => $firstName,
+        'tags'      => array_values($accountTags),
+    ];
+    if ($phone)     $contactPayload['mobile_phone_number'] = $phone;
+    if ($accountId) $contactPayload['account'] = $accountId;
+
+    salesflare('POST', '/contacts', $contactPayload);
+} catch (\Throwable $e) {
+    // Salesflare failure never blocks the main response
+}
 
 // ── Respond ───────────────────────────────────────────────────────────────────
 echo json_encode([
