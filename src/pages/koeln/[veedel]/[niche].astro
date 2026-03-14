@@ -33,6 +33,16 @@ const showFomo  = fomoCount > 0
   title={r(nicheData.seoTitle)}
   description={r(nicheData.seoDescription)}
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/" },
+      { "@type": "ListItem", "position": 2, "name": "Köln", "item": "https://bonuskarte.digital/koeln/" },
+      { "@type": "ListItem", "position": 3, "name": veedelData.name, "item": `https://bonuskarte.digital/koeln/${veedelData.slug}/` },
+      { "@type": "ListItem", "position": 4, "name": `${nicheData.label} in ${veedelData.name}` }
+    ]
+  })} />
   <Navbar ctaHref="#demo" ctaLabel={nicheData.heroCopy.ctaLabel} />
 
   <!-- ── HERO ─────────────────────────────────────────────────── -->

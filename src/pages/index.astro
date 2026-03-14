@@ -39,6 +39,14 @@ const solutions = [
   title="bonuskarte.digital – Digitale Stempelkarte für lokale Unternehmen"
   description="Mehr Stammkunden mit der digitalen Stempelkarte. Apple Wallet & Google Wallet. Kein App-Download. 90 Tage kostenlos testen."
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "bonuskarte.digital",
+    "url": "https://bonuskarte.digital",
+    "description": "Digitale Stempelkarten für Apple Wallet & Google Wallet. Für Cafés, Restaurants, Dönerläden und Pizzerien in Deutschland.",
+    "inLanguage": "de-DE"
+  })} />
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
