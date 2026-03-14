@@ -27,16 +27,14 @@ const { title, description, ogImage = '/og.png' } = Astro.props
     />
     <title>{title}</title>
 
-    <!-- Google Analytics 4 — Measurement ID im GitHub Secret GA4_ID hinterlegen -->
-    <!-- Aktuell: Platzhalter G-XXXXXXXXXX → ersetzen sobald GA4 Property erstellt -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VMZHH4WN6R"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX', {
-        anonymize_ip: true,
-        cookie_flags: 'SameSite=None;Secure'
+      gtag('config', 'G-VMZHH4WN6R', {
+        anonymize_ip: true
       });
     </script>
 
