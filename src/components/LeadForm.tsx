@@ -36,10 +36,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           vorname:   data.vorname,
-          nachname:  data.nachname,
-          business:  data.business,
           instagram: data.instagram,
-          email:     data.email,
           telefon:   data.telefon,
           niche:     niche.toLowerCase(),
         }),
@@ -135,43 +132,26 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>Vorname *</label>
-          <input name="vorname" type="text" required placeholder="Max" className={inputClass} />
-        </div>
-        <div>
-          <label className={labelClass}>Nachname *</label>
-          <input name="nachname" type="text" required placeholder="Mustermann" className={inputClass} />
-        </div>
-      </div>
-
       <div>
-        <label className={labelClass}>Name deines {niche}s *</label>
-        <input name="business" type="text" required placeholder="z.B. Café Sonnenblume" className={inputClass} />
-      </div>
-
-      <div>
-        <label className={labelClass}>Instagram-Handle *</label>
+        <label className={labelClass}>Instagram-Kanal *</label>
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-600 text-sm font-medium select-none">@</span>
-          <input name="instagram" type="text" required placeholder="dein_cafe_koeln"
+          <input name="instagram" type="text" required placeholder="dein_laden_koeln"
             className={`${inputClass} pl-8`} />
         </div>
-        <p className="mt-2 text-[10px] tracking-wide text-white/20">
-          Wir nutzen dein Profil für Logo und Farben der Demo-Karte.
+        <p className="mt-2 text-[10px] tracking-wide text-white/30">
+          Wir erstellen daraus deine persönliche Demo-Karte.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className={labelClass}>E-Mail *</label>
-          <input name="email" type="email" required placeholder="max@cafe.de" className={inputClass} />
-        </div>
-        <div>
-          <label className={labelClass}>Telefon</label>
-          <input name="telefon" type="tel" placeholder="+49 221 …" className={inputClass} />
-        </div>
+      <div>
+        <label className={labelClass}>Dein Vorname *</label>
+        <input name="vorname" type="text" required placeholder="Max" className={inputClass} />
+      </div>
+
+      <div>
+        <label className={labelClass}>Handynummer *</label>
+        <input name="telefon" type="tel" required placeholder="+49 170 …" className={inputClass} />
       </div>
 
       {state === 'error' && (
