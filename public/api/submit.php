@@ -169,25 +169,53 @@ $card = $cardRes['body']['data'];
 
 // ── Step 3: Create lead in Salesflare (fire & forget — never blocks response) ─
 try {
-    // Account = the business (instagram handle as name until real name is known)
-    $accountName = $instagram ?: $firstName;
-    $accountTags = array_filter([$niche, 'koeln']);
+    $tags          = array_values(array_filter([$niche, 'koeln']));
+    $instagramUrl  = $instagram ? 'https://www.instagram.com/' . $instagram : null;
+    $nicheLabels   = ['cafe' => 'Café', 'doener' => 'Döner', 'pizza' => 'Pizza', 'restaurant' => 'Restaurant'];
+    $nicheLabel    = $nicheLabels[$niche] ?? $niche;
 
-    $accountRes = salesflare('POST', '/accounts', [
-        'name' => '@' . $accountName,
-        'tags' => array_values($accountTags),
-    ]);
-    $accountId = $accountRes['body']['id'] ?? null;
+    // ── Account (the business) ──────────────────────────────────────────────
+    $accountPayload = [
+        'name' => $instagram ? '@' . $instagram : $firstName,
+        'tags' => $tags,
+    ];
+    if ($phone && $instagramUrl) {
+        $accountPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
+        $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+    } elseif ($phone) {
+        $accountPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
+    } elseif ($instagramUrl) {
+        $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+    }
 
-    // Contact = the person
+    $accountRes = salesflare('POST', '/accounts', $accountPayload);
+    $accountId  = $accountRes['body']['id'] ?? null;
+
+    // ── Contact (the person) ────────────────────────────────────────────────
     $contactPayload = [
         'firstname' => $firstName,
-        'tags'      => array_values($accountTags),
+        'tags'      => $tags,
     ];
-    if ($phone)     $contactPayload['mobile_phone_number'] = $phone;
-    if ($accountId) $contactPayload['account'] = $accountId;
+    if ($phone) {
+        $contactPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
+    }
+    if ($instagramUrl) {
+        $contactPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+    }
+    if ($accountId) {
+        $contactPayload['account'] = $accountId;
+    }
 
     salesflare('POST', '/contacts', $contactPayload);
+
+    // ── Opportunity ─────────────────────────────────────────────────────────
+    if ($accountId) {
+        salesflare('POST', '/opportunities', [
+            'name'    => $nicheLabel . ' · @' . ($instagram ?: $firstName) . ' · Köln',
+            'account' => $accountId,
+            'tags'    => $tags,
+        ]);
+    }
 } catch (\Throwable $e) {
     // Salesflare failure never blocks the main response
 }
