@@ -97,7 +97,7 @@ export default function PhoneMockup() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.3 }}
-          className="text-[10px] tracking-[0.25em] uppercase text-white/25"
+          className="text-[10px] tracking-[0.25em] uppercase text-white/50"
         >
           {labels[current]}
         </motion.p>

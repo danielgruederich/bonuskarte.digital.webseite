@@ -80,7 +80,7 @@ const related = allPosts
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
 
       <!-- Breadcrumb -->
-      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-white/30 mb-7 tracking-wide">
+      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-white/55 mb-7 tracking-wide">
         <a href="/" class="hover:text-white/60 transition-colors">Home</a>
         <span>›</span>
         <a href="/koeln" class="hover:text-white/60 transition-colors">Köln</a>
@@ -95,9 +95,9 @@ const related = allPosts
         <span class={`text-xs font-semibold tracking-wide uppercase px-2.5 py-1 ${categoryColors[post.data.category]}`}>
           {post.data.category}
         </span>
-        <span class="text-white/25 text-xs">{post.data.readingTime} Min. Lesezeit</span>
-        <span class="text-white/15">·</span>
-        <span class="text-white/30 text-xs">📍 Köln</span>
+        <span class="text-white/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
+        <span class="text-white/50">·</span>
+        <span class="text-white/55 text-xs">📍 Köln</span>
       </div>
 
       <!-- Title -->
@@ -117,7 +117,7 @@ const related = allPosts
         </div>
         <div>
           <div class="text-white text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
-          <div class="text-white/35 text-xs">{formatDate(post.data.pubDate)}</div>
+          <div class="text-white/60 text-xs">{formatDate(post.data.pubDate)}</div>
         </div>
       </div>
 

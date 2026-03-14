@@ -65,11 +65,11 @@ export const PricingCard = ({
 
         {/* Header */}
         <div className="mb-8">
-          <p className="text-xs tracking-[0.3em] uppercase text-white/30 mb-4">{tier}</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-white/55 mb-4">{tier}</p>
           <div className="flex items-baseline gap-2 mb-6">
             <span className="text-4xl font-black text-white">{price}</span>
             {price !== "Individuell" && (
-              <span className="text-sm text-white/30 font-light">{priceLabel}</span>
+              <span className="text-sm text-white/55 font-light">{priceLabel}</span>
             )}
           </div>
           <div className="flex items-center gap-2">

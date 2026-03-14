@@ -148,7 +148,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-1">3 Felder · 30 Sekunden</p>
+      <p className="text-[10px] tracking-[0.2em] uppercase text-white/55 mb-1">3 Felder · 30 Sekunden</p>
       <div>
         <label className={labelClass}>Instagram-Kanal *</label>
         <div className="relative">
@@ -166,7 +166,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
             className={`${inputClass} pl-8`}
           />
         </div>
-        <p className="mt-2 text-[10px] tracking-wide text-white/30">
+        <p className="mt-2 text-[10px] tracking-wide text-white/55">
           Wir erstellen daraus deine persönliche Demo-Karte.
         </p>
       </div>

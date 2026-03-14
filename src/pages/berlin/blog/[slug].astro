@@ -48,7 +48,7 @@ const related = allPosts
 
   <header class="bg-black pt-24 pb-10 sm:pb-14">
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
-      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-white/30 mb-7 tracking-wide">
+      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-white/55 mb-7 tracking-wide">
         <a href="/" class="hover:text-white/60 transition-colors">Home</a>
         <span>›</span>
         <a href="/berlin" class="hover:text-white/60 transition-colors">Berlin</a>
@@ -60,9 +60,9 @@ const related = allPosts
 
       <div class="flex flex-wrap items-center gap-2.5 mb-5">
         <span class={`text-xs font-semibold tracking-wide uppercase px-2.5 py-1 ${categoryColors[post.data.category]}`}>{post.data.category}</span>
-        <span class="text-white/25 text-xs">{post.data.readingTime} Min. Lesezeit</span>
-        <span class="text-white/15">·</span>
-        <span class="text-white/30 text-xs">📍 Berlin</span>
+        <span class="text-white/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
+        <span class="text-white/50">·</span>
+        <span class="text-white/55 text-xs">📍 Berlin</span>
       </div>
 
       <h1 class="text-3xl sm:text-4xl font-black text-white leading-tight tracking-tight mb-5">{post.data.title}</h1>
@@ -74,7 +74,7 @@ const related = allPosts
         </div>
         <div>
           <div class="text-white text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
-          <div class="text-white/35 text-xs">{formatDate(post.data.pubDate)}</div>
+          <div class="text-white/60 text-xs">{formatDate(post.data.pubDate)}</div>
         </div>
       </div>
     </div>

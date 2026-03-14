@@ -47,7 +47,7 @@ const categoryColors: Record<string, string> = {
           Wissen für Kölner Unternehmer. Kundenbindung für Ehrenfeld, Nippes, Innenstadt und alle Kölner Veedel.
         </p>
         <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 text-xs text-white/30 mt-8 tracking-wide">
+        <nav class="flex items-center gap-2 text-xs text-white/55 mt-8 tracking-wide">
           <a href="/" class="hover:text-white/60 transition-colors">Home</a>
           <span>›</span>
           <a href="/koeln" class="hover:text-white/60 transition-colors">Köln</a>
@@ -82,7 +82,7 @@ const categoryColors: Record<string, string> = {
               <span class={`text-xs font-semibold tracking-wide uppercase px-2.5 py-1 rounded-sm ${categoryColors[featured.data.category]}`}>
                 {featured.data.category}
               </span>
-              <span class="text-white/30 text-xs">{featured.data.readingTime} Min. Lesezeit</span>
+              <span class="text-white/55 text-xs">{featured.data.readingTime} Min. Lesezeit</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-bold text-white leading-snug mb-4 group-hover:text-gold-400 transition-colors">
               {featured.data.title}
@@ -91,7 +91,7 @@ const categoryColors: Record<string, string> = {
               {featured.data.description}
             </p>
             <div class="flex items-center justify-between">
-              <span class="text-white/30 text-xs">{formatDate(featured.data.pubDate)}</span>
+              <span class="text-white/55 text-xs">{formatDate(featured.data.pubDate)}</span>
               <span class="inline-flex items-center gap-2 text-gold-600 text-xs font-bold tracking-widest uppercase group-hover:gap-3 transition-all">
                 Weiterlesen
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ const categoryColors: Record<string, string> = {
               <span class={`text-xs font-semibold tracking-wide uppercase px-2 py-0.5 rounded-sm ${categoryColors[post.data.category]}`}>
                 {post.data.category}
               </span>
-              <span class="text-white/25 text-xs">{post.data.readingTime} Min.</span>
+              <span class="text-white/50 text-xs">{post.data.readingTime} Min.</span>
             </div>
             <h3 class="text-base font-bold text-white leading-snug mb-3 group-hover:text-gold-400 transition-colors flex-1">
               {post.data.title}
@@ -137,8 +137,8 @@ const categoryColors: Record<string, string> = {
               {post.data.description}
             </p>
             <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-              <span class="text-white/25 text-xs">{formatDate(post.data.pubDate)}</span>
-              <svg class="w-4 h-4 text-white/20 group-hover:text-gold-600 group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="text-white/50 text-xs">{formatDate(post.data.pubDate)}</span>
+              <svg class="w-4 h-4 text-white/50 group-hover:text-gold-600 group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </div>
