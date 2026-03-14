@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
-import WalletMockup from '../components/WalletMockup.astro'
+import PhoneMockup from '../components/PhoneMockup.tsx'
 
 const howItWorks = [
   { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine Stempelkarte mit deinem Branding in unter 24 Stunden.' },
@@ -107,9 +107,9 @@ const solutions = [
           </div>
         </div>
 
-        <!-- Wallet card -->
+        <!-- Phone Mockup -->
         <div class="flex justify-center lg:justify-end">
-          <WalletMockup businessName="Dein Unternehmen" reward="Gratis-Produkt" stamped={6} total={10} />
+          <PhoneMockup client:load />
         </div>
       </div>
     </div>
