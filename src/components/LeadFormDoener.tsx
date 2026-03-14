@@ -1,4 +1,5 @@
-import { useState, type FormEvent, type ChangeEvent } from 'react'
+import { useState, type FormEvent, type ChangeEvent, useRef } from 'react'
+import { analytics } from '../lib/analytics'
 
 interface Props {
   formspreeId?: string
@@ -24,6 +25,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
   const [vorname, setVorname] = useState('')
   const [instagram, setInstagram] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
+  const formStartedRef = useRef(false)
 
   function handleInstagramChange(e: ChangeEvent<HTMLInputElement>) {
     setInstagram(e.target.value.replace(/^@+/, ''))
@@ -54,6 +56,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
           installLink: json.installLink,
           directInstallLink: json.directInstallLink,
         })
+        analytics.demoCardCreated(niche, 'koeln')
         setState('success')
         form.reset()
         setInstagram('')
@@ -93,6 +96,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
               href={universalLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => analytics.walletInstallClicked(niche)}
               className="w-full group flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black font-black tracking-[0.1em] uppercase text-base py-5 transition-all"
             >
               Demo-Karte ins Wallet laden →
@@ -122,6 +126,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => analytics.whatsappClicked('success')}
             className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold tracking-wide text-sm px-8 py-4 transition-all"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -132,6 +137,13 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
         </div>
       </div>
     )
+  }
+
+  function handleFirstFocus() {
+    if (!formStartedRef.current) {
+      formStartedRef.current = true
+      analytics.formStarted(niche, 'koeln')
+    }
   }
 
   return (
@@ -148,6 +160,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
             placeholder="dein_laden_koeln"
             value={instagram}
             onChange={handleInstagramChange}
+            onFocus={handleFirstFocus}
             autoComplete="off"
             autoCapitalize="none"
             className={`${inputClass} pl-8`}
