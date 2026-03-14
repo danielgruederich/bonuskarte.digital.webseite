@@ -5,7 +5,9 @@ interface Props {
   ogImage?: string
 }
 
-const { title, description, ogImage = '/og.png' } = Astro.props
+const { title, description, ogImage } = Astro.props
+const canonicalUrl = new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
+const ogImageUrl   = ogImage ? new URL(ogImage, 'https://bonuskarte.digital').href : null
 ---
 <!doctype html>
 <html lang="de" class="scroll-smooth">
@@ -13,10 +15,13 @@ const { title, description, ogImage = '/og.png' } = Astro.props
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalUrl} />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

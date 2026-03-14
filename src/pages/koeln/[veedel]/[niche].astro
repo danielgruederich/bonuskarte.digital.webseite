@@ -49,11 +49,9 @@ const showFomo  = fomoCount > 0
           </span>
         </div>
 
-        <h1 class="text-5xl sm:text-6xl font-extralight text-white leading-[1.1] tracking-tight mb-2">
-          {nicheData.heroCopy.headlineLight}
-        </h1>
-        <h1 class="text-5xl sm:text-6xl font-bold text-gold-600 leading-[1.1] tracking-tight mb-8">
-          {r(nicheData.heroCopy.headlineBold)}
+        <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-8">
+          <span class="font-extralight text-white block mb-2">{nicheData.heroCopy.headlineLight}</span>
+          <span class="font-bold text-gold-600 block">{r(nicheData.heroCopy.headlineBold)}</span>
         </h1>
 
         {showFomo && (
