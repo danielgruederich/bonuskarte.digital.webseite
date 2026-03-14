@@ -42,6 +42,32 @@ const related = allPosts
   description={post.data.description}
   ogImage={post.data.heroImage}
 >
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "image": post.data.heroImage,
+    "datePublished": post.data.pubDate.toISOString(),
+    "dateModified": (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    "author": {
+      "@type": "Organization",
+      "name": "FUERTE.DIGITAL",
+      "url": "https://bonuskarte.digital"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FUERTE.DIGITAL",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bonuskarte.digital/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://bonuskarte.digital/koeln/blog/${post.slug}`
+    }
+  })} />
   <Navbar dark={true} ctaHref="/#demo" />
 
   <!-- Reading progress bar -->

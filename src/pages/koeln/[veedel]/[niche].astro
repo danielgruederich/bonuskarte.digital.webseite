@@ -43,6 +43,28 @@ const showFomo  = fomoCount > 0
       { "@type": "ListItem", "position": 4, "name": `${nicheData.label} in ${veedelData.name}` }
     ]
   })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Digitale Stempelkarte für ${nicheData.label} in ${veedelData.name}`,
+    "description": r(nicheData.seoDescription),
+    "url": `https://bonuskarte.digital/koeln/${veedelData.slug}/${nicheData.slug}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "FUERTE.DIGITAL",
+      "url": "https://bonuskarte.digital"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": `${veedelData.name}, Köln`
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "90 Tage kostenlos testen – keine Kreditkarte, kein Vertrag"
+    }
+  })} />
   <Navbar ctaHref="#demo" ctaLabel={nicheData.heroCopy.ctaLabel} />
 
   <!-- ── HERO ─────────────────────────────────────────────────── -->
