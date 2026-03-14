@@ -102,7 +102,7 @@ const solutions = [
           <!-- Trust -->
           <div class="flex flex-wrap gap-5 mt-10">
             {['🔒 DSGVO', '📱 Apple & Google Wallet', '⚡ Live in 24h', '✅ Kein Risiko'].map(t => (
-              <span class="text-[10px] tracking-widest uppercase text-white/25">{t}</span>
+              <span class="text-[10px] tracking-widest uppercase text-white/50">{t}</span>
             ))}
           </div>
         </div>
@@ -124,17 +124,17 @@ const solutions = [
       <!-- Divider label -->
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Das Problem</span>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/40">Das Problem</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="border border-white/5 p-8">
-          <p class="text-xs tracking-[0.3em] uppercase text-white/30 mb-6">Papierstempelkarte</p>
+          <p class="text-xs tracking-[0.3em] uppercase text-white/50 mb-6">Papierstempelkarte</p>
           <ul class="space-y-4">
             {problems.map(t => (
-              <li class="flex items-start gap-3 text-sm text-white/40 font-light">
-                <span class="text-white/20 mt-0.5 flex-shrink-0">—</span>
+              <li class="flex items-start gap-3 text-sm text-white/60 font-light">
+                <span class="text-white/40 mt-0.5 flex-shrink-0">—</span>
                 {t}
               </li>
             ))}
@@ -162,16 +162,16 @@ const solutions = [
     <div class="relative max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Wie es funktioniert</span>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/40">Wie es funktioniert</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {howItWorks.map((item, i) => (
           <div class="group border border-white/5 hover:border-gold-600/30 p-7 transition-all">
-            <div class="text-4xl font-black text-gold-600/20 group-hover:text-gold-600/40 transition-colors leading-none mb-6">{item.step}</div>
+            <div class="text-4xl font-black text-gold-600/50 group-hover:text-gold-600/80 transition-colors leading-none mb-6">{item.step}</div>
             <h3 class="font-semibold text-white tracking-wide mb-3 text-sm">{item.title}</h3>
-            <p class="text-white/35 text-sm leading-relaxed font-light">{item.desc}</p>
+            <p class="text-white/60 text-sm leading-relaxed font-light">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -183,7 +183,7 @@ const solutions = [
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-[10px] tracking-[0.4em] uppercase text-white/20">Verfügbare Städte</span>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/40">Verfügbare Städte</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
 
@@ -224,7 +224,7 @@ const solutions = [
       <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-8">
         Stammkunden?
       </h2>
-      <p class="text-white/30 text-sm tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
+      <p class="text-white/50 text-sm tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
       <a href="/koeln"
         class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
         Kostenlos starten

@@ -159,10 +159,11 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
     <form onSubmit={handleSubmit} className="space-y-5">
       <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-1">3 Felder · 30 Sekunden</p>
       <div>
-        <label className={labelClass}>Instagram-Kanal *</label>
+        <label htmlFor="instagram" className={labelClass}>Instagram-Kanal *</label>
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-600 text-sm font-medium select-none">@</span>
           <input
+            id="instagram"
             name="instagram"
             type="text"
             required
@@ -181,13 +182,13 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
       </div>
 
       <div>
-        <label className={labelClass}>Dein Vorname *</label>
-        <input name="vorname" type="text" required placeholder="Max" autoComplete="given-name" className={inputClass} />
+        <label htmlFor="vorname" className={labelClass}>Dein Vorname *</label>
+        <input id="vorname" name="vorname" type="text" required placeholder="Max" autoComplete="given-name" className={inputClass} />
       </div>
 
       <div>
-        <label className={labelClass}>Handynummer *</label>
-        <input name="telefon" type="tel" required placeholder="+49 170 …" autoComplete="tel" inputMode="tel" className={inputClass} />
+        <label htmlFor="telefon" className={labelClass}>Handynummer *</label>
+        <input id="telefon" name="telefon" type="tel" required placeholder="+49 170 …" autoComplete="tel" inputMode="tel" className={inputClass} />
       </div>
 
       {state === 'error' && (
