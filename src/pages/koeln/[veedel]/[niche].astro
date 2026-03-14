@@ -147,7 +147,7 @@ const showFomo  = fomoCount > 0
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-[10px] tracking-[0.4em] uppercase text-white/40">Der Vorteil</span>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/55">Der Vorteil</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -155,7 +155,7 @@ const showFomo  = fomoCount > 0
           <div class="group border border-white/5 hover:border-gold-600/30 p-8 transition-all">
             <div class="text-4xl mb-5 group-hover:scale-110 transition-transform inline-block">{a.icon}</div>
             <h3 class="font-bold text-white text-base mb-3">{a.title}</h3>
-            <p class="text-white/60 text-sm leading-relaxed font-light">{a.desc}</p>
+            <p class="text-white/75 text-sm leading-relaxed font-light">{a.desc}</p>
           </div>
         ))}
       </div>
@@ -168,7 +168,7 @@ const showFomo  = fomoCount > 0
     <div class="relative max-w-3xl mx-auto text-center">
       <div class="flex items-center gap-4 mb-10">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-[10px] tracking-[0.4em] uppercase text-white/40">Das Angebot</span>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/55">Das Angebot</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
       <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">90 Tage Test.</h2>
@@ -182,7 +182,7 @@ const showFomo  = fomoCount > 0
           <div class="border border-gold-600/20 p-6 text-center">
             <div class="text-4xl font-black text-gold-600 mb-1">{stat.n}</div>
             <div class="text-white font-semibold text-sm mb-1">{stat.label}</div>
-            <div class="text-white/30 text-xs">{stat.sub}</div>
+            <div class="text-white/55 text-xs">{stat.sub}</div>
           </div>
         ))}
       </div>
@@ -211,7 +211,7 @@ const showFomo  = fomoCount > 0
         </div>
         <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2">Demo-Karte</h2>
         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">direkt ins Wallet.</h2>
-        <p class="text-white/40 text-sm font-light leading-relaxed max-w-sm mx-auto">
+        <p class="text-white/65 text-sm font-light leading-relaxed max-w-sm mx-auto">
           Trag dich ein – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
         </p>
       </div>
@@ -223,7 +223,7 @@ const showFomo  = fomoCount > 0
           <LeadForm client:load niche={nicheData.label} city="Köln" whatsappUrl={whatsappUrl} />
         )}
       </div>
-      <p class="text-center text-white/30 text-xs mt-5">
+      <p class="text-center text-white/50 text-xs mt-5">
         Nach 90 Tagen ab 29 €/Monat ·
         <a href="/preise" class="text-gold-600/60 hover:text-gold-600 underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
       </p>
