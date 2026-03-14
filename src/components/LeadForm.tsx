@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useState, type FormEvent, type ChangeEvent } from 'react'
 
 interface Props {
   niche: string
@@ -24,6 +24,12 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
   const [state, setState] = useState<State>('idle')
   const [card, setCard] = useState<CardLinks | null>(null)
   const [vorname, setVorname] = useState('')
+  const [instagram, setInstagram] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  function handleInstagramChange(e: ChangeEvent<HTMLInputElement>) {
+    setInstagram(e.target.value.replace(/^@+/, ''))
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -31,6 +37,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form))
     setVorname((data.vorname as string) ?? '')
+    const cleanInstagram = String(data.instagram ?? '').replace(/^@+/, '')
 
     try {
       const res = await fetch('/api/submit.php', {
@@ -38,7 +45,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           vorname:   data.vorname,
-          instagram: data.instagram,
+          instagram: cleanInstagram,
           telefon:   data.telefon,
           niche:     niche.toLowerCase(),
         }),
@@ -52,10 +59,13 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
         })
         setState('success')
         form.reset()
+        setInstagram('')
       } else {
+        setErrorMsg('Etwas ist schiefgelaufen. Bitte versuche es erneut.')
         setState('error')
       }
     } catch {
+      setErrorMsg('Keine Verbindung. Bitte Internetverbindung prüfen und erneut versuchen.')
       setState('error')
     }
   }
@@ -135,12 +145,22 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-1">3 Felder · 30 Sekunden</p>
       <div>
         <label className={labelClass}>Instagram-Kanal *</label>
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-600 text-sm font-medium select-none">@</span>
-          <input name="instagram" type="text" required placeholder="dein_laden_koeln"
-            className={`${inputClass} pl-8`} />
+          <input
+            name="instagram"
+            type="text"
+            required
+            placeholder="dein_laden_koeln"
+            value={instagram}
+            onChange={handleInstagramChange}
+            autoComplete="off"
+            autoCapitalize="none"
+            className={`${inputClass} pl-8`}
+          />
         </div>
         <p className="mt-2 text-[10px] tracking-wide text-white/30">
           Wir erstellen daraus deine persönliche Demo-Karte.
@@ -159,7 +179,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
 
       {state === 'error' && (
         <p className="text-sm text-red-400 border border-red-400/30 px-4 py-3">
-          Etwas ist schiefgelaufen. Bitte versuche es erneut.
+          {errorMsg || 'Etwas ist schiefgelaufen. Bitte versuche es erneut.'}
         </p>
       )}
 
