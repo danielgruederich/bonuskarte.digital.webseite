@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content'
+import { hilfeCategories, getCategoryFromSlug } from '@/data/hilfe-categories'
+
+interface Props {
+  currentSlug?: string
+}
+
+const { currentSlug } = Astro.props
+const allEntries = await getCollection('hilfe')
+
+const grouped = hilfeCategories.map(cat => ({
+  ...cat,
+  entries: allEntries
+    .filter(e => getCategoryFromSlug(e.slug) === cat.slug)
+    .sort((a, b) => a.data.order - b.data.order),
+}))
+---
+
+<div class="lg:hidden mb-6">
+  <button
+    id="hilfe-sidebar-toggle"
+    class="w-full flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white/70"
+  >
+    <span>Navigation</span>
+    <svg class="w-4 h-4 transition-transform" id="hilfe-sidebar-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <div id="hilfe-sidebar-mobile" class="hidden mt-2 bg-black/95 border border-white/10 rounded-lg p-4">
+    <a href="/hilfe" class="block text-xs font-bold tracking-widest uppercase text-gold-600 mb-4">
+      Hilfe & Tutorials
+    </a>
+
+    {grouped.map(cat => (
+      <div class="mb-4">
+        <p class="text-xs font-bold tracking-widest uppercase text-white/40 mb-2">
+          <span class="mr-1.5">{cat.icon}</span>{cat.label}
+        </p>
+        <ul class="space-y-1">
+          {cat.entries.map(entry => {
+            const isActive = entry.slug === currentSlug
+            return (
+              <li>
+                <a
+                  href={`/hilfe/${entry.slug}`}
+                  class:list={[
+                    'block pl-4 py-1.5 text-sm transition-colors',
+                    isActive ? 'text-gold-600 font-medium' : 'text-white/50',
+                  ]}
+                >
+                  {entry.data.title}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('hilfe-sidebar-toggle')
+  const mobile = document.getElementById('hilfe-sidebar-mobile')
+  const chevron = document.getElementById('hilfe-sidebar-chevron')
+  if (toggle && mobile) {
+    toggle.addEventListener('click', () => {
+      mobile.classList.toggle('hidden')
+      chevron?.classList.toggle('rotate-180')
+    })
+  }
+</script>

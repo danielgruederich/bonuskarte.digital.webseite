@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content'
+import { hilfeCategories, getCategoryFromSlug } from '@/data/hilfe-categories'
+
+interface Props {
+  currentSlug: string
+}
+
+const { currentSlug } = Astro.props
+const allEntries = await getCollection('hilfe')
+
+const ordered = hilfeCategories.flatMap(cat =>
+  allEntries
+    .filter(e => getCategoryFromSlug(e.slug) === cat.slug)
+    .sort((a, b) => a.data.order - b.data.order)
+)
+
+const currentIndex = ordered.findIndex(e => e.slug === currentSlug)
+const prev = currentIndex > 0 ? ordered[currentIndex - 1] : null
+const next = currentIndex < ordered.length - 1 ? ordered[currentIndex + 1] : null
+---
+
+{(prev || next) && (
+  <div class="mt-12 pt-8 border-t border-white/10 flex justify-between gap-4">
+    {prev ? (
+      <a href={`/hilfe/${prev.slug}`} class="group flex items-center gap-2 text-sm text-white/50 hover:text-gold-600 transition-colors">
+        <svg class="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+        </svg>
+        <span>{prev.data.title}</span>
+      </a>
+    ) : <div />}
+    {next ? (
+      <a href={`/hilfe/${next.slug}`} class="group flex items-center gap-2 text-sm text-white/50 hover:text-gold-600 transition-colors ml-auto">
+        <span>{next.data.title}</span>
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    ) : <div />}
+  </div>
+)}

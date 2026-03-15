@@ -15,4 +15,14 @@ const blog = defineCollection({
   }),
 })
 
-export const collections = { blog }
+const hilfe = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number(),
+    video: z.string().url().optional(),
+  }),
+})
+
+export const collections = { blog, hilfe }
