@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content'
+import HilfeLayout from '@/layouts/HilfeLayout.astro'
+
+export async function getStaticPaths() {
+  const entries = await getCollection('hilfe')
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+---
+
+<HilfeLayout title={entry.data.title} description={entry.data.description} slug={entry.slug}>
+  {entry.data.video && (
+    <div class="mb-8">
+      <div class="relative w-full overflow-hidden rounded-lg border border-white/10" style="padding-bottom: 56.25%;">
+        <iframe
+          src={entry.data.video}
+          title={entry.data.title}
+          class="absolute inset-0 w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  )}
+  <Content />
+</HilfeLayout>

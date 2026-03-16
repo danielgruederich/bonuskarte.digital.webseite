@@ -1,0 +1,44 @@
+---
+interface Props {
+  url: string
+  title?: string
+}
+
+const { url, title = 'Video' } = Astro.props
+
+function getYouTubeId(url: string): string | null {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?#]+)/)
+  return match ? match[1] : null
+}
+
+function getLoomId(url: string): string | null {
+  const match = url.match(/loom\.com\/(?:share|embed)\/([a-f0-9]+)/)
+  return match ? match[1] : null
+}
+
+const youtubeId = getYouTubeId(url)
+const loomId = getLoomId(url)
+
+let embedUrl = url
+if (youtubeId) {
+  embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}`
+} else if (loomId) {
+  embedUrl = `https://www.loom.com/embed/${loomId}`
+}
+---
+
+<div class="my-8">
+  <div class="relative w-full overflow-hidden rounded-lg border border-white/10" style="padding-bottom: 56.25%;">
+    <iframe
+      src={embedUrl}
+      title={title}
+      class="absolute inset-0 w-full h-full"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {title !== 'Video' && (
+    <p class="mt-2 text-sm text-white/40 text-center">{title}</p>
+  )}
+</div>

@@ -1,0 +1,69 @@
+---
+import BaseLayout from './BaseLayout.astro'
+import Navbar from '@/components/Navbar.astro'
+import Footer from '@/components/Footer.astro'
+import HilfeSidebar from '@/components/hilfe/HilfeSidebar.astro'
+import HilfeSidebarMobile from '@/components/hilfe/HilfeSidebarMobile.astro'
+import PrevNext from '@/components/hilfe/PrevNext.astro'
+import { getCategoryFromSlug, getCategoryLabel } from '@/data/hilfe-categories'
+
+interface Props {
+  title: string
+  description: string
+  slug: string
+}
+
+const { title, description, slug } = Astro.props
+const categorySlug = getCategoryFromSlug(slug)
+const categoryLabel = getCategoryLabel(categorySlug)
+---
+
+<BaseLayout title={`${title} — Hilfe | bonuskarte.digital`} description={description}>
+  <Navbar ctaHref="/hilfe" ctaLabel="Hilfe" />
+
+  <main class="min-h-screen bg-black pt-24 pb-16">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+      <!-- Breadcrumb -->
+      <nav class="mb-8 text-xs text-white/40">
+        <a href="/hilfe" class="hover:text-gold-600 transition-colors">Hilfe</a>
+        <span class="mx-2">/</span>
+        <span class="hover:text-gold-600 transition-colors">{categoryLabel}</span>
+        <span class="mx-2">/</span>
+        <span class="text-white/60">{title}</span>
+      </nav>
+
+      <div class="flex gap-12">
+        <!-- Sidebar (desktop) -->
+        <HilfeSidebar currentSlug={slug} />
+
+        <!-- Content -->
+        <article class="flex-1 min-w-0">
+          <!-- Mobile sidebar -->
+          <HilfeSidebarMobile currentSlug={slug} />
+
+          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-8">{title}</h1>
+
+          <div class="prose prose-invert max-w-none
+            prose-headings:font-bold prose-headings:tracking-tight
+            prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4
+            prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3
+            prose-p:text-white/70 prose-p:leading-relaxed
+            prose-li:text-white/70
+            prose-strong:text-white
+            prose-a:text-gold-600 prose-a:no-underline hover:prose-a:underline
+            prose-code:text-gold-600 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+            prose-ol:list-decimal prose-ul:list-disc
+            prose-table:text-sm prose-th:text-white/60 prose-td:text-white/70
+          ">
+            <slot />
+          </div>
+
+          <PrevNext currentSlug={slug} />
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
