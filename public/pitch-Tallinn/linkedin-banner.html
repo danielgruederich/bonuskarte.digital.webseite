@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; align-items: center; justify-content: center; height: 100vh; }
+
+  .banner {
+    width: 1584px;
+    height: 396px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0f1a0f 100%);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+  }
+
+  /* Köln Skyline silhouette */
+  .skyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+  }
+  .skyline svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Subtle grid pattern */
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(34,197,94,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34,197,94,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Glow effects */
+  .glow-1 {
+    position: absolute;
+    top: -60px;
+    right: 200px;
+    width: 400px;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(34,197,94,0.12), transparent 70%);
+  }
+  .glow-2 {
+    position: absolute;
+    bottom: -40px;
+    left: 300px;
+    width: 300px;
+    height: 150px;
+    background: radial-gradient(ellipse, rgba(34,197,94,0.08), transparent 70%);
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+  }
+
+  .text-block {
+    flex: 1;
+    /* Offset to the right to avoid profile photo overlap area */
+    padding-left: 200px;
+  }
+
+  .brand {
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .brand .dot { color: #22c55e; }
+
+  .tagline {
+    font-size: 22px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .badges {
+    display: flex;
+    gap: 16px;
+  }
+  .badge {
+    padding: 6px 16px;
+    border: 1px solid rgba(34,197,94,0.25);
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(34,197,94,0.7);
+  }
+
+  /* Phone mockup on right side */
+  .phone-preview {
+    position: relative;
+    width: 140px;
+    height: 286px;
+    flex-shrink: 0;
+    margin-right: 40px;
+  }
+  .phone-preview .shell {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: #E8530E;
+    box-shadow: 0 0 0 1px #FF6B2B, 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .phone-preview .screen {
+    position: absolute;
+    inset: 2px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .phone-preview .notch {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 14px;
+    background: #000;
+    border-radius: 10px;
+    z-index: 10;
+  }
+  .phone-preview .screen img {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 24px);
+    object-fit: cover;
+    object-position: top;
+  }
+  .phone-preview .fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to top, #fff, transparent);
+    z-index: 5;
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <div class="grid-pattern"></div>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <!-- Köln Skyline -->
+  <div class="skyline">
+    <svg viewBox="0 0 1584 180" preserveAspectRatio="none" fill="rgba(34,197,94,0.06)">
+      <!-- Kölner Dom -->
+      <polygon points="700,180 700,40 710,38 715,10 720,38 730,40 730,180" />
+      <polygon points="730,180 730,45 740,43 745,15 750,43 760,45 760,180" />
+      <!-- Dom Mittelschiff -->
+      <rect x="710" y="60" width="40" height="120" />
+      <!-- Hohenzollernbrücke -->
+      <path d="M 760,160 Q 820,130 880,160" stroke="rgba(34,197,94,0.06)" stroke-width="3" fill="none" />
+      <path d="M 760,155 Q 820,125 880,155" stroke="rgba(34,197,94,0.06)" stroke-width="2" fill="none" />
+      <rect x="760" y="155" width="120" height="25" />
+      <!-- Fernsehturm (Colonius) -->
+      <rect x="500" y="70" width="6" height="110" />
+      <ellipse cx="503" cy="85" rx="14" ry="10" />
+      <rect x="501" y="30" width="4" height="40" />
+      <!-- Kranhaus -->
+      <polygon points="900,180 900,80 940,50 940,80 960,80 960,180" />
+      <!-- Musikdome / buildings -->
+      <rect x="400" y="120" width="50" height="60" />
+      <rect x="460" y="100" width="30" height="80" />
+      <rect x="1000" y="110" width="60" height="70" />
+      <rect x="1070" y="130" width="40" height="50" />
+      <rect x="1120" y="100" width="35" height="80" />
+      <rect x="300" y="140" width="40" height="40" />
+      <rect x="350" y="130" width="30" height="50" />
+      <rect x="1200" y="120" width="50" height="60" />
+      <rect x="1260" y="140" width="30" height="40" />
+      <!-- Rhein -->
+      <rect x="0" y="170" width="1584" height="10" fill="rgba(34,197,94,0.03)" />
+    </svg>
+  </div>
+
+  <div class="content">
+    <div class="text-block">
+      <div class="brand">bonuskarte<span class="dot">.digital</span></div>
+      <div class="tagline">Die digitale Stempelkarte für Kölner Gastronomen.</div>
+      <div class="badges">
+        <span class="badge">Apple & Google Wallet</span>
+        <span class="badge">Made in Köln</span>
+        <span class="badge">DSGVO-konform</span>
+      </div>
+    </div>
+
+    <div class="phone-preview">
+      <div class="shell"></div>
+      <div class="screen">
+        <div class="notch"></div>
+        <img src="/screens/screen-8.webp" alt="Goldjunge Köln">
+        <div class="fade"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
