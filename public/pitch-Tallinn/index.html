@@ -253,6 +253,56 @@
   }
   .contact-info { font-size: 20px; color: #888; line-height: 1.8; }
 
+  /* FOUNDERS */
+  .founders {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .founder-card {
+    text-align: center;
+    width: 280px;
+  }
+  .founder-card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 20px;
+    border: 3px solid #22c55e;
+  }
+  .founder-photo-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    border: 3px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: #555;
+    margin: 0 auto 20px auto;
+  }
+  .founder-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .founder-role {
+    font-size: 18px;
+    color: #22c55e;
+    margin-bottom: 12px;
+  }
+  .founder-bio {
+    font-size: 16px;
+    color: #888;
+    line-height: 1.5;
+  }
+
   .nav-hint {
     position: fixed;
     bottom: 20px;
@@ -407,15 +457,23 @@
   </div>
 </div>
 
-<!-- SLIDE 8: Team -->
+<!-- SLIDE 8: Founders -->
 <div class="slide" data-slide="8">
-  <h2>Team</h2>
-  <ul>
-    <li><strong>Daniel Gruederich</strong> — Gründer & Produkt<br><span style="font-size:20px;color:#888;">fuerte.digital, Köln</span></li>
-    <li>BoomerangMe Whitelabel-Infrastruktur als technisches Fundament</li>
-    <li>Eigene Scanner-App, Marketing-Plattform & Sales-Tools</li>
-    <li>Lean & bootstrapped — profitabel ab Kunde #1</li>
-  </ul>
+  <h2>Die Gründer</h2>
+  <div class="founders">
+    <div class="founder-card">
+      <img src="/pitch-Tallinn/daniel.png" alt="Daniel Gruederich">
+      <h3>Daniel Gruederich</h3>
+      <p class="founder-role">Co-Founder & Produkt</p>
+      <p class="founder-bio">Details folgen</p>
+    </div>
+    <div class="founder-card">
+      <div class="founder-photo-placeholder">JH</div>
+      <h3>Jonas Henning</h3>
+      <p class="founder-role">Co-Founder</p>
+      <p class="founder-bio">Details folgen</p>
+    </div>
+  </div>
 </div>
 
 <!-- SLIDE 9: Milestones -->
