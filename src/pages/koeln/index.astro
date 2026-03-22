@@ -1,11 +1,223 @@
 ---
-// Static fallback: redirect to Innenstadt veedel hub
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import Navbar from '../../components/Navbar.astro'
+import Footer from '../../components/Footer.astro'
+import { veedel } from '../../data/veedel'
+
+const niches = [
+  { label: 'Café',              emoji: '☕',  slug: 'cafes',      desc: 'Kaffee, Kuchen & Stammgäste' },
+  { label: 'Döner',             emoji: '🥙',  slug: 'doener',     desc: 'Imbiss & Dönerläden' },
+  { label: 'Restaurant',        emoji: '🍽️', slug: 'restaurant', desc: 'Restaurants & Bistros' },
+  { label: 'Pizza',             emoji: '🍕',  slug: 'pizza',      desc: 'Pizzerien & Lieferdienste' },
+]
+
+const totalBetriebe = veedel.reduce((acc, v) =>
+  acc + v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza, 0)
 ---
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/koeln/innenstadt" />
-    <link rel="canonical" href="/koeln/innenstadt" />
-  </head>
-  <body></body>
-</html>
+
+<BaseLayout
+  title="Digitale Stempelkarte Köln – Apple & Google Wallet | bonuskarte.digital"
+  description="Digitale Stempelkarten für Cafés, Dönerläden, Restaurants und Pizzerien in allen 15 Kölner Veedeln. Apple Wallet & Google Wallet. 90 Tage kostenlos. Kein App-Download."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digitale Stempelkarte Köln",
+    "description": "Digitale Kundenkarten für Apple Wallet & Google Wallet für Gastronomiebetriebe in Köln. Für alle Veedel: Innenstadt, Ehrenfeld, Nippes, Sülz und mehr.",
+    "provider": {
+      "@type": "Organization",
+      "name": "FUERTE.DIGITAL",
+      "url": "https://bonuskarte.digital"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Köln",
+      "sameAs": "https://www.wikidata.org/wiki/Q365"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "90 Tage kostenlos testen – keine Kreditkarte erforderlich"
+    }
+  })} />
+
+  <Navbar ctaHref="/koeln/innenstadt/cafes" ctaLabel="Jetzt starten" />
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
+
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
+        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+        <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+          {totalBetriebe}+ Kölner Betriebe bereits dabei
+        </span>
+      </div>
+
+      <!-- H1 -->
+      <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
+        <span class="font-extralight text-white block mb-2">Digitale Stempelkarte</span>
+        <span class="font-bold text-gold-600 block">für Köln.</span>
+      </h1>
+
+      <p class="text-white/55 text-base sm:text-lg font-light leading-relaxed mb-8 max-w-xl">
+        Mehr Stammkunden für Cafés, Dönerläden, Restaurants und Pizzerien in Köln –
+        direkt in Apple Wallet & Google Wallet. Kein App-Download. Kein Papier.
+      </p>
+
+      <!-- Trust badge -->
+      <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-10">
+        <span class="text-gold-600 text-sm">✦</span>
+        <span class="text-gold-500 text-xs tracking-[0.15em] font-light">90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE</span>
+      </div>
+
+      <!-- Niche selector -->
+      <div id="branchen" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+        {niches.map(n => (
+          <a
+            href={`/koeln/innenstadt/${n.slug}`}
+            class="group relative border border-white/8 hover:border-gold-600 bg-white/2 hover:bg-gold-600/5 p-6 text-center transition-all hover:-translate-y-1"
+          >
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{n.emoji}</div>
+            <div class="text-white font-bold text-sm tracking-wide mb-1">{n.label}</div>
+            <div class="text-white/55 text-[11px]">{n.desc}</div>
+            <div class="mt-4 flex items-center justify-center gap-1 text-gold-600 text-[10px] font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+              Jetzt starten
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Trust row -->
+      <div class="flex flex-wrap gap-6">
+        {['✅ 90 Tage kostenlos', '🔒 DSGVO', '⚡ In 24h live', '📱 Apple & Google Wallet', '🗺️ Alle 15 Kölner Veedel'].map(t => (
+          <span class="text-[10px] tracking-widest uppercase text-white/55">{t}</span>
+        ))}
+      </div>
+
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+  </section>
+
+  <!-- ── WARUM KÖLN ─────────────────────────────────────── -->
+  <section class="py-20 px-5 sm:px-8 bg-black border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/55">Warum Köln</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {[
+          { num: '15', label: 'Kölner Veedel', desc: 'Von der Innenstadt bis Porz – jeder Kiez hat seine Stammcafé-Kultur.' },
+          { num: '90', label: 'Tage kostenlos', desc: 'Ohne Kreditkarte starten. Ohne Risiko testen. Ohne App-Download für Kunden.' },
+          { num: '1×', label: 'QR-Code scannen', desc: 'Gast scannt einmal – die Karte liegt für immer in Apple oder Google Wallet.' },
+        ].map(stat => (
+          <div class="border border-white/5 hover:border-gold-600/30 p-8 transition-all">
+            <div class="text-4xl font-black text-gold-400 leading-none mb-3">{stat.num}</div>
+            <div class="text-white font-semibold text-sm tracking-wide mb-2">{stat.label}</div>
+            <div class="text-white/55 text-sm font-light leading-relaxed">{stat.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VEEDEL GRID ────────────────────────────────────── -->
+  <section id="veedel" class="py-20 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white opacity-40"></div>
+    <div class="relative max-w-5xl mx-auto">
+
+      <div class="flex items-center gap-4 mb-4">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/55">Dein Kölner Veedel</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+      <p class="text-center text-white/40 text-sm font-light mb-12">
+        Wähle dein Viertel und sieh, welche Betriebe dort bereits dabei sind.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        {veedel.map(v => {
+          const total = v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza
+          return (
+            <a
+              href={`/koeln/${v.slug}`}
+              class="group relative border border-white/5 hover:border-gold-600 bg-white/2 hover:bg-gold-600/5 p-4 text-center transition-all"
+            >
+              {total > 0 && (
+                <div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-gold-600 text-black text-[8px] font-black tracking-wider uppercase px-2 py-0.5 whitespace-nowrap">
+                  {total} dabei
+                </div>
+              )}
+              <div class="text-white font-semibold text-xs tracking-wide group-hover:text-gold-400 transition-colors">
+                {v.name}
+              </div>
+              <div class="mt-2 text-[9px] tracking-[0.15em] uppercase text-gold-600/0 group-hover:text-gold-600 transition-colors flex items-center justify-center gap-1">
+                Ansehen →
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ───────────────────────────────────── -->
+  <section class="py-20 px-5 sm:px-8 bg-black border-t border-white/5">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-4 mb-12">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-[10px] tracking-[0.4em] uppercase text-white/55">So einfach geht's</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {[
+          { step: '01', title: 'Branche wählen', desc: 'Café, Döner, Restaurant oder Pizza – wähle deine Nische.' },
+          { step: '02', title: 'Karte einrichten', desc: 'Wir bauen deine Stempelkarte mit deinem Namen in unter 24h.' },
+          { step: '03', title: 'QR-Code aufhängen', desc: 'Gäste scannen einmal und speichern die Karte im Wallet.' },
+          { step: '04', title: 'Stammkunden gewinnen', desc: 'Push-Benachrichtigungen bringen Gäste aktiv zurück.' },
+        ].map(item => (
+          <div class="group border border-white/5 hover:border-gold-600/30 p-7 transition-all">
+            <div class="text-4xl font-black text-gold-400 group-hover:text-gold-300 transition-colors leading-none mb-5">{item.step}</div>
+            <h3 class="font-semibold text-white tracking-wide mb-3 text-sm">{item.title}</h3>
+            <p class="text-white/60 text-sm leading-relaxed font-light">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ──────────────────────────────────────── -->
+  <section class="py-28 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-3xl mx-auto text-center">
+      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-6">Für Kölner Gastronomen</p>
+      <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">Bereit für mehr</h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-8">Stammkunden in Köln?</h2>
+      <p class="text-white/55 text-sm tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
+      <a
+        href="/koeln/innenstadt/cafes"
+        class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
+      >
+        Kostenlos starten
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
