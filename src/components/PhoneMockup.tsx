@@ -2,17 +2,35 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
 const screens = [
-  '/screens/screen-1.png',
-  '/screens/screen-2.png',
-  '/screens/screen-3.png',
-  '/screens/screen-4.png',
+  '/screens/screen-1.webp',
+  '/screens/screen-2.webp',
+  '/screens/screen-3.webp',
+  '/screens/screen-4.webp',
+  '/screens/screen-5.webp',
+  '/screens/screen-6.webp',
+  '/screens/screen-7.webp',
+  '/screens/screen-8.webp',
+  '/screens/screen-9.webp',
+  '/screens/screen-10.webp',
+  '/screens/screen-11.webp',
+  '/screens/screen-12.webp',
+  '/screens/screen-13.webp',
 ]
 
 const labels = [
-  'Eis-Café · Köln',
-  'Kaffee-Bar · Köln',
-  'Coffee Lab · Köln',
-  'Specialty Coffee · Köln',
+  "Bambule's Chili",
+  'Formula Uno',
+  'AWB Coffee',
+  'Pizza Karte',
+  'Tastyy Döner',
+  'MeinDentist',
+  'Bullet Shop',
+  'Goldjunge · Köln',
+  "Sam's Cheesesteak",
+  'Caruso · Focaccia Bar',
+  'Reinigung',
+  'Ojalá Poke',
+  'Underluxx',
 ]
 
 export default function PhoneMockup() {
