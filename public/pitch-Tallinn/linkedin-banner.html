@@ -24,7 +24,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 180px;
+    height: 300px;
   }
   .skyline svg {
     width: 100%;
@@ -168,34 +168,57 @@
 
   <!-- Köln Skyline -->
   <div class="skyline">
-    <svg viewBox="0 0 1584 180" preserveAspectRatio="none" fill="rgba(34,197,94,0.06)">
-      <!-- Kölner Dom -->
-      <polygon points="700,180 700,40 710,38 715,10 720,38 730,40 730,180" />
-      <polygon points="730,180 730,45 740,43 745,15 750,43 760,45 760,180" />
-      <!-- Dom Mittelschiff -->
-      <rect x="710" y="60" width="40" height="120" />
+    <svg viewBox="0 0 1584 300" preserveAspectRatio="xMidYMax slice" fill="rgba(34,197,94,0.045)">
+      <!-- Kölner Dom — prominent but subtle -->
+      <!-- Linker Turm -->
+      <polygon points="680,300 680,60 690,55 693,48 696,30 698,20 700,8 702,20 704,30 707,48 710,55 720,60 720,300" />
+      <!-- Spitze linker Turm -->
+      <rect x="698" y="0" width="4" height="10" />
+      <!-- Rechter Turm -->
+      <polygon points="740,300 740,65 750,60 753,52 756,35 758,24 760,12 762,24 764,35 767,52 770,60 780,65 780,300" />
+      <!-- Spitze rechter Turm -->
+      <rect x="758" y="4" width="4" height="10" />
+      <!-- Mittelschiff -->
+      <rect x="715" y="90" width="30" height="210" />
+      <!-- Dachfirst Mittelschiff -->
+      <polygon points="715,90 730,65 745,90" />
+      <!-- Fensterbögen (dezent) -->
+      <rect x="688" y="80" width="8" height="20" rx="4" fill="rgba(0,0,0,0.15)" />
+      <rect x="700" y="80" width="8" height="20" rx="4" fill="rgba(0,0,0,0.15)" />
+      <rect x="748" y="85" width="8" height="20" rx="4" fill="rgba(0,0,0,0.15)" />
+      <rect x="760" y="85" width="8" height="20" rx="4" fill="rgba(0,0,0,0.15)" />
+      <!-- Strebepfeiler -->
+      <polygon points="672,300 675,120 680,115 680,300" />
+      <polygon points="788,300 785,125 780,120 780,300" />
+
       <!-- Hohenzollernbrücke -->
-      <path d="M 760,160 Q 820,130 880,160" stroke="rgba(34,197,94,0.06)" stroke-width="3" fill="none" />
-      <path d="M 760,155 Q 820,125 880,155" stroke="rgba(34,197,94,0.06)" stroke-width="2" fill="none" />
-      <rect x="760" y="155" width="120" height="25" />
-      <!-- Fernsehturm (Colonius) -->
-      <rect x="500" y="70" width="6" height="110" />
-      <ellipse cx="503" cy="85" rx="14" ry="10" />
-      <rect x="501" y="30" width="4" height="40" />
+      <path d="M 790,260 Q 850,230 920,260" stroke="rgba(34,197,94,0.045)" stroke-width="3" fill="none" />
+      <path d="M 790,255 Q 850,225 920,255" stroke="rgba(34,197,94,0.045)" stroke-width="2" fill="none" />
+      <rect x="790" y="258" width="130" height="42" />
+
+      <!-- Colonius -->
+      <rect x="480" y="120" width="5" height="180" />
+      <ellipse cx="482" cy="140" rx="12" ry="8" />
+      <rect x="481" y="70" width="3" height="55" />
+
       <!-- Kranhaus -->
-      <polygon points="900,180 900,80 940,50 940,80 960,80 960,180" />
-      <!-- Musikdome / buildings -->
-      <rect x="400" y="120" width="50" height="60" />
-      <rect x="460" y="100" width="30" height="80" />
-      <rect x="1000" y="110" width="60" height="70" />
-      <rect x="1070" y="130" width="40" height="50" />
-      <rect x="1120" y="100" width="35" height="80" />
-      <rect x="300" y="140" width="40" height="40" />
-      <rect x="350" y="130" width="30" height="50" />
-      <rect x="1200" y="120" width="50" height="60" />
-      <rect x="1260" y="140" width="30" height="40" />
+      <polygon points="960,300 960,140 1000,100 1000,140 1020,140 1020,300" />
+
+      <!-- Andere Gebäude (dezent) -->
+      <rect x="380" y="210" width="40" height="90" />
+      <rect x="430" y="190" width="25" height="110" />
+      <rect x="1060" y="200" width="50" height="100" />
+      <rect x="1120" y="220" width="35" height="80" />
+      <rect x="1170" y="195" width="30" height="105" />
+      <rect x="280" y="240" width="35" height="60" />
+      <rect x="325" y="225" width="25" height="75" />
+      <rect x="1250" y="215" width="45" height="85" />
+      <rect x="1310" y="240" width="25" height="60" />
+      <rect x="1370" y="230" width="35" height="70" />
+      <rect x="200" y="255" width="30" height="45" />
+
       <!-- Rhein -->
-      <rect x="0" y="170" width="1584" height="10" fill="rgba(34,197,94,0.03)" />
+      <rect x="0" y="285" width="1584" height="15" fill="rgba(34,197,94,0.02)" />
     </svg>
   </div>
 
