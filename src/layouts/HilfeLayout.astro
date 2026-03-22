@@ -19,6 +19,18 @@ const categoryLabel = getCategoryLabel(categorySlug)
 ---
 
 <BaseLayout title={`${title} — Hilfe | bonuskarte.digital`} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": title,
+    "description": description,
+    "url": `https://bonuskarte.digital/hilfe/${slug}`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "fuerte.digital",
+      "url": "https://bonuskarte.digital"
+    }
+  })} />
   <Navbar ctaHref="/hilfe" ctaLabel="Hilfe" />
 
   <main class="min-h-screen bg-black pt-24 pb-16">
