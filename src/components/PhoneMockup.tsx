@@ -50,13 +50,13 @@ export default function PhoneMockup() {
       <div className="relative w-[260px] h-[530px]">
 
         {/* Outer shell */}
-        <div className="absolute inset-0 rounded-[44px] bg-[#1a1a1a] shadow-[0_0_0_2px_#2a2a2a,0_40px_80px_rgba(0,0,0,0.6)]" />
+        <div className="absolute inset-0 rounded-[44px] bg-[#E8530E] shadow-[0_0_0_2px_#FF6B2B,0_40px_80px_rgba(0,0,0,0.6)]" />
 
         {/* Side buttons */}
-        <div className="absolute -left-[3px] top-[100px] w-[3px] h-[32px] bg-[#2a2a2a] rounded-l-sm" />
-        <div className="absolute -left-[3px] top-[145px] w-[3px] h-[56px] bg-[#2a2a2a] rounded-l-sm" />
-        <div className="absolute -left-[3px] top-[212px] w-[3px] h-[56px] bg-[#2a2a2a] rounded-l-sm" />
-        <div className="absolute -right-[3px] top-[160px] w-[3px] h-[72px] bg-[#2a2a2a] rounded-r-sm" />
+        <div className="absolute -left-[3px] top-[100px] w-[3px] h-[32px] bg-[#FF6B2B] rounded-l-sm" />
+        <div className="absolute -left-[3px] top-[145px] w-[3px] h-[56px] bg-[#FF6B2B] rounded-l-sm" />
+        <div className="absolute -left-[3px] top-[212px] w-[3px] h-[56px] bg-[#FF6B2B] rounded-l-sm" />
+        <div className="absolute -right-[3px] top-[160px] w-[3px] h-[72px] bg-[#FF6B2B] rounded-r-sm" />
 
         {/* Screen area */}
         <div className="absolute inset-[3px] rounded-[41px] overflow-hidden bg-white">
@@ -88,7 +88,7 @@ export default function PhoneMockup() {
         </div>
 
         {/* Gold glow under phone */}
-        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[180px] h-[40px] bg-yellow-600 blur-[40px] opacity-20 rounded-full" />
+        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[180px] h-[40px] bg-[#E8530E] blur-[40px] opacity-25 rounded-full" />
       </div>
 
       {/* Dot indicators */}
