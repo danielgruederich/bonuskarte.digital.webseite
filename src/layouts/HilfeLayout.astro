@@ -56,17 +56,17 @@ const categoryLabel = getCategoryLabel(categorySlug)
 
           <h1 class="text-3xl sm:text-4xl font-bold text-white mb-8">{title}</h1>
 
-          <div class="prose prose-invert max-w-none
-            prose-headings:font-bold prose-headings:tracking-tight
+          <div class="prose max-w-none text-white
+            prose-headings:!text-white prose-headings:font-bold prose-headings:tracking-tight
             prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4
             prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3
-            prose-p:text-white/90 prose-p:leading-relaxed
-            prose-li:text-white/90
-            prose-strong:text-white
-            prose-a:text-gold-600 prose-a:no-underline hover:prose-a:underline
-            prose-code:text-gold-600 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+            prose-p:!text-white/90 prose-p:leading-relaxed
+            prose-li:!text-white/90
+            prose-strong:!text-white
+            prose-a:!text-gold-600 prose-a:no-underline hover:prose-a:underline
+            prose-code:!text-gold-600 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
             prose-ol:list-decimal prose-ul:list-disc
-            prose-table:text-sm prose-th:text-white/80 prose-td:text-white/90
+            prose-table:text-sm prose-th:!text-white/80 prose-td:!text-white/90
           ">
             <slot />
           </div>
