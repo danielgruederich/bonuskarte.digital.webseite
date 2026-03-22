@@ -1,0 +1,1175 @@
+---
+const title = "Tonchibox — Gepäckfreie Städte durch smarte Infrastruktur"
+const description = "Smarte Gepäckschließfächer für touristische Hotspots. Asset-backed Infrastructure für gepäckfreie Städte. Startmarkt Kroatien."
+const canonicalUrl = "https://bonuskarte.digital/tonchibox"
+
+const sizes = [
+  { name: "Medium", desc: "Handgepäck", price: "6,50 €", slots: 8 },
+  { name: "Large", desc: "Koffer", price: "9,00 €", slots: 10 },
+  { name: "XL", desc: "Großer Koffer", price: "11,00 €", slots: 8 },
+  { name: "XXL", desc: "Familien / Sonder", price: "13,50 €", slots: 6 },
+]
+
+const moats = [
+  {
+    title: "Standort-Monopol",
+    desc: "Wer den Vertrag für das strategisch beste Eckhaus oder den Hafenplatz hat, besitzt ein physisches Monopol. Wir besetzen die A-Lagen dauerhaft.",
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`
+  },
+  {
+    title: "Physische Präsenz",
+    desc: "Die Sichtbarkeit triggert Impulsnutzung. Ein Passant, der uns sieht, sucht nicht mehr nach einer App. Top-of-Mind durch Stadtraum-Branding.",
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`
+  },
+  {
+    title: "Markteintrittsbarrieren",
+    desc: "~20k € Investment pro Standort, regulatorische Beziehungen zu Städten & UNESCO-Behörden, Hardware-Logistik vor Ort. Wettbewerber scheitern an der Komplexität.",
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+  },
+]
+
+const phases = [
+  { year: "2024", title: "Proof", desc: "Rollout Zadar & Split Cluster (10–15 Einheiten).", color: "#0ea5e9" },
+  { year: "2025", title: "Scale", desc: "Marktführerschaft Kroatien. Erste Standorte Italien & Griechenland.", color: "#06b6d4" },
+  { year: "2027", title: "Exit / Infra", desc: "Strategischer Verkauf an Mobilitäts- oder Infrastruktur-Fonds.", color: "#8b5cf6" },
+]
+---
+
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <style>
+      :root {
+        --sky: #0ea5e9;
+        --sky-light: #e0f2fe;
+        --sky-bg: #f0f9ff;
+        --teal: #0d9488;
+        --teal-light: #ccfbf1;
+        --amber: #f59e0b;
+        --amber-light: #fef3c7;
+        --violet: #7c3aed;
+        --violet-light: #ede9fe;
+        --slate-900: #0f172a;
+        --slate-700: #334155;
+        --slate-500: #64748b;
+        --slate-300: #cbd5e1;
+        --slate-100: #f1f5f9;
+        --white: #ffffff;
+        --radius: 16px;
+        --radius-sm: 10px;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Outfit', sans-serif;
+        background: var(--white);
+        color: var(--slate-700);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      .serif { font-family: 'Instrument Serif', serif; }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ── NAV ─────────────────────────── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 16px 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+      }
+
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-brand {
+        font-weight: 800;
+        font-size: 1.3rem;
+        color: var(--slate-900);
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+
+      .nav-brand span { color: var(--sky); }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--slate-500);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover { color: var(--slate-900); }
+
+      .nav-cta {
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        color: var(--white) !important;
+        background: var(--sky);
+        padding: 10px 24px;
+        border-radius: 100px;
+        transition: background 0.2s, transform 0.2s !important;
+      }
+
+      .nav-cta:hover {
+        background: #0284c7 !important;
+        transform: translateY(-1px);
+      }
+
+      /* ── HERO ─────────────────────────── */
+      .hero {
+        padding: 160px 24px 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(circle, var(--sky-light) 0%, transparent 60%);
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--sky-light);
+        color: var(--sky);
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 8px 20px;
+        border-radius: 100px;
+        margin-bottom: 32px;
+        position: relative;
+      }
+
+      .hero-badge::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background: var(--sky);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.5); }
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 6vw, 4.5rem);
+        font-weight: 800;
+        color: var(--slate-900);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+        position: relative;
+      }
+
+      .hero h1 .italic {
+        font-family: 'Instrument Serif', serif;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--sky);
+      }
+
+      .hero-desc {
+        font-size: 1.15rem;
+        color: var(--slate-500);
+        max-width: 560px;
+        margin: 0 auto 40px;
+        font-weight: 400;
+        line-height: 1.7;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 64px;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--white);
+        background: var(--slate-900);
+        padding: 14px 32px;
+        border-radius: 100px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .btn-primary:hover {
+        background: var(--sky);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(14, 165, 233, 0.3);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--slate-700);
+        background: var(--white);
+        padding: 14px 32px;
+        border-radius: 100px;
+        text-decoration: none;
+        border: 1px solid var(--slate-300);
+        transition: all 0.2s;
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--sky);
+        color: var(--sky);
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+
+      .hero-stat {
+        text-align: center;
+      }
+
+      .hero-stat-value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--slate-900);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .hero-stat-label {
+        font-size: 0.78rem;
+        color: var(--slate-500);
+        font-weight: 500;
+      }
+
+      /* ── SECTIONS ─────────────────────── */
+      section {
+        padding: 100px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .section-badge {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--sky);
+        background: var(--sky-light);
+        padding: 6px 16px;
+        border-radius: 100px;
+        margin-bottom: 16px;
+      }
+
+      .section-badge.amber {
+        color: var(--amber);
+        background: var(--amber-light);
+      }
+
+      .section-badge.teal {
+        color: var(--teal);
+        background: var(--teal-light);
+      }
+
+      .section-badge.violet {
+        color: var(--violet);
+        background: var(--violet-light);
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 800;
+        color: var(--slate-900);
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+        line-height: 1.15;
+      }
+
+      .section-desc {
+        font-size: 1.05rem;
+        color: var(--slate-500);
+        max-width: 560px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* ── PROBLEM ─────────────────────── */
+      .problem-bg {
+        background: var(--slate-100);
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .problem-visual {
+        background: linear-gradient(135deg, var(--sky-light), var(--amber-light));
+        border-radius: var(--radius);
+        padding: 48px;
+        text-align: center;
+        position: relative;
+      }
+
+      .problem-big-number {
+        font-size: 5rem;
+        font-weight: 900;
+        color: var(--slate-900);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .problem-big-label {
+        font-size: 1rem;
+        color: var(--slate-700);
+        font-weight: 500;
+      }
+
+      .problem-content h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--slate-900);
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+      }
+
+      .problem-content > p {
+        font-size: 1rem;
+        color: var(--slate-500);
+        margin-bottom: 32px;
+        line-height: 1.7;
+      }
+
+      .problem-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .problem-list li {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        font-size: 0.95rem;
+        color: var(--slate-700);
+        line-height: 1.5;
+      }
+
+      .problem-list li::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        margin-top: 2px;
+        border-radius: 50%;
+        background: #fee2e2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3l6 6M9 3L3 9' stroke='%23ef4444' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      /* ── CARDS ─────────────────────────── */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: var(--radius);
+        padding: 32px 24px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        border-color: var(--sky);
+      }
+
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        background: var(--sky-light);
+        color: var(--sky);
+      }
+
+      .card h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--slate-900);
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        font-size: 0.88rem;
+        color: var(--slate-500);
+        line-height: 1.6;
+      }
+
+      /* ── QUOTE ─────────────────────────── */
+      .quote-section {
+        text-align: center;
+        padding: 80px 24px;
+        background: linear-gradient(135deg, var(--sky-bg), var(--amber-light));
+        border-radius: var(--radius);
+        margin: 0 24px;
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .quote-section blockquote {
+        font-family: 'Instrument Serif', serif;
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        color: var(--slate-900);
+        max-width: 640px;
+        margin: 0 auto;
+        line-height: 1.5;
+        font-style: italic;
+      }
+
+      .quote-section .highlight {
+        color: var(--sky);
+        font-style: normal;
+        font-weight: 600;
+        font-family: 'Outfit', sans-serif;
+      }
+
+      /* ── MOAT ─────────────────────────── */
+      .moat-bg {
+        background: var(--slate-100);
+      }
+
+      .moat-card {
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,0.06);
+        border-radius: var(--radius);
+        padding: 36px 28px;
+        transition: all 0.3s;
+      }
+
+      .moat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      }
+
+      .moat-card .card-icon {
+        background: var(--teal-light);
+        color: var(--teal);
+      }
+
+      .moat-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--teal);
+        margin-bottom: 12px;
+      }
+
+      .moat-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--slate-900);
+        margin-bottom: 10px;
+      }
+
+      .moat-card p {
+        font-size: 0.88rem;
+        color: var(--slate-500);
+        line-height: 1.6;
+      }
+
+      /* ── CITIES ─────────────────────────── */
+      .city-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .city-card {
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: var(--radius);
+        padding: 32px 24px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .city-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      }
+
+      .city-emoji {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .city-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--slate-900);
+        margin-bottom: 8px;
+      }
+
+      .city-card p {
+        font-size: 0.85rem;
+        color: var(--slate-500);
+        line-height: 1.5;
+      }
+
+      /* ── PRICING ─────────────────────────── */
+      .pricing-wrapper {
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: var(--radius);
+        overflow: hidden;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .pricing-table thead {
+        background: var(--sky-light);
+      }
+
+      .pricing-table th {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--sky);
+        padding: 16px 24px;
+        text-align: left;
+      }
+
+      .pricing-table td {
+        padding: 18px 24px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        font-size: 0.95rem;
+        color: var(--slate-700);
+      }
+
+      .pricing-table tr:last-child td { border-bottom: none; }
+
+      .pricing-table td:last-child {
+        font-weight: 700;
+        color: var(--slate-900);
+      }
+
+      .size-desc {
+        color: var(--slate-500);
+        font-size: 0.82rem;
+      }
+
+      .pricing-footer {
+        background: var(--slate-100);
+        padding: 16px 24px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--sky);
+        text-align: center;
+      }
+
+      /* ── NUMBERS ─────────────────────────── */
+      .numbers-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .number-card {
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: var(--radius);
+        padding: 36px 24px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .number-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      }
+
+      .number-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--sky);
+        margin-bottom: 8px;
+      }
+
+      .number-value {
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: var(--slate-900);
+        line-height: 1;
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+
+      .number-desc {
+        font-size: 0.82rem;
+        color: var(--slate-500);
+        line-height: 1.5;
+      }
+
+      /* ── ROADMAP ─────────────────────────── */
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .roadmap-card {
+        background: var(--white);
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: var(--radius);
+        padding: 32px 24px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+
+      .roadmap-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      }
+
+      .roadmap-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+      }
+
+      .roadmap-card:nth-child(1)::before { background: var(--sky); }
+      .roadmap-card:nth-child(2)::before { background: var(--teal); }
+      .roadmap-card:nth-child(3)::before { background: var(--violet); }
+
+      .roadmap-year {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--slate-900);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .roadmap-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--sky);
+        margin-bottom: 8px;
+      }
+
+      .roadmap-desc {
+        font-size: 0.88rem;
+        color: var(--slate-500);
+        line-height: 1.5;
+      }
+
+      /* ── CTA ─────────────────────────── */
+      .cta-section {
+        text-align: center;
+        padding: 100px 24px;
+        background: linear-gradient(180deg, var(--white) 0%, var(--sky-bg) 100%);
+      }
+
+      .cta-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: var(--slate-900);
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+        line-height: 1.15;
+      }
+
+      .cta-title .italic {
+        font-family: 'Instrument Serif', serif;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--sky);
+      }
+
+      .cta-desc {
+        font-size: 1.05rem;
+        color: var(--slate-500);
+        margin-bottom: 36px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+      }
+
+      .cta-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--slate-900);
+        margin-top: 20px;
+      }
+
+      .cta-email a {
+        color: var(--sky);
+        text-decoration: none;
+      }
+
+      .cta-location {
+        font-size: 0.85rem;
+        color: var(--slate-500);
+        margin-top: 8px;
+      }
+
+      /* ── FOOTER ─────────────────────────── */
+      footer {
+        border-top: 1px solid rgba(0,0,0,0.06);
+        padding: 32px 0;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 0.78rem;
+        color: var(--slate-500);
+      }
+
+      footer a {
+        color: var(--sky);
+        text-decoration: none;
+      }
+
+      /* ── RESPONSIVE ─────────────────────── */
+      @media (max-width: 768px) {
+        .problem-grid,
+        .card-grid,
+        .city-cards,
+        .numbers-grid,
+        .roadmap-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-stats {
+          gap: 32px;
+        }
+        .nav-links { display: none; }
+        section { padding: 64px 0; }
+        .quote-section { margin: 0 16px; padding: 48px 24px; }
+      }
+
+      @media (max-width: 480px) {
+        .hero { padding: 130px 16px 64px; }
+        .hero-buttons { flex-direction: column; align-items: center; }
+      }
+
+      /* ── ANIMATIONS ─────────────────────── */
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .hero-badge,
+      .hero h1,
+      .hero-desc,
+      .hero-buttons,
+      .hero-stats {
+        animation: fadeUp 0.7s ease-out both;
+      }
+      .hero-badge { animation-delay: 0.05s; }
+      .hero h1 { animation-delay: 0.15s; }
+      .hero-desc { animation-delay: 0.25s; }
+      .hero-buttons { animation-delay: 0.35s; }
+      .hero-stats { animation-delay: 0.45s; }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="container">
+        <a href="/tonchibox" class="nav-brand">tonchi<span>box</span></a>
+        <ul class="nav-links">
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#loesung">Lösung</a></li>
+          <li><a href="#markt">Markt</a></li>
+          <li><a href="#zahlen">Zahlen</a></li>
+          <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">Asset-Backed Infrastructure</div>
+        <h1>
+          Gepäckfreie Städte durch<br />
+          <span class="italic">smarte Infrastruktur.</span>
+        </h1>
+        <p class="hero-desc">
+          Tonchibox baut vollautomatische Schließfach-Systeme an den wertvollsten touristischen Standorten Europas. Physische Assets. Digitaler Betrieb. Kein Personal.
+        </p>
+        <div class="hero-buttons">
+          <a href="#kontakt" class="btn-primary">Pitch Deck anfordern &rarr;</a>
+          <a href="#loesung" class="btn-secondary">Mehr erfahren</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">>70%</div>
+            <div class="hero-stat-label">EBITDA Marge</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">20k €</div>
+            <div class="hero-stat-label">CAPEX pro Einheit</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">&lt;12 Mo.</div>
+            <div class="hero-stat-label">Amortisation</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">32</div>
+            <div class="hero-stat-label">Fächer pro Modul</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem-bg" id="problem">
+      <div class="container">
+        <div class="problem-grid">
+          <div class="problem-visual">
+            <div class="problem-big-number">10–12h</div>
+            <div class="problem-big-label">ohne Gepäckaufbewahrung<br />pro Tourist am Reisetag</div>
+          </div>
+          <div class="problem-content">
+            <span class="section-badge">Das Problem</span>
+            <h2>Urbaner Ballast</h2>
+            <p>Touristen schleppen stundenlang Koffer durch enge Gassen. Die Mobilität sinkt, der Stress steigt. Bestehende Lösungen scheitern an Konsistenz.</p>
+            <ul class="problem-list">
+              <li>Partner-Shops abhängig von Öffnungszeiten und Launen der Ladenbesitzer</li>
+              <li>Keine einheitlichen Sicherheitsstandards, Haftung ungeklärt</li>
+              <li>Kein 24/7 Zugriff — Nachtreisen und frühe Abflüge werden nicht bedient</li>
+              <li>Plattformen wie Bounce scheitern an der operativen Konsistenz vor Ort</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="loesung">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Die Lösung</span>
+          <h2 class="section-title">Physische Assets. Digitale Autonomie.</h2>
+          <p class="section-desc">Tonchibox ist kein Software-Startup, sondern ein Infrastruktur-Unternehmen. Wir kontrollieren den Zugangspunkt, standardisieren die UX und garantieren Verfügbarkeit.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </div>
+            <h3>Leisure Mode</h3>
+            <p>Design für Strände und Promenaden. Beleuchtet, sichtbar, mit Solar-Management. Wetterfeste Container-Architektur als Ankerpunkt im Stadtraum.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/></svg>
+            </div>
+            <h3>Heritage Mode</h3>
+            <p>Schlichtes Design für UNESCO-Zonen und sensible Altstadtbereiche. Gedeckte Farben, matte Oberflächen. Wahrnehmung als Stadtmöbel.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Tonchibox OS</h3>
+            <p>Vollautomatischer Betrieb ohne Personal. Remote Monitoring, Dynamic Pricing, Bezahlung per Karte, Apple Pay oder Krypto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="quote-section">
+      <blockquote>
+        Check-out um 10:00 Uhr. Abfahrt um 20:00 Uhr.<br />
+        <span class="highlight">Tonchibox schenkt dem Touristen den 11. Urlaubstag zurück.</span><br />
+        Kofferfrei an den Strand, ins Restaurant, in die Altstadt.
+      </blockquote>
+    </div>
+
+    <!-- MOAT -->
+    <section class="moat-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge teal">Defensibility</span>
+          <h2 class="section-title">Der Moat</h2>
+          <p class="section-desc">Hardware ist der ultimative Burggraben. Drei Schichten schützen vor Wettbewerb.</p>
+        </div>
+
+        <div class="card-grid">
+          {moats.map((m, i) => (
+            <div class="moat-card">
+              <div class="card-icon" set:html={m.icon} />
+              <div class="moat-label">Moat {i + 1}</div>
+              <h3>{m.title}</h3>
+              <p>{m.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- GEOGRAPHY -->
+    <section id="markt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge amber">Geographie</span>
+          <h2 class="section-title">Startmarkt Kroatien</h2>
+          <p class="section-desc">Das Labor für High-Margin Tourismus. Massive Konzentration von Hotel- & Apartment-Gästen in engen Küstenstädten.</p>
+        </div>
+
+        <div class="city-cards">
+          <div class="city-card">
+            <span class="city-emoji">🏝️</span>
+            <h3>Split</h3>
+            <p>Drehkreuz für Insel-Hopper. Hohe Fluktuation, enge Altstadt, massiver Gepäck-Bedarf.</p>
+          </div>
+          <div class="city-card">
+            <span class="city-emoji">🚢</span>
+            <h3>Zadar</h3>
+            <p>Kreuzfahrt- & Airport-Hotspot. Perfekter Standort für die erste Cluster-Installation.</p>
+          </div>
+          <div class="city-card">
+            <span class="city-emoji">🏛️</span>
+            <h3>Dubrovnik</h3>
+            <p>Absolute Premium-Preise. UNESCO-Stadt mit extremer touristischer Dichte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="problem-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Pricing</span>
+          <h2 class="section-title">Der Tagespreis</h2>
+          <p class="section-desc">Kein Zeitstress. Ein fixer Preis für den ganzen Tag. Mental einfach, ideal für Strand- & Abreisetage.</p>
+        </div>
+
+        <div class="pricing-wrapper">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Größe</th>
+                <th>Anzahl (Standard)</th>
+                <th>Preis / Tag</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sizes.map(s => (
+                <tr>
+                  <td>{s.name} <span class="size-desc">({s.desc})</span></td>
+                  <td>{s.slots}</td>
+                  <td>{s.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div class="pricing-footer">
+            Maximaler Brutto-Umsatz pro Tag (32 Fächer): 311,00 €
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINANCIALS -->
+    <section id="zahlen">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge violet">Financial Deep Dive</span>
+          <h2 class="section-title">Unit Economics: 32er Modul</h2>
+          <p class="section-desc">Asset-backed Sicherheit trifft auf Technologie-Multiples. ROI, IRR & Unit Economics im Detail.</p>
+        </div>
+
+        <div class="numbers-grid">
+          <div class="number-card">
+            <div class="number-label">CAPEX</div>
+            <div class="number-value">20k €</div>
+            <div class="number-desc">Einmalige Asset-Kosten pro Schließfach-Einheit.</div>
+          </div>
+          <div class="number-card">
+            <div class="number-label">OPEX / Monat</div>
+            <div class="number-value">~800 €</div>
+            <div class="number-desc">Miete, Wartung, Strom, Software & Cloud.</div>
+          </div>
+          <div class="number-card">
+            <div class="number-label">EBITDA Marge</div>
+            <div class="number-value">>70%</div>
+            <div class="number-desc">Hoher operativer Hebel bei Skalierung.</div>
+          </div>
+        </div>
+
+        <div class="numbers-grid" style="margin-top: 20px;">
+          <div class="number-card">
+            <div class="number-label">Jahres-EBITDA</div>
+            <div class="number-value">~33k €</div>
+            <div class="number-desc">Pro Standort bei ~35% Auslastung.</div>
+          </div>
+          <div class="number-card">
+            <div class="number-label">Payback</div>
+            <div class="number-value">6–14 Mo.</div>
+            <div class="number-desc">6–8 Monate privat, 10–14 Stadtflächen.</div>
+          </div>
+          <div class="number-card">
+            <div class="number-label">ROI (5 Jahre)</div>
+            <div class="number-value">1000%</div>
+            <div class="number-desc">Private Flächen. Stadt: 850%.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="problem-bg">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Roadmap</span>
+          <h2 class="section-title">Roadmap & Skalierung</h2>
+        </div>
+
+        <div class="roadmap-grid">
+          {phases.map(p => (
+            <div class="roadmap-card">
+              <div class="roadmap-year">{p.year}</div>
+              <div class="roadmap-title">{p.title}</div>
+              <p class="roadmap-desc">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="kontakt">
+      <div class="container">
+        <span class="section-badge">Investment Thesis</span>
+        <h2 class="cta-title">
+          Tonchibox besetzt die wertvollsten<br />
+          <span class="italic">Gepäck-Zugangspunkte</span> im Tourismus.
+        </h2>
+        <p class="cta-desc">
+          Asset-backed Sicherheit, exklusive Lagen und vollautomatisierte Skalierung. Lassen Sie uns gemeinsam Städte entlasten.
+        </p>
+        <a href="mailto:info@tonchibox.com" class="btn-primary">Kontakt aufnehmen &rarr;</a>
+        <div class="cta-email">
+          <a href="mailto:info@tonchibox.com">info@tonchibox.com</a>
+        </div>
+        <p class="cta-location">Zadar / Split, Kroatien</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Tonchibox &middot; <a href="mailto:info@tonchibox.com">info@tonchibox.com</a> &middot; Zadar / Split, Kroatien</p>
+      </div>
+    </footer>
+  </body>
+</html>
