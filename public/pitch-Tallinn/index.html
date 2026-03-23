@@ -727,9 +727,35 @@
     color: #444;
   }
 
+  /* Mobile nav arrows — hidden on desktop */
+  .mobile-nav { display: none; }
+
   /* MOBILE */
   @media (max-width: 768px) {
-    body { overflow: auto; height: auto; }
+    body { overflow-x: hidden; overflow-y: auto; height: auto; }
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 16px;
+      left: 0; right: 0;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-arrow {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      background: rgba(10,10,10,0.9);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-arrow:active { background: #22c55e; color: #000; border-color: #22c55e; }
+    .nav-hint { display: none; }
     .slide { padding: 24px 16px 60px; min-height: 100vh; height: auto; justify-content: flex-start; padding-top: 40px; }
     h1 { font-size: 24px; }
     h2 { font-size: 22px; margin-bottom: 12px; }
@@ -757,12 +783,12 @@
     .solution-mockup img { height: 180px; margin: 0 auto; display: block; }
 
     /* Steps */
-    .steps { flex-direction: column; gap: 8px; }
+    .steps { display: flex !important; flex-direction: column !important; gap: 8px; }
     .step { padding: 10px 12px; }
     .step .num { width: 24px; height: 24px; font-size: 12px; }
     .step p { font-size: 13px; }
-    .mockup-gallery { gap: 4px; flex-wrap: wrap; justify-content: center; }
-    .phone-mini { transform: scale(0.5); margin: -16px; }
+    .mockup-gallery { display: grid !important; grid-template-columns: repeat(2, 1fr); gap: 8px; justify-items: center; }
+    .phone-mini { transform: scale(0.6); margin: -12px; }
 
     /* Pricing */
     .pricing { grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -1165,6 +1191,10 @@
 
 <div class="slide-number" id="slide-counter"></div>
 <div class="nav-hint">Pfeiltasten zum Navigieren</div>
+<div class="mobile-nav" id="mobile-nav">
+  <button class="nav-arrow nav-prev" id="nav-prev">&#8592;</button>
+  <button class="nav-arrow nav-next" id="nav-next">&#8594;</button>
+</div>
 
 <script>
   // GATE: Name + Email (no validation)
@@ -1236,7 +1266,16 @@
     current = n;
     slides[current - 1].classList.add('active');
     counter.textContent = current + ' / ' + total;
+    window.scrollTo(0, 0);
   }
+
+  // Mobile nav arrows
+  document.getElementById('nav-prev').addEventListener('click', function() {
+    if (current > 1) showSlide(current - 1);
+  });
+  document.getElementById('nav-next').addEventListener('click', function() {
+    if (current < total) showSlide(current + 1);
+  });
 
   // Skip gate with ?skip parameter
   if (new URLSearchParams(window.location.search).has('skip')) {
