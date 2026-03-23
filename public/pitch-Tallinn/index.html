@@ -259,6 +259,10 @@
     height: 16px;
   }
 
+  /* QR CAROUSEL */
+  .qr-slide { position:absolute; top:0; left:50%; transform:translateX(-50%); opacity:0; transition:opacity 0.5s ease; }
+  .qr-slide.qr-active { position:relative; opacity:1; left:auto; transform:none; display:inline-block; }
+
   /* PROBLEM SLIDE: two columns */
   .problem-cols {
     display: grid;
@@ -853,6 +857,16 @@
     <div class="phone-mini"><div class="pm-shell"></div><div class="pm-screen"><div class="pm-notch"></div><img src="/screens/screen-8.webp" alt="Goldjunge"><div class="pm-fade"></div><div class="pm-home"></div></div></div>
     <div class="phone-mini"><div class="pm-shell"></div><div class="pm-screen"><div class="pm-notch"></div><img src="/screens/screen-12.webp" alt="Ojalá Poke"><div class="pm-fade"></div><div class="pm-home"></div></div></div>
   </div>
+  <div class="qr-carousel" style="margin-top:24px; text-align:center;">
+    <p style="font-size:14px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:12px;">Personalisierte QR-Codes</p>
+    <div style="position:relative; display:inline-block;">
+      <img class="qr-slide qr-active" src="/pitch-Tallinn/qr-1.jpg" alt="QR Code Bambule's" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
+      <img class="qr-slide" src="/pitch-Tallinn/qr-2.jpg" alt="QR Code AWB Coffee" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
+      <img class="qr-slide" src="/pitch-Tallinn/qr-3.jpg" alt="QR Code Dein Logo" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
+      <img class="qr-slide" src="/pitch-Tallinn/qr-4.jpg" alt="QR Code Suat's Döner" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
+    </div>
+    <div class="qr-dots" id="qr-dots" style="display:flex; gap:6px; justify-content:center; margin-top:10px;"></div>
+  </div>
 </div>
 
 <!-- SLIDE 5: Business Model -->
@@ -936,14 +950,20 @@
 <!-- SLIDE 8: Go-to-Market -->
 <div class="slide" data-slide="8">
   <h2>Go-to-Market: <span class="accent">Stadt für Stadt</span></h2>
-  <ul>
-    <li>Pilotstadt Köln: 60 hyper-lokale SEO-Landing-Pages<br><span style="font-size:20px;color:#888;">/koeln/nippes/cafes — /koeln/ehrenfeld/doener</span></li>
-    <li>Spanien: Fuerteventura — 10 Kunden aktiv</li>
-    <li>Expansion: Berlin, Düsseldorf, Bonn</li>
-    <li>Next: Türkei</li>
-    <li>Walk-in Sales + digitale Kaltakquise (Instagram, WhatsApp)</li>
-    <li>Content-Marketing: 11 Blog-Artikel, 16 Video-Tutorials</li>
-  </ul>
+  <div style="display:flex; gap:40px; align-items:flex-start;">
+    <ul style="flex:1;">
+      <li>Pilotstadt Köln: 60 hyper-lokale SEO-Landing-Pages<br><span style="font-size:20px;color:#888;">/koeln/nippes/cafes — /koeln/ehrenfeld/doener</span></li>
+      <li>Spanien: Fuerteventura — 10 Kunden aktiv</li>
+      <li>Expansion: Berlin, Düsseldorf, Bonn</li>
+      <li>Next: Türkei</li>
+      <li>Walk-in Sales + digitale Kaltakquise (Instagram, WhatsApp)</li>
+      <li>Content-Marketing: 11 Blog-Artikel, 16 Video-Tutorials</li>
+    </ul>
+    <div style="flex-shrink:0; width:280px;">
+      <img src="/pitch-Tallinn/landing-preview.jpg" alt="Landing Page Beispiel" style="width:100%; border-radius:12px; border:1px solid #333; box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+      <p style="font-size:11px; color:#555; margin-top:8px; text-align:center;">bonuskarte.digital/koeln/nippes/cafes</p>
+    </div>
+  </div>
 </div>
 
 <!-- SLIDE 9: Wettbewerb -->
@@ -1146,6 +1166,28 @@
     if (diff > 50 && current < total) showSlide(current + 1);
     if (diff < -50 && current > 1) showSlide(current - 1);
   });
+
+  // QR CAROUSEL
+  var qrSlides = document.querySelectorAll('.qr-slide');
+  var qrDotsEl = document.getElementById('qr-dots');
+  var qrCurrent = 0;
+  for (var q = 0; q < qrSlides.length; q++) {
+    var qd = document.createElement('div');
+    qd.style.cssText = 'width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.15);transition:all 0.3s;';
+    if (q === 0) { qd.style.width = '16px'; qd.style.borderRadius = '4px'; qd.style.background = '#8B7300'; }
+    qrDotsEl.appendChild(qd);
+  }
+  setInterval(function() {
+    qrSlides[qrCurrent].classList.remove('qr-active');
+    qrDotsEl.children[qrCurrent].style.width = '6px';
+    qrDotsEl.children[qrCurrent].style.borderRadius = '50%';
+    qrDotsEl.children[qrCurrent].style.background = 'rgba(255,255,255,0.15)';
+    qrCurrent = (qrCurrent + 1) % qrSlides.length;
+    qrSlides[qrCurrent].classList.add('qr-active');
+    qrDotsEl.children[qrCurrent].style.width = '16px';
+    qrDotsEl.children[qrCurrent].style.borderRadius = '4px';
+    qrDotsEl.children[qrCurrent].style.background = '#8B7300';
+  }, 2500);
 </script>
 
 </body>
