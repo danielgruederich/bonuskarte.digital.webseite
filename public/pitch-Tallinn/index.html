@@ -726,6 +726,85 @@
     font-size: 13px;
     color: #444;
   }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .slide { padding: 30px 20px; overflow-y: auto; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 26px; margin-bottom: 16px; }
+    .subtitle { font-size: 16px; }
+    ul li { font-size: 18px; padding-left: 24px; }
+    ul li::before { top: 8px; width: 8px; height: 8px; }
+
+    /* Title slide */
+    .title-row { flex-direction: column; gap: 24px; }
+    .phone-frame { width: 160px; height: 330px; margin: 0 auto; }
+    .title-trust { gap: 10px; }
+    .title-trust span { font-size: 10px; }
+
+    /* Problem slide */
+    .problem-cols { grid-template-columns: 1fr; gap: 16px; }
+    .problem-col { padding: 16px; }
+    .problem-col li { font-size: 16px !important; }
+
+    /* Solution slide */
+    .solution-row { flex-direction: column; gap: 20px; }
+    .solution-mockup img { height: 240px; }
+
+    /* Steps */
+    .steps { flex-direction: column; gap: 12px; }
+    .step { padding: 12px 16px; }
+    .step .num { width: 28px; height: 28px; font-size: 14px; }
+    .step p { font-size: 14px; }
+    .mockup-gallery { gap: 8px; flex-wrap: wrap; justify-content: center; }
+    .phone-mini { transform: scale(0.7); margin: -10px; }
+
+    /* Pricing */
+    .pricing { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .price-card { padding: 16px; }
+    .price-card h3 { font-size: 18px; }
+    .price-num { font-size: 28px; }
+
+    /* Why now / TAM */
+    .why-grid { grid-template-columns: 1fr; gap: 12px; }
+    .tam-cards { flex-direction: column; gap: 16px; }
+    .tam-card { min-width: unset; }
+
+    /* Go-to-market: stack vertically */
+    .slide[data-slide="8"] > div { flex-direction: column !important; }
+    .slide[data-slide="8"] > div > div:last-child { width: 100% !important; max-width: 200px; margin: 0 auto; }
+
+    /* Comparison */
+    .comparison { flex-direction: column; gap: 16px; }
+    .col { padding: 16px; }
+    .col li { font-size: 16px; }
+
+    /* Founders */
+    .founders { flex-direction: column; gap: 24px; }
+    .founder-card img, .founder-photo-placeholder { width: 100px; height: 100px; }
+
+    /* Milestones */
+    .milestones li { font-size: 16px; padding: 10px 12px 10px 36px; }
+
+    /* Internationalisierung */
+    .slide[data-slide="12"] .problem-cols { grid-template-columns: 1fr; }
+
+    /* CTA */
+    .cta-block .big { font-size: 20px; }
+    .contact-info { font-size: 16px; }
+
+    /* Gate screen */
+    #gate-screen input { width: 260px; font-size: 16px; padding: 12px 16px; }
+    #gate-btn { padding: 12px 32px; font-size: 16px; }
+    #gate-screen h2 { font-size: 22px; }
+
+    /* QR carousel */
+    .qr-carousel img { width: 120px !important; height: 120px !important; }
+
+    /* Nav hint */
+    .nav-hint { font-size: 11px; left: 20px; }
+    .slide-number { right: 20px; }
+  }
 </style>
 </head>
 <body>
