@@ -984,10 +984,10 @@
       <p class="founder-bio">Gründer von bonuskarte.digital. Bringt Wallet-Technologie in die Gastronomie.</p>
     </div>
     <div class="founder-card">
-      <div class="founder-photo-placeholder">JH</div>
+      <img src="/pitch-Tallinn/jonas.jpg" alt="Jonas Henning">
       <h3>Jonas Henning</h3>
       <p class="founder-role">Co-Founder</p>
-      <p class="founder-bio">Details folgen</p>
+      <p class="founder-bio">Bringt strategische Perspektive und unternehmerisches Know-how ins Team.</p>
     </div>
   </div>
 </div>
@@ -1089,16 +1089,25 @@
   var gateScreen = document.getElementById('gate-screen');
   var gateBtn = document.getElementById('gate-btn');
 
-  gateBtn.addEventListener('click', function() {
+  function unlockDeck() {
+    var name = document.getElementById('gate-name').value.trim();
+    var email = document.getElementById('gate-email').value.trim();
     gateScreen.classList.add('hidden');
     showSlide(1);
-  });
+    // Send data to PHP (fire & forget)
+    if (name || email) {
+      fetch('/pitch-Tallinn/gate.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email })
+      }).catch(function() {});
+    }
+  }
+
+  gateBtn.addEventListener('click', unlockDeck);
 
   document.getElementById('gate-email').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      gateScreen.classList.add('hidden');
-      showSlide(1);
-    }
+    if (e.key === 'Enter') { unlockDeck(); }
   });
   document.getElementById('gate-name').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
