@@ -1068,12 +1068,6 @@
     }
   }
 
-  // Skip gate with ?skip parameter
-  if (new URLSearchParams(window.location.search).has('skip')) {
-    gateScreen.classList.add('hidden');
-    showSlide(1);
-  }
-
   gateBtn.addEventListener('click', unlockDeck);
 
   document.getElementById('gate-email').addEventListener('keydown', function(e) {
@@ -1124,6 +1118,12 @@
     current = n;
     slides[current - 1].classList.add('active');
     counter.textContent = current + ' / ' + total;
+  }
+
+  // Skip gate with ?skip parameter
+  if (new URLSearchParams(window.location.search).has('skip')) {
+    gateScreen.classList.add('hidden');
+    showSlide(1);
   }
 
   document.addEventListener('keydown', function(e) {
