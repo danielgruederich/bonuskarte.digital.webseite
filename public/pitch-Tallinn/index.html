@@ -737,6 +737,26 @@
     /* All slides visible, scroll down */
     .slide { display: flex !important; min-height: auto; height: auto; padding: 40px 20px; border-bottom: 1px solid #1a1a1a; }
     .slide-number, .nav-hint, .mobile-nav { display: none !important; }
+
+    /* Scroll indicator arrow */
+    .scroll-indicator {
+      display: block !important;
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      animation: bounceDown 1.5s ease infinite;
+      font-size: 32px;
+      color: #22c55e;
+      opacity: 1;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+    @keyframes bounceDown {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(12px); }
+    }
     .slide { padding: 24px 16px 60px; min-height: 100vh; height: auto; justify-content: flex-start; padding-top: 40px; }
     h1 { font-size: 24px; }
     h2 { font-size: 22px; margin-bottom: 12px; }
@@ -1171,6 +1191,7 @@
 </div>
 
 <div class="slide-number" id="slide-counter"></div>
+<div class="scroll-indicator" id="scroll-indicator" style="display:none;">&#8595;</div>
 <div class="nav-hint">Pfeiltasten zum Navigieren</div>
 <div class="mobile-nav" id="mobile-nav">
   <button class="nav-arrow nav-prev" id="nav-prev">&#8592;</button>
@@ -1283,6 +1304,15 @@
     var diff = touchStartX - e.changedTouches[0].clientX;
     if (diff > 50 && current < total) showSlide(current + 1);
     if (diff < -50 && current > 1) showSlide(current - 1);
+  });
+
+  // Scroll indicator: hide after user scrolls
+  var scrollInd = document.getElementById('scroll-indicator');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      scrollInd.style.opacity = '0';
+      setTimeout(function() { scrollInd.style.display = 'none'; }, 500);
+    }
   });
 
   // QR CAROUSEL
