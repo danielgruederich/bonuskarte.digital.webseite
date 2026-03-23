@@ -733,29 +733,10 @@
   /* MOBILE */
   @media (max-width: 768px) {
     body { overflow-x: hidden; overflow-y: auto; height: auto; }
-    .mobile-nav {
-      display: flex;
-      position: fixed;
-      bottom: 16px;
-      left: 0; right: 0;
-      justify-content: space-between;
-      padding: 0 20px;
-      z-index: 100;
-    }
-    .nav-arrow {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      border: 2px solid #333;
-      background: rgba(10,10,10,0.9);
-      color: #fff;
-      font-size: 22px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .nav-arrow:active { background: #22c55e; color: #000; border-color: #22c55e; }
-    .nav-hint { display: none; }
+
+    /* All slides visible, scroll down */
+    .slide { display: flex !important; min-height: auto; height: auto; padding: 40px 20px; border-bottom: 1px solid #1a1a1a; }
+    .slide-number, .nav-hint, .mobile-nav { display: none !important; }
     .slide { padding: 24px 16px 60px; min-height: 100vh; height: auto; justify-content: flex-start; padding-top: 40px; }
     h1 { font-size: 24px; }
     h2 { font-size: 22px; margin-bottom: 12px; }
