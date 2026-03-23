@@ -264,6 +264,23 @@
     height: 16px;
   }
 
+  /* STEPS VISUAL LAYOUT */
+  .steps-visual {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .step-block { text-align: center; }
+  .step-phone-img {
+    position: absolute;
+    top: 40px; left: 0; right: 0; bottom: 0;
+    width: 100%; height: calc(100% - 40px);
+    object-fit: cover; object-position: top;
+    opacity: 0; transition: opacity 0.5s ease;
+  }
+  .step-phone-img.step-phone-active { opacity: 1; }
+
   /* QR CAROUSEL */
   .qr-slide { position:absolute; top:0; left:50%; transform:translateX(-50%); opacity:0; transition:opacity 0.5s ease; }
   .qr-slide.qr-active { position:relative; opacity:1; left:auto; transform:none; display:inline-block; }
@@ -791,6 +808,7 @@
 
     /* Steps */
     .steps { display: flex !important; flex-direction: column !important; gap: 10px; }
+    .steps-visual { grid-template-columns: 1fr !important; gap: 16px; }
     .step { padding: 16px; border-color: #999; }
     .step .num { font-size: 18px; }
     .step p { font-size: 16px; color: #f5f5f5; }
@@ -960,39 +978,61 @@
 <!-- SLIDE 4: How it works -->
 <div class="slide" data-slide="4">
   <h2>So funktioniert's</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="num">1</div>
-      <p>Stempelkarte mit eigenem Branding in 24h erstellt</p>
+  <div class="steps-visual">
+    <!-- Step 1 -->
+    <div class="step-block">
+      <div class="step">
+        <div class="num">1</div>
+        <p>Stempelkarte mit eigenem Branding in 24h erstellt</p>
+      </div>
     </div>
-    <div class="step">
-      <div class="num">2</div>
-      <p>Gast scannt QR-Code — Karte landet im Wallet</p>
+    <!-- Step 2 + QR Carousel -->
+    <div class="step-block">
+      <div class="step">
+        <div class="num">2</div>
+        <p>Gast scannt QR-Code — Karte landet im Wallet</p>
+      </div>
+      <div class="qr-carousel" style="margin-top:16px; text-align:center;">
+        <div style="position:relative; display:inline-block;">
+          <img class="qr-slide qr-active" src="/pitch-Tallinn/qr-1.jpg" alt="QR Code" style="width:140px; height:140px; border-radius:12px; object-fit:cover;">
+          <img class="qr-slide" src="/pitch-Tallinn/qr-2.jpg" alt="QR Code" style="width:140px; height:140px; border-radius:12px; object-fit:cover;">
+          <img class="qr-slide" src="/pitch-Tallinn/qr-3.jpg" alt="QR Code" style="width:140px; height:140px; border-radius:12px; object-fit:cover;">
+          <img class="qr-slide" src="/pitch-Tallinn/qr-4.jpg" alt="QR Code" style="width:140px; height:140px; border-radius:12px; object-fit:cover;">
+        </div>
+        <div class="qr-dots" id="qr-dots" style="display:flex; gap:6px; justify-content:center; margin-top:8px;"></div>
+      </div>
     </div>
-    <div class="step">
-      <div class="num">3</div>
-      <p>Betreiber stempelt per Klick in der Scanner-App</p>
+    <!-- Step 3 + Phone Carousel -->
+    <div class="step-block">
+      <div class="step">
+        <div class="num">3</div>
+        <p>Betreiber stempelt per Klick in der Scanner-App</p>
+      </div>
+      <div class="step-phone" style="margin-top:16px; text-align:center;">
+        <div class="phone-frame" style="width:140px; height:286px; margin:0 auto;">
+          <div class="phone-shell"></div>
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <img class="step-phone-img step-phone-active" src="/screens/screen-4.webp" alt="Pizza Karte">
+            <img class="step-phone-img" src="/screens/screen-5.webp" alt="Döner Karte">
+            <img class="step-phone-img" src="/screens/screen-8.webp" alt="Goldjunge">
+            <img class="step-phone-img" src="/screens/screen-12.webp" alt="Ojalá Poke">
+            <div class="phone-fade-bottom"></div>
+            <div class="phone-home"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="step">
-      <div class="num">4</div>
-      <p>Push-Nachrichten & Belohnungen bringen Kunden zurück</p>
+    <!-- Step 4 + Push Preview -->
+    <div class="step-block">
+      <div class="step">
+        <div class="num">4</div>
+        <p>Push-Nachrichten & Belohnungen bringen Kunden zurück</p>
+      </div>
+      <div style="margin-top:16px; text-align:center;">
+        <img src="/pitch-Tallinn/push-preview.jpg" alt="Push Notification Preview" style="width:140px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.4);">
+      </div>
     </div>
-  </div>
-  <div class="mockup-gallery">
-    <div class="phone-mini"><div class="pm-shell"></div><div class="pm-screen"><div class="pm-notch"></div><img src="/screens/screen-4.webp" alt="Pizza Karte"><div class="pm-fade"></div><div class="pm-home"></div></div></div>
-    <div class="phone-mini"><div class="pm-shell"></div><div class="pm-screen"><div class="pm-notch"></div><img src="/screens/screen-5.webp" alt="Döner Karte"><div class="pm-fade"></div><div class="pm-home"></div></div></div>
-    <div class="phone-mini"><div class="pm-shell"></div><div class="pm-screen"><div class="pm-notch"></div><img src="/screens/screen-8.webp" alt="Goldjunge"><div class="pm-fade"></div><div class="pm-home"></div></div></div>
-    <div class="phone-mini"><div class="pm-shell"></div><div class="pm-screen"><div class="pm-notch"></div><img src="/screens/screen-12.webp" alt="Ojalá Poke"><div class="pm-fade"></div><div class="pm-home"></div></div></div>
-  </div>
-  <div class="qr-carousel" style="margin-top:24px; text-align:center;">
-    <p style="font-size:14px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:12px;">Personalisierte QR-Codes</p>
-    <div style="position:relative; display:inline-block;">
-      <img class="qr-slide qr-active" src="/pitch-Tallinn/qr-1.jpg" alt="QR Code Bambule's" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
-      <img class="qr-slide" src="/pitch-Tallinn/qr-2.jpg" alt="QR Code AWB Coffee" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
-      <img class="qr-slide" src="/pitch-Tallinn/qr-3.jpg" alt="QR Code Dein Logo" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
-      <img class="qr-slide" src="/pitch-Tallinn/qr-4.jpg" alt="QR Code Suat's Döner" style="width:180px; height:180px; border-radius:12px; object-fit:cover;">
-    </div>
-    <div class="qr-dots" id="qr-dots" style="display:flex; gap:6px; justify-content:center; margin-top:10px;"></div>
   </div>
 </div>
 
@@ -1029,22 +1069,22 @@
   <h2>Warum <span class="accent">jetzt</span>?</h2>
   <div class="why-now-grid">
     <div class="why-card">
-      <div class="why-icon">📈</div>
+      <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
       <h3>Loyalty-Markt explodiert</h3>
       <p>Europa: 16,5 Mrd. € (2025) → 29,5 Mrd. € (2030). Wachstum von 14% pro Jahr.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">📱</div>
+      <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <h3>Wallet-Adoption</h3>
       <p>Apple & Google Wallet sind Standard. Kein App-Download mehr nötig — die Infrastruktur ist da.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🍽️</div>
+      <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
       <h3>Post-COVID Digitalisierung</h3>
       <p>Restaurants suchen aktiv nach digitalen Lösungen. QR-Codes sind gelernt.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">🌱</div>
+      <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20c4 0 8.68-3.9 9-12z"/><path d="M2 12s4.5-1 7.5-4.5c1.5-1.7 2.5-4 2.5-5.5 0 4.5 2 8 4 10"/></svg></div>
       <h3>Nachhaltigkeit</h3>
       <p>Papierkarten unter Druck. Immer mehr Gastronomen wollen nachhaltig wirtschaften.</p>
     </div>
@@ -1086,7 +1126,7 @@
       <li>Hyper-personalisierte, automatisierte Outreach-Kampagnen (Instagram, WhatsApp)</li>
       <li>Automatisiertes Content-Marketing: 11 Blog-Artikel, 16 Video-Tutorials</li>
     </ul>
-    <div style="flex-shrink:0; width:280px;">
+    <div style="flex-shrink:0; width:400px;">
       <img src="/pitch-Tallinn/landing-preview.jpg" alt="Landing Page Beispiel" style="width:100%; border-radius:12px; border:1px solid #333; box-shadow:0 8px 32px rgba(0,0,0,0.4);">
       <p style="font-size:11px; color:#555; margin-top:8px; text-align:center;">bonuskarte.digital/koeln/nippes/cafes</p>
     </div>
@@ -1320,6 +1360,17 @@
       setTimeout(function() { scrollInd.style.display = 'none'; }, 500);
     }
   });
+
+  // STEP 3 PHONE CAROUSEL
+  var stepPhones = document.querySelectorAll('.step-phone-img');
+  var stepPhoneCurrent = 0;
+  if (stepPhones.length > 0) {
+    setInterval(function() {
+      stepPhones[stepPhoneCurrent].classList.remove('step-phone-active');
+      stepPhoneCurrent = (stepPhoneCurrent + 1) % stepPhones.length;
+      stepPhones[stepPhoneCurrent].classList.add('step-phone-active');
+    }, 2500);
+  }
 
   // QR CAROUSEL
   var qrSlides = document.querySelectorAll('.qr-slide');
