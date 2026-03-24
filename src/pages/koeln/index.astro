@@ -9,10 +9,11 @@ const niches = [
   { label: 'Döner',             emoji: '🥙',  slug: 'doener',     desc: 'Imbiss & Dönerläden' },
   { label: 'Restaurant',        emoji: '🍽️', slug: 'restaurant', desc: 'Restaurants & Bistros' },
   { label: 'Pizza',             emoji: '🍕',  slug: 'pizza',      desc: 'Pizzerien & Lieferdienste' },
+  { label: 'Eiscafé',           emoji: '🍦',  slug: 'eiscafe',    desc: 'Eiscafés & Frozen Yogurt' },
 ]
 
 const totalBetriebe = veedel.reduce((acc, v) =>
-  acc + v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza, 0)
+  acc + v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza + v.fomoCount.eiscafe, 0)
 ---
 
 <BaseLayout

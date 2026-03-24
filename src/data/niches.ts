@@ -1,9 +1,9 @@
-export type NicheSlug = 'cafes' | 'doener' | 'pizza' | 'restaurant'
+export type NicheSlug = 'cafes' | 'doener' | 'pizza' | 'restaurant' | 'eiscafe'
 export type FormType = 'full' | 'simple'
 
 export interface NicheData {
   slug: NicheSlug
-  fomoKey: 'cafe' | 'doener' | 'pizza' | 'restaurant' // key into VeedelData.fomoCount
+  fomoKey: 'cafe' | 'doener' | 'pizza' | 'restaurant' | 'eiscafe' // key into VeedelData.fomoCount
   label: string       // display name ("Café", "Döner", …)
   emoji: string
   formType: FormType  // 'full' = LeadForm, 'simple' = LeadFormDoener
@@ -117,6 +117,29 @@ export const niches: NicheData[] = [
       { icon: '📱', title: 'Stammkunden, die wiederkommen', desc: 'Dein Restaurant bleibt auf dem Handy Deiner Gäste. Ein Blick auf die Karte – und der Tisch ist reserviert.' },
       { icon: '🔔', title: 'Push-Nachrichten', desc: 'Neues Saisonmenü, Freitagsspecial, Last-Minute-Tische? Direkt aufs Sperrbildschirm. Ohne Social-Media-Algorithmus.' },
       { icon: '🤝', title: 'Keine App für Deine Gäste', desc: 'Apple Wallet & Google Wallet – vorinstalliert auf jedem Smartphone. Kein Download, keine Registrierung nötig.' },
+    ],
+  },
+  {
+    slug: 'eiscafe',
+    fomoKey: 'eiscafe',
+    label: 'Eiscafé',
+    emoji: '🍦',
+    formType: 'full',
+    seoTitle: 'Digitale Stempelkarte für Eiscafés in {veedelName} – 90 Tage gratis | bonuskarte.digital',
+    seoDescription: 'Digitale Kundenbindung für Eiscafés in {veedelName}. Jede Kugel zählt. Mehr Stammkunden, mehr Umsatz. 90 Tage komplett kostenlos.',
+    heroCopy: {
+      eyebrow: 'Eiscafés in {veedelName}',
+      headlineLight: 'Stammkunden, die',
+      headlineBold: 'immer wiederkommen in {veedelName}.',
+      bodyText: 'Jede Kugel zählt. Mit der digitalen Stempelkarte holst du deine Gäste immer wieder zurück – direkt auf ihr Handy. Kein Papier, keine App.',
+      fomoText: '{fomoCount} Eiscafés in {veedelName} sind bereits dabei. Sei das nächste.',
+      ctaLabel: 'Jetzt 90 Tage gratis testen',
+    },
+    walletMockup: { businessName: 'Eiscafé Sonnenschein', reward: 'Gratis-Eis', stamped: 7, total: 10 },
+    arguments: [
+      { icon: '🍦', title: 'Jede Kugel zählt', desc: 'Kunden sehen: „Nur noch 2 Stempel bis zum Gratis-Eis“. Sie kommen zu dir – nicht zur Konkurrenz.' },
+      { icon: '📱', title: 'Im Wallet, nicht vergessen', desc: 'Dein Logo auf dem Sperrbildschirm. Apple & Google Wallet, kein App-Download.' },
+      { icon: '📣', title: 'Push statt Flyer', desc: 'Saisonstart, neue Sorte, Happy Hour? Direkt aufs Handy deiner Stammkunden.' },
     ],
   },
 ]

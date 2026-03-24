@@ -7,6 +7,7 @@ import LeadForm from '../../../components/LeadForm.tsx'
 import LeadFormDoener from '../../../components/LeadFormDoener.tsx'
 import { veedel as allVeedel, getVeedelBySlug, fallbackVeedel } from '../../../data/veedel'
 import { niches, getNicheBySlug } from '../../../data/niches'
+import { GooeyText } from '../../../components/ui/gooey-text-morphing'
 
 export function getStaticPaths() {
   return allVeedel.flatMap(v =>
@@ -27,6 +28,8 @@ const r = (s: string) =>
 
 const fomoCount = veedelData.fomoCount[nicheData.fomoKey]
 const showFomo  = fomoCount > 0
+const isEiscafe = nicheData.slug === 'eiscafe'
+const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Mehr Umsatz']
 ---
 
 <BaseLayout
@@ -81,10 +84,26 @@ const showFomo  = fomoCount > 0
           </span>
         </div>
 
-        <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-8">
-          <span class="font-extralight text-white block mb-2">{nicheData.heroCopy.headlineLight}</span>
-          <span class="font-bold text-gold-600 block">{r(nicheData.heroCopy.headlineBold)}</span>
-        </h1>
+        {isEiscafe ? (
+          <div class="mb-8">
+            <GooeyText
+              client:load
+              texts={gooeyTexts}
+              morphTime={1.5}
+              cooldownTime={1}
+              className="h-[80px] sm:h-[100px]"
+              textClassName="font-bold text-gold-600 text-4xl sm:text-5xl md:text-[50pt]"
+            />
+            <p class="text-white/60 font-extralight text-lg tracking-wide mt-4 text-center sm:text-left">
+              {r(nicheData.heroCopy.headlineBold)}
+            </p>
+          </div>
+        ) : (
+          <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-8">
+            <span class="font-extralight text-white block mb-2">{nicheData.heroCopy.headlineLight}</span>
+            <span class="font-bold text-gold-600 block">{r(nicheData.heroCopy.headlineBold)}</span>
+          </h1>
+        )}
 
         {showFomo && (
           <div class="flex items-center gap-3 border border-gold-600/20 bg-gold-600/5 px-4 py-2.5 mb-6">

@@ -35,7 +35,7 @@ const grouped = hilfeCategories.map(cat => ({
 
     {grouped.map(cat => (
       <div class="mb-4">
-        <p class="text-xs font-bold tracking-widest uppercase text-white/40 mb-2">
+        <p class="text-xs font-bold tracking-widest uppercase text-white/70 mb-2">
           <span class="mr-1.5">{cat.icon}</span>{cat.label}
         </p>
         <ul class="space-y-1">
@@ -47,7 +47,7 @@ const grouped = hilfeCategories.map(cat => ({
                   href={`/hilfe/${entry.slug}`}
                   class:list={[
                     'block pl-4 py-1.5 text-sm transition-colors',
-                    isActive ? 'text-gold-600 font-medium' : 'text-white/50',
+                    isActive ? 'text-gold-600 font-medium' : 'text-white/80',
                   ]}
                 >
                   {entry.data.title}
