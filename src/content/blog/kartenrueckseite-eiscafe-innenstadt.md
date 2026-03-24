@@ -7,6 +7,7 @@ category: "Ratgeber"
 readingTime: 6
 featured: false
 city: koeln
+approved: false
 ---
 
 Deine digitale Kundenkarte hat eine Vorderseite. Logo, Stempelfortschritt, dein Name. Das kennt jeder.

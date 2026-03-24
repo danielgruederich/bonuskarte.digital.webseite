@@ -7,6 +7,7 @@ category: "Strategie"
 readingTime: 7
 featured: false
 city: koeln
+approved: false
 ---
 
 Netflix hat es gemacht. Dein Fitnessstudio auch. Die Waschanlage um die Ecke bietet eine Flatrate an. Sogar dein Rasiererhersteller schickt dir Klingen im Abo.

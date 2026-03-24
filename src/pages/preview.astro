@@ -5,13 +5,28 @@ import { getCollection } from 'astro:content'
 const allPosts = await getCollection('blog')
 const now = new Date()
 
-const scheduled = allPosts
-  .filter(p => p.data.pubDate > now)
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+type PostStatus = 'needsEdit' | 'draft' | 'approved' | 'live'
 
-const live = allPosts
-  .filter(p => p.data.pubDate <= now)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+function getStatus(post: any): PostStatus {
+  if (post.data.needsEdit) return 'needsEdit'
+  if (post.data.approved === false) return 'draft'
+  if (post.data.pubDate > now) return 'approved'
+  return 'live'
+}
+
+const statusOrder: Record<PostStatus, number> = { needsEdit: 0, draft: 1, approved: 2, live: 3 }
+
+const sorted = [...allPosts].sort((a, b) => {
+  const sa = statusOrder[getStatus(a)]
+  const sb = statusOrder[getStatus(b)]
+  if (sa !== sb) return sa - sb
+  return a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+})
+
+const needsEdit = sorted.filter(p => getStatus(p) === 'needsEdit')
+const drafts = sorted.filter(p => getStatus(p) === 'draft')
+const approved = sorted.filter(p => getStatus(p) === 'approved')
+const live = sorted.filter(p => getStatus(p) === 'live').reverse()
 
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }).format(date)
@@ -25,12 +40,30 @@ const cityPaths: Record<string, string> = {
   huerth: '/huerth/blog/',
 }
 
+const statusStyles: Record<PostStatus, { label: string; classes: string }> = {
+  needsEdit: { label: 'NEEDS EDIT', classes: 'bg-red-900/30 text-red-300 border border-red-700/30' },
+  draft: { label: 'ENTWURF', classes: 'bg-white/10 text-white/40 border border-white/10' },
+  approved: { label: 'FREIGEGEBEN', classes: 'bg-gold-600/20 text-gold-400 border border-gold-600/30' },
+  live: { label: 'LIVE', classes: 'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30' },
+}
+
 const categoryColors: Record<string, string> = {
   'Ratgeber':  'bg-gold-600/20 text-gold-400 border border-gold-600/30',
   'Strategie': 'bg-blue-900/30 text-blue-300 border border-blue-700/30',
   'How-to':    'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30',
   'News':      'bg-white/10 text-white/60 border border-white/10',
 }
+
+function renderSection(title: string, posts: any[], status: PostStatus) {
+  return { title, posts, status }
+}
+
+const sections = [
+  { title: `Needs Edit (${needsEdit.length})`, posts: needsEdit, status: 'needsEdit' as PostStatus },
+  { title: `Entwürfe (${drafts.length})`, posts: drafts, status: 'draft' as PostStatus },
+  { title: `Freigegeben (${approved.length})`, posts: approved, status: 'approved' as PostStatus },
+  { title: `Live (${live.length})`, posts: live, status: 'live' as PostStatus },
+]
 ---
 
 <BaseLayout title="Preview: Alle Blog-Artikel" description="Interne Vorschau">
@@ -38,23 +71,30 @@ const categoryColors: Record<string, string> = {
     <div class="max-w-3xl mx-auto px-5 py-20">
       <div class="text-xs font-bold tracking-[0.3em] uppercase text-gold-600 mb-4">Interne Vorschau</div>
       <h1 class="text-3xl font-black mb-2">Alle Blog-Artikel</h1>
-      <p class="text-white/50 text-sm mb-10">{allPosts.length} Artikel total · {scheduled.length} geplant · {live.length} live</p>
+      <p class="text-white/50 text-sm mb-10">
+        {allPosts.length} total ·
+        {needsEdit.length > 0 && <span class="text-red-300">{needsEdit.length} needs edit</span>}
+        {needsEdit.length > 0 && ' · '}
+        {drafts.length} Entwürfe · {approved.length} freigegeben · {live.length} live
+      </p>
 
-      {scheduled.length > 0 && (
+      {sections.map(section => section.posts.length > 0 && (
         <>
-          <div class="flex items-center gap-4 mb-6">
-            <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-white/40">Geplant ({scheduled.length})</h2>
+          <div class="flex items-center gap-4 mb-6 mt-10">
+            <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-white/40">{section.title}</h2>
             <div class="flex-1 h-px bg-white/5"></div>
           </div>
 
-          <div class="space-y-4 mb-14">
-            {scheduled.map((post) => {
+          <div class="space-y-4">
+            {section.posts.map((post) => {
               const cityPath = cityPaths[post.data.city] || '/koeln/blog/'
+              const status = getStatus(post)
+              const style = statusStyles[status]
               return (
-                <a href={`${cityPath}${post.slug}`} class="block border border-white/10 hover:border-gold-600/40 transition-colors p-6">
+                <a href={`${cityPath}${post.slug}`} class={`block border transition-colors p-6 ${status === 'needsEdit' ? 'border-red-700/30 hover:border-red-500/50' : 'border-white/10 hover:border-gold-600/40'}`}>
                   <div class="flex flex-wrap items-center gap-2 mb-2">
-                    <span class="text-xs px-2 py-0.5 rounded-sm bg-white/10 text-white/40 border border-white/10">
-                      GEPLANT
+                    <span class={`text-xs px-2 py-0.5 rounded-sm ${style.classes}`}>
+                      {style.label}
                     </span>
                     <span class={`text-xs px-2 py-0.5 rounded-sm ${categoryColors[post.data.category] || ''}`}>
                       {post.data.category}
@@ -63,7 +103,7 @@ const categoryColors: Record<string, string> = {
                     <span class="text-white/40 text-xs">· {post.data.readingTime} Min.</span>
                     <span class="text-white/30 text-xs">· {post.data.city}</span>
                   </div>
-                  <h3 class="text-lg font-bold text-white hover:text-gold-400 transition-colors mb-1">
+                  <h3 class={`text-lg font-bold transition-colors mb-1 ${status === 'needsEdit' ? 'text-red-200 hover:text-red-100' : 'text-white hover:text-gold-400'}`}>
                     {post.data.title}
                   </h3>
                   <p class="text-white/40 text-sm">{post.data.description}</p>
@@ -72,41 +112,12 @@ const categoryColors: Record<string, string> = {
             })}
           </div>
         </>
-      )}
-
-      <div class="flex items-center gap-4 mb-6">
-        <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-white/40">Live ({live.length})</h2>
-        <div class="flex-1 h-px bg-white/5"></div>
-      </div>
-
-      <div class="space-y-4">
-        {live.map((post) => {
-          const cityPath = cityPaths[post.data.city] || '/koeln/blog/'
-          return (
-            <a href={`${cityPath}${post.slug}`} class="block border border-white/10 hover:border-gold-600/40 transition-colors p-6">
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="text-xs px-2 py-0.5 rounded-sm bg-emerald-900/30 text-emerald-300 border border-emerald-700/30">
-                  LIVE
-                </span>
-                <span class={`text-xs px-2 py-0.5 rounded-sm ${categoryColors[post.data.category] || ''}`}>
-                  {post.data.category}
-                </span>
-                <span class="text-white/40 text-xs">{formatDate(post.data.pubDate)}</span>
-                <span class="text-white/40 text-xs">· {post.data.readingTime} Min.</span>
-                <span class="text-white/30 text-xs">· {post.data.city}</span>
-              </div>
-              <h3 class="text-lg font-bold text-white hover:text-gold-400 transition-colors mb-1">
-                {post.data.title}
-              </h3>
-              <p class="text-white/40 text-sm">{post.data.description}</p>
-            </a>
-          )
-        })}
-      </div>
+      ))}
 
       <div class="mt-12 p-6 border border-white/5 bg-ink-900">
-        <p class="text-white/40 text-sm">
-          Diese Seite ist nicht verlinkt und nicht indexiert. Geplante Artikel sind über die Direktlinks erreichbar, auch wenn sie noch nicht im Blog-Listing erscheinen.
+        <p class="text-white/40 text-sm leading-relaxed">
+          <strong class="text-white/60">Workflow:</strong> Artikel lesen → Claude sagen „Artikel X freigeben" oder „Artikel X needs edit: [was ändern]".
+          Erst nach Freigabe + pubDate erscheint der Artikel im öffentlichen Blog.
         </p>
       </div>
     </div>

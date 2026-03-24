@@ -7,6 +7,7 @@ category: "Strategie"
 readingTime: 6
 featured: false
 city: koeln
+approved: false
 ---
 
 Stell dir vor: Es ist ein Mittwoch im Juli. Dein Kunde — nennen wir ihn Tim — hat Geburtstag. Er sitzt im Büro, scrollt durch WhatsApp-Nachrichten, und dann vibriert sein Handy. Nicht von seiner Mutter. Nicht von seinem besten Kumpel. Sondern von dir.

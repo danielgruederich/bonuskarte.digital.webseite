@@ -7,6 +7,7 @@ category: "How-to"
 readingTime: 6
 featured: false
 city: koeln
+approved: false
 ---
 
 Du hast 800 Follower auf Instagram. Vielleicht 1.200. Vielleicht sogar 3.000. Die liken deine Eis-Fotos, kommentieren mit Herz-Emojis, taggen ihre Freunde unter dem Pistazie-Post.

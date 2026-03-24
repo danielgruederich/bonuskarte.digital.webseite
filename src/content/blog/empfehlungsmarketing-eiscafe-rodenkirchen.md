@@ -7,6 +7,7 @@ category: "Strategie"
 readingTime: 7
 featured: false
 city: koeln
+approved: false
 ---
 
 In Rodenkirchen kennt jeder jeden. Am Maternusplatz grüßen sich die Nachbarn, beim Metzger fragt man nach den Kindern, und wenn eine neue Eisdiele aufmacht, weiß es das halbe Veedel am nächsten Tag.
