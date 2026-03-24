@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const words = ['Kundenkarte', 'Stempelkarte', 'Clubkarte', 'Communitykarte', 'Couponkarte']
@@ -17,13 +17,13 @@ export default function RotatingWord() {
   const longest = words.reduce((a, b) => (a.length > b.length ? a : b), '')
 
   return (
-    <span className="relative flex w-full justify-start overflow-hidden md:pb-4 md:pt-1">
-      {/* Invisible longest word reserves stable width + height */}
-      <span className="invisible font-extralight" aria-hidden="true">{longest}</span>
+    <div className="relative w-full overflow-hidden text-white font-extralight text-5xl sm:text-6xl tracking-tighter">
+      {/* Invisible longest word reserves stable height */}
+      <span className="invisible block" aria-hidden="true">{longest}</span>
       {words.map((word, index) => (
         <motion.span
           key={index}
-          className="absolute font-extralight"
+          className="absolute top-0 left-0"
           initial={{ opacity: 0, y: '-100%' }}
           transition={{ type: 'spring', stiffness: 50 }}
           animate={
@@ -35,6 +35,6 @@ export default function RotatingWord() {
           {word}
         </motion.span>
       ))}
-    </span>
+    </div>
   )
 }
