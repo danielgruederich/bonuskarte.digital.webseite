@@ -34,7 +34,7 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
   - `doener` → noch nicht erstellt ⏳
   - `pizza` → noch nicht erstellt ⏳
   - `restaurant` → noch nicht erstellt ⏳
-  - `eiscafe` → noch nicht erstellt ⏳
+  - `eiscafe` → 1060441 ✅
 
 ## URL-Struktur
 ```

@@ -39,6 +39,7 @@ const TEMPLATE_IDS = [
     'doener'     => null,    // TODO: create in Boomerang
     'pizza'      => null,    // TODO: create in Boomerang
     'restaurant' => null,    // TODO: create in Boomerang
+    'eiscafe'    => 1060441, // Eiscafé — active ✅
 ];
 const TEMPLATE_FALLBACK = 1046392; // used if niche has no template yet
 
