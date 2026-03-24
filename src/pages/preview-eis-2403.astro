@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+
+const eisSlugs = [
+  'stempelkarte-eisdiele-nippes',
+  'push-marketing-eisdiele-ehrenfeld',
+  'eisflatrate-abo-eiscafe-suelz',
+  'instagram-coupon-eisdiele-lindenthal',
+  'kartenrueckseite-eiscafe-innenstadt',
+  'empfehlungsmarketing-eiscafe-rodenkirchen',
+]
+
+const allPosts = await getCollection('blog')
+const posts = allPosts
+  .filter(p => eisSlugs.includes(p.slug))
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
+
+const now = new Date()
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }).format(date)
+}
+---
+
+<BaseLayout title="Preview: Eis-Blog-Serie" description="Interne Vorschau">
+  <div class="min-h-screen bg-black text-white">
+    <div class="max-w-3xl mx-auto px-5 py-20">
+      <div class="text-xs font-bold tracking-[0.3em] uppercase text-gold-600 mb-4">Interne Vorschau</div>
+      <h1 class="text-3xl font-black mb-2">Eis-Blog-Serie</h1>
+      <p class="text-white/50 text-sm mb-10">6 Artikel — lies sie durch und gib Feedback an Claude.</p>
+
+      <div class="space-y-4">
+        {posts.map((post, i) => {
+          const isLive = post.data.pubDate <= now
+          return (
+            <a href={`/koeln/blog/${post.slug}`} class="block border border-white/10 hover:border-gold-600/40 transition-colors p-6">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="text-gold-600 font-bold text-sm">#{i + 1}</span>
+                <span class={`text-xs px-2 py-0.5 rounded-sm ${isLive ? 'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30' : 'bg-white/10 text-white/40 border border-white/10'}`}>
+                  {isLive ? 'LIVE' : 'GEPLANT'}
+                </span>
+                <span class="text-white/40 text-xs">{formatDate(post.data.pubDate)}</span>
+                <span class="text-white/40 text-xs">· {post.data.readingTime} Min.</span>
+              </div>
+              <h2 class="text-lg font-bold text-white hover:text-gold-400 transition-colors mb-1">
+                {post.data.title}
+              </h2>
+              <p class="text-white/40 text-sm">{post.data.description}</p>
+            </a>
+          )
+        })}
+      </div>
+
+      <div class="mt-12 p-6 border border-white/5 bg-ink-900">
+        <p class="text-white/40 text-sm">
+          Diese Seite ist nicht verlinkt und nicht indexiert. Artikel sind über die Direktlinks erreichbar, auch wenn sie noch nicht im Blog-Listing erscheinen.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

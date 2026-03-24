@@ -7,7 +7,7 @@ import path from 'path'
 
 export default defineConfig({
   site: 'https://bonuskarte.digital',
-  integrations: [react(), tailwind(), sitemap(), mdx()],
+  integrations: [react(), tailwind(), sitemap({ filter: (page) => !page.includes('/preview-') }), mdx()],
   output: 'static',
   vite: {
     resolve: {
