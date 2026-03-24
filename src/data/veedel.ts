@@ -39,5 +39,6 @@ export function getVeedelBySlug(slug: string): VeedelData | undefined {
 export const fallbackVeedel: VeedelData = {
   name: 'Köln',
   slug: 'koeln',
+  intro: 'Köln ist eine der gastronomisch vielfältigsten Städte Deutschlands. Digitale Stempelkarten helfen lokalen Betrieben, Stammkunden zu gewinnen und zu halten.',
   fomoCount: { cafe: 5, doener: 4, restaurant: 3, pizza: 2, eiscafe: 0 },
 }
