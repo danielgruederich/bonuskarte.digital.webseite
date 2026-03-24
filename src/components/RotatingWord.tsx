@@ -1,64 +1,40 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { motion } from 'framer-motion'
 
 const words = ['Kundenkarte', 'Stempelkarte', 'Clubkarte', 'Communitykarte', 'Couponkarte']
 
-const TYPING_SPEED = 80
-const DELETING_SPEED = 50
-const PAUSE_AFTER_TYPING = 2000
-const PAUSE_AFTER_DELETING = 300
-
 export default function RotatingWord() {
   const [wordIndex, setWordIndex] = useState(0)
-  const [displayed, setDisplayed] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
-
-  const tick = useCallback(() => {
-    const currentWord = words[wordIndex]
-
-    if (!isDeleting) {
-      // Typing
-      const next = currentWord.slice(0, displayed.length + 1)
-      setDisplayed(next)
-
-      if (next === currentWord) {
-        // Finished typing — pause, then start deleting
-        setTimeout(() => setIsDeleting(true), PAUSE_AFTER_TYPING)
-        return
-      }
-    } else {
-      // Deleting
-      const next = currentWord.slice(0, displayed.length - 1)
-      setDisplayed(next)
-
-      if (next === '') {
-        setIsDeleting(false)
-        setWordIndex(i => (i + 1) % words.length)
-        return
-      }
-    }
-  }, [displayed, isDeleting, wordIndex])
 
   useEffect(() => {
-    const speed = isDeleting ? DELETING_SPEED : TYPING_SPEED
-    // Don't schedule if we just finished typing (pause handles it)
-    if (!isDeleting && displayed === words[wordIndex]) return
-
-    const timer = setTimeout(tick, speed)
+    const timer = setTimeout(() => {
+      setWordIndex((i) => (i + 1) % words.length)
+    }, 2000)
     return () => clearTimeout(timer)
-  }, [tick, displayed, isDeleting, wordIndex])
+  }, [wordIndex])
 
-  // Start typing after deleting pause
-  useEffect(() => {
-    if (!isDeleting && displayed === '') {
-      const timer = setTimeout(tick, PAUSE_AFTER_DELETING)
-      return () => clearTimeout(timer)
-    }
-  }, [isDeleting, displayed, tick])
+  // Find the longest word to reserve stable height
+  const longest = words.reduce((a, b) => (a.length > b.length ? a : b), '')
 
   return (
-    <span className="inline-block">
-      {displayed}
-      <span className="inline-block w-[3px] h-[0.85em] bg-gold-600 ml-1 align-middle animate-blink" />
+    <span className="relative flex w-full justify-start overflow-hidden md:pb-4 md:pt-1">
+      {/* Invisible longest word reserves stable width + height */}
+      <span className="invisible font-extralight" aria-hidden="true">{longest}</span>
+      {words.map((word, index) => (
+        <motion.span
+          key={index}
+          className="absolute font-extralight"
+          initial={{ opacity: 0, y: '-100%' }}
+          transition={{ type: 'spring', stiffness: 50 }}
+          animate={
+            wordIndex === index
+              ? { y: 0, opacity: 1 }
+              : { y: wordIndex > index ? '-150%' : '150%', opacity: 0 }
+          }
+        >
+          {word}
+        </motion.span>
+      ))}
     </span>
   )
 }
