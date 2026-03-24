@@ -34,13 +34,14 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
   - `doener` → noch nicht erstellt ⏳
   - `pizza` → noch nicht erstellt ⏳
   - `restaurant` → noch nicht erstellt ⏳
+  - `eiscafe` → noch nicht erstellt ⏳
 
 ## URL-Struktur
 ```
 bonuskarte.digital/koeln/[veedel]/[niche]
 Beispiel: bonuskarte.digital/koeln/nippes/cafes
 ```
-- 15 Veedel × 4 Nischen = 60 statische Seiten
+- 15 Veedel × 5 Nischen = 75 statische Seiten
 - Subdomain `koeln.bonuskarte.digital/*` → Cloudflare Redirect → `bonuskarte.digital/koeln/*`
 
 ## Wichtige Dateien
@@ -49,8 +50,9 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `src/data/niches.ts` | Zentrale Nischen-Config (slug, SEO, Copy, Template ID) |
 | `src/data/veedel.ts` | 15 Kölner Veedel mit FOMO-Counts |
 | `src/pages/koeln/[veedel]/[niche].astro` | Unified Landing Page (60 Seiten) |
-| `src/components/LeadForm.tsx` | Hauptformular (Café, Restaurant, Pizza) |
+| `src/components/LeadForm.tsx` | Hauptformular (Café, Restaurant, Pizza, Eiscafé) |
 | `src/components/LeadFormDoener.tsx` | Vereinfachtes Formular für Döner |
+| `src/components/ui/gooey-text-morphing.tsx` | GooeyText-Animation (morphende Wörter, nur Eiscafé-Hero) |
 | `public/api/submit.php` | PHP API Handler → Boomerang |
 
 ## Brand
@@ -58,7 +60,7 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 - **Stil:** Geometrisch, minimal, thin Typography, all-caps
 
 ## Offene TODOs
-- [ ] Boomerang Templates für Döner, Pizza, Restaurant erstellen → IDs in `submit.php` eintragen
+- [ ] Boomerang Templates für Döner, Pizza, Restaurant, Eiscafé erstellen → IDs in `submit.php` eintragen
 - [ ] Logo SVG durch echtes PNG ersetzen
 - [ ] FTP-Passwort rotieren (wurde im Klartext geteilt)
 - [ ] Blog-Sektion aufbauen (2×/Monat, hyper-lokal, SEO)

@@ -23,9 +23,10 @@ bonuskarte-digital/
 │   │   ├── ui/
 │   │   │   ├── button.tsx
 │   │   │   ├── card.tsx
-│   │   │   └── dark-gradient-pricing.tsx
+│   │   │   ├── dark-gradient-pricing.tsx
+│   │   │   └── gooey-text-morphing.tsx  # Morphende Text-Animation (Eiscafé Hero)
 │   │   ├── Footer.astro
-│   │   ├── LeadForm.tsx            # Vollformular (Café, Pizza, Restaurant)
+│   │   ├── LeadForm.tsx            # Vollformular (Café, Pizza, Restaurant, Eiscafé)
 │   │   ├── LeadFormDoener.tsx      # Vereinfachtes Formular (Döner)
 │   │   ├── Navbar.astro
 │   │   └── WalletMockup.astro
@@ -91,7 +92,8 @@ bonuskarte.digital/
 │   │   ├── cafes                       # Landing Page
 │   │   ├── doener
 │   │   ├── pizza
-│   │   └── restaurant
+│   │   ├── restaurant
+│   │   └── eiscafe                    # NEU: mit GooeyText Hero-Animation
 │   ├── nippes/
 │   │   ├── cafes
 │   │   └── …
@@ -108,7 +110,7 @@ koeln.bonuskarte.digital/*  →  (Cloudflare 301)  →  bonuskarte.digital/koeln
 ```
 
 **Seitenanzahl (statisch gebaut):**
-- Köln: 15 Veedel × 4 Nischen = **60 Landing Pages**
+- Köln: 15 Veedel × 5 Nischen = **75 Landing Pages**
 - Köln: 15 Veedel-Hubs + 1 Stadt-Hub = 16 weitere Seiten
 
 ---
@@ -129,6 +131,7 @@ GET  https://api.digitalwallet.cards/api/v2/customers   → Customer suchen (bei
 | doener | `null` | ⏳ muss im Boomerang-Dashboard erstellt werden |
 | pizza | `null` | ⏳ muss im Boomerang-Dashboard erstellt werden |
 | restaurant | `null` | ⏳ muss im Boomerang-Dashboard erstellt werden |
+| eiscafe | `null` | ⏳ muss im Boomerang-Dashboard erstellt werden |
 
 **Fallback:** Solange `null`, wird Template `1046392` für alle Nischen verwendet.
 
@@ -155,7 +158,7 @@ GET  https://api.digitalwallet.cards/api/v2/customers   → Customer suchen (bei
 
 **Schritte:**
 1. Ins Boomerang Dashboard einloggen: [digitalwallet.cards](https://digitalwallet.cards)
-2. 3 neue Card-Templates erstellen: **Döner, Pizza, Restaurant**
+2. 4 neue Card-Templates erstellen: **Döner, Pizza, Restaurant, Eiscafé**
 3. Jeweils Template-ID aus der URL kopieren
 4. In `public/api/submit.php` eintragen:
 
@@ -165,6 +168,7 @@ const TEMPLATE_IDS = [
     'doener'     => XXXXXXX,    // ← hier neue ID eintragen
     'pizza'      => XXXXXXX,    // ← hier neue ID eintragen
     'restaurant' => XXXXXXX,    // ← hier neue ID eintragen
+    'eiscafe'    => XXXXXXX,    // ← hier neue ID eintragen
 ];
 ```
 
@@ -386,7 +390,7 @@ git push origin main
 | Problem | Priorität | Aufwand | Nächster Schritt |
 |---------|-----------|---------|------------------|
 | FTP-Passwort rotieren | 🔴 kritisch | 10 Min | StackCP → neues Passwort setzen, GitHub Secret aktualisieren |
-| Boomerang Templates Döner/Pizza/Restaurant | 🟡 mittel | 30 Min | Im Boomerang Dashboard erstellen, IDs in `submit.php` eintragen |
+| Boomerang Templates Döner/Pizza/Restaurant/Eiscafé | 🟡 mittel | 30 Min | Im Boomerang Dashboard erstellen, IDs in `submit.php` eintragen |
 | Logo PNG | 🟡 mittel | — | PNG nach `public/logo.png`, Navbar anpassen |
 | Animiertes Phone Mockup | 🟡 mittel | 2–3h | Screenshots in `/iphone mockups/` ablegen, dann bauen |
 
@@ -417,4 +421,4 @@ git push origin main
 
 ## Nächster konkreter Schritt
 
-**→ Boomerang Dashboard öffnen → 3 neue Card-Templates erstellen (Döner, Pizza, Restaurant) → Template-IDs in `public/api/submit.php` eintragen → pushen**
+**→ Boomerang Dashboard öffnen → 4 neue Card-Templates erstellen (Döner, Pizza, Restaurant, Eiscafé) → Template-IDs in `public/api/submit.php` eintragen → pushen**
