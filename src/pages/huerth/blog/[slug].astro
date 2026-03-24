@@ -5,9 +5,10 @@ import Navbar from '../../../components/Navbar.astro'
 import Footer from '../../../components/Footer.astro'
 
 export async function getStaticPaths() {
+  const now = new Date()
   const posts = await getCollection('blog')
   return posts
-    .filter(p => p.data.city === 'huerth')
+    .filter(p => p.data.city === 'huerth' && p.data.pubDate <= now)
     .map(post => ({ params: { slug: post.slug }, props: { post } }))
 }
 
