@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import PhoneMockup from '../components/PhoneMockup.tsx'
 import RotatingWord from '../components/RotatingWord.tsx'
-import StackedPhones from '../components/ui/stacked-phones.tsx'
 
 const howItWorks = [
   { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine Stempelkarte mit deinem Branding in unter 24 Stunden.' },
@@ -50,25 +49,6 @@ const solutions = [
     "inLanguage": "de-DE"
   })} />
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
-
-  <!-- ── STACKED PHONES HERO ───────────────────────────────────── -->
-  <section class="relative w-full h-[80vh] bg-black overflow-hidden">
-    <!-- Subtle gold radial glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gold-600 rounded-full blur-[250px] opacity-[0.04]"></div>
-
-    <!-- Interactive 3D phone stack -->
-    <div class="w-full h-full pt-20">
-      <StackedPhones client:only="react" />
-    </div>
-
-    <!-- Hint text -->
-    <p class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-[10px] tracking-[0.3em] uppercase text-white/30 font-light select-none hidden lg:block">
-      Bewege den Cursor
-    </p>
-
-    <!-- Bottom fade into next section -->
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
-  </section>
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
   <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
