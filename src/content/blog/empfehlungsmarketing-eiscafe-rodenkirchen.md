@@ -140,4 +140,4 @@ Du willst sehen, wie der Weiterleitungslink und die Feedback-Nachricht funktioni
 
 Und dann denk an deine treuesten Kunden in Rodenkirchen. Die, die jeden Sonntag kommen. Die, die dein Eis am Rheinufer essen. Die, die ihren Nachbarn von dir erzählen. Stell dir vor, jeder von ihnen hätte einen Weiterleitungslink. Wie viele neue Stammkunden hättest du bis Ende des Sommers?
 
-[Starte jetzt — 90 Tage kostenlos →](/koeln/rodenkirchen/eiscafe)
+[Starte jetzt — 90 Tage kostenlos →](/koeln/rodenkirchen/eiscafe/#demo)

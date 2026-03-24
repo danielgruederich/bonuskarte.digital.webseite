@@ -111,4 +111,4 @@ Du willst die Rückseite einer Kundenkarte sehen — und den Geo-Push erleben? I
 
 Dreh die Karte um. Schau dir an, was dort alles Platz hat. Und dann überleg: Welche 9 Dinge sollten deine Kunden über deine Eisdiele in der Innenstadt wissen?
 
-[Starte jetzt — 90 Tage kostenlos →](/koeln/innenstadt/eiscafe)
+[Starte jetzt — 90 Tage kostenlos →](/koeln/innenstadt/eiscafe/#demo)

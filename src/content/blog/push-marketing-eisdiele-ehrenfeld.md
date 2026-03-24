@@ -98,4 +98,4 @@ Du willst wissen, wie eine Push-Nachricht bei deinen Kunden ankommt? Installier 
 
 Du siehst die Karte in deiner Wallet, bekommst eine Beispiel-Push-Nachricht und verstehst in 30 Sekunden, warum das stärker ist als jeder Instagram-Post.
 
-[Oder starte direkt mit deiner eigenen Karte — 90 Tage kostenlos →](/koeln/ehrenfeld/eiscafe)
+[Oder starte direkt mit deiner eigenen Karte — 90 Tage kostenlos →](/koeln/ehrenfeld/eiscafe/#demo)

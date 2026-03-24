@@ -110,4 +110,4 @@ Du willst sehen, wie die Community Card funktioniert? Installier dir die Testkar
 
 Und dann frag dich: Wie viele deiner Stammkunden in Sülz würden sofort zugreifen, wenn du ihnen morgen eine Eisflatrate anbietest?
 
-[Starte jetzt — 90 Tage kostenlos →](/koeln/suelz/eiscafe)
+[Starte jetzt — 90 Tage kostenlos →](/koeln/suelz/eiscafe/#demo)

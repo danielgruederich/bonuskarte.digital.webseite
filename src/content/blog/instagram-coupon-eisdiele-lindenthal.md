@@ -118,4 +118,4 @@ Du willst sehen, wie sich ein Coupon anfühlt, der zur Stempelkarte wird? Instal
 
 Und dann überleg: Wie viele deiner Instagram-Follower würden freitagnachmittag bei dir in Lindenthal auftauchen, wenn du ihnen eine Kugel schenkst?
 
-[Starte jetzt — 90 Tage kostenlos →](/koeln/lindenthal/eiscafe)
+[Starte jetzt — 90 Tage kostenlos →](/koeln/lindenthal/eiscafe/#demo)

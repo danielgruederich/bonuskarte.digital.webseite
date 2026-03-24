@@ -83,4 +83,4 @@ Du willst wissen, wie sich das für deine Kunden anfühlt? Installier dir die Ei
 
 Ein Tap, und du siehst genau das, was deine Kunden sehen werden. Die Stempelkarte in der Wallet, die Fortschrittsanzeige, das Design. Und dann überleg dir, wie viele Stammkunden du diesen Sommer in Nippes aufbauen willst.
 
-[Oder starte direkt mit deiner eigenen Karte — 90 Tage kostenlos →](/koeln/nippes/eiscafe)
+[Oder starte direkt mit deiner eigenen Karte — 90 Tage kostenlos →](/koeln/nippes/eiscafe/#demo)
