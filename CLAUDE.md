@@ -23,7 +23,7 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
 |---|---|
 | FTP Server | ftp.gb.stackcp.com |
 | FTP User | github-deploy@bonuskarte.digital |
-| Deploy Path | /public_html/bonuskarte/ |
+| Deploy Path | /bonuskarte/ |
 
 ## Boomerang Cards API
 - Base URL: `https://api.digitalwallet.cards`
