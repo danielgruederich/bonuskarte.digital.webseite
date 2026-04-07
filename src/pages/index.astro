@@ -58,7 +58,7 @@ const solutions = [
 
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
+        <div class="text-center lg:text-left">
           <!-- Eyebrow -->
           <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-6 sm:mb-10">
             <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
@@ -74,7 +74,7 @@ const solutions = [
             <span class="font-bold text-gold-600 block">Gastronomen.</span>
           </h1>
 
-          <p class="text-white/80 text-base leading-relaxed mb-6 max-w-md font-light">
+          <p class="text-white/80 text-base leading-relaxed mb-6 max-w-md mx-auto lg:mx-0 font-light">
             Mehr Stammgäste, messbar mehr Umsatz. Deine Kunden
             tragen die Stempelkarte direkt im Handy –
             kein Papier, keine App, kein Aufwand für dich.
@@ -87,7 +87,7 @@ const solutions = [
             </span>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3">
+          <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
             <a href="/koeln"
               class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
               Für mein Lokal starten
@@ -102,7 +102,7 @@ const solutions = [
           </div>
 
           <!-- Trust -->
-          <div class="flex flex-wrap gap-5 mt-6 sm:mt-10">
+          <div class="flex flex-wrap gap-5 mt-6 sm:mt-10 justify-center lg:justify-start">
             {['🔒 DSGVO', '📱 Apple & Google Wallet', '⚡ Live in 24h', '✅ Kein Risiko'].map(t => (
               <span class="text-[10px] tracking-widest uppercase text-white/75">{t}</span>
             ))}
