@@ -47,7 +47,7 @@ export default function PhoneMockup() {
     <>
       <style>{`
         @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-          .phone-mockup-wrap { transform: scale(0.6); transform-origin: top center; }
+          .phone-mockup-wrap { transform: scale(0.85); transform-origin: top center; }
         }
       `}</style>
       <div className="phone-mockup-wrap relative flex flex-col items-center gap-5">
