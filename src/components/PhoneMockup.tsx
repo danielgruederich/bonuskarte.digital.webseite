@@ -44,7 +44,7 @@ export default function PhoneMockup() {
   }, [])
 
   return (
-    <div className="relative flex flex-col items-center gap-5">
+    <div className="relative flex flex-col items-center gap-5 scale-75 md:scale-[0.65] lg:scale-100 origin-top">
 
       {/* Phone frame */}
       <div className="relative w-[260px] h-[530px]">
