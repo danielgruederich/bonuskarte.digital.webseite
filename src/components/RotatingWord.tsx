@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-const words = ['Kundenkarte', 'Stempelkarte', 'Clubkarte', 'Communitykarte', 'Couponkarte']
+const words = ['Kundenkarte', 'Bonuskarte', 'Clubkarte', 'Communitykarte', 'Couponkarte']
 
 export default function RotatingWord() {
   const [wordIndex, setWordIndex] = useState(0)
