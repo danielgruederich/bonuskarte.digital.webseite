@@ -12,7 +12,7 @@ export default {
           300: '#e4ce5c',
           400: '#cfb630',
           500: '#b89c1a',
-          600: '#8B7300',  // primary gold
+          600: '#A38A00',  // primary gold (WCAG AA ~4.8:1 on black)
           700: '#6e5c00',
           800: '#4f4200',
           900: '#302800',
@@ -38,7 +38,7 @@ export default {
         display: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'grid-gold':  "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='40' height='40' fill='none' stroke='rgb(139 115 0 / 0.08)'%3e%3cpath d='M0 .5H39.5V40'/%3e%3c/svg%3e\")",
+        'grid-gold':  "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='40' height='40' fill='none' stroke='rgb(163 138 0 / 0.08)'%3e%3cpath d='M0 .5H39.5V40'/%3e%3c/svg%3e\")",
         'grid-white': "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='40' height='40' fill='none' stroke='rgb(255 255 255 / 0.04)'%3e%3cpath d='M0 .5H39.5V40'/%3e%3c/svg%3e\")",
         'grid-gray':  "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' width='40' height='40' fill='none' stroke='rgb(0 0 0 / 0.05)'%3e%3cpath d='M0 .5H39.5V40'/%3e%3c/svg%3e\")",
       },
