@@ -44,7 +44,13 @@ export default function PhoneMockup() {
   }, [])
 
   return (
-    <div className="relative flex flex-col items-center gap-5 md:portrait:scale-[0.65] origin-top">
+    <>
+      <style>{`
+        @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+          .phone-mockup-wrap { transform: scale(0.6); transform-origin: top center; }
+        }
+      `}</style>
+      <div className="phone-mockup-wrap relative flex flex-col items-center gap-5">
 
       {/* Phone frame */}
       <div className="relative w-[260px] h-[530px]">
@@ -122,5 +128,6 @@ export default function PhoneMockup() {
       </AnimatePresence>
 
     </div>
+    </>
   )
 }
