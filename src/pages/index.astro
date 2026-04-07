@@ -57,8 +57,8 @@ const solutions = [
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
 
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="text-center lg:text-left">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
+        <div class="text-center md:text-left">
           <!-- Eyebrow (fills full width with random branches) -->
           <div id="eyebrow-bar" class="w-full overflow-hidden border border-gold-600/30 px-4 py-2 mb-6 sm:mb-10">
             <div class="flex items-center gap-3">
@@ -105,7 +105,7 @@ const solutions = [
             <span class="font-bold text-gold-600 block">Gastronomen.</span>
           </h1>
 
-          <p class="text-white/80 text-base leading-relaxed mb-6 max-w-md mx-auto lg:mx-0 font-light">
+          <p class="text-white/80 text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-light">
             Mehr Stammgäste, messbar mehr Umsatz. Deine Kunden
             tragen die Stempelkarte direkt im Handy –
             kein Papier, keine App, kein Aufwand für dich.
@@ -118,7 +118,7 @@ const solutions = [
             </span>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
             <a href="/koeln"
               class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
               Für mein Lokal starten
@@ -133,7 +133,7 @@ const solutions = [
           </div>
 
           <!-- Trust -->
-          <div class="flex flex-wrap gap-5 mt-6 sm:mt-10 justify-center lg:justify-start">
+          <div class="flex flex-wrap gap-5 mt-6 sm:mt-10 justify-center md:justify-start">
             {['🔒 DSGVO', '📱 Apple & Google Wallet', '⚡ Live in 24h', '✅ Kein Risiko'].map(t => (
               <span class="text-[10px] tracking-widest uppercase text-white/75">{t}</span>
             ))}
@@ -141,7 +141,7 @@ const solutions = [
         </div>
 
         <!-- Phone Mockup -->
-        <div class="flex justify-center lg:justify-end">
+        <div class="flex justify-center md:justify-end">
           <PhoneMockup client:load />
         </div>
       </div>
