@@ -46,14 +46,22 @@ export default function PhoneMockup() {
   return (
     <>
       <style>{`
-        @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
-          .phone-mockup-wrap { transform: scale(0.85); transform-origin: top center; }
+        .phone-mockup-wrap {
+          --phone-w: 260px;
+          --phone-h: 530px;
+        }
+        @media (min-width: 768px) {
+          .phone-mockup-wrap {
+            --phone-w: min(260px, 100%);
+            --phone-h: auto;
+            aspect-ratio: 260 / 580;
+          }
         }
       `}</style>
-      <div className="phone-mockup-wrap relative flex flex-col items-center gap-5">
+      <div className="phone-mockup-wrap relative flex flex-col items-center gap-3 w-full max-w-[260px]">
 
-      {/* Phone frame */}
-      <div className="relative w-[260px] h-[530px]">
+      {/* Phone frame – aspect ratio preserves proportions */}
+      <div className="relative w-full" style={{ aspectRatio: '260 / 530' }}>
 
         {/* Outer shell */}
         <div className="absolute inset-0 rounded-[44px] bg-[#E8530E] shadow-[0_0_0_2px_#FF6B2B,0_40px_80px_rgba(0,0,0,0.6)]" />
