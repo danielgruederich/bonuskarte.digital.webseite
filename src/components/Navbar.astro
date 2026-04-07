@@ -33,7 +33,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
       </a>
 
       <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden lg:flex items-center gap-5 lg:gap-8">
         <a href="/#wie-es-funktioniert" class="text-xs font-medium tracking-widest uppercase transition-colors"
           class:list={[dark ? 'text-white/50 hover:text-white' : 'text-black/50 hover:text-black']}>
           Wie es funktioniert
@@ -66,7 +66,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
       </nav>
 
       <!-- Mobile toggle -->
-      <button id="mobile-toggle" class="md:hidden p-2 transition-colors"
+      <button id="mobile-toggle" class="lg:hidden p-2 transition-colors"
         class:list={[dark ? 'text-white/60 hover:text-white' : 'text-black/60 hover:text-black']}
         aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden border-t border-white/10 py-6 flex flex-col gap-5 bg-black/95 backdrop-blur-md">
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 py-6 flex flex-col gap-5 bg-black/95 backdrop-blur-md">
       <a href="/#wie-es-funktioniert" class="text-xs font-medium tracking-widest uppercase text-white/70 hover:text-white transition-colors">
         Wie es funktioniert
       </a>
