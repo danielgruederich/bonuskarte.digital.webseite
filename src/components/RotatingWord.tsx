@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const words = ['Stempelkarte', 'Bonuskarte', 'Kundenkarte', 'Clubkarte', 'Communitykarte']
 
@@ -13,28 +13,20 @@ export default function RotatingWord() {
     return () => clearTimeout(timer)
   }, [wordIndex])
 
-  // Find the longest word to reserve stable height
-  const longest = words.reduce((a, b) => (a.length > b.length ? a : b), '')
-
   return (
-    <div className="relative w-full overflow-hidden text-gold-600 font-bold text-5xl sm:text-6xl tracking-tighter">
-      {/* Invisible longest word reserves stable height */}
-      <span className="invisible block" aria-hidden="true">{longest}</span>
-      {words.map((word, index) => (
+    <span className="inline-block relative font-bold text-gold-600">
+      <AnimatePresence mode="wait">
         <motion.span
-          key={index}
-          className="absolute top-0 left-0"
-          initial={index === 0 ? { opacity: 1, y: 0 } : { opacity: 0, y: '150%' }}
-          transition={{ type: 'spring', stiffness: 50 }}
-          animate={
-            wordIndex === index
-              ? { y: 0, opacity: 1 }
-              : { y: wordIndex > index ? '-150%' : '150%', opacity: 0 }
-          }
+          key={words[wordIndex]}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="inline-block"
         >
-          {word}
+          {words[wordIndex]}
         </motion.span>
-      ))}
-    </div>
+      </AnimatePresence>
+    </span>
   )
 }
