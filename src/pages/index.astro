@@ -59,13 +59,29 @@ const solutions = [
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="text-center lg:text-left">
-          <!-- Eyebrow -->
+          <!-- Eyebrow (random 3 on each load) -->
           <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-6 sm:mb-10">
             <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-            <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+            <span id="eyebrow-text" class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
               Für Cafés · Restaurants · Dönerläden
             </span>
           </div>
+          <script>
+            {`
+              const branches = [
+                'Cafés', 'Restaurants', 'Dönerläden', 'Pizzerien', 'Eiscafés',
+                'Bäckereien', 'Friseure', 'Barbershops', 'Nagelstudios', 'Kosmetikstudios',
+                'Fitnessstudios', 'Yoga-Studios', 'Tattoo-Studios', 'Blumenläden',
+                'Weinbars', 'Cocktailbars', 'Bubble-Tea-Shops', 'Sushi-Bars',
+                'Burger-Läden', 'Shisha-Lounges', 'Hundesalons', 'Massagestudios',
+                'Brauereien', 'Buchhandlungen', 'Kioske', 'Waschsalons',
+                'Fahrradwerkstätten', 'Autowaschanlagen', 'Imbisse', 'Boba-Shops'
+              ];
+              const shuffled = branches.sort(() => Math.random() - 0.5);
+              const picked = shuffled.slice(0, 3);
+              document.getElementById('eyebrow-text').textContent = 'Für ' + picked.join(' · ');
+            `}
+          </script>
 
           <h1 class="text-5xl sm:text-6xl tracking-tighter mb-5 sm:mb-8">
             <span class="font-extralight text-white block">Die digitale</span>
