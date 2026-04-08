@@ -52,6 +52,7 @@ $email     = trim($body['email']     ?? '');
 $phone     = trim($body['telefon']   ?? $body['phone']     ?? '');
 $kontakt   = trim($body['kontakt']   ?? ''); // LeadFormDoener combined field
 $niche     = strtolower(trim($body['niche'] ?? 'cafe'));
+$utm       = $body['utm'] ?? [];
 
 // Normalize display names to template keys
 $nicheAliases = [
@@ -170,9 +171,16 @@ $card = $cardRes['body']['data'];
 
 // ── Step 3: Create lead in Salesflare (fire & forget — never blocks response) ─
 try {
-    $tags          = array_values(array_filter([$niche, 'koeln']));
+    // Extract city/veedel/niche from utm_campaign (e.g. "koeln-nippes-cafes")
+    $utmCampaign   = $utm['utm_campaign'] ?? '';
+    $utmSource     = $utm['utm_source'] ?? 'bonuskarte.digital';
+    $pathParts     = explode('-', $utmCampaign);
+    $leadCity      = $pathParts[0] ?? 'unbekannt';
+    $leadVeedel    = $pathParts[1] ?? '';
+    $leadPage      = str_replace('-', '/', $utmCampaign); // koeln/nippes/cafes
+    $tags          = array_values(array_filter([$niche, $leadCity, $utmCampaign]));
     $instagramUrl  = $instagram ? 'https://www.instagram.com/' . $instagram : null;
-    $nicheLabels   = ['cafe' => 'Café', 'doener' => 'Döner', 'pizza' => 'Pizza', 'restaurant' => 'Restaurant'];
+    $nicheLabels   = ['cafe' => 'Café', 'doener' => 'Döner', 'pizza' => 'Pizza', 'restaurant' => 'Restaurant', 'eiscafe' => 'Eiscafé', 'baeckerei' => 'Bäckerei', 'friseur' => 'Friseur', 'fitnessstudio' => 'Fitnessstudio', 'yoga' => 'Yoga-Studio', 'blumenladen' => 'Blumenladen'];
     $nicheLabel    = $nicheLabels[$niche] ?? $niche;
 
     // ── Account (the business) ──────────────────────────────────────────────
@@ -212,7 +220,7 @@ try {
     // ── Opportunity ─────────────────────────────────────────────────────────
     if ($accountId) {
         salesflare('POST', '/opportunities', [
-            'name'    => $nicheLabel . ' · @' . ($instagram ?: $firstName) . ' · Köln',
+            'name'    => $nicheLabel . ' · @' . ($instagram ?: $firstName) . ' · /' . $leadPage,
             'account' => $accountId,
             'tags'    => $tags,
         ]);
@@ -221,10 +229,34 @@ try {
     // Salesflare failure never blocks the main response
 }
 
+// ── UTM helper: append UTM params to a URL ───────────────────────────────────
+function appendUtm(string $url, array $utm): string
+{
+    if (!$url || !$utm) return $url;
+    $allowed = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+    $params = array_intersect_key($utm, array_flip($allowed));
+    if (!$params) return $url;
+    $sep = str_contains($url, '?') ? '&' : '?';
+    return $url . $sep . http_build_query($params);
+}
+
+// Append UTM params to all install links
+$installLink = isset($card['installLink']) ? appendUtm($card['installLink'], $utm) : null;
+$shareLink   = isset($card['shareLink'])   ? appendUtm($card['shareLink'], $utm)   : null;
+
+$directInstallLink = $card['directInstallLink'] ?? null;
+if (is_array($directInstallLink)) {
+    foreach ($directInstallLink as $key => $link) {
+        if (is_string($link)) {
+            $directInstallLink[$key] = appendUtm($link, $utm);
+        }
+    }
+}
+
 // ── Respond ───────────────────────────────────────────────────────────────────
 echo json_encode([
-    'success'          => true,
-    'installLink'      => $card['installLink']      ?? null,
-    'shareLink'        => $card['shareLink']        ?? null,
-    'directInstallLink' => $card['directInstallLink'] ?? null,
+    'success'           => true,
+    'installLink'       => $installLink,
+    'shareLink'         => $shareLink,
+    'directInstallLink' => $directInstallLink,
 ]);

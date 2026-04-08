@@ -33,6 +33,20 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
     setInstagram(e.target.value.replace(/^@+/, ''))
   }
 
+  function getUtmParams(): Record<string, string> {
+    const params = new URLSearchParams(window.location.search)
+    const path = window.location.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'homepage'
+    const utm: Record<string, string> = {
+      utm_source: params.get('utm_source') || 'bonuskarte.digital',
+      utm_medium: params.get('utm_medium') || 'landing-page',
+      utm_campaign: params.get('utm_campaign') || path,
+    }
+    if (params.get('utm_content')) utm.utm_content = params.get('utm_content')!
+    if (params.get('utm_term')) utm.utm_term = params.get('utm_term')!
+    if (params.get('fbclid')) utm.fbclid = params.get('fbclid')!
+    return utm
+  }
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setState('submitting')
@@ -50,6 +64,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
           instagram: cleanInstagram,
           telefon:   data.telefon,
           niche:     niche.toLowerCase(),
+          utm:       getUtmParams(),
         }),
       })
       const json = await res.json()
