@@ -28,10 +28,13 @@ jobs:
         run: npm run build
 
       - name: Deploy via FTP to Starthost
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /bonuskarte/
+        run: |
+          sudo apt-get install -y lftp
+          lftp -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" -e "
+            set ftp:ssl-allow no;
+            set net:timeout 30;
+            set net:max-retries 5;
+            set net:reconnect-interval-base 5;
+            mirror --reverse --delete --parallel=4 --verbose ./dist/ /bonuskarte/;
+            quit
+          "
