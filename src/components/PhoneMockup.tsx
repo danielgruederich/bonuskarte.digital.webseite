@@ -1,5 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const screens = [
   '/screens/screen-1.webp',
@@ -35,12 +34,29 @@ const labels = [
 
 export default function PhoneMockup() {
   const [current, setCurrent] = useState(0)
+  const [labelVisible, setLabelVisible] = useState(true)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  const goTo = (next: number) => {
+    if (next === current) return
+    setLabelVisible(false)
+    setTimeout(() => {
+      setCurrent(next)
+      setLabelVisible(true)
+    }, 150)
+  }
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(i => (i + 1) % screens.length)
+    timerRef.current = setInterval(() => {
+      setLabelVisible(false)
+      setTimeout(() => {
+        setCurrent(prev => (prev + 1) % screens.length)
+        setLabelVisible(true)
+      }, 150)
     }, 3000)
-    return () => clearInterval(timer)
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current)
+    }
   }, [])
 
   return (
@@ -56,6 +72,17 @@ export default function PhoneMockup() {
             --phone-h: auto;
             aspect-ratio: 260 / 580;
           }
+        }
+        .phone-label {
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .phone-label-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .phone-label-hidden {
+          opacity: 0;
+          transform: translateY(-4px);
         }
       `}</style>
       <div className="phone-mockup-wrap relative flex flex-col items-center gap-3 w-full max-w-[260px]">
@@ -80,18 +107,15 @@ export default function PhoneMockup() {
 
           {/* Card image — starts below Dynamic Island */}
           <div className="absolute left-0 right-0 bottom-0" style={{ top: '48px' }}>
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={current}
-                src={screens[current]}
-                alt={labels[current]}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="w-full h-full object-cover object-top"
-              />
-            </AnimatePresence>
+            <img
+              src={screens[current]}
+              alt={labels[current]}
+              loading="lazy"
+              decoding="async"
+              width={254}
+              height={482}
+              className="w-full h-full object-cover object-top transition-opacity duration-500 ease-in-out"
+            />
           </div>
 
           {/* Bottom fade — hides page dots + grey area */}
@@ -110,7 +134,7 @@ export default function PhoneMockup() {
         {screens.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
+            onClick={() => goTo(i)}
             className={`transition-all duration-300 rounded-full ${
               i === current
                 ? 'w-5 h-1.5 bg-yellow-600'
@@ -122,18 +146,13 @@ export default function PhoneMockup() {
       </div>
 
       {/* Label */}
-      <AnimatePresence mode="wait">
-        <motion.p
-          key={current}
-          initial={{ opacity: 0, y: 4 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -4 }}
-          transition={{ duration: 0.3 }}
-          className="text-[10px] tracking-[0.25em] uppercase text-white"
-        >
-          {labels[current]}
-        </motion.p>
-      </AnimatePresence>
+      <p
+        className={`text-[10px] tracking-[0.25em] uppercase text-white phone-label ${
+          labelVisible ? 'phone-label-visible' : 'phone-label-hidden'
+        }`}
+      >
+        {labels[current]}
+      </p>
 
     </div>
     </>

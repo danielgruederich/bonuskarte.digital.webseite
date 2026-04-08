@@ -19,7 +19,7 @@ type State = 'idle' | 'submitting' | 'success' | 'error'
 const inputClass =
   'w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-white/40 text-sm tracking-wide focus:outline-none focus:border-gold-600 focus:bg-white/8 transition-colors'
 
-const labelClass = 'block text-[10px] font-medium tracking-[0.2em] uppercase text-white/60 mb-2'
+const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-white/60 mb-2'
 
 export default function LeadForm({ niche, city, whatsappUrl }: Props) {
   const [state, setState] = useState<State>('idle')
@@ -89,7 +89,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
         <h3 className="text-xl font-semibold tracking-wide text-white mb-3">
           {vorname ? `Deine Demo-Karte ist fertig, ${vorname}!` : 'Deine Demo-Karte ist fertig!'}
         </h3>
-        <p className="text-white/50 text-sm leading-relaxed max-w-sm mx-auto mb-8">
+        <p className="text-white text-sm leading-relaxed max-w-sm mx-auto mb-8">
           Lade sie jetzt ins Wallet — kein Download, keine App nötig.
         </p>
 
@@ -126,7 +126,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
         )}
 
         <div className="border-t border-white/5 pt-7">
-          <p className="text-white/50 text-sm mb-4">
+          <p className="text-white text-sm mb-4">
             Nächster Schritt: Ich melde mich persönlich bei dir.
           </p>
           {whatsappUrl && (
@@ -157,7 +157,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <p className="text-[10px] tracking-[0.2em] uppercase text-white/55 mb-1">3 Felder · 30 Sekunden</p>
+      <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">3 Felder · 30 Sekunden</p>
       <div>
         <label htmlFor="instagram" className={labelClass}>Instagram-Kanal *</label>
         <div className="relative">
@@ -176,7 +176,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
             className={`${inputClass} pl-8`}
           />
         </div>
-        <p className="mt-2 text-[10px] tracking-wide text-white/55">
+        <p className="mt-2 text-xs tracking-wide text-white/55">
           Wir erstellen daraus deine persönliche Demo-Karte.
         </p>
       </div>
@@ -220,7 +220,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
         )}
       </button>
 
-      <p className="text-[10px] tracking-widest uppercase text-center text-white/50">
+      <p className="text-xs tracking-widest uppercase text-center text-white">
         Kein Risiko · Keine Kreditkarte · 90 Tage kostenlos
       </p>
     </form>
