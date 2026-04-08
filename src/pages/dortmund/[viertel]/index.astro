@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import Navbar from '../../../components/Navbar.astro'
+import Footer from '../../../components/Footer.astro'
+import { stadtteile, fallbackStadtteil, getStadtteilBySlug } from '../../../data/dortmund'
+
+export function getStaticPaths() {
+  return stadtteile.map(s => ({ params: { viertel: s.slug } }))
+}
+
+const { viertel: slug } = Astro.params
+const data = getStadtteilBySlug(slug) ?? fallbackStadtteil
+
+const niches = [
+  {
+    key: 'cafe',
+    label: 'Café',
+    emoji: '☕',
+    desc: 'Kaffee, Kuchen, Stammgäste',
+    href: `/dortmund/${data.slug}/cafes`,
+    fomo: data.fomoCount.cafe,
+  },
+  {
+    key: 'doener',
+    label: 'Döner',
+    emoji: '🥙',
+    desc: 'Imbiss & Dönerläden',
+    href: `/dortmund/${data.slug}/doener`,
+    fomo: data.fomoCount.doener,
+  },
+  {
+    key: 'restaurant',
+    label: 'Restaurant & Bistro',
+    emoji: '🍽️',
+    desc: 'Restaurants & Bistros',
+    href: `/dortmund/${data.slug}/restaurant`,
+    fomo: data.fomoCount.restaurant,
+  },
+  {
+    key: 'pizza',
+    label: 'Pizza',
+    emoji: '🍕',
+    desc: 'Pizzerien & Lieferdienste',
+    href: `/dortmund/${data.slug}/pizza`,
+    fomo: data.fomoCount.pizza,
+  },
+  {
+    key: 'eiscafe',
+    label: 'Eiscafé',
+    emoji: '🍦',
+    desc: 'Eiscafés & Eisdielen',
+    href: `/dortmund/${data.slug}/eiscafe`,
+    fomo: data.fomoCount.eiscafe,
+  },
+  {
+    key: 'baeckerei',
+    label: 'Bäckerei',
+    emoji: '🥐',
+    desc: 'Bäckereien & Konditoreien',
+    href: `/dortmund/${data.slug}/baeckerei`,
+    fomo: data.fomoCount.baeckerei,
+  },
+  {
+    key: 'friseur',
+    label: 'Friseur',
+    emoji: '💇',
+    desc: 'Friseure & Barbershops',
+    href: `/dortmund/${data.slug}/friseur`,
+    fomo: data.fomoCount.friseur,
+  },
+  {
+    key: 'fitnessstudio',
+    label: 'Fitnessstudio',
+    emoji: '💪',
+    desc: 'Fitnessstudios & Gyms',
+    href: `/dortmund/${data.slug}/fitnessstudio`,
+    fomo: data.fomoCount.fitnessstudio,
+  },
+  {
+    key: 'yoga',
+    label: 'Yoga-Studio',
+    emoji: '🧘',
+    desc: 'Yoga- & Pilates-Studios',
+    href: `/dortmund/${data.slug}/yoga`,
+    fomo: data.fomoCount.yoga,
+  },
+  {
+    key: 'blumenladen',
+    label: 'Blumenladen',
+    emoji: '💐',
+    desc: 'Blumenläden & Floristik',
+    href: `/dortmund/${data.slug}/blumenladen`,
+    fomo: data.fomoCount.blumenladen,
+  },
+]
+---
+
+<BaseLayout
+  title={`Digitale Kundenkarte für ${data.name} – bonuskarte.digital`}
+  description={`Digitale Kundenbindung für lokale Läden in ${data.name}. Wähle deine Branche und starte 90 Tage kostenlos.`}
+>
+  <Navbar ctaHref="#branchen" ctaLabel="Jetzt starten" />
+
+  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+
+    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
+
+      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
+        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+        <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+          Dortmund · {data.name}
+        </span>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
+        <span class="font-extralight text-white block mb-2">Digitale Kundenbindung</span>
+        <span class="font-bold text-gold-600 block">für {data.name}.</span>
+      </h1>
+
+      <p class="text-white/40 text-base font-light leading-relaxed mb-14 max-w-lg">
+        Wähle deine Branche und sieh, wie andere Läden in {data.name} bereits
+        mehr Stammkunden gewinnen.
+      </p>
+
+      <div id="branchen" class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {niches.map(n => (
+          <a
+            href={n.href}
+            class="group relative border border-white/5 hover:border-gold-600 bg-white/2 hover:bg-gold-600/5 p-6 text-center transition-all hover:-translate-y-1"
+          >
+            {n.fomo > 0 && (
+              <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-gold-600 text-black text-[9px] font-black tracking-wider uppercase px-2.5 py-1 whitespace-nowrap">
+                {n.fomo} bereits dabei
+              </div>
+            )}
+
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{n.emoji}</div>
+            <div class="text-white font-bold text-sm tracking-wide mb-1">{n.label}</div>
+            <div class="text-white/55 text-[11px]">{n.desc}</div>
+
+            <div class="mt-4 flex items-center justify-center gap-1 text-gold-600 text-[10px] font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+              Starten
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap gap-6 mt-12">
+        {['✅ 90 Tage kostenlos', '🔒 DSGVO', '⚡ In 24h live', '📱 Apple & Google Wallet'].map(t => (
+          <span class="text-[10px] tracking-widest uppercase text-white/50">{t}</span>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

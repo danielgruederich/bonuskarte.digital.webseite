@@ -17,10 +17,19 @@ const howItWorks = [
 const cities = [
   { label: 'Köln',        href: '/koeln',        emoji: '🏙️', available: true  },
   { label: 'Berlin',      href: '/berlin',       emoji: '🐻', available: true  },
+  { label: 'Hamburg',     href: '/hamburg',      emoji: '⚓', available: true  },
+  { label: 'München',     href: '/muenchen',     emoji: '🏔️', available: true  },
+  { label: 'Frankfurt',   href: '/frankfurt',    emoji: '🏦', available: true  },
+  { label: 'Stuttgart',   href: '/stuttgart',    emoji: '🚗', available: true  },
   { label: 'Düsseldorf',  href: '/duesseldorf',  emoji: '🌉', available: true  },
+  { label: 'Dortmund',    href: '/dortmund',     emoji: '⚽', available: true  },
+  { label: 'Essen',       href: '/essen',        emoji: '🏭', available: true  },
+  { label: 'Leipzig',     href: '/leipzig',      emoji: '🎵', available: true  },
+  { label: 'Dresden',     href: '/dresden',      emoji: '🏛️', available: true  },
+  { label: 'Hannover',    href: '/hannover',     emoji: '🌿', available: true  },
+  { label: 'Nürnberg',    href: '/nuernberg',    emoji: '🏰', available: true  },
   { label: 'Bonn',        href: '/bonn',         emoji: '🎓', available: true  },
   { label: 'Hürth',       href: '/huerth',       emoji: '📍', available: true  },
-  { label: 'Weitere Städte', href: '#',          emoji: '＋', available: false },
 ]
 
 const problems = [
@@ -223,7 +232,7 @@ const solutions = [
         {[
           { value: '35+', label: 'Betriebe aktiv' },
           { value: '2.400+', label: 'Karten im Umlauf' },
-          { value: '5', label: 'Städte live' },
+          { value: '15', label: 'Städte live' },
           { value: '24h', label: 'Setup-Zeit' },
         ].map(stat => (
           <div class="border border-white/5 p-6 text-center">
