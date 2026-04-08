@@ -1,38 +1,34 @@
 import { useEffect, useState } from 'react'
-
-const words = ['Stempelkarte', 'Bonuskarte', 'Kundenkarte', 'Clubkarte', 'Communitykarte']
+import { cardBranchPairs } from '../data/card-branch-pairs'
 
 export default function RotatingWord() {
-  const [wordIndex, setWordIndex] = useState(0)
+  const [index, setIndex] = useState(0)
   const [animState, setAnimState] = useState<'enter' | 'visible' | 'exit'>('visible')
 
   useEffect(() => {
     if (animState === 'visible') {
-      const timer = setTimeout(() => {
-        setAnimState('exit')
-      }, 2000)
+      const timer = setTimeout(() => setAnimState('exit'), 2000)
       return () => clearTimeout(timer)
     }
 
     if (animState === 'exit') {
       const timer = setTimeout(() => {
-        setWordIndex((i) => (i + 1) % words.length)
+        setIndex((i) => (i + 1) % cardBranchPairs.length)
         setAnimState('enter')
       }, 300)
       return () => clearTimeout(timer)
     }
 
     if (animState === 'enter') {
-      // Force a reflow so the enter keyframe starts from the initial state
-      const raf = requestAnimationFrame(() => {
-        setAnimState('visible')
-      })
+      const raf = requestAnimationFrame(() => setAnimState('visible'))
       return () => cancelAnimationFrame(raf)
     }
   }, [animState])
 
+  const cls = `inline-block rotating-word-${animState}`
+
   return (
-    <span className="inline-block relative font-bold text-gold-600">
+    <>
       <style>{`
         .rotating-word-enter {
           opacity: 0;
@@ -49,11 +45,13 @@ export default function RotatingWord() {
           transition: opacity 0.3s ease, transform 0.3s ease;
         }
       `}</style>
-      <span
-        className={`inline-block rotating-word-${animState}`}
-      >
-        {words[wordIndex]}
+      <span className="block">
+        <span className={`${cls} font-bold text-gold-600`}>{cardBranchPairs[index].card}</span>
       </span>
-    </span>
+      <span className="font-bold text-white block">für Kölner</span>
+      <span className="block">
+        <span className={`${cls} font-bold text-gold-600`}>{cardBranchPairs[index].branch}</span>
+      </span>
+    </>
   )
 }

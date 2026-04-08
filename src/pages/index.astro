@@ -5,11 +5,12 @@ import Footer from '../components/Footer.astro'
 import PhoneMockup from '../components/PhoneMockup.tsx'
 import RotatingWord from '../components/RotatingWord.tsx'
 import Icon from '../components/icons/TrustIcons.astro'
+import { cardBranchPairs } from '../data/card-branch-pairs'
 
 const howItWorks = [
-  { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine Stempelkarte mit deinem Branding in unter 24 Stunden.' },
-  { step: '02', title: 'Gäste einladen', desc: 'Gäste scannen einmal einen QR-Code und speichern die Karte im Wallet.' },
-  { step: '03', title: 'Stempel vergeben', desc: 'Ein Klick – der Stempel landet sofort auf dem Handy deines Gastes.' },
+  { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine digitale Karte mit deinem Branding in unter 24 Stunden.' },
+  { step: '02', title: 'Kunden einladen', desc: 'Kunden scannen einmal einen QR-Code und speichern die Karte im Wallet.' },
+  { step: '03', title: 'Punkte sammeln', desc: 'Ein Klick – der Punkt landet sofort auf dem Handy deines Kunden.' },
   { step: '04', title: 'Kunden binden', desc: 'Push-Nachrichten, Statistiken, automatische Belohnungen. Alles inklusive.' },
 ]
 
@@ -38,15 +39,15 @@ const solutions = [
 ---
 
 <BaseLayout
-  title="Digitale Stempelkarte für Gastronomen in Köln – bonuskarte.digital"
-  description="Mehr Stammkunden mit der digitalen Stempelkarte für Cafés, Restaurants & Dönerläden in Köln. Apple Wallet & Google Wallet. Kein App-Download. 90 Tage kostenlos testen."
+  title="Digitale Kundenkarte für dein Geschäft – bonuskarte.digital"
+  description="Stempelkarten, Punktekarten, Mitgliedskarten & Geschenkkarten direkt in Apple & Google Wallet. Für Cafés, Friseure, Fitnessstudios & mehr. 90 Tage kostenlos testen."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "bonuskarte.digital",
     "url": "https://bonuskarte.digital",
-    "description": "Digitale Stempelkarten für Apple Wallet & Google Wallet. Für Cafés, Restaurants, Dönerläden und Pizzerien in Deutschland.",
+    "description": "Digitale Kundenkarten für Apple Wallet & Google Wallet. Stempelkarten, Punktekarten, Mitgliedskarten & mehr für lokale Betriebe in Deutschland.",
     "inLanguage": "de-DE"
   })} />
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
@@ -60,28 +61,19 @@ const solutions = [
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 md:pt-24 pb-8 md:pb-12 w-full">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-stretch">
         <div class="text-center md:text-left">
-          <!-- Eyebrow (fills full width with random branches) -->
+          <!-- Eyebrow (fills full width with branches from card-branch-pairs) -->
           <div id="eyebrow-bar" class="w-full overflow-hidden border border-gold-600/30 px-4 py-2 mb-6 sm:mb-10">
             <div class="flex items-center gap-3">
               <span class="w-1 h-1 bg-gold-600 animate-pulse-slow flex-shrink-0"></span>
               <span id="eyebrow-text" class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase whitespace-nowrap overflow-hidden">
-                Für Cafés · Restaurants · Dönerläden · Pizzerien · Eiscafés
+                {`Für ${cardBranchPairs.map(p => p.branch).join(' · ')}`}
               </span>
             </div>
           </div>
-          <script is:inline>
-              const branches = [
-                'Cafés', 'Restaurants', 'Dönerläden', 'Pizzerien', 'Eiscafés',
-                'Bäckereien', 'Friseure', 'Barbershops', 'Nagelstudios', 'Kosmetikstudios',
-                'Fitnessstudios', 'Yoga-Studios', 'Tattoo-Studios', 'Blumenläden',
-                'Weinbars', 'Cocktailbars', 'Bubble-Tea-Shops', 'Sushi-Bars',
-                'Burger-Läden', 'Shisha-Lounges', 'Hundesalons', 'Massagestudios',
-                'Brauereien', 'Buchhandlungen', 'Kioske', 'Waschsalons',
-                'Fahrradwerkstätten', 'Autowaschanlagen', 'Imbisse', 'Boba-Shops'
-              ];
+          <script is:inline define:vars={{ eyebrowBranches: cardBranchPairs.map(p => p.branch) }}>
               var el = document.getElementById('eyebrow-text');
               var bar = document.getElementById('eyebrow-bar');
-              var shuffled = branches.sort(function() { return Math.random() - 0.5; });
+              var shuffled = eyebrowBranches.sort(function() { return Math.random() - 0.5; });
               var sep = ' · ';
               var text = 'Für ' + shuffled[0];
               el.textContent = text;
@@ -99,14 +91,12 @@ const solutions = [
 
           <h1 class="text-5xl sm:text-6xl tracking-tighter mb-5 sm:mb-8">
             <span class="font-extralight text-white block">Die digitale</span>
-            <span class="block"><RotatingWord client:idle /></span>
-            <span class="font-bold text-white block">für Kölner</span>
-            <span class="font-bold text-gold-600 block">Gastronomen.</span>
+            <RotatingWord client:idle />
           </h1>
 
           <p class="text-white text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-light">
-            Mehr Stammgäste, messbar mehr Umsatz. Deine Kunden
-            tragen die Stempelkarte direkt im Handy –
+            Mehr Stammkunden, messbar mehr Umsatz. Deine Kunden
+            tragen deine Karte direkt im Handy –
             kein Papier, keine App, kein Aufwand für dich.
           </p>
 
