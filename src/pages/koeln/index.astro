@@ -6,26 +6,31 @@ import { veedel } from '../../data/veedel'
 import Icon from '../../components/icons/TrustIcons.astro'
 
 const niches = [
-  { label: 'Café',              emoji: '☕',  slug: 'cafes',      desc: 'Kaffee, Kuchen & Stammgäste' },
-  { label: 'Döner',             emoji: '🥙',  slug: 'doener',     desc: 'Imbiss & Dönerläden' },
-  { label: 'Restaurant',        emoji: '🍽️', slug: 'restaurant', desc: 'Restaurants & Bistros' },
-  { label: 'Pizza',             emoji: '🍕',  slug: 'pizza',      desc: 'Pizzerien & Lieferdienste' },
-  { label: 'Eiscafé',           emoji: '🍦',  slug: 'eiscafe',    desc: 'Eiscafés & Frozen Yogurt' },
+  { label: 'Café',              emoji: '☕',  slug: 'cafes',          desc: 'Kaffee, Kuchen & Stammgäste' },
+  { label: 'Döner',             emoji: '🥙',  slug: 'doener',         desc: 'Imbiss & Dönerläden' },
+  { label: 'Restaurant',        emoji: '🍽️', slug: 'restaurant',     desc: 'Restaurants & Bistros' },
+  { label: 'Pizza',             emoji: '🍕',  slug: 'pizza',          desc: 'Pizzerien & Lieferdienste' },
+  { label: 'Eiscafé',           emoji: '🍦',  slug: 'eiscafe',        desc: 'Eiscafés & Eisdielen' },
+  { label: 'Bäckerei',          emoji: '🥐',  slug: 'baeckerei',      desc: 'Bäckereien & Konditoreien' },
+  { label: 'Friseur',           emoji: '💇',  slug: 'friseur',        desc: 'Friseure & Barbershops' },
+  { label: 'Fitnessstudio',     emoji: '💪',  slug: 'fitnessstudio',  desc: 'Fitnessstudios & Gyms' },
+  { label: 'Yoga-Studio',       emoji: '🧘',  slug: 'yoga',           desc: 'Yoga- & Pilates-Studios' },
+  { label: 'Blumenladen',       emoji: '💐',  slug: 'blumenladen',    desc: 'Blumenläden & Floristik' },
 ]
 
 const totalBetriebe = veedel.reduce((acc, v) =>
-  acc + v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza + v.fomoCount.eiscafe, 0)
+  acc + v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza + v.fomoCount.eiscafe + v.fomoCount.baeckerei + v.fomoCount.friseur + v.fomoCount.fitnessstudio + v.fomoCount.yoga + v.fomoCount.blumenladen, 0)
 ---
 
 <BaseLayout
-  title="Digitale Stempelkarte Köln – Apple & Google Wallet | bonuskarte.digital"
-  description="Digitale Stempelkarten für Cafés, Dönerläden, Restaurants und Pizzerien in allen 15 Kölner Veedeln. Apple Wallet & Google Wallet. 90 Tage kostenlos. Kein App-Download."
+  title="Digitale Kundenkarte Köln – Apple & Google Wallet | bonuskarte.digital"
+  description="Digitale Kundenkarten für Cafés, Friseure, Fitnessstudios, Bäckereien & mehr in Köln. Apple & Google Wallet. 90 Tage kostenlos. Kein App-Download."
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Digitale Stempelkarte Köln",
-    "description": "Digitale Kundenkarten für Apple Wallet & Google Wallet für Gastronomiebetriebe in Köln. Für alle Veedel: Innenstadt, Ehrenfeld, Nippes, Sülz und mehr.",
+    "name": "Digitale Kundenkarte Köln",
+    "description": "Digitale Kundenkarten für Apple Wallet & Google Wallet für lokale Betriebe in Köln. Für alle Veedel: Innenstadt, Ehrenfeld, Nippes, Sülz und mehr.",
     "provider": {
       "@type": "Organization",
       "name": "bonuskarte.digital",
@@ -63,12 +68,12 @@ const totalBetriebe = veedel.reduce((acc, v) =>
 
       <!-- H1 -->
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
-        <span class="font-extralight text-white block mb-2">Digitale Stempelkarte</span>
+        <span class="font-extralight text-white block mb-2">Digitale Kundenkarte</span>
         <span class="font-bold text-gold-600 block">für Köln.</span>
       </h1>
 
       <p class="text-white/55 text-base sm:text-lg font-light leading-relaxed mb-8 max-w-xl">
-        Mehr Stammkunden für Cafés, Dönerläden, Restaurants und Pizzerien in Köln –
+        Mehr Stammkunden für lokale Betriebe in Köln –
         direkt in Apple Wallet & Google Wallet. Kein App-Download. Kein Papier.
       </p>
 
@@ -100,7 +105,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
 
       <!-- Trust row -->
       <div class="flex flex-wrap gap-6">
-        {['✅ 90 Tage kostenlos', '🔒 DSGVO', '⚡ In 24h live', '📱 Apple & Google Wallet', '🗺️ Alle 15 Kölner Veedel'].map(t => (
+        {['✅ 90 Tage kostenlos', '🔒 DSGVO', '⚡ In 24h live', '📱 Apple & Google Wallet'].map(t => (
           <span class="text-[10px] tracking-widest uppercase text-white/55">{t}</span>
         ))}
       </div>
@@ -121,7 +126,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
-          { num: '15', label: 'Kölner Veedel', desc: 'Von der Innenstadt bis Porz – jeder Kiez hat seine Stammcafé-Kultur.' },
+          { num: '15', label: 'Kölner Veedel', desc: 'Von der Innenstadt bis Porz – jeder Kiez hat seine Stammkunden-Kultur.' },
           { num: '90', label: 'Tage kostenlos', desc: 'Ohne Kreditkarte starten. Ohne Risiko testen. Ohne App-Download für Kunden.' },
           { num: '1×', label: 'QR-Code scannen', desc: 'Gast scannt einmal – die Karte liegt für immer in Apple oder Google Wallet.' },
         ].map(stat => (
@@ -151,7 +156,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {veedel.map(v => {
-          const total = v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza
+          const total = v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza + v.fomoCount.eiscafe + v.fomoCount.baeckerei + v.fomoCount.friseur + v.fomoCount.fitnessstudio + v.fomoCount.yoga + v.fomoCount.blumenladen
           return (
             <a
               href={`/koeln/${v.slug}`}
@@ -186,10 +191,10 @@ const totalBetriebe = veedel.reduce((acc, v) =>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {[
-          { step: '01', title: 'Branche wählen', desc: 'Café, Döner, Restaurant oder Pizza – wähle deine Nische.' },
-          { step: '02', title: 'Karte einrichten', desc: 'Wir bauen deine Stempelkarte mit deinem Namen in unter 24h.' },
-          { step: '03', title: 'QR-Code aufhängen', desc: 'Gäste scannen einmal und speichern die Karte im Wallet.' },
-          { step: '04', title: 'Stammkunden gewinnen', desc: 'Push-Benachrichtigungen bringen Gäste aktiv zurück.' },
+          { step: '01', title: 'Branche wählen', desc: 'Café, Friseur, Fitnessstudio, Bäckerei – wähle deine Branche.' },
+          { step: '02', title: 'Karte einrichten', desc: 'Wir bauen deine digitale Karte mit deinem Branding in unter 24h.' },
+          { step: '03', title: 'QR-Code aufhängen', desc: 'Kunden scannen einmal und speichern die Karte im Wallet.' },
+          { step: '04', title: 'Stammkunden gewinnen', desc: 'Push-Nachrichten bringen Kunden aktiv zurück.' },
         ].map(item => (
           <div class="group border border-white/5 hover:border-gold-600/30 p-7 transition-all">
             <div class="text-4xl font-black text-gold-400 group-hover:text-gold-300 transition-colors leading-none mb-5">{item.step}</div>
@@ -205,7 +210,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
   <section class="py-28 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
-      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-6">Für Kölner Gastronomen</p>
+      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-6">Für Kölner Betriebe</p>
       <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">Bereit für mehr</h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-8">Stammkunden in Köln?</h2>
       <p class="text-white/55 text-sm tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
