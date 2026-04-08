@@ -7,6 +7,13 @@ import LeadForm from '../../../components/LeadForm.tsx'
 import LeadFormDoener from '../../../components/LeadFormDoener.tsx'
 import { stadtteile, getStadtteilBySlug, fallbackStadtteil } from '../../../data/duesseldorf'
 import { niches, getNicheBySlug } from '../../../data/niches'
+import Icon from '../../../components/icons/TrustIcons.astro'
+
+const emojiToIcon: Record<string, string> = {
+  '📱': 'smartphone', '🔔': 'bell', '📊': 'chart', '🔥': 'flame',
+  '📣': 'megaphone', '🍕': 'pizza', '🍦': 'ice-cream', '🤝': 'handshake',
+  '⚡': 'zap', '🔒': 'shield',
+}
 
 export function getStaticPaths() {
   return stadtteile.flatMap(s =>
@@ -38,11 +45,11 @@ const showFomo  = fomoCount > 0
     <div class="absolute inset-0 bg-grid-white"></div>
     <div class="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
 
-    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-28 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 pb-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center w-full">
       <div>
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
+        <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-6">
           <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-          <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+          <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">
             Düsseldorf · {stadtteilData.name}
           </span>
         </div>
@@ -54,17 +61,17 @@ const showFomo  = fomoCount > 0
 
         {showFomo && (
           <div class="flex items-center gap-3 border border-gold-600/20 bg-gold-600/5 px-4 py-2.5 mb-6">
-            <span class="text-gold-600 text-sm">✦</span>
-            <span class="text-gold-500/80 text-xs tracking-[0.1em] font-light">{r(nicheData.heroCopy.fomoText)}</span>
+            <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
+            <span class="text-gold-500 text-xs tracking-[0.1em] font-light">{r(nicheData.heroCopy.fomoText)}</span>
           </div>
         )}
 
-        <p class="text-white/50 text-base leading-relaxed mb-6 max-w-md font-light">
+        <p class="text-white text-base leading-relaxed mb-6 max-w-md font-light">
           {nicheData.heroCopy.bodyText}
         </p>
 
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-10">
-          <span class="text-gold-600 text-sm">✦</span>
+        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-6">
+          <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
           <span class="text-gold-500 text-xs tracking-[0.15em] font-light">
             90 TAGE KOMPLETT KOSTENLOS — KEIN KNEBELVERTRAG
           </span>
@@ -72,7 +79,7 @@ const showFomo  = fomoCount > 0
 
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="#demo"
-            class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
+            class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all">
             {nicheData.heroCopy.ctaLabel}
             <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -81,9 +88,18 @@ const showFomo  = fomoCount > 0
         </div>
 
         <div class="flex flex-wrap gap-5 mt-10">
-          {['🔒 DSGVO', '📱 Apple & Google Wallet', '⚡ Live in 24h', '🤝 Kein Abo'].map(t => (
-            <span class="text-[10px] tracking-widest uppercase text-white/50">{t}</span>
-          ))}
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="shield" class="w-4 h-4 text-gold-600" /> DSGVO
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="wallet" class="w-4 h-4 text-gold-600" /> Apple & Google Wallet
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="zap" class="w-4 h-4 text-gold-600" /> Live in 24h
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="check-circle" class="w-4 h-4 text-gold-600" /> Kein Abo
+          </span>
         </div>
       </div>
 
@@ -97,31 +113,42 @@ const showFomo  = fomoCount > 0
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
   </section>
 
-  <section class="py-24 px-5 sm:px-8 bg-black">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-[10px] tracking-[0.4em] uppercase text-white/50">Der Vorteil</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-white">Der Vorteil</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {nicheData.arguments.map(a => (
           <div class="group border border-white/5 hover:border-gold-600/30 p-8 transition-all">
-            <div class="text-4xl mb-5 group-hover:scale-110 transition-transform inline-block">{a.icon}</div>
-            <h3 class="font-bold text-white text-base mb-3">{a.title}</h3>
-            <p class="text-white/40 text-sm leading-relaxed font-light">{a.desc}</p>
+            <div class="mb-5 group-hover:scale-110 transition-transform inline-block text-gold-600">
+              {emojiToIcon[a.icon] ? (
+                <Icon name={emojiToIcon[a.icon]} class="w-8 h-8" />
+              ) : (
+                <span class="text-4xl">{a.icon}</span>
+              )}
+            </div>
+            <h3 class="font-bold text-white text-lg mb-3">{a.title}</h3>
+            <p class="text-white text-base leading-relaxed font-light">{a.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-24 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-white opacity-50"></div>
     <div class="relative max-w-3xl mx-auto text-center">
+      <div class="flex items-center gap-4 mb-10">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-white">Das Angebot</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
       <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">90 Tage Test.</h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-gold-600 tracking-tight mb-10">0€ Risiko.</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -133,26 +160,26 @@ const showFomo  = fomoCount > 0
           <div class="border border-gold-600/20 p-6 text-center">
             <div class="text-4xl font-black text-gold-600 mb-1">{stat.n}</div>
             <div class="text-white font-semibold text-sm mb-1">{stat.label}</div>
-            <div class="text-white/55 text-xs">{stat.sub}</div>
+            <div class="text-white text-sm">{stat.sub}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section id="demo" class="py-24 px-5 sm:px-8 bg-black relative overflow-hidden">
+  <section id="demo" class="py-12 sm:py-16 px-5 sm:px-8 bg-black relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold-600 rounded-full blur-[180px] opacity-5"></div>
     <div class="relative max-w-xl mx-auto">
       <div class="text-center mb-10">
         <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2 mb-8">
-          <span class="text-gold-600 text-sm">✦</span>
-          <span class="text-gold-500 text-[10px] tracking-[0.3em] uppercase">
+          <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
+          <span class="text-gold-500 text-xs tracking-[0.3em] uppercase">
             Exklusiv für {nicheData.emoji} in {stadtteilData.name}
           </span>
         </div>
         <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2">Demo-Karte</h2>
         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">direkt ins Wallet.</h2>
-        <p class="text-white/40 text-sm font-light leading-relaxed max-w-sm mx-auto">
+        <p class="text-white text-base font-light leading-relaxed max-w-sm mx-auto">
           Trag dich ein – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
         </p>
       </div>
@@ -163,15 +190,19 @@ const showFomo  = fomoCount > 0
           <LeadForm client:load niche={nicheData.label} city="Düsseldorf" whatsappUrl={whatsappUrl} />
         )}
       </div>
+      <p class="text-center text-white text-sm mt-5">
+        Nach 90 Tagen ab 29 €/Monat ·
+        <a href="/preise" class="text-gold-600 hover:text-gold-600 underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
+      </p>
     </div>
   </section>
 
-  <section class="py-24 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
     <div class="relative max-w-2xl mx-auto text-center">
-      <p class="text-gold-600 text-[10px] tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
+      <p class="text-gold-600 text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
       <h2 class="text-4xl font-extralight text-white tracking-tight mb-2">90 Tage gratis.</h2>
       <h2 class="text-4xl font-bold text-white tracking-tight mb-10">Überzeug dich selbst.</h2>
-      <a href="#demo" class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+      <a href="#demo" class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
         {nicheData.heroCopy.ctaLabel}
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

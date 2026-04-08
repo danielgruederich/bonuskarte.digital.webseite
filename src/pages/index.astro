@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import PhoneMockup from '../components/PhoneMockup.tsx'
 import RotatingWord from '../components/RotatingWord.tsx'
+import Icon from '../components/icons/TrustIcons.astro'
 
 const howItWorks = [
   { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine Stempelkarte mit deinem Branding in unter 24 Stunden.' },
@@ -110,7 +111,7 @@ const solutions = [
           </p>
 
           <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-6 sm:mb-10">
-            <span class="text-gold-600 text-sm">✦</span>
+            <Icon name="diamond" class="w-3.5 h-3.5 text-gold-600" />
             <span class="text-gold-500 text-xs tracking-[0.15em] font-light">
               90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE
             </span>
@@ -131,10 +132,19 @@ const solutions = [
           </div>
 
           <!-- Trust -->
-          <div class="flex flex-wrap gap-5 mt-6 sm:mt-10 justify-center md:justify-start">
-            {['🔒 DSGVO', '📱 Apple & Google Wallet', '⚡ Live in 24h', '✅ Kein Risiko'].map(t => (
-              <span class="text-[10px] tracking-widest uppercase text-white">{t}</span>
-            ))}
+          <div class="flex flex-wrap gap-6 mt-6 sm:mt-10 justify-center md:justify-start">
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+              <Icon name="shield" class="w-4 h-4 text-gold-600" /> DSGVO
+            </span>
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+              <Icon name="wallet" class="w-4 h-4 text-gold-600" /> Apple & Google Wallet
+            </span>
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+              <Icon name="zap" class="w-4 h-4 text-gold-600" /> Live in 24h
+            </span>
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+              <Icon name="check-circle" class="w-4 h-4 text-gold-600" /> Kein Risiko
+            </span>
           </div>
         </div>
 
@@ -177,7 +187,7 @@ const solutions = [
           <ul class="space-y-4">
             {solutions.map(t => (
               <li class="flex items-start gap-3 text-xl text-white font-light">
-                <span class="text-gold-600 mt-0.5 flex-shrink-0">✦</span>
+                <Icon name="diamond" class="w-4 h-4 text-gold-600 mt-1.5 flex-shrink-0" />
                 {t}
               </li>
             ))}

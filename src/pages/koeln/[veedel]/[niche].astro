@@ -8,6 +8,13 @@ import LeadFormDoener from '../../../components/LeadFormDoener.tsx'
 import { veedel as allVeedel, getVeedelBySlug, fallbackVeedel } from '../../../data/veedel'
 import { niches, getNicheBySlug } from '../../../data/niches'
 import { GooeyText } from '../../../components/ui/gooey-text-morphing'
+import Icon from '../../../components/icons/TrustIcons.astro'
+
+const emojiToIcon: Record<string, string> = {
+  '📱': 'smartphone', '🔔': 'bell', '📊': 'chart', '🔥': 'flame',
+  '📣': 'megaphone', '🍕': 'pizza', '🍦': 'ice-cream', '🤝': 'handshake',
+  '⚡': 'zap', '🔒': 'shield',
+}
 
 export function getStaticPaths() {
   return allVeedel.flatMap(v =>
@@ -107,7 +114,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
 
         {showFomo && (
           <div class="flex items-center gap-3 border border-gold-600/20 bg-gold-600/5 px-4 py-2.5 mb-6">
-            <span class="text-gold-600 text-sm">✦</span>
+            <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
             <span class="text-gold-500 text-xs tracking-[0.1em] font-light">{r(nicheData.heroCopy.fomoText)}</span>
           </div>
         )}
@@ -117,7 +124,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
         </p>
 
         <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-6">
-          <span class="text-gold-600 text-sm">✦</span>
+          <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
           <span class="text-gold-500 text-xs tracking-[0.15em] font-light">
             90 TAGE KOMPLETT KOSTENLOS — KEIN KNEBELVERTRAG
           </span>
@@ -142,9 +149,18 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
         </div>
 
         <div class="flex flex-wrap gap-5 mt-10">
-          {['🔒 DSGVO', '📱 Apple & Google Wallet', '⚡ Live in 24h', '🤝 Kein Abo'].map(t => (
-            <span class="text-xs tracking-wider uppercase text-white font-light">{t}</span>
-          ))}
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="shield" class="w-4 h-4 text-gold-600" /> DSGVO
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="wallet" class="w-4 h-4 text-gold-600" /> Apple & Google Wallet
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="zap" class="w-4 h-4 text-gold-600" /> Live in 24h
+          </span>
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
+            <Icon name="check-circle" class="w-4 h-4 text-gold-600" /> Kein Abo
+          </span>
         </div>
       </div>
 
@@ -172,8 +188,14 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {nicheData.arguments.map(a => (
           <div class="group border border-white/5 hover:border-gold-600/30 p-8 transition-all">
-            <div class="text-4xl mb-5 group-hover:scale-110 transition-transform inline-block">{a.icon}</div>
-            <h3 class="font-bold text-white text-base mb-3">{a.title}</h3>
+            <div class="mb-5 group-hover:scale-110 transition-transform inline-block text-gold-600">
+              {emojiToIcon[a.icon] ? (
+                <Icon name={emojiToIcon[a.icon]} class="w-8 h-8" />
+              ) : (
+                <span class="text-4xl">{a.icon}</span>
+              )}
+            </div>
+            <h3 class="font-bold text-white text-lg mb-3">{a.title}</h3>
             <p class="text-white text-base leading-relaxed font-light">{a.desc}</p>
           </div>
         ))}
@@ -223,7 +245,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
     <div class="relative max-w-xl mx-auto">
       <div class="text-center mb-10">
         <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2 mb-8">
-          <span class="text-gold-600 text-sm">✦</span>
+          <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
           <span class="text-gold-500 text-xs tracking-[0.3em] uppercase">
             Exklusiv für {nicheData.emoji} in {veedelData.name}
           </span>

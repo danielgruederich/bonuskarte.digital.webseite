@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+// motion import removed – component unused
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -73,8 +73,8 @@ export const PricingCard = ({
             )}
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-gold-600 text-xs">✦</span>
-            <span className="text-gold-600 text-[10px] tracking-[0.25em] uppercase font-medium">
+            <svg className="w-3.5 h-3.5 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 12l10 10 10-10L12 2z"/></svg>
+            <span className="text-gold-600 text-xs tracking-[0.25em] uppercase font-medium">
               Inklusive
             </span>
           </div>

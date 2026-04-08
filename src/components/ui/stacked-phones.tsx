@@ -1,5 +1,5 @@
 import { useRef, useCallback } from "react";
-import { motion, useSpring } from "framer-motion";
+// motion import removed – component unused
 
 const PANEL_COUNT = 14;
 const WAVE_SPRING = { stiffness: 160, damping: 22, mass: 0.6 };

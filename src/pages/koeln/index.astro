@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import Navbar from '../../components/Navbar.astro'
 import Footer from '../../components/Footer.astro'
 import { veedel } from '../../data/veedel'
+import Icon from '../../components/icons/TrustIcons.astro'
 
 const niches = [
   { label: 'Café',              emoji: '☕',  slug: 'cafes',      desc: 'Kaffee, Kuchen & Stammgäste' },
@@ -73,7 +74,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
 
       <!-- Trust badge -->
       <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-10">
-        <span class="text-gold-600 text-sm">✦</span>
+        <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
         <span class="text-gold-500 text-xs tracking-[0.15em] font-light">90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE</span>
       </div>
 

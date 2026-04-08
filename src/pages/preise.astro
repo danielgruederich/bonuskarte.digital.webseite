@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
+import Icon from '../components/icons/TrustIcons.astro'
 
 const faq = [
   {
@@ -107,7 +108,7 @@ const faq = [
               'Setup in unter 24h',
             ].map(f => (
               <div class="flex items-start gap-3">
-                <span class="text-gold-600 text-xs mt-0.5 flex-shrink-0">✦</span>
+                <Icon name="diamond" class="w-3.5 h-3.5 text-gold-600 mt-0.5 flex-shrink-0" />
                 <span class="text-sm text-white font-light">{f}</span>
               </div>
             ))}
@@ -150,7 +151,7 @@ const faq = [
               'Setup in unter 24h',
             ].map(f => (
               <div class="flex items-start gap-3">
-                <span class="text-gold-600 text-xs mt-0.5 flex-shrink-0">✦</span>
+                <Icon name="diamond" class="w-3.5 h-3.5 text-gold-600 mt-0.5 flex-shrink-0" />
                 <span class="text-sm text-white font-light">{f}</span>
               </div>
             ))}
@@ -183,7 +184,7 @@ const faq = [
               'Prioritäts-Support',
             ].map(f => (
               <div class="flex items-start gap-3">
-                <span class="text-gold-600 text-xs mt-0.5 flex-shrink-0">✦</span>
+                <Icon name="diamond" class="w-3.5 h-3.5 text-gold-600 mt-0.5 flex-shrink-0" />
                 <span class="text-sm text-white font-light">{f}</span>
               </div>
             ))}
