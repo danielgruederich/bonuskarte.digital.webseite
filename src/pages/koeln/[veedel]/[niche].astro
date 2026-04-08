@@ -56,7 +56,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": `Digitale Stempelkarte für ${nicheData.label} in ${veedelData.name}`,
+    "name": `Digitale ${nicheData.cardType} für ${nicheData.label} in ${veedelData.name}`,
     "description": r(nicheData.seoDescription),
     "url": `https://bonuskarte.digital/koeln/${veedelData.slug}/${nicheData.slug}`,
     "provider": {

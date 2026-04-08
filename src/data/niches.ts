@@ -1,9 +1,11 @@
-export type NicheSlug = 'cafes' | 'doener' | 'pizza' | 'restaurant' | 'eiscafe'
+export type NicheSlug = 'cafes' | 'doener' | 'pizza' | 'restaurant' | 'eiscafe' | 'baeckerei' | 'friseur' | 'fitnessstudio' | 'yoga' | 'blumenladen'
+export type FomoKey = 'cafe' | 'doener' | 'pizza' | 'restaurant' | 'eiscafe' | 'baeckerei' | 'friseur' | 'fitnessstudio' | 'yoga' | 'blumenladen'
 export type FormType = 'full' | 'simple'
 
 export interface NicheData {
   slug: NicheSlug
-  fomoKey: 'cafe' | 'doener' | 'pizza' | 'restaurant' | 'eiscafe' // key into VeedelData.fomoCount
+  fomoKey: FomoKey    // key into VeedelData.fomoCount
+  cardType: string    // z.B. "Stempelkarte", "Mitgliedskarte", "10er-Karte"
   label: string       // display name ("Café", "Döner", …)
   emoji: string
   formType: FormType  // 'full' = LeadForm, 'simple' = LeadFormDoener
@@ -30,6 +32,7 @@ export const niches: NicheData[] = [
   {
     slug: 'cafes',
     fomoKey: 'cafe',
+    cardType: 'Stempelkarte',
     label: 'Café',
     emoji: '☕',
     formType: 'full',
@@ -53,6 +56,7 @@ export const niches: NicheData[] = [
   {
     slug: 'doener',
     fomoKey: 'doener',
+    cardType: 'Stempelkarte',
     label: 'Döner',
     emoji: '🥙',
     formType: 'simple',
@@ -76,6 +80,7 @@ export const niches: NicheData[] = [
   {
     slug: 'pizza',
     fomoKey: 'pizza',
+    cardType: 'Stempelkarte',
     label: 'Pizzeria',
     emoji: '🍕',
     formType: 'full',
@@ -99,6 +104,7 @@ export const niches: NicheData[] = [
   {
     slug: 'restaurant',
     fomoKey: 'restaurant',
+    cardType: 'Punktekarte',
     label: 'Restaurant',
     emoji: '🍽️',
     formType: 'full',
@@ -122,6 +128,7 @@ export const niches: NicheData[] = [
   {
     slug: 'eiscafe',
     fomoKey: 'eiscafe',
+    cardType: 'Stempelkarte',
     label: 'Eiscafé',
     emoji: '🍦',
     formType: 'full',
@@ -140,6 +147,126 @@ export const niches: NicheData[] = [
       { icon: '🍦', title: 'Jede Kugel zählt', desc: 'Kunden sehen: „Nur noch 2 Stempel bis zum Gratis-Eis“. Sie kommen zu dir – nicht zur Konkurrenz.' },
       { icon: '📱', title: 'Im Wallet, nicht vergessen', desc: 'Dein Logo auf dem Sperrbildschirm. Apple & Google Wallet, kein App-Download.' },
       { icon: '📣', title: 'Push statt Flyer', desc: 'Saisonstart, neue Sorte, Happy Hour? Direkt aufs Handy deiner Stammkunden.' },
+    ],
+  },
+  {
+    slug: 'baeckerei',
+    fomoKey: 'baeckerei',
+    cardType: 'Stempelkarte',
+    label: 'Bäckerei',
+    emoji: '🥐',
+    formType: 'full',
+    seoTitle: 'Digitale Stempelkarte für Bäckereien in {veedelName} – 90 Tage gratis | bonuskarte.digital',
+    seoDescription: 'Digitale Kundenbindung für Bäckereien in {veedelName}. Brötchen holen wird belohnt – direkt im Smartphone-Wallet. 90 Tage kostenlos.',
+    heroCopy: {
+      eyebrow: 'Bäckereien in {veedelName}',
+      headlineLight: 'Jeden Morgen',
+      headlineBold: 'dieselbe Bäckerei in {veedelName}.',
+      bodyText: 'Brötchen holen ist Gewohnheit. Mach deine Bäckerei zur ersten Wahl – mit der digitalen Stempelkarte direkt auf dem Handy deiner Kunden.',
+      fomoText: '{fomoCount} Bäckereien in {veedelName} sind bereits dabei. Sei die nächste.',
+      ctaLabel: 'Jetzt 90 Tage gratis testen',
+    },
+    walletMockup: { businessName: 'Bäckerei Sonnenkorn', reward: 'Gratis-Brot', stamped: 8, total: 10 },
+    arguments: [
+      { icon: '📱', title: 'Tägliche Sichtbarkeit', desc: 'Dein Logo auf dem Sperrbildschirm – jeden Morgen. Deine Kunden denken zuerst an dich.' },
+      { icon: '🔥', title: 'Der "Nur noch 2"-Effekt', desc: 'Kunden sehen: „Nur noch 2 Stempel bis zum Gratis-Brot." Sie kommen zu dir – nicht zum Discounter.' },
+      { icon: '📣', title: 'Push statt Plakat', desc: 'Neues Saisonbrot, Oster-Aktion, Frühstücksangebot? Direkt aufs Handy deiner Stammkunden.' },
+    ],
+  },
+  {
+    slug: 'friseur',
+    fomoKey: 'friseur',
+    cardType: 'Guthabenkarte',
+    label: 'Friseur',
+    emoji: '💇',
+    formType: 'full',
+    seoTitle: 'Digitale Kundenkarte für Friseure in {veedelName} – 90 Tage gratis | bonuskarte.digital',
+    seoDescription: 'Digitale Kundenbindung für Friseure & Barbershops in {veedelName}. Stammkunden belohnen, Termine füllen. 90 Tage kostenlos.',
+    heroCopy: {
+      eyebrow: 'Friseure & Barbershops in {veedelName}',
+      headlineLight: 'Der Friseur,',
+      headlineBold: 'zu dem man immer geht in {veedelName}.',
+      bodyText: 'Deine Kunden kommen alle 4–6 Wochen. Sorge dafür, dass sie jedes Mal zu DIR kommen – mit der digitalen Kundenkarte direkt im Wallet.',
+      fomoText: '{fomoCount} Friseure in {veedelName} sind bereits dabei. Sei der nächste.',
+      ctaLabel: 'Jetzt 90 Tage gratis testen',
+    },
+    walletMockup: { businessName: 'Salon Haargenau', reward: 'Gratis-Schnitt', stamped: 5, total: 6 },
+    arguments: [
+      { icon: '📱', title: '6 Schnitte, 1 gratis', desc: 'Deine Kunden sammeln Besuche und bekommen den nächsten Schnitt geschenkt. Einfach, fair, effektiv.' },
+      { icon: '🔔', title: 'Terminerinnerung per Push', desc: '„Zeit für einen neuen Schnitt?" – direkt auf dem Sperrbildschirm. Kein Anruf, kein Social Media nötig.' },
+      { icon: '🤝', title: 'Kein App-Download', desc: 'Apple Wallet & Google Wallet – vorinstalliert auf jedem Smartphone. Deine Kunden speichern die Karte in Sekunden.' },
+    ],
+  },
+  {
+    slug: 'fitnessstudio',
+    fomoKey: 'fitnessstudio',
+    cardType: 'Mitgliedskarte',
+    label: 'Fitnessstudio',
+    emoji: '💪',
+    formType: 'full',
+    seoTitle: 'Digitale Mitgliedskarte für Fitnessstudios in {veedelName} – 90 Tage gratis | bonuskarte.digital',
+    seoDescription: 'Digitaler Mitgliedsausweis für Fitnessstudios in {veedelName}. Direkt im Smartphone-Wallet, automatische Verlängerung, Push-Nachrichten.',
+    heroCopy: {
+      eyebrow: 'Fitnessstudios in {veedelName}',
+      headlineLight: 'Dein Studio.',
+      headlineBold: 'Immer dabei in {veedelName}.',
+      bodyText: 'Der digitale Mitgliedsausweis direkt im Wallet deiner Mitglieder. Kein Plastik, kein Vergessen, kein Aufwand an der Theke.',
+      fomoText: '{fomoCount} Fitnessstudios in {veedelName} sind bereits dabei. Sei das nächste.',
+      ctaLabel: 'Jetzt 90 Tage gratis testen',
+    },
+    walletMockup: { businessName: 'FitVeedel', reward: 'Gratis-Monat', stamped: 9, total: 12 },
+    arguments: [
+      { icon: '📱', title: 'Digitaler Mitgliedsausweis', desc: 'Kein Plastikkarten-Chaos mehr. Deine Mitglieder haben ihren Ausweis immer dabei – im Smartphone.' },
+      { icon: '🔔', title: 'Push-Nachrichten an Mitglieder', desc: 'Neuer Kursplan, Studio-Event, Sonderaktion? Direkt aufs Handy – ohne Social-Media-Algorithmus.' },
+      { icon: '📊', title: 'Mitglieder-Statistiken', desc: 'Sieh in Echtzeit, wie viele Mitglieder aktiv sind. Erkenne Abwanderung, bevor es zu spät ist.' },
+    ],
+  },
+  {
+    slug: 'yoga',
+    fomoKey: 'yoga',
+    cardType: '10er-Karte',
+    label: 'Yoga-Studio',
+    emoji: '🧘',
+    formType: 'full',
+    seoTitle: 'Digitale 10er-Karte für Yoga-Studios in {veedelName} – 90 Tage gratis | bonuskarte.digital',
+    seoDescription: 'Digitale 10er-Karte für Yoga- & Pilates-Studios in {veedelName}. Kurse buchen, Stunden tracken – direkt im Wallet. 90 Tage kostenlos.',
+    heroCopy: {
+      eyebrow: 'Yoga- & Pilates-Studios in {veedelName}',
+      headlineLight: 'Jede Stunde zählt.',
+      headlineBold: 'Dein Yoga-Studio in {veedelName}.',
+      bodyText: 'Die digitale 10er-Karte für dein Studio. Kunden kaufen ein Paket, lösen Stunden ein – alles direkt im Wallet. Kein Papier, kein Zettelchaos.',
+      fomoText: '{fomoCount} Yoga-Studios in {veedelName} sind bereits dabei. Sei das nächste.',
+      ctaLabel: 'Jetzt 90 Tage gratis testen',
+    },
+    walletMockup: { businessName: 'Yoga am Rhein', reward: 'Gratis-Stunde', stamped: 8, total: 10 },
+    arguments: [
+      { icon: '📱', title: '10er-Karte im Wallet', desc: 'Deine Kunden sehen jederzeit, wie viele Stunden sie noch haben. Kein Nachfragen, keine Zettel.' },
+      { icon: '🔔', title: 'Kursplan per Push', desc: 'Neue Kurse, geänderte Zeiten, Vertretung? Deine Teilnehmer erfahren es sofort – direkt auf dem Handy.' },
+      { icon: '🔥', title: 'Nachkauf-Effekt', desc: '„Noch 1 Stunde übrig" – deine Kunden buchen rechtzeitig das nächste Paket, bevor sie abspringen.' },
+    ],
+  },
+  {
+    slug: 'blumenladen',
+    fomoKey: 'blumenladen',
+    cardType: 'Geschenkkarte',
+    label: 'Blumenladen',
+    emoji: '💐',
+    formType: 'full',
+    seoTitle: 'Digitale Geschenkkarte für Blumenläden in {veedelName} – 90 Tage gratis | bonuskarte.digital',
+    seoDescription: 'Digitale Geschenk- & Kundenkarte für Blumenläden in {veedelName}. Kunden verschenken Sträuße digital, du gewinnst Stammkunden. 90 Tage kostenlos.',
+    heroCopy: {
+      eyebrow: 'Blumenläden in {veedelName}',
+      headlineLight: 'Blumen verschenken.',
+      headlineBold: 'Digital. In {veedelName}.',
+      bodyText: 'Die digitale Geschenkkarte für deinen Blumenladen. Kunden verschenken Sträuße per Link – und du gewinnst neue Stammkunden, die wiederkommen.',
+      fomoText: '{fomoCount} Blumenläden in {veedelName} sind bereits dabei. Sei der nächste.',
+      ctaLabel: 'Jetzt 90 Tage gratis testen',
+    },
+    walletMockup: { businessName: 'Blütenreich', reward: 'Gratis-Strauß', stamped: 7, total: 10 },
+    arguments: [
+      { icon: '📱', title: 'Geschenkkarte per Link', desc: 'Deine Kunden verschenken einen Strauß per WhatsApp oder E-Mail. Der Beschenkte löst ihn bei dir ein.' },
+      { icon: '🔔', title: 'Anlass-Erinnerung', desc: 'Muttertag, Valentinstag, Jahrestag – erinnere deine Kunden per Push, bevor sie es vergessen.' },
+      { icon: '🤝', title: 'Neue Kunden gewinnen', desc: 'Jede Geschenkkarte bringt einen neuen Kunden in deinen Laden. Aus Beschenkten werden Stammkunden.' },
     ],
   },
 ]
