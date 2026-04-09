@@ -163,37 +163,36 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">3 Felder · 30 Sekunden</p>
+      <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">2 Pflichtfelder · 30 Sekunden</p>
+
       <div>
-        <label className={labelClass}>Instagram-Kanal *</label>
+        <label className={labelClass}>Dein Vorname *</label>
+        <input name="vorname" type="text" required placeholder="Max" autoComplete="given-name" onFocus={handleFirstFocus} className={inputClass} />
+      </div>
+
+      <div>
+        <label className={labelClass}>Handynummer *</label>
+        <input name="telefon" type="tel" required placeholder="+49 170 …" autoComplete="tel" inputMode="tel" className={inputClass} />
+      </div>
+
+      <div>
+        <label className={labelClass}>Instagram oder Geschäftsname</label>
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-600 text-sm font-medium select-none">@</span>
           <input
             name="instagram"
             type="text"
-            required
-            placeholder="dein_laden_koeln"
+            placeholder="dein_laden (optional)"
             value={instagram}
             onChange={handleInstagramChange}
-            onFocus={handleFirstFocus}
             autoComplete="off"
             autoCapitalize="none"
             className={`${inputClass} pl-8`}
           />
         </div>
         <p className="mt-2 text-xs tracking-wide text-white/55">
-          Wir erstellen daraus deine persönliche Demo-Karte.
+          Damit erstellen wir deine Demo-Karte mit deinem Branding.
         </p>
-      </div>
-
-      <div>
-        <label className={labelClass}>Dein Vorname *</label>
-        <input name="vorname" type="text" required placeholder="Max" autoComplete="given-name" className={inputClass} />
-      </div>
-
-      <div>
-        <label className={labelClass}>Handynummer *</label>
-        <input name="telefon" type="tel" required placeholder="+49 170 …" autoComplete="tel" inputMode="tel" className={inputClass} />
       </div>
 
       {state === 'error' && (

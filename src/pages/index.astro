@@ -300,6 +300,59 @@ const solutions = [
     </div>
   </section>
 
+  <!-- ── FAQ ────────────────────────────────────────────────────── -->
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <div class="flex items-center gap-4 mb-6 sm:mb-10">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-white">Häufige Fragen</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="space-y-4">
+        {[
+          {
+            q: 'Ist das wirklich 90 Tage kostenlos?',
+            a: 'Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar.',
+          },
+          {
+            q: 'Brauchen meine Kunden eine App?',
+            a: 'Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet – beide sind auf jedem Smartphone vorinstalliert. Kein Download, keine Registrierung.',
+          },
+          {
+            q: 'Wie viel Aufwand habe ich bei der Einrichtung?',
+            a: 'Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live.',
+          },
+          {
+            q: 'Was kostet es nach der Testphase?',
+            a: 'Ab 29 €/Monat für einen Standort. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Keine Setup-Gebühr, monatlich kündbar.',
+          },
+          {
+            q: 'Funktioniert das auch für Nicht-Gastro-Betriebe?',
+            a: 'Ja. Neben Stempelkarten bieten wir Mitgliedskarten, 10er-Karten, Geschenkkarten und Guthabenkarten – für Friseure, Fitnessstudios, Yoga-Studios, Blumenläden und mehr.',
+          },
+          {
+            q: 'Ist das DSGVO-konform?',
+            a: 'Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden.',
+          },
+        ].map(faq => (
+          <details class="group border border-white/5 hover:border-gold-600/20 transition-colors">
+            <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
+              <span class="text-white text-sm sm:text-base font-medium pr-4">{faq.q}</span>
+              <svg class="w-4 h-4 text-gold-600 flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-white text-sm leading-relaxed font-light">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
   <section class="py-16 sm:py-28 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
