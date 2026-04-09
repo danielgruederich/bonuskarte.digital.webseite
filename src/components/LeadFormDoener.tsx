@@ -134,9 +134,12 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
         )}
 
         <div className="border-t border-white/5 pt-7">
-          <p className="text-white text-sm mb-4">
-            Nächster Schritt: Ich melde mich persönlich bei dir.
-          </p>
+          <p className="text-white text-sm font-medium mb-2">So geht's weiter:</p>
+          <ol className="text-white/70 text-sm space-y-1 mb-4 list-decimal list-inside">
+            <li>Lade die Demo-Karte ins Wallet</li>
+            <li>Du bekommst heute noch eine WhatsApp von uns</li>
+            <li>Wir richten deine Karte mit deinem Branding ein</li>
+          </ol>
           <a
             href={whatsappUrl}
             target="_blank"

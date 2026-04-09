@@ -5,9 +5,9 @@
 export const cardBranchPairs = [
   { card: 'Stempelkarte',   branch: 'Cafés' },
   { card: 'Punktekarte',    branch: 'Restaurants' },
-  { card: 'Clubkarte',      branch: 'Fitnessstudios' },
+  { card: 'Mitgliedskarte', branch: 'Fitnessstudios' },
   { card: 'Geschenkkarte',  branch: 'Blumenläden' },
-  { card: 'Guthabenkarte',  branch: 'Friseure' },
+  { card: 'Stempelkarte',   branch: 'Friseure' },
   { card: '10er-Karte',     branch: 'Yoga-Studios' },
 ] as const
 
