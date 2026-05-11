@@ -35,6 +35,6 @@ jobs:
             set net:timeout 30;
             set net:max-retries 5;
             set net:reconnect-interval-base 5;
-            mirror --reverse --delete --parallel=4 --verbose ./dist/ /bonuskarte/;
+            mirror --reverse --delete --parallel=4 --verbose ./dist/ /;
             quit
           "
