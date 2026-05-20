@@ -54,6 +54,11 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
           class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
           Hilfe
         </a>
+        <span class="text-xs font-medium tracking-widest uppercase text-white/40">
+          <span class="text-gold-600">DE</span>
+          <span class="mx-1">|</span>
+          <a href="/fr/" class="hover:text-gold-600 transition-colors">FR</a>
+        </span>
         <a
           href={ctaHref}
           class="group inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-black px-5 py-2.5 text-xs font-bold tracking-widest uppercase transition-all"
@@ -94,6 +99,9 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
       </a>
       <a href="/hilfe" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
         Hilfe
+      </a>
+      <a href="/fr/" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
+        🇫🇷 Version française (FR)
       </a>
       <a href={ctaHref} class="block w-full bg-gold-600 text-black text-xs font-bold tracking-widest uppercase px-5 py-3 text-center">
         {ctaLabel}
