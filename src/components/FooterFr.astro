@@ -1,0 +1,65 @@
+---
+import { uiFr } from '../data/fr/ui-fr'
+---
+<footer class="bg-black border-t border-white/5 text-white">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-8 h-8 flex-shrink-0">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" fill="black" rx="2"/>
+              <rect x="8" y="8" width="16" height="2.5" fill="#A38A00"/>
+              <rect x="8" y="15" width="14" height="2.5" fill="#A38A00"/>
+              <rect x="8" y="15" width="2.5" height="9" fill="#A38A00"/>
+            </svg>
+          </div>
+          <div class="leading-none">
+            <div class="text-sm font-medium tracking-[0.15em] uppercase text-white">bonuskarte<span class="text-gold-600">.digital</span></div>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">
+          {uiFr.footer.tagline}
+        </p>
+        <address class="not-italic mt-5 text-sm space-y-1">
+          <p>Sülzburgstrasse 234, 50937 Köln</p>
+          <p><a href="tel:+491737130733" class="hover:text-gold-600 transition-colors">+49 173 7130733</a></p>
+          <p><a href="https://wa.me/491705594140" class="hover:text-gold-600 transition-colors">WhatsApp →</a></p>
+        </address>
+      </div>
+
+      <!-- Secteurs -->
+      <div>
+        <h3 class="text-white text-xs font-bold tracking-widest uppercase mb-5">{uiFr.footer.secteurs}</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/fr/paris/" class="hover:text-gold-600 transition-colors">Paris</a></li>
+          <li><a href="/fr/paris/11e/boulangerie" class="hover:text-gold-600 transition-colors">🥐 Boulangeries — 11e</a></li>
+          <li><a href="/fr/paris/18e/cafe" class="hover:text-gold-600 transition-colors">☕ Cafés — 18e</a></li>
+          <li><a href="/fr/paris/1er/restaurant" class="hover:text-gold-600 transition-colors">🍽️ Restaurants — 1er</a></li>
+        </ul>
+      </div>
+
+      <!-- Légal -->
+      <div>
+        <h3 class="text-white text-xs font-bold tracking-widest uppercase mb-5">{uiFr.footer.legal}</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/fr/tarifs" class="hover:text-gold-600 transition-colors">{uiFr.footer.tarifs}</a></li>
+          <li><a href="/fr/mentions-legales" class="hover:text-gold-600 transition-colors">{uiFr.footer.mentions}</a></li>
+          <li><a href="/fr/confidentialite" class="hover:text-gold-600 transition-colors">{uiFr.footer.privacy}</a></li>
+          <li><a href="/sitemap-index.xml" class="hover:text-gold-600 transition-colors">Sitemap</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <span>© {new Date().getFullYear()} bonuskarte.digital by fuerte.digital</span>
+      <div class="flex items-center gap-5">
+        <span>🔒 Conforme RGPD</span>
+        <a href="/" class="hover:text-gold-600 transition-colors">🇩🇪 Version allemande</a>
+      </div>
+    </div>
+  </div>
+</footer>
