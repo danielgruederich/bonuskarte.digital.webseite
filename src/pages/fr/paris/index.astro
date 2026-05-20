@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import NavbarFr from '../../../components/NavbarFr.astro'
+import FooterFr from '../../../components/FooterFr.astro'
+import { arrondissements } from '../../../data/fr/paris'
+import { uiFr } from '../../../data/fr/ui-fr'
+---
+
+<BaseLayout
+  title="Carte de fidélité numérique à Paris | bonuskarte.digital"
+  description="Fidélisez vos clients à Paris avec une carte de fidélité numérique dans Apple & Google Wallet. Tous les arrondissements couverts. 90 jours gratuits, sans application."
+  lang="fr"
+  locale="fr_FR"
+>
+  <NavbarFr ctaHref="/fr/paris/1er/" ctaLabel="Commencer" />
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+
+    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
+
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
+        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+        <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+          Paris · Tous les arrondissements
+        </span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
+        <span class="font-extralight text-white block mb-2">Fidélisez vos clients</span>
+        <span class="font-bold text-gold-600 block">dans tout Paris.</span>
+      </h1>
+
+      <p class="text-white/40 text-base font-light leading-relaxed mb-14 max-w-lg">
+        Choisissez votre arrondissement et découvrez comment les commerçants parisiens fidélisent leur clientèle avec une carte numérique dans Apple & Google Wallet — sans application, en 24h.
+      </p>
+
+      <!-- Trust row -->
+      <div class="flex flex-wrap gap-6 mb-14">
+        {uiFr.trust.map(t => (
+          <span class="text-[10px] tracking-widest uppercase text-white/50">{t}</span>
+        ))}
+      </div>
+
+      <!-- Arrondissements grid -->
+      <div id="arrondissements" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {arrondissements.map(a => (
+          <a
+            href={`/fr/paris/${a.slug}/`}
+            class="group relative border border-white/5 hover:border-gold-600 bg-white/2 hover:bg-gold-600/5 p-5 transition-all hover:-translate-y-1"
+          >
+            <div class="text-white font-bold text-sm tracking-wide mb-1 group-hover:text-gold-400 transition-colors">
+              {a.name}
+            </div>
+            <div class="text-white/40 text-[11px] leading-relaxed mb-3">
+              {a.quartiers.split(',').slice(0, 2).join(',')}
+            </div>
+            <div class="text-xs tracking-[0.15em] text-gold-600 uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+              Voir
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── INTRO ────────────────────────────────────────────────── -->
+  <section class="py-16 px-5 sm:px-8 bg-black">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-4 mb-10">
+        <div class="h-px flex-1 bg-white/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-white">Pourquoi Paris ?</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { value: '40 000+', label: 'commerces de proximité à Paris' },
+          { value: '90 jours', label: 'gratuits pour tester' },
+          { value: '24h', label: 'pour être en ligne' },
+        ].map(stat => (
+          <div class="border border-white/5 p-6 text-center">
+            <div class="text-4xl font-black text-gold-600 mb-2">{stat.value}</div>
+            <div class="text-xs tracking-[0.25em] uppercase text-white">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-white/40 text-sm font-light leading-relaxed mt-10 text-center max-w-2xl mx-auto">
+        Paris compte plus de 40 000 commerces de proximité — boulangeries, cafés, coiffeurs, restaurants, instituts de beauté. Chaque arrondissement a sa propre clientèle, ses propres habitudes. Une carte de fidélité numérique, directement dans le Wallet de vos clients, est le levier le plus simple pour transformer un passant en habitué.
+      </p>
+    </div>
+  </section>
+
+  <FooterFr />
+</BaseLayout>
