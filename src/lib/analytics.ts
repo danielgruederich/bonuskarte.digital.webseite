@@ -17,6 +17,14 @@ export const analytics = {
   demoCardCreated: (niche: string, city: string) =>
     track('demo_card_created', { niche, city }),
 
+  /** Google Ads Conversion: Lead-Formular erfolgreich abgeschickt */
+  leadConversion: () =>
+    track('conversion', {
+      send_to: 'AW-18176373682/jWsvCIyIj7AcELLnldtD',
+      value: 1.0,
+      currency: 'EUR',
+    }),
+
   /** Klick auf "Demo-Karte ins Wallet laden" im Success-State */
   walletInstallClicked: (niche: string) =>
     track('wallet_install_clicked', { niche }),

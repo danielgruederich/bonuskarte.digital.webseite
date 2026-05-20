@@ -75,6 +75,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
           directInstallLink: json.directInstallLink,
         })
         analytics.demoCardCreated(niche, city)
+        analytics.leadConversion()
         setState('success')
         form.reset()
         setInstagram('')

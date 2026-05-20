@@ -72,6 +72,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
           directInstallLink: json.directInstallLink,
         })
         analytics.demoCardCreated(niche, 'koeln')
+        analytics.leadConversion()
         setState('success')
         form.reset()
         setInstagram('')
