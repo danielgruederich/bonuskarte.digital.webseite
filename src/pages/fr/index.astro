@@ -4,6 +4,8 @@ import NavbarFr from '../../components/NavbarFr.astro'
 import FooterFr from '../../components/FooterFr.astro'
 import { uiFr } from '../../data/fr/ui-fr'
 import { nichesFr } from '../../data/fr/niches-fr'
+import PhoneMockup from '../../components/PhoneMockup.tsx'
+import RotatingWordFr from '../../components/RotatingWordFr.tsx'
 
 const howItWorks = [
   { step: '01', title: 'Créer votre carte', desc: 'Nous configurons votre carte de fidélité numérique avec votre logo et vos couleurs en moins de 24 heures.' },
@@ -48,55 +50,66 @@ const nicheTeaser = nichesFr.slice(0, 6)
     <div class="absolute inset-0 bg-grid-white"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
 
-    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 md:pt-24 pb-8 md:pb-12 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-stretch">
+        <div class="text-center md:text-left">
 
-      <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
-        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-        <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
-          Boulangeries · Cafés · Restaurants · Coiffeurs
-        </span>
+          <!-- Eyebrow -->
+          <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-6 sm:mb-10">
+            <span class="w-1 h-1 bg-gold-600 animate-pulse-slow flex-shrink-0"></span>
+            <span class="text-gold-600 text-[10px] sm:text-xs font-light tracking-[0.3em] uppercase">
+              Boulangeries · Cafés · Restaurants · Coiffeurs
+            </span>
+          </div>
+
+          <!-- H1 -->
+          <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-5 sm:mb-8">
+            <span class="font-extralight text-white block mb-2">La carte de fidélité</span>
+            <RotatingWordFr client:idle />
+          </h1>
+
+          <p class="text-white text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-light">
+            Plus de clients réguliers, plus de chiffre d'affaires. Votre carte de fidélité numérique directement dans leur téléphone — sans papier, sans application, sans effort.
+          </p>
+
+          <!-- Free trial badge -->
+          <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-6 sm:mb-10">
+            <span class="text-gold-500 text-xs tracking-[0.15em] font-light">
+              90 JOURS GRATUITS — SANS CARTE BANCAIRE
+            </span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <a href="/fr/paris/"
+              class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
+              Commencer gratuitement
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="#comment-ca-marche"
+              class="inline-flex items-center justify-center border border-white/10 hover:border-gold-600/40 text-white px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all">
+              Comment ça marche
+            </a>
+          </div>
+
+          <!-- Trust row -->
+          <div class="flex flex-wrap gap-6 mt-6 sm:mt-10 justify-center md:justify-start">
+            {uiFr.trust.map(t => (
+              <span class="text-[10px] tracking-widest uppercase text-white/50">{t}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Phone Mockup -->
+        <div class="flex justify-center md:justify-end items-center h-full">
+          <PhoneMockup client:visible />
+        </div>
       </div>
-
-      <!-- H1 -->
-      <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
-        <span class="font-extralight text-white block mb-2">La carte de fidélité</span>
-        <span class="font-bold text-gold-600 block">numérique pour vos clients.</span>
-      </h1>
-
-      <p class="text-white text-base leading-relaxed mb-8 max-w-lg font-light">
-        Plus de clients réguliers, plus de chiffre d'affaires. Votre carte de fidélité numérique directement dans leur téléphone — sans papier, sans application, sans effort.
-      </p>
-
-      <!-- Free trial badge -->
-      <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-10">
-        <span class="text-gold-500 text-xs tracking-[0.15em] font-light">
-          90 JOURS GRATUITS — SANS CARTE BANCAIRE
-        </span>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-3 mb-10">
-        <a href="/fr/paris/"
-          class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
-          Commencer gratuitement
-          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-        <a href="#comment-ca-marche"
-          class="inline-flex items-center justify-center border border-white/10 hover:border-gold-600/40 text-white px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all">
-          Comment ça marche
-        </a>
-      </div>
-
-      <!-- Trust row -->
-      <div class="flex flex-wrap gap-6">
-        {uiFr.trust.map(t => (
-          <span class="text-[10px] tracking-widest uppercase text-white/50">{t}</span>
-        ))}
-      </div>
-
     </div>
+
+    <!-- Bottom fade to next section -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
   </section>
 
   <!-- ── PROBLEM / SOLUTION ────────────────────────────────────── -->
