@@ -1,40 +1,42 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.astro'
-import Icon from '../components/icons/TrustIcons.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarFr from '../../components/NavbarFr.astro'
+import FooterFr from '../../components/FooterFr.astro'
+import Icon from '../../components/icons/TrustIcons.astro'
 
 const faq = [
   {
-    q: 'Was passiert nach den 90 Tagen?',
-    a: 'Du entscheidest, ob du weitermachst. Kein automatischer Übergang, kein versteckter Vertrag. Wir melden uns vorher bei dir.',
+    q: 'Que se passe-t-il après 90 jours ?',
+    a: "C'est vous qui décidez si vous continuez. Pas de passage automatique, pas de contrat caché. Nous vous contactons avant la fin de la période d'essai.",
   },
   {
-    q: 'Was zählt als "Standort"?',
-    a: 'Ein Standort ist ein Lokal oder eine Filiale. Jeder Standort bekommt seine eigene digitale Stempelkarte mit eigenem Branding.',
+    q: 'Qu\'est-ce qu\'un « établissement » ?',
+    a: 'Un établissement correspond à un point de vente ou une succursale. Chaque établissement dispose de sa propre carte de fidélité numérique avec son propre branding.',
   },
   {
-    q: 'Brauchen meine Gäste eine App?',
-    a: 'Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet – auf jedem iPhone und Android-Handy vorinstalliert. Kein Download, kein Account.',
+    q: 'Mes clients ont-ils besoin d\'une application ?',
+    a: 'Non. La carte est enregistrée directement dans Apple Wallet ou Google Wallet — préinstallé sur chaque iPhone et téléphone Android. Aucun téléchargement, aucun compte nécessaire.',
   },
   {
-    q: 'Wie lange dauert die Einrichtung?',
-    a: 'Deine Karte ist in unter 24 Stunden live. Wir kümmern uns um alles – du musst nur dein Branding (Logo, Farbe, Belohnung) angeben.',
+    q: 'Combien de temps prend la mise en place ?',
+    a: 'Votre carte est en ligne en moins de 24 heures. Nous nous occupons de tout — il vous suffit de nous fournir votre branding (logo, couleur, récompense).',
   },
   {
-    q: 'Kann ich jederzeit kündigen?',
-    a: 'Ja. Monatlich kündbar, keine Mindestlaufzeit, keine Einrichtungsgebühr. Null Risiko.',
+    q: 'Puis-je résilier à tout moment ?',
+    a: 'Oui. Résiliation mensuelle, sans durée minimale, sans frais d\'installation. Zéro risque.',
   },
   {
-    q: 'Was ist Push Automation?',
-    a: 'Automatische Push-Nachrichten an deine Stammkunden – z. B. wenn jemand länger nicht da war, oder du ein neues Angebot hast.',
+    q: 'Qu\'est-ce que la Push Automation ?',
+    a: 'Des notifications push automatiques envoyées à vos clients fidèles — par exemple lorsqu\'un client n\'est pas venu depuis un moment, ou quand vous avez une nouvelle offre.',
   },
 ]
 ---
 
 <BaseLayout
-  title="Preise – digitale Stempelkarte ab 29 €/Monat | bonuskarte.digital"
-  description="Einfache, transparente Preise. 1 Standort für 29 €/Monat. Ab 10 Standorte Flatrate für 100 €/Monat. 90 Tage kostenlos testen – keine Kreditkarte."
+  title="Tarifs – Carte de fidélité numérique | bonuskarte.digital"
+  description="Tarifs simples et transparents. 1 établissement à partir de 29 €/mois. À partir de 10 établissements, forfait illimité à 100 €/mois. Testez 90 jours gratuitement — sans carte bancaire."
+  lang="fr"
+  locale="fr_FR"
   alternates={[
     { hreflang: 'de', href: 'https://bonuskarte.digital/preise' },
     { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/tarifs' },
@@ -54,7 +56,7 @@ const faq = [
     }))
   })} />
 
-  <Navbar ctaHref="#preise" ctaLabel="Jetzt testen" />
+  <NavbarFr ctaHref="#tarifs" ctaLabel="Tester 90 jours gratuitement" />
 
   <!-- ── HERO ─────────────────────────────────────────────────── -->
   <section class="relative bg-black overflow-hidden pt-32 pb-16 px-5 sm:px-8">
@@ -65,21 +67,21 @@ const faq = [
       <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-8">
         <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
         <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">
-          Transparent · Fair · Risikofrei
+          Transparent · Équitable · Sans risque
         </span>
       </div>
 
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
-        <span class="font-extralight text-white block mb-3">Einfache</span>
-        <span class="font-bold text-gold-600 block">Preise.</span>
+        <span class="font-extralight text-white block mb-3">Des tarifs</span>
+        <span class="font-bold text-gold-600 block">simples.</span>
       </h1>
       <p class="text-white text-base font-light leading-relaxed max-w-lg mx-auto mb-10">
-        Starte 90 Tage kostenlos. Danach zahlst du nur, wenn du zufrieden bist –
-        monatlich kündbar, keine Einrichtungsgebühr.
+        Commencez 90 jours gratuitement. Ensuite, vous ne payez que si vous êtes satisfait —
+        résiliation mensuelle, sans frais d'installation.
       </p>
 
       <div class="flex flex-wrap justify-center gap-6">
-        {['✅ 90 Tage kostenlos', '🔒 DSGVO-konform', '⚡ Live in 24h', '📱 Apple & Google Wallet'].map(t => (
+        {['✅ 90 jours gratuits', '🔒 Conforme RGPD', '⚡ En ligne en 24h', '📱 Apple & Google Wallet'].map(t => (
           <span class="text-xs tracking-widest uppercase text-white">{t}</span>
         ))}
       </div>
@@ -87,7 +89,7 @@ const faq = [
   </section>
 
   <!-- ── PRICING ─────────────────────────────────────────────── -->
-  <section id="preise" class="py-12 sm:py-16 px-5 sm:px-8 bg-black">
+  <section id="tarifs" class="py-12 sm:py-16 px-5 sm:px-8 bg-black">
     <div class="max-w-4xl mx-auto">
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
@@ -97,20 +99,20 @@ const faq = [
           <p class="text-xs tracking-[0.3em] uppercase text-white mb-5">Solo</p>
           <div class="flex items-baseline gap-1.5 mb-1">
             <span class="text-5xl font-black text-white">29€</span>
-            <span class="text-sm text-white font-light">/ Monat</span>
+            <span class="text-sm text-white font-light">/ mois</span>
           </div>
-          <p class="text-xs text-white mb-8">pro Standort · zzgl. MwSt.</p>
+          <p class="text-xs text-white mb-8">par établissement · HT</p>
 
           <div class="space-y-3.5 flex-1 mb-8">
             {[
-              '1 Standort',
-              'Unbegrenzt viele Kundenkarten',
-              'Push-Nachrichten an Stammkunden',
-              'Live-Statistiken (Karten, Stempel)',
-              'QR-Code zum Stempeln',
-              'Eigenes Branding (Logo, Farbe)',
+              '1 établissement',
+              'Cartes clients illimitées',
+              'Notifications push aux clients fidèles',
+              'Statistiques en temps réel (cartes, tampons)',
+              'QR code pour tamponner',
+              'Branding personnalisé (logo, couleur)',
               'Apple Wallet & Google Wallet',
-              'Setup in unter 24h',
+              'Mise en place en moins de 24h',
             ].map(f => (
               <div class="flex items-start gap-3">
                 <Icon name="diamond" class="w-3.5 h-3.5 text-gold-600 mt-0.5 flex-shrink-0" />
@@ -119,13 +121,13 @@ const faq = [
             ))}
           </div>
 
-          <a href="/koeln"
+          <a href="/fr/paris/"
             class="w-full inline-flex items-center justify-center border border-white/15 hover:border-gold-600/40 text-white hover:text-white px-6 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
-            Kostenlos testen
+            Tester gratuitement
           </a>
         </div>
 
-        <!-- KETTE — highlighted -->
+        <!-- CHAÎNE — highlighted -->
         <div class="relative border-2 border-gold-600/60 bg-gradient-to-b from-gold-600/[0.04] to-transparent shadow-[0_0_80px_rgba(139,115,0,0.1)] p-10 flex flex-col md:scale-105 md:-my-4 z-10">
           <!-- Top gold line -->
           <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-600 to-transparent"></div>
@@ -133,27 +135,27 @@ const faq = [
           <!-- Badge -->
           <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
             <span class="bg-gold-600 text-black text-[9px] font-bold tracking-[0.2em] uppercase px-4 py-1.5">
-              Beliebteste Wahl
+              Le plus populaire
             </span>
           </div>
 
-          <p class="text-xs tracking-[0.3em] uppercase text-gold-600 mb-5">Kette</p>
+          <p class="text-xs tracking-[0.3em] uppercase text-gold-600 mb-5">Chaîne</p>
           <div class="flex items-baseline gap-1.5 mb-1">
             <span class="text-5xl font-black text-white">100€</span>
-            <span class="text-sm text-white font-light">/ Monat</span>
+            <span class="text-sm text-white font-light">/ mois</span>
           </div>
-          <p class="text-xs text-white mb-8">ab 10 Standorte · Flatrate · zzgl. MwSt.</p>
+          <p class="text-xs text-white mb-8">à partir de 10 établissements · Forfait illimité · HT</p>
 
           <div class="space-y-3.5 flex-1 mb-8">
             {[
-              'Ab 10 Standorte — Flatrate',
-              'Alles aus Solo',
-              'Push Automation (Abwesenheits-Trigger)',
-              'Zentrales Multi-Standort-Dashboard',
-              'Alle Standorte in einer Übersicht',
-              'Prioritäts-Support',
-              'Eigene Subdomain möglich',
-              'Setup in unter 24h',
+              'À partir de 10 établissements — forfait illimité',
+              'Tout inclus de Solo',
+              'Push Automation (déclencheur d\'absence)',
+              'Tableau de bord multi-établissements centralisé',
+              'Tous les établissements dans une vue d\'ensemble',
+              'Support prioritaire',
+              'Sous-domaine personnalisé possible',
+              'Mise en place en moins de 24h',
             ].map(f => (
               <div class="flex items-start gap-3">
                 <Icon name="diamond" class="w-3.5 h-3.5 text-gold-600 mt-0.5 flex-shrink-0" />
@@ -162,9 +164,9 @@ const faq = [
             ))}
           </div>
 
-          <a href="/koeln"
+          <a href="/fr/paris/"
             class="w-full inline-flex items-center justify-center bg-gold-600 hover:bg-gold-500 text-black px-6 py-4 text-xs font-bold tracking-[0.15em] uppercase transition-all">
-            Jetzt starten
+            Commencer maintenant
           </a>
         </div>
 
@@ -173,20 +175,20 @@ const faq = [
           <p class="text-xs tracking-[0.3em] uppercase text-white mb-5">Franchise</p>
           <div class="flex items-baseline gap-1.5 mb-1">
             <span class="text-5xl font-black text-white">250€</span>
-            <span class="text-sm text-white font-light">/ Monat</span>
+            <span class="text-sm text-white font-light">/ mois</span>
           </div>
-          <p class="text-xs text-white mb-8">Franchise-Systeme · zzgl. MwSt.</p>
+          <p class="text-xs text-white mb-8">Systèmes de franchise · HT</p>
 
           <div class="space-y-3.5 flex-1 mb-8">
             {[
-              'Bis zu 20 Standorten inklusive',
-              'Alles aus Kette',
-              'Eigene Domain (yourcard.de)',
-              'Franchise-weites Dashboard',
-              'Zentrales Kampagnen-Management',
-              'Push-Nachrichten systemweit',
-              'Individuelle Berichte pro Standort',
-              'Prioritäts-Support',
+              "Jusqu'à 20 établissements inclus",
+              'Tout inclus de Chaîne',
+              'Domaine personnalisé (votrecarte.fr)',
+              'Tableau de bord franchise centralisé',
+              'Gestion des campagnes centralisée',
+              'Notifications push à l\'ensemble du réseau',
+              'Rapports individuels par établissement',
+              'Support prioritaire',
             ].map(f => (
               <div class="flex items-start gap-3">
                 <Icon name="diamond" class="w-3.5 h-3.5 text-gold-600 mt-0.5 flex-shrink-0" />
@@ -197,7 +199,7 @@ const faq = [
 
           <a href="https://wa.me/491705594140" target="_blank" rel="noopener noreferrer"
             class="w-full inline-flex items-center justify-center border border-white/15 hover:border-gold-600/40 text-white hover:text-white px-6 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
-            Beratung anfragen
+            Demander un devis
           </a>
         </div>
 
@@ -207,40 +209,40 @@ const faq = [
       <div class="mt-8 border border-white/10 hover:border-white/15 transition-colors p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
           <p class="text-xs tracking-[0.3em] uppercase text-white mb-2">Enterprise</p>
-          <p class="text-white text-lg font-semibold mb-1">Individuelles Angebot für große Ketten & Systemgastro</p>
-          <p class="text-white text-sm font-light">Unbegrenzte Standorte · API-Integration · White-Label · SLA-Garantie · Dedizierter Account Manager</p>
+          <p class="text-white text-lg font-semibold mb-1">Offre sur mesure pour les grandes chaînes & la restauration de réseau</p>
+          <p class="text-white text-sm font-light">Établissements illimités · Intégration API · White-Label · Garantie SLA · Account Manager dédié</p>
         </div>
         <a href="https://wa.me/491705594140" target="_blank" rel="noopener noreferrer"
           class="flex-shrink-0 inline-flex items-center justify-center border border-white/15 hover:border-gold-600/40 text-white hover:text-white px-8 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
-          Jetzt anfragen
+          Nous contacter
         </a>
       </div>
 
       <!-- Trust badges -->
       <div class="mt-8 flex flex-wrap items-center justify-center gap-6">
         {[
-          '✅ 90 Tage kostenlos',
-          '🔄 Kein automatischer Übergang',
-          '📅 Monatlich kündbar',
-          '🚫 Keine Einrichtungsgebühr',
+          '✅ 90 jours gratuits',
+          '🔄 Pas de passage automatique',
+          '📅 Résiliation mensuelle',
+          '🚫 Sans frais d\'installation',
         ].map(t => (
           <span class="text-xs tracking-widest uppercase text-white">{t}</span>
         ))}
       </div>
 
       <p class="text-center text-white text-xs tracking-wide mt-4">
-        Alle Preise zzgl. MwSt.
+        Tous les prix HT (hors taxes).
       </p>
     </div>
   </section>
 
-  <!-- ── VERGLEICH ──────────────────────────────────────────── -->
+  <!-- ── COMPARAISON ────────────────────────────────────────── -->
   <section class="py-12 sm:py-16 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-white opacity-50"></div>
     <div class="relative max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Papier vs. Digital</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-white">Papier vs. Numérique</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
 
@@ -248,21 +250,21 @@ const faq = [
         <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-white/5">
-              <th class="text-left text-white text-xs tracking-[0.3em] uppercase font-normal pb-4 pr-8">Funktion</th>
-              <th class="text-center text-white text-xs tracking-[0.3em] uppercase font-normal pb-4 px-4">Papierkarte</th>
+              <th class="text-left text-white text-xs tracking-[0.3em] uppercase font-normal pb-4 pr-8">Fonctionnalité</th>
+              <th class="text-center text-white text-xs tracking-[0.3em] uppercase font-normal pb-4 px-4">Carte papier</th>
               <th class="text-center text-gold-600 text-xs tracking-[0.3em] uppercase font-normal pb-4 pl-4">bonuskarte.digital</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-white/5">
             {[
-              ['Immer beim Gast', '✗', '✓'],
-              ['Push-Nachrichten ans Handy', '✗', '✓'],
-              ['Statistiken & Auswertungen', '✗', '✓'],
-              ['Karte geht verloren', 'Ständig', 'Nie'],
-              ['Hygienisch', '✗', '✓'],
-              ['Kosten', 'Druck + Papier', 'Ab 29 €/Monat'],
-              ['App-Download für Gäste nötig', '—', 'Nein'],
-              ['Setup-Zeit', 'Sofort', 'Unter 24h'],
+              ['Toujours sur le client', '✗', '✓'],
+              ['Notifications push sur mobile', '✗', '✓'],
+              ['Statistiques & analyses', '✗', '✓'],
+              ['Carte perdue', 'Souvent', 'Jamais'],
+              ['Hygiénique', '✗', '✓'],
+              ['Coût', 'Impression + papier', 'À partir de 29 €/mois'],
+              ['Téléchargement d\'app nécessaire', '—', 'Non'],
+              ['Délai de mise en place', 'Immédiat', 'Moins de 24h'],
             ].map(([feature, paper, digital]) => (
               <tr>
                 <td class="py-4 pr-8 text-white font-light">{feature}</td>
@@ -281,7 +283,7 @@ const faq = [
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Häufige Fragen</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-white">Questions fréquentes</span>
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
 
@@ -300,16 +302,16 @@ const faq = [
   <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
-      <p class="text-gold-600 text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
+      <p class="text-gold-600 text-xs tracking-[0.4em] uppercase mb-6">Sans risque</p>
       <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">
-        90 Tage gratis
+        90 jours gratuits
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-10">
-        ausprobieren.
+        à tester.
       </h2>
-      <a href="/koeln"
+      <a href="/fr/paris/"
         class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
-        Jetzt kostenlos starten
+        Commencer gratuitement
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
@@ -317,5 +319,5 @@ const faq = [
     </div>
   </section>
 
-  <Footer />
+  <FooterFr />
 </BaseLayout>

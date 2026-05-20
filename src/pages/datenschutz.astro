@@ -3,7 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 ---
-<BaseLayout title="Datenschutz | bonuskarte.digital" description="Datenschutzerklärung von bonuskarte.digital – fuerte.digital, Köln.">
+<BaseLayout
+  title="Datenschutz | bonuskarte.digital"
+  description="Datenschutzerklärung von bonuskarte.digital – fuerte.digital, Köln."
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/datenschutz' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/confidentialite' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/datenschutz' },
+  ]}
+>
   <Navbar />
   <main class="bg-black min-h-screen text-white">
     <div class="max-w-2xl mx-auto px-5 sm:px-8 py-24">
