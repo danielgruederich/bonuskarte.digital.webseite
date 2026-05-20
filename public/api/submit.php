@@ -128,6 +128,54 @@ function salesflare(string $method, string $path, array $data = []): array
     ], $data);
 }
 
+// ── FR / lead-only path (skip Boomerang, record in Salesflare only) ───────────
+if (($body['mode'] ?? '') === 'lead' || ($body['lang'] ?? '') === 'fr') {
+    $arrLabel    = trim($body['arr'] ?? '');
+    $utmCampaign = $utm['utm_campaign'] ?? '';
+    $utmSource   = $utm['utm_source']   ?? 'bonuskarte.digital';
+    $tags        = array_values(array_filter(['paris', 'lead-fr', $niche, $utmCampaign]));
+    $instagramUrl = $instagram ? 'https://www.instagram.com/' . $instagram : null;
+    $nicheLabels  = ['boulangerie' => 'Boulangerie', 'cafe' => 'Café', 'restaurant' => 'Restaurant', 'coiffeur' => 'Coiffeur', 'kebab' => 'Kebab', 'pizzeria' => 'Pizzeria', 'glacier' => 'Glacier', 'fleuriste' => 'Fleuriste', 'salle-de-sport' => 'Salle de sport', 'institut-de-beaute' => 'Institut de beauté'];
+    $nicheLabel   = $nicheLabels[$niche] ?? $niche;
+
+    try {
+        // Account
+        $accountPayload = ['name' => $instagram ? '@' . $instagram : $firstName, 'tags' => $tags];
+        if ($phone && $instagramUrl) {
+            $accountPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
+            $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        } elseif ($phone) {
+            $accountPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
+        } elseif ($instagramUrl) {
+            $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        }
+        $accountRes = salesflare('POST', '/accounts', $accountPayload);
+        $accountId  = $accountRes['body']['id'] ?? null;
+
+        // Contact
+        $contactPayload = ['firstname' => $firstName, 'tags' => $tags];
+        if ($phone)        $contactPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
+        if ($instagramUrl) $contactPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        if ($accountId)    $contactPayload['account']          = $accountId;
+        salesflare('POST', '/contacts', $contactPayload);
+
+        // Opportunity
+        if ($accountId) {
+            $leadPage = str_replace('-', '/', $utmCampaign);
+            salesflare('POST', '/opportunities', [
+                'name'    => $nicheLabel . ' · ' . ($arrLabel ?: 'Paris') . ' · @' . ($instagram ?: $firstName),
+                'account' => $accountId,
+                'tags'    => $tags,
+            ]);
+        }
+    } catch (\Throwable $e) {
+        // Salesflare failure never blocks the response
+    }
+
+    echo json_encode(['success' => true]);
+    exit;
+}
+
 // ── Step 1: Create customer ───────────────────────────────────────────────────
 $customerPayload = ['firstName' => $firstName];
 if ($surname)  $customerPayload['surname'] = $surname;

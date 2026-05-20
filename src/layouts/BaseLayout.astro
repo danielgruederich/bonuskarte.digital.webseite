@@ -3,19 +3,25 @@ interface Props {
   title: string
   description: string
   ogImage?: string
+  lang?: 'de' | 'fr'
+  locale?: string                                     // 'de_DE' | 'fr_FR'
+  alternates?: { hreflang: string; href: string }[]   // hreflang pairs; default empty
 }
 
-const { title, description, ogImage } = Astro.props
+const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [] } = Astro.props
 const canonicalUrl = new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
 const ogImageUrl   = new URL(ogImage ?? '/og-default.png', 'https://bonuskarte.digital').href
 ---
 <!doctype html>
-<html lang="de" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {alternates.map(a => (
+      <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+    ))}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
@@ -23,7 +29,7 @@ const ogImageUrl   = new URL(ogImage ?? '/og-default.png', 'https://bonuskarte.d
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale" content={locale} />
     <meta property="og:site_name" content="bonuskarte.digital" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImageUrl} />

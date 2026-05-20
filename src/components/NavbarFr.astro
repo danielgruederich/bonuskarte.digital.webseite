@@ -1,10 +1,12 @@
 ---
+import { uiFr } from '../data/fr/ui-fr'
+
 interface Props {
   ctaHref?: string
   ctaLabel?: string
   dark?: boolean
 }
-const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = Astro.props
+const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = true } = Astro.props
 ---
 
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
@@ -12,8 +14,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
     <div class="flex items-center justify-between h-16">
 
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
-        <!-- F-mark icon (inline SVG approximating the brand mark) -->
+      <a href="/fr/" class="flex items-center gap-3 group">
         <div class="w-8 h-8 flex-shrink-0">
           <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="32" height="32" fill="black" rx="2"/>
@@ -34,31 +35,26 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
 
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-5 lg:gap-8">
-        <a href="/#wie-es-funktioniert" class="text-xs font-medium tracking-widest uppercase transition-colors"
+        <a href="/fr/#comment-ca-marche" class="text-xs font-medium tracking-widest uppercase transition-colors"
           class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
-          Wie es funktioniert
+          {uiFr.nav.howItWorks}
         </a>
-        <a href="/#branchen" class="text-xs font-medium tracking-widest uppercase transition-colors"
+        <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase transition-colors"
           class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
-          Branchen
+          {uiFr.nav.secteurs}
         </a>
-        <a href="/preise" class="text-xs font-medium tracking-widest uppercase transition-colors"
+        <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase transition-colors"
           class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
-          Preise
+          {uiFr.nav.tarifs}
         </a>
-        <a href="/koeln/blog" class="text-xs font-medium tracking-widest uppercase transition-colors"
-          class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
-          Blog
-        </a>
-        <a href="/hilfe" class="text-xs font-medium tracking-widest uppercase transition-colors"
-          class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
-          Hilfe
-        </a>
-        <span class="text-xs font-medium tracking-widest uppercase text-white/40">
-          <span class="text-gold-600">DE</span>
-          <span class="mx-1">|</span>
-          <a href="/fr/" class="hover:text-gold-600 transition-colors">FR</a>
-        </span>
+
+        <!-- Language switcher -->
+        <div class="flex items-center gap-1 text-xs font-medium tracking-widest uppercase" class:list={[dark ? 'text-white/60' : 'text-black/40']}>
+          <span class="text-gold-600">FR</span>
+          <span class:list={[dark ? 'text-white/30' : 'text-black/20']}>|</span>
+          <a href="/" class:list={[dark ? 'text-white/60 hover:text-white transition-colors' : 'text-black/40 hover:text-black transition-colors']}>DE</a>
+        </div>
+
         <a
           href={ctaHref}
           class="group inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-black px-5 py-2.5 text-xs font-bold tracking-widest uppercase transition-all"
@@ -73,7 +69,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
       <!-- Mobile toggle -->
       <button id="mobile-toggle" class="lg:hidden p-2 transition-colors"
         class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black hover:text-gold-600']}
-        aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -85,23 +81,17 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = 
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 py-6 flex flex-col gap-5 bg-black/95 backdrop-blur-md">
-      <a href="/#wie-es-funktioniert" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
-        Wie es funktioniert
+      <a href="/fr/#comment-ca-marche" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
+        {uiFr.nav.howItWorks}
       </a>
-      <a href="/#branchen" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
-        Branchen
+      <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
+        {uiFr.nav.secteurs}
       </a>
-      <a href="/preise" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
-        Preise
+      <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
+        {uiFr.nav.tarifs}
       </a>
-      <a href="/koeln/blog" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
-        Blog
-      </a>
-      <a href="/hilfe" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
-        Hilfe
-      </a>
-      <a href="/fr/" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
-        🇫🇷 Version française (FR)
+      <a href="/" class="text-xs font-medium tracking-widest uppercase text-white/60 hover:text-white transition-colors">
+        🇩🇪 Version (DE)
       </a>
       <a href={ctaHref} class="block w-full bg-gold-600 text-black text-xs font-bold tracking-widest uppercase px-5 py-3 text-center">
         {ctaLabel}
