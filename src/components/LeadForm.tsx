@@ -6,6 +6,10 @@ interface Props {
   city: string
   formspreeId?: string
   whatsappUrl?: string
+  mode?: 'standard' | 'gruender'
+  bannerText?: string
+  submitLabel?: string
+  successHeadline?: string
 }
 
 interface CardLinks {
@@ -21,7 +25,15 @@ const inputClass =
 
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-white/60 mb-2'
 
-export default function LeadForm({ niche, city, whatsappUrl }: Props) {
+export default function LeadForm({
+  niche,
+  city,
+  whatsappUrl,
+  mode = 'standard',
+  bannerText,
+  submitLabel = 'Demo-Karte erstellen',
+  successHeadline,
+}: Props) {
   const [state, setState] = useState<State>('idle')
   const [card, setCard] = useState<CardLinks | null>(null)
   const [vorname, setVorname] = useState('')
@@ -64,6 +76,8 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
           instagram: cleanInstagram,
           telefon:   data.telefon,
           niche:     niche.toLowerCase(),
+          city:      city.toLowerCase(),
+          mode,
           utm:       getUtmParams(),
         }),
       })
@@ -103,10 +117,17 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
         </div>
 
         <h3 className="text-xl font-semibold tracking-wide text-white mb-3">
-          {vorname ? `Deine Demo-Karte ist fertig, ${vorname}!` : 'Deine Demo-Karte ist fertig!'}
+          {(() => {
+            if (successHeadline) {
+              return vorname ? `${successHeadline}, ${vorname}!` : `${successHeadline}!`
+            }
+            return vorname ? `Deine Demo-Karte ist fertig, ${vorname}!` : 'Deine Demo-Karte ist fertig!'
+          })()}
         </h3>
         <p className="text-white text-sm leading-relaxed max-w-sm mx-auto mb-8">
-          Lade sie jetzt ins Wallet — kein Download, keine App nötig.
+          {mode === 'gruender'
+            ? 'Wir melden uns innerhalb 24 h. Lade jetzt deine Demo-Karte ins Wallet — so siehst du schon mal, wie es aussieht.'
+            : 'Lade sie jetzt ins Wallet — kein Download, keine App nötig.'}
         </p>
 
         {universalLink && (
@@ -175,8 +196,15 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">2 Pflichtfelder · 30 Sekunden</p>
+    <>
+      {mode === 'gruender' && bannerText && (
+        <div className="mb-6 border border-gold-600/60 bg-gradient-to-b from-gold-600/[0.08] to-transparent p-5">
+          <p className="text-xs tracking-[0.3em] uppercase text-gold-600 mb-2">Platz sichern</p>
+          <p className="text-sm text-white/90 font-light leading-relaxed">{bannerText}</p>
+        </div>
+      )}
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">2 Pflichtfelder · 30 Sekunden</p>
 
       <div>
         <label htmlFor="vorname" className={labelClass}>Dein Vorname *</label>
@@ -230,7 +258,7 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
           </>
         ) : (
           <>
-            Demo-Karte erstellen
+            {submitLabel}
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
@@ -239,8 +267,11 @@ export default function LeadForm({ niche, city, whatsappUrl }: Props) {
       </button>
 
       <p className="text-xs tracking-widest uppercase text-center text-white">
-        Kein Risiko · Keine Kreditkarte · 90 Tage kostenlos
+        {mode === 'gruender'
+          ? '90 Tage Geld-zurück · Verbindlich erst nach Telefonat · DSGVO'
+          : 'Kein Risiko · Keine Kreditkarte · 90 Tage kostenlos'}
       </p>
     </form>
+    </>
   )
 }

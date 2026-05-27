@@ -53,6 +53,8 @@ $phone     = trim($body['telefon']   ?? $body['phone']     ?? '');
 $kontakt   = trim($body['kontakt']   ?? ''); // LeadFormDoener combined field
 $niche     = strtolower(trim($body['niche'] ?? 'cafe'));
 $utm       = $body['utm'] ?? [];
+$mode      = strtolower(trim($body['mode'] ?? 'standard'));
+$reqCity   = strtolower(trim($body['city'] ?? ''));
 
 // Normalize display names to template keys
 $nicheAliases = [
@@ -226,7 +228,15 @@ try {
     $leadCity      = $pathParts[0] ?? 'unbekannt';
     $leadVeedel    = $pathParts[1] ?? '';
     $leadPage      = str_replace('-', '/', $utmCampaign); // koeln/nippes/cafes
-    $tags          = array_values(array_filter([$niche, $leadCity, $utmCampaign]));
+    $baseTags = [$niche, $leadCity, $utmCampaign];
+    if ($mode === 'gruender') {
+        $baseTags[] = 'gruender-100';
+        $baseTags[] = 'lifetime-100eur';
+        if ($reqCity) {
+            $baseTags[] = $reqCity;
+        }
+    }
+    $tags          = array_values(array_filter($baseTags));
     $instagramUrl  = $instagram ? 'https://www.instagram.com/' . $instagram : null;
     $nicheLabels   = ['cafe' => 'Café', 'doener' => 'Döner', 'pizza' => 'Pizza', 'restaurant' => 'Restaurant', 'eiscafe' => 'Eiscafé', 'baeckerei' => 'Bäckerei', 'friseur' => 'Friseur', 'fitnessstudio' => 'Fitnessstudio', 'yoga' => 'Yoga-Studio', 'blumenladen' => 'Blumenladen'];
     $nicheLabel    = $nicheLabels[$niche] ?? $niche;
