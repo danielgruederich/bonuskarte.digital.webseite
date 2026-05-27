@@ -66,6 +66,7 @@ export default function LeadForm({
     const data = Object.fromEntries(new FormData(form))
     setVorname((data.vorname as string) ?? '')
     const cleanInstagram = String(data.instagram ?? '').replace(/^@+/, '')
+    analytics.signupSubmitAttempt(niche, city, mode)
 
     try {
       const res = await fetch('/api/submit.php', {
@@ -89,15 +90,17 @@ export default function LeadForm({
           directInstallLink: json.directInstallLink,
         })
         analytics.demoCardCreated(niche, city)
-        analytics.leadConversion()
+        analytics.signupSubmit(niche, city, mode)
         setState('success')
         form.reset()
         setInstagram('')
       } else {
+        analytics.signupSubmitError(niche, city, 'api_error', mode)
         setErrorMsg('Etwas ist schiefgelaufen. Bitte versuche es erneut.')
         setState('error')
       }
     } catch {
+      analytics.signupSubmitError(niche, city, 'network_error', mode)
       setErrorMsg('Keine Verbindung. Bitte Internetverbindung prüfen und erneut versuchen.')
       setState('error')
     }
@@ -191,7 +194,7 @@ export default function LeadForm({
   function handleFirstFocus() {
     if (!formStartedRef.current) {
       formStartedRef.current = true
-      analytics.formStarted(niche, city)
+      analytics.signupFormStart(niche, city, mode)
     }
   }
 

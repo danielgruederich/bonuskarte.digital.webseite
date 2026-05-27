@@ -1,4 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
+import { analytics } from '../lib/analytics'
+
+interface Props {
+  location?: string
+}
 
 const screens = [
   '/screens/screen-1.webp',
@@ -32,10 +37,12 @@ const labels = [
   'Underluxx',
 ]
 
-export default function PhoneMockup() {
+export default function PhoneMockup({ location = 'hero' }: Props = {}) {
   const [current, setCurrent] = useState(0)
   const [labelVisible, setLabelVisible] = useState(true)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const wrapperRef = useRef<HTMLDivElement | null>(null)
+  const viewedRef = useRef(false)
 
   const goTo = (next: number) => {
     if (next === current) return
@@ -58,6 +65,25 @@ export default function PhoneMockup() {
       if (timerRef.current) clearInterval(timerRef.current)
     }
   }, [])
+
+  useEffect(() => {
+    const el = wrapperRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && !viewedRef.current) {
+            viewedRef.current = true
+            analytics.demoCardView(location)
+            obs.disconnect()
+          }
+        }
+      },
+      { threshold: 0.5 },
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [location])
 
   return (
     <>
@@ -85,7 +111,7 @@ export default function PhoneMockup() {
           transform: translateY(-4px);
         }
       `}</style>
-      <div className="phone-mockup-wrap relative flex flex-col items-center gap-3 w-full max-w-[260px]">
+      <div ref={wrapperRef} className="phone-mockup-wrap relative flex flex-col items-center gap-3 w-full max-w-[260px]">
 
       {/* Phone frame – aspect ratio preserves proportions */}
       <div className="relative w-full" style={{ aspectRatio: '260 / 530' }}>

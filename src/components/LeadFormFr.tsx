@@ -51,7 +51,7 @@ export default function LeadFormFr({ niche, arr }: Props) {
   function handleFirstFocus() {
     if (!formStartedRef.current) {
       formStartedRef.current = true
-      analytics.formStarted(niche, arr)
+      analytics.signupFormStart(niche, arr, 'fr_paris')
     }
   }
 
@@ -65,6 +65,7 @@ export default function LeadFormFr({ niche, arr }: Props) {
     const currentPhone  = String(data.phone  ?? '')
     setPrenom(currentPrenom)
     setPhone(currentPhone)
+    analytics.signupSubmitAttempt(niche, arr, 'fr_paris')
 
     try {
       const res = await fetch('/api/submit.php', {
@@ -83,15 +84,17 @@ export default function LeadFormFr({ niche, arr }: Props) {
       })
       const json = await res.json()
       if (res.ok && json.success) {
-        analytics.leadConversion()
+        analytics.signupSubmit(niche, arr, 'fr_paris')
         setState('success')
         form.reset()
         setInstagram('')
       } else {
+        analytics.signupSubmitError(niche, arr, 'api_error', 'fr_paris')
         setErrorMsg('Une erreur est survenue. Veuillez réessayer.')
         setState('error')
       }
     } catch {
+      analytics.signupSubmitError(niche, arr, 'network_error', 'fr_paris')
       setErrorMsg('Pas de connexion. Veuillez vérifier votre connexion internet.')
       setState('error')
     }

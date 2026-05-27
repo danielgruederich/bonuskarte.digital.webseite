@@ -52,6 +52,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
     const data = Object.fromEntries(new FormData(form))
     setVorname((data.vorname as string) ?? '')
     const cleanInstagram = String(data.instagram ?? '').replace(/^@+/, '')
+    analytics.signupSubmitAttempt(niche, 'koeln', 'doener')
 
     try {
       const res = await fetch('/api/submit.php', {
@@ -72,15 +73,17 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
           directInstallLink: json.directInstallLink,
         })
         analytics.demoCardCreated(niche, 'koeln')
-        analytics.leadConversion()
+        analytics.signupSubmit(niche, 'koeln', 'doener')
         setState('success')
         form.reset()
         setInstagram('')
       } else {
+        analytics.signupSubmitError(niche, 'koeln', 'api_error', 'doener')
         setErrorMsg('Etwas ist schiefgelaufen. Bitte versuche es erneut.')
         setState('error')
       }
     } catch {
+      analytics.signupSubmitError(niche, 'koeln', 'network_error', 'doener')
       setErrorMsg('Keine Verbindung. Bitte Internetverbindung prüfen und erneut versuchen.')
       setState('error')
     }
@@ -161,7 +164,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
   function handleFirstFocus() {
     if (!formStartedRef.current) {
       formStartedRef.current = true
-      analytics.formStarted(niche, 'koeln')
+      analytics.signupFormStart(niche, 'koeln', 'doener')
     }
   }
 
