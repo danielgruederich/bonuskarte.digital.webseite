@@ -1,5 +1,7 @@
 # Gründer-Landing Implementation Plan
 
+> **STATUS: COMPLETED 2026-05-27** — alle 8 Tasks executed, gemerged in `main` (commit `6fb8def`), via GitHub Actions zu Starthost deployed, live auf https://bonuskarte.digital/koeln/gruender/. Visueller Browser-Check + Test-Lead durch Daniel noch offen.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a standalone, noindex Gründer landing page at `/koeln/gruender` that converts visitors via the existing LeadForm (with a Gründer-Banner + Salesflare tagging) into 100 €-Lifetime leads.
