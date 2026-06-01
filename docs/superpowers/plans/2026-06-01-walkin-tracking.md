@@ -8,6 +8,8 @@
 
 **Tech Stack:** Astro 4 (static), React-Islands (TSX), Tailwind, PHP-Endpoint (`submit.php`), GA4 + Google Ads, Salesflare. Kein Unit-Test-Framework vorhanden → Verifikation per Build, HTML-Grep, GA4-Echtzeit, Browser-Check.
 
+> **STATUS 2026-06-01: Tasks 1–7 umgesetzt, gemergt, auf main gepusht und live deployed.** Zusätzlich alle 10 Boomerang-Template-IDs in `submit.php` verdrahtet (Commits `72534b1`+`cd601f4`). Live verifiziert: `/koeln/walkin` HTTP 200, 10 Branchen, noindex, aus Sitemap; Test-POST `niche=doener` → korrektes Template 1115375 + Salesflare-Lead mit Tag `walkin`. **Task 8 (manuell, Daniel): GA4-Echtzeit-Events prüfen + Test-Lead `@test_claude_doener` löschen.**
+
 > **iCloud-Build-Caveat:** Lokaler `npm run build` hängt unter System-Node + iCloud. Vor jedem Build: `fnm use 22` (ggf. `fnm install 22`). Wenn der Build trotzdem hängt, ist die kanonische Verifikation der Deploy-Build via GitHub Actions. Siehe Memory `feedback_icloud_breaks_local_builds`.
 
 ---
