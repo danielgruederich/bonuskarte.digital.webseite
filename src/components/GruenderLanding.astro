@@ -6,13 +6,16 @@ import Icon from './icons/TrustIcons.astro'
 import LeadForm from './LeadForm.tsx'
 import WalletMockup from './WalletMockup.astro'
 import type { GruenderCityConfig } from '../data/gruender'
+import { niches } from '../data/niches'
 
 interface Props {
   config: GruenderCityConfig
 }
 
-const { config } = Astro.props
+const { config, source = 'gruender' } = Astro.props
 const { cityCapitalized, cityDative, faq } = config
+
+const nicheOptions = niches.map((n) => ({ slug: n.slug, label: n.label }))
 
 const title = `Gründer-Aktion ${cityCapitalized} — 100 € einmalig, kein Abo | bonuskarte.digital`
 const description = `Für die ersten 100 ${cityDative} Betriebe: digitale Stempelkarte für 100 € einmalig. Kein Abo, 90 Tage Geld-zurück-Garantie. Apple & Google Wallet.`
@@ -194,6 +197,9 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
         bannerText={bannerText}
         submitLabel="Platz sichern"
         successHeadline="Dein Platz ist reserviert"
+        source={source}
+        selectableNiche={true}
+        nicheOptions={nicheOptions}
       />
     </div>
   </section>
