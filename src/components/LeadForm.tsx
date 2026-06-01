@@ -247,7 +247,7 @@ export default function LeadForm({
             onChange={handleNicheChange}
             className={inputClass}
           >
-            <option value="" disabled>Branche wählen</option>
+            <option value="" disabled className="bg-black text-white">Branche wählen</option>
             {nicheOptions.map((n) => (
               <option key={n.slug} value={n.slug} className="bg-black text-white">
                 {n.label}
