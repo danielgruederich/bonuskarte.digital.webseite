@@ -36,10 +36,13 @@ const SALESFLARE_BASE    = 'https://api.salesflare.com';
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
     'cafe'       => 1046392, // Kölner Kaffee Laden — active ✅
-    'doener'     => null,    // TODO: create in Boomerang
-    'pizza'      => null,    // TODO: create in Boomerang
-    'restaurant' => null,    // TODO: create in Boomerang
+    'doener'     => 1115375, // active ✅
+    'pizza'      => 1115406, // active ✅
+    'restaurant' => 1115409, // active ✅
     'eiscafe'    => 1060441, // Eiscafé — active ✅
+    'baeckerei'  => 1115411, // active ✅
+    'friseur'    => 1115412, // active ✅
+    // TODO: fitnessstudio, yoga, blumenladen — noch kein Template (Café-Fallback)
 ];
 const TEMPLATE_FALLBACK = 1046392; // used if niche has no template yet
 
