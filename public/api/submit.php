@@ -54,6 +54,7 @@ $kontakt   = trim($body['kontakt']   ?? ''); // LeadFormDoener combined field
 $niche     = strtolower(trim($body['niche'] ?? 'cafe'));
 $utm       = $body['utm'] ?? [];
 $mode      = strtolower(trim($body['mode'] ?? 'standard'));
+$source    = strtolower(trim($body['source'] ?? ''));
 $reqCity   = strtolower(trim($body['city'] ?? ''));
 
 // Normalize display names to template keys
@@ -234,6 +235,9 @@ try {
         $baseTags[] = 'lifetime-100eur';
         if ($reqCity) {
             $baseTags[] = $reqCity;
+        }
+        if ($source === 'gruender_walkin') {
+            $baseTags[] = 'walkin';
         }
     }
     $tags          = array_values(array_filter($baseTags));
