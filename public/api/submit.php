@@ -42,7 +42,9 @@ const TEMPLATE_IDS = [
     'eiscafe'    => 1060441, // Eiscafé — active ✅
     'baeckerei'  => 1115411, // active ✅
     'friseur'    => 1115412, // active ✅
-    // TODO: fitnessstudio, yoga, blumenladen — noch kein Template (Café-Fallback)
+    'fitnessstudio' => 1115413, // active ✅
+    'yoga'          => 1115414, // active ✅
+    'blumenladen'   => 1115415, // active ✅
 ];
 const TEMPLATE_FALLBACK = 1046392; // used if niche has no template yet
 
