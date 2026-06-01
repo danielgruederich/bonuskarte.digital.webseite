@@ -19,7 +19,7 @@ Tracking-Snippet liegt in `src/layouts/BaseLayout.astro`. Funnel-Events feuern a
 Reihenfolge im Trial-Funnel:
 
 ```
-page_view  →  demo_card_view  →  signup_form_start  →  signup_submit
+page_view  →  demo_card_view  →  niche_selected  →  signup_form_start  →  signup_submit
                                                           ↘ demo_booking (parallel)
                                                           ↘ chatbot_open (parallel)
 ```
@@ -40,6 +40,13 @@ page_view  →  demo_card_view  →  signup_form_start  →  signup_submit
 - **Bedeutet:** Nutzer fokussiert das erste Pflicht-Feld im Lead-Formular.
 - **Trigger:** `onFocus` des Vorname/Prénom-Inputs (einmal pro Session).
 - **Parameter:** `niche`, `city`, `source` (z.B. `'gruender'`, `'standard'`, `'doener'`, `'fr_paris'`).
+- **Status:** ✅ Live.
+
+### `niche_selected`
+- **Bedeutet:** Nutzer hat im Branchen-Dropdown (Gründer-/Walk-in-Seite) eine Branche gewählt.
+- **Trigger:** `onChange` des Branchen-Selects in `LeadForm.tsx` (einmal pro Session).
+- **Parameter:** `niche`, `city`, `source` (`'gruender'` oder `'gruender_walkin'`).
+- **Nutzen:** Schließt die Funnel-Lücke zwischen `demo_card_view` und `signup_form_start` — zeigt Abbrecher, die zwar die Branche wählen, aber keine Kontaktdaten eingeben.
 - **Status:** ✅ Live.
 
 ### `signup_submit_attempt`
@@ -134,6 +141,7 @@ Werte:
 |---|---|
 | `standard` | Reguläre Veedel-/Stadt-Landing-Pages |
 | `gruender` | Gründer-Landing `/koeln/gruender/` |
+| `gruender_walkin` | Walk-in-Seite `/koeln/walkin/` (iPad-Anlage durch Gründer) |
 | `doener` | Döner-spezifische Form |
 | `fr_paris` | Französischer Markt (`/fr/`-Pfad) |
 

@@ -50,6 +50,7 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `src/data/niches.ts` | Zentrale Nischen-Config (slug, SEO, Copy, Template ID) |
 | `src/data/veedel.ts` | 15 Kölner Veedel mit FOMO-Counts |
 | `src/pages/koeln/[veedel]/[niche].astro` | Unified Landing Page (60 Seiten) |
+| `src/pages/koeln/walkin.astro` | Walk-in-Landingpage fürs iPad (noindex, `source='gruender_walkin'`), nische-unabhängig |
 | `src/components/LeadForm.tsx` | Hauptformular (Café, Restaurant, Pizza, Eiscafé) |
 | `src/components/LeadFormDoener.tsx` | Vereinfachtes Formular für Döner |
 | `src/components/ui/gooey-text-morphing.tsx` | GooeyText-Animation (morphende Wörter, nur Eiscafé-Hero) |
