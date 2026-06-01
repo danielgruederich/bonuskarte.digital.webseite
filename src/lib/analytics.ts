@@ -30,6 +30,10 @@ export const analytics = {
   signupFormStart: (niche: string, city: string, source: string = 'standard') =>
     track('signup_form_start', { niche, city, source }),
 
+  /** Funnel-Step: Branche im Dropdown gewählt (einmal pro Session) */
+  nicheSelected: (niche: string, city: string, source: string = 'standard') =>
+    track('niche_selected', { niche, city, source }),
+
   /** Funnel-Step: Submit-Button gedrückt (Diagnose-Event für API-Drop-off) */
   signupSubmitAttempt: (niche: string, city: string, source: string = 'standard') =>
     track('signup_submit_attempt', { niche, city, source }),
