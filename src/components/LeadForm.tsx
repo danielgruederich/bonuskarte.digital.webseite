@@ -1,6 +1,11 @@
 import { useState, type FormEvent, type ChangeEvent, useRef } from 'react'
 import { analytics } from '../lib/analytics'
 
+interface NicheOption {
+  slug: string
+  label: string
+}
+
 interface Props {
   niche: string
   city: string
@@ -10,6 +15,12 @@ interface Props {
   bannerText?: string
   submitLabel?: string
   successHeadline?: string
+  /** Wenn true: Branche wird per Dropdown gewählt statt festem `niche`-Prop */
+  selectableNiche?: boolean
+  /** Auswahloptionen fürs Dropdown (Pflicht wenn selectableNiche=true) */
+  nicheOptions?: NicheOption[]
+  /** Analytics-source; default = mode. Erlaubt z.B. 'gruender_walkin' bei identischem mode. */
+  source?: string
 }
 
 interface CardLinks {
@@ -33,6 +44,9 @@ export default function LeadForm({
   bannerText,
   submitLabel = 'Demo-Karte erstellen',
   successHeadline,
+  selectableNiche = false,
+  nicheOptions = [],
+  source,
 }: Props) {
   const [state, setState] = useState<State>('idle')
   const [card, setCard] = useState<CardLinks | null>(null)
@@ -40,9 +54,21 @@ export default function LeadForm({
   const [instagram, setInstagram] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
   const formStartedRef = useRef(false)
+  const [selectedNiche, setSelectedNiche] = useState('')
+  const nicheSelectedRef = useRef(false)
+  const trackSource = source ?? mode
+  const effectiveNiche = selectableNiche ? selectedNiche : niche
 
   function handleInstagramChange(e: ChangeEvent<HTMLInputElement>) {
     setInstagram(e.target.value.replace(/^@+/, ''))
+  }
+
+  function handleNicheChange(e: ChangeEvent<HTMLSelectElement>) {
+    setSelectedNiche(e.target.value)
+    if (e.target.value && !nicheSelectedRef.current) {
+      nicheSelectedRef.current = true
+      analytics.nicheSelected(e.target.value, city, trackSource)
+    }
   }
 
   function getUtmParams(): Record<string, string> {
@@ -66,7 +92,7 @@ export default function LeadForm({
     const data = Object.fromEntries(new FormData(form))
     setVorname((data.vorname as string) ?? '')
     const cleanInstagram = String(data.instagram ?? '').replace(/^@+/, '')
-    analytics.signupSubmitAttempt(niche, city, mode)
+    analytics.signupSubmitAttempt(effectiveNiche, city, trackSource)
 
     try {
       const res = await fetch('/api/submit.php', {
@@ -76,9 +102,10 @@ export default function LeadForm({
           vorname:   data.vorname,
           instagram: cleanInstagram,
           telefon:   data.telefon,
-          niche:     niche.toLowerCase(),
+          niche:     effectiveNiche.toLowerCase(),
           city:      city.toLowerCase(),
           mode,
+          source:    trackSource,
           utm:       getUtmParams(),
         }),
       })
@@ -89,18 +116,18 @@ export default function LeadForm({
           shareLink: json.shareLink,
           directInstallLink: json.directInstallLink,
         })
-        analytics.demoCardCreated(niche, city)
-        analytics.signupSubmit(niche, city, mode)
+        analytics.demoCardCreated(effectiveNiche, city)
+        analytics.signupSubmit(effectiveNiche, city, trackSource)
         setState('success')
         form.reset()
         setInstagram('')
       } else {
-        analytics.signupSubmitError(niche, city, 'api_error', mode)
+        analytics.signupSubmitError(effectiveNiche, city, 'api_error', trackSource)
         setErrorMsg('Etwas ist schiefgelaufen. Bitte versuche es erneut.')
         setState('error')
       }
     } catch {
-      analytics.signupSubmitError(niche, city, 'network_error', mode)
+      analytics.signupSubmitError(effectiveNiche, city, 'network_error', trackSource)
       setErrorMsg('Keine Verbindung. Bitte Internetverbindung prüfen und erneut versuchen.')
       setState('error')
     }
@@ -194,7 +221,7 @@ export default function LeadForm({
   function handleFirstFocus() {
     if (!formStartedRef.current) {
       formStartedRef.current = true
-      analytics.signupFormStart(niche, city, mode)
+      analytics.signupFormStart(effectiveNiche, city, trackSource)
     }
   }
 
@@ -208,6 +235,27 @@ export default function LeadForm({
       )}
       <form onSubmit={handleSubmit} className="space-y-5">
         <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">2 Pflichtfelder · 30 Sekunden</p>
+
+      {selectableNiche && (
+        <div>
+          <label htmlFor="niche-select" className={labelClass}>Branche *</label>
+          <select
+            id="niche-select"
+            name="niche-select"
+            required
+            value={selectedNiche}
+            onChange={handleNicheChange}
+            className={inputClass}
+          >
+            <option value="" disabled>Branche wählen</option>
+            {nicheOptions.map((n) => (
+              <option key={n.slug} value={n.slug} className="bg-black text-white">
+                {n.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <div>
         <label htmlFor="vorname" className={labelClass}>Dein Vorname *</label>
