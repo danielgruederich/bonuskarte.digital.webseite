@@ -33,6 +33,10 @@ const BOOMERANG_BASE     = 'https://api.digitalwallet.cards';
 const SALESFLARE_API_KEY = 'Lh1Qucl715Sp6Pwy4DZpoxzlGWt64Ugz7GA3M9G5_NKjm';
 const SALESFLARE_BASE    = 'https://api.salesflare.com';
 
+// Telegram Lead-Alert (eigener Bot @bonuskarte_leads_bot)
+const TELEGRAM_BOT_TOKEN = '8557794026:AAHVILm2tKZFbTaTEG7s7wkxZJl8mQ-QsB8';
+const TELEGRAM_CHAT_ID    = '128525956';
+
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
     'cafe'       => 1046392, // Kölner Kaffee Laden — active ✅
@@ -136,6 +140,145 @@ function salesflare(string $method, string $path, array $data = []): array
     ], $data);
 }
 
+// ── Salesflare lead recorder ──────────────────────────────────────────────────
+// Speichert Account + Kontakt + Opportunity. Läuft VOR Boomerang, damit ein Fehler
+// bei der Demo-Karten-Erstellung den Lead nie mehr verschluckt. Fehler hier
+// blockieren die Antwort nie (try/catch, fire & forget).
+function recordSalesflareLead(
+    string $firstName,
+    string $instagram,
+    string $phone,
+    string $niche,
+    string $mode,
+    string $source,
+    string $reqCity,
+    array $utm
+): void {
+    try {
+        // Extract city/veedel/niche from utm_campaign (e.g. "koeln-nippes-cafes")
+        $utmCampaign   = $utm['utm_campaign'] ?? '';
+        $pathParts     = explode('-', $utmCampaign);
+        $leadCity      = $pathParts[0] ?? 'unbekannt';
+        $leadPage      = str_replace('-', '/', $utmCampaign); // koeln/nippes/cafes
+        $baseTags = [$niche, $leadCity, $utmCampaign];
+        if ($mode === 'gruender') {
+            $baseTags[] = 'gruender-100';
+            $baseTags[] = 'lifetime-100eur';
+            if ($reqCity) {
+                $baseTags[] = $reqCity;
+            }
+            if ($source === 'gruender_walkin') {
+                $baseTags[] = 'walkin';
+            }
+        }
+        $tags          = array_values(array_filter($baseTags));
+        $instagramUrl  = $instagram ? 'https://www.instagram.com/' . $instagram : null;
+        $nicheLabels   = ['cafe' => 'Café', 'doener' => 'Döner', 'pizza' => 'Pizza', 'restaurant' => 'Restaurant', 'eiscafe' => 'Eiscafé', 'baeckerei' => 'Bäckerei', 'friseur' => 'Friseur', 'fitnessstudio' => 'Fitnessstudio', 'yoga' => 'Yoga-Studio', 'blumenladen' => 'Blumenladen'];
+        $nicheLabel    = $nicheLabels[$niche] ?? $niche;
+
+        // ── Account (the business) ──────────────────────────────────────────────
+        $accountPayload = [
+            'name' => $instagram ? '@' . $instagram : $firstName,
+            'tags' => $tags,
+        ];
+        if ($phone && $instagramUrl) {
+            $accountPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
+            $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        } elseif ($phone) {
+            $accountPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
+        } elseif ($instagramUrl) {
+            $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        }
+
+        $accountRes = salesflare('POST', '/accounts', $accountPayload);
+        $accountId  = $accountRes['body']['id'] ?? null;
+
+        // ── Contact (the person) ────────────────────────────────────────────────
+        $contactPayload = [
+            'firstname' => $firstName,
+            'tags'      => $tags,
+        ];
+        if ($phone) {
+            $contactPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
+        }
+        if ($instagramUrl) {
+            $contactPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        }
+        if ($accountId) {
+            $contactPayload['account'] = $accountId;
+        }
+
+        salesflare('POST', '/contacts', $contactPayload);
+
+        // ── Opportunity ─────────────────────────────────────────────────────────
+        if ($accountId) {
+            salesflare('POST', '/opportunities', [
+                'name'    => $nicheLabel . ' · @' . ($instagram ?: $firstName) . ' · /' . $leadPage,
+                'account' => $accountId,
+                'tags'    => $tags,
+            ]);
+        }
+    } catch (\Throwable $e) {
+        // Salesflare failure never blocks the main response
+    }
+}
+
+// ── Telegram Lead-Alert ───────────────────────────────────────────────────────
+// Pingt sofort bei jedem Lead mit Name + Nummer + Nische + fertigem wa.me-Link,
+// damit das Follow-up in einem Tap passieren kann. Fire & forget, blockiert nie.
+function notifyTelegramLead(
+    string $firstName,
+    string $phone,
+    string $email,
+    string $instagram,
+    string $niche,
+    string $mode,
+    array $utm
+): void {
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+        return;
+    }
+    try {
+        $utmCampaign = $utm['utm_campaign'] ?? '';
+        $leadPage    = $utmCampaign ? '/' . str_replace('-', '/', $utmCampaign) : '';
+        $nicheLabels = ['cafe' => 'Café', 'doener' => 'Döner', 'pizza' => 'Pizza', 'restaurant' => 'Restaurant', 'eiscafe' => 'Eiscafé', 'baeckerei' => 'Bäckerei', 'friseur' => 'Friseur', 'fitnessstudio' => 'Fitnessstudio', 'yoga' => 'Yoga-Studio', 'blumenladen' => 'Blumenladen'];
+        $nicheLabel  = $nicheLabels[$niche] ?? $niche;
+
+        // wa.me-Link aus der Telefonnummer bauen (deutsche Nummern: führende 0 → 49)
+        $waLink = '';
+        if ($phone) {
+            $digits = preg_replace('/\D+/', '', $phone);
+            if (str_starts_with($digits, '0')) {
+                $digits = '49' . substr($digits, 1);
+            }
+            if ($digits) {
+                $greeting = "Hallo {$firstName}, hier ist Daniel von bonuskarte.digital 👋 Danke, dass du dir eine Demo-Karte erstellt hast! Wann passt dir ein kurzer Call?";
+                $waLink = 'https://wa.me/' . $digits . '?text=' . rawurlencode($greeting);
+            }
+        }
+
+        $lines   = [];
+        $lines[] = '🎯 <b>Neuer Lead</b> — ' . htmlspecialchars($nicheLabel) . ($mode === 'gruender' ? ' · Gründer' : '');
+        $lines[] = '👤 ' . htmlspecialchars($firstName);
+        $lines[] = '📱 ' . ($phone ? htmlspecialchars($phone) : '—');
+        if ($email)     $lines[] = '✉️ ' . htmlspecialchars($email);
+        if ($instagram) $lines[] = '📷 @' . htmlspecialchars($instagram);
+        if ($leadPage)  $lines[] = '🔗 ' . htmlspecialchars($leadPage);
+        if ($waLink)    $lines[] = "\n<a href=\"" . htmlspecialchars($waLink) . "\">📲 Auf WhatsApp antworten</a>";
+
+        apiRequest('POST', 'https://api.telegram.org', '/bot' . TELEGRAM_BOT_TOKEN . '/sendMessage', [
+            'Content-Type: application/json',
+        ], [
+            'chat_id'                  => TELEGRAM_CHAT_ID,
+            'text'                     => implode("\n", $lines),
+            'parse_mode'               => 'HTML',
+            'disable_web_page_preview' => true,
+        ]);
+    } catch (\Throwable $e) {
+        // Telegram failure never blocks the main response
+    }
+}
+
 // ── FR / lead-only path (skip Boomerang, record in Salesflare only) ───────────
 if (($body['mode'] ?? '') === 'lead' || ($body['lang'] ?? '') === 'fr') {
     $arrLabel    = trim($body['arr'] ?? '');
@@ -184,6 +327,10 @@ if (($body['mode'] ?? '') === 'lead' || ($body['lang'] ?? '') === 'fr') {
     exit;
 }
 
+// ── Step 0: Record lead in Salesflare FIRST (never lost on Boomerang failure) ─
+recordSalesflareLead($firstName, $instagram, $phone, $niche, $mode, $source, $reqCity, $utm);
+notifyTelegramLead($firstName, $phone, $email, $instagram, $niche, $mode, $utm);
+
 // ── Step 1: Create customer ───────────────────────────────────────────────────
 $customerPayload = ['firstName' => $firstName];
 if ($surname)  $customerPayload['surname'] = $surname;
@@ -224,77 +371,6 @@ if ($cardRes['code'] !== 201 || empty($cardRes['body']['data'])) {
 }
 
 $card = $cardRes['body']['data'];
-
-// ── Step 3: Create lead in Salesflare (fire & forget — never blocks response) ─
-try {
-    // Extract city/veedel/niche from utm_campaign (e.g. "koeln-nippes-cafes")
-    $utmCampaign   = $utm['utm_campaign'] ?? '';
-    $utmSource     = $utm['utm_source'] ?? 'bonuskarte.digital';
-    $pathParts     = explode('-', $utmCampaign);
-    $leadCity      = $pathParts[0] ?? 'unbekannt';
-    $leadVeedel    = $pathParts[1] ?? '';
-    $leadPage      = str_replace('-', '/', $utmCampaign); // koeln/nippes/cafes
-    $baseTags = [$niche, $leadCity, $utmCampaign];
-    if ($mode === 'gruender') {
-        $baseTags[] = 'gruender-100';
-        $baseTags[] = 'lifetime-100eur';
-        if ($reqCity) {
-            $baseTags[] = $reqCity;
-        }
-        if ($source === 'gruender_walkin') {
-            $baseTags[] = 'walkin';
-        }
-    }
-    $tags          = array_values(array_filter($baseTags));
-    $instagramUrl  = $instagram ? 'https://www.instagram.com/' . $instagram : null;
-    $nicheLabels   = ['cafe' => 'Café', 'doener' => 'Döner', 'pizza' => 'Pizza', 'restaurant' => 'Restaurant', 'eiscafe' => 'Eiscafé', 'baeckerei' => 'Bäckerei', 'friseur' => 'Friseur', 'fitnessstudio' => 'Fitnessstudio', 'yoga' => 'Yoga-Studio', 'blumenladen' => 'Blumenladen'];
-    $nicheLabel    = $nicheLabels[$niche] ?? $niche;
-
-    // ── Account (the business) ──────────────────────────────────────────────
-    $accountPayload = [
-        'name' => $instagram ? '@' . $instagram : $firstName,
-        'tags' => $tags,
-    ];
-    if ($phone && $instagramUrl) {
-        $accountPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
-        $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
-    } elseif ($phone) {
-        $accountPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
-    } elseif ($instagramUrl) {
-        $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
-    }
-
-    $accountRes = salesflare('POST', '/accounts', $accountPayload);
-    $accountId  = $accountRes['body']['id'] ?? null;
-
-    // ── Contact (the person) ────────────────────────────────────────────────
-    $contactPayload = [
-        'firstname' => $firstName,
-        'tags'      => $tags,
-    ];
-    if ($phone) {
-        $contactPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
-    }
-    if ($instagramUrl) {
-        $contactPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
-    }
-    if ($accountId) {
-        $contactPayload['account'] = $accountId;
-    }
-
-    salesflare('POST', '/contacts', $contactPayload);
-
-    // ── Opportunity ─────────────────────────────────────────────────────────
-    if ($accountId) {
-        salesflare('POST', '/opportunities', [
-            'name'    => $nicheLabel . ' · @' . ($instagram ?: $firstName) . ' · /' . $leadPage,
-            'account' => $accountId,
-            'tags'    => $tags,
-        ]);
-    }
-} catch (\Throwable $e) {
-    // Salesflare failure never blocks the main response
-}
 
 // ── UTM helper: append UTM params to a URL ───────────────────────────────────
 function appendUtm(string $url, array $utm): string
