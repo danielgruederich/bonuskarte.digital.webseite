@@ -27,14 +27,19 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy via FTP to Starthost
+      - name: Deploy via SFTP to Starthost
         run: |
           sudo apt-get install -y lftp
-          lftp -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" -e "
-            set ftp:ssl-allow no;
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "ssh.gb.stackcp.com" >> ~/.ssh/known_hosts 2>/dev/null
+          lftp -e "
+            set sftp:connect-program 'ssh -a -x -i ~/.ssh/id_ed25519';
+            open sftp://fuerte.digital@ssh.gb.stackcp.com;
             set net:timeout 30;
             set net:max-retries 5;
             set net:reconnect-interval-base 5;
-            mirror --reverse --delete --parallel=4 --verbose ./dist/ /;
+            mirror --reverse --delete --parallel=4 --verbose ./dist/ bonuskarte/;
             quit
           "
