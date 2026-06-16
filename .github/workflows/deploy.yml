@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
@@ -27,14 +27,22 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy via FTP to Starthost
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Deploy via SFTP → bonuskarte/
+        env:
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          sudo apt-get install -y lftp
-          lftp -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" -e "
-            set ftp:ssl-allow no;
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          lftp -c "
+            set sftp:connect-program 'ssh -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null';
             set net:timeout 30;
-            set net:max-retries 5;
-            set net:reconnect-interval-base 5;
-            mirror --reverse --delete --parallel=4 --verbose ./dist/ /;
-            quit
+            open -u fuerte.digital, sftp://ssh.gb.stackcp.com;
+            mirror -R --verbose --delete --parallel=4 --exclude-glob .DS_Store dist/ bonuskarte/;
           "
+
+          rm ~/.ssh/deploy_key
