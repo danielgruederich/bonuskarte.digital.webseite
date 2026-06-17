@@ -153,7 +153,7 @@ function recordSalesflareLead(
     string $source,
     string $reqCity,
     array $utm
-): void {
+) {
     try {
         // Extract city/veedel/niche from utm_campaign (e.g. "koeln-nippes-cafes")
         $utmCampaign   = $utm['utm_campaign'] ?? '';
@@ -234,7 +234,7 @@ function notifyTelegramLead(
     string $niche,
     string $mode,
     array $utm
-): void {
+) {
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
         return;
     }
