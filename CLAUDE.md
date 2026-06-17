@@ -21,20 +21,26 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
 ## Hosting
 | | |
 |---|---|
-| FTP Server | ftp.gb.stackcp.com |
-| FTP User | github-deploy@bonuskarte.digital |
-| Deploy Path | /bonuskarte/ |
+| SSH Server | ssh.gb.stackcp.com |
+| SSH User | fuerte.digital |
+| Deploy Path | bonuskarte/ (relativ zu Home) |
+| Deploy Methode | rsync über SSH (GitHub Actions Secret: SSH_PRIVATE_KEY) |
 
 ## Boomerang Cards API
 - Base URL: `https://api.digitalwallet.cards`
 - Auth: `X-API-Key` Header
 - API Key: in `public/api/submit.php` (nicht öffentlich committen)
-- Template IDs:
+- Template IDs (alle 10 verdrahtet):
   - `cafes` → 1046392 ✅
-  - `doener` → noch nicht erstellt ⏳
-  - `pizza` → noch nicht erstellt ⏳
-  - `restaurant` → noch nicht erstellt ⏳
   - `eiscafe` → 1060441 ✅
+  - `doener` → 1115375 ✅
+  - `pizza` → 1115406 ✅
+  - `restaurant` → 1115409 ✅
+  - `baeckerei` → 1115411 ✅
+  - `friseur` → 1115412 ✅
+  - `fitnessstudio` → 1115413 ✅
+  - `yoga` → 1115414 ✅
+  - `blumenladen` → 1115415 ✅
 
 ## URL-Struktur
 ```
