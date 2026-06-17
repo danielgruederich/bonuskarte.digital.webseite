@@ -79,7 +79,7 @@ $niche = $nicheAliases[$niche] ?? $niche;
 
 // LeadFormDoener: kontakt is either phone or email
 if ($kontakt && !$email && !$phone) {
-    if (str_contains($kontakt, '@')) {
+    if (strpos($kontakt, '@') !== false) {
         $email = $kontakt;
     } else {
         $phone = $kontakt;
@@ -248,7 +248,7 @@ function notifyTelegramLead(
         $waLink = '';
         if ($phone) {
             $digits = preg_replace('/\D+/', '', $phone);
-            if (str_starts_with($digits, '0')) {
+            if (strpos($digits, '0') === 0) {
                 $digits = '49' . substr($digits, 1);
             }
             if ($digits) {
@@ -379,7 +379,7 @@ function appendUtm(string $url, array $utm): string
     $allowed = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
     $params = array_intersect_key($utm, array_flip($allowed));
     if (!$params) return $url;
-    $sep = str_contains($url, '?') ? '&' : '?';
+    $sep = (strpos($url, '?') !== false) ? '&' : '?';
     return $url . $sep . http_build_query($params);
 }
 
