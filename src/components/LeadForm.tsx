@@ -21,6 +21,7 @@ interface Props {
   nicheOptions?: NicheOption[]
   /** Analytics-source; default = mode. Erlaubt z.B. 'gruender_walkin' bei identischem mode. */
   source?: string
+  bookingUrl?: string
 }
 
 interface CardLinks {
@@ -47,11 +48,13 @@ export default function LeadForm({
   selectableNiche = false,
   nicheOptions = [],
   source,
+  bookingUrl,
 }: Props) {
   const [state, setState] = useState<State>('idle')
   const [card, setCard] = useState<CardLinks | null>(null)
   const [vorname, setVorname] = useState('')
   const [instagram, setInstagram] = useState('')
+  const [email, setEmail] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
   const formStartedRef = useRef(false)
   const [selectedNiche, setSelectedNiche] = useState('')
@@ -102,6 +105,7 @@ export default function LeadForm({
           vorname:   data.vorname,
           instagram: cleanInstagram,
           telefon:   data.telefon,
+          email:     (data.email as string) ?? '',
           niche:     effectiveNiche.toLowerCase(),
           city:      city.toLowerCase(),
           mode,
@@ -121,6 +125,7 @@ export default function LeadForm({
         setState('success')
         form.reset()
         setInstagram('')
+        setEmail('')
       } else {
         analytics.signupSubmitError(effectiveNiche, city, 'api_error', trackSource)
         setErrorMsg('Etwas ist schiefgelaufen. Bitte versuche es erneut.')
@@ -234,7 +239,7 @@ export default function LeadForm({
         </div>
       )}
       <form onSubmit={handleSubmit} className="space-y-5">
-        <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">2 Pflichtfelder · 30 Sekunden</p>
+        <p className="text-xs tracking-[0.2em] uppercase text-white/55 mb-1">2 Pflichtfelder · E-Mail optional · 30 Sekunden</p>
 
       {selectableNiche && (
         <div>
@@ -265,6 +270,21 @@ export default function LeadForm({
       <div>
         <label htmlFor="telefon" className={labelClass}>Handynummer *</label>
         <input id="telefon" name="telefon" type="tel" required placeholder="+49 170 …" autoComplete="tel" inputMode="tel" className={inputClass} />
+      </div>
+
+      <div>
+        <label htmlFor="email" className={labelClass}>E-Mail <span className="text-white/30 font-light normal-case tracking-normal">(optional)</span></label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="max@muster.de"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          autoComplete="email"
+          inputMode="email"
+          className={inputClass}
+        />
       </div>
 
       <div>
@@ -322,6 +342,21 @@ export default function LeadForm({
           ? '90 Tage Geld-zurück · Verbindlich erst nach Telefonat · DSGVO'
           : 'Kein Risiko · Keine Kreditkarte · 90 Tage kostenlos'}
       </p>
+
+      {bookingUrl && (
+        <p className="text-center text-xs text-white/40 pt-1">
+          Lieber erst informieren?{' '}
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => analytics.demoBooking('form')}
+            className="text-white/60 hover:text-gold-600 underline underline-offset-2 transition-colors"
+          >
+            Kostenlosen Termin buchen →
+          </a>
+        </p>
+      )}
     </form>
     </>
   )

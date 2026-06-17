@@ -147,6 +147,16 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
             Per WhatsApp anfragen
           </a>
         </div>
+        <a href="https://termin.fuerte.digital"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="if(typeof gtag!=='undefined')gtag('event','demo_booking',{source:'hero'})"
+          class="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-xs tracking-[0.15em] uppercase transition-colors py-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          Erst informieren? Termin buchen
+        </a>
 
         <div class="flex flex-wrap gap-5 mt-10">
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
@@ -164,13 +174,35 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
         </div>
       </div>
 
-      <div class="flex justify-center lg:justify-end">
-        <WalletMockup
-          businessName={nicheData.walletMockup.businessName}
-          reward={nicheData.walletMockup.reward}
-          stamped={nicheData.walletMockup.stamped}
-          total={nicheData.walletMockup.total}
-        />
+      <div class="flex flex-col gap-6 items-center md:items-end">
+        {nicheData.formType === 'simple' ? (
+          <WalletMockup
+            businessName={nicheData.walletMockup.businessName}
+            reward={nicheData.walletMockup.reward}
+            stamped={nicheData.walletMockup.stamped}
+            total={nicheData.walletMockup.total}
+          />
+        ) : (
+          <>
+            <div class="opacity-60 scale-75 origin-top hidden md:block">
+              <WalletMockup
+                businessName={nicheData.walletMockup.businessName}
+                reward={nicheData.walletMockup.reward}
+                stamped={nicheData.walletMockup.stamped}
+                total={nicheData.walletMockup.total}
+              />
+            </div>
+            <div id="demo" class="w-full border border-gold-600/20 bg-black/60 backdrop-blur-sm p-6 sm:p-8">
+              <LeadForm
+                client:load
+                niche={nicheData.label}
+                city="Köln"
+                whatsappUrl={whatsappUrl}
+                bookingUrl="https://termin.fuerte.digital"
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
 
@@ -289,36 +321,46 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
   </section>
 
   <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
-  <section id="demo" class="py-12 sm:py-16 px-5 sm:px-8 bg-black relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold-600 rounded-full blur-[180px] opacity-5"></div>
-    <div class="relative max-w-xl mx-auto">
-      <div class="text-center mb-10">
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2 mb-8">
-          <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
-          <span class="text-gold-500 text-xs tracking-[0.3em] uppercase">
-            Exklusiv für {nicheData.emoji} in {veedelData.name}
-          </span>
+  {nicheData.formType === 'simple' ? (
+    <section id="demo" class="py-12 sm:py-16 px-5 sm:px-8 bg-black relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold-600 rounded-full blur-[180px] opacity-5"></div>
+      <div class="relative max-w-xl mx-auto">
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2 mb-8">
+            <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
+            <span class="text-gold-500 text-xs tracking-[0.3em] uppercase">
+              Exklusiv für {nicheData.emoji} in {veedelData.name}
+            </span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2">Demo-Karte</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">direkt ins Wallet.</h2>
+          <p class="text-white text-base font-light leading-relaxed max-w-sm mx-auto">
+            Trag dich ein – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
+          </p>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2">Demo-Karte</h2>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-6">direkt ins Wallet.</h2>
-        <p class="text-white text-base font-light leading-relaxed max-w-sm mx-auto">
-          Trag dich ein – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
+        <div class="relative border border-gold-600/20 bg-ink-950 p-8 sm:p-10">
+          <LeadFormDoener client:load whatsappUrl={whatsappUrl} niche={nicheData.slug} />
+        </div>
+        <p class="text-center text-white text-sm mt-5">
+          Nach 90 Tagen ab 29 €/Monat ·
+          <a href="/preise" class="text-gold-600 hover:text-gold-600 underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
         </p>
       </div>
-
-      <div class="relative border border-gold-600/20 bg-ink-950 p-8 sm:p-10">
-        {nicheData.formType === 'simple' ? (
-          <LeadFormDoener client:load whatsappUrl={whatsappUrl} niche={nicheData.slug} />
-        ) : (
-          <LeadForm client:load niche={nicheData.label} city="Köln" whatsappUrl={whatsappUrl} />
-        )}
+    </section>
+  ) : (
+    <section class="py-10 sm:py-12 px-5 sm:px-8 bg-black border-t border-white/5 md:hidden">
+      <div class="max-w-xl mx-auto text-center">
+        <p class="text-white/50 text-sm mb-4">Noch nicht überzeugt?</p>
+        <a href="#demo"
+          class="group inline-flex items-center gap-3 border border-gold-600/40 hover:border-gold-600 text-gold-600 px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase transition-all">
+          {nicheData.heroCopy.ctaLabel}
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
       </div>
-      <p class="text-center text-white text-sm mt-5">
-        Nach 90 Tagen ab 29 €/Monat ·
-        <a href="/preise" class="text-gold-600 hover:text-gold-600 underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
-      </p>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
   <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
