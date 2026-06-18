@@ -238,25 +238,29 @@ const solutions = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
           {
-            quote: 'Unsere Gäste lieben es. Kein Papier mehr, kein Nachfragen – die Karte ist einfach immer da.',
-            name: 'Maria K.',
-            role: 'Inhaberin, Café Sonnenschein',
-            location: 'Köln-Ehrenfeld',
+            quote: 'Wir haben von Anfang an auf eine digitale Stempelkarte gesetzt. Wir haben viele Schüler als Kunden und können über Push-Nachrichten viele direkt erreichen. Besonders die flexiblen Stempel während der frei konfigurierbaren Happy Hour haben uns einen echten Wettbewerbsvorteil verschafft. Uns wurden 30 % mehr Umsatz versprochen, sobald wir 1.000 aktive Karten draußen haben – dieses Ziel haben wir bereits jetzt weit übertroffen.',
+            name: 'Yussuf',
+            role: 'Inhaber, Der Dönermacher',
+            location: 'Köln Braunsfeld',
+            logo: '/images/testimonials/donermacher.png',
           },
           {
-            quote: 'In 3 Wochen hatten wir über 80 digitale Stammkarten vergeben. Das hätten wir mit Papier nie geschafft.',
-            name: 'Hasan Y.',
-            role: 'Inhaber, Döner Meister',
-            location: 'Köln-Nippes',
+            quote: 'Daniel kam schon bei der Eröffnung von Erste Liebe auf uns zu. GoLive war 24 Stunden später. Keine Ausfälle, Kunden lieben es. Wir haben schon 200 Karten im Umlauf – und nutzen bisher nur 10 % der Plattform.',
+            name: 'Tim',
+            role: 'Inhaber, Café Erste Liebe',
+            location: 'Köln, Neustadt Süd',
+            logo: '/images/testimonials/erste-liebe.jpg',
           },
           {
-            quote: 'Die Push-Nachrichten bringen Gäste wirklich zurück. Wir sehen den Unterschied in der Kasse.',
-            name: 'Laura S.',
-            role: 'Geschäftsführerin, Trattoria Bella',
-            location: 'Köln-Innenstadt',
+            quote: 'We have been using Daniel\'s digital solution for 2 years now. Simple, effective – and despite our disbelief, even in a touristic village like Corralejo. We managed to configure a Coupon and 3 Stamp bonus cards for tourists and a VIP Card for locals. All within one system, same competitive price. Fully recommended.',
+            name: 'Jao',
+            role: 'ASAP Cafe Corralejo',
+            location: 'Fuerteventura',
+            logo: '/images/testimonials/ASAP.Brunch.jpg',
           },
         ].map(t => (
           <div class="border border-white/5 hover:border-gold-600/20 p-6 transition-colors">
+            <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-gold-600/30 mb-4" />
             <div class="text-gold-600 text-lg mb-3">"</div>
             <p class="text-white text-sm font-light leading-relaxed mb-4">{t.quote}</p>
             <div>
