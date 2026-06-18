@@ -72,7 +72,7 @@ const testimonials = [
 ---
 
 <BaseLayout
-  title="Digitale Bonuskarte für Kölner Unternehmen – bonuskarte.digital"
+  title="Digitale Stempelkarte & Bonuskarte für lokale Betriebe – bonuskarte.digital"
   description="Stempelkarten, Punktekarten, Mitgliedskarten & Geschenkkarten direkt in Apple & Google Wallet. Für Cafés, Friseure, Fitnessstudios & mehr. 90 Tage kostenlos testen."
   alternates={[
     { hreflang: 'de', href: 'https://bonuskarte.digital/' },
@@ -90,9 +90,38 @@ const testimonials = [
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "bonuskarte.digital",
+    "description": "Digitale Stempelkarte & Bonuskarte für lokale Betriebe – direkt in Apple Wallet & Google Wallet.",
+    "url": "https://bonuskarte.digital",
+    "image": "https://bonuskarte.digital/screens/phone-1.jpg",
+    "screenshot": "https://bonuskarte.digital/screens/phone-1.jpg",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "90 Tage kostenlos, danach ab 29 €/Monat"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "ratingCount": testimonials.length
+    }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
     "@type": "Service",
     "name": "bonuskarte.digital",
     "url": "https://bonuskarte.digital",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "ratingCount": testimonials.length
+    },
     "review": testimonials.map(t => ({
       "@type": "Review",
       "reviewBody": t.quote,
@@ -100,6 +129,18 @@ const testimonials = [
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     }))
   })} />
+  <script type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Ist das wirklich 90 Tage kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar." } },
+      { "@type": "Question", "name": "Brauchen meine Kunden eine App?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet – beide sind auf jedem Smartphone vorinstalliert. Kein Download, keine Registrierung." } },
+      { "@type": "Question", "name": "Wie viel Aufwand habe ich bei der Einrichtung?", "acceptedAnswer": { "@type": "Answer", "text": "Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live." } },
+      { "@type": "Question", "name": "Was kostet es nach der Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ab 29 €/Monat für einen Standort. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Keine Setup-Gebühr, monatlich kündbar." } },
+      { "@type": "Question", "name": "Funktioniert das auch für Nicht-Gastro-Betriebe?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Neben Stempelkarten bieten wir Mitgliedskarten, 10er-Karten, Geschenkkarten und Guthabenkarten – für Friseure, Fitnessstudios, Yoga-Studios, Blumenläden und mehr." } },
+      { "@type": "Question", "name": "Ist das DSGVO-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden." } }
+    ]
+  })}</script>
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
