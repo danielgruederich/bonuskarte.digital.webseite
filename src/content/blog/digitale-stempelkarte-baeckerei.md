@@ -108,4 +108,4 @@ Das können nur Sie.
 
 **bonuskarte.digital** – 90 Tage kostenlos testen, in 24 Stunden live.
 
-[Jetzt kostenlos starten →](/koeln/nippes/cafes)
+[Jetzt kostenlos starten →](/koeln/nippes/baeckerei)

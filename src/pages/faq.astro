@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+
+const faqs = [
+  {
+    q: 'Was ist eine digitale Bonuskarte?',
+    a: 'Eine digitale Bonuskarte ersetzt die Papier-Stempelkarte und landet direkt in Apple Wallet oder Google Wallet auf dem Smartphone des Kunden. Der Betreiber stempelt per QR-Code, der Kunde sieht seinen Fortschritt in Echtzeit. Kein Download, keine Registrierung, kein Papier das verloren geht.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen einer digitalen Bonuskarte und einer digitalen Stempelkarte?',
+    a: 'Beide Begriffe meinen dasselbe: eine Kundenkarte die Treue belohnt, digital statt auf Papier. "Stempelkarte" ist der geläufigere Begriff in der Gastronomie, "Bonuskarte" der übergeordnete Begriff. bonuskarte.digital bietet beides: klassische Stempelkarten, Punktekarten, Mitgliedskarten und Geschenkkarten, alle direkt in Apple Wallet oder Google Wallet.',
+  },
+  {
+    q: 'Brauchen meine Kunden eine App?',
+    a: 'Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf jedem Android. Der Kunde scannt einmal einen QR-Code und speichert die Karte mit einem Klick. Kein Download, keine Passwörter, keine Registrierung.',
+  },
+  {
+    q: 'Was kostet eine digitale Bonuskarte?',
+    a: 'bonuskarte.digital bietet 90 Tage kostenlosen Test ohne Kreditkarte. Danach kostet ein Standort 29 Euro pro Monat, monatlich kündbar, keine Setup-Gebuehr. Fuer Ketten mit 2 bis 10 Standorten gibt es das Ketten-Paket fuer 100 Euro pro Monat.',
+  },
+  {
+    q: 'Wie schnell kann ich eine digitale Stempelkarte einrichten?',
+    a: 'Die Einrichtung dauert unter 24 Stunden. Du fuellst ein kurzes Formular mit Firmenname, Logo und Stempelregel aus. bonuskarte.digital erstellt die Karte mit deinem Branding. Kein technisches Wissen noetig.',
+  },
+  {
+    q: 'Gibt es eine digitale Bonuskarte fuer Doener-Imbisse?',
+    a: 'Ja. bonuskarte.digital bietet eine fertige Stempelkarten-Vorlage speziell fuer Doener-Imbisse, mit anpassbarem Branding und automatischer Stempelregel. Kunden sammeln Stempel nach jedem Kauf und loesen ihre Belohnung direkt in Apple Wallet oder Google Wallet ein. Aktuell gibt es Stempelkarten fuer Cafes, Eisdielen, Doener, Pizza, Restaurants, Baeckereien, Friseursalons, Fitnessstudios, Yoga-Studios und Blumenlaeden.',
+  },
+  {
+    q: 'Gibt es eine digitale Bonuskarte in Berlin, Hamburg oder anderen Staedten?',
+    a: 'Ja. bonuskarte.digital ist in ganz Deutschland verfuegbar. Aktive Kunden gibt es in Koeln, Berlin, Hamburg, Muenchen, Frankfurt, Duesseldorf und weiteren Staedten. Das System laeuft vollstaendig digital, der Standort des Betriebs spielt keine Rolle.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen bonuskarte.digital und Favecard oder anderen Anbieter?',
+    a: 'bonuskarte.digital setzt auf Apple Wallet und Google Wallet statt einer eigenen App. Das bedeutet: keine Installations-Huerde fuer den Kunden, keine DSGVO-Probleme durch eigene App-Stores und direkter Zugang zu Push-Nachrichten ueber das Wallet-System. Der Preis beginnt bei 29 Euro pro Monat, ohne Setup-Gebuehr und mit 90 Tagen kostenlosem Test.',
+  },
+  {
+    q: 'Ist eine digitale Bonuskarte DSGVO-konform?',
+    a: 'Ja. Die Karte speichert keine persoenlichen Daten auf dem Geraet des Kunden. Es gibt keine Tracking-App, keine Cookies, keine E-Mail-Pflicht. Die Verarbeitung erfolgt DSGVO-konform. Kunden koennen die Karte jederzeit aus ihrem Wallet loeschen.',
+  },
+  {
+    q: 'Kann ich Push-Nachrichten an meine Kunden senden?',
+    a: 'Ja. Mit einer digitalen Bonuskarte in Apple Wallet oder Google Wallet kannst du Push-Nachrichten direkt auf das Sperrbildschirm-Display deiner Kunden senden. Zum Beispiel: Geburtstags-Glueckwunsch mit einer kostenlosen Kugel Eis, Ankuendigung einer Happy Hour oder ein Angebot wenn ein Kunde laenger nicht mehr da war. Push-Nachrichten sind in jedem Paket inklusive.',
+  },
+]
+---
+
+<BaseLayout
+  title="FAQ: Digitale Bonuskarte & Stempelkarte erklaert – bonuskarte.digital"
+  description="Alle Fragen zur digitalen Bonuskarte und Stempelkarte: Kosten, Einrichtung, Apple Wallet, DSGVO, Push-Nachrichten und mehr. Antworten in unter 2 Minuten."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/" },
+      { "@type": "ListItem", "position": 2, "name": "FAQ" }
+    ]
+  })} />
+
+  <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
+
+  <!-- ── HEADER ──────────────────────────────────────────────────── -->
+  <section class="bg-black pt-28 pb-12 px-5 sm:px-8 border-b border-white/5">
+    <div class="max-w-2xl mx-auto">
+      <nav class="flex items-center gap-1.5 text-xs text-white/40 mb-8 tracking-wide">
+        <a href="/" class="hover:text-white/60 transition-colors">Home</a>
+        <span>›</span>
+        <span class="text-white/60">FAQ</span>
+      </nav>
+      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-6">
+        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+        <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">Haeufige Fragen</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-4">
+        Alles ueber die digitale<br />
+        <span class="font-bold text-gold-600">Bonuskarte.</span>
+      </h1>
+      <p class="text-white/60 text-base leading-relaxed max-w-xl">
+        Antworten auf die haeufigsten Fragen zu digitalen Stempelkarten, Bonuskarten und Kundenbindung fuer lokale Betriebe.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FAQ ────────────────────────────────────────────────────── -->
+  <section class="bg-black py-14 px-5 sm:px-8">
+    <div class="max-w-2xl mx-auto space-y-3">
+      {faqs.map((faq, i) => (
+        <details class="group border border-white/5 hover:border-gold-600/20 transition-colors" open={i === 0}>
+          <summary class="flex items-center justify-between cursor-pointer p-6">
+            <h2 class="text-white text-sm sm:text-base font-medium pr-4 leading-snug">{faq.q}</h2>
+            <svg class="w-4 h-4 text-gold-600 flex-shrink-0 group-open:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-white/70 text-sm leading-relaxed">{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────────────────────── -->
+  <section class="bg-black py-14 px-5 sm:px-8 border-t border-white/5">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-gold-600 text-xs tracking-[0.4em] uppercase mb-4">Kein Risiko</p>
+      <h2 class="text-3xl sm:text-4xl font-extralight text-white tracking-tight mb-2">90 Tage gratis.</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-8">Ueberzeugt dich selbst.</h2>
+      <a href="/koeln"
+        class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
+        Jetzt kostenlos starten
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      <p class="text-white/30 text-xs mt-5">Keine Kreditkarte. Keine App. Live in 24h.</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

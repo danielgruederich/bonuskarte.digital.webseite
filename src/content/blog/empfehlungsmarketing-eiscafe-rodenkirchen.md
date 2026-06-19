@@ -1,6 +1,6 @@
 ---
 title: "Dein bester Verkäufer? Der Kunde, der gerade gegangen ist."
-description: "Empfehlungsmarketing und automatische Google-Review-Anfragen — wie Eisdielen in Rodenkirchen Kunden zu Verkäufern machen."
+description: "Empfehlungsmarketing und automatische Google-Review-Anfragen: wie Eisdielen in Rodenkirchen Kunden zu Verkäufern machen."
 pubDate: 2026-04-10
 heroImage: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1200&h=630&q=80&auto=format&fit=crop"
 category: "Strategie"
@@ -73,21 +73,20 @@ Und jetzt das Problem: Die meisten zufriedenen Kunden hinterlassen nie eine Bewe
 
 **Die automatische Push-Nachricht löst genau das.** Eine Stunde nach dem Besuch, wenn die Erinnerung noch frisch ist und der Geschmack noch auf der Zunge liegt. Ein Tap auf den Link — und der Kunde steht direkt auf deiner Google-Bewertungsseite. 30 Sekunden, 5 Sterne, ein kurzer Satz. Fertig.
 
-## Die Zahlen: 30 Reviews in einem Monat
+## Was realistisch möglich ist: Ein Beispielszenario
 
-Eine Eisdiele am Maternusplatz hat die automatische Feedback-Push-Nachricht aktiviert. Ergebnis nach einem Monat:
+Stell dir vor, eine Eisdiele in Rodenkirchen aktiviert die automatische Feedback-Push-Nachricht. So könnte das Ergebnis nach einem Monat aussehen:
 
 | | |
 |---|---|
 | Kunden mit aktiver Stempelkarte | ~200 |
 | Push-Nachrichten versendet | ~350 (manche kommen mehrfach) |
-| Google Reviews erhalten | 30 |
-| Durchschnittliche Bewertung | 4,9 Sterne |
+| Google Reviews erhalten | 25 bis 35 |
+| Durchschnittliche Bewertung | 4,7 bis 5,0 Sterne |
 
-**30 neue Google Reviews in einem Monat.** Ohne eine einzige persönliche Bitte. Ohne ein einziges unangenehmes Gespräch an der Theke. Einfach eine automatische Nachricht, eine Stunde nach dem Besuch.
+**Ohne eine einzige persönliche Bitte.** Ohne ein einziges unangenehmes Gespräch an der Theke. Einfach eine automatische Nachricht, eine Stunde nach dem Besuch.
 
-Vorher: 15 Bewertungen, 4,3 Sterne.
-Nachher: 45 Bewertungen, 4,7 Sterne.
+Die Logik dahinter: Zufriedene Kunden wollen helfen, wenn man sie zum richtigen Zeitpunkt fragt und ihnen den Weg so einfach wie möglich macht.
 
 **Das ist der Unterschied zwischen „Die Eisdiele um die Ecke" und „Die beste Eisdiele in Rodenkirchen."**
 

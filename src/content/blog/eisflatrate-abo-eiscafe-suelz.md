@@ -1,6 +1,6 @@
 ---
 title: "Eine Eisflatrate. Klingt verrückt. Bis du die Zahlen siehst."
-description: "50 Abo-Kunden, 29 Euro im Monat, 6 Monate garantiert. Warum eine Eisflatrate in Sülz funktioniert — und wie Stripe das Geld automatisch einzieht."
+description: "50 Abo-Kunden, 29 Euro im Monat, 6 Monate garantiert. Warum eine Eisflatrate in Sülz funktioniert, und wie Stripe das Geld automatisch einzieht."
 pubDate: 2026-04-01
 heroImage: "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=1200&h=630&q=80&auto=format&fit=crop"
 category: "Strategie"
@@ -84,7 +84,7 @@ Und Instagram? Ein Post über deine Eisflatrate wird geteilt. Nicht weil du Geld
 
 **„Aber dann kommen die jeden Tag und ich verliere Geld!"**
 
-Nein. Die Erfahrung aus anderen Flatrate-Modellen zeigt: Kunden nutzen ein Abo durchschnittlich an 40–60 % der möglichen Tage. Der Rest ist dein Gewinn. Außerdem: Ein Abo-Kunde, der jeden Tag kommt, bringt Freunde mit. Kauft eine zweite Kugel. Nimmt einen Becher für zu Hause mit. Der Abo-Kunde ist nicht dein teuerster Kunde — er ist dein treuester.
+Nein. Die Erfahrung aus anderen Flatrate-Modellen zeigt: Kunden nutzen ein Abo durchschnittlich an 40 bis 60 % der möglichen Tage. Der Rest ist dein Gewinn. Außerdem: Ein Abo-Kunde, der jeden Tag kommt, bringt Freunde mit. Kauft eine zweite Kugel. Nimmt einen Becher für zu Hause mit. Der Abo-Kunde ist nicht dein teuerster Kunde — er ist dein treuester.
 
 **„29 Euro ist zu teuer / zu günstig."**
 

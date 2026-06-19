@@ -62,7 +62,7 @@ In Nippes, Ehrenfeld oder der Südstadt funktioniert das besonders gut, weil die
 
 ## 5. Miss nicht nur deinen Umsatz – miss den Erfolg deiner Gäste
 
-Ogilvy nennt es „Measure Their Success Too." Frag dich: Hilft mein Laden meinen Gästen, ihre eigenen Ziele zu erreichen?
+Frag dich: Hilft mein Laden meinen Gästen, ihre eigenen Ziele zu erreichen?
 
 **Praktisch für dein Geschäft:**
 - Die Mittagspause soll entspannend sein? Dann zählt Geschwindigkeit und Atmosphäre, nicht die Portionsgröße

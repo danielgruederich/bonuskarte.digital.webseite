@@ -86,4 +86,4 @@ Du willst sehen, wie die digitale 10er-Karte in deinem Studio aussieht? Probier 
 
 **Auch für Pilates, Tai Chi und Tanzschulen.**
 
-[Jetzt 90 Tage kostenlos testen →](/koeln/suelz/cafes/#demo)
+[Jetzt 90 Tage kostenlos testen →](/koeln/suelz/yoga/#demo)
