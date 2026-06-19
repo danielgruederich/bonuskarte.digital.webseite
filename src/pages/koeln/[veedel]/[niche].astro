@@ -75,6 +75,17 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
       "description": "90 Tage kostenlos testen – keine Kreditkarte, monatlich kündbar"
     }
   })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Ist das wirklich 90 Tage kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar." } },
+      { "@type": "Question", "name": "Brauchen meine Kunden eine App?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet – beide sind auf jedem Smartphone vorinstalliert. Kein Download, keine Registrierung." } },
+      { "@type": "Question", "name": "Wie viel Aufwand habe ich bei der Einrichtung?", "acceptedAnswer": { "@type": "Answer", "text": "Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live." } },
+      { "@type": "Question", "name": "Was kostet es nach der Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ab 29 €/Monat für einen Standort. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Keine Setup-Gebühr, monatlich kündbar." } },
+      { "@type": "Question", "name": "Ist das DSGVO-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden." } }
+    ]
+  })} />
   <Navbar ctaHref="#demo" ctaLabel={nicheData.heroCopy.ctaLabel} />
 
   <!-- ── HERO ─────────────────────────────────────────────────── -->
