@@ -70,4 +70,4 @@ Der Wechsel kostet keine Einführungsgebühr und keine technischen Kenntnisse. D
 
 Papier-Stempelkarten funktionieren – aber sie arbeiten nicht für Sie. Gerade in einer Stadt wie Köln, wo Stammkunden von Veedel zu Veedel wandern und die Konkurrenz im gleichen Block sitzt, macht der Unterschied aus. Digitale Stempelkarten über **bonuskarte.digital** sammeln Daten, senden Erinnerungen und begleiten Ihre Kölner Kunden überall hin.
 
-Die ersten 90 Tage sind gratis. Es gibt keinen besseren Zeitpunkt zum Starten.
+Die ersten 90 Tage sind gratis. Es gibt keinen besseren Zeitpunkt zum Starten – [jetzt kostenlos testen](/koeln).

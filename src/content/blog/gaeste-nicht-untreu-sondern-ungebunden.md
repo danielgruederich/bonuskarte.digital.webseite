@@ -64,4 +64,4 @@ Die Ogilvy-Studie klingt erst mal bedrohlich: Kunden lassen sich nicht mehr bind
 
 Nicht durch Rabatte. Nicht durch Druck. Sondern durch Relevanz, Präsenz und echten Mehrwert.
 
-**Starte mit einer digitalen Stempelkarte, die deine Gäste im Alltag begleitet.** Teste bonuskarte.digital 90 Tage kostenlos – und werde Teil der Welt deiner Gäste.
+**Starte mit einer digitalen Stempelkarte, die deine Gäste im Alltag begleitet.** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln) – und werde Teil der Welt deiner Gäste.

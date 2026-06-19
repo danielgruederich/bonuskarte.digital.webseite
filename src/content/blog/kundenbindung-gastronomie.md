@@ -75,6 +75,6 @@ Ein Mittagsrestaurant nahe dem Neumarkt setzt auf 10 Stempel für ein gratis Mit
 
 Kundenbindung in der Kölner Gastronomie ist keine Raketenwissenschaft. Es braucht ein einfaches Versprechen, ein zuverlässiges System und die Bereitschaft, Kunden aktiv anzusprechen.
 
-Digitale Stempelkarten über **bonuskarte.digital** machen genau das möglich – ohne IT-Kenntnisse, auf jedem Smartphone, 90 Tage kostenlos.
+Digitale Stempelkarten über [bonuskarte.digital](/koeln) machen genau das möglich – ohne IT-Kenntnisse, auf jedem Smartphone, 90 Tage kostenlos.
 
 Ihre Stammkunden sind bereits in Ihrem Veedel. Geben Sie ihnen einen Grund zu bleiben.

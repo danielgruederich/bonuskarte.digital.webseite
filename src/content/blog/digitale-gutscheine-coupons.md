@@ -91,4 +91,4 @@ Kein App-Download auf Kundenseite. Kein technisches Wissen auf Betreiberseite. U
 
 Digitale Gutscheine sind kein Ersatz für Stempelkarten – sie sind die perfekte Ergänzung. Mit dem richtigen Mix aus Treueprogramm und gezielten Aktionen bauen Kölner Betriebe eine Kundenbasis, die nicht nur wiederkommt, sondern auch wächst.
 
-Starten Sie jetzt kostenlos – 90 Tage, keine Kreditkarte, keine Pflichten.
+[Starten Sie jetzt kostenlos](/koeln) – 90 Tage, keine Kreditkarte, keine Pflichten.

@@ -11,7 +11,7 @@ interface Props {
 
 const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false } = Astro.props
 const canonicalUrl = new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
-const ogImageUrl   = new URL(ogImage ?? '/og-default.png', 'https://bonuskarte.digital').href
+const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuskarte.digital').href
 ---
 <!doctype html>
 <html lang={lang} class="scroll-smooth">

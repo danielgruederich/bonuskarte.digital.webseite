@@ -57,4 +57,4 @@ Jedes Mal, wenn dein Gast sein Handy öffnet, sieht er deine Karte. Das ist kein
 
 Die Ogilvy-Studie bestätigt, was viele Gastronomen in Köln längst spüren: Preiskampf funktioniert nicht dauerhaft. Was funktioniert, ist eine Kombination aus echtem Mehrwert, Gemeinschaftsgefühl und smarter Präsenz im Alltag deiner Gäste.
 
-**Willst du sehen, wie eine digitale Stempelkarte das für dein Geschäft leisten kann?** Teste bonuskarte.digital 90 Tage kostenlos – ohne Risiko, ohne Kreditkarte.
+**Willst du sehen, wie eine digitale Stempelkarte das für dein Geschäft leisten kann?** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln) – ohne Risiko, ohne Kreditkarte.

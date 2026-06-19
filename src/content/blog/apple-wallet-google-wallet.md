@@ -88,4 +88,4 @@ Nach zwei Wochen ins Dashboard schauen: Wann werden Karten hinzugefügt? Wann wi
 
 Apple Wallet und Google Wallet sind keine Zukunftstechnologie – sie sind täglich auf dem Smartphone Ihrer Kölner Gäste. **bonuskarte.digital** öffnet Ihnen die Tür zu diesen Plattformen: ohne Programmierkenntnisse, ohne App-Entwicklung.
 
-Nutzen Sie die digitale Infrastruktur, die bereits in jeder Kölner Hosentasche steckt – für Ihre lokale Kundenbindung.
+Nutzen Sie die digitale Infrastruktur, die bereits in jeder Kölner Hosentasche steckt – für Ihre lokale Kundenbindung. [Jetzt 90 Tage kostenlos testen →](/koeln)
