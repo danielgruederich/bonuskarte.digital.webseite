@@ -7,6 +7,7 @@ import LeadForm from '../../../components/LeadForm.tsx'
 import LeadFormDoener from '../../../components/LeadFormDoener.tsx'
 import { veedel as allVeedel, getVeedelBySlug, fallbackVeedel } from '../../../data/veedel'
 import { niches, getNicheBySlug } from '../../../data/niches'
+import { nicheVeedelContent } from '../../../data/niche-veedel-content'
 import { GooeyText } from '../../../components/ui/gooey-text-morphing'
 import Icon from '../../../components/icons/TrustIcons.astro'
 
@@ -247,7 +248,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
   </section>
 
   <!-- ── CONTENT BODY ─────────────────────────────────────────── -->
-  {nicheData.contentBody && (
+  {(nicheVeedelContent[nicheData.slug]?.[veedelData.slug] || nicheData.contentBody) && (
     <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black border-t border-white/5">
       <div class="max-w-3xl mx-auto">
         <div class="flex items-center gap-4 mb-10">
@@ -255,7 +256,8 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
           <span class="text-xs tracking-[0.4em] uppercase text-white">{nicheData.label} in {veedelData.name}</span>
           <div class="h-px flex-1 bg-white/5"></div>
         </div>
-        <div class="[&_p]:text-white [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-5 [&_p:last-child]:mb-0 [&_strong]:text-gold-600 [&_strong]:font-semibold" set:html={r(nicheData.contentBody)} />
+        <div class="[&_p]:text-white [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-5 [&_p:last-child]:mb-0 [&_strong]:text-gold-600 [&_strong]:font-semibold"
+          set:html={nicheVeedelContent[nicheData.slug]?.[veedelData.slug] ?? r(nicheData.contentBody)} />
       </div>
     </section>
   )}
