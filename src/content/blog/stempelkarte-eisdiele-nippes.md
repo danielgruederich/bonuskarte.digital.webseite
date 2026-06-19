@@ -7,7 +7,7 @@ category: "Ratgeber"
 readingTime: 6
 featured: false
 city: koeln
-approved: false
+approved: true
 ---
 
 Samstagnachmittag in Nippes. Die Sonne brennt, der Blücherpark ist voll, und vor deiner Eisdiele steht eine Schlange bis zum Bürgersteig. Drei Kugeln Mango, zwei Kugeln Pistazie, einmal Spaghetti-Eis für die Kleine. Die Kasse klingelt.

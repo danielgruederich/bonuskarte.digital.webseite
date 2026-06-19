@@ -7,7 +7,7 @@ category: "Strategie"
 readingTime: 6
 featured: false
 city: koeln
-approved: false
+approved: true
 ---
 
 Du kennst das: Ein Gast kommt dreimal die Woche, trinkt seinen Cappuccino, kennt dein Team beim Vornamen. Dann eröffnet zwei Straßen weiter ein neues Café mit „Jeder 5. Kaffee gratis" – und dein Stammgast ist weg. **War er je wirklich ein Stammkunde?**
