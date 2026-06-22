@@ -48,6 +48,7 @@ jobs:
 
       - name: Trigger webhook
         run: |
+          sleep 15
           STATUS=$(curl -s -o /tmp/resp.json -w "%{http_code}" \
             "https://bonuskarte.digital/deploy.php?token=${{ secrets.DEPLOY_TOKEN }}")
           echo "Response: $(cat /tmp/resp.json)"
