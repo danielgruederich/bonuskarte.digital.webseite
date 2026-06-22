@@ -8,7 +8,7 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string(),
-    category: z.enum(['Ratgeber', 'Strategie', 'How-to', 'News']),
+    category: z.enum(['Ratgeber', 'Strategie', 'How-to', 'News', 'Lokales']),
     readingTime: z.number(),
     featured: z.boolean().default(false),
     city: z.string(), // e.g. 'koeln', 'hamburg', 'berlin'
