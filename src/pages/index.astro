@@ -109,18 +109,6 @@ const testimonials = [
       "ratingValue": "5",
       "bestRating": "5",
       "ratingCount": testimonials.length
-    }
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "bonuskarte.digital",
-    "url": "https://bonuskarte.digital",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "ratingCount": testimonials.length
     },
     "review": testimonials.map(t => ({
       "@type": "Review",
