@@ -6,3 +6,5 @@ dist/
 .DS_Store
 *.log
 iphone mockups/
+deploy.php
+site.zip
