@@ -117,7 +117,7 @@ const testimonials = [
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
     }))
   })} />
-  <script type="application/ld+json">{JSON.stringify({
+  <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
@@ -128,7 +128,7 @@ const testimonials = [
       { "@type": "Question", "name": "Funktioniert das auch für Nicht-Gastro-Betriebe?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Neben Stempelkarten bieten wir Mitgliedskarten, 10er-Karten, Geschenkkarten und Guthabenkarten – für Friseure, Fitnessstudios, Yoga-Studios, Blumenläden und mehr." } },
       { "@type": "Question", "name": "Ist das DSGVO-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden." } }
     ]
-  })}</script>
+  })} />
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
