@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
   schedule:
     - cron: '0 5 * * *'  # Täglich um 6 Uhr (MEZ) = 5 UTC → Rebuild für pubDate-gesteuerte Artikel
 
