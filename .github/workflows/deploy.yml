@@ -31,7 +31,9 @@ jobs:
         run: npm run build
 
       - name: ZIP dist
-        run: cd dist && zip -r ../site.zip . -q && echo "ZIP size: $(du -sh ../site.zip | cut -f1)"
+        run: |
+          cd dist && zip -r ../site.zip . -q
+          echo "ZIP size: $(du -sh ../site.zip | cut -f1)"
 
       - name: Publish GitHub Release
         env:
