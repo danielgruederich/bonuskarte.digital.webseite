@@ -10,6 +10,8 @@ city: koeln
 approved: true
 ---
 
+**Kurz zusammengefasst:** Gäste kommen nicht wegen dir nicht wieder – sie sind schlicht nicht gebunden. Wer ihnen einen konkreten Anlass gibt zurückzukehren, gewinnt sie als Stammkunden.
+
 Dein Essen ist gut. Dein Service auch. Trotzdem kommen manche Gäste einfach nicht wieder. **Das ist frustrierend, aber es liegt wahrscheinlich nicht an dir.**
 
 Heutige Konsumenten sind nicht untreu. Sie sind **ungebunden**. Und das verändert alles, was du über Kundenbindung zu wissen glaubst.

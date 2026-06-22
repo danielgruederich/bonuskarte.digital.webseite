@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** Die digitale 10er-Karte im Wallet macht Schluss mit Zettelchaos – Kunden sehen ihren Stundenstand immer, und ein Push-Reminder wenn die Karte fast leer ist sorgt automatisch für den Nachkauf.
+
 Die 10er-Karte ist das Herzstück jedes Yoga-Studios. Ob Vinyasa, Hatha oder Yin — die meisten Kunden wollen sich nicht an ein Abo binden, aber trotzdem regelmäßig auf die Matte. Die Zehnerkarte ist der perfekte Kompromiss: Flexibel genug für den Kunden, planbar genug für dich.
 
 **Das Problem: Die Karte aus Papier funktioniert nicht mehr.**

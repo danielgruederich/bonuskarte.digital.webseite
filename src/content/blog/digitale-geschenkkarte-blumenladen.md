@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** Eine digitale Geschenkkarte für Blumenläden bringt dir neue Kunden ins Geschäft – der Beschenkte kommt zum Einlösen, und aus ihm wird ein Stammkunde.
+
 Blumen sind das beliebteste Geschenk Deutschlands. Zum Geburtstag, zum Muttertag, zur Hochzeit, oder einfach so — weil jemand einem anderen Menschen eine Freude machen will. Das Problem: Was, wenn die Mutter in Köln wohnt und der Sohn in Hamburg?
 
 Einen Strauß online bestellen und liefern lassen? Unpersönlich. Geld überweisen mit dem Hinweis „Kauf dir Blumen"? Noch unpersönlicher.

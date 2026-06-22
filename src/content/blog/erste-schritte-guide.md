@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** In 5 Schritten und weniger als 10 Minuten ist deine digitale Stempelkarte eingerichtet und live – ohne Hardware, ohne App-Zwang für Kunden.
+
 Sie betreiben ein Café in Ehrenfeld, einen Dönerladen in Nippes oder ein Restaurant in der Kölner Innenstadt – und Sie möchten, dass Ihre Stammkunden häufiger wiederkommen. Eine digitale Stempelkarte ist der direkteste Weg dahin.
 
 Dieser Guide führt Sie in fünf konkreten Schritten durch den Start. Sie brauchen keine technischen Kenntnisse, kein Design-Talent und keine großen Vorbereitungen. Der gesamte Prozess dauert weniger als 10 Minuten.

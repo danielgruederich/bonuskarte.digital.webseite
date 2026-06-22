@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** Apple Wallet und Google Wallet sind auf jedem Smartphone vorinstalliert – lokale Betriebe können diese Plattform nutzen, um Kundenkarten direkt dorthin zu bringen, ohne App-Download oder Registrierung.
+
 Denken Sie an Ihre Stammkunden in Köln: Morgens fahren sie mit der KVB, checken ihr Handy, zahlen per Wallet-App an der Kasse. Das Smartphone ist ihr zentrales Werkzeug. Und genau dort – in Apple Wallet oder Google Wallet – können Sie als Kölner Gastronom präsent sein.
 
 Dieser Artikel erklärt, wie das funktioniert und warum es die wirksamste Form lokaler Kundenbindung ist.

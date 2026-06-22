@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** Bäckereien sind der perfekte Ort für digitale Stempelkarten – Kunden kommen täglich, und ein konkreter Anreiz sorgt dafür, dass sie immer bei dir kaufen statt beim Konkurrenten um die Ecke.
+
 Es gibt kaum ein Geschäft, das Menschen so regelmäßig besuchen wie ihre Bäckerei. Jeden Morgen. Auf dem Weg zur Arbeit. Vor der Schule. Am Sonntagmorgen mit der ganzen Familie. Brötchen, Croissants, Brot – täglich frisch, täglich gebraucht.
 
 Und trotzdem nutzen die meisten Bäckereien kein einziges Instrument, um aus dieser Gewohnheit echte Kundenbindung zu machen. Keine Stempelkarte, kein Bonusprogramm, nichts. Oder schlimmer: eine Papierkarte, die zwischen Kassenzettel und Einkaufsliste verschwindet.

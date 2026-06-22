@@ -10,6 +10,8 @@ city: koeln
 approved: true
 ---
 
+**Kurz zusammengefasst:** Aus Gelegenheitsgästen echte Fans zu machen funktioniert nicht mit Rabatten – sondern mit Präsenz im Alltag, Gemeinschaftsgefühl und einem konkreten Grund, wiederzukommen.
+
 Stammkunden sind Gold wert, das weiß jeder Gastronom. Aber wie macht man aus einem Gast, der zufällig reinkommt, einen echten Fan, der dich aktiv weiterempfiehlt? **Nicht mit dem nächsten Rabatt.**
 
 Es geht nicht darum, Kunden an dich zu binden. Es geht darum, **bedeutungsvoll in die Welt deiner Gäste zu gehören.**

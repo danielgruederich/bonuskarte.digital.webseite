@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** Digitale Gutscheine füllen stille Tage und gewinnen Neukunden – sie ergänzen die Stempelkarte und reaktivieren Gäste, die länger nicht da waren.
+
 Stempelkarten binden Stammkunden. Aber was ist mit Neukunden? Und was tun an stillen Montagabenden in Ehrenfeld, am ruhigen Mittwochmittag in Nippes oder im Januar-Tief nach Karneval?
 
 Hier kommen **digitale Gutscheine** ins Spiel – das zweite große Werkzeug moderner Kundenbindung für Kölner Betriebe.

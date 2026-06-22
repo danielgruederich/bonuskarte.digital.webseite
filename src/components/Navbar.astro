@@ -7,6 +7,19 @@ interface Props {
 const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = true } = Astro.props
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  "name": ["Wie es funktioniert", "Branchen", "Preise", "Blog", "FAQ", "Köln"],
+  "url": [
+    "https://bonuskarte.digital/#wie-es-funktioniert",
+    "https://bonuskarte.digital/#branchen",
+    "https://bonuskarte.digital/preise",
+    "https://bonuskarte.digital/koeln/blog",
+    "https://bonuskarte.digital/faq",
+    "https://bonuskarte.digital/koeln"
+  ]
+})} />
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="flex items-center justify-between h-16">

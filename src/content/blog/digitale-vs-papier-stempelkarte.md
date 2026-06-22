@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** Papier-Stempelkarten kosten wenig, bringen aber auch wenig – digitale Karten liegen dauerhaft im Wallet, schicken Push-Nachrichten und zeigen dir wann Kunden zuletzt da waren.
+
 Die Papier-Stempelkarte ist ein Kölner Klassiker. In jedem Café in Ehrenfeld, jedem Dönerladen in der Innenstadt, jeder Pizzeria in Nippes liegt irgendwo ein Stapel davon hinter der Theke. Günstig zu drucken, sofort verständlich, kein Technik-Aufwand.
 
 Aber in der Praxis sieht das oft anders aus – und viele Betriebe merken erst nach Monaten, wie viel Potenzial sie ungenutzt lassen. Besonders in einer Stadt wie Köln, wo die Stammkundschaft das Rückgrat des Lokals ist.

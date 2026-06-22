@@ -9,6 +9,8 @@ featured: false
 city: koeln
 ---
 
+**Kurz zusammengefasst:** Eine digitale Mitgliedskarte im Smartphone ersetzt die Plastikkarte, verhindert No-Shows durch Push-Erinnerungen und zeigt dir in Echtzeit, wer kurz vor der Kündigung steht.
+
 Jeder Fitnessstudio-Betreiber kennt das Bild: Ein Mitglied steht an der Theke, kramt in der Tasche und sagt: „Ich hab meine Karte vergessen. Könnt ihr mich trotzdem reinlassen?" Das passiert nicht einmal pro Woche – das passiert mehrmals täglich.
 
 Plastikkarten werden vergessen, verloren, zerbrochen, gewaschen. Sie passen nicht mehr ins Portemonnaie, weil dort schon drei andere Karten stecken. Und am Ende landen sie in der Schublade – zusammen mit der Motivation, regelmäßig zu trainieren.
