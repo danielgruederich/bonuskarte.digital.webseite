@@ -23,7 +23,7 @@ function formatDate(date: Date) {
 }
 
 const categoryColors: Record<string, string> = {
-  'Ratgeber':  'bg-amber/20 text-amber border border-amber/30',
+  'Ratgeber':  'bg-amber/20 text-amber border border-amber/50',
   'Strategie': 'bg-blue-900/30 text-blue-300 border border-blue-700/30',
   'How-to':    'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30',
   'News':      'bg-ink/10 text-ink/60 border border-ink/10',
@@ -93,7 +93,7 @@ const related = allPosts
     </div>
   </header>
 
-  <div class="bg-ink border-t border-ink/15">
+  <div class="bg-ink border-t border-ink/30">
     <div class="max-w-2xl mx-auto px-5 sm:px-8 py-8 sm:py-10">
       <div class="flex items-center justify-center bg-ink-900 min-h-[200px] sm:min-h-[320px] p-6 sm:p-10">
         <img src={post.data.heroImage} alt={post.data.title} class="max-h-[200px] sm:max-h-[300px] w-auto max-w-full object-contain drop-shadow-2xl" loading="eager" />
@@ -109,7 +109,7 @@ const related = allPosts
     </div>
   </main>
 
-  <section class="bg-ink py-14 sm:py-20 border-t border-ink/15">
+  <section class="bg-ink py-14 sm:py-20 border-t border-ink/30">
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
       <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
         <div class="flex-1">

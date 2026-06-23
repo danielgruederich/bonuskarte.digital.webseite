@@ -22,7 +22,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
     <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
 
       <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-10">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-10">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
         <span class="text-amber text-[10px] font-normal tracking-[0.3em] uppercase">
           Paris · Tous les arrondissements
@@ -51,7 +51,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
         {arrondissements.map(a => (
           <a
             href={`/fr/paris/${a.slug}/`}
-            class="group relative border border-ink/15 hover:border-amber bg-ink/2 hover:bg-amber/5 p-5 transition-all hover:-translate-y-1"
+            class="group relative border border-ink/30 hover:border-amber bg-ink/2 hover:bg-amber/5 p-5 transition-all hover:-translate-y-1"
           >
             <div class="text-ink font-bold text-sm tracking-wide mb-1 group-hover:text-amber transition-colors">
               {a.name}
@@ -87,7 +87,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
           { value: '90 jours', label: 'gratuits pour tester' },
           { value: '24h', label: 'pour être en ligne' },
         ].map(stat => (
-          <div class="border border-ink/15 p-6 text-center">
+          <div class="border border-ink/30 p-6 text-center">
             <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
             <div class="text-xs tracking-[0.25em] uppercase text-ink">{stat.label}</div>
           </div>

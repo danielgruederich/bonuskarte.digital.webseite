@@ -59,7 +59,7 @@ const niches = [
 
     <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
 
-      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-10">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-10">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
         <span class="text-amber text-[10px] font-normal tracking-[0.3em] uppercase">
           Berlin · {data.name}
@@ -80,7 +80,7 @@ const niches = [
         {niches.map(n => (
           <a
             href={n.href}
-            class="group relative border border-ink/15 hover:border-amber bg-ink/2 hover:bg-amber/5 p-6 text-center transition-all hover:-translate-y-1"
+            class="group relative border border-ink/30 hover:border-amber bg-ink/2 hover:bg-amber/5 p-6 text-center transition-all hover:-translate-y-1"
           >
             {n.fomo > 0 && (
               <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-amber text-black text-[9px] font-black tracking-wider uppercase px-2.5 py-1 whitespace-nowrap">

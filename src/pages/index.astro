@@ -141,7 +141,7 @@ const testimonials = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-stretch">
         <div class="text-center md:text-left">
           <!-- Eyebrow (fills full width with branches from card-branch-pairs) -->
-          <div id="eyebrow-bar" class="w-full overflow-hidden border border-amber/30 px-4 py-2 mb-6 sm:mb-10">
+          <div id="eyebrow-bar" class="w-full overflow-hidden border border-amber/50 px-4 py-2 mb-6 sm:mb-10">
             <div class="flex items-center gap-3">
               <span class="w-1 h-1 bg-amber animate-pulse-slow flex-shrink-0"></span>
               <span id="eyebrow-text" class="text-amber text-xs font-normal tracking-[0.3em] uppercase whitespace-nowrap overflow-hidden">
@@ -166,7 +166,7 @@ const testimonials = [
             kein Papier, keine App, kein Aufwand für dich.
           </p>
 
-          <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6 sm:mb-10">
+          <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2.5 mb-6 sm:mb-10">
             <Icon name="diamond" class="w-3.5 h-3.5 text-amber" />
             <span class="text-amber text-xs tracking-[0.15em] font-normal">
               90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE
@@ -226,7 +226,7 @@ const testimonials = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="border border-ink/15 p-8">
+        <div class="border border-ink/30 p-8">
           <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Papierstempelkarte</p>
           <ul class="space-y-4">
             {problems.map(t => (
@@ -238,7 +238,7 @@ const testimonials = [
           </ul>
         </div>
 
-        <div class="border border-amber/30 bg-amber/3 p-8">
+        <div class="border border-amber/50 bg-amber/3 p-8">
           <p class="text-xs tracking-[0.3em] uppercase text-amber mb-6">bonuskarte.digital</p>
           <ul class="space-y-4">
             {solutions.map(t => (
@@ -265,7 +265,7 @@ const testimonials = [
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         {howItWorks.map((item, i) => (
-          <div class="group border border-ink/15 hover:border-amber/30 p-4 sm:p-7 transition-all">
+          <div class="group bg-paper border border-ink/30 hover:border-amber/50 shadow-sm p-4 sm:p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-3">{item.step}</div>
             <h3 class="font-semibold text-ink tracking-wide mb-1 text-sm">{item.title}</h3>
             <p class="text-ink text-sm leading-relaxed font-normal">{item.desc}</p>
@@ -292,7 +292,7 @@ const testimonials = [
           { value: '15', label: 'Städte live' },
           { value: '24h', label: 'Setup-Zeit' },
         ].map(stat => (
-          <div class="border border-ink/15 p-6 text-center">
+          <div class="bg-paper border border-ink/30 shadow-sm p-6 text-center">
             <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
             <div class="text-xs tracking-[0.25em] uppercase text-ink">{stat.label}</div>
           </div>
@@ -302,8 +302,8 @@ const testimonials = [
       <!-- Testimonials -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {testimonials.map(t => (
-          <div class="border border-ink/15 hover:border-amber/20 p-6 transition-colors">
-            <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-amber/30 mb-4" />
+          <div class="bg-paper border border-ink/30 hover:border-amber/50 shadow-sm p-6 transition-colors">
+            <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-amber/50 mb-4" />
             <blockquote class="text-ink text-sm font-normal leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
             <div>
               <p class="text-ink text-sm font-semibold">{t.name}</p>
@@ -329,7 +329,7 @@ const testimonials = [
         {cities.map(c => (
           c.available ? (
             <a href={c.href}
-              class="group border border-amber/30 hover:border-amber hover:bg-amber/5 p-6 text-center transition-all">
+              class="group border border-amber/50 hover:border-amber hover:bg-amber/5 p-6 text-center transition-all">
               <svg class="w-4 h-4 text-amber/60 group-hover:text-amber mx-auto mb-2 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4-4-7-7.5-7-10.5a7 7 0 1114 0C19 13.5 16 17 12 21z"/><circle cx="12" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg>
               <div class="text-xs font-semibold tracking-widest uppercase text-ink group-hover:text-amber">{c.label}</div>
               <div class="mt-3 text-xs tracking-[0.2em] uppercase text-amber flex items-center justify-center gap-1">
@@ -388,7 +388,7 @@ const testimonials = [
             a: 'Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden.',
           },
         ].map(faq => (
-          <details class="group border border-ink/15 hover:border-amber/20 transition-colors">
+          <details class="group border border-ink/30 hover:border-amber/20 transition-colors">
             <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
               <span class="text-ink text-sm font-medium pr-4">{faq.q}</span>
               <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -413,7 +413,7 @@ const testimonials = [
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
+  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 Tage kostenlos</p>

@@ -48,7 +48,7 @@ const showFomo  = fomoCount > 0
 
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 pb-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center w-full">
       <div>
-        <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-6">
+        <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
           <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
           <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">
             Dresden · {stadtteilData.name}
@@ -71,7 +71,7 @@ const showFomo  = fomoCount > 0
           {r(nicheData.heroCopy.bodyText)}
         </p>
 
-        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6">
+        <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2.5 mb-6">
           <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
           <span class="text-amber text-xs tracking-[0.15em] font-normal">
             90 TAGE KOMPLETT KOSTENLOS — KEIN KNEBELVERTRAG
@@ -127,7 +127,7 @@ const showFomo  = fomoCount > 0
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {nicheData.arguments.map(a => (
-          <div class="group border border-ink/15 hover:border-amber/30 p-8 transition-all">
+          <div class="group border border-ink/30 hover:border-amber/50 p-8 transition-all">
             <div class="mb-5 group-hover:scale-110 transition-transform inline-block text-amber">
               {emojiToIcon[a.icon] ? (
                 <Icon name={emojiToIcon[a.icon]} class="w-8 h-8" />
@@ -175,7 +175,7 @@ const showFomo  = fomoCount > 0
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber rounded-full blur-[180px] opacity-5"></div>
     <div class="relative max-w-xl mx-auto">
       <div class="text-center mb-10">
-        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2 mb-8">
+        <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2 mb-8">
           <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
           <span class="text-amber text-xs tracking-[0.3em] uppercase">
             Exklusiv für {nicheData.emoji} in {stadtteilData.name}
@@ -203,7 +203,7 @@ const showFomo  = fomoCount > 0
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>

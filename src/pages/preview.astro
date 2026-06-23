@@ -43,12 +43,12 @@ const cityPaths: Record<string, string> = {
 const statusStyles: Record<PostStatus, { label: string; classes: string }> = {
   needsEdit: { label: 'NEEDS EDIT', classes: 'bg-red-900/30 text-red-300 border border-red-700/30' },
   draft: { label: 'ENTWURF', classes: 'bg-ink/10 text-ink/40 border border-ink/10' },
-  approved: { label: 'FREIGEGEBEN', classes: 'bg-amber/20 text-amber border border-amber/30' },
+  approved: { label: 'FREIGEGEBEN', classes: 'bg-amber/20 text-amber border border-amber/50' },
   live: { label: 'LIVE', classes: 'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30' },
 }
 
 const categoryColors: Record<string, string> = {
-  'Ratgeber':  'bg-amber/20 text-amber border border-amber/30',
+  'Ratgeber':  'bg-amber/20 text-amber border border-amber/50',
   'Strategie': 'bg-blue-900/30 text-blue-300 border border-blue-700/30',
   'How-to':    'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30',
   'News':      'bg-ink/10 text-ink/60 border border-ink/10',
@@ -114,7 +114,7 @@ const sections = [
         </>
       ))}
 
-      <div class="mt-12 p-6 border border-ink/15 bg-ink-900">
+      <div class="mt-12 p-6 border border-ink/30 bg-ink-900">
         <p class="text-ink/40 text-sm leading-relaxed">
           <strong class="text-ink/60">Workflow:</strong> Artikel lesen → Claude sagen „Artikel X freigeben" oder „Artikel X needs edit: [was ändern]".
           Erst nach Freigabe + pubDate erscheint der Artikel im öffentlichen Blog.

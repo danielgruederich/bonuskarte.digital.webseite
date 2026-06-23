@@ -56,7 +56,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 pb-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center w-full">
       <div>
         <!-- Eyebrow -->
-        <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-8">
+        <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-8">
           <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
           <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">{eyebrow}</span>
         </div>
@@ -81,7 +81,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <p class="text-ink text-base leading-relaxed mb-6 max-w-md font-normal">{bodyText}</p>
 
         <!-- 90 jours badge -->
-        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6">
+        <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2.5 mb-6">
           <svg class="w-4 h-4 text-amber shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
@@ -132,7 +132,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
 
       <!-- Right col: SEO-rich arrondissement intro block -->
       <div class="hidden md:flex flex-col justify-center gap-6">
-        <div class="border border-ink/15 bg-ink/2 p-8">
+        <div class="border border-ink/30 bg-ink/2 p-8">
           <p class="text-amber text-xs tracking-[0.3em] uppercase mb-4">
             {a.name} · {a.arrLong} · {a.cp}
           </p>
@@ -160,7 +160,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── SEO PARAGRAPH ────────────────────────────────────────────────────── -->
-  <section class="py-10 sm:py-12 px-5 sm:px-8 bg-paper border-t border-ink/15">
+  <section class="py-10 sm:py-12 px-5 sm:px-8 bg-paper border-t border-ink/30">
     <div class="max-w-3xl mx-auto">
       <p class="text-ink/50 text-sm leading-relaxed">
         Vous gérez une <strong class="text-ink/70">{n.label}</strong> dans le <strong class="text-ink/70">{a.arrLong}</strong> ({a.cp}) — {a.quartiers} ?
@@ -182,7 +182,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {n.arguments.map(arg => (
-          <div class="group border border-ink/15 hover:border-amber/30 p-8 transition-all">
+          <div class="group border border-ink/30 hover:border-amber/50 p-8 transition-all">
             <div class="mb-5 group-hover:scale-110 transition-transform inline-block">
               <span class="text-4xl text-amber">{arg.icon}</span>
             </div>
@@ -262,7 +262,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
             a: 'Oui. Toutes les données sont traitées conformément au RGPD. Aucun cookie de tracking sur le téléphone de vos clients, aucune donnée revendue.',
           },
         ].map(faq => (
-          <details class="group border border-ink/15 hover:border-amber/20 transition-colors">
+          <details class="group border border-ink/30 hover:border-amber/20 transition-colors">
             <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
               <span class="text-ink text-sm sm:text-base font-medium pr-4">{faq.q}</span>
               <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -283,7 +283,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber rounded-full blur-[180px] opacity-5"></div>
     <div class="relative max-w-xl mx-auto">
       <div class="text-center mb-10">
-        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2 mb-8">
+        <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2 mb-8">
           <svg class="w-4 h-4 text-amber shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
@@ -309,7 +309,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Sans risque</p>

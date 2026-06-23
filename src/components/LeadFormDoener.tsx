@@ -123,13 +123,13 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
             <div className="flex gap-3">
               {appleLink && (
                 <a href={appleLink} target="_blank" rel="noopener noreferrer"
-                  className="flex-1 text-center border border-ink/10 hover:border-amber/30 text-ink/40 hover:text-ink/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  className="flex-1 text-center border border-ink/10 hover:border-amber/50 text-ink/40 hover:text-ink/70 text-xs tracking-widest uppercase py-3 transition-all">
                   Apple Wallet
                 </a>
               )}
               {googleLink && (
                 <a href={googleLink} target="_blank" rel="noopener noreferrer"
-                  className="flex-1 text-center border border-ink/10 hover:border-amber/30 text-ink/40 hover:text-ink/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  className="flex-1 text-center border border-ink/10 hover:border-amber/50 text-ink/40 hover:text-ink/70 text-xs tracking-widest uppercase py-3 transition-all">
                   Google Wallet
                 </a>
               )}
@@ -137,7 +137,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
           </div>
         )}
 
-        <div className="border-t border-ink/15 pt-7">
+        <div className="border-t border-ink/30 pt-7">
           <p className="text-ink text-sm font-medium mb-2">So geht's weiter:</p>
           <ol className="text-ink/70 text-sm space-y-1 mb-4 list-decimal list-inside">
             <li>Lade die Demo-Karte ins Wallet</li>

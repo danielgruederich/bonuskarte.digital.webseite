@@ -59,7 +59,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
     <div class="relative max-w-5xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
 
       <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-10">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-10">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
         <span class="text-amber text-[10px] font-normal tracking-[0.3em] uppercase">
           {totalBetriebe}+ Kölner Betriebe bereits dabei
@@ -78,7 +78,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
       </p>
 
       <!-- Trust badge -->
-      <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-10">
+      <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2.5 mb-10">
         <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
         <span class="text-amber text-xs tracking-[0.15em] font-normal">90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE</span>
       </div>
@@ -116,7 +116,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
   </section>
 
   <!-- ── WARUM KÖLN ─────────────────────────────────────── -->
-  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/15">
+  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/30">
     <div class="max-w-5xl mx-auto">
       <div class="flex items-center gap-4 mb-12">
         <div class="h-px flex-1 bg-ink/20"></div>
@@ -130,7 +130,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           { num: '90', label: 'Tage kostenlos', desc: 'Ohne Kreditkarte starten. Ohne Risiko testen. Ohne App-Download für Kunden.' },
           { num: '1×', label: 'QR-Code scannen', desc: 'Gast scannt einmal – die Karte liegt für immer in Apple oder Google Wallet.' },
         ].map(stat => (
-          <div class="border border-ink/15 hover:border-amber/30 p-8 transition-all">
+          <div class="border border-ink/30 hover:border-amber/50 p-8 transition-all">
             <div class="text-4xl font-black text-amber leading-none mb-3">{stat.num}</div>
             <div class="text-ink font-semibold text-sm tracking-wide mb-2">{stat.label}</div>
             <div class="text-ink/55 text-sm font-normal leading-relaxed">{stat.desc}</div>
@@ -160,7 +160,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           return (
             <a
               href={`/koeln/${v.slug}`}
-              class="group relative border border-ink/15 hover:border-amber bg-ink/2 hover:bg-amber/5 p-4 text-center transition-all"
+              class="group relative border border-ink/30 hover:border-amber bg-ink/2 hover:bg-amber/5 p-4 text-center transition-all"
             >
               {total > 0 && (
                 <div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-amber text-black text-[8px] font-black tracking-wider uppercase px-2 py-0.5 whitespace-nowrap">
@@ -181,7 +181,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
   </section>
 
   <!-- ── HOW IT WORKS ───────────────────────────────────── -->
-  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/15">
+  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/30">
     <div class="max-w-5xl mx-auto">
       <div class="flex items-center gap-4 mb-12">
         <div class="h-px flex-1 bg-ink/20"></div>
@@ -196,7 +196,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           { step: '03', title: 'QR-Code aufhängen', desc: 'Kunden scannen einmal und speichern die Karte im Wallet.' },
           { step: '04', title: 'Stammkunden gewinnen', desc: 'Push-Nachrichten bringen Kunden aktiv zurück.' },
         ].map(item => (
-          <div class="group border border-ink/15 hover:border-amber/30 p-7 transition-all">
+          <div class="group border border-ink/30 hover:border-amber/50 p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-5">{item.step}</div>
             <h3 class="font-semibold text-ink tracking-wide mb-3 text-sm">{item.title}</h3>
             <p class="text-ink/60 text-sm leading-relaxed font-normal">{item.desc}</p>
@@ -207,7 +207,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
   </section>
 
   <!-- ── FINAL CTA ──────────────────────────────────────── -->
-  <section class="py-28 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
+  <section class="py-28 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-[10px] tracking-[0.4em] uppercase mb-6">Für Kölner Betriebe</p>

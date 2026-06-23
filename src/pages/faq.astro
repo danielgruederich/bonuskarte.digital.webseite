@@ -72,14 +72,14 @@ const faqs = [
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- ── HEADER ──────────────────────────────────────────────────── -->
-  <section class="bg-ink pt-28 pb-12 px-5 sm:px-8 border-b border-ink/15">
+  <section class="bg-ink pt-28 pb-12 px-5 sm:px-8 border-b border-ink/30">
     <div class="max-w-2xl mx-auto">
       <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
         <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
         <span>›</span>
         <span class="text-ink/60">FAQ</span>
       </nav>
-      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-6">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
         <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">Haeufige Fragen</span>
       </div>
@@ -97,7 +97,7 @@ const faqs = [
   <section class="bg-ink py-14 px-5 sm:px-8">
     <div class="max-w-2xl mx-auto space-y-3">
       {faqs.map((faq, i) => (
-        <details class="group border border-ink/15 hover:border-amber/20 transition-colors" open={i === 0}>
+        <details class="group border border-ink/30 hover:border-amber/20 transition-colors" open={i === 0}>
           <summary class="flex items-center justify-between cursor-pointer p-6">
             <h2 class="text-ink text-sm sm:text-base font-medium pr-4 leading-snug">{faq.q}</h2>
             <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +113,7 @@ const faqs = [
   </section>
 
   <!-- ── CTA ────────────────────────────────────────────────────── -->
-  <section class="bg-ink py-14 px-5 sm:px-8 border-t border-ink/15">
+  <section class="bg-ink py-14 px-5 sm:px-8 border-t border-ink/30">
     <div class="max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-4">Kein Risiko</p>
       <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">90 Tage gratis.</h2>
