@@ -9,8 +9,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-amber text-white hover:bg-amber-dark font-bold tracking-wide uppercase text-xs rounded-full",
-        ghost:   "border border-amber/60 text-amber hover:bg-amber hover:text-white tracking-wide uppercase text-xs rounded-full",
-        outline: "border border-amber/60 text-amber hover:bg-amber hover:text-white tracking-wide uppercase text-xs rounded-full",
+        ghost:   "border border-amber/60 text-amber hover:bg-amber-dark hover:text-white tracking-wide uppercase text-xs rounded-full",
+        outline: "border border-amber/60 text-amber hover:bg-amber-dark hover:text-white tracking-wide uppercase text-xs rounded-full",
       },
       size: {
         default: "h-11 px-6 py-2",

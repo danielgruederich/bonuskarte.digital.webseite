@@ -15,7 +15,7 @@ interface CardLinks {
 type State = 'idle' | 'submitting' | 'success' | 'error'
 
 const inputClass =
-  'w-full px-4 py-3 bg-ink/5 border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-ink/8 transition-colors'
+  'w-full px-4 py-3 bg-ink/20 border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-ink/8 transition-colors'
 
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-ink/60 mb-2'
 
@@ -137,7 +137,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
           </div>
         )}
 
-        <div className="border-t border-ink/5 pt-7">
+        <div className="border-t border-ink/15 pt-7">
           <p className="text-ink text-sm font-medium mb-2">So geht's weiter:</p>
           <ol className="text-ink/70 text-sm space-y-1 mb-4 list-decimal list-inside">
             <li>Lade die Demo-Karte ins Wallet</li>

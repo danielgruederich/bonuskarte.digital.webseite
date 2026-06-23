@@ -11,7 +11,7 @@ type State = 'idle' | 'submitting' | 'success' | 'error'
 const WA_NUMBER = '491705594140'
 
 const inputClass =
-  'w-full px-4 py-3 bg-ink/5 border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-ink/8 transition-colors'
+  'w-full px-4 py-3 bg-ink/20 border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-ink/8 transition-colors'
 
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-ink/60 mb-2'
 

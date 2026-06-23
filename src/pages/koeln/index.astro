@@ -116,12 +116,12 @@ const totalBetriebe = veedel.reduce((acc, v) =>
   </section>
 
   <!-- ── WARUM KÖLN ─────────────────────────────────────── -->
-  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/5">
+  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/15">
     <div class="max-w-5xl mx-auto">
       <div class="flex items-center gap-4 mb-12">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-[10px] tracking-[0.4em] uppercase text-ink/55">Warum Köln</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -130,7 +130,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           { num: '90', label: 'Tage kostenlos', desc: 'Ohne Kreditkarte starten. Ohne Risiko testen. Ohne App-Download für Kunden.' },
           { num: '1×', label: 'QR-Code scannen', desc: 'Gast scannt einmal – die Karte liegt für immer in Apple oder Google Wallet.' },
         ].map(stat => (
-          <div class="border border-ink/5 hover:border-amber/30 p-8 transition-all">
+          <div class="border border-ink/15 hover:border-amber/30 p-8 transition-all">
             <div class="text-4xl font-black text-amber leading-none mb-3">{stat.num}</div>
             <div class="text-ink font-semibold text-sm tracking-wide mb-2">{stat.label}</div>
             <div class="text-ink/55 text-sm font-light leading-relaxed">{stat.desc}</div>
@@ -146,9 +146,9 @@ const totalBetriebe = veedel.reduce((acc, v) =>
     <div class="relative max-w-5xl mx-auto">
 
       <div class="flex items-center gap-4 mb-4">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-[10px] tracking-[0.4em] uppercase text-ink/55">Dein Kölner Veedel</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
       <p class="text-center text-ink/40 text-sm font-light mb-12">
         Wähle dein Viertel und sieh, welche Betriebe dort bereits dabei sind.
@@ -160,7 +160,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           return (
             <a
               href={`/koeln/${v.slug}`}
-              class="group relative border border-ink/5 hover:border-amber bg-ink/2 hover:bg-amber/5 p-4 text-center transition-all"
+              class="group relative border border-ink/15 hover:border-amber bg-ink/2 hover:bg-amber/5 p-4 text-center transition-all"
             >
               {total > 0 && (
                 <div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-amber text-black text-[8px] font-black tracking-wider uppercase px-2 py-0.5 whitespace-nowrap">
@@ -181,12 +181,12 @@ const totalBetriebe = veedel.reduce((acc, v) =>
   </section>
 
   <!-- ── HOW IT WORKS ───────────────────────────────────── -->
-  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/5">
+  <section class="py-20 px-5 sm:px-8 bg-paper border-t border-ink/15">
     <div class="max-w-5xl mx-auto">
       <div class="flex items-center gap-4 mb-12">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-[10px] tracking-[0.4em] uppercase text-ink/55">So einfach geht's</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -196,7 +196,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           { step: '03', title: 'QR-Code aufhängen', desc: 'Kunden scannen einmal und speichern die Karte im Wallet.' },
           { step: '04', title: 'Stammkunden gewinnen', desc: 'Push-Nachrichten bringen Kunden aktiv zurück.' },
         ].map(item => (
-          <div class="group border border-ink/5 hover:border-amber/30 p-7 transition-all">
+          <div class="group border border-ink/15 hover:border-amber/30 p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-5">{item.step}</div>
             <h3 class="font-semibold text-ink tracking-wide mb-3 text-sm">{item.title}</h3>
             <p class="text-ink/60 text-sm leading-relaxed font-light">{item.desc}</p>
@@ -207,7 +207,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
   </section>
 
   <!-- ── FINAL CTA ──────────────────────────────────────── -->
-  <section class="py-28 px-5 sm:px-8 bg-paper border-t border-ink/5 relative overflow-hidden">
+  <section class="py-28 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-[10px] tracking-[0.4em] uppercase mb-6">Für Kölner Betriebe</p>
@@ -216,7 +216,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
       <p class="text-ink/55 text-sm tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
       <a
         href="/koeln/innenstadt/cafes"
-        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
       >
         Kostenlos starten
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

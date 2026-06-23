@@ -165,7 +165,7 @@ const faq = [
           </div>
 
           <a href="/fr/paris/"
-            class="w-full inline-flex items-center justify-center bg-amber hover:bg-amber text-black px-6 py-4 text-xs font-bold tracking-[0.15em] uppercase transition-all">
+            class="w-full inline-flex items-center justify-center bg-amber hover:bg-amber-dark text-black px-6 py-4 text-xs font-bold tracking-[0.15em] uppercase transition-all">
             Commencer maintenant
           </a>
         </div>
@@ -241,15 +241,15 @@ const faq = [
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Papier vs. Numérique</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
-            <tr class="border-b border-ink/5">
+            <tr class="border-b border-ink/15">
               <th class="text-left text-ink text-xs tracking-[0.3em] uppercase font-normal pb-4 pr-8">Fonctionnalité</th>
               <th class="text-center text-ink text-xs tracking-[0.3em] uppercase font-normal pb-4 px-4">Carte papier</th>
               <th class="text-center text-amber text-xs tracking-[0.3em] uppercase font-normal pb-4 pl-4">bonuskarte.digital</th>
@@ -282,14 +282,14 @@ const faq = [
   <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Questions fréquentes</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="space-y-px">
         {faq.map(item => (
-          <div class="border border-ink/5 p-6 hover:border-amber/20 transition-colors">
+          <div class="border border-ink/15 p-6 hover:border-amber/20 transition-colors">
             <p class="text-ink text-sm font-semibold mb-2">{item.q}</p>
             <p class="text-ink text-sm font-light leading-relaxed">{item.a}</p>
           </div>
@@ -299,7 +299,7 @@ const faq = [
   </section>
 
   <!-- ── FINAL CTA ──────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/5 relative overflow-hidden">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Sans risque</p>
@@ -310,7 +310,7 @@ const faq = [
         à tester.
       </h2>
       <a href="/fr/paris/"
-        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
         Commencer gratuitement
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

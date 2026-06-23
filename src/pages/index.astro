@@ -175,7 +175,7 @@ const testimonials = [
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
             <a href="/koeln"
-              class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
+              class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
               Kostenlos testen
               <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -220,13 +220,13 @@ const testimonials = [
     <div class="max-w-6xl mx-auto">
       <!-- Divider label -->
       <div class="flex items-center gap-4 mb-8 sm:mb-12">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Das Problem</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="border border-ink/5 p-8">
+        <div class="border border-ink/15 p-8">
           <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Papierstempelkarte</p>
           <ul class="space-y-4">
             {problems.map(t => (
@@ -258,14 +258,14 @@ const testimonials = [
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Wie es funktioniert</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         {howItWorks.map((item, i) => (
-          <div class="group border border-ink/5 hover:border-amber/30 p-4 sm:p-7 transition-all">
+          <div class="group border border-ink/15 hover:border-amber/30 p-4 sm:p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-3">{item.step}</div>
             <h3 class="font-semibold text-ink tracking-wide mb-1 text-sm">{item.title}</h3>
             <p class="text-ink text-sm leading-relaxed font-light">{item.desc}</p>
@@ -276,12 +276,12 @@ const testimonials = [
   </section>
 
   <!-- ── SOCIAL PROOF ───────────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper-dark">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Das sagen unsere Kunden</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <!-- Stats -->
@@ -292,7 +292,7 @@ const testimonials = [
           { value: '15', label: 'Städte live' },
           { value: '24h', label: 'Setup-Zeit' },
         ].map(stat => (
-          <div class="border border-ink/5 p-6 text-center">
+          <div class="border border-ink/15 p-6 text-center">
             <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
             <div class="text-xs tracking-[0.25em] uppercase text-ink">{stat.label}</div>
           </div>
@@ -302,7 +302,7 @@ const testimonials = [
       <!-- Testimonials -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {testimonials.map(t => (
-          <div class="border border-ink/5 hover:border-amber/20 p-6 transition-colors">
+          <div class="border border-ink/15 hover:border-amber/20 p-6 transition-colors">
             <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-amber/30 mb-4" />
             <blockquote class="text-ink text-sm font-light leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
             <div>
@@ -320,9 +320,9 @@ const testimonials = [
   <section id="staedte" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Verfügbare Städte</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -330,6 +330,7 @@ const testimonials = [
           c.available ? (
             <a href={c.href}
               class="group border border-amber/30 hover:border-amber hover:bg-amber/5 p-6 text-center transition-all">
+              <svg class="w-4 h-4 text-amber/60 group-hover:text-amber mx-auto mb-2 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4-4-7-7.5-7-10.5a7 7 0 1114 0C19 13.5 16 17 12 21z"/><circle cx="12" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg>
               <div class="text-xs font-semibold tracking-widest uppercase text-ink group-hover:text-amber">{c.label}</div>
               <div class="mt-3 text-xs tracking-[0.2em] uppercase text-amber flex items-center justify-center gap-1">
                 Zur Stadt
@@ -340,6 +341,7 @@ const testimonials = [
             </a>
           ) : (
             <div class="border border-ink/10 p-6 text-center">
+              <svg class="w-4 h-4 text-ink/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4-4-7-7.5-7-10.5a7 7 0 1114 0C19 13.5 16 17 12 21z"/><circle cx="12" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg>
               <div class="text-xs font-semibold tracking-widest uppercase text-ink">{c.label}</div>
               <div class="mt-3 text-xs tracking-[0.2em] uppercase text-ink">Bald verfügbar</div>
             </div>
@@ -350,13 +352,13 @@ const testimonials = [
   </section>
 
   <!-- ── FAQ ────────────────────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper-dark relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Häufige Fragen</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="space-y-4">
@@ -386,7 +388,7 @@ const testimonials = [
             a: 'Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden.',
           },
         ].map(faq => (
-          <details class="group border border-ink/5 hover:border-amber/20 transition-colors">
+          <details class="group border border-ink/15 hover:border-amber/20 transition-colors">
             <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
               <span class="text-ink text-sm font-medium pr-4">{faq.q}</span>
               <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -411,7 +413,7 @@ const testimonials = [
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/5 relative overflow-hidden">
+  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 Tage kostenlos</p>
@@ -423,7 +425,7 @@ const testimonials = [
       </h2>
       <p class="text-ink text-xs tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
       <a href="/koeln"
-        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
         Kostenlos starten
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

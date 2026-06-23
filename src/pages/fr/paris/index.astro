@@ -51,7 +51,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
         {arrondissements.map(a => (
           <a
             href={`/fr/paris/${a.slug}/`}
-            class="group relative border border-ink/5 hover:border-amber bg-ink/2 hover:bg-amber/5 p-5 transition-all hover:-translate-y-1"
+            class="group relative border border-ink/15 hover:border-amber bg-ink/2 hover:bg-amber/5 p-5 transition-all hover:-translate-y-1"
           >
             <div class="text-ink font-bold text-sm tracking-wide mb-1 group-hover:text-amber transition-colors">
               {a.name}
@@ -76,9 +76,9 @@ import { uiFr } from '../../../data/fr/ui-fr'
   <section class="py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-10">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Pourquoi Paris ?</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -87,7 +87,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
           { value: '90 jours', label: 'gratuits pour tester' },
           { value: '24h', label: 'pour être en ligne' },
         ].map(stat => (
-          <div class="border border-ink/5 p-6 text-center">
+          <div class="border border-ink/15 p-6 text-center">
             <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
             <div class="text-xs tracking-[0.25em] uppercase text-ink">{stat.label}</div>
           </div>

@@ -90,7 +90,7 @@ const categoryColors: Record<string, string> = {
   {rest.length > 0 && (
     <section class="bg-ink py-16">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/5">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/20">
           {rest.map(post => (
             <a href={`/bonn/blog/${post.slug}`} class="group bg-paper hover:bg-ink-900 transition-colors duration-200 p-7 flex flex-col">
               <div class="relative overflow-hidden aspect-video mb-6">
@@ -105,10 +105,10 @@ const categoryColors: Record<string, string> = {
     </section>
   )}
 
-  <section class="bg-ink border-t border-ink/5 py-20">
+  <section class="bg-ink border-t border-ink/15 py-20">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
       <h2 class="text-3xl sm:text-4xl font-black text-ink mb-5">Bereit für Ihre digitale Kundenkarte in Bonn?</h2>
-      <a href="/bonn/innenstadt/cafes" class="inline-flex items-center gap-3 bg-amber hover:bg-amber text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors">
+      <a href="/bonn/innenstadt/cafes" class="inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors">
         Jetzt gratis starten →
       </a>
     </div>

@@ -72,7 +72,7 @@ const faqs = [
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- ── HEADER ──────────────────────────────────────────────────── -->
-  <section class="bg-ink pt-28 pb-12 px-5 sm:px-8 border-b border-ink/5">
+  <section class="bg-ink pt-28 pb-12 px-5 sm:px-8 border-b border-ink/15">
     <div class="max-w-2xl mx-auto">
       <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
         <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
@@ -97,7 +97,7 @@ const faqs = [
   <section class="bg-ink py-14 px-5 sm:px-8">
     <div class="max-w-2xl mx-auto space-y-3">
       {faqs.map((faq, i) => (
-        <details class="group border border-ink/5 hover:border-amber/20 transition-colors" open={i === 0}>
+        <details class="group border border-ink/15 hover:border-amber/20 transition-colors" open={i === 0}>
           <summary class="flex items-center justify-between cursor-pointer p-6">
             <h2 class="text-ink text-sm sm:text-base font-medium pr-4 leading-snug">{faq.q}</h2>
             <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,13 +113,13 @@ const faqs = [
   </section>
 
   <!-- ── CTA ────────────────────────────────────────────────────── -->
-  <section class="bg-ink py-14 px-5 sm:px-8 border-t border-ink/5">
+  <section class="bg-ink py-14 px-5 sm:px-8 border-t border-ink/15">
     <div class="max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-4">Kein Risiko</p>
       <h2 class="text-3xl sm:text-4xl font-extralight text-ink tracking-tight mb-2">90 Tage gratis.</h2>
       <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-8">Ueberzeugt dich selbst.</h2>
       <a href="/koeln"
-        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
         Jetzt kostenlos starten
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

@@ -21,7 +21,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = false } =
   ]
 })} />
 
-<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-paper border-b border-ink/5">
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-paper border-b border-ink/15">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="flex items-center justify-between h-16">
 
@@ -110,9 +110,9 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = false } =
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      navbar.classList.add('bg-paper/95', 'backdrop-blur-md', 'border-b', 'border-ink/5', 'shadow-sm')
+      navbar.classList.add('bg-paper/95', 'backdrop-blur-md', 'border-b', 'border-ink/15', 'shadow-sm')
     } else {
-      navbar.classList.remove('bg-paper/95', 'backdrop-blur-md', 'border-b', 'border-ink/5', 'shadow-sm')
+      navbar.classList.remove('bg-paper/95', 'backdrop-blur-md', 'border-b', 'border-ink/15', 'shadow-sm')
     }
   })
 

@@ -93,7 +93,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="#demo"
-            class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber text-black px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all">
+            class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all">
             {ctaLabel}
             <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -132,7 +132,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
 
       <!-- Right col: SEO-rich arrondissement intro block -->
       <div class="hidden md:flex flex-col justify-center gap-6">
-        <div class="border border-ink/5 bg-ink/2 p-8">
+        <div class="border border-ink/15 bg-ink/2 p-8">
           <p class="text-amber text-xs tracking-[0.3em] uppercase mb-4">
             {a.name} · {a.arrLong} · {a.cp}
           </p>
@@ -160,7 +160,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── SEO PARAGRAPH ────────────────────────────────────────────────────── -->
-  <section class="py-10 sm:py-12 px-5 sm:px-8 bg-paper border-t border-ink/5">
+  <section class="py-10 sm:py-12 px-5 sm:px-8 bg-paper border-t border-ink/15">
     <div class="max-w-3xl mx-auto">
       <p class="text-ink/50 text-sm leading-relaxed">
         Vous gérez une <strong class="text-ink/70">{n.label}</strong> dans le <strong class="text-ink/70">{a.arrLong}</strong> ({a.cp}) — {a.quartiers} ?
@@ -176,13 +176,13 @@ const whatsappUrl = 'https://wa.me/491705594140'
   <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Les avantages</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {n.arguments.map(arg => (
-          <div class="group border border-ink/5 hover:border-amber/30 p-8 transition-all">
+          <div class="group border border-ink/15 hover:border-amber/30 p-8 transition-all">
             <div class="mb-5 group-hover:scale-110 transition-transform inline-block">
               <span class="text-4xl text-amber">{arg.icon}</span>
             </div>
@@ -199,9 +199,9 @@ const whatsappUrl = 'https://wa.me/491705594140'
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <div class="flex items-center gap-4 mb-10">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">L'offre</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
       <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">90 jours d'essai.</h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-amber tracking-tight mb-10">0 € de risque.</h2>
@@ -220,7 +220,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
       </div>
       <div class="mt-10">
         <a href="#demo"
-          class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
+          class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
           Tester 90 jours gratuitement
           <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -235,9 +235,9 @@ const whatsappUrl = 'https://wa.me/491705594140'
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-10">
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Questions fréquentes</span>
-        <div class="h-px flex-1 bg-ink/5"></div>
+        <div class="h-px flex-1 bg-ink/20"></div>
       </div>
       <div class="space-y-4">
         {[
@@ -262,7 +262,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
             a: 'Oui. Toutes les données sont traitées conformément au RGPD. Aucun cookie de tracking sur le téléphone de vos clients, aucune donnée revendue.',
           },
         ].map(faq => (
-          <details class="group border border-ink/5 hover:border-amber/20 transition-colors">
+          <details class="group border border-ink/15 hover:border-amber/20 transition-colors">
             <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
               <span class="text-ink text-sm sm:text-base font-medium pr-4">{faq.q}</span>
               <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,14 +309,14 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/5 relative overflow-hidden">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/15 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Sans risque</p>
       <h2 class="text-4xl font-extralight text-ink tracking-tight mb-2">90 jours gratuits.</h2>
       <h2 class="text-4xl font-bold text-ink tracking-tight mb-10">Convainquez-vous.</h2>
       <a href="#demo"
-        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
         {ctaLabel}
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
