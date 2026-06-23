@@ -116,11 +116,22 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = false } =
     }
   })
 
+  function closeMenu() {
+    menu.classList.add('hidden')
+    iconO.classList.remove('hidden')
+    iconC.classList.add('hidden')
+    toggle.setAttribute('aria-expanded', 'false')
+  }
+
   toggle.addEventListener('click', () => {
     const isOpen = !menu.classList.contains('hidden')
-    menu.classList.toggle('hidden')
-    iconO.classList.toggle('hidden')
-    iconC.classList.toggle('hidden')
-    toggle.setAttribute('aria-expanded', String(!isOpen))
+    if (isOpen) { closeMenu() } else {
+      menu.classList.remove('hidden')
+      iconO.classList.add('hidden')
+      iconC.classList.remove('hidden')
+      toggle.setAttribute('aria-expanded', 'true')
+    }
   })
+
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu))
 </script>
