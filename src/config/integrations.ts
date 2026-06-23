@@ -14,7 +14,7 @@ export const zipchat = {
    * Wird im <body> 1:1 eingebunden, sobald gesetzt.
    * Beispiel: '<script async src="https://cdn.zipchat.ai/widget.js" data-shop-id="abc123"></script>'
    */
-  embedScript: '' as string,
+  embedScript: "<script src='https://app.zipchat.ai/widget/zipchat.js?id=8XoH9C09g5b5W3QzrjB0' data-no-optimize='1' defer></script>" as string,
 
   /**
    * CSS-Selektor des Chat-Launchers (Button unten rechts). Ein Klick darauf
