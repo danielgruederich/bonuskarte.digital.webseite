@@ -6,58 +6,51 @@ interface Props {
   ctaLabel?: string
   dark?: boolean
 }
-const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = true } = Astro.props
+const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = false } = Astro.props
 ---
 
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="flex items-center justify-between h-16">
 
-      <!-- Logo -->
-      <a href="/fr/" class="flex items-center gap-3 group">
-        <div class="w-8 h-8 flex-shrink-0">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="32" height="32" fill="black" rx="2"/>
-            <!-- Top horizontal bar -->
-            <rect x="8" y="8" width="16" height="2.5" fill="#A38A00"/>
-            <!-- Middle horizontal bar -->
-            <rect x="8" y="15" width="14" height="2.5" fill="#A38A00"/>
-            <!-- Vertical bar -->
-            <rect x="8" y="15" width="2.5" height="9" fill="#A38A00"/>
-          </svg>
-        </div>
-        <div class="leading-none">
-          <div class="text-sm font-medium tracking-[0.15em] uppercase" class:list={[dark ? 'text-white' : 'text-black']}>
-            bonuskarte<span class="text-gold-600">.digital</span>
-          </div>
-        </div>
+      <!-- Logo: Zwei-Kreise-Mark + Wordmark -->
+      <a href="/fr/" class="flex items-center gap-3 group" aria-label="bonuskarte.digital — Page d'accueil">
+        <svg viewBox="0 0 44 28" class="w-9 h-auto flex-shrink-0" aria-hidden="true">
+          <circle cx="12" cy="14" r="11" fill="none"
+            stroke={dark ? '#F6F1E8' : '#1A1410'} stroke-width="1.5"/>
+          <circle cx="28" cy="14" r="11" fill="#F25C24"/>
+        </svg>
+        <span class="text-sm font-semibold leading-none" class:list={[dark ? 'text-paper' : 'text-ink']}>
+          bonuskarte<span class="text-amber">.digital</span>
+        </span>
       </a>
 
       <!-- Desktop nav -->
-      <nav class="hidden lg:flex items-center gap-5 lg:gap-8">
-        <a href="/fr/#comment-ca-marche" class="text-xs font-medium tracking-widest uppercase transition-colors"
-          class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
+      <nav class="hidden lg:flex items-center gap-5 lg:gap-8 ml-12">
+        <a href="/fr/#comment-ca-marche" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+          class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiFr.nav.howItWorks}
         </a>
-        <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase transition-colors"
-          class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
+        <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+          class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiFr.nav.secteurs}
         </a>
-        <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase transition-colors"
-          class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black/50 hover:text-black']}>
+        <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+          class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiFr.nav.tarifs}
         </a>
 
         <!-- Language switcher -->
-        <div class="flex items-center gap-1 text-xs font-medium tracking-widest uppercase" class:list={[dark ? 'text-white/60' : 'text-black/40']}>
-          <span class="text-gold-600">FR</span>
-          <span class:list={[dark ? 'text-white/30' : 'text-black/20']}>|</span>
-          <a href="/" class:list={[dark ? 'text-white/60 hover:text-white transition-colors' : 'text-black/40 hover:text-black transition-colors']}>DE</a>
-        </div>
+        <span class="text-xs font-medium tracking-widest uppercase"
+          class:list={[dark ? 'text-paper/40' : 'text-ink/30']}>
+          <span class="text-amber">FR</span>
+          <span class="mx-1">|</span>
+          <a href="/" class="hover:text-amber transition-colors">DE</a>
+        </span>
 
         <a
           href={ctaHref}
-          class="group inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-black px-5 py-2.5 text-xs font-bold tracking-widest uppercase transition-all"
+          class="group inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide uppercase transition-colors"
         >
           {ctaLabel}
           <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,8 +60,8 @@ const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = true } = Astro.props
       </nav>
 
       <!-- Mobile toggle -->
-      <button id="mobile-toggle" class="lg:hidden p-2 transition-colors"
-        class:list={[dark ? 'text-white hover:text-gold-600' : 'text-black hover:text-gold-600']}
+      <button id="mobile-toggle" class="lg:hidden p-2 transition-colors hover:text-amber"
+        class:list={[dark ? 'text-paper' : 'text-ink']}
         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -80,20 +73,20 @@ const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = true } = Astro.props
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="lg:hidden hidden border-t border-white/10 py-6 flex flex-col gap-5 bg-black/95 backdrop-blur-md">
-      <a href="/fr/#comment-ca-marche" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-ink/10 py-6 flex flex-col gap-5 bg-paper/98 backdrop-blur-md">
+      <a href="/fr/#comment-ca-marche" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiFr.nav.howItWorks}
       </a>
-      <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
+      <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiFr.nav.secteurs}
       </a>
-      <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase text-white hover:text-gold-600 transition-colors">
+      <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiFr.nav.tarifs}
       </a>
-      <a href="/" class="text-xs font-medium tracking-widest uppercase text-white/60 hover:text-white transition-colors">
+      <a href="/" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         🇩🇪 Version (DE)
       </a>
-      <a href={ctaHref} class="block w-full bg-gold-600 text-black text-xs font-bold tracking-widest uppercase px-5 py-3 text-center">
+      <a href={ctaHref} class="block w-full bg-amber hover:bg-amber-dark text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full text-center transition-colors">
         {ctaLabel}
       </a>
     </div>
@@ -109,9 +102,9 @@ const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = true } = Astro.props
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      navbar.classList.add('bg-black/95', 'backdrop-blur-md', 'border-b', 'border-white/5')
+      navbar.classList.add('bg-paper/95', 'backdrop-blur-md', 'border-b', 'border-ink/5', 'shadow-sm')
     } else {
-      navbar.classList.remove('bg-black/95', 'backdrop-blur-md', 'border-b', 'border-white/5')
+      navbar.classList.remove('bg-paper/95', 'backdrop-blur-md', 'border-b', 'border-ink/5', 'shadow-sm')
     }
   })
 
