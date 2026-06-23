@@ -235,7 +235,7 @@ export default function LeadForm({
       {mode === 'gruender' && bannerText && (
         <div className="mb-6 border border-amber/60 bg-gradient-to-b from-amber/[0.08] to-transparent p-5">
           <p className="text-xs tracking-[0.3em] uppercase text-amber mb-2">Platz sichern</p>
-          <p className="text-sm text-ink/90 font-light leading-relaxed">{bannerText}</p>
+          <p className="text-sm text-ink/90 font-normal leading-relaxed">{bannerText}</p>
         </div>
       )}
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -273,7 +273,7 @@ export default function LeadForm({
       </div>
 
       <div>
-        <label htmlFor="email" className={labelClass}>E-Mail <span className="text-ink/30 font-light normal-case tracking-normal">(optional)</span></label>
+        <label htmlFor="email" className={labelClass}>E-Mail <span className="text-ink/30 font-normal normal-case tracking-normal">(optional)</span></label>
         <input
           id="email"
           name="email"

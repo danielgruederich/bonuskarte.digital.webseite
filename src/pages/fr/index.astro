@@ -57,24 +57,24 @@ const nicheTeaser = nichesFr.slice(0, 6)
           <!-- Eyebrow -->
           <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-6 sm:mb-10">
             <span class="w-1 h-1 bg-amber animate-pulse-slow flex-shrink-0"></span>
-            <span class="text-amber text-[10px] sm:text-xs font-light tracking-[0.3em] uppercase">
+            <span class="text-amber text-[10px] sm:text-xs font-normal tracking-[0.3em] uppercase">
               Boulangeries · Cafés · Restaurants · Coiffeurs
             </span>
           </div>
 
           <!-- H1 -->
           <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-5 sm:mb-8">
-            <span class="font-extralight text-ink block mb-2">La carte de fidélité</span>
+            <span class="font-normal text-ink block mb-2">La carte de fidélité</span>
             <RotatingWordFr client:idle />
           </h1>
 
-          <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-light">
+          <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-normal">
             Plus de clients réguliers, plus de chiffre d'affaires. Votre carte de fidélité numérique directement dans leur téléphone — sans papier, sans application, sans effort.
           </p>
 
           <!-- Free trial badge -->
           <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6 sm:mb-10">
-            <span class="text-amber text-xs tracking-[0.15em] font-light">
+            <span class="text-amber text-xs tracking-[0.15em] font-normal">
               90 JOURS GRATUITS — SANS CARTE BANCAIRE
             </span>
           </div>
@@ -126,7 +126,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
           <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Carte tampon papier</p>
           <ul class="space-y-4">
             {problems.map(t => (
-              <li class="flex items-start gap-3 text-base text-ink font-light">
+              <li class="flex items-start gap-3 text-base text-ink font-normal">
                 <span class="text-ink mt-0.5 flex-shrink-0">—</span>
                 {t}
               </li>
@@ -138,7 +138,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
           <p class="text-xs tracking-[0.3em] uppercase text-amber mb-6">bonuskarte.digital</p>
           <ul class="space-y-4">
             {solutions.map(t => (
-              <li class="flex items-start gap-3 text-base text-ink font-light">
+              <li class="flex items-start gap-3 text-base text-ink font-normal">
                 <span class="text-amber mt-0.5 flex-shrink-0">◆</span>
                 {t}
               </li>
@@ -164,7 +164,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
           <div class="group border border-ink/15 hover:border-amber/30 p-4 sm:p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-3">{item.step}</div>
             <h3 class="font-semibold text-ink tracking-wide mb-1 text-sm">{item.title}</h3>
-            <p class="text-ink text-sm leading-relaxed font-light">{item.desc}</p>
+            <p class="text-ink text-sm leading-relaxed font-normal">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -180,7 +180,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
-      <p class="text-ink/40 text-sm font-light text-center mb-10 max-w-xl mx-auto">
+      <p class="text-ink/40 text-sm font-normal text-center mb-10 max-w-xl mx-auto">
         Boulangeries, cafés, restaurants, coiffeurs, kebabs, pizzerias, glaciers, fleuristes, salles de sport, instituts de beauté — la carte de fidélité numérique s'adapte à chaque type de commerce.
       </p>
 
@@ -217,13 +217,13 @@ const nicheTeaser = nichesFr.slice(0, 6)
       </div>
 
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-4">Sans engagement</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
         90 jours gratuits.
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">
         Ensuite à partir de 29 €/mois.
       </h2>
-      <p class="text-ink/40 text-sm font-light mb-10 max-w-lg mx-auto">
+      <p class="text-ink/40 text-sm font-normal mb-10 max-w-lg mx-auto">
         Cartes illimitées, notifications push, statistiques en temps réel — tout inclus. Sans frais d'installation. Résiliable chaque mois.
       </p>
       <a href="/fr/tarifs"
@@ -280,7 +280,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
               </svg>
             </summary>
             <div class="px-5 sm:px-6 pb-5 sm:pb-6">
-              <p class="text-ink text-sm leading-relaxed font-light">{faq.a}</p>
+              <p class="text-ink text-sm leading-relaxed font-normal">{faq.a}</p>
             </div>
           </details>
         ))}
@@ -293,7 +293,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 jours gratuits</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
         Prêt à fidéliser
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">

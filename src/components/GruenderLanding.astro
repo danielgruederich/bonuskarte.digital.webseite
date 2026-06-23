@@ -50,11 +50,11 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
         </div>
 
         <h1 class="text-5xl sm:text-6xl leading-[1.05] tracking-tight mb-6">
-          <span class="font-extralight text-ink block mb-2">Einmal 100 €.</span>
+          <span class="font-normal text-ink block mb-2">Einmal 100 €.</span>
           <span class="font-bold text-amber block">Nie wieder ein Abo.</span>
         </h1>
 
-        <p class="text-ink/85 text-base font-light leading-relaxed max-w-lg mb-8">
+        <p class="text-ink/85 text-base font-normal leading-relaxed max-w-lg mb-8">
           Sichere dir den Gründer-Preis von bonuskarte.digital — solange Plätze frei sind. Voller Funktionsumfang, dauerhaft. Kein Monatsbeitrag.
         </p>
 
@@ -100,7 +100,7 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
         ].map(f => (
           <div class="flex items-start gap-3">
             <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-1 flex-shrink-0" />
-            <span class="text-sm text-ink font-light">{f}</span>
+            <span class="text-sm text-ink font-normal">{f}</span>
           </div>
         ))}
       </div>
@@ -111,11 +111,11 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
   <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper">
     <div class="max-w-3xl mx-auto text-center">
       <p class="text-xs tracking-[0.4em] uppercase text-amber mb-6">Was es dich kostet</p>
-      <h2 class="text-6xl sm:text-7xl font-extralight text-ink tracking-tight mb-2">
+      <h2 class="text-6xl sm:text-7xl font-normal text-ink tracking-tight mb-2">
         9 Cent
       </h2>
       <p class="text-ink/60 text-sm tracking-widest uppercase mb-10">am Tag · bei 3 Jahren Nutzung</p>
-      <p class="text-ink/90 text-lg font-light leading-relaxed max-w-xl mx-auto">
+      <p class="text-ink/90 text-lg font-normal leading-relaxed max-w-xl mx-auto">
         Kommt nur ein Gast einmal mehr wegen der Karte — hat es sich bezahlt.
       </p>
     </div>
@@ -148,7 +148,7 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
               ['Nach 10 Jahren',  '3.480 €', '100 €'],
             ].map(([t, regular, gruender]) => (
               <tr>
-                <td class="py-4 pr-8 text-ink font-light">{t}</td>
+                <td class="py-4 pr-8 text-ink font-normal">{t}</td>
                 <td class="py-4 px-4 text-right text-ink/50">{regular}</td>
                 <td class="py-4 pl-4 text-right text-amber font-bold">{gruender}</td>
               </tr>
@@ -167,7 +167,7 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
   <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper">
     <div class="max-w-2xl mx-auto">
       <p class="text-xs tracking-[0.4em] uppercase text-amber mb-6 text-center">Warum gibt's das?</p>
-      <p class="text-ink/85 text-base font-light leading-relaxed text-center">
+      <p class="text-ink/85 text-base font-normal leading-relaxed text-center">
         bonuskarte.digital wird bootstrapped aufgebaut. Die ersten 100 Betriebe finanzieren das Wachstum — und sichern sich dafür den Lifetime-Preis. Danach gilt der reguläre Monatstarif für alle Neuen.
       </p>
     </div>
@@ -181,10 +181,10 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
     <div class="relative max-w-md mx-auto">
       <div class="text-center mb-10">
         <p class="text-xs tracking-[0.4em] uppercase text-amber mb-4">Platz sichern</p>
-        <h2 class="text-4xl font-extralight text-ink tracking-tight mb-2">
+        <h2 class="text-4xl font-normal text-ink tracking-tight mb-2">
           Einer von 100.
         </h2>
-        <p class="text-ink/60 text-sm font-light">
+        <p class="text-ink/60 text-sm font-normal">
           2 Felder · 30 Sekunden · keine Kreditkarte.
         </p>
       </div>
@@ -217,7 +217,7 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
         {faq.map(item => (
           <div class="border border-ink/15 p-6 hover:border-amber/20 transition-colors">
             <p class="text-ink text-sm font-semibold mb-2">{item.q}</p>
-            <p class="text-ink/80 text-sm font-light leading-relaxed">{item.a}</p>
+            <p class="text-ink/80 text-sm font-normal leading-relaxed">{item.a}</p>
           </div>
         ))}
       </div>
@@ -230,7 +230,7 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
 
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Solange Plätze frei sind</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
         Einmal 100 €.
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">

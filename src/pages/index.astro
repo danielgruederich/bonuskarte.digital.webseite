@@ -144,7 +144,7 @@ const testimonials = [
           <div id="eyebrow-bar" class="w-full overflow-hidden border border-amber/30 px-4 py-2 mb-6 sm:mb-10">
             <div class="flex items-center gap-3">
               <span class="w-1 h-1 bg-amber animate-pulse-slow flex-shrink-0"></span>
-              <span id="eyebrow-text" class="text-amber text-xs font-light tracking-[0.3em] uppercase whitespace-nowrap overflow-hidden">
+              <span id="eyebrow-text" class="text-amber text-xs font-normal tracking-[0.3em] uppercase whitespace-nowrap overflow-hidden">
                 {`Für ${cardBranchPairs.slice(0, 3).map(p => p.branch).join(' · ')}`}
               </span>
             </div>
@@ -156,11 +156,11 @@ const testimonials = [
           </script>
 
           <h1 class="text-5xl sm:text-6xl tracking-tighter mb-5 sm:mb-8">
-            <span class="font-extralight text-ink block">Die digitale</span>
+            <span class="font-normal text-ink block">Die digitale</span>
             <RotatingWord client:idle />
           </h1>
 
-          <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-light">
+          <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-normal">
             Mehr Stammkunden, messbar mehr Umsatz. Deine Kunden
             tragen deine Karte direkt im Handy –
             kein Papier, keine App, kein Aufwand für dich.
@@ -168,7 +168,7 @@ const testimonials = [
 
           <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6 sm:mb-10">
             <Icon name="diamond" class="w-3.5 h-3.5 text-amber" />
-            <span class="text-amber text-xs tracking-[0.15em] font-light">
+            <span class="text-amber text-xs tracking-[0.15em] font-normal">
               90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE
             </span>
           </div>
@@ -230,7 +230,7 @@ const testimonials = [
           <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Papierstempelkarte</p>
           <ul class="space-y-4">
             {problems.map(t => (
-              <li class="flex items-start gap-3 text-base text-ink font-light">
+              <li class="flex items-start gap-3 text-base text-ink font-normal">
                 <span class="text-ink mt-0.5 flex-shrink-0">—</span>
                 {t}
               </li>
@@ -242,7 +242,7 @@ const testimonials = [
           <p class="text-xs tracking-[0.3em] uppercase text-amber mb-6">bonuskarte.digital</p>
           <ul class="space-y-4">
             {solutions.map(t => (
-              <li class="flex items-start gap-3 text-base text-ink font-light">
+              <li class="flex items-start gap-3 text-base text-ink font-normal">
                 <Icon name="diamond" class="w-4 h-4 text-amber mt-1.5 flex-shrink-0" />
                 {t}
               </li>
@@ -268,7 +268,7 @@ const testimonials = [
           <div class="group border border-ink/15 hover:border-amber/30 p-4 sm:p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-3">{item.step}</div>
             <h3 class="font-semibold text-ink tracking-wide mb-1 text-sm">{item.title}</h3>
-            <p class="text-ink text-sm leading-relaxed font-light">{item.desc}</p>
+            <p class="text-ink text-sm leading-relaxed font-normal">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -304,11 +304,11 @@ const testimonials = [
         {testimonials.map(t => (
           <div class="border border-ink/15 hover:border-amber/20 p-6 transition-colors">
             <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-amber/30 mb-4" />
-            <blockquote class="text-ink text-sm font-light leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
+            <blockquote class="text-ink text-sm font-normal leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
             <div>
               <p class="text-ink text-sm font-semibold">{t.name}</p>
-              <p class="text-ink text-sm font-light">{t.role}</p>
-              <p class="text-amber text-sm font-light">{t.location}</p>
+              <p class="text-ink text-sm font-normal">{t.role}</p>
+              <p class="text-amber text-sm font-normal">{t.location}</p>
             </div>
           </div>
         ))}
@@ -396,7 +396,7 @@ const testimonials = [
               </svg>
             </summary>
             <div class="px-5 sm:px-6 pb-5 sm:pb-6">
-              <p class="text-ink text-sm leading-relaxed font-light">{faq.a}</p>
+              <p class="text-ink text-sm leading-relaxed font-normal">{faq.a}</p>
             </div>
           </details>
         ))}
@@ -417,7 +417,7 @@ const testimonials = [
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 Tage kostenlos</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
         Bereit für mehr
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">

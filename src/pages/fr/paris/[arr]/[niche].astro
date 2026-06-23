@@ -58,12 +58,12 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <!-- Eyebrow -->
         <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-8">
           <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
-          <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">{eyebrow}</span>
+          <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">{eyebrow}</span>
         </div>
 
         <!-- Headline -->
         <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-8">
-          <span class="font-extralight text-ink block mb-2">{headlineLight}</span>
+          <span class="font-normal text-ink block mb-2">{headlineLight}</span>
           <span class="font-bold text-amber block">{headlineBold}</span>
         </h1>
 
@@ -73,19 +73,19 @@ const whatsappUrl = 'https://wa.me/491705594140'
             <svg class="w-4 h-4 text-amber shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
             </svg>
-            <span class="text-amber text-xs tracking-[0.1em] font-light">{fomoText}</span>
+            <span class="text-amber text-xs tracking-[0.1em] font-normal">{fomoText}</span>
           </div>
         )}
 
         <!-- Body text -->
-        <p class="text-ink text-base leading-relaxed mb-6 max-w-md font-light">{bodyText}</p>
+        <p class="text-ink text-base leading-relaxed mb-6 max-w-md font-normal">{bodyText}</p>
 
         <!-- 90 jours badge -->
         <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6">
           <svg class="w-4 h-4 text-amber shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
-          <span class="text-amber text-xs tracking-[0.15em] font-light uppercase">
+          <span class="text-amber text-xs tracking-[0.15em] font-normal uppercase">
             90 jours offerts — sans engagement
           </span>
         </div>
@@ -111,19 +111,19 @@ const whatsappUrl = 'https://wa.me/491705594140'
 
         <!-- Trust badges -->
         <div class="flex flex-wrap gap-5 mt-10">
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             RGPD
           </span>
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
             Apple &amp; Google Wallet
           </span>
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             En ligne en 24h
           </span>
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
             Sans abonnement
           </span>
@@ -187,7 +187,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
               <span class="text-4xl text-amber">{arg.icon}</span>
             </div>
             <h3 class="font-bold text-ink text-lg mb-3">{arg.title}</h3>
-            <p class="text-ink text-base leading-relaxed font-light">{arg.desc}</p>
+            <p class="text-ink text-base leading-relaxed font-normal">{arg.desc}</p>
           </div>
         ))}
       </div>
@@ -203,7 +203,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <span class="text-xs tracking-[0.4em] uppercase text-ink">L'offre</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">90 jours d'essai.</h2>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">90 jours d'essai.</h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-amber tracking-tight mb-10">0 € de risque.</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
@@ -270,7 +270,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
               </svg>
             </summary>
             <div class="px-5 sm:px-6 pb-5 sm:pb-6">
-              <p class="text-ink text-sm leading-relaxed font-light">{faq.a}</p>
+              <p class="text-ink text-sm leading-relaxed font-normal">{faq.a}</p>
             </div>
           </details>
         ))}
@@ -291,9 +291,9 @@ const whatsappUrl = 'https://wa.me/491705594140'
             Exclusif {n.emoji} à {a.name}
           </span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extralight text-ink tracking-tight mb-2">Démarrez</h2>
+        <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">Démarrez</h2>
         <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-6">gratuitement.</h2>
-        <p class="text-ink text-base font-light leading-relaxed max-w-sm mx-auto">
+        <p class="text-ink text-base font-normal leading-relaxed max-w-sm mx-auto">
           Laissez vos coordonnées — nous vous contactons sous 24h pour lancer votre carte de fidélité.
         </p>
       </div>
@@ -313,7 +313,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Sans risque</p>
-      <h2 class="text-4xl font-extralight text-ink tracking-tight mb-2">90 jours gratuits.</h2>
+      <h2 class="text-4xl font-normal text-ink tracking-tight mb-2">90 jours gratuits.</h2>
       <h2 class="text-4xl font-bold text-ink tracking-tight mb-10">Convainquez-vous.</h2>
       <a href="#demo"
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">

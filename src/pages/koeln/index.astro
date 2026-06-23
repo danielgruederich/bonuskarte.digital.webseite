@@ -61,18 +61,18 @@ const totalBetriebe = veedel.reduce((acc, v) =>
       <!-- Eyebrow -->
       <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-10">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
-        <span class="text-amber text-[10px] font-light tracking-[0.3em] uppercase">
+        <span class="text-amber text-[10px] font-normal tracking-[0.3em] uppercase">
           {totalBetriebe}+ Kölner Betriebe bereits dabei
         </span>
       </div>
 
       <!-- H1 -->
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
-        <span class="font-extralight text-ink block mb-2">Digitale Kundenkarte</span>
+        <span class="font-normal text-ink block mb-2">Digitale Kundenkarte</span>
         <span class="font-bold text-amber block">für Köln.</span>
       </h1>
 
-      <p class="text-ink/55 text-base sm:text-lg font-light leading-relaxed mb-8 max-w-xl">
+      <p class="text-ink/55 text-base sm:text-lg font-normal leading-relaxed mb-8 max-w-xl">
         Mehr Stammkunden für lokale Betriebe in Köln –
         direkt in Apple Wallet & Google Wallet. Kein App-Download. Kein Papier.
       </p>
@@ -80,7 +80,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
       <!-- Trust badge -->
       <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-10">
         <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
-        <span class="text-amber text-xs tracking-[0.15em] font-light">90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE</span>
+        <span class="text-amber text-xs tracking-[0.15em] font-normal">90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE</span>
       </div>
 
       <!-- Niche selector -->
@@ -133,7 +133,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           <div class="border border-ink/15 hover:border-amber/30 p-8 transition-all">
             <div class="text-4xl font-black text-amber leading-none mb-3">{stat.num}</div>
             <div class="text-ink font-semibold text-sm tracking-wide mb-2">{stat.label}</div>
-            <div class="text-ink/55 text-sm font-light leading-relaxed">{stat.desc}</div>
+            <div class="text-ink/55 text-sm font-normal leading-relaxed">{stat.desc}</div>
           </div>
         ))}
       </div>
@@ -150,7 +150,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
         <span class="text-[10px] tracking-[0.4em] uppercase text-ink/55">Dein Kölner Veedel</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
-      <p class="text-center text-ink/40 text-sm font-light mb-12">
+      <p class="text-center text-ink/40 text-sm font-normal mb-12">
         Wähle dein Viertel und sieh, welche Betriebe dort bereits dabei sind.
       </p>
 
@@ -199,7 +199,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
           <div class="group border border-ink/15 hover:border-amber/30 p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-5">{item.step}</div>
             <h3 class="font-semibold text-ink tracking-wide mb-3 text-sm">{item.title}</h3>
-            <p class="text-ink/60 text-sm leading-relaxed font-light">{item.desc}</p>
+            <p class="text-ink/60 text-sm leading-relaxed font-normal">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -211,7 +211,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-[10px] tracking-[0.4em] uppercase mb-6">Für Kölner Betriebe</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">Bereit für mehr</h2>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">Bereit für mehr</h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">Stammkunden in Köln?</h2>
       <p class="text-ink/55 text-sm tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
       <a

@@ -64,16 +64,16 @@ const faq = [
     <div class="relative max-w-3xl mx-auto text-center">
       <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-8">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
-        <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">
           Transparent · Fair · Risikofrei
         </span>
       </div>
 
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
-        <span class="font-extralight text-ink block mb-3">Einfache</span>
+        <span class="font-normal text-ink block mb-3">Einfache</span>
         <span class="font-bold text-amber block">Preise.</span>
       </h1>
-      <p class="text-ink text-base font-light leading-relaxed max-w-lg mx-auto mb-10">
+      <p class="text-ink text-base font-normal leading-relaxed max-w-lg mx-auto mb-10">
         Starte 90 Tage kostenlos. Danach ab 29 €/Monat – unter 1 € pro Tag,
         monatlich kündbar, keine Einrichtungsgebühr. Kommt nur ein Gast pro Monat
         wegen der Karte einmal mehr, hat es sich schon bezahlt.
@@ -98,7 +98,7 @@ const faq = [
           <p class="text-xs tracking-[0.3em] uppercase text-ink mb-5">Solo</p>
           <div class="flex items-baseline gap-1.5 mb-1">
             <span class="text-5xl font-black text-ink">29€</span>
-            <span class="text-sm text-ink font-light">/ Monat</span>
+            <span class="text-sm text-ink font-normal">/ Monat</span>
           </div>
           <p class="text-xs text-amber font-medium mb-1">Unter 1 € pro Tag</p>
           <p class="text-xs text-ink mb-8">bis zu 3 Standorte · zzgl. MwSt.</p>
@@ -116,7 +116,7 @@ const faq = [
             ].map(f => (
               <div class="flex items-start gap-3">
                 <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-0.5 flex-shrink-0" />
-                <span class="text-sm text-ink font-light">{f}</span>
+                <span class="text-sm text-ink font-normal">{f}</span>
               </div>
             ))}
           </div>
@@ -142,7 +142,7 @@ const faq = [
           <p class="text-xs tracking-[0.3em] uppercase text-amber mb-5">Kette</p>
           <div class="flex items-baseline gap-1.5 mb-1">
             <span class="text-5xl font-black text-ink">100€</span>
-            <span class="text-sm text-ink font-light">/ Monat</span>
+            <span class="text-sm text-ink font-normal">/ Monat</span>
           </div>
           <p class="text-xs text-ink mb-8">4–10 Standorte · Flatrate · zzgl. MwSt.</p>
 
@@ -159,7 +159,7 @@ const faq = [
             ].map(f => (
               <div class="flex items-start gap-3">
                 <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-0.5 flex-shrink-0" />
-                <span class="text-sm text-ink font-light">{f}</span>
+                <span class="text-sm text-ink font-normal">{f}</span>
               </div>
             ))}
           </div>
@@ -175,7 +175,7 @@ const faq = [
           <p class="text-xs tracking-[0.3em] uppercase text-ink mb-5">Franchise</p>
           <div class="flex items-baseline gap-1.5 mb-1">
             <span class="text-5xl font-black text-ink">250€</span>
-            <span class="text-sm text-ink font-light">/ Monat</span>
+            <span class="text-sm text-ink font-normal">/ Monat</span>
           </div>
           <p class="text-xs text-ink mb-8">Franchise-Systeme · zzgl. MwSt.</p>
 
@@ -192,7 +192,7 @@ const faq = [
             ].map(f => (
               <div class="flex items-start gap-3">
                 <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-0.5 flex-shrink-0" />
-                <span class="text-sm text-ink font-light">{f}</span>
+                <span class="text-sm text-ink font-normal">{f}</span>
               </div>
             ))}
           </div>
@@ -207,7 +207,7 @@ const faq = [
 
       <!-- Chat CTA -->
       <div class="mt-8 border border-ink/10 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-ink/60 text-sm font-light">Nicht sicher welcher Plan passt? Unser Agent antwortet sofort.</p>
+        <p class="text-ink/60 text-sm font-normal">Nicht sicher welcher Plan passt? Unser Agent antwortet sofort.</p>
         <button
           onclick="document.querySelector('[id*=zipchat], [class*=zipchat], .zipchat-launcher, #zipchat-launcher')?.click()"
           class="flex-shrink-0 inline-flex items-center gap-2 bg-white text-black px-6 py-3 text-xs font-bold tracking-[0.15em] uppercase hover:bg-amber-dark transition-all">
@@ -221,7 +221,7 @@ const faq = [
         <div>
           <p class="text-xs tracking-[0.3em] uppercase text-ink mb-2">Enterprise</p>
           <p class="text-ink text-lg font-semibold mb-1">Individuelles Angebot für große Ketten & Systemgastro</p>
-          <p class="text-ink text-sm font-light">Unbegrenzte Standorte · API-Integration · White-Label · SLA-Garantie · Dedizierter Account Manager</p>
+          <p class="text-ink text-sm font-normal">Unbegrenzte Standorte · API-Integration · White-Label · SLA-Garantie · Dedizierter Account Manager</p>
         </div>
         <a href="https://wa.me/491705594140" target="_blank" rel="noopener noreferrer"
           class="flex-shrink-0 inline-flex items-center justify-center border border-ink/15 hover:border-amber/40 text-ink hover:text-ink px-8 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
@@ -278,7 +278,7 @@ const faq = [
               ['Setup-Zeit', 'Sofort', 'Unter 24h'],
             ].map(([feature, paper, digital]) => (
               <tr>
-                <td class="py-4 pr-8 text-ink font-light">{feature}</td>
+                <td class="py-4 pr-8 text-ink font-normal">{feature}</td>
                 <td class="py-4 px-4 text-center text-ink">{paper}</td>
                 <td class="py-4 pl-4 text-center text-amber font-medium">{digital}</td>
               </tr>
@@ -302,7 +302,7 @@ const faq = [
         {faq.map(item => (
           <div class="border border-ink/15 p-6 hover:border-amber/20 transition-colors">
             <p class="text-ink text-sm font-semibold mb-2">{item.q}</p>
-            <p class="text-ink text-sm font-light leading-relaxed">{item.a}</p>
+            <p class="text-ink text-sm font-normal leading-relaxed">{item.a}</p>
           </div>
         ))}
       </div>
@@ -314,7 +314,7 @@ const faq = [
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
         90 Tage gratis
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">

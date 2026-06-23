@@ -50,30 +50,30 @@ const showFomo  = fomoCount > 0
       <div>
         <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-6">
           <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
-          <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">
+          <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">
             Leipzig · {stadtteilData.name}
           </span>
         </div>
 
         <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-8">
-          <span class="font-extralight text-ink block mb-2">{nicheData.heroCopy.headlineLight}</span>
+          <span class="font-normal text-ink block mb-2">{nicheData.heroCopy.headlineLight}</span>
           <span class="font-bold text-amber block">{r(nicheData.heroCopy.headlineBold)}</span>
         </h1>
 
         {showFomo && (
           <div class="flex items-center gap-3 border border-amber/20 bg-amber/5 px-4 py-2.5 mb-6">
             <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
-            <span class="text-amber text-xs tracking-[0.1em] font-light">{r(nicheData.heroCopy.fomoText)}</span>
+            <span class="text-amber text-xs tracking-[0.1em] font-normal">{r(nicheData.heroCopy.fomoText)}</span>
           </div>
         )}
 
-        <p class="text-ink text-base leading-relaxed mb-6 max-w-md font-light">
+        <p class="text-ink text-base leading-relaxed mb-6 max-w-md font-normal">
           {r(nicheData.heroCopy.bodyText)}
         </p>
 
         <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6">
           <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
-          <span class="text-amber text-xs tracking-[0.15em] font-light">
+          <span class="text-amber text-xs tracking-[0.15em] font-normal">
             90 TAGE KOMPLETT KOSTENLOS — KEIN KNEBELVERTRAG
           </span>
         </div>
@@ -89,16 +89,16 @@ const showFomo  = fomoCount > 0
         </div>
 
         <div class="flex flex-wrap gap-5 mt-10">
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <Icon name="shield" class="w-4 h-4 text-amber" /> DSGVO
           </span>
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <Icon name="wallet" class="w-4 h-4 text-amber" /> Apple & Google Wallet
           </span>
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <Icon name="zap" class="w-4 h-4 text-amber" /> Live in 24h
           </span>
-          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-light">
+          <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-ink font-normal">
             <Icon name="check-circle" class="w-4 h-4 text-amber" /> Kein Abo
           </span>
         </div>
@@ -136,7 +136,7 @@ const showFomo  = fomoCount > 0
               )}
             </div>
             <h3 class="font-bold text-ink text-lg mb-3">{a.title}</h3>
-            <p class="text-ink text-base leading-relaxed font-light">{a.desc}</p>
+            <p class="text-ink text-base leading-relaxed font-normal">{a.desc}</p>
           </div>
         ))}
       </div>
@@ -152,7 +152,7 @@ const showFomo  = fomoCount > 0
         <span class="text-xs tracking-[0.4em] uppercase text-ink">Das Angebot</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">90 Tage Test.</h2>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">90 Tage Test.</h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-amber tracking-tight mb-10">0€ Risiko.</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
@@ -181,9 +181,9 @@ const showFomo  = fomoCount > 0
             Exklusiv für {nicheData.emoji} in {stadtteilData.name}
           </span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extralight text-ink tracking-tight mb-2">Demo-Karte</h2>
+        <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">Demo-Karte</h2>
         <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-6">direkt ins Wallet.</h2>
-        <p class="text-ink text-base font-light leading-relaxed max-w-sm mx-auto">
+        <p class="text-ink text-base font-normal leading-relaxed max-w-sm mx-auto">
           Trag dich ein – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
         </p>
       </div>
@@ -207,7 +207,7 @@ const showFomo  = fomoCount > 0
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
-      <h2 class="text-4xl font-extralight text-ink tracking-tight mb-2">90 Tage gratis.</h2>
+      <h2 class="text-4xl font-normal text-ink tracking-tight mb-2">90 Tage gratis.</h2>
       <h2 class="text-4xl font-bold text-ink tracking-tight mb-10">Überzeug dich selbst.</h2>
       <a href="#demo"
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
