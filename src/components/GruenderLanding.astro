@@ -36,8 +36,8 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
   <Navbar ctaHref="#form" ctaLabel="Platz sichern" />
 
   <!-- ── HERO ─────────────────────────────────────────────────── -->
-  <section class="relative bg-ink overflow-hidden pt-32 pb-16 px-5 sm:px-8">
-    <div class="absolute inset-0 bg-grid-white"></div>
+  <section class="relative bg-paper overflow-hidden pt-32 pb-16 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-ink"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
 
     <div class="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -50,17 +50,17 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
         </div>
 
         <h1 class="text-5xl sm:text-6xl leading-[1.05] tracking-tight mb-6">
-          <span class="font-extralight text-white block mb-2">Einmal 100 €.</span>
+          <span class="font-extralight text-ink block mb-2">Einmal 100 €.</span>
           <span class="font-bold text-amber block">Nie wieder ein Abo.</span>
         </h1>
 
-        <p class="text-white/85 text-base font-light leading-relaxed max-w-lg mb-8">
+        <p class="text-ink/85 text-base font-light leading-relaxed max-w-lg mb-8">
           Sichere dir den Gründer-Preis von bonuskarte.digital — solange Plätze frei sind. Voller Funktionsumfang, dauerhaft. Kein Monatsbeitrag.
         </p>
 
         <div class="flex flex-wrap gap-x-6 gap-y-3 mb-10">
           {['✓ 90 Tage Geld-zurück', '✓ Apple & Google Wallet', '✓ Setup in 24 h'].map(t => (
-            <span class="text-[11px] tracking-widest uppercase text-white/80">{t}</span>
+            <span class="text-[11px] tracking-widest uppercase text-ink/80">{t}</span>
           ))}
         </div>
 
@@ -80,13 +80,13 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
   </section>
 
   <!-- ── VALUE-BLOCK ──────────────────────────────────────────── -->
-  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-4xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Was du bekommst</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Was du bekommst</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-y-5 gap-x-10">
@@ -100,7 +100,7 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
         ].map(f => (
           <div class="flex items-start gap-3">
             <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-1 flex-shrink-0" />
-            <span class="text-sm text-white font-light">{f}</span>
+            <span class="text-sm text-ink font-light">{f}</span>
           </div>
         ))}
       </div>
@@ -108,35 +108,35 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
   </section>
 
   <!-- ── ROI-BLOCK ────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-ink">
+  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper">
     <div class="max-w-3xl mx-auto text-center">
       <p class="text-xs tracking-[0.4em] uppercase text-amber mb-6">Was es dich kostet</p>
-      <h2 class="text-6xl sm:text-7xl font-extralight text-white tracking-tight mb-2">
+      <h2 class="text-6xl sm:text-7xl font-extralight text-ink tracking-tight mb-2">
         9 Cent
       </h2>
-      <p class="text-white/60 text-sm tracking-widest uppercase mb-10">am Tag · bei 3 Jahren Nutzung</p>
-      <p class="text-white/90 text-lg font-light leading-relaxed max-w-xl mx-auto">
+      <p class="text-ink/60 text-sm tracking-widest uppercase mb-10">am Tag · bei 3 Jahren Nutzung</p>
+      <p class="text-ink/90 text-lg font-light leading-relaxed max-w-xl mx-auto">
         Kommt nur ein Gast einmal mehr wegen der Karte — hat es sich bezahlt.
       </p>
     </div>
   </section>
 
   <!-- ── VERGLEICHS-TABELLE ───────────────────────────────────── -->
-  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Regulär vs. Gründer</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Regulär vs. Gründer</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
-            <tr class="border-b border-white/5">
-              <th class="text-left text-white/60 text-xs tracking-[0.3em] uppercase font-normal pb-4 pr-8">Zeitraum</th>
-              <th class="text-right text-white/60 text-xs tracking-[0.3em] uppercase font-normal pb-4 px-4">Solo-Abo (29 €/Monat)</th>
+            <tr class="border-b border-ink/5">
+              <th class="text-left text-ink/60 text-xs tracking-[0.3em] uppercase font-normal pb-4 pr-8">Zeitraum</th>
+              <th class="text-right text-ink/60 text-xs tracking-[0.3em] uppercase font-normal pb-4 px-4">Solo-Abo (29 €/Monat)</th>
               <th class="text-right text-amber text-xs tracking-[0.3em] uppercase font-normal pb-4 pl-4">Gründer (100 € einmal)</th>
             </tr>
           </thead>
@@ -148,8 +148,8 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
               ['Nach 10 Jahren',  '3.480 €', '100 €'],
             ].map(([t, regular, gruender]) => (
               <tr>
-                <td class="py-4 pr-8 text-white font-light">{t}</td>
-                <td class="py-4 px-4 text-right text-white/50">{regular}</td>
+                <td class="py-4 pr-8 text-ink font-light">{t}</td>
+                <td class="py-4 px-4 text-right text-ink/50">{regular}</td>
                 <td class="py-4 pl-4 text-right text-amber font-bold">{gruender}</td>
               </tr>
             ))}
@@ -157,34 +157,34 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
         </table>
       </div>
 
-      <p class="text-center text-white/40 text-xs tracking-wide mt-6">
+      <p class="text-center text-ink/40 text-xs tracking-wide mt-6">
         Solo-Abo-Preis: bonuskarte.digital regulär · zzgl. MwSt.
       </p>
     </div>
   </section>
 
   <!-- ── STORY-BLOCK ──────────────────────────────────────────── -->
-  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-ink">
+  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper">
     <div class="max-w-2xl mx-auto">
       <p class="text-xs tracking-[0.4em] uppercase text-amber mb-6 text-center">Warum gibt's das?</p>
-      <p class="text-white/85 text-base font-light leading-relaxed text-center">
+      <p class="text-ink/85 text-base font-light leading-relaxed text-center">
         bonuskarte.digital wird bootstrapped aufgebaut. Die ersten 100 Betriebe finanzieren das Wachstum — und sichern sich dafür den Lifetime-Preis. Danach gilt der reguläre Monatstarif für alle Neuen.
       </p>
     </div>
   </section>
 
   <!-- ── FORM-BLOCK ───────────────────────────────────────────── -->
-  <section id="form" class="py-12 sm:py-20 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+  <section id="form" class="py-12 sm:py-20 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5 pointer-events-none"></div>
 
     <div class="relative max-w-md mx-auto">
       <div class="text-center mb-10">
         <p class="text-xs tracking-[0.4em] uppercase text-amber mb-4">Platz sichern</p>
-        <h2 class="text-4xl font-extralight text-white tracking-tight mb-2">
+        <h2 class="text-4xl font-extralight text-ink tracking-tight mb-2">
           Einer von 100.
         </h2>
-        <p class="text-white/60 text-sm font-light">
+        <p class="text-ink/60 text-sm font-light">
           2 Felder · 30 Sekunden · keine Kreditkarte.
         </p>
       </div>
@@ -205,19 +205,19 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
   </section>
 
   <!-- ── FAQ ──────────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-ink">
+  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper">
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Häufige Fragen</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Häufige Fragen</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <div class="space-y-px">
         {faq.map(item => (
-          <div class="border border-white/5 p-6 hover:border-amber/20 transition-colors">
-            <p class="text-white text-sm font-semibold mb-2">{item.q}</p>
-            <p class="text-white/80 text-sm font-light leading-relaxed">{item.a}</p>
+          <div class="border border-ink/5 p-6 hover:border-amber/20 transition-colors">
+            <p class="text-ink text-sm font-semibold mb-2">{item.q}</p>
+            <p class="text-ink/80 text-sm font-light leading-relaxed">{item.a}</p>
           </div>
         ))}
       </div>
@@ -225,15 +225,15 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
   </section>
 
   <!-- ── FINAL CTA ────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-ink-950 border-t border-white/5 relative overflow-hidden">
+  <section class="py-12 sm:py-20 px-5 sm:px-8 bg-paper border-t border-ink/5 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
 
     <div class="relative max-w-2xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Solange Plätze frei sind</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">
+      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">
         Einmal 100 €.
       </h2>
-      <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-10">
+      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">
         Nie wieder ein Abo.
       </h2>
 
@@ -247,7 +247,7 @@ const bannerText = 'Du sicherst dir einen der 100 Lifetime-Plätze. Wir melden u
 
       <div class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3">
         {['✓ 90 Tage Geld-zurück', '✓ Apple & Google Wallet', '✓ Setup in 24 h'].map(t => (
-          <span class="text-[11px] tracking-widest uppercase text-white/80">{t}</span>
+          <span class="text-[11px] tracking-widest uppercase text-ink/80">{t}</span>
         ))}
       </div>
     </div>

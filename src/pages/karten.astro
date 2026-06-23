@@ -151,22 +151,22 @@ const cards = [
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- HERO -->
-  <section class="bg-ink pt-28 pb-14 px-5 sm:px-8 border-b border-white/5">
+  <section class="bg-ink pt-28 pb-14 px-5 sm:px-8 border-b border-ink/5">
     <div class="max-w-4xl mx-auto">
-      <nav class="flex items-center gap-1.5 text-xs text-white/40 mb-8 tracking-wide">
-        <a href="/" class="hover:text-white/60 transition-colors">Home</a>
+      <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
+        <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
         <span>›</span>
-        <span class="text-white/60">Alle Karten</span>
+        <span class="text-ink/60">Alle Karten</span>
       </nav>
       <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-6">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
         <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">8 Kartentypen</span>
       </div>
-      <h1 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-4">
+      <h1 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-4">
         Die richtige Karte<br />
         <span class="font-bold text-amber">für jeden Betrieb.</span>
       </h1>
-      <p class="text-white/60 text-base leading-relaxed max-w-2xl">
+      <p class="text-ink/60 text-base leading-relaxed max-w-2xl">
         Ob Café, Fitnessstudio oder Boutique — bonuskarte.digital hat den passenden Kartentyp. Alle Karten landen direkt in Apple Wallet & Google Wallet. Kein App-Download, keine Registrierung.
       </p>
     </div>
@@ -177,10 +177,10 @@ const cards = [
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {cards.map((card) => (
-          <div class={`border ${card.highlight ? 'border-amber/40' : 'border-white/8'} hover:border-white/20 transition-colors p-0 overflow-hidden flex flex-col`}>
+          <div class={`border ${card.highlight ? 'border-amber/40' : 'border-ink/8'} hover:border-ink/20 transition-colors p-0 overflow-hidden flex flex-col`}>
 
             <!-- Card mockup placeholder -->
-            <div class="relative bg-ink p-6 flex items-center justify-center min-h-[160px]">
+            <div class="relative bg-paper p-6 flex items-center justify-center min-h-[160px]">
               {card.highlight && (
                 <div class="absolute top-3 right-3 bg-amber text-black text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-0.5">
                   Beliebteste Karte
@@ -191,7 +191,7 @@ const cards = [
               <div class="w-full max-w-[280px] rounded-xl overflow-hidden shadow-2xl" style={`background: #111; border: 1px solid rgba(255,255,255,0.08);`}>
                 <!-- Card top bar -->
                 <div class="px-4 pt-3 pb-2 flex items-center justify-between" style={`background: ${card.accent}22; border-bottom: 1px solid ${card.accent}33;`}>
-                  <span class="text-white text-[11px] font-semibold tracking-wide">{card.cardLabel}</span>
+                  <span class="text-ink text-[11px] font-semibold tracking-wide">{card.cardLabel}</span>
                   <svg class="w-5 h-5 opacity-60" viewBox="0 0 24 24" fill="none">
                     <rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="1.5"/>
                     <path d="M2 10h20" stroke="white" stroke-width="1.5"/>
@@ -205,7 +205,7 @@ const cards = [
                     <div class="grid grid-cols-5 gap-1.5 mb-3">
                       {Array.from({ length: card.stampCount }).map((_, i) => (
                         <div
-                          class={`w-full aspect-square rounded-full border ${i < card.stampsFilled ? 'border-0' : 'border-white/20'}`}
+                          class={`w-full aspect-square rounded-full border ${i < card.stampsFilled ? 'border-0' : 'border-ink/20'}`}
                           style={i < card.stampsFilled ? `background: ${card.accent}` : 'background: rgba(255,255,255,0.05)'}
                         />
                       ))}
@@ -213,14 +213,14 @@ const cards = [
                   ) : (
                     <!-- Non-stamp visual -->
                     <div class="h-10 rounded flex items-center px-3 mb-3" style={`background: ${card.accent}18; border: 1px solid ${card.accent}33;`}>
-                      <span class="text-white/80 text-sm font-light">{card.cardSub}</span>
+                      <span class="text-ink/80 text-sm font-light">{card.cardSub}</span>
                     </div>
                   )}
                   <div class="flex items-center justify-between">
-                    <span class="text-white/40 text-[10px]">{card.cardSub}</span>
+                    <span class="text-ink/40 text-[10px]">{card.cardSub}</span>
                     <div class="flex items-center gap-0.5">
-                      <div class="w-4 h-4 rounded-full bg-white/10" />
-                      <div class="w-4 h-4 rounded-full bg-white/5 -ml-1" />
+                      <div class="w-4 h-4 rounded-full bg-ink/10" />
+                      <div class="w-4 h-4 rounded-full bg-ink/5 -ml-1" />
                     </div>
                   </div>
                 </div>
@@ -234,17 +234,17 @@ const cards = [
                   <span class="text-[10px] tracking-[0.25em] uppercase font-medium mb-1 block" style={`color: ${card.color}`}>
                     {card.tag}
                   </span>
-                  <h2 class="text-white text-xl font-bold tracking-tight">{card.name}</h2>
-                  <p class="text-white/50 text-sm font-light mt-0.5">{card.tagline}</p>
+                  <h2 class="text-ink text-xl font-bold tracking-tight">{card.name}</h2>
+                  <p class="text-ink/50 text-sm font-light mt-0.5">{card.tagline}</p>
                 </div>
               </div>
 
-              <p class="text-white/65 text-sm leading-relaxed mb-4">{card.description}</p>
+              <p class="text-ink/65 text-sm leading-relaxed mb-4">{card.description}</p>
 
               <!-- Use cases -->
               <div class="flex flex-wrap gap-2 mb-5">
                 {card.useCases.map(uc => (
-                  <span class="text-white/40 text-[11px] border border-white/8 px-2.5 py-1 tracking-wide">{uc}</span>
+                  <span class="text-ink/40 text-[11px] border border-ink/8 px-2.5 py-1 tracking-wide">{uc}</span>
                 ))}
               </div>
 
@@ -266,7 +266,7 @@ const cards = [
                 ) : (
                   <a
                     href="/koeln"
-                    class="inline-flex items-center gap-2 text-white/60 text-xs font-medium tracking-[0.15em] uppercase px-5 py-3 border border-white/10 hover:border-white/20 transition-colors"
+                    class="inline-flex items-center gap-2 text-ink/60 text-xs font-medium tracking-[0.15em] uppercase px-5 py-3 border border-ink/10 hover:border-ink/20 transition-colors"
                   >
                     Karte anfragen
                   </a>
@@ -280,12 +280,12 @@ const cards = [
   </section>
 
   <!-- COMPARISON NOTE -->
-  <section class="bg-ink py-10 px-5 sm:px-8 border-t border-white/5">
+  <section class="bg-ink py-10 px-5 sm:px-8 border-t border-ink/5">
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
       <div class="flex-1">
-        <p class="text-white/80 text-base font-light leading-relaxed">
-          <span class="text-white font-semibold">Nicht sicher, welche Karte passt?</span><br class="sm:hidden" />
-          <span class="text-white/60"> 90 % unserer Kunden starten mit der Stempelkarte. Wir beraten dich kostenlos innerhalb von 24 Stunden.</span>
+        <p class="text-ink/80 text-base font-light leading-relaxed">
+          <span class="text-ink font-semibold">Nicht sicher, welche Karte passt?</span><br class="sm:hidden" />
+          <span class="text-ink/60"> 90 % unserer Kunden starten mit der Stempelkarte. Wir beraten dich kostenlos innerhalb von 24 Stunden.</span>
         </p>
       </div>
       <a

@@ -14,8 +14,8 @@ const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
 >
   <Navbar ctaHref="/koeln" ctaLabel="Zur Startseite" />
 
-  <section class="relative bg-ink overflow-hidden pt-28 pb-12 px-5 sm:px-8">
-    <div class="absolute inset-0 bg-grid-white"></div>
+  <section class="relative bg-paper overflow-hidden pt-28 pb-12 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-ink"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
 
     <div class="relative max-w-3xl mx-auto text-center">
@@ -26,10 +26,10 @@ const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
         </span>
       </div>
       <h1 class="text-4xl sm:text-5xl leading-[1.1] tracking-tight mb-6">
-        <span class="font-extralight text-white block mb-2">Buch dein</span>
+        <span class="font-extralight text-ink block mb-2">Buch dein</span>
         <span class="font-bold text-amber block">24-h-Setup.</span>
       </h1>
-      <p class="text-white/60 text-base font-light leading-relaxed max-w-lg mx-auto">
+      <p class="text-ink/60 text-base font-light leading-relaxed max-w-lg mx-auto">
         Wir klären in 15 Minuten alles rund um deine Karte – danach bist du in
         unter 24 Stunden live. Such dir einfach einen Slot aus.
       </p>
@@ -39,7 +39,7 @@ const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
   <section class="bg-ink pb-16 px-5 sm:px-8">
     <div class="max-w-3xl mx-auto">
       {embed ? (
-        <div class="border border-amber/20 bg-ink-950 overflow-hidden">
+        <div class="border border-amber/20 bg-paper overflow-hidden">
           <iframe
             id="trafft-embed"
             src={trafft.bookingUrl}
@@ -51,7 +51,7 @@ const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
           ></iframe>
         </div>
       ) : (
-        <div class="text-center border border-amber/20 bg-ink-950 p-10">
+        <div class="text-center border border-amber/20 bg-paper p-10">
           <a
             href={trafft.bookingUrl}
             target="_blank"

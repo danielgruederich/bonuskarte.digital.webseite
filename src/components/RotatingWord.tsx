@@ -48,7 +48,7 @@ export default function RotatingWord() {
       <span className="block">
         <span className={`${cls} font-bold text-amber`}>{cardBranchPairs[index].card}</span>
       </span>
-      <span className="font-bold text-white block">für Kölner</span>
+      <span className="font-bold text-ink block">für Kölner</span>
       <span className="block">
         <span className={`${cls} font-bold text-amber`}>{cardBranchPairs[index].branch}</span>
       </span>

@@ -25,8 +25,8 @@ const niches = [
 >
   <Navbar ctaHref="#branchen" ctaLabel="Jetzt starten" />
 
-  <section class="relative min-h-screen flex items-center bg-ink overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white"></div>
+  <section class="relative min-h-screen flex items-center bg-paper overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink"></div>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber rounded-full blur-[200px] opacity-5"></div>
 
     <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
@@ -39,25 +39,25 @@ const niches = [
       </div>
 
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
-        <span class="font-extralight text-white block mb-2">Digitale Kundenbindung</span>
+        <span class="font-extralight text-ink block mb-2">Digitale Kundenbindung</span>
         <span class="font-bold text-amber block">für {data.name}.</span>
       </h1>
 
-      <p class="text-white/40 text-base font-light leading-relaxed mb-14 max-w-lg">
+      <p class="text-ink/40 text-base font-light leading-relaxed mb-14 max-w-lg">
         Wähle deine Branche und sieh, wie andere Läden in {data.name} bereits mehr Stammkunden gewinnen.
       </p>
 
       <div id="branchen" class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {niches.map(n => (
-          <a href={n.href} class="group relative border border-white/5 hover:border-amber bg-white/2 hover:bg-amber/5 p-6 text-center transition-all hover:-translate-y-1">
+          <a href={n.href} class="group relative border border-ink/5 hover:border-amber bg-ink/2 hover:bg-amber/5 p-6 text-center transition-all hover:-translate-y-1">
             {n.fomo > 0 && (
               <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-amber text-black text-[9px] font-black tracking-wider uppercase px-2.5 py-1 whitespace-nowrap">
                 {n.fomo} bereits dabei
               </div>
             )}
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{n.emoji}</div>
-            <div class="text-white font-bold text-sm tracking-wide mb-1">{n.label}</div>
-            <div class="text-white/55 text-[11px]">{n.desc}</div>
+            <div class="text-ink font-bold text-sm tracking-wide mb-1">{n.label}</div>
+            <div class="text-ink/55 text-[11px]">{n.desc}</div>
             <div class="mt-4 flex items-center justify-center gap-1 text-amber text-[10px] font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
               Starten
               <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +70,7 @@ const niches = [
 
       <div class="flex flex-wrap gap-6 mt-12">
         {['✅ 90 Tage kostenlos', '🔒 DSGVO', '⚡ In 24h live', '📱 Apple & Google Wallet'].map(t => (
-          <span class="text-[10px] tracking-widest uppercase text-white/50">{t}</span>
+          <span class="text-[10px] tracking-widest uppercase text-ink/50">{t}</span>
         ))}
       </div>
 

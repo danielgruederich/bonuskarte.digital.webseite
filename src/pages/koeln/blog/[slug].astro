@@ -27,7 +27,7 @@ const categoryColors: Record<string, string> = {
   'Ratgeber':  'bg-amber/20 text-amber border border-amber/30',
   'Strategie': 'bg-blue-900/30 text-blue-300 border border-blue-700/30',
   'How-to':    'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30',
-  'News':      'bg-white/10 text-white/60 border border-white/10',
+  'News':      'bg-ink/10 text-ink/60 border border-ink/10',
 }
 
 const allPosts = await getCollection('blog')
@@ -80,14 +80,14 @@ const related = allPosts
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
 
       <!-- Breadcrumb -->
-      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-white/55 mb-7 tracking-wide">
-        <a href="/" class="hover:text-white/60 transition-colors">Home</a>
+      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-ink/55 mb-7 tracking-wide">
+        <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
         <span>›</span>
-        <a href="/koeln" class="hover:text-white/60 transition-colors">Köln</a>
+        <a href="/koeln" class="hover:text-ink/60 transition-colors">Köln</a>
         <span>›</span>
-        <a href="/koeln/blog" class="hover:text-white/60 transition-colors">Blog</a>
+        <a href="/koeln/blog" class="hover:text-ink/60 transition-colors">Blog</a>
         <span>›</span>
-        <span class="text-white/50">{post.data.category}</span>
+        <span class="text-ink/50">{post.data.category}</span>
       </nav>
 
       <!-- Category + meta -->
@@ -95,29 +95,29 @@ const related = allPosts
         <span class={`text-xs font-semibold tracking-wide uppercase px-2.5 py-1 ${categoryColors[post.data.category]}`}>
           {post.data.category}
         </span>
-        <span class="text-white/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
-        <span class="text-white/50">·</span>
-        <span class="text-white/55 text-xs">📍 Köln</span>
+        <span class="text-ink/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
+        <span class="text-ink/50">·</span>
+        <span class="text-ink/55 text-xs">📍 Köln</span>
       </div>
 
       <!-- Title -->
-      <h1 class="text-3xl sm:text-4xl font-black text-white leading-tight tracking-tight mb-5">
+      <h1 class="text-3xl sm:text-4xl font-black text-ink leading-tight tracking-tight mb-5">
         {post.data.title}
       </h1>
 
       <!-- Description -->
-      <p class="text-white/55 text-base sm:text-lg leading-relaxed mb-7">
+      <p class="text-ink/55 text-base sm:text-lg leading-relaxed mb-7">
         {post.data.description}
       </p>
 
       <!-- Author + date -->
-      <div class="flex items-center gap-3 pt-5 border-t border-white/8">
+      <div class="flex items-center gap-3 pt-5 border-t border-ink/8">
         <div class="w-9 h-9 bg-amber flex items-center justify-center flex-shrink-0">
           <span class="text-black font-black text-sm">F</span>
         </div>
         <div>
-          <div class="text-white text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
-          <div class="text-white/60 text-xs">{formatDate(post.data.pubDate)}</div>
+          <div class="text-ink text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
+          <div class="text-ink/60 text-xs">{formatDate(post.data.pubDate)}</div>
         </div>
       </div>
 
@@ -125,7 +125,7 @@ const related = allPosts
   </header>
 
   <!-- ── Hero Image ───────────────────────────── -->
-  <div class="bg-ink border-t border-white/5">
+  <div class="bg-ink border-t border-ink/5">
     <div class="max-w-2xl mx-auto px-5 sm:px-8 py-8 sm:py-10">
       <div class="flex items-center justify-center bg-ink-900 min-h-[200px] sm:min-h-[320px] p-6 sm:p-10">
         <img
@@ -148,15 +148,15 @@ const related = allPosts
   </main>
 
   <!-- ── CTA Banner ───────────────────────────── -->
-  <section class="bg-ink py-14 sm:py-20 border-t border-white/5">
+  <section class="bg-ink py-14 sm:py-20 border-t border-ink/5">
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
       <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
         <div class="flex-1">
           <div class="text-amber text-xs font-bold tracking-[0.25em] uppercase mb-2">Für Kölner Betriebe</div>
-          <h2 class="text-2xl sm:text-3xl font-black text-white leading-tight">
+          <h2 class="text-2xl sm:text-3xl font-black text-ink leading-tight">
             Jetzt 90 Tage kostenlos starten
           </h2>
-          <p class="text-white/45 text-sm mt-2 leading-relaxed">
+          <p class="text-ink/45 text-sm mt-2 leading-relaxed">
             Keine Kreditkarte. Keine App. Läuft auf jedem Smartphone in Ihrem Veedel.
           </p>
         </div>

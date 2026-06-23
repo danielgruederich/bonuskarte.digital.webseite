@@ -14,7 +14,7 @@ const Benefit = ({ text }: BenefitProps) => {
       <span className="grid size-4 place-content-center rounded-full bg-amber/20 text-sm text-amber flex-shrink-0">
         <Check className="size-3" />
       </span>
-      <span className="text-sm text-white/60 font-light">{text}</span>
+      <span className="text-sm text-ink/60 font-light">{text}</span>
     </div>
   )
 }
@@ -59,11 +59,11 @@ export const PricingCard = ({
 
         {/* Header */}
         <div className="mb-8">
-          <p className="text-xs tracking-[0.3em] uppercase text-white/55 mb-4">{tier}</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-ink/55 mb-4">{tier}</p>
           <div className="flex items-baseline gap-2 mb-6">
-            <span className="text-4xl font-black text-white">{price}</span>
+            <span className="text-4xl font-black text-ink">{price}</span>
             {price !== "Individuell" && (
-              <span className="text-sm text-white/55 font-light">{priceLabel}</span>
+              <span className="text-sm text-ink/55 font-light">{priceLabel}</span>
             )}
           </div>
           <div className="flex items-center gap-2">

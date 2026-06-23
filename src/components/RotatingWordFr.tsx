@@ -48,7 +48,7 @@ export default function RotatingWordFr() {
         }
       `}</style>
       <span className="font-bold text-amber block">numérique</span>
-      <span className="font-bold text-white block">pour vos</span>
+      <span className="font-bold text-ink block">pour vos</span>
       <span className="block">
         <span className={`${cls} font-bold text-amber`}>{branches[index]}</span>
       </span>

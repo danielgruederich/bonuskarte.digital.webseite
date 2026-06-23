@@ -42,7 +42,7 @@ const cityPaths: Record<string, string> = {
 
 const statusStyles: Record<PostStatus, { label: string; classes: string }> = {
   needsEdit: { label: 'NEEDS EDIT', classes: 'bg-red-900/30 text-red-300 border border-red-700/30' },
-  draft: { label: 'ENTWURF', classes: 'bg-white/10 text-white/40 border border-white/10' },
+  draft: { label: 'ENTWURF', classes: 'bg-ink/10 text-ink/40 border border-ink/10' },
   approved: { label: 'FREIGEGEBEN', classes: 'bg-amber/20 text-amber border border-amber/30' },
   live: { label: 'LIVE', classes: 'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30' },
 }
@@ -51,7 +51,7 @@ const categoryColors: Record<string, string> = {
   'Ratgeber':  'bg-amber/20 text-amber border border-amber/30',
   'Strategie': 'bg-blue-900/30 text-blue-300 border border-blue-700/30',
   'How-to':    'bg-emerald-900/30 text-emerald-300 border border-emerald-700/30',
-  'News':      'bg-white/10 text-white/60 border border-white/10',
+  'News':      'bg-ink/10 text-ink/60 border border-ink/10',
 }
 
 function renderSection(title: string, posts: any[], status: PostStatus) {
@@ -67,11 +67,11 @@ const sections = [
 ---
 
 <BaseLayout title="Preview: Alle Blog-Artikel" description="Interne Vorschau">
-  <div class="min-h-screen bg-ink text-white">
+  <div class="min-h-screen bg-paper text-ink">
     <div class="max-w-3xl mx-auto px-5 py-20">
       <div class="text-xs font-bold tracking-[0.3em] uppercase text-amber mb-4">Interne Vorschau</div>
       <h1 class="text-3xl font-black mb-2">Alle Blog-Artikel</h1>
-      <p class="text-white/50 text-sm mb-10">
+      <p class="text-ink/50 text-sm mb-10">
         {allPosts.length} total ·
         {needsEdit.length > 0 && <span class="text-red-300">{needsEdit.length} needs edit</span>}
         {needsEdit.length > 0 && ' · '}
@@ -81,8 +81,8 @@ const sections = [
       {sections.map(section => section.posts.length > 0 && (
         <>
           <div class="flex items-center gap-4 mb-6 mt-10">
-            <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-white/40">{section.title}</h2>
-            <div class="flex-1 h-px bg-white/5"></div>
+            <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-ink/40">{section.title}</h2>
+            <div class="flex-1 h-px bg-ink/5"></div>
           </div>
 
           <div class="space-y-4">
@@ -91,7 +91,7 @@ const sections = [
               const status = getStatus(post)
               const style = statusStyles[status]
               return (
-                <a href={`${cityPath}${post.slug}`} class={`block border transition-colors p-6 ${status === 'needsEdit' ? 'border-red-700/30 hover:border-red-500/50' : 'border-white/10 hover:border-amber/40'}`}>
+                <a href={`${cityPath}${post.slug}`} class={`block border transition-colors p-6 ${status === 'needsEdit' ? 'border-red-700/30 hover:border-red-500/50' : 'border-ink/10 hover:border-amber/40'}`}>
                   <div class="flex flex-wrap items-center gap-2 mb-2">
                     <span class={`text-xs px-2 py-0.5 rounded-sm ${style.classes}`}>
                       {style.label}
@@ -99,14 +99,14 @@ const sections = [
                     <span class={`text-xs px-2 py-0.5 rounded-sm ${categoryColors[post.data.category] || ''}`}>
                       {post.data.category}
                     </span>
-                    <span class="text-white/40 text-xs">{formatDate(post.data.pubDate)}</span>
-                    <span class="text-white/40 text-xs">· {post.data.readingTime} Min.</span>
-                    <span class="text-white/30 text-xs">· {post.data.city}</span>
+                    <span class="text-ink/40 text-xs">{formatDate(post.data.pubDate)}</span>
+                    <span class="text-ink/40 text-xs">· {post.data.readingTime} Min.</span>
+                    <span class="text-ink/30 text-xs">· {post.data.city}</span>
                   </div>
-                  <h3 class={`text-lg font-bold transition-colors mb-1 ${status === 'needsEdit' ? 'text-red-200 hover:text-red-100' : 'text-white hover:text-amber'}`}>
+                  <h3 class={`text-lg font-bold transition-colors mb-1 ${status === 'needsEdit' ? 'text-red-200 hover:text-red-100' : 'text-ink hover:text-amber'}`}>
                     {post.data.title}
                   </h3>
-                  <p class="text-white/40 text-sm">{post.data.description}</p>
+                  <p class="text-ink/40 text-sm">{post.data.description}</p>
                 </a>
               )
             })}
@@ -114,9 +114,9 @@ const sections = [
         </>
       ))}
 
-      <div class="mt-12 p-6 border border-white/5 bg-ink-900">
-        <p class="text-white/40 text-sm leading-relaxed">
-          <strong class="text-white/60">Workflow:</strong> Artikel lesen → Claude sagen „Artikel X freigeben" oder „Artikel X needs edit: [was ändern]".
+      <div class="mt-12 p-6 border border-ink/5 bg-ink-900">
+        <p class="text-ink/40 text-sm leading-relaxed">
+          <strong class="text-ink/60">Workflow:</strong> Artikel lesen → Claude sagen „Artikel X freigeben" oder „Artikel X needs edit: [was ändern]".
           Erst nach Freigabe + pubDate erscheint der Artikel im öffentlichen Blog.
         </p>
       </div>

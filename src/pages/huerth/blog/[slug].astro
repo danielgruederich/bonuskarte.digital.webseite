@@ -47,31 +47,31 @@ const related = allPosts
 
   <header class="bg-ink pt-24 pb-10 sm:pb-14">
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
-      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-white/55 mb-7 tracking-wide">
-        <a href="/" class="hover:text-white/60 transition-colors">Home</a><span>›</span>
-        <a href="/huerth" class="hover:text-white/60 transition-colors">Hürth</a><span>›</span>
-        <a href="/huerth/blog" class="hover:text-white/60 transition-colors">Blog</a><span>›</span>
-        <span class="text-white/50">{post.data.category}</span>
+      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-ink/55 mb-7 tracking-wide">
+        <a href="/" class="hover:text-ink/60 transition-colors">Home</a><span>›</span>
+        <a href="/huerth" class="hover:text-ink/60 transition-colors">Hürth</a><span>›</span>
+        <a href="/huerth/blog" class="hover:text-ink/60 transition-colors">Blog</a><span>›</span>
+        <span class="text-ink/50">{post.data.category}</span>
       </nav>
       <div class="flex flex-wrap items-center gap-2.5 mb-5">
-        <span class="text-white/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
-        <span class="text-white/55 text-xs">📍 Hürth</span>
+        <span class="text-ink/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
+        <span class="text-ink/55 text-xs">📍 Hürth</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-black text-white leading-tight tracking-tight mb-5">{post.data.title}</h1>
-      <p class="text-white/55 text-base sm:text-lg leading-relaxed mb-7">{post.data.description}</p>
-      <div class="flex items-center gap-3 pt-5 border-t border-white/8">
+      <h1 class="text-3xl sm:text-4xl font-black text-ink leading-tight tracking-tight mb-5">{post.data.title}</h1>
+      <p class="text-ink/55 text-base sm:text-lg leading-relaxed mb-7">{post.data.description}</p>
+      <div class="flex items-center gap-3 pt-5 border-t border-ink/8">
         <div class="w-9 h-9 bg-amber flex items-center justify-center flex-shrink-0">
           <span class="text-black font-black text-sm">F</span>
         </div>
         <div>
-          <div class="text-white text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
-          <div class="text-white/60 text-xs">{formatDate(post.data.pubDate)}</div>
+          <div class="text-ink text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
+          <div class="text-ink/60 text-xs">{formatDate(post.data.pubDate)}</div>
         </div>
       </div>
     </div>
   </header>
 
-  <div class="bg-ink border-t border-white/5">
+  <div class="bg-ink border-t border-ink/5">
     <div class="max-w-2xl mx-auto px-5 sm:px-8 py-8 sm:py-10">
       <div class="flex items-center justify-center bg-ink-900 min-h-[200px] sm:min-h-[320px] p-6 sm:p-10">
         <img src={post.data.heroImage} alt={post.data.title} class="max-h-[200px] sm:max-h-[300px] w-auto max-w-full object-contain drop-shadow-2xl" loading="eager" />
@@ -85,12 +85,12 @@ const related = allPosts
     </div>
   </main>
 
-  <section class="bg-ink py-14 sm:py-20 border-t border-white/5">
+  <section class="bg-ink py-14 sm:py-20 border-t border-ink/5">
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
       <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
         <div class="flex-1">
           <div class="text-amber text-xs font-bold tracking-[0.25em] uppercase mb-2">Für Hürther Betriebe</div>
-          <h2 class="text-2xl sm:text-3xl font-black text-white leading-tight">Jetzt 90 Tage kostenlos starten</h2>
+          <h2 class="text-2xl sm:text-3xl font-black text-ink leading-tight">Jetzt 90 Tage kostenlos starten</h2>
         </div>
         <a href="/huerth/huerth-mitte/cafes" class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber text-black font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
           Gratis starten →

@@ -132,8 +132,8 @@ const testimonials = [
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
-  <section class="relative flex items-center bg-ink overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white"></div>
+  <section class="relative flex items-center bg-paper overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink"></div>
     <!-- Gold radial glow -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-amber rounded-full blur-[200px] opacity-5"></div>
 
@@ -156,11 +156,11 @@ const testimonials = [
           </script>
 
           <h1 class="text-5xl sm:text-6xl tracking-tighter mb-5 sm:mb-8">
-            <span class="font-extralight text-white block">Die digitale</span>
+            <span class="font-extralight text-ink block">Die digitale</span>
             <RotatingWord client:idle />
           </h1>
 
-          <p class="text-white text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-light">
+          <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-light">
             Mehr Stammkunden, messbar mehr Umsatz. Deine Kunden
             tragen deine Karte direkt im Handy –
             kein Papier, keine App, kein Aufwand für dich.
@@ -182,23 +182,23 @@ const testimonials = [
               </svg>
             </a>
             <a href="#staedte"
-              class="inline-flex items-center justify-center border border-white/10 hover:border-amber/40 text-white hover:text-white px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all">
+              class="inline-flex items-center justify-center border border-ink/10 hover:border-amber/40 text-ink hover:text-ink px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all">
               Städte ansehen
             </a>
           </div>
 
           <!-- Trust -->
           <div class="flex flex-wrap gap-6 mt-6 sm:mt-10 justify-center md:justify-start">
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
               <Icon name="shield" class="w-4 h-4 text-amber" /> DSGVO
             </span>
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
               <Icon name="wallet" class="w-4 h-4 text-amber" /> Apple & Google Wallet
             </span>
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
               <Icon name="zap" class="w-4 h-4 text-amber" /> Live in 24h
             </span>
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-white">
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
               <Icon name="check-circle" class="w-4 h-4 text-amber" /> Kein Risiko
             </span>
           </div>
@@ -212,26 +212,26 @@ const testimonials = [
     </div>
 
     <!-- Bottom fade to next section -->
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-paper to-transparent"></div>
   </section>
 
   <!-- ── PROBLEM / SOLUTION ────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-ink">
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-6xl mx-auto">
       <!-- Divider label -->
       <div class="flex items-center gap-4 mb-8 sm:mb-12">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Das Problem</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Das Problem</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="border border-white/5 p-8">
-          <p class="text-xs tracking-[0.3em] uppercase text-white mb-6">Papierstempelkarte</p>
+        <div class="border border-ink/5 p-8">
+          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Papierstempelkarte</p>
           <ul class="space-y-4">
             {problems.map(t => (
-              <li class="flex items-start gap-3 text-base text-white font-light">
-                <span class="text-white mt-0.5 flex-shrink-0">—</span>
+              <li class="flex items-start gap-3 text-base text-ink font-light">
+                <span class="text-ink mt-0.5 flex-shrink-0">—</span>
                 {t}
               </li>
             ))}
@@ -242,7 +242,7 @@ const testimonials = [
           <p class="text-xs tracking-[0.3em] uppercase text-amber mb-6">bonuskarte.digital</p>
           <ul class="space-y-4">
             {solutions.map(t => (
-              <li class="flex items-start gap-3 text-base text-white font-light">
+              <li class="flex items-start gap-3 text-base text-ink font-light">
                 <Icon name="diamond" class="w-4 h-4 text-amber mt-1.5 flex-shrink-0" />
                 {t}
               </li>
@@ -254,21 +254,21 @@ const testimonials = [
   </section>
 
   <!-- ── HOW IT WORKS ──────────────────────────────────────────── -->
-  <section id="wie-es-funktioniert" class="py-8 sm:py-16 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+  <section id="wie-es-funktioniert" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Wie es funktioniert</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Wie es funktioniert</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         {howItWorks.map((item, i) => (
-          <div class="group border border-white/5 hover:border-amber/30 p-4 sm:p-7 transition-all">
+          <div class="group border border-ink/5 hover:border-amber/30 p-4 sm:p-7 transition-all">
             <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-3">{item.step}</div>
-            <h3 class="font-semibold text-white tracking-wide mb-1 text-sm">{item.title}</h3>
-            <p class="text-white text-sm leading-relaxed font-light">{item.desc}</p>
+            <h3 class="font-semibold text-ink tracking-wide mb-1 text-sm">{item.title}</h3>
+            <p class="text-ink text-sm leading-relaxed font-light">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -276,12 +276,12 @@ const testimonials = [
   </section>
 
   <!-- ── SOCIAL PROOF ───────────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-ink">
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Das sagen unsere Kunden</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Das sagen unsere Kunden</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <!-- Stats -->
@@ -292,9 +292,9 @@ const testimonials = [
           { value: '15', label: 'Städte live' },
           { value: '24h', label: 'Setup-Zeit' },
         ].map(stat => (
-          <div class="border border-white/5 p-6 text-center">
+          <div class="border border-ink/5 p-6 text-center">
             <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
-            <div class="text-xs tracking-[0.25em] uppercase text-white">{stat.label}</div>
+            <div class="text-xs tracking-[0.25em] uppercase text-ink">{stat.label}</div>
           </div>
         ))}
       </div>
@@ -302,12 +302,12 @@ const testimonials = [
       <!-- Testimonials -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {testimonials.map(t => (
-          <div class="border border-white/5 hover:border-amber/20 p-6 transition-colors">
+          <div class="border border-ink/5 hover:border-amber/20 p-6 transition-colors">
             <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-amber/30 mb-4" />
-            <blockquote class="text-white text-sm font-light leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
+            <blockquote class="text-ink text-sm font-light leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
             <div>
-              <p class="text-white text-sm font-semibold">{t.name}</p>
-              <p class="text-white text-sm font-light">{t.role}</p>
+              <p class="text-ink text-sm font-semibold">{t.name}</p>
+              <p class="text-ink text-sm font-light">{t.role}</p>
               <p class="text-amber text-sm font-light">{t.location}</p>
             </div>
           </div>
@@ -317,12 +317,12 @@ const testimonials = [
   </section>
 
   <!-- ── STÄDTE ────────────────────────────────────────────────── -->
-  <section id="staedte" class="py-8 sm:py-16 px-5 sm:px-8 bg-ink">
+  <section id="staedte" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Verfügbare Städte</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Verfügbare Städte</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -330,7 +330,7 @@ const testimonials = [
           c.available ? (
             <a href={c.href}
               class="group border border-amber/30 hover:border-amber hover:bg-amber/5 p-6 text-center transition-all">
-              <div class="text-xs font-semibold tracking-widest uppercase text-white group-hover:text-amber">{c.label}</div>
+              <div class="text-xs font-semibold tracking-widest uppercase text-ink group-hover:text-amber">{c.label}</div>
               <div class="mt-3 text-xs tracking-[0.2em] uppercase text-amber flex items-center justify-center gap-1">
                 Zur Stadt
                 <svg class="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -339,9 +339,9 @@ const testimonials = [
               </div>
             </a>
           ) : (
-            <div class="border border-white/10 p-6 text-center">
-              <div class="text-xs font-semibold tracking-widest uppercase text-white">{c.label}</div>
-              <div class="mt-3 text-xs tracking-[0.2em] uppercase text-white">Bald verfügbar</div>
+            <div class="border border-ink/10 p-6 text-center">
+              <div class="text-xs font-semibold tracking-widest uppercase text-ink">{c.label}</div>
+              <div class="mt-3 text-xs tracking-[0.2em] uppercase text-ink">Bald verfügbar</div>
             </div>
           )
         ))}
@@ -350,13 +350,13 @@ const testimonials = [
   </section>
 
   <!-- ── FAQ ────────────────────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-ink-950 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white opacity-50"></div>
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-white/5"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-white">Häufige Fragen</span>
-        <div class="h-px flex-1 bg-white/5"></div>
+        <div class="h-px flex-1 bg-ink/5"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Häufige Fragen</span>
+        <div class="h-px flex-1 bg-ink/5"></div>
       </div>
 
       <div class="space-y-4">
@@ -386,15 +386,15 @@ const testimonials = [
             a: 'Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden.',
           },
         ].map(faq => (
-          <details class="group border border-white/5 hover:border-amber/20 transition-colors">
+          <details class="group border border-ink/5 hover:border-amber/20 transition-colors">
             <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
-              <span class="text-white text-sm font-medium pr-4">{faq.q}</span>
+              <span class="text-ink text-sm font-medium pr-4">{faq.q}</span>
               <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
               </svg>
             </summary>
             <div class="px-5 sm:px-6 pb-5 sm:pb-6">
-              <p class="text-white text-sm leading-relaxed font-light">{faq.a}</p>
+              <p class="text-ink text-sm leading-relaxed font-light">{faq.a}</p>
             </div>
           </details>
         ))}
@@ -411,17 +411,17 @@ const testimonials = [
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-ink border-t border-white/5 relative overflow-hidden">
+  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/5 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 Tage kostenlos</p>
-      <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">
+      <h2 class="text-4xl sm:text-5xl font-extralight text-ink tracking-tight mb-2">
         Bereit für mehr
       </h2>
-      <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-8">
+      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">
         Stammkunden?
       </h2>
-      <p class="text-white text-xs tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
+      <p class="text-ink text-xs tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
       <a href="/koeln"
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
         Kostenlos starten
