@@ -10,24 +10,24 @@ const { businessName = 'Café Sonnenblume', reward = 'Gratis-Kaffee', stamped = 
 
 <div class="relative w-72 mx-auto animate-float select-none">
   <!-- Outer glow -->
-  <div class="absolute inset-0 bg-gold-600 rounded-none blur-[60px] opacity-10 scale-110"></div>
+  <div class="absolute inset-0 bg-amber rounded-none blur-[60px] opacity-10 scale-110"></div>
 
   <!-- Card -->
-  <div class="relative bg-black border border-gold-600/30 p-7 shadow-2xl overflow-hidden">
+  <div class="relative bg-ink border border-amber/30 p-7 shadow-2xl overflow-hidden">
 
     <!-- Corner accent lines -->
-    <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-gold-600/60"></div>
-    <div class="absolute top-0 right-0 w-6 h-6 border-t border-r border-gold-600/60"></div>
-    <div class="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-gold-600/60"></div>
-    <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-gold-600/60"></div>
+    <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-amber/60"></div>
+    <div class="absolute top-0 right-0 w-6 h-6 border-t border-r border-amber/60"></div>
+    <div class="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-amber/60"></div>
+    <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-amber/60"></div>
 
     <!-- Header -->
     <div class="flex justify-between items-start mb-7">
       <div>
-        <p class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase mb-1">Stempelkarte</p>
+        <p class="text-amber text-[10px] font-light tracking-[0.3em] uppercase mb-1">Stempelkarte</p>
         <p class="text-white text-base font-semibold tracking-wide">{businessName}</p>
       </div>
-      <div class="w-10 h-10 border border-gold-600/30 flex items-center justify-center text-xl">
+      <div class="w-10 h-10 border border-amber/30 flex items-center justify-center text-xl">
         ☕
       </div>
     </div>
@@ -37,7 +37,7 @@ const { businessName = 'Café Sonnenblume', reward = 'Gratis-Kaffee', stamped = 
       {Array.from({ length: total }).map((_, i) => (
         <div class={`aspect-square flex items-center justify-center text-xs font-bold transition-all ${
           i < stamped
-            ? 'bg-gold-600 text-black'
+            ? 'bg-amber text-black'
             : 'border border-white/10 text-white/50'
         }`}>
           {i < stamped ? '✓' : ''}
@@ -49,10 +49,10 @@ const { businessName = 'Café Sonnenblume', reward = 'Gratis-Kaffee', stamped = 
     <div class="border border-white/10 p-3">
       <div class="flex justify-between items-center mb-2">
         <p class="text-white/40 text-[10px] tracking-widest uppercase">Nächste Belohnung</p>
-        <p class="text-gold-600 text-[10px] font-bold">{stamped}/{total}</p>
+        <p class="text-amber text-[10px] font-bold">{stamped}/{total}</p>
       </div>
       <div class="h-px bg-white/10 mb-2 relative overflow-hidden">
-        <div class="absolute inset-y-0 left-0 bg-gold-600 transition-all" style={`width: ${(stamped / total) * 100}%`}></div>
+        <div class="absolute inset-y-0 left-0 bg-amber transition-all" style={`width: ${(stamped / total) * 100}%`}></div>
       </div>
       <p class="text-white text-sm font-medium">{reward}</p>
     </div>

@@ -151,20 +151,20 @@ const cards = [
   <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
 
   <!-- HERO -->
-  <section class="bg-black pt-28 pb-14 px-5 sm:px-8 border-b border-white/5">
+  <section class="bg-ink pt-28 pb-14 px-5 sm:px-8 border-b border-white/5">
     <div class="max-w-4xl mx-auto">
       <nav class="flex items-center gap-1.5 text-xs text-white/40 mb-8 tracking-wide">
         <a href="/" class="hover:text-white/60 transition-colors">Home</a>
         <span>›</span>
         <span class="text-white/60">Alle Karten</span>
       </nav>
-      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-6">
-        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-        <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">8 Kartentypen</span>
+      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-6">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">8 Kartentypen</span>
       </div>
       <h1 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-4">
         Die richtige Karte<br />
-        <span class="font-bold text-gold-600">für jeden Betrieb.</span>
+        <span class="font-bold text-amber">für jeden Betrieb.</span>
       </h1>
       <p class="text-white/60 text-base leading-relaxed max-w-2xl">
         Ob Café, Fitnessstudio oder Boutique — bonuskarte.digital hat den passenden Kartentyp. Alle Karten landen direkt in Apple Wallet & Google Wallet. Kein App-Download, keine Registrierung.
@@ -173,16 +173,16 @@ const cards = [
   </section>
 
   <!-- CARDS GRID -->
-  <section class="bg-black py-14 px-5 sm:px-8">
+  <section class="bg-ink py-14 px-5 sm:px-8">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {cards.map((card) => (
-          <div class={`border ${card.highlight ? 'border-gold-600/40' : 'border-white/8'} hover:border-white/20 transition-colors p-0 overflow-hidden flex flex-col`}>
+          <div class={`border ${card.highlight ? 'border-amber/40' : 'border-white/8'} hover:border-white/20 transition-colors p-0 overflow-hidden flex flex-col`}>
 
             <!-- Card mockup placeholder -->
-            <div class="relative bg-zinc-900 p-6 flex items-center justify-center min-h-[160px]">
+            <div class="relative bg-ink p-6 flex items-center justify-center min-h-[160px]">
               {card.highlight && (
-                <div class="absolute top-3 right-3 bg-gold-600 text-black text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-0.5">
+                <div class="absolute top-3 right-3 bg-amber text-black text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-0.5">
                   Beliebteste Karte
                 </div>
               )}
@@ -280,7 +280,7 @@ const cards = [
   </section>
 
   <!-- COMPARISON NOTE -->
-  <section class="bg-black py-10 px-5 sm:px-8 border-t border-white/5">
+  <section class="bg-ink py-10 px-5 sm:px-8 border-t border-white/5">
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
       <div class="flex-1">
         <p class="text-white/80 text-base font-light leading-relaxed">
@@ -290,7 +290,7 @@ const cards = [
       </div>
       <a
         href="/koeln"
-        class="flex-shrink-0 inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all"
+        class="flex-shrink-0 inline-flex items-center gap-2 bg-amber hover:bg-amber text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all"
       >
         Kostenlos starten
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

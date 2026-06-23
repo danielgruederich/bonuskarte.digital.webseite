@@ -42,28 +42,28 @@ const showFomo  = fomoCount > 0
   <Navbar ctaHref="#demo" ctaLabel={nicheData.heroCopy.ctaLabel} />
 
   <!-- ── HERO ─────────────────────────────────────────────────── -->
-  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+  <section class="relative min-h-screen flex items-center bg-ink overflow-hidden">
     <div class="absolute inset-0 bg-grid-white"></div>
-    <div class="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+    <div class="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-amber rounded-full blur-[200px] opacity-5"></div>
 
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 pb-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center w-full">
       <div>
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-6">
-          <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-          <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">
+        <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-6">
+          <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+          <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">
             Hamburg · {stadtteilData.name}
           </span>
         </div>
 
         <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-8">
           <span class="font-extralight text-white block mb-2">{nicheData.heroCopy.headlineLight}</span>
-          <span class="font-bold text-gold-600 block">{r(nicheData.heroCopy.headlineBold)}</span>
+          <span class="font-bold text-amber block">{r(nicheData.heroCopy.headlineBold)}</span>
         </h1>
 
         {showFomo && (
-          <div class="flex items-center gap-3 border border-gold-600/20 bg-gold-600/5 px-4 py-2.5 mb-6">
-            <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
-            <span class="text-gold-500 text-xs tracking-[0.1em] font-light">{r(nicheData.heroCopy.fomoText)}</span>
+          <div class="flex items-center gap-3 border border-amber/20 bg-amber/5 px-4 py-2.5 mb-6">
+            <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
+            <span class="text-amber text-xs tracking-[0.1em] font-light">{r(nicheData.heroCopy.fomoText)}</span>
           </div>
         )}
 
@@ -71,16 +71,16 @@ const showFomo  = fomoCount > 0
           {r(nicheData.heroCopy.bodyText)}
         </p>
 
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-6">
-          <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
-          <span class="text-gold-500 text-xs tracking-[0.15em] font-light">
+        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6">
+          <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
+          <span class="text-amber text-xs tracking-[0.15em] font-light">
             90 TAGE KOMPLETT KOSTENLOS — KEIN KNEBELVERTRAG
           </span>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="#demo"
-            class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all">
+            class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber text-black px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all">
             {nicheData.heroCopy.ctaLabel}
             <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -90,16 +90,16 @@ const showFomo  = fomoCount > 0
 
         <div class="flex flex-wrap gap-5 mt-10">
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <Icon name="shield" class="w-4 h-4 text-gold-600" /> DSGVO
+            <Icon name="shield" class="w-4 h-4 text-amber" /> DSGVO
           </span>
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <Icon name="wallet" class="w-4 h-4 text-gold-600" /> Apple & Google Wallet
+            <Icon name="wallet" class="w-4 h-4 text-amber" /> Apple & Google Wallet
           </span>
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <Icon name="zap" class="w-4 h-4 text-gold-600" /> Live in 24h
+            <Icon name="zap" class="w-4 h-4 text-amber" /> Live in 24h
           </span>
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <Icon name="check-circle" class="w-4 h-4 text-gold-600" /> Kein Abo
+            <Icon name="check-circle" class="w-4 h-4 text-amber" /> Kein Abo
           </span>
         </div>
       </div>
@@ -118,7 +118,7 @@ const showFomo  = fomoCount > 0
   </section>
 
   <!-- ── ARGUMENTS ─────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-ink">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
@@ -127,8 +127,8 @@ const showFomo  = fomoCount > 0
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {nicheData.arguments.map(a => (
-          <div class="group border border-white/5 hover:border-gold-600/30 p-8 transition-all">
-            <div class="mb-5 group-hover:scale-110 transition-transform inline-block text-gold-600">
+          <div class="group border border-white/5 hover:border-amber/30 p-8 transition-all">
+            <div class="mb-5 group-hover:scale-110 transition-transform inline-block text-amber">
               {emojiToIcon[a.icon] ? (
                 <Icon name={emojiToIcon[a.icon]} class="w-8 h-8" />
               ) : (
@@ -153,15 +153,15 @@ const showFomo  = fomoCount > 0
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
       <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">90 Tage Test.</h2>
-      <h2 class="text-4xl sm:text-5xl font-bold text-gold-600 tracking-tight mb-10">0€ Risiko.</h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-amber tracking-tight mb-10">0€ Risiko.</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
           { n: '0€', label: 'Setup-Gebühr',  sub: 'Komplett kostenlos starten' },
           { n: '90', label: 'Tage gratis',   sub: 'Kein Risiko, kein Druck'    },
           { n: '∞',  label: 'Stammkunden',   sub: 'Die immer wiederkommen'     },
         ].map(stat => (
-          <div class="border border-gold-600/20 p-6 text-center">
-            <div class="text-4xl font-black text-gold-600 mb-1">{stat.n}</div>
+          <div class="border border-amber/20 p-6 text-center">
+            <div class="text-4xl font-black text-amber mb-1">{stat.n}</div>
             <div class="text-white font-semibold text-sm mb-1">{stat.label}</div>
             <div class="text-white text-sm">{stat.sub}</div>
           </div>
@@ -171,13 +171,13 @@ const showFomo  = fomoCount > 0
   </section>
 
   <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
-  <section id="demo" class="py-12 sm:py-16 px-5 sm:px-8 bg-black relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold-600 rounded-full blur-[180px] opacity-5"></div>
+  <section id="demo" class="py-12 sm:py-16 px-5 sm:px-8 bg-ink relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber rounded-full blur-[180px] opacity-5"></div>
     <div class="relative max-w-xl mx-auto">
       <div class="text-center mb-10">
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2 mb-8">
-          <Icon name="diamond" class="w-4 h-4 text-gold-600 shrink-0" />
-          <span class="text-gold-500 text-xs tracking-[0.3em] uppercase">
+        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2 mb-8">
+          <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
+          <span class="text-amber text-xs tracking-[0.3em] uppercase">
             Exklusiv für {nicheData.emoji} in {stadtteilData.name}
           </span>
         </div>
@@ -188,7 +188,7 @@ const showFomo  = fomoCount > 0
         </p>
       </div>
 
-      <div class="relative border border-gold-600/20 bg-ink-950 p-8 sm:p-10">
+      <div class="relative border border-amber/20 bg-ink-950 p-8 sm:p-10">
         {nicheData.formType === 'simple' ? (
           <LeadFormDoener client:load whatsappUrl={whatsappUrl} niche={nicheData.slug} />
         ) : (
@@ -197,20 +197,20 @@ const showFomo  = fomoCount > 0
       </div>
       <p class="text-center text-white text-sm mt-5">
         Nach 90 Tagen ab 29 €/Monat ·
-        <a href="/preise" class="text-gold-600 hover:text-gold-600 underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
+        <a href="/preise" class="text-amber hover:text-amber underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
       </p>
     </div>
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-ink border-t border-white/5 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
-      <p class="text-gold-600 text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
       <h2 class="text-4xl font-extralight text-white tracking-tight mb-2">90 Tage gratis.</h2>
       <h2 class="text-4xl font-bold text-white tracking-tight mb-10">Überzeug dich selbst.</h2>
       <a href="#demo"
-        class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
         {nicheData.heroCopy.ctaLabel}
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

@@ -49,31 +49,31 @@ const whatsappUrl = 'https://wa.me/491705594140'
   <NavbarFr ctaHref="#demo" ctaLabel={ctaLabel} />
 
   <!-- ── HERO ──────────────────────────────────────────────────────────────── -->
-  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+  <section class="relative min-h-screen flex items-center bg-ink overflow-hidden">
     <div class="absolute inset-0 bg-grid-white"></div>
-    <div class="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+    <div class="absolute top-1/2 -right-40 w-[600px] h-[600px] bg-amber rounded-full blur-[200px] opacity-5"></div>
 
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 pb-12 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center w-full">
       <div>
         <!-- Eyebrow -->
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-8">
-          <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-          <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">{eyebrow}</span>
+        <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-8">
+          <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+          <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">{eyebrow}</span>
         </div>
 
         <!-- Headline -->
         <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-8">
           <span class="font-extralight text-white block mb-2">{headlineLight}</span>
-          <span class="font-bold text-gold-600 block">{headlineBold}</span>
+          <span class="font-bold text-amber block">{headlineBold}</span>
         </h1>
 
         <!-- FOMO (only when count > 0; currently never) -->
         {showFomo && (
-          <div class="flex items-center gap-3 border border-gold-600/20 bg-gold-600/5 px-4 py-2.5 mb-6">
-            <svg class="w-4 h-4 text-gold-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="flex items-center gap-3 border border-amber/20 bg-amber/5 px-4 py-2.5 mb-6">
+            <svg class="w-4 h-4 text-amber shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
             </svg>
-            <span class="text-gold-500 text-xs tracking-[0.1em] font-light">{fomoText}</span>
+            <span class="text-amber text-xs tracking-[0.1em] font-light">{fomoText}</span>
           </div>
         )}
 
@@ -81,11 +81,11 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <p class="text-white text-base leading-relaxed mb-6 max-w-md font-light">{bodyText}</p>
 
         <!-- 90 jours badge -->
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2.5 mb-6">
-          <svg class="w-4 h-4 text-gold-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2.5 mb-6">
+          <svg class="w-4 h-4 text-amber shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
-          <span class="text-gold-500 text-xs tracking-[0.15em] font-light uppercase">
+          <span class="text-amber text-xs tracking-[0.15em] font-light uppercase">
             90 jours offerts — sans engagement
           </span>
         </div>
@@ -93,7 +93,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-3">
           <a href="#demo"
-            class="group inline-flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all">
+            class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber text-black px-8 py-4 text-sm font-bold tracking-[0.2em] uppercase transition-all">
             {ctaLabel}
             <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -112,19 +112,19 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <!-- Trust badges -->
         <div class="flex flex-wrap gap-5 mt-10">
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             RGPD
           </span>
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
             Apple &amp; Google Wallet
           </span>
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             En ligne en 24h
           </span>
           <span class="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-white font-light">
-            <svg class="w-4 h-4 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
             Sans abonnement
           </span>
         </div>
@@ -133,7 +133,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
       <!-- Right col: SEO-rich arrondissement intro block -->
       <div class="hidden md:flex flex-col justify-center gap-6">
         <div class="border border-white/5 bg-white/2 p-8">
-          <p class="text-gold-600 text-xs tracking-[0.3em] uppercase mb-4">
+          <p class="text-amber text-xs tracking-[0.3em] uppercase mb-4">
             {a.name} · {a.arrLong} · {a.cp}
           </p>
           <p class="text-white/70 text-sm leading-relaxed mb-4">{a.intro}</p>
@@ -142,13 +142,13 @@ const whatsappUrl = 'https://wa.me/491705594140'
           </p>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <div class="border border-gold-600/20 p-5 text-center">
-            <div class="text-3xl font-black text-gold-600 mb-1">90</div>
+          <div class="border border-amber/20 p-5 text-center">
+            <div class="text-3xl font-black text-amber mb-1">90</div>
             <div class="text-white text-xs font-semibold">jours offerts</div>
             <div class="text-white/40 text-xs">sans risque</div>
           </div>
-          <div class="border border-gold-600/20 p-5 text-center">
-            <div class="text-3xl font-black text-gold-600 mb-1">0€</div>
+          <div class="border border-amber/20 p-5 text-center">
+            <div class="text-3xl font-black text-amber mb-1">0€</div>
             <div class="text-white text-xs font-semibold">pour démarrer</div>
             <div class="text-white/40 text-xs">sans carte bancaire</div>
           </div>
@@ -160,7 +160,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── SEO PARAGRAPH ────────────────────────────────────────────────────── -->
-  <section class="py-10 sm:py-12 px-5 sm:px-8 bg-black border-t border-white/5">
+  <section class="py-10 sm:py-12 px-5 sm:px-8 bg-ink border-t border-white/5">
     <div class="max-w-3xl mx-auto">
       <p class="text-white/50 text-sm leading-relaxed">
         Vous gérez une <strong class="text-white/70">{n.label}</strong> dans le <strong class="text-white/70">{a.arrLong}</strong> ({a.cp}) — {a.quartiers} ?
@@ -173,7 +173,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── ARGUMENTS ─────────────────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black">
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-ink">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-14">
         <div class="h-px flex-1 bg-white/5"></div>
@@ -182,9 +182,9 @@ const whatsappUrl = 'https://wa.me/491705594140'
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {n.arguments.map(arg => (
-          <div class="group border border-white/5 hover:border-gold-600/30 p-8 transition-all">
+          <div class="group border border-white/5 hover:border-amber/30 p-8 transition-all">
             <div class="mb-5 group-hover:scale-110 transition-transform inline-block">
-              <span class="text-4xl text-gold-600">{arg.icon}</span>
+              <span class="text-4xl text-amber">{arg.icon}</span>
             </div>
             <h3 class="font-bold text-white text-lg mb-3">{arg.title}</h3>
             <p class="text-white text-base leading-relaxed font-light">{arg.desc}</p>
@@ -204,15 +204,15 @@ const whatsappUrl = 'https://wa.me/491705594140'
         <div class="h-px flex-1 bg-white/5"></div>
       </div>
       <h2 class="text-4xl sm:text-5xl font-extralight text-white tracking-tight mb-2">90 jours d'essai.</h2>
-      <h2 class="text-4xl sm:text-5xl font-bold text-gold-600 tracking-tight mb-10">0 € de risque.</h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-amber tracking-tight mb-10">0 € de risque.</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
           { n: '0€',  label: 'Frais de démarrage', sub: 'Commencez sans rien débourser' },
           { n: '90',  label: 'Jours offerts',       sub: 'Sans risque, sans pression'   },
           { n: '∞',   label: 'Clients fidèles',     sub: 'Qui reviennent toujours'      },
         ].map(stat => (
-          <div class="border border-gold-600/20 p-6 text-center">
-            <div class="text-4xl font-black text-gold-600 mb-1">{stat.n}</div>
+          <div class="border border-amber/20 p-6 text-center">
+            <div class="text-4xl font-black text-amber mb-1">{stat.n}</div>
             <div class="text-white font-semibold text-sm mb-1">{stat.label}</div>
             <div class="text-white text-sm">{stat.sub}</div>
           </div>
@@ -220,7 +220,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
       </div>
       <div class="mt-10">
         <a href="#demo"
-          class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
+          class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
           Tester 90 jours gratuitement
           <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -262,10 +262,10 @@ const whatsappUrl = 'https://wa.me/491705594140'
             a: 'Oui. Toutes les données sont traitées conformément au RGPD. Aucun cookie de tracking sur le téléphone de vos clients, aucune donnée revendue.',
           },
         ].map(faq => (
-          <details class="group border border-white/5 hover:border-gold-600/20 transition-colors">
+          <details class="group border border-white/5 hover:border-amber/20 transition-colors">
             <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
               <span class="text-white text-sm sm:text-base font-medium pr-4">{faq.q}</span>
-              <svg class="w-4 h-4 text-gold-600 flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
               </svg>
             </summary>
@@ -279,15 +279,15 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── LEAD FORM ─────────────────────────────────────────────────────────── -->
-  <section id="demo" class="py-12 sm:py-16 px-5 sm:px-8 bg-black relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold-600 rounded-full blur-[180px] opacity-5"></div>
+  <section id="demo" class="py-12 sm:py-16 px-5 sm:px-8 bg-ink relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber rounded-full blur-[180px] opacity-5"></div>
     <div class="relative max-w-xl mx-auto">
       <div class="text-center mb-10">
-        <div class="inline-flex items-center gap-3 border border-gold-600/30 bg-gold-600/5 px-4 py-2 mb-8">
-          <svg class="w-4 h-4 text-gold-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="inline-flex items-center gap-3 border border-amber/30 bg-amber/5 px-4 py-2 mb-8">
+          <svg class="w-4 h-4 text-amber shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
-          <span class="text-gold-500 text-xs tracking-[0.3em] uppercase">
+          <span class="text-amber text-xs tracking-[0.3em] uppercase">
             Exclusif {n.emoji} à {a.name}
           </span>
         </div>
@@ -298,7 +298,7 @@ const whatsappUrl = 'https://wa.me/491705594140'
         </p>
       </div>
 
-      <div class="relative border border-gold-600/20 bg-ink-950 p-8 sm:p-10">
+      <div class="relative border border-amber/20 bg-ink-950 p-8 sm:p-10">
         <LeadFormFr client:visible niche={n.label} arr={a.name} />
       </div>
 
@@ -309,14 +309,14 @@ const whatsappUrl = 'https://wa.me/491705594140'
   </section>
 
   <!-- ── FINAL CTA ─────────────────────────────────────────────────────────── -->
-  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-black border-t border-white/5 relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gold-600 rounded-full blur-[150px] opacity-5"></div>
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-ink border-t border-white/5 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-2xl mx-auto text-center">
-      <p class="text-gold-600 text-xs tracking-[0.4em] uppercase mb-6">Sans risque</p>
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Sans risque</p>
       <h2 class="text-4xl font-extralight text-white tracking-tight mb-2">90 jours gratuits.</h2>
       <h2 class="text-4xl font-bold text-white tracking-tight mb-10">Convainquez-vous.</h2>
       <a href="#demo"
-        class="group inline-flex items-center gap-3 bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
         {ctaLabel}
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

@@ -15,16 +15,16 @@ import { uiFr } from '../../../data/fr/ui-fr'
   <NavbarFr ctaHref="/fr/paris/1er/" ctaLabel="Commencer" />
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
-  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+  <section class="relative min-h-screen flex items-center bg-ink overflow-hidden">
     <div class="absolute inset-0 bg-grid-white"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber rounded-full blur-[200px] opacity-5"></div>
 
     <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
 
       <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
-        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-        <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-10">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-[10px] font-light tracking-[0.3em] uppercase">
           Paris · Tous les arrondissements
         </span>
       </div>
@@ -32,7 +32,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
       <!-- Headline -->
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
         <span class="font-extralight text-white block mb-2">Fidélisez vos clients</span>
-        <span class="font-bold text-gold-600 block">dans tout Paris.</span>
+        <span class="font-bold text-amber block">dans tout Paris.</span>
       </h1>
 
       <p class="text-white/40 text-base font-light leading-relaxed mb-14 max-w-lg">
@@ -51,15 +51,15 @@ import { uiFr } from '../../../data/fr/ui-fr'
         {arrondissements.map(a => (
           <a
             href={`/fr/paris/${a.slug}/`}
-            class="group relative border border-white/5 hover:border-gold-600 bg-white/2 hover:bg-gold-600/5 p-5 transition-all hover:-translate-y-1"
+            class="group relative border border-white/5 hover:border-amber bg-white/2 hover:bg-amber/5 p-5 transition-all hover:-translate-y-1"
           >
-            <div class="text-white font-bold text-sm tracking-wide mb-1 group-hover:text-gold-400 transition-colors">
+            <div class="text-white font-bold text-sm tracking-wide mb-1 group-hover:text-amber transition-colors">
               {a.name}
             </div>
             <div class="text-white/40 text-[11px] leading-relaxed mb-3">
               {a.quartiers.split(',').slice(0, 2).join(',')}
             </div>
-            <div class="text-xs tracking-[0.15em] text-gold-600 uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+            <div class="text-xs tracking-[0.15em] text-amber uppercase font-bold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
               Voir
               <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/>
@@ -73,7 +73,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
   </section>
 
   <!-- ── INTRO ────────────────────────────────────────────────── -->
-  <section class="py-16 px-5 sm:px-8 bg-black">
+  <section class="py-16 px-5 sm:px-8 bg-ink">
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-10">
         <div class="h-px flex-1 bg-white/5"></div>
@@ -88,7 +88,7 @@ import { uiFr } from '../../../data/fr/ui-fr'
           { value: '24h', label: 'pour être en ligne' },
         ].map(stat => (
           <div class="border border-white/5 p-6 text-center">
-            <div class="text-4xl font-black text-gold-600 mb-2">{stat.value}</div>
+            <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
             <div class="text-xs tracking-[0.25em] uppercase text-white">{stat.label}</div>
           </div>
         ))}

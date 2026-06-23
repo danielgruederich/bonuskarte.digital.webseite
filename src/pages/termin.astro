@@ -14,20 +14,20 @@ const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
 >
   <Navbar ctaHref="/koeln" ctaLabel="Zur Startseite" />
 
-  <section class="relative bg-black overflow-hidden pt-28 pb-12 px-5 sm:px-8">
+  <section class="relative bg-ink overflow-hidden pt-28 pb-12 px-5 sm:px-8">
     <div class="absolute inset-0 bg-grid-white"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gold-600 rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
 
     <div class="relative max-w-3xl mx-auto text-center">
-      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-8">
-        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-        <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">
+      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-8">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-light tracking-[0.3em] uppercase">
           Kostenlos · Unverbindlich · 15 Minuten
         </span>
       </div>
       <h1 class="text-4xl sm:text-5xl leading-[1.1] tracking-tight mb-6">
         <span class="font-extralight text-white block mb-2">Buch dein</span>
-        <span class="font-bold text-gold-600 block">24-h-Setup.</span>
+        <span class="font-bold text-amber block">24-h-Setup.</span>
       </h1>
       <p class="text-white/60 text-base font-light leading-relaxed max-w-lg mx-auto">
         Wir klären in 15 Minuten alles rund um deine Karte – danach bist du in
@@ -36,10 +36,10 @@ const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
     </div>
   </section>
 
-  <section class="bg-black pb-16 px-5 sm:px-8">
+  <section class="bg-ink pb-16 px-5 sm:px-8">
     <div class="max-w-3xl mx-auto">
       {embed ? (
-        <div class="border border-gold-600/20 bg-ink-950 overflow-hidden">
+        <div class="border border-amber/20 bg-ink-950 overflow-hidden">
           <iframe
             id="trafft-embed"
             src={trafft.bookingUrl}
@@ -51,13 +51,13 @@ const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
           ></iframe>
         </div>
       ) : (
-        <div class="text-center border border-gold-600/20 bg-ink-950 p-10">
+        <div class="text-center border border-amber/20 bg-ink-950 p-10">
           <a
             href={trafft.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             id="trafft-link"
-            class="inline-flex items-center justify-center bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
+            class="inline-flex items-center justify-center bg-amber hover:bg-amber text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
           >
             Termin auswählen
           </a>

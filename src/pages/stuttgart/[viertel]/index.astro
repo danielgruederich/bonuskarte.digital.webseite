@@ -101,22 +101,22 @@ const niches = [
 >
   <Navbar ctaHref="#branchen" ctaLabel="Jetzt starten" />
 
-  <section class="relative min-h-screen flex items-center bg-black overflow-hidden">
+  <section class="relative min-h-screen flex items-center bg-ink overflow-hidden">
     <div class="absolute inset-0 bg-grid-white"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gold-600 rounded-full blur-[200px] opacity-5"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber rounded-full blur-[200px] opacity-5"></div>
 
     <div class="relative max-w-4xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
 
-      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-10">
-        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
-        <span class="text-gold-600 text-[10px] font-light tracking-[0.3em] uppercase">
+      <div class="inline-flex items-center gap-3 border border-amber/30 px-4 py-2 mb-10">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-[10px] font-light tracking-[0.3em] uppercase">
           Stuttgart · {data.name}
         </span>
       </div>
 
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
         <span class="font-extralight text-white block mb-2">Digitale Kundenbindung</span>
-        <span class="font-bold text-gold-600 block">für {data.name}.</span>
+        <span class="font-bold text-amber block">für {data.name}.</span>
       </h1>
 
       <p class="text-white/40 text-base font-light leading-relaxed mb-14 max-w-lg">
@@ -128,10 +128,10 @@ const niches = [
         {niches.map(n => (
           <a
             href={n.href}
-            class="group relative border border-white/5 hover:border-gold-600 bg-white/2 hover:bg-gold-600/5 p-6 text-center transition-all hover:-translate-y-1"
+            class="group relative border border-white/5 hover:border-amber bg-white/2 hover:bg-amber/5 p-6 text-center transition-all hover:-translate-y-1"
           >
             {n.fomo > 0 && (
-              <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-gold-600 text-black text-[9px] font-black tracking-wider uppercase px-2.5 py-1 whitespace-nowrap">
+              <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-amber text-black text-[9px] font-black tracking-wider uppercase px-2.5 py-1 whitespace-nowrap">
                 {n.fomo} bereits dabei
               </div>
             )}
@@ -140,7 +140,7 @@ const niches = [
             <div class="text-white font-bold text-sm tracking-wide mb-1">{n.label}</div>
             <div class="text-white/55 text-[11px]">{n.desc}</div>
 
-            <div class="mt-4 flex items-center justify-center gap-1 text-gold-600 text-[10px] font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
+            <div class="mt-4 flex items-center justify-center gap-1 text-amber text-[10px] font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">
               Starten
               <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/>

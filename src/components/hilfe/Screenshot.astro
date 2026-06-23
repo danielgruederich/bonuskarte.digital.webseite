@@ -9,7 +9,7 @@ const { src, alt, caption } = Astro.props
 ---
 
 <figure class="my-8">
-  <div class="overflow-hidden rounded-lg border border-white/10">
+  <div class="overflow-hidden rounded-lg border border-paper/10">
     <img
       src={src}
       alt={alt}
@@ -19,6 +19,6 @@ const { src, alt, caption } = Astro.props
     />
   </div>
   {caption && (
-    <figcaption class="mt-2 text-sm text-white/40 text-center">{caption}</figcaption>
+    <figcaption class="mt-2 text-sm text-paper/40 text-center">{caption}</figcaption>
   )}
 </figure>

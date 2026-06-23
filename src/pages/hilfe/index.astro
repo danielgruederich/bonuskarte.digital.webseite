@@ -34,12 +34,12 @@ const categories = hilfeCategories.map(cat => ({
   })} />
   <Navbar ctaHref="/hilfe" ctaLabel="Hilfe" />
 
-  <main class="min-h-screen bg-black pt-24 pb-16">
+  <main class="min-h-screen bg-ink pt-24 pb-16">
     <div class="max-w-4xl mx-auto px-5 sm:px-8">
 
       <!-- Hero -->
       <div class="text-center mb-16">
-        <p class="text-xs font-medium tracking-[0.3em] uppercase text-gold-600 mb-4">
+        <p class="text-xs font-medium tracking-[0.3em] uppercase text-amber mb-4">
           Hilfe-Center
         </p>
         <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">
@@ -55,10 +55,10 @@ const categories = hilfeCategories.map(cat => ({
         {categories.map(cat => (
           <a
             href={cat.firstSlug ? `/hilfe/${cat.firstSlug}` : '#'}
-            class="group block border border-white/10 rounded-lg p-6 hover:border-gold-600/30 hover:bg-white/[0.02] transition-all"
+            class="group block border border-white/10 rounded-lg p-6 hover:border-amber/30 hover:bg-white/[0.02] transition-all"
           >
             <span class="text-3xl mb-4 block">{cat.icon}</span>
-            <h2 class="text-sm font-bold tracking-widest uppercase text-white group-hover:text-gold-600 transition-colors mb-2">
+            <h2 class="text-sm font-bold tracking-widest uppercase text-white group-hover:text-amber transition-colors mb-2">
               {cat.label}
             </h2>
             <p class="text-xs text-white/40">

@@ -46,11 +46,11 @@ export default function RotatingWord() {
         }
       `}</style>
       <span className="block">
-        <span className={`${cls} font-bold text-gold-600`}>{cardBranchPairs[index].card}</span>
+        <span className={`${cls} font-bold text-amber`}>{cardBranchPairs[index].card}</span>
       </span>
       <span className="font-bold text-white block">für Kölner</span>
       <span className="block">
-        <span className={`${cls} font-bold text-gold-600`}>{cardBranchPairs[index].branch}</span>
+        <span className={`${cls} font-bold text-amber`}>{cardBranchPairs[index].branch}</span>
       </span>
     </>
   )

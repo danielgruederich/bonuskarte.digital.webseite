@@ -20,7 +20,7 @@ const grouped = hilfeCategories.map(cat => ({
 <div class="lg:hidden mb-6">
   <button
     id="hilfe-sidebar-toggle"
-    class="w-full flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white/70"
+    class="w-full flex items-center justify-between bg-white/5 border border-paper/10 rounded-lg px-4 py-3 text-sm text-paper/70"
   >
     <span>Navigation</span>
     <svg class="w-4 h-4 transition-transform" id="hilfe-sidebar-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,14 +28,14 @@ const grouped = hilfeCategories.map(cat => ({
     </svg>
   </button>
 
-  <div id="hilfe-sidebar-mobile" class="hidden mt-2 bg-black/95 border border-white/10 rounded-lg p-4">
-    <a href="/hilfe" class="block text-xs font-bold tracking-widest uppercase text-gold-600 mb-4">
+  <div id="hilfe-sidebar-mobile" class="hidden mt-2 bg-ink/95 border border-paper/10 rounded-lg p-4">
+    <a href="/hilfe" class="block text-xs font-bold tracking-widest uppercase text-amber mb-4">
       Hilfe & Tutorials
     </a>
 
     {grouped.map(cat => (
       <div class="mb-4">
-        <p class="text-xs font-bold tracking-widest uppercase text-white/70 mb-2">
+        <p class="text-xs font-bold tracking-widest uppercase text-paper/70 mb-2">
           <span class="mr-1.5">{cat.icon}</span>{cat.label}
         </p>
         <ul class="space-y-1">
@@ -47,7 +47,7 @@ const grouped = hilfeCategories.map(cat => ({
                   href={`/hilfe/${entry.slug}`}
                   class:list={[
                     'block pl-4 py-1.5 text-sm transition-colors',
-                    isActive ? 'text-gold-600 font-medium' : 'text-white/80',
+                    isActive ? 'text-amber font-medium' : 'text-paper/80',
                   ]}
                 >
                   {entry.data.title}

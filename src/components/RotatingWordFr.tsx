@@ -47,10 +47,10 @@ export default function RotatingWordFr() {
           transition: opacity 0.3s ease, transform 0.3s ease;
         }
       `}</style>
-      <span className="font-bold text-gold-600 block">numérique</span>
+      <span className="font-bold text-amber block">numérique</span>
       <span className="font-bold text-white block">pour vos</span>
       <span className="block">
-        <span className={`${cls} font-bold text-gold-600`}>{branches[index]}</span>
+        <span className={`${cls} font-bold text-amber`}>{branches[index]}</span>
       </span>
     </>
   )
