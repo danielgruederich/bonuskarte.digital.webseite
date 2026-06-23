@@ -1,0 +1,40 @@
+---
+/**
+ * Zipchat-Chatbot-Widget.
+ *
+ * Bindet das Embed-Snippet aus src/config/integrations.ts ein und meldet das
+ * Öffnen des Chats als GA4-Event `chatbot_open` (einmal pro Session).
+ * Rendert nichts, solange `zipchat.embedScript` leer ist.
+ */
+import { zipchat } from '../../config/integrations'
+
+const enabled = zipchat.embedScript.trim().length > 0
+---
+{enabled && (
+  <Fragment>
+  <Fragment set:html={zipchat.embedScript} />
+
+  <script define:vars={{ selector: zipchat.launcherSelector }}>
+    // chatbot_open: einmal pro Session feuern, sobald der Launcher geklickt wird.
+    (function () {
+      const KEY = 'zipchat_open_tracked'
+      function fire() {
+        if (sessionStorage.getItem(KEY)) return
+        sessionStorage.setItem(KEY, '1')
+        if (typeof gtag === 'function') {
+          gtag('event', 'chatbot_open', { location: 'zipchat_widget' })
+        }
+      }
+      // Delegierter Klick — das Widget lädt asynchron nach.
+      document.addEventListener(
+        'click',
+        function (e) {
+          const target = e.target
+          if (target instanceof Element && target.closest(selector)) fire()
+        },
+        true,
+      )
+    })()
+  </script>
+  </Fragment>
+)}

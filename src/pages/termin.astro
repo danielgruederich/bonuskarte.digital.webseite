@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import { trafft } from '../config/integrations'
+
+const embed = trafft.allowEmbed && trafft.bookingUrl.trim().length > 0
+---
+
+<BaseLayout
+  title="Kostenloses 24-h-Setup buchen | bonuskarte.digital"
+  description="Buche dein kostenloses Setup-Gespräch. In 15 Minuten klären wir alles – danach ist deine digitale Kundenkarte in unter 24 Stunden live."
+  noindex={true}
+>
+  <Navbar ctaHref="/koeln" ctaLabel="Zur Startseite" />
+
+  <section class="relative bg-black overflow-hidden pt-28 pb-12 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-white"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gold-600 rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-3 border border-gold-600/30 px-4 py-2 mb-8">
+        <span class="w-1 h-1 bg-gold-600 animate-pulse-slow"></span>
+        <span class="text-gold-600 text-xs font-light tracking-[0.3em] uppercase">
+          Kostenlos · Unverbindlich · 15 Minuten
+        </span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl leading-[1.1] tracking-tight mb-6">
+        <span class="font-extralight text-white block mb-2">Buch dein</span>
+        <span class="font-bold text-gold-600 block">24-h-Setup.</span>
+      </h1>
+      <p class="text-white/60 text-base font-light leading-relaxed max-w-lg mx-auto">
+        Wir klären in 15 Minuten alles rund um deine Karte – danach bist du in
+        unter 24 Stunden live. Such dir einfach einen Slot aus.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-black pb-16 px-5 sm:px-8">
+    <div class="max-w-3xl mx-auto">
+      {embed ? (
+        <div class="border border-gold-600/20 bg-ink-950 overflow-hidden">
+          <iframe
+            id="trafft-embed"
+            src={trafft.bookingUrl}
+            title="Termin buchen"
+            loading="lazy"
+            class="w-full"
+            style="height: 820px; border: 0;"
+            allow="payment"
+          ></iframe>
+        </div>
+      ) : (
+        <div class="text-center border border-gold-600/20 bg-ink-950 p-10">
+          <a
+            href={trafft.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            id="trafft-link"
+            class="inline-flex items-center justify-center bg-gold-600 hover:bg-gold-500 text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
+          >
+            Termin auswählen
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    // demo_booking: feuert, sobald der/die Besucher:in mit dem Trafft-Widget
+    // interagiert (Klick in den iframe → Fenster verliert Fokus). Cross-Origin
+    // verhindert das Auslesen einer echten Buchungs-Bestätigung — die kommt
+    // server-seitig über den Trafft-Webhook. Dieses Event ist der Engagement-Proxy.
+    (function () {
+      const KEY = 'trafft_booking_tracked'
+      function fire(source: string) {
+        if (sessionStorage.getItem(KEY)) return
+        sessionStorage.setItem(KEY, '1')
+        // @ts-ignore – gtag wird global vom GA4-Snippet bereitgestellt
+        if (typeof gtag === 'function') {
+          // @ts-ignore
+          gtag('event', 'demo_booking', { source })
+        }
+      }
+
+      const iframe = document.getElementById('trafft-embed')
+      if (iframe) {
+        window.addEventListener('blur', function () {
+          if (document.activeElement === iframe) fire('trafft_embed')
+        })
+      }
+
+      const link = document.getElementById('trafft-link')
+      if (link) {
+        link.addEventListener('click', function () {
+          fire('trafft_link')
+        })
+      }
+    })()
+  </script>
+</BaseLayout>

@@ -1,0 +1,40 @@
+/**
+ * Zentrale Konfiguration für externe Widgets (Zipchat-Chatbot, Trafft-Buchung).
+ *
+ * Beide Integrationen sind erst aktiv, wenn hier die echten Werte eingetragen
+ * sind. Solange die Felder leer (''), wird NICHTS gerendert — die Seite bleibt
+ * sauber und der Build grün. So lässt sich "live schalten" als reine Config-
+ * Änderung machen, ohne Komponenten anzufassen.
+ */
+
+// ── Zipchat (24/7-Chatbot, fängt Inbound-Leads + bucht Demo) ─────────────────
+export const zipchat = {
+  /**
+   * Das vollständige <script>-Snippet von Zipchat (Dashboard → Install).
+   * Wird im <body> 1:1 eingebunden, sobald gesetzt.
+   * Beispiel: '<script async src="https://cdn.zipchat.ai/widget.js" data-shop-id="abc123"></script>'
+   */
+  embedScript: '' as string,
+
+  /**
+   * CSS-Selektor des Chat-Launchers (Button unten rechts). Ein Klick darauf
+   * feuert das GA4-Event `chatbot_open` (einmal pro Session).
+   * Im Zipchat-Dashboard / via DevTools prüfen und ggf. anpassen.
+   */
+  launcherSelector: '[id*="zipchat"], [class*="zipchat"], iframe[src*="zipchat"]',
+}
+
+// ── Trafft ("Kostenloses 24-h-Setup buchen") ────────────────────────────────
+export const trafft = {
+  /**
+   * Öffentliche Trafft-Buchungs-URL (iframe-fähig). Default ist die bestehende
+   * Buchungsseite. Falls Trafft das Einbetten per iframe blockt (X-Frame-Options),
+   * `allowEmbed` auf false setzen → es wird stattdessen direkt verlinkt.
+   */
+  bookingUrl: 'https://termin.fuerte.digital' as string,
+
+  /** true = iframe-Embed (Seite /termin), false = nur Direktlink. */
+  allowEmbed: true,
+}
+
+export const integrations = { zipchat, trafft }

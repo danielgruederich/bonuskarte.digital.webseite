@@ -9,6 +9,8 @@ interface Props {
   noindex?: boolean                                   // when true, emit <meta robots="noindex,follow">
 }
 
+import Zipchat from '../components/integrations/Zipchat.astro'
+
 const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false } = Astro.props
 const canonicalUrl = new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
 const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuskarte.digital').href
@@ -86,5 +88,6 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
   </head>
   <body class="bg-white text-gray-900 antialiased">
     <slot />
+    <Zipchat />
   </body>
 </html>
