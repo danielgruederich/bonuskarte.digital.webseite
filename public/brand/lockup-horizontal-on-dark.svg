@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 70" role="img" aria-label="bonuskarte.digital">
+  <!-- transparent background — for dark (ink) surfaces -->
+
+  <!-- mark: ring in paper, filled in amber -->
+  <circle cx="35" cy="35" r="30" fill="none" stroke="#F6F1E8" stroke-width="4"/>
+  <circle cx="80" cy="35" r="30" fill="#F25C24"/>
+
+  <!-- wordmark in paper -->
+  <text
+    x="126"
+    y="45"
+    font-family="'Geist', system-ui, -apple-system, sans-serif"
+    font-weight="600"
+    font-size="22"
+    fill="#F6F1E8"
+    letter-spacing="-0.4"
+  >bonuskarte<tspan fill="#F25C24">.</tspan>digital</text>
+</svg>

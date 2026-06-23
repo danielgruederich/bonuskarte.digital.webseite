@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" role="img" aria-label="bonuskarte.digital">
+  <!-- transparent background — gestapelt auf dunklem Untergrund -->
+
+  <circle cx="67" cy="42" r="30" fill="none" stroke="#F6F1E8" stroke-width="4"/>
+  <circle cx="112" cy="42" r="30" fill="#F25C24"/>
+
+  <text
+    x="90"
+    y="96"
+    text-anchor="middle"
+    font-family="'Geist', system-ui, -apple-system, sans-serif"
+    font-weight="600"
+    font-size="16"
+    fill="#F6F1E8"
+    letter-spacing="-0.3"
+  >bonuskarte<tspan fill="#F25C24">.</tspan>digital</text>
+</svg>

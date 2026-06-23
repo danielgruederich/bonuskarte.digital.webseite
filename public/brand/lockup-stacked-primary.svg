@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 120" role="img" aria-label="bonuskarte.digital">
+  <!-- transparent background — gestapelt für quadratische Flächen -->
+
+  <!-- mark centered -->
+  <circle cx="67" cy="42" r="30" fill="none" stroke="#1A1410" stroke-width="4"/>
+  <circle cx="112" cy="42" r="30" fill="#F25C24"/>
+
+  <!-- wordmark below mark -->
+  <text
+    x="90"
+    y="96"
+    text-anchor="middle"
+    font-family="'Geist', system-ui, -apple-system, sans-serif"
+    font-weight="600"
+    font-size="16"
+    fill="#1A1410"
+    letter-spacing="-0.3"
+  >bonuskarte<tspan fill="#F25C24">.</tspan>digital</text>
+</svg>
