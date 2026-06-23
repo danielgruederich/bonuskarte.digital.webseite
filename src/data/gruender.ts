@@ -24,7 +24,7 @@ export const koeln: GruenderCityConfig = {
     },
     {
       q: 'Was, wenn ich später Standorte dazunehme?',
-      a: 'Dein Gründer-Tarif gilt für einen Standort. Zusätzliche Standorte buchst du regulär als Solo-Abos (29 €/Monat pro Standort) oder steigst ab 10 Standorten auf den Kette-Tarif (100 €/Monat Flatrate) um. Dein Gründer-Standort bleibt ohne Folgekosten.',
+      a: 'Dein Gründer-Tarif gilt für bis zu 3 Standorte. Wächst du darüber hinaus, steigst du auf den Ketten-Tarif um (100 €/Monat für 4–10 Standorte, Flatrate). Dein Gründer-Tarif bleibt ohne Folgekosten.',
     },
     {
       q: 'Was, wenn die 100 Plätze voll sind?',
