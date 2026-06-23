@@ -33,7 +33,7 @@ interface CardLinks {
 type State = 'idle' | 'submitting' | 'success' | 'error'
 
 const inputClass =
-  'w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-white/40 text-sm tracking-wide focus:outline-none focus:border-gold-600 focus:bg-white/8 transition-colors'
+  'w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-white/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-white/8 transition-colors'
 
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-white/60 mb-2'
 
@@ -145,8 +145,8 @@ export default function LeadForm({
 
     return (
       <div className="text-center py-8">
-        <div className="w-16 h-16 border border-gold-600/40 flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-16 h-16 border border-amber/40 flex items-center justify-center mx-auto mb-6">
+          <svg className="w-8 h-8 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -172,7 +172,7 @@ export default function LeadForm({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => analytics.walletInstallClicked(niche)}
-              className="w-full group flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
+              className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
@@ -183,13 +183,13 @@ export default function LeadForm({
             <div className="flex gap-3">
               {appleLink && (
                 <a href={appleLink} target="_blank" rel="noopener noreferrer"
-                  className="flex-1 text-center border border-white/10 hover:border-gold-600/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  className="flex-1 text-center border border-white/10 hover:border-amber/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
                   Apple Wallet
                 </a>
               )}
               {googleLink && (
                 <a href={googleLink} target="_blank" rel="noopener noreferrer"
-                  className="flex-1 text-center border border-white/10 hover:border-gold-600/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
+                  className="flex-1 text-center border border-white/10 hover:border-amber/30 text-white/40 hover:text-white/70 text-xs tracking-widest uppercase py-3 transition-all">
                   Google Wallet
                 </a>
               )}
@@ -233,8 +233,8 @@ export default function LeadForm({
   return (
     <>
       {mode === 'gruender' && bannerText && (
-        <div className="mb-6 border border-gold-600/60 bg-gradient-to-b from-gold-600/[0.08] to-transparent p-5">
-          <p className="text-xs tracking-[0.3em] uppercase text-gold-600 mb-2">Platz sichern</p>
+        <div className="mb-6 border border-amber/60 bg-gradient-to-b from-amber/[0.08] to-transparent p-5">
+          <p className="text-xs tracking-[0.3em] uppercase text-amber mb-2">Platz sichern</p>
           <p className="text-sm text-white/90 font-light leading-relaxed">{bannerText}</p>
         </div>
       )}
@@ -252,9 +252,9 @@ export default function LeadForm({
             onChange={handleNicheChange}
             className={inputClass}
           >
-            <option value="" disabled className="bg-black text-white">Branche wählen</option>
+            <option value="" disabled className="bg-ink text-white">Branche wählen</option>
             {nicheOptions.map((n) => (
-              <option key={n.slug} value={n.slug} className="bg-black text-white">
+              <option key={n.slug} value={n.slug} className="bg-ink text-white">
                 {n.label}
               </option>
             ))}
@@ -290,7 +290,7 @@ export default function LeadForm({
       <div>
         <label htmlFor="instagram" className={labelClass}>Instagram oder Geschäftsname</label>
         <div className="relative">
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-600 text-sm font-medium select-none">@</span>
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-amber text-sm font-medium select-none">@</span>
           <input
             id="instagram"
             name="instagram"
@@ -317,7 +317,7 @@ export default function LeadForm({
       <button
         type="submit"
         disabled={state === 'submitting'}
-        className="w-full group flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
+        className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
       >
         {state === 'submitting' ? (
           <>
@@ -351,7 +351,7 @@ export default function LeadForm({
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => analytics.demoBooking('form')}
-            className="text-white/60 hover:text-gold-600 underline underline-offset-2 transition-colors"
+            className="text-white/60 hover:text-amber underline underline-offset-2 transition-colors"
           >
             Kostenlosen Termin buchen →
           </a>

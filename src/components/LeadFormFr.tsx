@@ -11,7 +11,7 @@ type State = 'idle' | 'submitting' | 'success' | 'error'
 const WA_NUMBER = '491705594140'
 
 const inputClass =
-  'w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-white/40 text-sm tracking-wide focus:outline-none focus:border-gold-600 focus:bg-white/8 transition-colors'
+  'w-full px-4 py-3 bg-white/5 border border-white/20 text-white placeholder-white/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-white/8 transition-colors'
 
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-white/60 mb-2'
 
@@ -106,8 +106,8 @@ export default function LeadFormFr({ niche, arr }: Props) {
     const waHref = `https://wa.me/${WA_NUMBER}?text=${waText}`
     return (
       <div className="text-center py-8">
-        <div className="w-16 h-16 border border-gold-600/40 flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="w-16 h-16 border border-amber/40 flex items-center justify-center mx-auto mb-6">
+          <svg className="w-8 h-8 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -173,7 +173,7 @@ export default function LeadFormFr({ niche, arr }: Props) {
       <div>
         <label className={labelClass}>Instagram ou nom de l'établissement</label>
         <div className="relative">
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-600 text-sm font-medium select-none">@</span>
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-amber text-sm font-medium select-none">@</span>
           <input
             name="instagram"
             type="text"
@@ -200,7 +200,7 @@ export default function LeadFormFr({ niche, arr }: Props) {
       <button
         type="submit"
         disabled={state === 'submitting'}
-        className="w-full group flex items-center justify-center gap-3 bg-gold-600 hover:bg-gold-500 disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
+        className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
       >
         {state === 'submitting' ? (
           <>
