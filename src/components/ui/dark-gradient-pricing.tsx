@@ -11,7 +11,7 @@ interface BenefitProps {
 const Benefit = ({ text }: BenefitProps) => {
   return (
     <div className="flex items-center gap-3">
-      <span className="grid size-4 place-content-center rounded-full bg-gold-600/20 text-sm text-gold-600 flex-shrink-0">
+      <span className="grid size-4 place-content-center rounded-full bg-amber/20 text-sm text-amber flex-shrink-0">
         <Check className="size-3" />
       </span>
       <span className="text-sm text-white/60 font-light">{text}</span>
@@ -41,26 +41,20 @@ export const PricingCard = ({
   ctaHref = "#demo",
 }: PricingCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-      viewport={{ once: true }}
-      className="h-full"
-    >
+    <div className="h-full">
       <Card
         className={cn(
           "relative h-full w-full overflow-hidden flex flex-col",
           "bg-gradient-to-b from-white/[0.03] to-transparent",
           highlighted
-            ? "border-gold-600/50 shadow-[0_0_40px_rgba(139,115,0,0.08)]"
+            ? "border-amber/50 shadow-[0_0_40px_rgba(242,92,36,0.08)]"
             : "border-white/5",
           "p-8",
           className,
         )}
       >
         {highlighted && (
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-600/60 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber/60 to-transparent" />
         )}
 
         {/* Header */}
@@ -73,8 +67,8 @@ export const PricingCard = ({
             )}
           </div>
           <div className="flex items-center gap-2">
-            <svg className="w-3.5 h-3.5 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 12l10 10 10-10L12 2z"/></svg>
-            <span className="text-gold-600 text-xs tracking-[0.25em] uppercase font-medium">
+            <svg className="w-3.5 h-3.5 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 12l10 10 10-10L12 2z"/></svg>
+            <span className="text-amber text-xs tracking-[0.25em] uppercase font-medium">
               Inklusive
             </span>
           </div>
@@ -96,6 +90,6 @@ export const PricingCard = ({
           <a href={ctaHref}>{CTA}</a>
         </Button>
       </Card>
-    </motion.div>
+    </div>
   )
 }
