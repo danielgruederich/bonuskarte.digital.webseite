@@ -49,7 +49,7 @@ const related = allPosts
     "image": post.data.heroImage,
     "datePublished": post.data.pubDate.toISOString(),
     "dateModified": (post.data.updatedDate ?? post.data.pubDate).toISOString(),
-    "author": { "@type": "Organization", "name": "bonuskarte.digital", "url": "https://bonuskarte.digital" },
+    "author": { "@type": "Person", "name": "Daniel Grüderich", "jobTitle": "Gründer", "url": "https://www.linkedin.com/in/dgruederich/", "worksFor": { "@type": "Organization", "name": "bonuskarte.digital", "url": "https://bonuskarte.digital" } },
     "publisher": { "@type": "Organization", "name": "bonuskarte.digital", "logo": { "@type": "ImageObject", "url": "https://bonuskarte.digital/favicon.svg" } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://bonuskarte.digital/berlin/blog/${post.slug}` }
   })} />
@@ -92,12 +92,10 @@ const related = allPosts
       <p class="text-paper/55 text-base sm:text-lg leading-relaxed mb-7">{post.data.description}</p>
 
       <div class="flex items-center gap-3 pt-5 border-t border-paper/8">
-        <div class="w-9 h-9 bg-amber flex items-center justify-center flex-shrink-0">
-          <span class="text-black font-black text-sm">F</span>
-        </div>
+        <img src="/images/daniel-gruederich.png" alt="Daniel Grüderich" class="w-9 h-9 rounded-full object-cover object-top flex-shrink-0" />
         <div>
-          <div class="text-paper text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
-          <div class="text-paper/60 text-xs">{formatDate(post.data.pubDate)}</div>
+          <div class="text-paper text-sm font-semibold leading-none mb-1">Daniel Grüderich</div>
+          <div class="text-paper/60 text-xs">Gründer bonuskarte.digital · {formatDate(post.data.pubDate)}</div>
         </div>
       </div>
     </div>
@@ -118,6 +116,25 @@ const related = allPosts
       </article>
     </div>
   </main>
+
+  <!-- ── Author Bio ───────────────────────────── -->
+  <section class="bg-paper-dark py-10 sm:py-12 border-t border-ink/10">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8">
+      <div class="flex items-start gap-5">
+        <img src="/images/daniel-gruederich.png" alt="Daniel Grüderich" class="w-16 h-16 rounded-full object-cover object-top flex-shrink-0" />
+        <div>
+          <div class="text-xs font-bold tracking-[0.2em] uppercase text-ink/40 mb-1">Über den Autor</div>
+          <div class="text-ink font-semibold text-sm mb-0.5">Daniel Grüderich</div>
+          <div class="text-amber text-xs font-medium mb-2">Gründer bonuskarte.digital</div>
+          <p class="text-ink/70 text-sm leading-relaxed">Daniel Grüderich ist Gründer von bonuskarte.digital und hilft lokalen Betrieben dabei, Papier-Stempelkarten durch digitale Kundenbindung zu ersetzen. Seit Jahren arbeitet er mit Gastronomen, Cafés und lokalen Händlern zusammen und weiß, was Stammkunden wirklich brauchen.</p>
+          <a href="https://www.linkedin.com/in/dgruederich/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-3 text-xs text-ink/50 hover:text-ink transition-colors">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="bg-ink py-14 sm:py-20 border-t border-ink/30">
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
