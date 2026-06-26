@@ -71,6 +71,24 @@ Ein Imbiss in der Neusser Straße teilt den Karten-Link als QR-Code an der Theke
 **Restaurant in der Innenstadt:**
 Ein Mittagsrestaurant nahe dem Neumarkt setzt auf 10 Stempel für ein gratis Mittagsmenü. Mitarbeiter fragen jeden Gast beim Zahlen. Nach einem Monat: 60 % der Stammgäste nutzen die digitale Karte aktiv.
 
+## Häufig gestellte Fragen
+
+### Warum funktionieren Papier-Stempelkarten so schlecht?
+
+Weil sie passiv sind. Sie liegen zu Hause in der Schublade, erinnern an nichts und sammeln keine Daten. Eine digitale Karte in der Apple Wallet liegt immer beim Gast und erscheint automatisch auf seinem Sperrbildschirm, wenn er an deinem Lokal vorbeigeht.
+
+### Wie viele Stempel sollte meine Kundenkarte in Köln haben?
+
+8 bis 10 Stempel sind der Sweet Spot. Weniger wirkt billig, mehr verlieren Kunden die Motivation. Die Belohnung muss sich wie ein echtes Geschenk anfühlen, kein 5-Prozent-Coupon, sondern ein gratis Hauptgericht oder ein gratis Kaffee.
+
+### Wie nutze ich die Veedel-Identität in Köln für meine Kundenbindung?
+
+Indem du deinen Laden als das Stammlokal des Viertels positionierst. Kölner sind stolz auf ihr Veedel und kaufen dort, wo sie sich zugehörig fühlen. Eine Stempelkarte, die auf dem Homescreen präsent ist, macht dich sichtbar, ohne dass du Werbung schalten musst.
+
+### Was kostet mich eine digitale Stempelkarte für mein Kölner Lokal?
+
+Die ersten 90 Tage sind kostenlos. Danach ab 29 Euro pro Monat, ohne Umsatzanteil und ohne versteckte Gebühren. Du zahlst eine Monatspauschale, egal wie viele Stempel vergeben werden.
+
 ## Fazit
 
 Kundenbindung in der Kölner Gastronomie ist keine Raketenwissenschaft. Es braucht ein einfaches Versprechen, ein zuverlässiges System und die Bereitschaft, Kunden aktiv anzusprechen.

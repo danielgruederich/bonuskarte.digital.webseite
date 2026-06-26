@@ -48,3 +48,21 @@ Die entscheidende Frage für bessere **Kundenbindung in Neuehrenfeld Köln**: Wa
 ## Nächster Schritt
 
 Bonuskarte.digital bietet digitale Stempelkarten, die ohne App-Download funktionieren – Kunde scannt, tippt, fertig. **Setup dauert unter einem Tag, keine IT-Kenntnisse nötig.** Für Läden in Neuehrenfeld gibt es ein kostenloses Erstgespräch. Kein Pitch, kein Druck – nur 20 Minuten, in denen wir schauen, ob es für dich passt.
+
+## Häufig gestellte Fragen
+
+### Warum ist Kundenbindung in Neuehrenfeld gerade jetzt besonders wichtig?
+
+Das Viertel ist noch nicht so dicht mit Läden besetzt wie Ehrenfeld direkt nebenan. Wer jetzt seine Stammkunden-Infrastruktur aufbaut, hat in zwei Jahren einen Vorsprung, den neue Mitbewerber nicht mehr einfach einholen. Je mehr Läden kommen, desto teurer wird das Gewinnen jedes einzelnen Stammkunden.
+
+### Was ist der Vorteil einer digitalen Stempelkarte gegenüber der aus Pappe?
+
+Eine Papierkarte geht verloren, wird vergessen oder liegt zu Hause, wenn der Kunde gerade einkauft. Eine digitale Karte sitzt im Handy zwischen Kreditkarte und KVB-Ticket. Sie erinnert zur richtigen Zeit, und der Betrieb sieht, wer gerade aktiv sammelt und wer seit Wochen nicht mehr aufgetaucht ist.
+
+### Wie schnell wirkt ein digitales Bonusprogramm in Neuehrenfeld?
+
+Die ersten spürbaren Effekte zeigen sich nach vier bis acht Wochen. Gäste, die sonst zufällig wiederkamen, kommen bewusst zurück, weil sie wissen, wo sie gerade im Stempelfortschritt stehen. Die Besuchsfrequenz steigt im Schnitt um 20 bis 40 Prozent, je nach Branche und wie aktiv das Programm beworben wird.
+
+### Muss mein Kunde eine App herunterladen?
+
+Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf fast jedem Smartphone bereits vorinstalliert sind. Der Kunde scannt einmal einen QR-Code, tippt auf "Hinzufügen" und ist fertig.

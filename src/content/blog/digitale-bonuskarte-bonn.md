@@ -76,6 +76,24 @@ Ergebnis:
 
 **Der Betreiber:** *"Ich hätte nicht gedacht, dass so etwas so einfach funktioniert. Einmal einrichten, QR-Code aufstellen – und die Leute scannen von selbst."*
 
+## Häufig gestellte Fragen
+
+### Wie lange dauert es, eine digitale Bonuskarte für meinen Bonner Betrieb einzurichten?
+
+Unter 15 Minuten. Du gibst deinen Betriebsnamen ein, legst die Stempel-Anzahl und die Belohnung fest, lädst optional ein Logo hoch und bekommst sofort einen Link und QR-Code. Kein Techniker, keine Wartezeit.
+
+### Muss ich meine Bonner Kunden bei der Einrichtung der Karte begleiten?
+
+Nein. Der Gast scannt einmal den QR-Code oder klickt auf den Link, und die Karte landet automatisch in seiner Apple Wallet oder Google Wallet. Kein Account, kein Passwort, keine App. Der einzige aktive Schritt auf deiner Seite ist der Hinweis beim Bezahlen: "Haben Sie schon unsere Bonuskarte?"
+
+### Welche Stempel-Mechanik eignet sich für Bonner Cafés am besten?
+
+Bewährt hat sich 8 Getränke, 1 gratis Heißgetränk. Diese Anzahl ist hoch genug, dass du nichts verschenkst, und niedrig genug, dass Kunden das Ziel realistisch vor Augen haben. Für Studenten im Uni-Viertel, die oft mehrfach pro Woche kommen, kann auch ein kleinerer Schwellenwert gut funktionieren.
+
+### Was kostet die digitale Bonuskarte nach den ersten 90 Tagen?
+
+Nach dem kostenlosen Testzeitraum startet der Preis bei 29 Euro pro Monat. Es gibt keinen Vertrag mit langer Laufzeit, du kannst monatlich kündigen.
+
 ## Fazit
 
 Bonn ist eine Stadt, in der Stammkunden der echte Unternehmenswert sind. Digitale Bonuskarten machen aus Gelegenheitsgästen treue Stammkunden – schnell, ohne IT-Aufwand, und ohne monatliche Werbekosten.

@@ -54,3 +54,21 @@ Starte mit einer einfachen Frage an deine Stammkunden diese Woche: **"Was würde
 Wer den nächsten Schritt gehen will: Eine digitale Stempelkarte ist in 15 Minuten eingerichtet, kostet weniger als ein Anzeigenblock im Stadtteilmagazin, und arbeitet täglich für dich – auch wenn du gerade nicht im Laden stehst.
 
 Welche deiner Stammkunden kommen eigentlich aus echter Überzeugung – und welche einfach weil du zufällig auf dem Heimweg liegst?
+
+## Häufig gestellte Fragen
+
+### Wie unterscheidet sich Kundenbindung in Lindenthal von anderen Kölner Veedeln?
+
+Lindenthal hat zwei völlig verschiedene Kundenschichten: etablierte Familien und Paare am Stadtwald, die Verlässlichkeit suchen, und Studierende rund um die Uni, die jedes Semester rotieren. Beide mit einer einzigen Strategie anzusprechen funktioniert nicht. Digitale Stempelkarten geben dir die Werkzeuge, um beide Gruppen sinnvoll zu belohnen.
+
+### Wie spricht man Studierende in Lindenthal mit einer Stempelkarte an?
+
+Studierende reagieren gut auf konkrete, schnell erreichbare Prämien. Eine Stempelkarte mit einem klaren Ziel, zum Beispiel der fünfte Kaffee gratis, schafft einen Grund wiederzukommen, auch wenn der Preis drei Meter weiter ähnlich ist. Das Gefühl, bereits Stempel gesammelt zu haben, hält die Entscheidung für deinen Laden.
+
+### Brauche ich ein CRM-System oder reicht eine digitale Stempelkarte für mein Café in Lindenthal?
+
+Für die meisten lokalen Betriebe reicht eine digitale Stempelkarte vollständig aus. Sie zeigt dir, wer wie oft kommt, wann jemand zuletzt da war und wer kurz vor der Prämie steht. Ein CRM im fünfstelligen Bereich ist für ein Café an der Dürener Straße Overkill.
+
+### Was kostet eine digitale Stempelkarte in Lindenthal?
+
+Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Kein Vertrag, keine Einrichtungsgebühr, kein IT-Aufwand.

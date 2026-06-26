@@ -112,3 +112,21 @@ Du willst die Rückseite einer Kundenkarte sehen — und den Geo-Push erleben? I
 Dreh die Karte um. Schau dir an, was dort alles Platz hat. Und dann überleg: Welche 9 Dinge sollten deine Kunden über deine Eisdiele in der Innenstadt wissen?
 
 [Starte jetzt — 90 Tage kostenlos →](/koeln/innenstadt/eiscafe/#demo)
+
+## Häufig gestellte Fragen
+
+### Was kann ich auf der Rückseite meiner digitalen Kundenkarte eintragen?
+
+Bis zu 9 Links. Typische Inhalte: Instagram-Account, Öffnungszeiten, Google-Bewertungsseite, Catering-Anfrage, Lieferservice, Personalsuche, E-Mail und TikTok. Du wählst, was für deine Kunden am nützlichsten ist.
+
+### Wie funktioniert Geo-Push und muss ich ihn manuell auslösen?
+
+Geo-Push läuft vollautomatisch. Du trägst einmal deinen Standort und einen Radius ein, zum Beispiel 100 Meter, und schreibst die Nachricht. Ab dann bekommen Karteninhaber automatisch eine Push-Benachrichtigung, wenn sie in der Nähe sind. Du musst nichts tun.
+
+### Wie oft bekommt ein Kunde einen Geo-Push?
+
+Maximal einmal pro Tag. Niemand will mehrfach täglich eine Benachrichtigung. Der Geo-Push ist am stärksten, wenn er selten kommt und dafür zum richtigen Moment.
+
+### Kann ich die Links auf der Rückseite nachträglich ändern?
+
+Ja, jederzeit. Neue Sorte im Angebot? Neuer Link. Personalsuche beendet? Link entfernen. Die Änderung wird sofort auf allen Karten deiner Kunden sichtbar, ohne dass sie etwas tun müssen.

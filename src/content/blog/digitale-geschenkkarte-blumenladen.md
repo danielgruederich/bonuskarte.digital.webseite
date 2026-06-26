@@ -96,3 +96,25 @@ Du willst sehen, wie eine digitale Geschenkkarte für deinen Blumenladen aussieh
 Kein Vertrag. Keine Kreditkarte. Keine Verpflichtung.
 
 [Jetzt 90 Tage kostenlos testen →](/koeln/#demo)
+
+## Häufig gestellte Fragen
+
+### Wie kauft mein Kunde eine digitale Geschenkkarte für meinen Blumenladen?
+
+Dein Kunde kauft die Karte direkt bei dir, entweder im Laden oder über einen Link, den du per WhatsApp oder auf deiner Website teilst. Er wählt den Betrag und bekommt sofort einen Link, den er weiterleiten kann. Kein Versand, keine Wartezeit.
+
+### Was passiert, wenn das Guthaben nicht vollständig aufgebraucht wird?
+
+Das Restguthaben bleibt auf der Karte gespeichert und ist beim nächsten Besuch sichtbar. Der Kunde muss nichts machen, der Stand wird automatisch im Wallet angezeigt.
+
+### Kann eine Geschenkkarte auch an jemanden in einer anderen Stadt verschickt werden?
+
+Ja, genau das ist der Kern des Konzepts. Der Geber schickt den Link per WhatsApp, E-Mail oder iMessage an die beschenkte Person, egal wo sie wohnt. Die Karte landet im Wallet und kann beim nächsten Besuch in deinem Laden eingelöst werden.
+
+### Braucht mein Kunde eine App, um die Geschenkkarte zu nutzen?
+
+Nein. Die Karte landet in Apple Wallet oder Google Wallet, die auf jedem Smartphone vorinstalliert sind. Kein Download, kein Konto, kein Passwort.
+
+### Wie stelle ich sicher, dass eine Karte nicht doppelt eingelöst wird?
+
+Jede digitale Geschenkkarte ist personalisiert und fälschungssicher. Das Guthaben wird beim Einlösen sofort abgebucht und ist für dich im Dashboard sichtbar. Eine doppelte Nutzung ist technisch nicht möglich.

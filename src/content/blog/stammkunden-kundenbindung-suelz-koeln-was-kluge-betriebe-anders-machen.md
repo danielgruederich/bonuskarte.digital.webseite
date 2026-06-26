@@ -39,6 +39,24 @@ An Wochenenden bringt der Äußere Grüngürtel ein Publikum, das Sülz noch nic
 
 Kleinstbetriebe mit System schlagen Ketten ohne System. Eine Kette hat Budget, eigene App und Marketingteam — und trotzdem weiß kein Mitarbeiter, wer Maria ist, die jeden Freitag um 8:30 Uhr einen Hafermilch-Cappuccino bestellt. Ein Betrieb an der Sülzburgstraße kann genau das wissen, wenn er ein einfaches Werkzeug nutzt. Dasselbe gilt für [Yoga-Studios in Sülz](/koeln/suelz/yoga) und [Blumenläden](/koeln/suelz/blumenladen) — Branchen, in denen Stammkunden den Großteil des Jahresumsatzes tragen.
 
+## Häufig gestellte Fragen
+
+### Was ist der Unterschied zwischen einem Laufkunden und einem Stammkunden in Sülz?
+
+Ein Laufkunde wiederholt sich zufällig, ein Stammkunde kehrt bewusst zurück. Der Laufkunde an der Sülzburgstraße kommt, weil er grade vorbeigeht. Der Stammkunde kommt, weil er erwartet wird und weiß, dass sein Besuch zählt. Psychologisch ist das eine Weggabelung, die direkten Einfluss auf den Monatsumsatz hat.
+
+### Wie binde ich Studenten aus dem Uni-Umfeld in Sülz langfristig?
+
+Studenten entscheiden in den ersten Wochen in einem neuen Viertel, wo sie ihre Routinen aufbauen. Wer in diesem Fenster einen konkreten Anreiz gibt, macht aus einer Neugier eine Gewohnheit. Eine digitale Stempelkarte gibt dem Studenten einen Grund, nach dem Semesterwechsel wieder bei dir anzufangen statt die Konkurrenz auszuprobieren.
+
+### Was passiert mit Grüngürtel-Besuchern, die nur einmal in Sülz vorbeikommen?
+
+Mit einer digitalen Stempelkarte machst du aus dem Einmaligen einen potenziellen Wiederkommer. Der Satz "Karte holen, beim nächsten Mal einen Stempel weiter" kostet dich zehn Sekunden an der Kasse. Ohne diese Einladung ist der Gast nach dem Spaziergang einfach weg.
+
+### Wie viel Aufwand bedeutet eine digitale Stempelkarte für den täglichen Betrieb?
+
+Fast keinen. Der Kunde scannt seinen QR-Code selbst, die Karte landet automatisch auf dem Handy. Du siehst die Aktivität im Dashboard, ohne etwas einzutragen. Der einzige aktive Schritt ist der Stempel beim Bezahlen, der genauso schnell geht wie eine Quittung.
+
 ---
 
 **Sülz belohnt Betriebe, die ihre Gäste kennen.**

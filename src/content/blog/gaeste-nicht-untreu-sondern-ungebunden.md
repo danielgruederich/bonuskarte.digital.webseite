@@ -61,3 +61,21 @@ Das klingt erst mal bedrohlich: Kunden lassen sich nicht mehr binden. Aber für 
 Nicht durch Rabatte. Nicht durch Druck. Sondern durch Relevanz, Präsenz und echten Mehrwert.
 
 **Starte mit einer digitalen Stempelkarte, die deine Gäste im Alltag begleitet.** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln) – und werde Teil der Welt deiner Gäste.
+
+## Häufig gestellte Fragen
+
+### Warum kommen Gäste nicht wieder, obwohl mein Essen gut ist?
+
+Sie kommen nicht wegen dir nicht wieder, sie sind schlicht ungebunden. Moderne Konsumenten fühlen sich keiner Marke verpflichtet. Ohne einen konkreten Anlass, zurückzukommen, geht der nächste Impuls an das nächste Café, das gerade sichtbar ist.
+
+### Was bringt wirklich mehr als ein klassisches Treueprogramm mit Rabatten?
+
+Präsenz im Alltag. Eine Stempelkarte in der Apple Wallet oder Google Wallet liegt immer beim Gast, ohne aufdringlich zu sein. Sie erscheint, wenn er in deiner Nähe ist, und gibt ihm einen Grund, sich zu entscheiden. Das ist kein Deal, das ist Gewohnheit.
+
+### Wie werde ich als lokaler Gastronom Teil des Veedel-Alltags?
+
+Indem du nicht nur Essen verkaufst, sondern eine Rolle spielst: Werte zeigen, lokale Events unterstützen, mit Nachbarläden kooperieren. Je mehr dein Laden mit dem Viertel verschmilzt, desto weniger bist du austauschbar.
+
+### Haben lokale Gastronomen gegenüber Ketten und Lieferplattformen überhaupt eine Chance?
+
+Ja, und das ist der Kernpunkt. Ketten kämpfen darum, persönlich zu wirken. Du bist es bereits. Was dir fehlt, ist oft nur die Sichtbarkeit zwischen den Besuchen. Wer das löst, hat einen Vorteil, den keine Kette kaufen kann.

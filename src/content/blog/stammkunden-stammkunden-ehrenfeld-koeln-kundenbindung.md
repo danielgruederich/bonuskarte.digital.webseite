@@ -48,4 +48,22 @@ Nicht jeder Gast ist ein Laufkunde — aber **ohne System weißt du es nicht**. 
 - [Bäckereien in Ehrenfeld](/koeln/ehrenfeld/baeckerei) — Frühstücks-Stammkunden aufbauen
 - [Yoga-Studios in Ehrenfeld](/koeln/ehrenfeld/yoga) — Kursbucher zu Stammkunden machen
 
+## Häufig gestellte Fragen
+
+### Warum ist Kundenbindung in Ehrenfeld schwieriger als in ruhigeren Kölner Vierteln?
+
+Die Dichte auf der Venloer Straße macht den Gästewechsel kostenlos. Zwei Schritte nach links, und der Gast ist beim Nachbarn. In Ehrenfeld folgen Gäste Hype-Zyklen, nicht Gewohnheiten. Ohne ein aktives Erkennungssystem verlierst du jeden Monat Stammkunden, ohne es zu merken.
+
+### Wie erkenne ich, ob ein Gast in Ehrenfeld ein echter Stammkunde ist oder doch nur Laufkunde?
+
+Ohne Daten erkennst du es nicht. Du erkennst das Gesicht, vielleicht die Bestellung, aber nicht wann er zuletzt da war und ob er die letzten drei Wochen schon woanders war. Eine digitale Stempelkarte gibt dir diese Sichtbarkeit, ohne dass du aktiv nachfragen musst.
+
+### Was zeigt mir eine digitale Stempelkarte, das ich ohne System nicht sehen kann?
+
+Du siehst, wann ein Stammgast zwei Wochen ausgeblieben ist, bevor er dauerhaft weg ist. Du siehst, welche Gäste täglich kommen und welche immer seltener werden. Diese Zahlen haben Ehrenfelder Betriebe bisher nicht gehabt, und sie sind der Unterschied zwischen Bauchgefühl und echtem Betrieb.
+
+### Lohnt sich ein Stempelkarten-System auch für Bäckereien mit kurzem Kundenkontakt?
+
+Gerade für Bäckereien. Der Frühstücks-Stammkunde ist das stabilste Kundensegment überhaupt, aber auch das am schwierigsten messbare. Wer erkennt, dass eine Stammkundin drei Wochen nicht mehr da war, kann reagieren. Wer es nicht erkennt, verliert sie lautlos.
+
 Wie viele deiner gestrigen Gäste wirst du nächste Woche wiedersehen — und woher willst du das eigentlich wissen?

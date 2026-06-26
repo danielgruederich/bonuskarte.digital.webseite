@@ -44,3 +44,21 @@ Du brauchst keinen Umbau, keine neue Kasse und keinen Techniker. Du richtest es 
 Die Frage ist: Welcher Laden an der Vitalisstraße oder am Gürtelbogen macht es zuerst – und holt sich die Stammkunden, bevor es der Nachbar tut?
 
 [Jetzt kostenlos starten](/starten) – keine Kreditkarte nötig.
+
+## Häufig gestellte Fragen
+
+### Warum tickt Kundenbindung in Bickendorf anders als in der Kölner Innenstadt?
+
+Bickendorf hat keine Touristen und keine Laufkundschaft vom Hauptbahnhof. Wer hier kauft, wohnt hier. Das bedeutet: Wer einen Kunden einmal überzeugt, hat echtes Stammkundenpotenzial. Gleichzeitig entscheiden diese Kunden täglich neu, weil Wettbewerb leise aus der Nachbarschaft kommt.
+
+### Was bringt eine digitale Stempelkarte einem Café oder Imbiss an der Vitalisstraße konkret?
+
+Der Kunde hat die Karte immer im Handy dabei, vergisst sie nicht und wird automatisch gestempelt. Du siehst, wer wann zuletzt da war, kannst gezielt Anreize setzen und erkennst, an welchem Wochentag dein Laden am schwächsten läuft. Das gibt dir Daten, die du mit Papierkarten nie hattest.
+
+### Brauchen meine Kunden in Bickendorf eine App, um die digitale Stempelkarte zu nutzen?
+
+Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone bereits vorinstalliert sind. Dein Kunde scannt einmal den QR-Code an der Theke, die Karte ist sofort gespeichert.
+
+### Was kostet eine digitale Stempelkarte für meinen Betrieb in Bickendorf?
+
+Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Keine Einrichtungsgebühr, kein Vertrag, keine Kreditkarte nötig zum Starten.

@@ -47,4 +47,21 @@ Wie viele Erstbesucher hattest du letzte Woche — und wie viele davon siehst du
 
 **Kundenbindung Deutz Köln** fängt nicht mit einer Kampagne an. Sie fängt damit an, dass du weißt, wer bei dir war — und dass du einen einfachen Grund schaffst, warum er wiederkommt. Das Werkzeug dafür passt in eine Hosentasche.
 
-Confirm filename when done.
+## Häufig gestellte Fragen
+
+### Wie bindet man in Deutz Messe-Besucher, die normalerweise nie wiederkommen?
+
+Mit einem QR-Code an der Kasse scannt der Messe-Gast einmal, die Karte ist sofort im Wallet gespeichert. Wenn er das nächste Mal in der Nähe der Lanxess Arena ist, sieht er seinen Stempelstand und erinnert sich an deinen Laden. Besuche, die sonst spurlos verschwinden, hinterlassen so einen digitalen Anknüpfungspunkt.
+
+### Warum reicht eine Papierstempelkarte in Deutz nicht mehr aus?
+
+In Deutz hast du drei verschiedene Kundengruppen: Büropendler, Messebesucher und Anwohner. Papierkarten funktionieren nur bei Stammkunden, die die Karte dabei haben. Messebesucher und spontane Laufkundschaft ziehen keine neue Karte. Eine digitale Karte ist in Sekunden im Wallet und geht nicht verloren.
+
+### Wie helfen Push-Benachrichtigungen einem Döner-Imbiss in Deutz?
+
+Wer einen Mittagsgast täglich hat, kann ihn gezielt kurz vor der Prämie erinnern. Eine automatische Benachrichtigung bei Stempel 9 von 10 bringt ihn am nächsten Tag zuverlässig wieder. Das ist kein Trick, das ist das Vergessen aktiv stopfen.
+
+### Was kostet eine digitale Stempelkarte für einen Betrieb in Deutz?
+
+Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Keine Einrichtungsgebühr, kein Vertrag.
+

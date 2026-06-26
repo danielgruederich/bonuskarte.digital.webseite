@@ -39,7 +39,17 @@ const related = allPosts
     "publisher": { "@type": "Organization", "name": "bonuskarte.digital", "logo": { "@type": "ImageObject", "url": "https://bonuskarte.digital/favicon.svg" } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://bonuskarte.digital/bonn/blog/${post.slug}` }
   })} />
-  <Navbar dark={true} ctaHref="/#demo" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bonuskarte.digital"},
+    {"@type": "ListItem", "position": 2, "name": "Bonn", "item": "https://bonuskarte.digital/bonn"},
+    {"@type": "ListItem", "position": 3, "name": "Blog", "item": "https://bonuskarte.digital/bonn/blog"},
+    {"@type": "ListItem", "position": 4, "name": post.data.title, "item": `https://bonuskarte.digital/bonn/blog/${post.slug}`}
+  ]
+})} />
+  <Navbar ctaHref="/#demo" />
 
   <div class="fixed top-0 left-0 right-0 z-[100] h-0.5 bg-transparent">
     <div id="progress-bar" class="h-full bg-amber transition-none" style="width:0%"></div>
@@ -47,25 +57,25 @@ const related = allPosts
 
   <header class="bg-ink pt-24 pb-10 sm:pb-14">
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
-      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-ink/55 mb-7 tracking-wide">
-        <a href="/" class="hover:text-ink/60 transition-colors">Home</a><span>›</span>
-        <a href="/bonn" class="hover:text-ink/60 transition-colors">Bonn</a><span>›</span>
-        <a href="/bonn/blog" class="hover:text-ink/60 transition-colors">Blog</a><span>›</span>
-        <span class="text-ink/50">{post.data.category}</span>
+      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-paper/55 mb-7 tracking-wide">
+        <a href="/" class="hover:text-paper/60 transition-colors">Home</a><span>›</span>
+        <a href="/bonn" class="hover:text-paper/60 transition-colors">Bonn</a><span>›</span>
+        <a href="/bonn/blog" class="hover:text-paper/60 transition-colors">Blog</a><span>›</span>
+        <span class="text-paper/50">{post.data.category}</span>
       </nav>
       <div class="flex flex-wrap items-center gap-2.5 mb-5">
-        <span class="text-ink/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
-        <span class="text-ink/55 text-xs">📍 Bonn</span>
+        <span class="text-paper/50 text-xs">{post.data.readingTime} Min. Lesezeit</span>
+        <span class="text-paper/55 text-xs">📍 Bonn</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl font-black text-ink leading-tight tracking-tight mb-5">{post.data.title}</h1>
-      <p class="text-ink/55 text-base sm:text-lg leading-relaxed mb-7">{post.data.description}</p>
-      <div class="flex items-center gap-3 pt-5 border-t border-ink/8">
+      <h1 class="text-3xl sm:text-4xl font-black text-paper leading-tight tracking-tight mb-5">{post.data.title}</h1>
+      <p class="text-paper/55 text-base sm:text-lg leading-relaxed mb-7">{post.data.description}</p>
+      <div class="flex items-center gap-3 pt-5 border-t border-paper/8">
         <div class="w-9 h-9 bg-amber flex items-center justify-center flex-shrink-0">
           <span class="text-black font-black text-sm">F</span>
         </div>
         <div>
-          <div class="text-ink text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
-          <div class="text-ink/60 text-xs">{formatDate(post.data.pubDate)}</div>
+          <div class="text-paper text-sm font-semibold leading-none mb-1">FUERTE.DIGITAL</div>
+          <div class="text-paper/60 text-xs">{formatDate(post.data.pubDate)}</div>
         </div>
       </div>
     </div>
@@ -90,7 +100,7 @@ const related = allPosts
       <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
         <div class="flex-1">
           <div class="text-amber text-xs font-bold tracking-[0.25em] uppercase mb-2">Für Bonner Betriebe</div>
-          <h2 class="text-2xl sm:text-3xl font-black text-ink leading-tight">Jetzt 90 Tage kostenlos starten</h2>
+          <h2 class="text-2xl sm:text-3xl font-black text-paper leading-tight">Jetzt 90 Tage kostenlos starten</h2>
         </div>
         <a href="/bonn/innenstadt/cafes" class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
           Gratis starten →

@@ -48,3 +48,21 @@ Eine digitale Stempelkarte ist in 15 Minuten eingerichtet. Kein IT-Wissen nötig
 **Welcher Stammkunde bei dir käme als erstes in Frage — der, der zweimal pro Woche kommt, aber nie aktiv zurückgeholt wird?** Stell dir vor, was passiert, wenn er das nächste Mal mit einem Stempel auf dem Handy rausgeht.
 
 [Jetzt kostenlos starten →](/kontakt)
+
+## Häufig gestellte Fragen
+
+### Warum ist Kundenbindung in Chorweiler besonders wichtig?
+
+Chorweiler ist kein Touristenviertel. Wer hier einkauft, lebt hier. Das bedeutet: Jeder überzeugte Stammkunde kommt immer wieder. Gleichzeitig ist die Auswahl an Läden überschaubar, was das stille Rennen um Gewohnheiten früh entscheidend macht.
+
+### Müssen meine Kunden in Chorweiler eine App herunterladen, um die Stempelkarte zu nutzen?
+
+Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet. Kein Download, kein Passwort, kein Account. Dein Kunde tippt einmal, die Karte ist im Handy gespeichert.
+
+### Wie schnell merken Kunden in Chorweiler einen Effekt durch eine digitale Stempelkarte?
+
+Oft schon beim ersten Gespräch. Wer einem Stammgast zeigt, dass er zwei Stempel hat und noch drei bis zum Gratis-Döner fehlen, schafft sofort einen konkreten Grund wiederzukommen. Das Gespräch dauert zehn Sekunden und sitzt.
+
+### Was kostet eine digitale Stempelkarte für einen Laden in Chorweiler?
+
+Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Keine Einrichtungsgebühr und kein Vertrag.

@@ -73,6 +73,24 @@ Ergebnis:
 
 **Der Betreiber:** *"Unsere Stammkunden haben die Karte geliebt. Die hatten das Gefühl, endlich mal offiziell anerkannt zu werden."*
 
+## Häufig gestellte Fragen
+
+### Wie schnell kann ich als Hürther Gastronom loslegen?
+
+Du bist in unter 15 Minuten fertig. Betriebsdaten eingeben, Stempel-Anzahl und Belohnung festlegen, QR-Code herunterladen und ausdrucken. Dann den Code am Tresen aufstellen und beim Bezahlen ansprechen.
+
+### Muss ich für die digitale Stempelkarte technisches Wissen mitbringen?
+
+Nein. Die Einrichtung funktioniert ohne IT-Kenntnisse, und deine Kunden brauchen keine App. Der Gast scannt den QR-Code, die Karte landet in Apple Wallet oder Google Wallet, und beim nächsten Besuch wird gestempelt. Fertig.
+
+### Welche Stempel-Anzahl ist für ein Hürther Café sinnvoll?
+
+8 Kaffees ist ein guter Startpunkt. Das Ziel ist in einer bis zwei Wochen erreichbar und gibt Kunden einen konkreten Anreiz, genau bei dir zu kaufen statt beim Konkurrenten. Für Imbisse und Dönerläden sind 10 Mahlzeiten realistisch, da die Besuche oft täglich stattfinden.
+
+### Wie wirken die standortbasierten Erinnerungen im Wallet?
+
+Du hinterlegst deine Betriebsadresse in der Karte. Wenn ein Stammgast in der Nähe deines Lokals vorbeiläuft, erscheint die Stempelkarte automatisch auf seinem Sperrbildschirm. Du zahlst dafür nichts, und beim Kunden kommt keine Werbeanzeige an, sondern eine stille Erinnerung.
+
 ## Fazit: Hürth belohnt Betriebe, die ihren Stammkunden zuhören
 
 In einer familiengeprägten, überschaubaren Stadt wie Hürth ist der persönliche Kontakt der wichtigste Wettbewerbsvorteil lokaler Gastrobetriebe. Digitale Stempelkarten ergänzen diesen Kontakt mit einem technischen System, das Loyalität messbar und belohnbar macht.

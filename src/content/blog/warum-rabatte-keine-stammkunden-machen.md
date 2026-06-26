@@ -53,6 +53,24 @@ Rabatte sind nicht grundsätzlich schlecht. Aber sie sind **der Anfang, nicht da
 
 Jedes Mal, wenn dein Gast sein Handy öffnet, sieht er deine Karte. Das ist keine Werbung, das ist **Präsenz im Alltag**: Teil der Welt deiner Gäste werden.
 
+## Häufig gestellte Fragen
+
+### Warum binden Rabatte keine echten Stammkunden?
+
+Rabatte belohnen den Kauf, nicht die Beziehung. Ein Gast, der wegen 10 Prozent Nachlass kommt, wechselt zum nächsten Anbieter, der 12 Prozent bietet. Er ist preissensibel, nicht loyal. Echte Stammkunden kommen, weil sie sich zugehörig fühlen, nicht weil der Deal stimmt.
+
+### Was ist der Unterschied zwischen Rabatt-Bindung und echter Kundenbindung?
+
+Rabatt-Bindung hält, solange der Preisvorteil besteht. Echte Bindung hält auch nach einem schlechten Tag, einem Fehler oder einer Preiserhöhung, weil der Gast das Gefühl hat, dazuzugehören. Der Unterschied zeigt sich, wenn der Laden nebenan eine Aktion macht: Der Rabattjäger geht, der echte Stammkunde bleibt.
+
+### Ist eine Stempelkarte dann nicht auch nur ein Rabattsystem?
+
+Eine Stempelkarte ist ein Anlass, wiederzukommen, kein Preisnachlass. Der Wert liegt nicht im Gratis-Kaffee, sondern darin, dass dein Gast dauerhaft auf dem Handy an dich erinnert wird. Die Karte in Apple Wallet oder Google Wallet ist Präsenz im Alltag, kein Coupon.
+
+### Was muss ein Betrieb tun, damit Gäste wirklich wegen mehr als einem Rabatt wiederkommen?
+
+Es geht um Werte, Gemeinschaft und Gefühl. Ein Gast bleibt, wenn dein Laden zu seiner Welt passt, wenn er sich dort versteht, wenn sein Morgenritual oder sein Mittagessen dort funktioniert. Das lässt sich nicht kaufen, aber es lässt sich durch Verlässlichkeit und echte Wertschätzung aufbauen.
+
 ## Fazit: Binde Gäste, nicht an Rabatte
 
 Was viele Gastronomen in Köln längst spüren, bestätigt sich immer wieder: Preiskampf funktioniert nicht dauerhaft. Was funktioniert, ist eine Kombination aus echtem Mehrwert, Gemeinschaftsgefühl und smarter Präsenz im Alltag deiner Gäste.

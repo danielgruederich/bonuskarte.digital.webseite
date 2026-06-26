@@ -82,6 +82,24 @@ Ergebnis nach 6 Wochen:
 - Einlöserate nach Erreichen der vollen Stempelzahl: 87 % (Gäste lösen aktiv ein, anstatt die Karte zu vergessen)
 - Weiterempfehlungen: 23 % der neuen Karteninhaber kamen auf Empfehlung eines bestehenden Kunden
 
+## Häufig gestellte Fragen
+
+### Funktioniert eine digitale Stempelkarte in der Düsseldorfer Altstadt genauso wie in ruhigeren Stadtteilen?
+
+Ja, aber mit unterschiedlicher Dynamik. In der Altstadt mit hoher Laufkundschaft brauchst du aktive Einladung am Tresen und einen klaren Anreiz. In Wohnvierteln wie Pempelfort oder Oberkassel spielt Nachbarschafts-Empfehlung eine größere Rolle. Die Stempelkarte passt in beide Szenarien.
+
+### Wie viele Stempel sollte eine Belohnung in einem Düsseldorfer Gastrobetrieb kosten?
+
+8 bis 10 Stempel für eine sinnvolle Belohnung sind der bewährte Richtwert. Bei Restaurants kann der Wert des Gratis-Angebots auch etwas höher liegen, weil das Publikum in Stadtteilen wie Oberkassel stärker auf Premium-Belohnungen reagiert als auf Standard-Rabatte.
+
+### Brauchen meine Gäste eine App, um die Kundenkarte zu nutzen?
+
+Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert. Jedes iPhone und jedes aktuelle Android-Smartphone unterstützt das, ohne Download, ohne Registrierung.
+
+### Ab wann lohnt sich eine digitale Stempelkarte für einen Düsseldorfer Gastrobetrieb?
+
+Sobald du Stammkunden hast, die du nicht verlieren willst. Die Einrichtung dauert etwa 15 Minuten, die ersten 90 Tage sind kostenlos. Ob 30 oder 300 aktive Kunden, der Aufwand bleibt gleich.
+
 ## Fazit: Düsseldorf belohnt Betriebe, die ihre Stammkunden kennen
 
 In einer Stadt mit hoher Gastronomiedichte und kaufkräftigem Publikum macht Kundenbindung den Unterschied zwischen einem vollen Lokal und einem leeren Tisch. Digitale Stempelkarten sind das einfachste und effektivste Tool dafür.

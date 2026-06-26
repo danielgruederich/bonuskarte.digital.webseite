@@ -49,4 +49,21 @@ Wenn du ein [Café in Kalk](/koeln/kalk/cafes) betreibst oder eine [Bäckerei](/
 
 **Wie viele deiner Stammkunden kennst du eigentlich mit Namen?** Wer die Antwort kennt, weiß auch wie viel Potenzial noch auf dem Tisch liegt — und wo eine digitale Stempelkarte heute anfangen kann.
 
-Confirm filename when done.
+## Häufig gestellte Fragen
+
+### Wie halte ich meine Stammkunden an der Kalker Hauptstraße aktiv?
+
+Ein einfaches Bonusprogramm reicht. Kein kompliziertes System, keine App. Dein Kunde bekommt nach einer festgelegten Anzahl Besuche eine Belohnung, zum Beispiel nach zehn Döner den elften gratis. Das schafft Grund wiederzukommen, bevor der neue Laden auf der anderen Straßenseite die Gelegenheit nutzt.
+
+### Was unterscheidet eine digitale von einer Papier-Stempelkarte in Kalk?
+
+Die Papierkarte liegt zuhause oder geht verloren. Die digitale Karte sitzt im Handy, ist immer dabei und kann nicht vergessen werden. Als Inhaber siehst du, wann jemand zuletzt bei dir war und wer gerade kurz vor der Prämie steht.
+
+### Muss ich für eine digitale Stempelkarte in Kalk ein IT-Profi sein?
+
+Nein. Einrichten dauert unter zehn Minuten. Deine Kunden brauchen keine App-Installation, nur eine Handykamera zum Scannen des QR-Codes. Das war es.
+
+### Was kostet eine digitale Stempelkarte für meinen Betrieb in Kalk?
+
+Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Kein Vertrag, keine Einrichtungsgebühr.
+

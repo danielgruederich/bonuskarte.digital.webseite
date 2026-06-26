@@ -94,6 +94,24 @@ Der Betreiber: *"Die haben wir nicht durch Werbung gewonnen, sondern durch die F
 
 **Events verbinden.** Viele Berliner Cafés veranstalten regelmäßig Events – Poetry Slams, Lesungen, Kunstabende. Ein Bonus-Stempel für Gäste, die das nächste Event besuchen, schafft doppelte Bindung.
 
+## Häufig gestellte Fragen
+
+### Muss mein Gast eine App herunterladen, um die Stempelkarte zu nutzen?
+
+Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone vorinstalliert sind. Der Gast scannt den QR-Code einmal mit der Kamera, tippt auf "Hinzufügen" und ist fertig. Kein Login, kein Account.
+
+### Wie spreche ich Berliner Café-Gäste am besten auf die Stempelkarte an?
+
+Direkt und kurz: "Haben Sie schon unsere digitale Stempelkarte? Braucht keine App, geht sofort." Das ist alles. Gäste, die bereit sind, reagieren sofort. Wer nicht interessiert ist, winkt ab, ohne sich belästigt zu fühlen. Kein Erklärungsaufwand, kein Druck.
+
+### Welche Stempel-Mechanik funktioniert in Berliner Cafés am besten?
+
+8 Stempel für ein Gratis-Getränk hat sich als Standard etabliert. Einfach, klar, schnell verständlich. Komplizierte Punkte-Systeme oder gestaffelte Belohnungen kosten Erklärungszeit und werden seltener genutzt.
+
+### Was hält Kiez-Gäste davon ab, zum Café nebenan zu wechseln?
+
+Der aufgebaute Fortschritt auf der Stempelkarte ist ein echter Anreiz, im Kiez zu bleiben. Wer schon 6 von 8 Stempeln hat, geht nicht zur Konkurrenz. Das System arbeitet still für dich, ohne dass du aktiv etwas tun musst.
+
 ## Fazit
 
 Berlin belohnt Betriebe, die ihre Kiez-Stammkunden ernst nehmen. Digitale Stempelkarten sind das einfachste Tool dafür – kein App-Download, kein Registrierungsformular, kein IT-Aufwand.

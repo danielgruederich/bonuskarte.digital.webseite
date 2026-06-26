@@ -48,3 +48,21 @@ Wer jetzt anfängt, baut in 90 Tagen eine Datenbasis, die kein Mitbewerber hat �
 ---
 
 Die Frage ist nicht, ob du Stammkunden brauchst. **Die Frage ist: Fängst du heute an — oder wenn dein stärkster Konkurrent auf der Hohen Straße es längst getan hat?**
+
+## Häufig gestellte Fragen
+
+### Warum reicht hohe Laufkundschaft in der Kölner Innenstadt nicht für nachhaltiges Wachstum?
+
+Viel Frequenz bedeutet nicht, dass diese Gäste wiederkommen. Ein Café an der Schildergasse hat täglich Hunderte Besucher, aber die meisten sind Touristen oder Durchläufer. Ohne ein System, das aus Erstbesuchern Stammkunden macht, bleibt das Geschäft abhängig von Zufall und Lage, nicht von echter Kundenbindung.
+
+### Wie baue ich in der Kölner Innenstadt echte Stammkunden auf?
+
+Indem du Daten sammelst: wer kommt, wie oft, wann zuletzt. Eine digitale Stempelkarte liefert genau das automatisch. Wer drei Wochen lang nicht mehr da war, bekommt eine Push-Benachrichtigung als sanften Anstups zurückzukommen, bevor er sich an einen anderen Betrieb gewöhnt hat.
+
+### Was unterscheidet eine digitale Stempelkarte von einer Instagram-Seite?
+
+Instagram erreicht deine Follower, nicht den Gast von gestern, dessen Profil du nicht kennst. Eine digitale Stempelkarte speichert jeden Besuch und gibt dir einen direkten Kanal auf den Sperrbildschirm des Gastes, ohne Algorithmus, ohne Streuung.
+
+### Lohnt sich eine digitale Stempelkarte in einem Viertel mit so viel Touristenzufluss wie der Kölner Innenstadt?
+
+Gerade dort lohnt sie sich besonders. Denn ohne System verlierst du die lokalen Stammkunden, die eigentlich das Rückgrat deines Umsatzes sind, still an Wettbewerber. Gleichzeitig kannst du Messe-Besucher und Wiederholungstouristen nach ihrem ersten Besuch mit einem digitalen Anknüpfungspunkt binden.

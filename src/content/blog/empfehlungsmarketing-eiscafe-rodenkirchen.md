@@ -140,3 +140,21 @@ Du willst sehen, wie der Weiterleitungslink und die Feedback-Nachricht funktioni
 Und dann denk an deine treuesten Kunden in Rodenkirchen. Die, die jeden Sonntag kommen. Die, die dein Eis am Rheinufer essen. Die, die ihren Nachbarn von dir erzählen. Stell dir vor, jeder von ihnen hätte einen Weiterleitungslink. Wie viele neue Stammkunden hättest du bis Ende des Sommers?
 
 [Starte jetzt — 90 Tage kostenlos →](/koeln/rodenkirchen/eiscafe/#demo)
+
+## Häufig gestellte Fragen
+
+### Wie funktioniert ein digitales Empfehlungsprogramm für meine Eisdiele?
+
+Jeder Karteninhaber bekommt einen persönlichen Weiterleitungslink. Wenn ein Freund darüber die Karte installiert und zum ersten Mal kauft, bekommen beide einen Stempel gutgeschrieben. Du aktivierst das einmal im Dashboard, danach läuft es automatisch.
+
+### Wie bekomme ich als Eisdiele mehr Google-Bewertungen?
+
+Lass eine automatische Push-Nachricht eine Stunde nach jedem Besuch verschicken. In der Nachricht steckt ein direkter Link zu deiner Google-Bewertungsseite. Der Kunde muss nicht selbst suchen, ein Tap reicht. Der Zeitpunkt ist ideal, weil das Eis noch frisch in Erinnerung ist.
+
+### Muss ich für jede Weiterempfehlung manuell einen Stempel vergeben?
+
+Nein. Sobald der geworbene Freund seinen ersten Kauf macht, werden die Stempel automatisch gutgeschrieben, für beide Seiten. Du siehst das im Dashboard, ohne etwas tun zu müssen.
+
+### Was ist realistisch: Wie viele neue Bewertungen kann ich nach einem Monat erwarten?
+
+Das hängt von der Zahl deiner aktiven Karteninhaber ab. Bei etwa 200 aktiven Kunden und einer Feedback-Push-Nachricht sind 25 bis 35 neue Google-Bewertungen in einem Monat ein realistischer Wert. Entscheidend sind der Zeitpunkt der Nachricht und ein einfacher, direkter Link.

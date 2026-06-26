@@ -83,4 +83,22 @@ Du willst wissen, wie sich das für deine Kunden anfühlt? Installier dir die Ei
 
 Ein Tap, und du siehst genau das, was deine Kunden sehen werden. Die Stempelkarte in der Wallet, die Fortschrittsanzeige, das Design. Und dann überleg dir, wie viele Stammkunden du diesen Sommer in Nippes aufbauen willst.
 
+## Häufig gestellte Fragen
+
+### Brauchen meine Kunden eine App, um die digitale Stempelkarte zu nutzen?
+
+Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf fast jedem Smartphone bereits vorinstalliert sind. Der Kunde scannt einmal den QR-Code an der Theke, tippt auf "Hinzufügen" und ist fertig. Kein Download, kein Passwort, kein Aufwand.
+
+### Wie lange hält der Effekt einer Stempelkarte bei einer Eisdiele in Nippes?
+
+Solange die Saison läuft und der Anreiz greifbar bleibt. Wer im April anfängt, hat bis September sechs Monate, um echte Stammkunden aufzubauen. Familien aus dem Blücherpark-Umfeld, die einmal gesammelt haben, kommen im nächsten Frühling gezielt zurück, weil sie den Fortschritt auf dem Handy sehen.
+
+### Was kostet eine digitale Stempelkarte für meine Eisdiele?
+
+Die ersten 90 Tage sind komplett kostenlos, kein Risiko und keine Kreditkarte nötig. Du testest mit allen Funktionen und siehst selbst, wie viele Stammkunden du in einer Saison aufbauen kannst. Danach gibt es flexible Tarife abhängig von der Kundenzahl.
+
+### Was passiert mit Kunden, die ihre Papierstempelkarte verloren haben?
+
+Gar nichts, im negativen Sinne. Der gesamte Fortschritt ist weg, und der Kunde fängt von vorne an, wenn er Lust hat, oder wechselt direkt zur Eisdiele nebenan. Mit einer digitalen Karte im Handy passiert das nicht, sie kann nicht verloren gehen.
+
 [Oder starte direkt mit deiner eigenen Karte — 90 Tage kostenlos →](/koeln/nippes/eiscafe/#demo)

@@ -126,3 +126,21 @@ Sie wissen jetzt, welcher Kartentyp zu Ihrem Betrieb passt. Der nächste Schritt
 Mit bonuskarte.digital richten wir Ihre digitale Karte innerhalb von 24 Stunden ein. Kein Vertrag, keine Einrichtungsgebühr, keine Kreditkarte nötig. 90 Tage lang kostenlos testen – und erst danach entscheiden, ob es sich lohnt.
 
 **[Jetzt kostenlos starten →](/koeln)**
+
+## Häufig gestellte Fragen
+
+### Welcher Kartentyp passt am besten zu einem Café oder einer Bäckerei?
+
+Die Stempelkarte ist der klassische Einstieg: Zehn Kaffee oder acht Brötchentüten, dann gibt es eine gratis. Sie funktioniert am besten bei Produkten mit niedrigem Preis und hoher Kauffrequenz. Wenn dein Kunde mehrmals pro Woche kommt, ist das dein Kartentyp.
+
+### Was ist der Unterschied zwischen einer Stempelkarte und einer Punktekarte?
+
+Bei der Stempelkarte bekommt der Kunde pro Besuch oder Kauf einen fixen Stempel, unabhängig vom Betrag. Bei der Punktekarte sammelt er proportional zum Umsatz, zum Beispiel ein Punkt pro Euro. Das macht Sinn bei Betrieben wie Restaurants, wo die Rechnung stark schwankt und Vielkäufer schneller belohnt werden sollen.
+
+### Kann ein Betrieb zwei verschiedene Kartentypen gleichzeitig anbieten?
+
+Ja. Ein Fitnessstudio kann eine Mitgliedskarte für den Zugang und eine 10er-Karte für Personal Training kombinieren. Das macht dann Sinn, wenn zwei verschiedene Angebote mit unterschiedlichen Kaufmustern bedient werden.
+
+### Brauchen Kunden eine App, um eine digitale Stempelkarte zu nutzen?
+
+Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf jedem iPhone und Android-Gerät bereits vorinstalliert sind. Kein Download, keine Registrierung. Der Kunde scannt einmal einen QR-Code, die Karte ist sofort im Wallet.

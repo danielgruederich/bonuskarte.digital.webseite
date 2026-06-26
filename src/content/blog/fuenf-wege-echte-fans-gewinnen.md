@@ -80,3 +80,21 @@ Alle fünf Strategien haben eines gemeinsam: Sie kosten wenig bis nichts, aber s
 Eine digitale Stempelkarte ist dabei ein smarter erster Schritt. Sie liegt direkt im Smartphone deiner Gäste, erinnert sie an dich und belohnt ihre Treue – ohne Papier, ohne App-Download, ohne Aufwand für dich.
 
 **[Teste bonuskarte.digital 90 Tage kostenlos](/koeln)** und finde heraus, wie schnell aus Gelegenheitsgästen echte Fans werden.
+
+## Häufig gestellte Fragen
+
+### Was unterscheidet einen echten Fan von einem Gelegenheitsgast?
+
+Ein Gelegenheitsgast kommt, wenn es passt. Ein echter Fan kommt, weil er dich als Teil seines Alltags betrachtet. Er empfiehlt dich weiter, ohne gefragt zu werden, und bleibt auch dann, wenn die Konkurrenz einen Rabatt anbietet.
+
+### Warum funktionieren Rabatte allein nicht zur Kundenbindung?
+
+Rabatte binden Kunden an einen Deal, nicht an dich. Wer einmal günstiger woanders kaufen kann, geht. Kundenbindung entsteht durch Bedeutung im Alltag: wertgeschätzt fühlen, mitgestalten können, einen Ort haben, der zu einem gehört.
+
+### Wie bringe ich Gäste dazu, mein Café aktiv weiterzuempfehlen?
+
+Indem du ihnen Werkzeug dafür gibst. Ein persönlicher Weiterleitungslink, mit dem Freunde ebenfalls Stempel bekommen, senkt die Hemmschwelle. Niemand teilt einen Link, wenn es sich nach Arbeit anfühlt, aber ein WhatsApp-Tipp mit echtem Mehrwert für beide Seiten funktioniert.
+
+### Wie kann eine digitale Stempelkarte dabei helfen, echte Stammkunden aufzubauen?
+
+Die Karte liegt im Smartphone des Gastes und erinnert ihn bei jedem Blick auf die Wallet an dich. Das ist passive Präsenz ohne Newsletter oder Werbeanzeige. Kombiniert mit der richtigen Belohnung entsteht ein konkreter Grund, wiederzukommen statt zum Wettbewerber zu gehen.

@@ -111,3 +111,21 @@ Du willst sehen, wie die Community Card funktioniert? Installier dir die Testkar
 Und dann frag dich: Wie viele deiner Stammkunden in Sülz würden sofort zugreifen, wenn du ihnen morgen eine Eisflatrate anbietest?
 
 [Starte jetzt — 90 Tage kostenlos →](/koeln/suelz/eiscafe/#demo)
+
+## Häufig gestellte Fragen
+
+### Was kostet eine Eisflatrate und lohnt die sich wirklich?
+
+Bei 29 Euro pro Monat und 50 Abo-Kunden bekommst du rund 1.450 Euro im Monat, bevor ein einziger Gast durch die Tür kommt. Der eigentliche Vorteil ist die Planbarkeit: Das Geld ist am Ersten des Monats auf deinem Konto, unabhängig vom Wetter oder der Saison.
+
+### Kommen Abo-Kunden jeden Tag und fressen den Gewinn auf?
+
+Nein. Die Erfahrung aus anderen Flatrate-Modellen zeigt, dass Kunden ihr Abo durchschnittlich an 40 bis 60 Prozent der möglichen Tage nutzen. Der Rest ist dein Gewinn. Dazu kommt: Ein Abo-Kunde, der oft kommt, bringt Freunde mit und kauft manchmal eine zweite Kugel.
+
+### Wie wird die monatliche Zahlung bei einer Eisflatrate abgewickelt?
+
+Die Zahlung läuft automatisch via Stripe. Dein Kunde richtet das Abo einmal ein, und Stripe zieht den Betrag jeden Monat ab. Du musst nicht nachfragen, mahnen oder manuell abrechnen.
+
+### Kann ich den Preis selbst festlegen?
+
+Ja. Du bestimmst, was das Abo kostet und was es enthält. Ob 19 Euro für Studenten, 29 Euro als Standardpreis oder 39 Euro für eine Premium-Variante mit zwei Kugeln pro Tag, das liegt komplett bei dir.

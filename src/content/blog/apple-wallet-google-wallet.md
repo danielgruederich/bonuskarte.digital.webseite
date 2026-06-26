@@ -86,6 +86,28 @@ QR-Code am Tresen, in der Instagram-Bio, im WhatsApp-Status, auf Google Business
 **Schritt 5 – Optimieren**
 Nach zwei Wochen ins Dashboard schauen: Wann werden Karten hinzugefügt? Wann wird gestempelt? Welcher Kanal bringt die meisten Neukunden?
 
+## Häufig gestellte Fragen
+
+### Muss mein Gast eine App herunterladen, um die Wallet-Karte zu nutzen?
+
+Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf nahezu jedem Android-Gerät. Der Gast tippt einmal auf den Link oder scannt den QR-Code, und die Karte landet direkt im Wallet. Kein Download, kein Account, kein Passwort.
+
+### Was ist der Unterschied zwischen Apple Wallet und Google Wallet?
+
+Apple Wallet läuft auf iPhones, Google Wallet auf Android-Geräten. Beide funktionieren nach demselben Prinzip: Karte hinzufügen, stempeln, Belohnung einlösen. Mit bonuskarte.digital erstellst du eine Karte, die für beide Plattformen gleichzeitig funktioniert.
+
+### Wie funktionieren standortbasierte Erinnerungen im Wallet?
+
+Du hinterlegst deine Adresse in der Karte. Wenn ein Gast in der Nähe deines Lokals ist, erscheint die Karte automatisch oben auf dem Sperrbildschirm. Das passiert ohne Kosten und ohne Werbebudget, solange der Gast die Karte im Wallet hat.
+
+### Was passiert, wenn ein Gast sein Handy wechselt?
+
+Die Karte bleibt über den Wallet-Link oder die automatische Datensicherung des Smartphones erhalten. Im Zweifelsfall scannt der Gast einfach nochmal den QR-Code und fügt die Karte mit dem aktuellen Stempelstand erneut hinzu.
+
+### Kann ich die Karte auch ohne eigene Website oder App nutzen?
+
+Ja. Du brauchst weder eine Website noch eine App. bonuskarte.digital stellt dir einen Link und einen QR-Code bereit, den du überall teilen kannst: am Tresen, in der Instagram-Bio, im WhatsApp-Status oder auf Google Business.
+
 ## Fazit
 
 Apple Wallet und Google Wallet sind keine Zukunftstechnologie – sie sind täglich auf dem Smartphone Ihrer Kölner Gäste. **bonuskarte.digital** öffnet Ihnen die Tür zu diesen Plattformen: ohne Programmierkenntnisse, ohne App-Entwicklung.

@@ -41,6 +41,24 @@ Der erste Monat ist kostenlos – kein Risiko, keine lange Einarbeitung.
 
 ---
 
+## Häufig gestellte Fragen
+
+### Warum verlieren Läden in Ossendorf Stammkunden, ohne es zu merken?
+
+Weil der Verlust still passiert. Ein Stammkunde, der drei Wochen pausiert, gibt kein Signal. Ohne System weißt du nicht, ob er im Urlaub ist oder zur Konkurrenz gewechselt hat. Erst wenn sein Platz dauerhaft leer bleibt, merkt man es, und dann ist es meist zu spät zum Reagieren.
+
+### Was macht eine digitale Stempelkarte besser als eine aus Papier?
+
+Die Papierkarte liegt in der Jacke, fällt in die Waschmaschine oder bleibt zu Hause. Die digitale Karte ist auf dem Handy, sichtbar neben Kreditkarte und KVB-Ticket. Sie sendet eine dezente Erinnerung, wenn noch ein Stempel bis zur Belohnung fehlt, und du siehst als Betreiber auf einen Blick, wie viele Stammkunden gerade aktiv sind.
+
+### Eignet sich eine digitale Stempelkarte auch für Fitnessstudios in Ossendorf?
+
+Ja, besonders gut. Fitnessstudios leben von Mitgliedern, die regelmäßig kommen, und können mit einer digitalen Karte Trainingspausen sichtbar machen. Wer zwei Wochen nicht war, bekommt eine Erinnerung. Das stärkt die Bindung, ohne dass der Inhaber aktiv nachfassen muss.
+
+### Wie aufwendig ist die Einrichtung für einen kleinen Betrieb?
+
+Der Setup dauert unter 15 Minuten. Kein App-Download für Kunden, keine Kassenintegration, kein Vertrag. Du druckst einen QR-Code aus, hängst ihn an die Theke, und deine Kunden starten ab dem nächsten Besuch.
+
 **Kundenbindung Ossendorf Köln** ist keine Marketing-Phrase. Es ist die Frage, ob dein Laden in einem Jahr noch dieselben Gesichter sieht wie heute. Die Infrastruktur dafür steht bereit. Wer zuerst anfängt, hat den Vorteil – bevor es der Nachbar tut.
 
 **Willst du wissen, wie viele deiner aktuellen Kunden du bei einer Pause verlieren würdest?** Das ist die Zahl, die zählt.
