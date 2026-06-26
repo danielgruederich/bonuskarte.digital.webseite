@@ -402,4 +402,5 @@ echo json_encode([
     'installLink'       => $installLink,
     'shareLink'         => $shareLink,
     'directInstallLink' => $directInstallLink,
+    'qrLink'            => $card['qrLink'] ?? null,
 ]);
