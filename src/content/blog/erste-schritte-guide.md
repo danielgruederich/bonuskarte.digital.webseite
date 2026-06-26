@@ -15,7 +15,7 @@ Sie betreiben ein Café in Ehrenfeld, einen Dönerladen in Nippes oder ein Resta
 
 Dieser Guide führt Sie in fünf konkreten Schritten durch den Start. Sie brauchen keine technischen Kenntnisse, kein Design-Talent und keine großen Vorbereitungen. Der gesamte Prozess dauert weniger als 10 Minuten.
 
-## Schritt 1: Kostenlos registrieren (90 Tage gratis)
+## Wie registriere ich mich kostenlos?
 
 Gehen Sie auf **bonuskarte.digital** und klicken Sie auf „90 Tage gratis starten". Keine Kreditkarte nötig – nur Name, E-Mail und Betriebsname.
 
@@ -23,7 +23,7 @@ Nach der Registrierung landen Sie direkt im Dashboard. Hier verwalten Sie Ihre K
 
 > **Kölner Tipp:** Nutzen Sie die 90 Tage konsequent. Das reicht locker, um echte Ergebnisse zu sehen – gerade in einem aktiven Viertel wie Ehrenfeld oder Nippes sehen viele Betriebe schon nach zwei Wochen messbare Aktivität.
 
-## Schritt 2: Ihre Kölner Karte gestalten
+## Wie gestalte ich meine digitale Kundenkarte?
 
 Im Dashboard klicken Sie auf „Neue Karte erstellen". Hier legen Sie fest:
 
@@ -45,7 +45,7 @@ Im Dashboard klicken Sie auf „Neue Karte erstellen". Hier legen Sie fest:
 
 Wenn alles gesetzt ist: Karte speichern. Das System generiert sofort einen persönlichen Link und einen QR-Code.
 
-## Schritt 3: Die Karte im Veedel teilen
+## Wie teile ich die Karte im Veedel?
 
 Die Karte ist fertig. Jetzt müssen Ihre Kölner Kunden davon erfahren. Die wirksamsten Kanäle:
 
@@ -61,7 +61,7 @@ Falls Sie eine Kunden-Gruppe oder Broadcast-Liste haben: Schicken Sie den Link d
 **Google Business Profil**
 Fügen Sie den Link zu Ihrem Google-Business-Eintrag für Köln hinzu. So sehen auch Suchende, die Sie gerade erst entdecken, das Angebot sofort.
 
-## Schritt 4: Stempel vergeben – der Ablauf an der Kölner Kasse
+## Wie vergebe ich Stempel an der Kasse?
 
 Wenn ein Gast mit seiner Wallet-Karte kommt:
 
@@ -74,7 +74,7 @@ Wenn ein Gast die maximale Stempelzahl erreicht hat, erscheint automatisch eine 
 
 Keine App nötig auf Kundenseite. Kein Einloggen, kein Passwort.
 
-## Schritt 5: Auswerten und für Ihr Kölner Veedel optimieren
+## Wie werte ich die Daten aus und optimiere?
 
 Nach den ersten zwei bis vier Wochen lohnt ein Blick ins Dashboard:
 
@@ -115,4 +115,4 @@ Egal ob Café in Ehrenfeld, Dönerladen in Nippes, Restaurant in Deutz oder Pizz
 
 Die Einrichtung dauert keine 10 Minuten. Die ersten 90 Tage sind kostenlos.
 
-Bereit? [Starten Sie jetzt.](/koeln)
+Bereit? [Starten Sie jetzt.](/koeln/ehrenfeld/cafes)

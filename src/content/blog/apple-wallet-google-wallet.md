@@ -46,7 +46,7 @@ Eine Wallet-Kundenkarte ist eine strukturierte digitale Karte – mit Ihrem Logo
 
 Wenn ein Stempel dazukommt, aktualisiert sich die Karte **in Echtzeit** – der Stempelstand ändert sich direkt nach dem Scan, ohne dass der Kunde etwas tun muss.
 
-## Standortbasierte Benachrichtigungen: Das Killer-Feature für Köln
+## Warum ist Geo-Fencing das Killer-Feature für Kölner Betriebe?
 
 Das ist der Vorteil, der Wallet-Karten von allem anderen unterscheidet: **Geo-Fencing.**
 
@@ -59,7 +59,7 @@ Stellen Sie sich vor:
 
 Das ist keine Werbung. Das ist eine stille, präzise Erinnerung. Kostenlos, ohne Algorithmus, ohne Streuverlust.
 
-## So gelangen Kölner Kunden zu Ihrer Wallet-Karte
+## Wie gelangen Kölner Kunden zu Ihrer Wallet-Karte?
 
 Mit **bonuskarte.digital** ist der Prozess simpel:
 
@@ -69,7 +69,7 @@ Mit **bonuskarte.digital** ist der Prozess simpel:
 4. Mit einem Tap fügt er die Karte zu seinem Wallet hinzu
 5. Die Karte bleibt dauerhaft gespeichert und wird bei jedem Besuch gestempelt
 
-## Schritt-für-Schritt: Wallet-Karte für Ihr Kölner Lokal einrichten
+## Wie richtet man die Wallet-Karte ein?
 
 **Schritt 1 – Konto anlegen**
 Gehen Sie auf bonuskarte.digital, starten Sie Ihren 90-Tage-Test. Keine Kreditkarte nötig.
@@ -112,4 +112,4 @@ Ja. Du brauchst weder eine Website noch eine App. bonuskarte.digital stellt dir 
 
 Apple Wallet und Google Wallet sind keine Zukunftstechnologie – sie sind täglich auf dem Smartphone Ihrer Kölner Gäste. **bonuskarte.digital** öffnet Ihnen die Tür zu diesen Plattformen: ohne Programmierkenntnisse, ohne App-Entwicklung.
 
-Nutzen Sie die digitale Infrastruktur, die bereits in jeder Kölner Hosentasche steckt – für Ihre lokale Kundenbindung. [Jetzt 90 Tage kostenlos testen →](/koeln)
+Nutzen Sie die digitale Infrastruktur, die bereits in jeder Kölner Hosentasche steckt – für Ihre lokale Kundenbindung. [Jetzt 90 Tage kostenlos testen →](/koeln/ehrenfeld/cafes)

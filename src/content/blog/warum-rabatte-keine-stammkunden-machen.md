@@ -14,7 +14,7 @@ Du kennst das: Ein Gast kommt dreimal die Woche, trinkt seinen Cappuccino, kennt
 
 Klassische Treueprogramme mit Rabatten und Punkten erzeugen keine echte Bindung. Sie trainieren Kunden darauf, den besten Deal zu suchen, nicht deinem Laden treu zu bleiben.
 
-## Das Problem mit dem Rabatt-Reflex
+## Was ist das Problem mit dem Rabatt-Reflex?
 
 Die meisten Bonusprogramme in der Gastronomie funktionieren nach dem gleichen Prinzip: Kauf X, bekomm Y gratis. Das klingt logisch, hat aber einen Haken: **Du belohnst den Kauf, nicht die Beziehung.**
 
@@ -22,7 +22,7 @@ Kunden in reinen Rabatt-Programmen sind preissensible Besucher, die für eine g�
 
 Das erklärt, warum viele Gastronomen frustriert sind: Die Stempelkarte ist voll, der Gratis-Kaffee abgeholt – und dann sieht man den Gast wochenlang nicht mehr.
 
-## Der Unterschied: Transaktion vs. echte Bindung
+## Was ist der Unterschied zwischen Transaktion und echter Bindung?
 
 Es gibt zwei Arten von Kundenbindung. Der Unterschied ist entscheidend:
 
@@ -35,7 +35,7 @@ Es gibt zwei Arten von Kundenbindung. Der Unterschied ist entscheidend:
 
 Für dein Café, deinen Dönerladen oder dein Restaurant bedeutet das: **Ein Gast, der sich bei dir zuhause fühlt, ist mehr wert als zehn Gäste, die nur wegen dem Rabatt kommen.**
 
-## Die vier Dimensionen echter Kundenbindung
+## Was sind die vier Dimensionen echter Kundenbindung?
 
 Aus der Praxis mit Gastronomen in Köln haben sich vier Dimensionen herauskristallisiert, die aus Gelegenheitsbesuchern echte Fans machen:
 
@@ -47,7 +47,7 @@ Aus der Praxis mit Gastronomen in Köln haben sich vier Dimensionen herauskrista
 
 **4. Kultur (Culture)** – Dein Laden passt einfach in die Welt deiner Gäste. Du bist Teil ihrer Routine, ihres Viertels, ihres Alltags.
 
-## Was das für deine Stempelkarte bedeutet
+## Was bedeutet das für deine Stempelkarte?
 
 Rabatte sind nicht grundsätzlich schlecht. Aber sie sind **der Anfang, nicht das Ziel**. Eine digitale Stempelkarte, die direkt im Apple Wallet oder Google Wallet deiner Gäste liegt, macht etwas Entscheidendes anders als der Papier-Stempel: Sie bleibt sichtbar.
 
@@ -75,4 +75,4 @@ Es geht um Werte, Gemeinschaft und Gefühl. Ein Gast bleibt, wenn dein Laden zu 
 
 Was viele Gastronomen in Köln längst spüren, bestätigt sich immer wieder: Preiskampf funktioniert nicht dauerhaft. Was funktioniert, ist eine Kombination aus echtem Mehrwert, Gemeinschaftsgefühl und smarter Präsenz im Alltag deiner Gäste.
 
-**Willst du sehen, wie eine digitale Stempelkarte das für dein Geschäft leisten kann?** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln) – ohne Risiko, ohne Kreditkarte.
+**Willst du sehen, wie eine digitale Stempelkarte das für dein Geschäft leisten kann?** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes) – ohne Risiko, ohne Kreditkarte.

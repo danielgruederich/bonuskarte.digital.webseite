@@ -15,7 +15,7 @@ Tatsächlich gibt es sechs grundlegend verschiedene Kartentypen, die sich für l
 
 Dieser Artikel zeigt Ihnen alle sechs – mit konkreten Beispielen, damit Sie sofort erkennen, welcher Typ zu Ihrem Betrieb passt.
 
-## 1. Stempelkarte – der bewährte Klassiker
+## 1. Was ist die Stempelkarte?
 
 **Was sie ist:** Der Kunde sammelt pro Besuch oder Kauf einen digitalen Stempel. Nach einer bestimmten Anzahl gibt es eine Belohnung – meistens ein Gratisprodukt.
 
@@ -29,7 +29,7 @@ Dieser Artikel zeigt Ihnen alle sechs – mit konkreten Beispielen, damit Sie so
 
 Die Stempelkarte funktioniert am besten bei Produkten mit niedrigem Einzelpreis und hoher Kauffrequenz. Wenn Ihr Kunde zwei- bis dreimal pro Woche bei Ihnen kauft, ist das Ihr Kartentyp.
 
-## 2. Punktekarte – flexibler als der Stempel
+## 2. Was ist die Punktekarte?
 
 **Was sie ist:** Statt eines fixen Stempels pro Besuch sammelt der Kunde Punkte – proportional zum Umsatz. 1 Euro Umsatz = 1 Punkt. Bei 100 Punkten gibt es eine Belohnung.
 
@@ -42,7 +42,7 @@ Die Stempelkarte funktioniert am besten bei Produkten mit niedrigem Einzelpreis 
 
 Der Vorteil gegenüber der Stempelkarte: Wer mehr ausgibt, wird schneller belohnt. Das motiviert zu höheren Warenkörben – besonders bei Restaurants, wo ein Gast mal 12 Euro und mal 45 Euro ausgibt.
 
-## 3. Mitgliedskarte / Clubkarte – digitale Zugehörigkeit
+## 3. Was ist eine digitale Mitgliedskarte?
 
 **Was sie ist:** Ein digitaler Mitgliedsausweis, der den Kunden als Mitglied identifiziert und ihm Zugang oder Vorteile gewährt. Keine Stempel, keine Punkte – stattdessen Status.
 
@@ -56,7 +56,7 @@ Der Vorteil gegenüber der Stempelkarte: Wer mehr ausgibt, wird schneller belohn
 
 Für Studios und Spaces ersetzt die digitale Mitgliedskarte die Plastikkarte komplett – ohne eigene App, ohne Login-Daten, ohne Installationshürde.
 
-## 4. Geschenkkarte – Umsatz durch Weitergabe
+## 4. Was ist eine digitale Geschenkkarte?
 
 **Was sie ist:** Eine digitale Karte mit einem festen Wert, die verschenkt werden kann. Der Beschenkte löst sie beim Betrieb ein – per QR-Code im Wallet.
 
@@ -70,7 +70,7 @@ Für Studios und Spaces ersetzt die digitale Mitgliedskarte die Plastikkarte kom
 
 Der strategische Vorteil: Geschenkkarten bringen neue Kunden in Ihren Laden, die ohne die Karte nie gekommen wären. Im Schnitt geben Geschenkkarten-Einlöser **30 % mehr aus** als der Kartenwert.
 
-## 5. Guthabenkarte – Prepaid für Stammkunden
+## 5. Was ist eine digitale Guthabenkarte?
 
 **Was sie ist:** Der Kunde lädt ein Guthaben auf die Karte und zahlt damit bei Ihnen. Ähnlich wie eine Geschenkkarte – aber für den Eigengebrauch und wiederaufladbar.
 
@@ -84,7 +84,7 @@ Der strategische Vorteil: Geschenkkarten bringen neue Kunden in Ihren Laden, die
 
 Der Vorteil für Sie: Sie erhalten den Umsatz im Voraus. Und ein Kunde mit Guthaben auf Ihrer Karte hat einen klaren Grund, wiederzukommen – statt zum Wettbewerber zu gehen.
 
-## 6. 10er-Karte / Mehrfachkarte – der digitale Zehnerblock
+## 6. Was ist eine digitale 10er-Karte?
 
 **Was sie ist:** Der Kunde kauft ein Paket aus einer festen Anzahl von Leistungen – z. B. 10 Yogastunden, 10 Autowäschen, 10 Massagen – und nutzt sie nach und nach ab.
 
@@ -119,13 +119,13 @@ Die Antwort hängt von drei Fragen ab:
 
 Viele Betriebe kombinieren auch zwei Typen: Ein Fitnessstudio kann eine Mitgliedskarte für den Zugang nutzen und zusätzlich eine 10er-Karte für Personal Training anbieten.
 
-## Jetzt 90 Tage kostenlos testen
+## Wie kann ich 90 Tage kostenlos testen?
 
 Sie wissen jetzt, welcher Kartentyp zu Ihrem Betrieb passt. Der nächste Schritt? Ausprobieren – ohne Risiko.
 
 Mit bonuskarte.digital richten wir Ihre digitale Karte innerhalb von 24 Stunden ein. Kein Vertrag, keine Einrichtungsgebühr, keine Kreditkarte nötig. 90 Tage lang kostenlos testen – und erst danach entscheiden, ob es sich lohnt.
 
-**[Jetzt kostenlos starten →](/koeln)**
+**[Jetzt kostenlos starten →](/koeln/ehrenfeld/cafes)**
 
 ## Häufig gestellte Fragen
 

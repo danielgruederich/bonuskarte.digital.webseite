@@ -16,7 +16,7 @@ Und am Montag? Stille.
 
 Nicht weil dein Eis schlecht war. Sondern weil dein Kunde drei andere Eisdielen auf dem Weg zur Arbeit passiert — und sich nicht mehr erinnert, welche seine war.
 
-## Das Problem kennt jede Eisdiele in Nippes
+## Was ist das Problem jeder Eisdiele in Nippes?
 
 Nippes ist eines der lebendigsten Veedel in Köln. Die Neusser Straße ist eine Bummelmeile, der Wilhelmsplatz ein Treffpunkt für Familien und Freunde, und durch das Nippeser Tälchen spazieren täglich Hunderte mit Eis in der Hand.
 
@@ -24,7 +24,7 @@ Die Laufkundschaft ist da. Das Problem ist nicht, dass zu wenige kommen. **Das P
 
 Und das liegt nicht an deinem Eis. Es liegt daran, dass du unsichtbar wirst, sobald der Kunde deinen Laden verlässt. Kein Kontakt, keine Erinnerung, keine Verbindung. Du existierst nur in dem Moment, in dem er vor dir steht.
 
-## Warum Papier-Stempelkarten das nicht lösen
+## Warum lösen Papier-Stempelkarten das Problem nicht?
 
 Du hast vielleicht schon eine Stempelkarte. Aus Pappe, mit einem kleinen Stempel, den du hinter der Theke aufbewahrst. Die Idee ist richtig. Die Umsetzung nicht.
 
@@ -36,7 +36,7 @@ Du hast vielleicht schon eine Stempelkarte. Aus Pappe, mit einem kleinen Stempel
 
 **Du hast keinen Überblick.** Wie viele Karten sind gerade im Umlauf? Wie viele Kunden sind bei Stempel 7 von 8? Wie viele haben die Karte nie wieder benutzt? Ohne Zahlen weißt du nichts. Und ohne Wissen kannst du nichts verbessern.
 
-## Die digitale Stempelkarte: Immer dabei, immer sichtbar
+## Was kann die digitale Stempelkarte besser als Papier?
 
 Stell dir vor, deine Stempelkarte wäre nicht aus Pappe — sondern auf dem Smartphone deines Kunden. In der Apple Wallet oder Google Wallet. Genau da, wo auch das KVB-Ticket und die Kreditkarte liegen.
 
@@ -51,7 +51,7 @@ Das war's. 10 Sekunden für den Kunden. Kein Aufwand für dich.
 
 Und ab jetzt passiert etwas, das keine Papierkarte kann: **Deine Eisdiele ist auf dem Handy deines Kunden.** Dauerhaft. Sichtbar. Erinnernd.
 
-## Was das in Nippes konkret bedeutet
+## Was bedeutet das für eine Eisdiele in Nippes?
 
 Denk an eine Familie, die samstags im Blücherpark war. Die Kinder wollen Eis. Sie kommen zu dir, scannen den QR-Code, und jedes Kind bekommt seinen Stempel. Nach dem dritten Samstag haben sie 6 von 8 Stempeln.
 
@@ -61,7 +61,7 @@ Raten mal, wo die Familie nächsten Samstag hingeht.
 
 Oder denk an den Jogger, der nach seiner Runde durch das Nippeser Tälchen bei dir eine Kugel holt. Mit der digitalen Karte in der Wallet bekommt er eine dezente Erinnerung, wenn er in der Nähe deines Ladens ist. Nicht aufdringlich — einfach da.
 
-## Warum gerade jetzt
+## Warum ist jetzt der richtige Zeitpunkt?
 
 Die Eis-Saison in Köln ist kurz. Von April bis September hast du sechs Monate, in denen die Menschen Eis essen wollen. Sechs Monate, um Stammkunden aufzubauen. Sechs Monate, um dafür zu sorgen, dass die Leute im nächsten Frühling wieder bei dir stehen — und nicht bei der Eisdiele zwei Straßen weiter.
 
@@ -75,7 +75,7 @@ Die Einrichtung dauert keine 15 Minuten. Du brauchst kein iPad, keine Kasse, kei
 
 Kein Umsatzanteil. Keine versteckten Kosten. Keine Vertragsbindung.
 
-## Probier es selbst aus
+## Wie kannst du die Karte selbst ausprobieren?
 
 Du willst wissen, wie sich das für deine Kunden anfühlt? Installier dir die Eiscafé-Testkarte direkt auf dein Handy:
 

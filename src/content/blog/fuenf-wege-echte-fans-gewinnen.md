@@ -18,7 +18,7 @@ Es geht nicht darum, Kunden an dich zu binden. Es geht darum, **bedeutungsvoll i
 
 Hier sind fünf Strategien, die du als Gastronom in Köln sofort umsetzen kannst.
 
-## 1. Hör zu, was deine Gäste wirklich wollen
+## 1. Wie hörst du deinen Gästen wirklich zu?
 
 Klingt banal, wird aber selten gemacht. Verstehe nicht nur, was deine Gäste bestellen, sondern warum sie kommen.
 
@@ -29,7 +29,7 @@ Klingt banal, wird aber selten gemacht. Verstehe nicht nur, was deine Gäste bes
 
 Ein Dönerimbiss in Ehrenfeld hat so herausgefunden, dass viele Gäste nicht wegen des Döners kommen, sondern weil er der einzige Laden ist, der um 23 Uhr noch offen hat. **Das Wissen verändert, wie du dein Angebot positionierst.**
 
-## 2. Lass deine Gäste mitgestalten
+## 2. Wie lässt du deine Gäste mitgestalten?
 
 Beziehe Kunden aktiv in Entscheidungen ein, sie fühlen sich dadurch als Teil deiner Geschichte.
 
@@ -40,7 +40,7 @@ Beziehe Kunden aktiv in Entscheidungen ein, sie fühlen sich dadurch als Teil de
 
 Wenn Gäste das Gefühl haben, dass ihr Input zählt, werden sie zu Botschaftern. **Sie erzählen Freunden nicht „Ich war beim Italiener", sondern „Ich war bei meinem Italiener."**
 
-## 3. Biete echten Mehrwert, nicht nur Produkte
+## 3. Wie bietest du echten Mehrwert statt nur Produkte?
 
 Biete Tools und Erlebnisse, die über das Essen hinausgehen.
 
@@ -51,7 +51,7 @@ Biete Tools und Erlebnisse, die über das Essen hinausgehen.
 
 **Der Unterschied:** Ein Rabatt sagt „Komm wieder." Ein Mehrwert sagt „Du bist mir wichtig."
 
-## 4. Schaffe Verbindungen, nicht nur Transaktionen
+## 4. Wie schaffst du echte Verbindungen mit deinen Gästen?
 
 Hilf deinen Gästen, sich untereinander zu verbinden.
 
@@ -62,7 +62,7 @@ Hilf deinen Gästen, sich untereinander zu verbinden.
 
 In Nippes, Ehrenfeld oder der Südstadt funktioniert das besonders gut, weil die **Veedel-Identität** stark ist. Dein Laden wird zum Knotenpunkt – und das bindet stärker als jeder Coupon.
 
-## 5. Miss nicht nur deinen Umsatz – miss den Erfolg deiner Gäste
+## 5. Warum solltest du den Erfolg deiner Gäste messen?
 
 Frag dich: Hilft mein Laden meinen Gästen, ihre eigenen Ziele zu erreichen?
 
@@ -73,13 +73,13 @@ Frag dich: Hilft mein Laden meinen Gästen, ihre eigenen Ziele zu erreichen?
 
 **Wenn du den Erfolg deiner Gäste zu deinem Erfolg machst, entsteht eine Bindung, die kein Wettbewerber mit Rabatten brechen kann.**
 
-## Fans statt Kunden: Der Unterschied liegt im Detail
+## Was unterscheidet echte Fans von Gelegenheitsgästen?
 
 Alle fünf Strategien haben eines gemeinsam: Sie kosten wenig bis nichts, aber sie erfordern ein Umdenken. Weg von „Wie bekomme ich mehr Kunden?" hin zu **„Wie werde ich ein unverzichtbarer Teil im Alltag meiner Gäste?"**
 
 Eine digitale Stempelkarte ist dabei ein smarter erster Schritt. Sie liegt direkt im Smartphone deiner Gäste, erinnert sie an dich und belohnt ihre Treue – ohne Papier, ohne App-Download, ohne Aufwand für dich.
 
-**[Teste bonuskarte.digital 90 Tage kostenlos](/koeln)** und finde heraus, wie schnell aus Gelegenheitsgästen echte Fans werden.
+**[Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes)** und finde heraus, wie schnell aus Gelegenheitsgästen echte Fans werden.
 
 ## Häufig gestellte Fragen
 

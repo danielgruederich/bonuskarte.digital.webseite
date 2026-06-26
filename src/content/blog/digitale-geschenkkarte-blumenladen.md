@@ -17,7 +17,7 @@ Einen Strauß online bestellen und liefern lassen? Unpersönlich. Geld überweis
 
 **Die Lösung: Eine digitale Geschenkkarte für den Blumenladen um die Ecke.**
 
-## So funktioniert die digitale Geschenkkarte
+## Wie funktioniert die digitale Geschenkkarte?
 
 Der Ablauf ist so einfach, dass er sich in einem Satz erklären lässt:
 
@@ -32,7 +32,7 @@ Im Detail:
 
 Das Guthaben bleibt auf der Karte, bis es aufgebraucht ist. Wenn jemand eine 50-Euro-Karte hat und einen Strauß für 35 Euro kauft, bleiben 15 Euro übrig — für den nächsten Besuch.
 
-## Warum digitale Geschenkkarten für Blumenläden Gold wert sind
+## Warum sind digitale Geschenkkarten für Blumenläden so wertvoll?
 
 ### 1. Jede Geschenkkarte bringt einen neuen Kunden in deinen Laden
 
@@ -60,7 +60,7 @@ Diese Erinnerungen kosten dich nichts. Keine Werbeanzeige, kein Flyer, kein Port
 
 Physische Geschenkgutscheine müssen gedruckt, gelagert und verwaltet werden. Plastikkarten kosten Geld und landen irgendwann im Müll. Die digitale Geschenkkarte existiert nur im Wallet — umweltfreundlich, kostenlos in der Produktion und immer griffbereit.
 
-## Physisch vs. Digital: Der Vergleich
+## Wie schneidet die digitale Geschenkkarte im Vergleich ab?
 
 | | Papier-Gutschein | Digitale Geschenkkarte |
 |---|---|---|
@@ -72,7 +72,7 @@ Physische Geschenkgutscheine müssen gedruckt, gelagert und verwaltet werden. Pl
 | Umweltfreundlich? | Papier/Plastik | Komplett digital |
 | Fälschungssicher? | Begrenzt | Ja |
 
-## Drei Szenarien, die zeigen, wie es funktioniert
+## In welchen Situationen funktioniert die Geschenkkarte?
 
 **Szenario 1: Muttertag**
 Lisa wohnt in Berlin. Ihre Mutter in Köln-Ehrenfeld. Lisa kauft eine digitale Geschenkkarte über 50 Euro beim Blumenladen in der Venloer Straße. Sie schickt den Link per WhatsApp — mit einer persönlichen Nachricht. Am Muttertag geht Lisas Mutter in den Laden, zeigt die Karte vor und stellt sich einen Strauß zusammen. Persönlicher als jede Online-Bestellung.
@@ -83,19 +83,19 @@ Max will seine Freundin überraschen. Aber er hat keine Ahnung, welche Blumen si
 **Szenario 3: Spontanes Dankeschön**
 Anna möchte sich bei ihrer Nachbarin bedanken, die letzte Woche auf ihre Katze aufgepasst hat. Sie kauft unterwegs in der Bahn eine Geschenkkarte über 25 Euro und schickt den Link per WhatsApp. Fertig in zwei Minuten. Die Nachbarin löst die Karte am nächsten Tag ein — und entdeckt dabei einen Blumenladen, den sie bisher nicht kannte.
 
-## Dein Blumenladen profitiert dreifach
+## Wie profitiert dein Blumenladen dreifach davon?
 
 1. **Vorab-Umsatz:** Das Geld ist auf deinem Konto, bevor der Strauß gebunden wird.
 2. **Neukundengewinnung:** Jede verschenkte Karte bringt einen neuen Menschen in deinen Laden.
 3. **Wiederkehr:** Push-Erinnerungen zu Muttertag, Valentinstag und Co. holen den Kunden zurück — ohne Werbebudget.
 
-## 90 Tage kostenlos testen
+## Wie teste ich die Geschenkkarte kostenlos?
 
 Du willst sehen, wie eine digitale Geschenkkarte für deinen Blumenladen aussieht? Probier es aus — kostenlos und unverbindlich.
 
 Kein Vertrag. Keine Kreditkarte. Keine Verpflichtung.
 
-[Jetzt 90 Tage kostenlos testen →](/koeln/#demo)
+[Jetzt 90 Tage kostenlos testen →](/koeln/ehrenfeld/blumenladen)
 
 ## Häufig gestellte Fragen
 

@@ -26,7 +26,7 @@ Eine Push-Nachricht ist eine Benachrichtigung, die direkt auf dem Sperrbildschir
 
 Und das Beste: Du brauchst dafür keine App. Wenn dein Kunde eine digitale Stempelkarte von dir in der Apple Wallet oder Google Wallet hat, kannst du ihm Push-Nachrichten schicken. Kostenlos. So oft du willst.
 
-## Geburtstags-Push: Die persönlichste Nachricht, die dein Kunde je von einem Geschäft bekommt
+## Was macht der Geburtstags-Push so besonders?
 
 Wie viele Geschäfte gratulieren deinem Kunden zum Geburtstag? Sein Friseur nicht. Sein Supermarkt nicht. Seine Lieblingspizzeria nicht.
 
@@ -40,7 +40,7 @@ Das klingt nach einer Kleinigkeit. Ist es nicht.
 
 In Ehrenfeld, wo am Lenauplatz und Helmholtzplatz jeden Abend Gruppen zusammensitzen, ist das Gold wert. Ein Geburtstagskind mit einer Gratis-Kugel und drei Freunden, die zahlen — das ist kein Verlust. Das ist eine Investition.
 
-## Instant Marketing: Wenn die Sonne rauskommt, klingelt das Handy
+## Wie funktioniert Instant Marketing für Eisdielen?
 
 Ehrenfeld ist ein Veedel, das draußen lebt. Auf der Venloer Straße, im Friedenspark, auf den Bänken vor den Cafés. Aber nur, wenn das Wetter stimmt.
 
@@ -54,7 +54,7 @@ Diese Nachricht geht an jeden Kunden, der deine digitale Stempelkarte in der Wal
 
 **Das ist Instant Marketing.** Kein Vorlauf. Kein Grafiker, der ein Posting bastelt. Kein Warten auf den Instagram-Algorithmus. Du entscheidest jetzt — und dein Kunde liest es jetzt.
 
-## Freitags-Push: Das Wochenende einläuten
+## Wie nutzt du den Freitags-Push für mehr Umsatz?
 
 In Ehrenfeld startet das Wochenende am Freitag. Die Venloer Straße füllt sich, die Leute schlendern, die Stimmung ist gut.
 
@@ -66,7 +66,7 @@ Kein Spam. Kein Werbetext. Einfach eine freundliche Erinnerung, dass es dich gib
 
 **Eine Nachricht. Einmal pro Woche. Und plötzlich bist du nicht mehr eine von vielen Eisdielen in Ehrenfeld — sondern die eine, die sich meldet.**
 
-## Warum Push-Nachrichten in Ehrenfeld besonders gut funktionieren
+## Warum funktionieren Push-Nachrichten in Ehrenfeld so gut?
 
 Ehrenfeld ist das kreativste Veedel in Köln. Die Menschen hier sind jung, digital, und erwarten von Geschäften mehr als ein Schild im Fenster. Sie wollen Überraschungen. Sie wollen das Gefühl, bei einem Laden zu kaufen, der mitdenkt.
 
@@ -74,7 +74,7 @@ Ehrenfeld ist das kreativste Veedel in Köln. Die Menschen hier sind jung, digit
 
 Du reagierst auf das Wetter. Du erinnerst an Geburtstage. Du kündigst neue Sorten an. Du bist nicht passiv — du bist präsent. Und in einem Veedel wie Ehrenfeld, wo die Konkurrenz drei Türen weiter lauert, ist Präsenz alles.
 
-## Was Push-Nachrichten kosten
+## Was kosten Push-Nachrichten für Eisdielen?
 
 Nichts. Keine Werbekosten, keine Klickpreise, keine Agentur.
 
@@ -82,7 +82,7 @@ Wenn dein Kunde eine digitale Stempelkarte in der Wallet hat, kannst du ihm Push
 
 Vergleich das mal mit Instagram-Werbung: Du zahlst pro Klick, erreichst vielleicht 5 % deiner Follower, und hoffst, dass der Algorithmus gnädig ist. Mit Push erreichst du **100 % deiner Karteninhaber.** Direkt. Garantiert.
 
-## Wie es funktioniert — in 3 Minuten
+## Wie funktioniert es in der Praxis?
 
 1. **Du loggst dich in dein bonuskarte.digital Dashboard ein**
 2. **Du schreibst deine Nachricht** — kurz, persönlich, auf den Punkt
@@ -90,7 +90,7 @@ Vergleich das mal mit Instagram-Werbung: Du zahlst pro Klick, erreichst vielleic
 
 Das war's. Kein Design nötig. Kein Social-Media-Kalender. Keine Hashtag-Strategie. Einfach eine Nachricht an die Menschen, die dein Eis schon mögen.
 
-## Probier es selbst aus
+## Wie kannst du es selbst ausprobieren?
 
 Du willst wissen, wie eine Push-Nachricht bei deinen Kunden ankommt? Installier dir die Eiscafé-Testkarte auf dein Handy — und erlebe es selbst:
 

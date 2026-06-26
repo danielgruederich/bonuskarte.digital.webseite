@@ -28,7 +28,7 @@ Statt eines Papier-Flyers, der im Kölner Briefkasten landet und sofort entsorgt
 
 Das Ergebnis: Ein Gutschein, der tatsächlich genutzt wird – statt im Papierkorb zu landen.
 
-## Der Unterschied: Gutschein vs. Stempelkarte
+## Was ist der Unterschied zwischen Gutschein und Stempelkarte?
 
 Beide Instrumente haben unterschiedliche Zwecke:
 
@@ -41,7 +41,7 @@ Beide Instrumente haben unterschiedliche Zwecke:
 
 Ideal ist die Kombination: Ein Neukunde bekommt einen Einmal-Gutschein beim ersten Besuch. Er kauft, löst ein – und wird dann Stempelkarten-Nutzer. Aus dem Erstkauf wird ein Kölner Stammkunde.
 
-## Einsatzmöglichkeiten für Kölner Betriebe
+## Wie setzen Kölner Betriebe digitale Gutscheine ein?
 
 **Neukundenaktion im Veedel**
 „Zeige diesen Gutschein beim ersten Besuch: 1 Kaffee gratis." Der Link wird auf Instagram, in der Google-Business-Seite oder als QR-Code an der Tür geteilt. Kein Missbrauch möglich – der Code ist einmalig nutzbar.
@@ -58,7 +58,7 @@ Ein neues Tagesgericht, eine saisonale Spezialität, ein frisch eingeführtes Fr
 **Inaktive Kunden reaktivieren**
 Stammkunden, die 30 Tage nicht gestempelt haben, können eine Wallet-Benachrichtigung erhalten: „Wir vermissen Sie – kommen Sie wieder und Ihr nächster Döner ist auf uns." Das gezielte Reaktivieren kostet wenig und bringt messbare Rückkehrer.
 
-## Best Practices für Kölner Betriebe
+## Was sind die Best Practices für Kölner Betriebe?
 
 **Klares, einfaches Angebot**
 „1 gratis Kölsch" schlägt „10 % Rabatt" fast immer. Der wahrgenommene Wert eines konkreten Gratis-Produkts ist höher als ein Prozentwert.
@@ -77,7 +77,7 @@ Digitale Coupons über **bonuskarte.digital** sind personalisiert und einmalig e
 **Nachverfolgung**
 Im Dashboard sehen Sie: Wie viele Gutscheine ausgegeben, wie viele eingelöst, welcher Kanal am besten performt. So verbessern Sie jede Aktion.
 
-## Wie bonuskarte.digital dabei hilft
+## Wie hilft bonuskarte.digital dabei?
 
 Mit **bonuskarte.digital** erstellen Sie digitale Gutscheine genauso einfach wie Stempelkarten:
 
@@ -111,4 +111,4 @@ Eine Laufzeit von 7 bis 14 Tagen hat sich bewährt. "Gültig bis Sonntag" ist ko
 
 Digitale Gutscheine sind kein Ersatz für Stempelkarten – sie sind die perfekte Ergänzung. Mit dem richtigen Mix aus Treueprogramm und gezielten Aktionen bauen Kölner Betriebe eine Kundenbasis, die nicht nur wiederkommt, sondern auch wächst.
 
-[Starten Sie jetzt kostenlos](/koeln) – 90 Tage, keine Kreditkarte, keine Pflichten.
+[Starten Sie jetzt kostenlos](/koeln/ehrenfeld/cafes) – 90 Tage, keine Kreditkarte, keine Pflichten.

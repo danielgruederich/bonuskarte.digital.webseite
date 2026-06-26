@@ -16,7 +16,7 @@ Aber wie viele davon standen diese Woche tatsächlich vor deiner Theke?
 
 **Instagram-Follower sind keine Kunden. Noch nicht.** Aber mit einem einzigen Trick machst du aus einem Like einen Besuch — und aus einem Besuch einen Stammkunden.
 
-## Der Trick: Ein digitaler Coupon mit Countdown
+## Wie funktioniert ein digitaler Coupon mit Countdown?
 
 Stell dir vor, du postest freitagnachmittag eine Instagram-Story. Kein perfekt inszeniertes Foto. Kein Werbetext. Einfach das hier:
 
@@ -28,7 +28,7 @@ Das war's. Ein Satz. Ein Zeitlimit. Ein Link.
 
 Der digitale Coupon liegt als Link in deiner Instagram-Bio. Ein Tap, und der Coupon landet in der Apple Wallet oder Google Wallet deines Followers. Kein App-Download, keine Registrierung, kein Passwort.
 
-## Was dann passiert: Die eigentliche Magie
+## Was passiert nach der ersten Einlösung?
 
 Dein Follower kommt vorbei. Zeigt den Coupon an der Theke. Bekommt seine Gratis-Kugel. Schöner Moment, netter Besuch.
 
@@ -47,7 +47,7 @@ Denk darüber nach, was gerade passiert ist:
 
 **Aus einem einmaligen Insta-Besucher ist ein Stempel-Sammler geworden.** Und Stempel-Sammler kommen wieder. Und wieder. Und wieder.
 
-## 10 Besuche. 10 Käufe. Das sind die Zahlen, die zählen.
+## Warum sind 10 Besuche der entscheidende Umsatzfaktor?
 
 Eine 10er Stempelkarte ist keine nette Geste. Sie ist ein Geschäftsmodell.
 
@@ -55,7 +55,7 @@ Wenn ein Kunde die Karte voll macht, hat er **10 Mal bei dir gekauft.** Bei durc
 
 Und das ist nur die erste Karte. Nach der zehnten Kugel startet die Stempelkarte von vorne. Wieder 10 Felder. Wieder ein Ziel. Wieder ein Grund, zu dir zu kommen statt zur Konkurrenz.
 
-## Warum das in Lindenthal besonders gut funktioniert
+## Warum funktioniert das in Lindenthal besonders gut?
 
 Lindenthal hat eine Zielgruppe, die wie gemacht ist für diesen Funnel: **junge, Instagram-affine Menschen mit Gewohnheiten.**
 
@@ -65,7 +65,7 @@ Am Lindenthaler Tierpark sind es Familien. Die Kinder waren bei den Ziegen, jetz
 
 Und am Clarenbachkanal spazieren Pärchen, die sich nach dem Spaziergang ein Eis teilen. Der Coupon bringt sie zum ersten Mal zu dir. Die Stempelkarte sorgt dafür, dass sie nicht zum letzten Mal da waren.
 
-## Schritt für Schritt: So erstellst du deinen ersten Instagram-Coupon
+## Wie erstellst du deinen ersten Instagram-Coupon?
 
 **1. Coupon anlegen (3 Minuten)**
 - Logge dich in dein bonuskarte.digital Dashboard ein
@@ -88,7 +88,7 @@ Und am Clarenbachkanal spazieren Pärchen, die sich nach dem Spaziergang ein Eis
 - Du siehst in deinem Dashboard, wie viele Coupons eingelöst wurden
 - Du siehst, wie viele Stempelkarten aktiv sind
 
-## Das Rechenbeispiel, das dich überzeugt
+## Wie viel Umsatz bringt ein Coupon wirklich?
 
 Du postest einen Coupon. 40 Follower lösen ihn ein.
 
@@ -102,7 +102,7 @@ Du postest einen Coupon. 40 Follower lösen ihn ein.
 
 **20 Euro investiert. 840 Euro Umsatz generiert.** Zeig mir eine Instagram-Werbeanzeige, die das schafft.
 
-## Wann du posten solltest
+## Wann ist der beste Zeitpunkt für einen Coupon-Post?
 
 **Freitagnachmittag** ist die beste Zeit. Die Leute planen ihr Wochenende. Sie sind in Instagram-Laune. Und sie haben Zeit, vorbeizukommen.
 
@@ -110,7 +110,7 @@ Aber teste ruhig verschiedene Tage. Ein Mittwoch-Coupon mit dem Text „Mitte de
 
 **Poste nicht öfter als einmal pro Woche.** Sonst verliert der Coupon seinen Reiz. Einmal pro Woche, mit echtem Zeitlimit, mit echtem Grund — das ist die Frequenz, die funktioniert.
 
-## Probier es selbst aus
+## Wie kannst du einen Coupon selbst ausprobieren?
 
 Du willst sehen, wie sich ein Coupon anfühlt, der zur Stempelkarte wird? Installier dir die Testkarte:
 

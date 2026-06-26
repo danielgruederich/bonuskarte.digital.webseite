@@ -13,7 +13,7 @@ Berlin hat mehr Cafés pro Einwohner als fast jede andere Stadt in Europa. In Pr
 
 In dieser Umgebung reicht guter Kaffee allein nicht mehr aus.
 
-## Die Berliner Kiez-Dynamik verstehen
+## Wie funktioniert die Berliner Kiez-Dynamik?
 
 Berlin funktioniert nicht als eine Stadt. Berlin ist eine Ansammlung von Kiezen – und jeder Kiez hat seine eigene Café-Stammkundschaft.
 
@@ -21,7 +21,7 @@ Der Prenzlauer-Berg-Gast geht in Prenzlauer Berg frühstücken. Der Friedrichsha
 
 **Digitale Stempelkarten machen aus Laufkundschaft Kiez-Stammkunden.** Nicht durch Rabatte – sondern durch Anerkennung. Der Gast sieht bei jedem Besuch seinen Fortschritt. Er weiß: Nach dem nächsten Kaffee gibt es einen gratis. Das hält ihn in Ihrem Kiez.
 
-## Was in Berlin funktioniert – und was nicht
+## Was funktioniert in Berlin und was nicht?
 
 Berlin ist experimentierfreudig. Neue Konzepte werden schneller angenommen als anderswo. Gleichzeitig sind Berliner Café-Gäste kritisch: Was sich aufdringlich oder uncool anfühlt, wird ignoriert.
 
@@ -36,7 +36,7 @@ Berlin ist experimentierfreudig. Neue Konzepte werden schneller angenommen als a
 - Persönliche Ansprache beim ersten Scan
 - Sichtbarer QR-Code – nicht versteckt, sondern prominent
 
-## Schritt-für-Schritt: Digitale Kundenkarte für Berliner Cafés einrichten
+## Wie richtet man eine digitale Kundenkarte für Berliner Cafés ein?
 
 ### Schritt 1: Stempel-Mechanik festlegen
 
@@ -76,7 +76,7 @@ Nach 2–3 Wochen haben Ihre ersten Gäste 4–5 Stempel. Jetzt kommt der entsch
 
 Das ist der Effekt, den Papier-Karten nie haben können.
 
-## Praxisbeispiel: Café in Prenzlauer Berg
+## Was zeigt das Praxisbeispiel aus dem Prenzlauer Berg?
 
 Ein Café in der Kastanienallee (Prenzlauer Berg) testete digitale Stempelkarten im Herbst 2025 über 6 Wochen:
 
@@ -86,7 +86,7 @@ Ein Café in der Kastanienallee (Prenzlauer Berg) testete digitale Stempelkarten
 
 Der Betreiber: *"Die haben wir nicht durch Werbung gewonnen, sondern durch die Frage: 'Wollen Sie die Karte?' Mehr braucht es nicht."*
 
-## Berlin-spezifische Tipps
+## Welche Tipps gelten speziell für Berliner Cafés?
 
 **Mehrsprachig denken.** Berlin ist international. Stempeln geht nonverbal – QR-Code scannen versteht jeder, egal welche Sprache. Aber der Karten-Link kann auf Englisch erklärt werden: *"Digital stamp card, no app needed."*
 

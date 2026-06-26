@@ -40,7 +40,7 @@ Für Betreiber in Köln ist die Verwaltung genauso unkompliziert:
 - **Benachrichtigungen senden** – Informieren Sie Kunden über Karneval-Aktionen, saisonale Angebote oder geänderte Öffnungszeiten direkt auf die Wallet-Karte
 - **Kein Schulungsaufwand** – Mitarbeiter brauchen keine Einweisung; das Stempeln funktioniert wie das Scannen mit dem Handy
 
-## Die Integration mit Apple Wallet & Google Wallet
+## Wie funktioniert die Integration mit Apple Wallet und Google Wallet?
 
 Der größte Vorteil: Apple Wallet ist auf **jedem iPhone** vorinstalliert, Google Wallet auf nahezu jedem Android-Gerät. Zusammen decken diese beiden Plattformen über **97 % aller Smartphones in Köln** ab.
 
@@ -48,7 +48,7 @@ Ihre Kunden müssen nichts installieren. Keine neue App. Kein neues Passwort. Di
 
 Und noch ein Vorteil: **Standortbasierte Benachrichtigungen.** Wenn ein Kunde in der Nähe Ihres Kölner Ladens ist – etwa an der Zülpicher Straße, am Ehrenfelder Markt oder in der Nippeser Talachse – erscheint Ihre Karte automatisch oben auf dem Sperrbildschirm. Eine stille, präzise Erinnerung zum richtigen Moment, ganz ohne Werbekosten.
 
-## Vorteile gegenüber klassischen Papier-Stempelkarten
+## Was sind die Vorteile gegenüber klassischen Papier-Stempelkarten?
 
 | | Papier-Stempelkarte | Digitale Stempelkarte |
 |---|---|---|
@@ -87,6 +87,6 @@ Nein. Die Einrichtung dauert wenige Minuten. Kein Code, kein Design-Wissen nöti
 
 ## Fazit
 
-Digitale Stempelkarten sind die logische Weiterentwicklung eines Systems, das in Köln seit Jahrzehnten funktioniert. Mit [bonuskarte.digital](/koeln) machen Kölner Betriebe den Schritt von der Papier-Karte zum smarten Kundenbindungs-Tool.
+Digitale Stempelkarten sind die logische Weiterentwicklung eines Systems, das in Köln seit Jahrzehnten funktioniert. Mit [bonuskarte.digital](/koeln/ehrenfeld/cafes) machen Kölner Betriebe den Schritt von der Papier-Karte zum smarten Kundenbindungs-Tool.
 
 Die ersten 90 Tage sind kostenlos. Kein Risiko, kein Aufwand – nur mehr Stammkunden in Ihrem Kölner Lokal.

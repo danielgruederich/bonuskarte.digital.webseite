@@ -15,7 +15,7 @@ Die Papier-Stempelkarte ist ein Kölner Klassiker. In jedem Café in Ehrenfeld, 
 
 Aber in der Praxis sieht das oft anders aus – und viele Betriebe merken erst nach Monaten, wie viel Potenzial sie ungenutzt lassen. Besonders in einer Stadt wie Köln, wo die Stammkundschaft das Rückgrat des Lokals ist.
 
-## Das Problem mit der klassischen Papier-Stempelkarte in Köln
+## Was ist das Problem mit der Papier-Stempelkarte in Köln?
 
 Gerade in belebten Kölner Vierteln wie Ehrenfeld, Nippes oder der Südstadt kommen Kunden häufig – aber die Papier-Karte ist selten dabei.
 
@@ -27,7 +27,7 @@ Gerade in belebten Kölner Vierteln wie Ehrenfeld, Nippes oder der Südstadt kom
 
 **Keine Benachrichtigungen.** Eine Papier-Karte kann Ihre Kunden nicht an Sie erinnern. Sie liegt still in der Schublade – während das Café um die Ecke den nächsten Instagram-Post absetzt.
 
-## Was die digitale Stempelkarte für Kölner Betriebe besser macht
+## Was macht die digitale Stempelkarte für Kölner Betriebe besser?
 
 **Unverlierbar.** Die Karte ist dauerhaft auf dem Smartphone gespeichert – in Apple Wallet oder Google Wallet. Kein Verlieren, kein Vergessen. Das Handy ist immer dabei, ob in der KVB-Bahn, auf dem Weg zum Wochenmarkt in Nippes oder während des Feierabend-Kaffees in der Südstadt.
 
@@ -37,7 +37,7 @@ Gerade in belebten Kölner Vierteln wie Ehrenfeld, Nippes oder der Südstadt kom
 
 **Standortbasiert.** Wenn ein Stammkunde aus Ehrenfeld morgens die Venloer Straße entlangläuft und Ihr Café in der Nähe liegt, erscheint Ihre Karte automatisch auf seinem Sperrbildschirm. Kein Werbebudget, kein Algorithmus – nur eine relevante Erinnerung im richtigen Moment.
 
-## Vergleich auf einen Blick
+## Wie schneidet die digitale Stempelkarte im direkten Vergleich ab?
 
 | Kriterium | Papier-Stempelkarte | bonuskarte.digital |
 |---|---|---|
@@ -62,7 +62,7 @@ Zur Ehrlichkeit gehört: Es gibt Situationen, in denen Papier noch seinen Platz 
 
 Das sind Randgruppen. Der typische Café-Gast in Ehrenfeld, der Mittags-Stammkunde in Deutz oder der Pizzakunde in Kalk hat sein Smartphone in der Hand – und erwartet zunehmend, alles digital abzuwickeln.
 
-## Tipp: Beides parallel anbieten
+## Lohnt es sich, beide Varianten parallel anzubieten?
 
 Viele Kölner Betriebe, die mit **bonuskarte.digital** starten, behalten anfangs die Papier-Karte parallel. Das ist ein guter Übergang. Erfahrungsgemäß zeigen sich nach wenigen Wochen klare Tendenzen: Die digitalen Karten werden häufiger mitgenommen, öfter genutzt und häufiger eingelöst.
 
@@ -90,4 +90,4 @@ Die Druckkosten für Papierkarten fallen weg. bonuskarte.digital kostet nach dem
 
 Papier-Stempelkarten funktionieren – aber sie arbeiten nicht für Sie. Gerade in einer Stadt wie Köln, wo Stammkunden von Veedel zu Veedel wandern und die Konkurrenz im gleichen Block sitzt, macht der Unterschied aus. Digitale Stempelkarten über **bonuskarte.digital** sammeln Daten, senden Erinnerungen und begleiten Ihre Kölner Kunden überall hin.
 
-Die ersten 90 Tage sind gratis. Es gibt keinen besseren Zeitpunkt zum Starten – [jetzt kostenlos testen](/koeln).
+Die ersten 90 Tage sind gratis. Es gibt keinen besseren Zeitpunkt zum Starten – [jetzt kostenlos testen](/koeln/ehrenfeld/cafes).

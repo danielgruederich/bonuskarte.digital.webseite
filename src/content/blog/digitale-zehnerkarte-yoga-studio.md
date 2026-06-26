@@ -15,7 +15,7 @@ Die 10er-Karte ist das Herzstück jedes Yoga-Studios. Ob Vinyasa, Hatha oder Yin
 
 **Das Problem: Die Karte aus Papier funktioniert nicht mehr.**
 
-## Papierkarten, Excel-Listen und das tägliche Chaos
+## Warum sind Papierkarten im Yoga-Studio ein Problem?
 
 Du kennst das. Montag, 18 Uhr, der Raum ist voll. 14 Teilnehmer, davon 9 mit 10er-Karte. Drei haben ihre Karte vergessen. Eine Kundin ist sich sicher, dass sie noch vier Stunden übrig hat — du hast nur drei Stempel gezählt. Und der neue Teilnehmer fragt, ob er auch mit Kreditkarte zahlen kann.
 
@@ -29,7 +29,7 @@ Während du Karten suchst, Stempel setzt und Diskussionen führst, warten alle a
 - Du führst parallele Listen in Excel, auf Zetteln oder im Kopf
 - Neue Karten werden erst gekauft, wenn die alte längst abgelaufen ist — dazwischen: Funkstille
 
-## Die Lösung: Die digitale 10er-Karte in Apple und Google Wallet
+## Was ist die Lösung für das Chaos mit Papierkarten im Studio?
 
 Stell dir vor, deine Kundin öffnet ihr iPhone, tippt auf die Wallet — und sieht sofort: **„3 von 10 Einheiten übrig."** Kein Suchen, kein Fragen, kein Diskutieren.
 
@@ -39,14 +39,14 @@ Und wenn nur noch eine Einheit übrig ist? Dann bekommt sie automatisch eine Pus
 
 Keine App. Kein Login. Kein Passwort. Die Karte lebt direkt im Wallet — da, wo auch die Boarding-Pässe und Konzertkarten liegen. Immer dabei, immer aktuell.
 
-## So funktioniert es — in 4 Schritten
+## Wie funktioniert die digitale 10er-Karte in der Praxis?
 
 1. **Du richtest deine 10er-Karte ein** — Design, Anzahl der Einheiten, Name deines Studios. In wenigen Minuten mit bonuskarte.digital.
 2. **Dein Kunde scannt den QR-Code** — an der Rezeption, auf dem Flyer oder auf deiner Website. Die Karte landet sofort im Wallet.
 3. **Bei jedem Kurs wird eine Einheit abgebucht** — du scannst den Code des Kunden. Ein Klick, fertig. Keine Diskussion über Restkontingente.
 4. **Wenn die Karte leer ist, kauft der Kunde eine neue** — oft schon vorher, weil die Push-Nachricht ihn rechtzeitig erinnert hat.
 
-## Papier vs. Digital: Der direkte Vergleich
+## Wie schneiden Papier- und Digitalkarte im Vergleich ab?
 
 | | Papierkarte | Digitale 10er-Karte |
 |---|---|---|
@@ -59,7 +59,7 @@ Keine App. Kein Login. Kein Passwort. Die Karte lebt direkt im Wallet — da, wo
 | Kosten für Kartendruck? | Laufend | Keine |
 | Verlustrisiko | Hoch | Kein Verlust möglich |
 
-## Praxis-Szenario: Ein Yoga-Studio in Sülz
+## Wie läuft das in einem Yoga-Studio in der Praxis ab?
 
 Stell dir ein kleines Yoga-Studio an der Berrenrather Straße in Sülz vor. Zwei Kursräume, sechs Lehrerinnen, rund 200 aktive Kundinnen. Bisher lief alles über Papierkarten und eine Excel-Tabelle, die eine Mitarbeiterin pflegt — wenn sie daran denkt.
 
@@ -70,7 +70,7 @@ Stell dir ein kleines Yoga-Studio an der Berrenrather Straße in Sülz vor. Zwei
 - **Echtzeit-Überblick für das Studio.** Wie viele Karten sind aktiv? Welche Kurse werden am häufigsten besucht? Wie viele Einheiten sind diese Woche eingelöst worden? Alles auf einen Blick — statt in einer unübersichtlichen Excel-Tabelle.
 - **Die Mitarbeiterin an der Rezeption spart 45 Minuten pro Tag.** Keine Karten suchen, keine Listen aktualisieren, keine Diskussionen über Reststempel.
 
-## Nicht nur für Yoga
+## Für welche Studios eignet sich die digitale Karte noch?
 
 Die digitale 10er-Karte funktioniert überall dort, wo Kunden Einheiten buchen:
 
@@ -82,7 +82,7 @@ Die digitale 10er-Karte funktioniert überall dort, wo Kunden Einheiten buchen:
 
 Das Prinzip ist immer dasselbe: Der Kunde kauft ein Kontingent, nutzt es flexibel und wird rechtzeitig erinnert, bevor es aufgebraucht ist.
 
-## 90 Tage kostenlos testen
+## Wie kann ich die digitale 10er-Karte kostenlos ausprobieren?
 
 Du willst sehen, wie die digitale 10er-Karte in deinem Studio aussieht? Probier es aus — kostenlos und unverbindlich. Kein Vertrag, keine Kreditkarte, keine Verpflichtung.
 

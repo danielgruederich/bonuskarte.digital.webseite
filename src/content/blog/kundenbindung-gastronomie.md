@@ -13,7 +13,7 @@ In Köln ist die Gastronomieszene so lebendig wie kaum anderswo in Deutschland. 
 
 In diesem Umfeld ist Kundenbindung kein Nice-to-have – sie ist das Fundament des Überlebens.
 
-## Die Wahrheit über Neukundengewinnung in Köln
+## Was kostet Neukundengewinnung in Köln wirklich?
 
 Einen neuen Kunden zu gewinnen kostet **5- bis 7-mal mehr** als einen bestehenden zu halten. Das gilt bundesweit – in einer Stadt wie Köln, mit ihrer hohen Dichte an gastronomischen Betrieben, ist der Effekt noch ausgeprägter.
 
@@ -21,7 +21,7 @@ In Vierteln wie Ehrenfeld oder Nippes sind die Wege kurz. Wenn Ihr Stammkunde si
 
 **Ein Stammkunde, der ein Kölner Café 10 Mal besucht, ist wertvoller als 10 Erstkunden, von denen keiner wiederkommt.** Stammkunden geben im Schnitt 67 % mehr aus und empfehlen weiter – besonders in sozialen und vernetzten Stadtteilen wie Ehrenfeld oder der Südstadt.
 
-## Was Stammkunden für die Kölner Gastronomie bedeuten
+## Was bedeuten Stammkunden für die Kölner Gastronomie?
 
 Köln hat einige Besonderheiten, die Stammkundenpflege besonders wertvoll machen:
 
@@ -31,7 +31,7 @@ Köln hat einige Besonderheiten, die Stammkundenpflege besonders wertvoll machen
 
 **Karneval als Saisonpeak.** Rund um Karneval explodiert die Frequenz in Kölner Lokalen. Wer rechtzeitig Stammkunden aufgebaut hat, profitiert in der fünften Jahreszeit überproportional. Wer keine Bindung hat, verliert Gäste an die nächste geöffnete Kneipe.
 
-## Warum klassische Kundenbindung in Köln oft scheitert
+## Warum scheitert klassische Kundenbindung in Köln oft?
 
 Viele Betriebe versuchen Kundenbindung – und geben nach drei Monaten auf. Warum?
 
@@ -43,7 +43,7 @@ Viele Betriebe versuchen Kundenbindung – und geben nach drei Monaten auf. Waru
 
 **Zu komplizierte Bedingungen.** Programme mit Punkten, Stufen und Ablaufdaten überfordern. Das Einfachste gewinnt immer – in Köln wie überall.
 
-## Das Rezept für echte Kundenloyalität in Köln
+## Was ist das Rezept für echte Kundenloyalität in Köln?
 
 **1. Einfachheit zuerst**
 „8 Stempel → 1 gratis Kölsch" oder „10 Döner → 1 gratis" – jeder Kölner versteht das sofort.
@@ -60,7 +60,7 @@ Ein gratis Hauptgericht nach 8 Besuchen motiviert. Ein 5-%-Rabatt nach 20 Käufe
 **5. Geo-Erinnerungen nutzen**
 Wenn ein Stammkunde aus Ehrenfeld morgens in der Nähe Ihres Cafés ist, erscheint Ihre Wallet-Karte auf seinem Sperrbildschirm. Kein Aufwand, kein Werbebudget.
 
-## Praxisbeispiele aus Kölner Vierteln
+## Wie funktioniert das in Kölner Vierteln in der Praxis?
 
 **Café in Ehrenfeld:**
 Ein Café an der Venloer Straße führt eine digitale Stempelkarte ein: 8 Kaffees → 1 gratis. Nach vier Wochen haben 120 Gäste die Karte aktiv. Die durchschnittliche Besuchsfrequenz der Karteninhaber liegt 40 % höher als vorher.
@@ -93,6 +93,6 @@ Die ersten 90 Tage sind kostenlos. Danach ab 29 Euro pro Monat, ohne Umsatzantei
 
 Kundenbindung in der Kölner Gastronomie ist keine Raketenwissenschaft. Es braucht ein einfaches Versprechen, ein zuverlässiges System und die Bereitschaft, Kunden aktiv anzusprechen.
 
-Digitale Stempelkarten über [bonuskarte.digital](/koeln) machen genau das möglich – ohne IT-Kenntnisse, auf jedem Smartphone, 90 Tage kostenlos.
+Digitale Stempelkarten über [bonuskarte.digital](/koeln/ehrenfeld/cafes) machen genau das möglich – ohne IT-Kenntnisse, auf jedem Smartphone, 90 Tage kostenlos.
 
 Ihre Stammkunden sind bereits in Ihrem Veedel. Geben Sie ihnen einen Grund zu bleiben.

@@ -13,7 +13,7 @@ Wer in Köln ein Café betreibt, kennt das Problem: Die Konkurrenz ist überall.
 
 Eine Kundenkarte kann der Unterschied sein – wenn sie richtig umgesetzt wird.
 
-## Warum die meisten Kundenkarten-Programme bei Cafés floppen
+## Warum floppen die meisten Kundenkarten-Programme bei Cafés?
 
 Die Idee ist simpel: Kunden sammeln Stempel und bekommen bei einer bestimmten Anzahl etwas gratis. Klingt einfach. Ist es aber in der Praxis oft nicht.
 
@@ -23,13 +23,13 @@ Die Idee ist simpel: Kunden sammeln Stempel und bekommen bei einer bestimmten An
 
 **Kein Überblick.** Wissen Sie, wie viele Ihrer Stempelkarten gerade aktiv sind? Wie viele bereits bei Stempel 7 sind? Ohne Daten kein Lernen – und kein Optimieren.
 
-## Was Kölner Cafés wirklich brauchen
+## Was brauchen Kölner Cafés wirklich?
 
 In Köln ist die Stammkunden-Kultur tief verwurzelt. Der Kölner kommt wieder – wenn man ihm einen Grund gibt. Und dieser Grund muss sichtbar sein: nicht in der Schublade, sondern im Smartphone.
 
 **Digitale Stempelkarten in der Apple Wallet oder Google Wallet** lösen das Problem grundlegend. Die Karte liegt immer beim Gast. Sie erscheint automatisch auf dem Sperrbildschirm, wenn der Gast in der Nähe Ihres Cafés ist. Und der Gast muss sich nicht registrieren, kein Passwort merken, keine App runterladen.
 
-## Die richtige Mechanik für Kölner Cafés
+## Welche Mechanik passt zu Kölner Cafés?
 
 ### 1. Die richtige Stempel-Anzahl wählen
 
@@ -56,7 +56,7 @@ Effektiv sind:
 
 Ehrenfeld, Nippes, Sülz, Deutz – jedes Kölner Viertel hat seine eigene Café-Community. Diese Community will ihr "Stammcafé" haben. Digitale Stempelkarten machen Sie zum offiziellen Stammcafé dieser Menschen – weil sie täglich auf deren Homescreen sind.
 
-## Praxisbeispiel: Café in Ehrenfeld
+## Wie hat ein Café in Ehrenfeld gestartet?
 
 Ein Café an der Venloer Straße führte digitale Stempelkarten im Oktober 2025 ein. Kein großes Marketing, keine Anzeigen. Nur der aktive Hinweis beim Zahlen und ein QR-Code am Tresen.
 

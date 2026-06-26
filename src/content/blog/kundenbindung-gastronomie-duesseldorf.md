@@ -15,7 +15,7 @@ Wer in Düsseldorf ein Café, einen Imbiss oder ein Restaurant betreibt, kämpft
 
 Kundenbindung ist hier keine Option – sie ist strategische Notwendigkeit.
 
-## Die Düsseldorfer Gastronomieszene: Was Betriebe wissen müssen
+## Was müssen Betriebe über die Düsseldorfer Gastrokultur wissen?
 
 Düsseldorf ist keine homogene Stadt. Sie hat ausgeprägte Stadtteile mit jeweils eigener Identität:
 
@@ -27,7 +27,7 @@ Düsseldorf ist keine homogene Stadt. Sie hat ausgeprägte Stadtteile mit jeweil
 
 **Pempelfort & Düsseltal:** Familienfreundliche Wohnviertel mit treuer Nachbarschaftskundschaft – ideales Terrain für Stammkunden-Programme.
 
-## Warum Kundenbindung in Düsseldorf besonders lohnt
+## Warum lohnt sich Kundenbindung in Düsseldorf besonders?
 
 Eine Besonderheit Düsseldorfs: Die Stadt hat eine überdurchschnittlich hohe Kaufkraft. Stammkunden in Düsseldorf geben nicht nur öfter aus – sie geben mehr aus. Und sie empfehlen weiter, besonders in den gut vernetzten Wohnvierteln jenseits der Altstadt.
 
@@ -35,7 +35,7 @@ Gleichzeitig gilt: Düsseldorfer sind anspruchsvoll. Ein schlechtes Loyalty-Prog
 
 **Die Messlatte ist hoch. Aber wer sie überspringt, hat treue Kunden für Jahre.**
 
-## Die häufigsten Fehler bei Kundenkarten in Düsseldorfer Gastrobetrieben
+## Was sind die häufigsten Fehler bei Kundenkarten in Düsseldorf?
 
 **Zu viele Stempel bis zur Belohnung.** 20 Stempel für einen Gratis-Döner? Das motiviert niemanden. Richtwert: 8–10 Stempel.
 
@@ -45,7 +45,7 @@ Gleichzeitig gilt: Düsseldorfer sind anspruchsvoll. Ein schlechtes Loyalty-Prog
 
 **Keine Aktivierung.** Eine Karte, über die niemand informiert, bringt nichts. Aktive Ansprache am Tresen ist Pflicht.
 
-## Digitale Kundenkarten: Das richtige Tool für Düsseldorf
+## Warum sind digitale Kundenkarten das richtige Tool für Düsseldorf?
 
 Digitale Stempelkarten, die in Apple Wallet oder Google Wallet gespeichert werden, sind für Düsseldorfer Gastronomiebetriebe die überlegene Lösung:
 
@@ -54,7 +54,7 @@ Digitale Stempelkarten, die in Apple Wallet oder Google Wallet gespeichert werde
 - **Kein App-Download** – funktioniert auf jedem iPhone und Android-Gerät
 - **Übersicht für den Betrieb** – wie viele aktive Kunden, wie viele kurz vor der Einlösung
 
-## Strategie für verschiedene Düsseldorfer Betriebstypen
+## Welche Strategie passt zu welchem Düsseldorfer Betriebstyp?
 
 ### Cafés (Altstadt, Carlstadt, Flingern)
 **Mechanik:** 8 Kaffees → 1 gratis Getränk
@@ -72,7 +72,7 @@ Digitale Stempelkarten, die in Apple Wallet oder Google Wallet gespeichert werde
 **Mechanik:** 8 Pizzen → 1 gratis nach Wahl
 **Besonderes:** Abend- und Wochenend-Push. Pizzerien-Stammkunden sind oft Familien und Paare – Freitag- und Samstagsabend sind die Premium-Zeiten.
 
-## Praxisbeispiel: Restaurant in Düsseldorf-Oberkassel
+## Wie lief es in der Praxis bei einem Restaurant in Oberkassel?
 
 Ein Restaurant in Oberkassel führte digitale Stempelkarten im Herbst 2025 ein. Besonderheit der Strategie: Keine Papier-Karten mehr, stattdessen QR-Code auf jedem Tisch und aktive Empfehlung durch das Service-Personal.
 

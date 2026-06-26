@@ -23,7 +23,7 @@ Eine digitale Mitgliedskarte ist ein Wallet-Pass, der direkt in Apple Wallet ode
 
 Sie ersetzt die Plastikkarte vollständig – beim Check-in an der Theke, bei der Zutrittskontrolle am Drehkreuz und als Identifikationsnachweis für Mitglieder-Vorteile.
 
-## Warum Fitnessstudios umsteigen
+## Warum steigen Fitnessstudios auf digitale Mitgliedskarten um?
 
 ### Das Smartphone ist immer dabei
 
@@ -57,7 +57,7 @@ Die größte Hürde bei Studio-eigenen Apps ist die Installation. Studien zeigen
 
 Über eine Anbindung an Stripe oder andere Zahlungsanbieter kann der Mitgliedsstatus automatisch aktualisiert werden. Zahlung eingegangen? Die Karte bleibt aktiv. Zahlung offen? Der Status ändert sich – und das Mitglied wird benachrichtigt.
 
-## So funktioniert die Umstellung – in 3 Schritten
+## Wie funktioniert die Umstellung in 3 Schritten?
 
 ### Schritt 1: Karte erstellen
 
@@ -71,7 +71,7 @@ Jedes Mitglied erhält einen personalisierten Link – per E-Mail, SMS, WhatsApp
 
 Über das Dashboard verwalten Sie alle Mitgliedskarten zentral: Status ändern, Push-Nachrichten senden, neue Mitglieder hinzufügen, inaktive Mitglieder kontaktieren. Alles in Echtzeit, alles an einem Ort.
 
-## Plastikkarte vs. Digitale Mitgliedskarte
+## Wie schneidet die digitale Mitgliedskarte im Vergleich ab?
 
 | | Plastikkarte | Digitale Mitgliedskarte |
 |---|---|---|
@@ -84,7 +84,7 @@ Jedes Mitglied erhält einen personalisierten Link – per E-Mail, SMS, WhatsApp
 | **App nötig?** | Nein | Nein – nur Apple/Google Wallet |
 | **Einrichtungszeit** | Tage bis Wochen (Druckerei) | 24 Stunden |
 
-## Praxisbeispiel: Ein Studio in Ehrenfeld stellt um
+## Was zeigt das Praxisbeispiel aus Ehrenfeld?
 
 Stellen Sie sich ein mittelgroßes Fitnessstudio in Köln-Ehrenfeld vor. 400 Mitglieder, zwei Trainer an der Theke, ein Drehkreuz mit Kartenleser. Die typischen Probleme:
 
@@ -114,10 +114,10 @@ In der Praxis betrifft das unter 2 % der Mitglieder. Für diese Fälle können S
 **Können Mitglieder ihre Karte weitergeben?**
 Jede Karte ist personalisiert und an ein Gerät gebunden. Eine Weitergabe ist technisch nicht möglich.
 
-## Jetzt 90 Tage kostenlos testen
+## Wie starte ich den kostenlosen 90-Tage-Test?
 
 Der Umstieg von Plastik auf digital klingt nach einem großen Projekt – ist es aber nicht. Mit bonuskarte.digital ist Ihre digitale Mitgliedskarte innerhalb von 24 Stunden einsatzbereit.
 
 Kein Vertrag, keine Einrichtungsgebühr. 90 Tage kostenlos testen, mit echten Mitgliedern, im echten Betrieb. Erst danach entscheiden.
 
-**[Jetzt kostenlos starten →](/koeln)**
+**[Jetzt kostenlos starten →](/koeln/ehrenfeld/fitnessstudio)**

@@ -16,7 +16,7 @@ Aber eine Eisflatrate? Jeden Tag eine Kugel für einen festen Monatspreis?
 
 **Klingt verrückt. Bis du die Zahlen siehst.**
 
-## Die Idee: Ein Eis-Abo für Stammkunden in Sülz
+## Was steckt hinter einer Eisflatrate für Stammkunden in Sülz?
 
 Sülz ist das perfekte Veedel für dieses Modell. An der Sülzburgstraße und Berrenrather Straße laufen täglich dieselben Menschen vorbei — Studenten auf dem Weg zur Uni, Familien auf dem Weg zum Stadtwald, Jogger nach ihrer Runde durch den Äußeren Grüngürtel, Flaneure auf der Dürener Straße.
 
@@ -26,7 +26,7 @@ Diese Menschen kommen nicht einmal im Monat. Sie kommen jeden Tag. Oder könnten
 
 Dein Kunde zahlt einen festen Monatsbeitrag — sagen wir 29 Euro. Dafür bekommt er jeden Tag eine Kugel Eis. Egal welche Sorte, egal an welchem Tag. Er kommt rein, zeigt seine Karte vor, bekommt sein Eis. Fertig.
 
-## Wie das technisch funktioniert
+## Wie funktioniert das technisch?
 
 Keine Zettelwirtschaft, kein Kassenbon-Chaos. Die Community Card von bonuskarte.digital hat eine eingebaute Abo-Funktion mit Stripe-Integration.
 
@@ -40,7 +40,7 @@ Keine Zettelwirtschaft, kein Kassenbon-Chaos. Die Community Card von bonuskarte.
 
 **Du kassierst nicht. Du mahnst nicht. Du rechnest nichts ab.** Stripe macht alles. Du machst Eis.
 
-## Die Zahlen, die dich überzeugen werden
+## Lohnt sich das finanziell?
 
 Lass uns rechnen. Konservativ.
 
@@ -56,7 +56,7 @@ Lass uns rechnen. Konservativ.
 
 **8.700 Euro gesicherte Einnahmen über 6 Monate.** Egal ob es regnet. Egal ob die Touristen ausbleiben. Egal ob die Eisdiele drei Straßen weiter Preise senkt. Das Geld ist da — auf deinem Konto, am Ersten des Monats.
 
-## Warum Sülz dafür gemacht ist
+## Warum ist Sülz das perfekte Veedel für eine Eisflatrate?
 
 Nicht jedes Veedel ist perfekt für eine Eisflatrate. Sülz schon. Und zwar aus drei Gründen:
 
@@ -66,7 +66,7 @@ Nicht jedes Veedel ist perfekt für eine Eisflatrate. Sülz schon. Und zwar aus 
 
 **3. Die Dürener Straße ist eine Flaniermeile.** Menschen, die hier bummeln, laufen langsam. Sie schauen in Schaufenster. Sie haben Zeit. Und sie sind bereit, sich auf etwas Neues einzulassen. Genau das ist eine Eisflatrate: etwas Neues.
 
-## Talk of the Town: Warum die Presse anrufen wird
+## Warum wird eine Eisflatrate zum Stadtgespräch?
 
 Du wärst die erste Eisdiele in Köln mit einer Eisflatrate. Denk mal darüber nach.
 
@@ -80,7 +80,7 @@ Das spricht sich rum. Erst bei den Kunden. Dann bei den Nachbarn. Dann in der Wh
 
 Und Instagram? Ein Post über deine Eisflatrate wird geteilt. Nicht weil du Geld für Reichweite zahlst, sondern weil die Leute in Sülz ihren Freunden davon erzählen wollen. „Guck mal, die Eisdiele bei mir um die Ecke hat jetzt eine Flatrate. Ist das geil oder ist das geil?"
 
-## Einwände, die du jetzt hast — und warum sie nicht stimmen
+## Welche Einwände gibt es und was ist daran falsch?
 
 **„Aber dann kommen die jeden Tag und ich verliere Geld!"**
 
@@ -94,7 +94,7 @@ Du bestimmst den Preis. 19 Euro für Studenten, 29 Euro für alle, 39 Euro für 
 
 Dafür gibt es den Test. 90 Tage kostenlos. Du stellst das Abo ein, erzählst deinen besten Stammkunden davon, und schaust was passiert. Wenn nach einem Monat niemand zugreift, hast du nichts verloren. Wenn 20 Leute zugreifen, hast du gerade 580 Euro Monatseinnahmen gesichert.
 
-## So startest du in 15 Minuten
+## Wie startest du die Eisflatrate in 15 Minuten?
 
 1. **Karte einrichten** — Community Card mit Abo-Option anlegen
 2. **Preis festlegen** — 29€/Monat, 19€/Monat für Studenten, oder was immer du willst
@@ -102,7 +102,7 @@ Dafür gibt es den Test. 90 Tage kostenlos. Du stellst das Abo ein, erzählst de
 4. **QR-Code aufstellen** — an der Theke, auf dem Tresen, an der Tür
 5. **Deinen Stammkunden erzählen** — die ersten 10 Abo-Kunden kommen aus deinem bestehenden Stamm
 
-## Probier es selbst aus
+## Wie probierst du die Eisflatrate selbst aus?
 
 Du willst sehen, wie die Community Card funktioniert? Installier dir die Testkarte:
 

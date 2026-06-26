@@ -13,7 +13,7 @@ Hürth liegt direkt vor den Toren Kölns – und hat doch eine ganz eigene Gastr
 
 Genau diese Eigenschaft ist das größte Kapital von Gastrobetrieben in Hürth – und zugleich das ungenutzte Potenzial. Denn "potenziell loyal" bedeutet noch nicht "aktiv gebunden".
 
-## Warum Kundenbindung in Hürth besonders wertvoll ist
+## Warum ist Kundenbindung in Hürth besonders wertvoll?
 
 Hürth ist eine Mittelstadt mit starkem Gemeinschaftsgefühl. Die Gäste von Cafés und Restaurants in Hürth-Mitte, Hermülheim oder Efferen kommen häufig aus demselben Viertel. Sie sehen sich auf dem Markt, beim Bäcker, auf dem Schulweg.
 
@@ -21,7 +21,7 @@ Diese soziale Dichte macht Empfehlungen besonders wertvoll: Ein zufriedener Stam
 
 **Digitale Stempelkarten schaffen einen messbaren Grund zum Wiederkommen** – nicht irgendwann, sondern gezielt. Der Gast weiß: "Noch zwei Stempel, dann gibt es einen gratis Kaffee." Das ist konkreter als jedes Versprechen guter Qualität.
 
-## Die Hürther Gastrosituation
+## Wie sieht die Gastrosituation in Hürth aus?
 
 Hürth wächst. Mit dem Hürth Park als Einkaufszentrum und der guten Anbindung an Köln zieht die Stadt zunehmend Pendler und Familien an. Das bedeutet:
 
@@ -31,7 +31,7 @@ Hürth wächst. Mit dem Hürth Park als Einkaufszentrum und der guten Anbindung 
 
 Der Wettbewerb mit Ketten gewinnt man nicht über Preis oder Marketing-Budget. Man gewinnt ihn über echte Beziehungen – und digitale Stempelkarten sind das einfachste Werkzeug dafür.
 
-## Praktische Umsetzung für Hürther Betriebe
+## Wie setzen Hürther Betriebe die digitale Stempelkarte um?
 
 ### Welche Stempel-Mechanik passt?
 
@@ -62,7 +62,7 @@ Apple Wallet und Google Wallet ermöglichen standortbasierte Benachrichtigungen.
 
 In einer kompakten Stadt wie Hürth, wo viele Gäste regelmäßig dieselben Wege gehen, ist dieser Effekt besonders stark.
 
-## Praxisbeispiel: Café in Hürth-Hermülheim
+## Was zeigt das Praxisbeispiel aus Hürth-Hermülheim?
 
 Ein Café in Hermülheim testete digitale Bonuskarten über 6 Wochen. Die Herausforderung: viele Stammgesichter, aber keine strukturierte Kundenbindung.
 

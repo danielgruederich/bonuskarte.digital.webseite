@@ -16,7 +16,7 @@ Aber dreh sie um. Wirklich — dreh sie um.
 
 **Auf der Rückseite liegt alles, was dein Kunde über dich wissen sollte. Und die meisten Eisdielenbesitzer wissen nicht mal, dass es sie gibt.**
 
-## Das versteckte Eisgeheimnis: Bis zu 9 Links
+## Was kann ich auf der Rückseite meiner Kundenkarte eintragen?
 
 Die Rückseite deiner digitalen Kundenkarte ist kein leeres Blatt. Sie ist eine Mini-Landingpage. Direkt auf dem Handy deines Kunden. Ohne Website, ohne App, ohne Googeln.
 
@@ -42,7 +42,7 @@ Was drauf kann? Alles, was du willst:
 
 **9. Dein Treueprogramm-Infoseite.** Erkläre, wie die Stempelkarte funktioniert, was es zu gewinnen gibt, und warum es sich lohnt, dranzubleiben.
 
-## Warum die Rückseite so mächtig ist
+## Warum ist die Rückseite der Kundenkarte so mächtig?
 
 Denk mal nach: Wo ist dein Instagram-Link gerade? Auf deiner Website, die niemand besucht. In deiner Instagram-Bio, die nur Leute sehen, die dich schon gefunden haben. Auf einem Aufkleber im Schaufenster, den niemand abfotografiert.
 
@@ -50,7 +50,7 @@ Denk mal nach: Wo ist dein Instagram-Link gerade? Auf deiner Website, die nieman
 
 Kein anderer Marketingkanal hat diese Kombination: **dauerhaft sichtbar, null Kosten, null Aufwand nach der Einrichtung.**
 
-## Geo-Push: Dein unsichtbarer Türsteher auf der Hohen Straße
+## Was ist Geo-Push und wie funktioniert er?
 
 Jetzt wird es richtig interessant.
 
@@ -64,7 +64,7 @@ Er schaut auf sein Handy. Sieht die Nachricht. Sieht seine Stempelkarte — 6 vo
 
 **Das ist Geo-Push.** Automatische Nachrichten, die ausgelöst werden, wenn dein Kunde in einem Radius von etwa 100 Metern an deiner Eisdiele vorbeigeht. Du musst nichts tun. Du musst nicht mal wissen, dass er vorbeigeht. Das System erkennt es — und schickt die Nachricht.
 
-## Warum Geo-Push in der Kölner Innenstadt alles verändert
+## Warum verändert Geo-Push das Geschäft in der Kölner Innenstadt?
 
 Die Innenstadt ist das Veedel mit der höchsten Laufkundschaft in Köln. Hohe Straße, Schildergasse, Heumarkt, Alter Markt, Rheinpromenade. Tausende Menschen laufen jeden Tag an deiner Eisdiele vorbei.
 
@@ -74,7 +74,7 @@ Die Innenstadt ist das Veedel mit der höchsten Laufkundschaft in Köln. Hohe St
 
 Und auf der Rückseite der Karte findet er dann sofort deine Öffnungszeiten — falls er kurz checken will, ob du noch offen hast.
 
-## Praxis-Beispiel: Die Eisdiele, die keine Website mehr braucht
+## Wie nutzt eine Kölner Eisdiele die Kundenkarte statt einer Website?
 
 Eine Eisdiele am Heumarkt hat die Rückseite ihrer Kundenkarte mit 7 Links bestückt: Instagram, Öffnungszeiten, Google-Bewertung, Catering-Anfrage, Personalsuche, Lieferservice, E-Mail.
 
@@ -82,7 +82,7 @@ Das Ergebnis: Die Betreiberin hat ihre Website abgeschaltet. Nicht weil sie kein
 
 **Ihre Kunden googeln sie nicht mehr. Sie öffnen die Karte.**
 
-## So richtest du die Rückseite ein
+## Wie richtest du die Rückseite deiner Kundenkarte ein?
 
 **Aufwand:** 10 Minuten, einmalig.
 
@@ -93,7 +93,7 @@ Das Ergebnis: Die Betreiberin hat ihre Website abgeschaltet. Nicht weil sie kein
 
 Du kannst die Links jederzeit ändern. Sommer-Aktion? Neuer Link. Personalsuche vorbei? Link entfernen. Neue Sorte? Link zur Ankündigung.
 
-## Geo-Push einrichten
+## Wie richtest du Geo-Push ein?
 
 1. **Im Dashboard:** Geo-Push aktivieren
 2. **Adresse eingeben** — dein Standort in der Innenstadt
@@ -103,7 +103,7 @@ Du kannst die Links jederzeit ändern. Sommer-Aktion? Neuer Link. Personalsuche 
 
 **Wichtig:** Nicht übertreiben. Eine Geo-Push-Nachricht pro Tag und Kunde ist das Maximum. Niemand will fünfmal am Tag einen Push von seiner Eisdiele. Einmal, freundlich, im richtigen Moment — das ist die Kunst.
 
-## Probier es selbst aus
+## Wie kannst du Geo-Push selbst ausprobieren?
 
 Du willst die Rückseite einer Kundenkarte sehen — und den Geo-Push erleben? Installier dir die Testkarte:
 

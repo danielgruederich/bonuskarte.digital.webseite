@@ -16,7 +16,7 @@ Die Frage ist nicht, ob deine Karte da ist. Die Frage ist, ob sie aussieht, als 
 
 Die gute Nachricht: Der Unterschied zwischen „billig" und „hochwertig" sind oft nur die Icons. Und du brauchst dafür kein Designstudium und kein teures Tool. Nur ein paar Minuten.
 
-## Warum das Design deiner Karte wichtiger ist, als du denkst
+## Warum ist das Kartendesign wichtiger als du denkst?
 
 Eine digitale Stempelkarte ist nicht nur ein Stempel-Zähler. Sie ist ein kleines Schaufenster deines Ladens – direkt auf dem Handy deines Kunden, an dem er mehrmals täglich vorbeiscrollt.
 
@@ -24,13 +24,13 @@ Und sie steht in härterer Gesellschaft als jede Papierkarte. Im Wallet konkurri
 
 Das ist kein Bauchgefühl, das ist Wahrnehmung. Und Wahrnehmung entscheidet, ob jemand zum Stammkunden wird.
 
-## Das Problem mit flachen Standard-Icons
+## Was ist das Problem mit flachen Standard-Icons?
 
 Die meisten Karten nutzen die Standard-Icons, die überall mitgeliefert werden: ein flaches Kaffeetassen-Symbol, ein flacher Stern, ein flaches Geschenk. Funktional – aber austauschbar. Genau dieselben Icons sehen deine Kunden auf Dutzenden anderen Apps und Karten.
 
 Flache Icons haben einen zweiten Nachteil: Sie wirken in einer Umgebung, in der alles andere Tiefe, Schatten und Politur hat, schnell wie ein Lückenfüller. Sie sagen „Vorlage", nicht „mein Laden".
 
-## Der Trick: 3D-Icons aus einem kostenlosen KI-Tool
+## Wie erstellst du 3D-Icons mit einem kostenlosen Tool?
 
 Statt der flachen Standard-Symbole kannst du **3D-Icons** verwenden: Symbole mit leichtem Volumen, weichen Schatten und kleinen Glanzlichtern. Genau der Look, den große Apps für ihre Belohnungs- und Stempel-Grafiken nutzen. Er wirkt sofort hochwertiger und „teurer".
 
@@ -47,7 +47,7 @@ So gehst du vor:
 
 Ein, zwei Minuten pro Icon. Der Effekt: Deine Karte sieht aus, als hätte eine Agentur sie gebaut.
 
-## Wichtig: Wo du bewusst flach bleibst
+## Wo solltest du bewusst auf flache Icons setzen?
 
 Jetzt der Teil, den die meisten „mach-alles-zu-3D"-Tipps verschweigen – und der den Unterschied zwischen „professionell" und „matschig" ausmacht.
 
@@ -60,7 +60,7 @@ Deshalb die Faustregel:
 
 So bekommst du den hochwertigen Look – ohne dass die Karte dort unscharf wird, wo es auf Lesbarkeit ankommt.
 
-## Den gleichen Look auf Aufsteller und Flyer ziehen
+## Wie überträgst du den Look auf Aufsteller und Flyer?
 
 Hier wird es richtig stark: Wenn deine Karte 3D-Icons nutzt, kannst du **dasselbe Design auf deine analogen Materialien übertragen**. Der Theken-Aufsteller mit dem QR-Code, der Flyer, der Aushang im Schaufenster – alles im selben Stil, mit denselben Icons.
 
@@ -68,7 +68,7 @@ Das nennt man einen einheitlichen Auftritt. Dein Kunde sieht das 3D-Eis auf dem 
 
 Ein Laden, dessen digitale und analoge Materialien zusammenpassen, wirkt automatisch sortierter und vertrauenswürdiger als einer, bei dem jedes Element woanders herkommt.
 
-## Die Farben machen den Unterschied
+## Welche Farben machen den Unterschied?
 
 Ein 3D-Icon wirkt nur dann hochwertig, wenn die Farben zu deinem Laden passen. Ein knallbuntes Standard-Icon auf einer schwarz-goldenen Karte sieht aus wie ein Fremdkörper. Die Lösung: Gib dem KI-Tool die Farben direkt mit.
 
@@ -81,7 +81,7 @@ Zwei einfache Regeln, an denen du dich orientieren kannst:
 
 Ein kurzer Blick auf dein Logo oder deine Einrichtung verrät dir deine Farben. Genau die gibst du dem Tool – und schon fühlt sich das Icon an, als wäre es für dich gemacht.
 
-## Drei Fehler, die deine Karte wieder billig aussehen lassen
+## Welche Fehler lassen deine Karte billig wirken?
 
 So schnell der hochwertige Look gelingt, so schnell ist er auch wieder verspielt. Diese drei Fehler sehe ich am häufigsten:
 
@@ -93,7 +93,7 @@ So schnell der hochwertige Look gelingt, so schnell ist er auch wieder verspielt
 
 Vermeide diese drei Dinge, und dein Design bleibt sauber.
 
-## Deine 5-Minuten-Checkliste
+## Was gehört auf deine 5-Minuten-Checkliste?
 
 - [ ] Haupt-Logo der Karte: **simpel, kontraststark, klein lesbar** – nicht überladen
 - [ ] Belohnungs- und Stempel-Symbol: **3D-Icon** aus dem KI-Tool
@@ -101,13 +101,13 @@ Vermeide diese drei Dinge, und dein Design bleibt sauber.
 - [ ] Farben an deinen Laden anpassen (zu deinem Logo, deiner Einrichtung)
 - [ ] Dasselbe Icon auf Theken-Aufsteller und Flyer übernehmen
 
-## Probier es aus – mit deiner eigenen Karte
+## Wie testest du es mit deiner eigenen Karte?
 
 Das Beste daran: Du musst nichts davon riskieren, um es zu sehen. Mit bonuskarte.digital gestaltest du deine eigene digitale Kundenkarte, lädst deine Icons hoch und siehst sofort, wie sie im Wallet aussieht – 90 Tage lang kostenlos, ohne Vertrag, ohne Kreditkarte.
 
 Schnapp dir ein 3D-Icon, das zu deinem Laden passt, und schau, wie viel hochwertiger deine Karte plötzlich wirkt.
 
-**[Jetzt kostenlos starten →](/koeln)**
+**[Jetzt kostenlos starten →](/koeln/ehrenfeld/cafes)**
 
 ## Häufig gestellte Fragen
 

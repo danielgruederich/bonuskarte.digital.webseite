@@ -13,7 +13,7 @@ Bonn ist keine Großstadt – und genau das ist die Stärke. Als frühere Bundes
 
 Wer in Bonn ein Café, ein Restaurant oder einen Imbiss betreibt, hat etwas Wertvolles: Gäste, die prinzipiell gerne wiederkommen. Das Problem: "Prinzipiell" ist nicht dasselbe wie "regelmäßig" – und "regelmäßig" ist das, was Ihr Betrieb braucht.
 
-## Bonn als Gastrostandort: Die Besonderheiten
+## Was macht Bonn als Gastrostandort besonders?
 
 **Universitätsstadt mit gemischtem Publikum.** Rund 40.000 Studenten sorgen für hohe Frequenz in bestimmten Stadtteilen – besonders in der Innenstadt und rund ums Uni-Viertel. Studenten sind loyale Café-Gäste, wenn der Preis stimmt und die Karte attraktiv genug ist.
 
@@ -21,13 +21,13 @@ Wer in Bonn ein Café, ein Restaurant oder einen Imbiss betreibt, hat etwas Wert
 
 **Familienstadtteile wie Kessenich, Beuel, Endenich.** In diesen Vierteln ist die Bindung ans lokale Café oder Restaurant besonders stark. Die gleichen Gesichter, Woche für Woche. Hier sind Kundenkarten-Programme am wirksamsten, weil der soziale Aspekt – man kennt sich – die Bindung verstärkt.
 
-## Die Bonner Gastronomie-Herausforderung
+## Vor welcher Herausforderung steht die Bonner Gastronomie?
 
 Bonn hat eine spezifische Herausforderung: Die Stadt ist überschaubar, aber die Konkurrenz wächst. Gerade in der Innenstadt und im Veedel-Bereich rund um die Universität eröffnen regelmäßig neue Cafés und Restaurants.
 
 Gleichzeitig: Der Bonner ist loyal – aber er muss einen Grund haben, treu zu sein. Ein gutes Produkt reicht nicht mehr aus. Der Gast braucht ein Signal: *"Hier werde ich als Stammkunde anerkannt."*
 
-## Was digitale Bonuskarten für Bonner Betriebe leisten
+## Was leisten digitale Bonuskarten für Bonner Betriebe?
 
 Eine digitale Stempelkarte in der Apple Wallet oder Google Wallet leistet genau das:
 
@@ -37,7 +37,7 @@ Eine digitale Stempelkarte in der Apple Wallet oder Google Wallet leistet genau 
 
 **Sie schafft Anerkennung.** Der Gast sieht seinen Fortschritt. Er weiß: "Noch 2 Stempel bis zum Gratis-Kaffee." Das ist kein Rabatt-Programm – das ist eine Beziehung.
 
-## Empfehlung nach Betriebstyp in Bonn
+## Welche Stempel-Mechanik passt für welchen Betriebstyp in Bonn?
 
 ### Cafés (Innenstadt, Poppelsdorf, Endenich)
 **Stempel-Mechanik:** 8 Kaffees → 1 gratis Heißgetränk nach Wahl
@@ -51,7 +51,7 @@ Eine digitale Stempelkarte in der Apple Wallet oder Google Wallet leistet genau 
 **Stempel-Mechanik:** 10 Mahlzeiten → 1 gratis
 **Tipp:** QR-Code prominent und dauerhaft sichtbar. In einem Schnell-Imbiss bleibt keine Zeit für lange Erklärungen – der QR-Code muss auf Anhieb auffallen.
 
-## So starten Sie in Bonn in 3 Schritten
+## Wie starten Bonner Betriebe in 3 Schritten?
 
 ### Schritt 1: Bonuskarte erstellen (15 Minuten)
 Unter bonuskarte.digital Betriebsdaten eingeben, Stempel-Anzahl und Belohnung festlegen, Karte personalisieren. Fertig.
@@ -65,7 +65,7 @@ Unter bonuskarte.digital Betriebsdaten eingeben, Stempel-Anzahl und Belohnung fe
 Beim Zahlen: *"Haben Sie schon unsere Bonuskarte? Geht schnell."*
 Dieser eine Satz ist der wichtigste Marketingschritt, den Sie tun können.
 
-## Praxisbeispiel: Café in Bonn-Poppelsdorf
+## Was zeigt das Praxisbeispiel aus Bonn-Poppelsdorf?
 
 Ein Café in Poppelsdorf – typisches Studentenviertel, gemischte Kundschaft aus Studenten, Doktoranden und Familien – testete digitale Stempelkarten über 8 Wochen.
 

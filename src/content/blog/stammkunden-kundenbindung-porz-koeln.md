@@ -15,7 +15,7 @@ Porz hat etwas, das viele Kölner Stadtteile längst verloren haben: eine echte 
 
 ---
 
-## Von Urbach bis Zündorf: Loyalität ist hier keine Phrase
+## Warum ist Loyalität in Porz keine leere Phrase?
 
 Porzer Kunden sind bodenständig. Wer seinen Friseur an der Hauptstraße hat, wechselt nicht beim nächsten Neuöffnungs-Angebot die Seiten. Wer seinen Mittagsdöner am Marktplatz Porz kauft, tut das nicht wegen eines Loyalty-Programms – sondern weil er dort hingehört.
 
@@ -23,7 +23,7 @@ Das ist ein riesiger Vorteil. **Porzer Stammkunden sind loyaler als der Stadtdur
 
 ---
 
-## Die Papierkarte war gut – aber sie klebt am Kühlschrank
+## Warum reicht die Papier-Stempelkarte in Porz nicht mehr?
 
 Viele Inhaber in Porz kennen das: Stempelkarte ausgedruckt, Stempel besorgt, fertig. Das funktioniert. Aber **Papierkarten verschwinden in Jackentaschen, werden vergessen, gehen verloren** – und du weißt nicht, ob der Gast, den du vor drei Wochen zuletzt gesehen hast, bald wiederkommt oder weg ist.
 
@@ -31,7 +31,7 @@ Eine digitale Karte löst genau das. Der Gast scannt einmal, die Karte landet au
 
 ---
 
-## Was das für deinen Laden konkret bedeutet
+## Was bedeutet das konkret für deinen Laden in Porz?
 
 **Kundenbindung Porz Köln** ist kein Marketingprojekt, das du auslagern musst. Es ist eine Entscheidung: Willst du, dass dein Stammgast beim nächsten Mal wieder bei dir kauft – oder hoffst du einfach, dass er den Weg zurückfindet?
 
@@ -63,7 +63,7 @@ Einfach und greifbar gewinnt immer. Ein Gratis-Kaffee nach dem fünften Besuch, 
 
 Ohne System gar nicht. Mit einer digitalen Stempelkarte siehst du, wann jemand zuletzt aktiv war. Wer vier Wochen pausiert, ist kein Stammkunde mehr. Du kannst dann eine gezielte Erinnerung schicken, bevor er dauerhaft bei der Konkurrenz gelandet ist.
 
-## Eine Frage zum Schluss
+## Wie viele deiner Kunden kommen wirklich zurück?
 
 Wie viele Kunden haben dich letzten Monat mehr als einmal besucht – und weißt du das überhaupt?
 

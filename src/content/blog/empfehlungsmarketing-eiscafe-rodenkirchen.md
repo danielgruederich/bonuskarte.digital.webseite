@@ -18,7 +18,7 @@ Dieses Netzwerk ist dein größter Vorteil. Nicht dein Standort, nicht dein Prei
 
 Die Frage ist nur: Lässt du das dem Zufall über, oder steuerst du es aktiv?
 
-## Empfehlungsmarketing: Wenn dein Kunde zum Verkäufer wird
+## Wie wird dein Kunde zum Verkäufer?
 
 Mundpropaganda ist das älteste Marketing der Welt. Und in einem Veedel wie Rodenkirchen — ruhig, familiär, persönlich — ist es immer noch das stärkste.
 
@@ -30,7 +30,7 @@ So funktioniert es: Jeder Kunde mit einer digitalen Stempelkarte bekommt einen p
 
 Wenn der Geworbene den Link anklickt und die Bonuskarte installiert, passiert etwas Cleveres: **Sobald der Neue seinen ersten Kauf macht, bekommen beide einen Stempel gutgeschrieben.** Der Empfehler und der Geworbene. Einer oder zwei — du entscheidest, wie großzügig du sein willst.
 
-## Warum Rodenkirchen perfekt dafür ist
+## Warum ist Rodenkirchen perfekt für Empfehlungsmarketing?
 
 Rodenkirchen ist kein anonymes Großstadtviertel. Hier gibt es echte Nachbarschaft. Familien, die seit Jahren nebeneinander wohnen. Eltern, die sich am Friedenswald zum Picknicken treffen. Freunde, die sonntags am Rheinufer spazieren und danach ein Eis holen.
 
@@ -48,7 +48,7 @@ Jetzt stell dir vor, das passiert nicht einmal, sondern zehnmal. Zwanzigmal. In 
 
 Das ist der Satz, der dein Marketing macht. Nicht du. Deine Kunden.
 
-## Automatisches Feedback: Frag deine Kunden, bevor es Google tut
+## Wie holst du automatisches Kundenfeedback vor der Google-Bewertung?
 
 Jetzt zum zweiten Teil. Denn Empfehlungsmarketing bringt neue Kunden — aber Feedback hält die bestehenden.
 
@@ -60,7 +60,7 @@ Kein Anruf. Kein E-Mail-Formular. Keine Umfrage mit 20 Fragen. Einfach eine freu
 
 Du kannst diese Nachricht mit einem Link versehen. Entweder zu einem kurzen Feedback-Formular. Oder — und das ist die mächtigere Option — **direkt zu deiner Google-Bewertungsseite.**
 
-## Warum Google Reviews für Eisdielen in Köln Gold sind
+## Warum sind Google Reviews für Kölner Eisdielen so wertvoll?
 
 Wenn jemand in Rodenkirchen „Eisdiele in der Nähe" googelt, sieht er drei Dinge: deinen Namen, dein Foto, und **deine Google-Bewertung.**
 
@@ -73,7 +73,7 @@ Und jetzt das Problem: Die meisten zufriedenen Kunden hinterlassen nie eine Bewe
 
 **Die automatische Push-Nachricht löst genau das.** Eine Stunde nach dem Besuch, wenn die Erinnerung noch frisch ist und der Geschmack noch auf der Zunge liegt. Ein Tap auf den Link — und der Kunde steht direkt auf deiner Google-Bewertungsseite. 30 Sekunden, 5 Sterne, ein kurzer Satz. Fertig.
 
-## Was realistisch möglich ist: Ein Beispielszenario
+## Was ist realistisch möglich nach einem Monat?
 
 Stell dir vor, eine Eisdiele in Rodenkirchen aktiviert die automatische Feedback-Push-Nachricht. So könnte das Ergebnis nach einem Monat aussehen:
 
@@ -90,7 +90,7 @@ Die Logik dahinter: Zufriedene Kunden wollen helfen, wenn man sie zum richtigen 
 
 **Das ist der Unterschied zwischen „Die Eisdiele um die Ecke" und „Die beste Eisdiele in Rodenkirchen."**
 
-## Feedback als Geschenk, nicht als Pflicht
+## Wie macht man Kundenfeedback zum Geschenk?
 
 Ein wichtiger Punkt: Du kannst die Feedback-Nachricht mit einer kleinen Belohnung verknüpfen — oder auch nicht. Beides funktioniert.
 
@@ -100,7 +100,7 @@ Ein wichtiger Punkt: Du kannst die Feedback-Nachricht mit einer kleinen Belohnun
 
 Welche Variante du wählst, hängt von dir ab. In Rodenkirchen, wo die Beziehung zwischen Kunde und Laden persönlicher ist, reicht oft die freundliche Nachricht ohne Belohnung. Die Leute hier helfen gern — wenn man sie nur fragt.
 
-## Empfehlung + Feedback = ein System, das sich selbst füttert
+## Wie funktioniert das System aus Empfehlung und Feedback?
 
 Wenn du beides kombinierst, entsteht ein Kreislauf:
 
@@ -118,7 +118,7 @@ Jeder neue Kunde kann zum Empfehler werden. Jeder Empfehler bringt neue Kunden. 
 
 Dein Marketing-Budget: 0 Euro. Dein Ergebnis: ein wachsender Kundenstamm, der sich selbst aufbaut.
 
-## So richtest du beides ein
+## Wie richtest du Empfehlungsprogramm und Feedback ein?
 
 **Referral-Programm (5 Minuten):**
 1. Im Dashboard: Empfehlungsprogramm aktivieren
@@ -131,7 +131,7 @@ Dein Marketing-Budget: 0 Euro. Dein Ergebnis: ein wachsender Kundenstamm, der si
 3. Nachricht schreiben und Google-Review-Link einfügen
 4. Aktivieren — läuft ab sofort automatisch
 
-## Probier es selbst aus
+## Wie probierst du Empfehlungsmarketing selbst aus?
 
 Du willst sehen, wie der Weiterleitungslink und die Feedback-Nachricht funktionieren? Installier dir die Testkarte:
 

@@ -17,7 +17,7 @@ Und trotzdem nutzen die meisten Bäckereien kein einziges Instrument, um aus die
 
 Dabei ist die Bäckerei der perfekte Ort für eine digitale Stempelkarte. Kein anderes Geschäft hat so viele Kontaktpunkte pro Woche.
 
-## Das Problem: Warum Bäckereien Stammkunden verlieren
+## Warum verlieren Bäckereien ihre Stammkunden?
 
 ### Papierkarten verschwinden
 
@@ -35,7 +35,7 @@ Wer sind Ihre treuesten Kunden? Wie oft kommen sie wirklich? Welche Filiale besu
 
 Aldi, Lidl und Penny verkaufen Aufbackbrötchen für Centbeträge. Der Preis allein ist kein Argument mehr. Was zählt, ist Gewohnheit, Bindung und das Gefühl: *"Das ist meine Bäckerei."* Genau dieses Gefühl müssen Sie aktiv aufbauen – denn von alleine entsteht es in Zeiten von Discounter-Backshops nicht mehr.
 
-## Warum digital gerade bei Bäckereien so gut funktioniert
+## Warum funktioniert Digital gerade bei Bäckereien so gut?
 
 ### Täglicher Kontaktpunkt
 
@@ -61,14 +61,14 @@ Was Papierkarten nie konnten: aktiv kommunizieren. Mit einer digitalen Stempelka
 
 Kein Newsletter, den niemand öffnet. Kein Social-Media-Post, der im Algorithmus untergeht. Sondern eine Nachricht direkt auf dem Sperrbildschirm.
 
-## So funktioniert's – in 4 Schritten
+## Wie funktioniert die digitale Stempelkarte in der Bäckerei?
 
 1. **Stempelkarte erstellen.** Sie legen fest: z. B. 10 Einkäufe = 1 Brot gratis. Design, Farben und Belohnung wählen – fertig.
 2. **QR-Code an der Theke.** Ein kleiner Aufsteller neben der Kasse. Kunden scannen einmal mit der Handy-Kamera.
 3. **Karte landet im Wallet.** Keine App, kein Download, kein Passwort. Die Karte ist sofort in Apple Wallet oder Google Wallet gespeichert – für immer.
 4. **Stempeln per Tap.** Bei jedem Einkauf scannen Kunden kurz den QR-Code oder Sie stempeln per Tap. Fertig in 3 Sekunden.
 
-## Papier vs. Digital: Der Vergleich für Bäckereien
+## Wie schneidet die digitale Stempelkarte im Vergleich zur Papierkarte ab?
 
 | Kriterium | Papierkarte | Digitale Stempelkarte |
 |---|---|---|
@@ -80,7 +80,7 @@ Kein Newsletter, den niemand öffnet. Kein Social-Media-Post, der im Algorithmus
 | Einrichtungszeit | Druckerei beauftragen | Unter 15 Minuten |
 | Umweltfreundlich? | Papierverbrauch | Komplett papierlos |
 
-## Die Zahlen: Was eine digitale Stempelkarte bringt
+## Welche Zahlen belegen den Nutzen der digitalen Stempelkarte?
 
 Eine Bäckerei mit **200 aktiven Stempelkarten** kann mit folgenden Effekten rechnen:
 
@@ -89,7 +89,7 @@ Eine Bäckerei mit **200 aktiven Stempelkarten** kann mit folgenden Effekten rec
 - **Geringere Abwanderung** an Discounter und Konkurrenz-Bäckereien
 - **Messbares Marketing**: Sie sehen, welche Push-Nachricht funktioniert und welche nicht
 
-## Praxisbeispiel: Eine Bäckerei in Nippes
+## Was zeigt das Praxisbeispiel aus einer Bäckerei in Nippes?
 
 Eine kleine Handwerksbäckerei in Köln-Nippes – zwei Mitarbeiter an der Theke, kein Marketing-Budget, kein Social-Media-Manager. Der Inhaber führt eine digitale Stempelkarte ein: 10 Einkäufe, 1 Brot gratis.
 
