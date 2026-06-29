@@ -4,20 +4,6 @@
  * Receives form data, creates a Boomerang customer + demo card, returns install links.
  */
 
-ini_set('display_errors', 0);
-error_reporting(E_ALL);
-set_error_handler(function($errno, $errstr, $errfile, $errline) {
-    http_response_code(500);
-    echo json_encode(['error' => "PHP[$errno]: $errstr (line $errline)"]);
-    exit;
-});
-register_shutdown_function(function() {
-    $err = error_get_last();
-    if ($err && in_array($err['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
-        http_response_code(500);
-        echo json_encode(['error' => "Fatal: {$err['message']} (line {$err['line']})"]);
-    }
-});
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: https://bonuskarte.digital');
@@ -303,7 +289,7 @@ function notifyTelegramLead(
 
 // ── Google Sheets Logging ─────────────────────────────────────────────────────
 // Fire & forget — Fehler blockieren nie die Hauptantwort.
-function logToSheets(string $vorname, string $telefon, string $email, string $instagram, string $niche, string $city, string $page, string $mode): void {
+function logToSheets(string $vorname, string $telefon, string $email, string $instagram, string $niche, string $city, string $page, string $mode) {
     if (!SHEETS_WEBHOOK_URL) return;
     try {
         $ch = curl_init(SHEETS_WEBHOOK_URL);
