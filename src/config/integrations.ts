@@ -44,7 +44,7 @@ export const pabbly = {
    * Leer lassen → kein Webhook wird gefeuert, Seite bleibt voll funktional.
    * Eintragen sobald Pabbly-Workflow erstellt ist.
    */
-  webhookUrl: '' as string,
+  webhookUrl: 'https://connect.pabbly.com/webhook-listener/webhook/IjU3NjUwNTZjMDYzNjA0MzU1MjY5NTUzMCI_3D_pc/IjU3NjcwNTY5MDYzNTA0M2M1MjY0NTUzZDUxMzYi_pc' as string,
 }
 
 export const integrations = { zipchat, trafft, pabbly }
