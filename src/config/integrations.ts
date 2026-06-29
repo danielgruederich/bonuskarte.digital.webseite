@@ -31,10 +31,10 @@ export const trafft = {
    * Buchungsseite. Falls Trafft das Einbetten per iframe blockt (X-Frame-Options),
    * `allowEmbed` auf false setzen → es wird stattdessen direkt verlinkt.
    */
-  bookingUrl: 'https://termin.fuerte.digital' as string,
+  bookingUrl: 'https://termin.bonuskarte.digital/15min' as string,
 
   /** true = iframe-Embed (Seite /termin), false = nur Direktlink. */
-  allowEmbed: true,
+  allowEmbed: false,
 }
 
 export const integrations = { zipchat, trafft }

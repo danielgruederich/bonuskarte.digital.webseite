@@ -5,6 +5,7 @@ interface Props {
   dark?: boolean
 }
 const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = false } = Astro.props
+const isCityCta = !ctaHref.startsWith('#')
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify({
@@ -62,6 +63,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = false } =
         </span>
         <a
           href={ctaHref}
+          data-city-cta={isCityCta ? '' : undefined}
           class="group inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide uppercase transition-colors"
         >
           {ctaLabel}
@@ -94,7 +96,7 @@ const { ctaHref = '#demo', ctaLabel = '90 Tage gratis starten', dark = false } =
       <a href="/faq"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">FAQ</a>
       <a href="/hilfe"                class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Hilfe</a>
       <a href="/fr/"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">🇫🇷 Version française (FR)</a>
-      <a href={ctaHref} class="block w-full bg-amber hover:bg-amber-dark text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full text-center transition-colors">
+      <a href={ctaHref} data-city-cta={isCityCta ? '' : undefined} class="block w-full bg-amber hover:bg-amber-dark text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full text-center transition-colors">
         {ctaLabel}
       </a>
     </div>

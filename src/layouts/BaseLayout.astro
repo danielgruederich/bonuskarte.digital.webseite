@@ -89,5 +89,17 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
   <body class="bg-paper text-ink antialiased">
     <slot />
     <Zipchat />
+    <script>
+      ;(function () {
+        const CITIES = ['berlin','hamburg','duesseldorf','muenchen','frankfurt','koeln','bonn','essen','hannover','dortmund','dresden','nuernberg','leipzig','stuttgart','huerth']
+        const city = window.location.pathname.split('/')[1]
+        if (CITIES.includes(city)) sessionStorage.setItem('bkCity', city)
+
+        const detected = sessionStorage.getItem('bkCity') || 'koeln'
+        document.querySelectorAll('[data-city-cta]').forEach(function (el) {
+          el.setAttribute('href', '/' + detected)
+        })
+      })()
+    </script>
   </body>
 </html>

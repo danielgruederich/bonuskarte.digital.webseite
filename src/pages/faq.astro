@@ -3,6 +3,58 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 
+// Video-URLs hier eintragen, sobald verfügbar
+const VIDEO_1_URL = '' // Schritt 1: Karte aufs Smartphone laden
+const VIDEO_2_URL = '' // Schritt 2: Stempel vergeben
+const VIDEO_3_URL = '' // Schritt 3: Prämie einlösen
+
+const operationsFaqs = [
+  {
+    q: 'Schaffen meine Mitarbeiter das an der Kasse?',
+    a: 'Ja – und du musst es nicht mal selbst erklären. Wir zeigen alles in drei 90-Sekunden-Videos: Karte installieren, stempeln, Prämie einlösen. Mehr braucht dein Team nicht. Der Vorgang selbst dauert pro Gast rund 2 Sekunden: QR öffnen, ein Tipp, Punkt gebucht.',
+  },
+  {
+    q: 'Wie wird mein Team eingearbeitet?',
+    a: 'Gar kein Aufwand: Du bekommst drei kurze Schulungsvideos – jedes nur 1,5 Minuten lang. Eins zeigt, wie Kunden die Bonuskarte aufs Smartphone laden, eins, wie Stempel auf die Karte kommen, und eins, wie ihr Prämien einlöst. In Summe unter 5 Minuten, und dein Team ist startklar. Kein Handbuch, keine Schulung vor Ort.',
+  },
+  {
+    q: 'Geht das auch in der Stoßzeit, wenn eine Schlange steht?',
+    a: 'Genau dafür ist es gebaut. Ein Stempel dauert rund 2 Sekunden – schneller als eine Papierkarte rauskramen, Stempel suchen, draufdrücken. Die Karte ist immer beim Gast im Handy, es geht nichts verloren und niemand sucht.',
+  },
+  {
+    q: 'Sind meine Gäste überhaupt technisch genug dafür?',
+    a: 'Deine Gäste müssen nichts können außer einmal einen QR-Code scannen – das kennt heute jeder von der Speisekarte. Danach liegt die Karte automatisch in Apple oder Google Wallet, die auf jedem Smartphone schon installiert sind. Keine App, kein Account, kein Passwort.',
+  },
+  {
+    q: 'Und meine älteren Stammgäste?',
+    a: 'Auch die haben fast alle ein Smartphone mit Wallet drauf. Wer einmal die Karte gespeichert hat, muss nie wieder etwas tun – einfach Handy zeigen. Und für alle, die partout nicht wollen, läuft die Papierkarte einfach weiter daneben. Du verlierst niemanden.',
+  },
+  {
+    q: 'Was, wenn ein Gast keine Wallet-Karte nutzen kann oder will?',
+    a: 'Kein Problem – du zwingst niemanden. Erfahrungsgemäß steigen über 90 % freiwillig um, weil sie die Karte so nie mehr vergessen. Und für alle, bei denen es am Smartphone hakt: Wir schicken die Karte als QR-Code direkt per WhatsApp an den Kunden. So ist wirklich jeder dabei.',
+  },
+  {
+    q: 'Wie kommen die Stempel überhaupt auf die Karte?',
+    a: 'Ein Tipp auf den Stempel-Button – der Punkt landet sofort im Handy des Gastes. Wie es genau aussieht, zeigen wir in einem 90-Sekunden-Video. Einfacher als jeder Papierstempel.',
+  },
+  {
+    q: 'Wie lösen meine Gäste ihre Prämie ein?',
+    a: 'Ist das Ziel erreicht (z. B. 10 Stempel), zeigt der Gast die volle Karte, ihr bestätigt die Einlösung mit einem Tipp – fertig, die Karte setzt sich automatisch zurück. Auch das ist in einem kurzen Video erklärt.',
+  },
+  {
+    q: 'Muss ich neue Hardware oder ein Kassensystem kaufen?',
+    a: 'Nein. Es läuft auf dem Smartphone oder Tablet, das du schon hast – Browser auf, fertig. Keine Anschaffung, keine Installation, keine Verträge mit Hardware-Anbietern.',
+  },
+  {
+    q: 'Was, wenn ein Mitarbeiter aus Versehen doppelt oder falsch stempelt?',
+    a: 'Stempel lassen sich im Dashboard nachvollziehen und korrigieren. Du siehst jede Buchung – anders als bei Papier, wo ein verschenkter Stempel einfach weg ist. Mehr Kontrolle, nicht weniger.',
+  },
+  {
+    q: 'Was passiert, wenn das Internet ausfällt?',
+    a: 'Der Stempelvorgang braucht nur eine kurze Verbindung – die hat heute jedes Handy übers Mobilfunknetz, auch wenn dein WLAN streikt. Fällt mal alles aus, holst du den Stempel einfach beim nächsten Besuch nach.',
+  },
+]
+
 const faqs = [
   {
     q: 'Was ist eine digitale Bonuskarte?',
@@ -54,7 +106,7 @@ const faqs = [
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(f => ({
+    "mainEntity": [...operationsFaqs, ...faqs].map(f => ({
       "@type": "Question",
       "name": f.q,
       "acceptedAnswer": { "@type": "Answer", "text": f.a }
@@ -93,11 +145,85 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ── FAQ ────────────────────────────────────────────────────── -->
-  <section class="bg-ink py-14 px-5 sm:px-8">
-    <div class="max-w-2xl mx-auto space-y-3">
+  <!-- ── SCHULUNGSVIDEOS ─────────────────────────────────────────── -->
+  <section class="bg-paper py-14 px-5 sm:px-8 border-b border-ink/10">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-amber text-xs font-medium tracking-[0.3em] uppercase mb-2">In unter 5 Minuten startklar</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-2">So einfach geht's</h2>
+      <p class="text-ink/60 text-base mb-10">Drei kurze Videos – je nur 90&nbsp;Sekunden. Mehr Handgriffe gibt es nicht.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {[
+          { url: VIDEO_1_URL, step: 'Schritt 1', title: 'Karte aufs Smartphone laden', len: '90 Sek. · für deine Kunden', label: 'Bonuskarte installieren' },
+          { url: VIDEO_2_URL, step: 'Schritt 2', title: 'Stempel vergeben',            len: '90 Sek. · für dein Team',   label: 'Stempel vergeben' },
+          { url: VIDEO_3_URL, step: 'Schritt 3', title: 'Prämie einlösen',             len: '90 Sek. · für dein Team',   label: 'Prämie einlösen' },
+        ].map(v => (
+          <div class="border border-ink/10 overflow-hidden">
+            <div class="relative bg-ink" style="aspect-ratio:16/9">
+              {v.url ? (
+                <iframe
+                  src={v.url}
+                  title={v.label}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  class="absolute inset-0 w-full h-full border-0"
+                />
+              ) : (
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="text-ink/30 text-xs tracking-widest uppercase">Video folgt</span>
+                </div>
+              )}
+            </div>
+            <div class="p-4">
+              <p class="text-amber text-xs font-bold tracking-[0.2em] uppercase mb-1">{v.step}</p>
+              <h3 class="text-ink text-sm font-semibold mb-1">{v.title}</h3>
+              <p class="text-ink/50 text-xs">{v.len}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BETREIBER-FAQ ────────────────────────────────────────────── -->
+  <section class="bg-paper py-14 px-5 sm:px-8 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center gap-4 mb-10">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Als Inhaber</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-ink tracking-tight mb-8">Alles, was du dich als Inhaber fragst</h2>
+      <div class="space-y-3">
+        {operationsFaqs.map((faq, i) => (
+          <details class="group border border-ink/10 hover:border-amber/20 transition-colors" open={i === 0}>
+            <summary class="flex items-center justify-between cursor-pointer p-6">
+              <span class="text-ink text-sm sm:text-base font-medium pr-4 leading-snug">{faq.q}</span>
+              <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-ink/70 text-sm leading-relaxed">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ALLGEMEINE FAQ ───────────────────────────────────────────── -->
+  <section class="bg-paper py-14 px-5 sm:px-8">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center gap-4 mb-10">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Allgemeine Fragen</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+      <div class="space-y-3">
       {faqs.map((faq, i) => (
-        <details class="group border border-ink/30 hover:border-amber/20 transition-colors" open={i === 0}>
+        <details class="group border border-ink/10 hover:border-amber/20 transition-colors" open={i === 0}>
           <summary class="flex items-center justify-between cursor-pointer p-6">
             <h2 class="text-ink text-sm sm:text-base font-medium pr-4 leading-snug">{faq.q}</h2>
             <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,6 +235,7 @@ const faqs = [
           </div>
         </details>
       ))}
+      </div>
     </div>
   </section>
 
@@ -118,7 +245,7 @@ const faqs = [
       <p class="text-amber text-xs tracking-[0.4em] uppercase mb-4">Kein Risiko</p>
       <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">90 Tage gratis.</h2>
       <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-8">Ueberzeugt dich selbst.</h2>
-      <a href="/koeln"
+      <a href="/koeln" data-city-cta
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-sm font-bold tracking-[0.25em] uppercase transition-all">
         Jetzt kostenlos starten
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
