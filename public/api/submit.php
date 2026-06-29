@@ -38,7 +38,7 @@ const TELEGRAM_BOT_TOKEN = '8557794026:AAHVILm2tKZFbTaTEG7s7wkxZJl8mQ-QsB8';
 const TELEGRAM_CHAT_ID    = '128525956';
 
 // Google Sheets Logging — Apps Script Web App URL (nach Deployment eintragen)
-const SHEETS_WEBHOOK_URL = '';
+const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxIKBXDVaAYfZcD6RV7lTodupreX7J5P0YV1OQ4FsOKArhRWhGBWSmmke4drEdLWgkX8Q/exec';
 
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
