@@ -46,19 +46,36 @@ const benefits = [
           ))}
         </ul>
 
-        <div class="relative inline-block">
-          <img
-            src="/images/leitfaden-cover.png"
-            alt="Cover: Mehr Stammkunden, mehr Umsatz — Der digitale Leitfaden für Kölner Cafés"
-            width={1406}
-            height={1988}
-            loading="lazy"
-            class="w-44 sm:w-52 border border-ink/10 shadow-2xl shadow-ink/20"
-          />
+        <!-- Argument Carousel -->
+        <div class="relative" id="ebook-carousel-wrap">
+          <div class="relative overflow-hidden min-h-[160px] sm:min-h-[130px]">
+            <div class="ebook-slide absolute inset-0 border-l-2 border-amber pl-5 transition-all duration-500" data-slide="0">
+              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Kartentypen</p>
+              <p class="text-ink font-semibold text-base leading-snug mb-1">7 Karten — eine Entscheidung.</p>
+              <p class="text-ink/65 text-sm leading-relaxed">Stempelkarte, Cashback, Coupon, Rabatt, Geschenk, Multipass & VIP-Club — alle erklärt, alle sofort umsetzbar.</p>
+            </div>
+            <div class="ebook-slide absolute inset-0 border-l-2 border-amber pl-5 transition-all duration-500 opacity-0" data-slide="1">
+              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Wirtschaftlichkeit</p>
+              <p class="text-ink font-semibold text-base leading-snug mb-1">Stammkunden kosten 5× weniger.</p>
+              <p class="text-ink/65 text-sm leading-relaxed">Als neue Gäste zu gewinnen — mit echten Zahlen aus der Gastronomie, nicht aus dem Lehrbuch.</p>
+            </div>
+            <div class="ebook-slide absolute inset-0 border-l-2 border-amber pl-5 transition-all duration-500 opacity-0" data-slide="2">
+              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Umsetzung</p>
+              <p class="text-ink font-semibold text-base leading-snug mb-1">Kein Marketingbudget nötig.</p>
+              <p class="text-ink/65 text-sm leading-relaxed">Alle Strategien funktionieren mit deinem Smartphone — speziell auf Kölner Cafés zugeschnitten.</p>
+            </div>
+          </div>
+          <!-- Dots -->
+          <div class="flex gap-2 mt-5">
+            <button class="ebook-dot w-6 h-1 bg-amber transition-all" data-dot="0" aria-label="Folie 1"></button>
+            <button class="ebook-dot w-2 h-1 bg-ink/20 transition-all" data-dot="1" aria-label="Folie 2"></button>
+            <button class="ebook-dot w-2 h-1 bg-ink/20 transition-all" data-dot="2" aria-label="Folie 3"></button>
+          </div>
         </div>
       </div>
 
       <!-- Right: Form Card -->
+
       <div class="bg-paper-dark/60 border border-ink/10 p-7 sm:p-9">
         <h3 class="font-display text-xl font-semibold tracking-tight text-ink mb-2">
           Jetzt kostenlos sichern
@@ -72,3 +89,35 @@ const benefits = [
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    const wrap = document.getElementById('ebook-carousel-wrap')
+    if (!wrap) return
+    const slides = wrap.querySelectorAll('.ebook-slide')
+    const dots   = wrap.querySelectorAll('.ebook-dot')
+    let current  = 0
+
+    function goTo(idx) {
+      slides[current].classList.add('opacity-0')
+      dots[current].classList.remove('w-6', 'bg-amber')
+      dots[current].classList.add('w-2', 'bg-ink/20')
+
+      current = idx
+      slides[current].classList.remove('opacity-0')
+      dots[current].classList.remove('w-2', 'bg-ink/20')
+      dots[current].classList.add('w-6', 'bg-amber')
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        clearInterval(timer)
+        goTo(Number(dot.dataset.dot))
+        timer = setInterval(next, 3500)
+      })
+    })
+
+    function next() { goTo((current + 1) % slides.length) }
+    var timer = setInterval(next, 3500)
+  })()
+</script>
