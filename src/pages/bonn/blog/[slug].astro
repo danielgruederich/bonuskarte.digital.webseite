@@ -14,6 +14,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 const { Content } = await post.render()
+const bookingUrl = post.data.niche === 'cafe'
+  ? 'https://termin.bonuskarte.digital/barista'
+  : 'https://termin.bonuskarte.digital/15min'
 
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('de-DE', { day: 'numeric', month: 'long', year: 'numeric' }).format(date)
@@ -119,10 +122,14 @@ const related = allPosts
           <div class="text-amber text-xs font-bold tracking-[0.25em] uppercase mb-2">Für Bonner Betriebe</div>
           <h2 class="text-2xl sm:text-3xl font-black text-paper leading-tight">Jetzt 90 Tage kostenlos starten</h2>
         </div>
-        <a href="/bonn/innenstadt/cafes" class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
-          Gratis starten →
-        </a>
-      </div>
+        <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <a href="/bonn/innenstadt/cafes" class="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
+            Gratis starten →
+          </a>
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 border border-paper/30 hover:border-paper/60 text-paper font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
+            Termin buchen
+          </a>
+        </div>
     </div>
   </section>
 

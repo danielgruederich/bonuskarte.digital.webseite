@@ -12,6 +12,7 @@ const blog = defineCollection({
     readingTime: z.number(),
     featured: z.boolean().default(false),
     city: z.string(), // e.g. 'koeln', 'hamburg', 'berlin'
+    niche: z.string().optional(), // e.g. 'cafe', 'eiscafe', 'baeckerei' — used for booking URL
     approved: z.boolean().default(true), // false = Entwurf, true = freigegeben
     needsEdit: z.boolean().default(false), // true = Änderungen nötig
   }),

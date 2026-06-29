@@ -7,6 +7,7 @@ category: "Ratgeber"
 readingTime: 7
 featured: false
 city: berlin
+niche: cafe
 ---
 
 Berlin hat mehr Cafés pro Einwohner als fast jede andere Stadt in Europa. In Prenzlauer Berg reiht sich Café an Café, in Kreuzberg kämpfen Hipster-Röstereien um dieselbe Stammkundschaft, und in Neukölln ist der Kampf um den Latte macchiato ein täglicher Überlebenskampf.

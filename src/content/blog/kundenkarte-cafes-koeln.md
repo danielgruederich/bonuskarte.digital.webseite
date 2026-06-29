@@ -7,6 +7,7 @@ category: "Ratgeber"
 readingTime: 7
 featured: false
 city: koeln
+niche: cafe
 ---
 
 Wer in Köln ein Café betreibt, kennt das Problem: Die Konkurrenz ist überall. In Ehrenfeld reiht sich Café an Café. In Nippes gibt es an jeder zweiten Ecke einen Kaffee to go. Und in der Südstadt kämpfen Dutzende Betriebe um dieselben Frühstücksgäste.
