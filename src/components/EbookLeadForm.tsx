@@ -29,6 +29,7 @@ export default function EbookLeadForm({
 }: Props) {
   const [state, setState] = useState<State>('idle')
   const [vorname, setVorname] = useState('')
+  const [email, setEmail] = useState('')
   const [instagram, setInstagram] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
   const formStartedRef = useRef(false)
@@ -73,6 +74,7 @@ export default function EbookLeadForm({
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form))
     setVorname((data.vorname as string) ?? '')
+    setEmail((data.email as string) ?? '')
     const cleanInstagram = String(data.instagram ?? '').replace(/^@+/, '')
     analytics.signupSubmitAttempt(niche, city, 'ebook')
 
@@ -85,6 +87,7 @@ export default function EbookLeadForm({
           ebook: ebookTag,
           vorname: data.vorname,
           telefon: data.telefon,
+          email: data.email,
           instagram: cleanInstagram,
           niche,
           city,
@@ -119,11 +122,11 @@ export default function EbookLeadForm({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold tracking-wide text-ink mb-3">
-          {vorname ? `Viel Spaß beim Lesen, ${vorname}!` : 'Dein Leitfaden ist fertig!'}
+        <h3 className="text-2xl font-bold tracking-tight text-ink mb-4">
+          Danke{vorname ? `, ${vorname}` : ''} für dein Interesse!
         </h3>
-        <p className="text-ink text-sm leading-relaxed max-w-sm mx-auto mb-7">
-          Der Download startet automatisch. Falls nicht, klick einfach hier:
+        <p className="text-ink/75 text-sm leading-relaxed max-w-sm mx-auto mb-8">
+          Du bekommst den Leitfaden{email ? <> an <strong className="text-ink">{email}</strong></> : ''} <strong className="text-ink">per E-Mail zugesendet</strong> oder kannst ihn <strong className="text-ink">direkt hier herunterladen</strong>.
         </p>
         <a
           href={pdfUrl}
@@ -134,11 +137,8 @@ export default function EbookLeadForm({
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
           </svg>
-          Leitfaden als PDF öffnen
+          Zum Leitfaden
         </a>
-        <p className="mt-7 text-xs tracking-widest uppercase text-ink/50">
-          Wir melden uns in Kürze per WhatsApp bei dir.
-        </p>
       </div>
     )
   }
@@ -146,12 +146,28 @@ export default function EbookLeadForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <p className="text-xs tracking-[0.2em] uppercase text-ink/55 mb-1">
-        3 Felder · 30 Sekunden · sofortiger Download
+        4 Felder · 30 Sekunden · sofortiger Download
       </p>
 
       <div>
         <label htmlFor="vorname" className={labelClass}>Dein Vorname *</label>
         <input id="vorname" name="vorname" type="text" required placeholder="Max" autoComplete="given-name" onFocus={handleFirstFocus} className={inputClass} />
+      </div>
+
+      <div>
+        <label htmlFor="email" className={labelClass}>E-Mail-Adresse *</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          placeholder="max@muster.de"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          autoComplete="email"
+          inputMode="email"
+          className={inputClass}
+        />
       </div>
 
       <div>
