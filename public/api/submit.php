@@ -37,6 +37,9 @@ const SALESFLARE_BASE    = 'https://api.salesflare.com';
 const TELEGRAM_BOT_TOKEN = '8557794026:AAHVILm2tKZFbTaTEG7s7wkxZJl8mQ-QsB8';
 const TELEGRAM_CHAT_ID    = '128525956';
 
+// Google Sheets Logging — Apps Script Web App URL (nach Deployment eintragen)
+const SHEETS_WEBHOOK_URL = '';
+
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
     'cafe'       => 1046392, // Kölner Kaffee Laden — active ✅
@@ -283,6 +286,24 @@ function notifyTelegramLead(
     }
 }
 
+// ── Google Sheets Logging ─────────────────────────────────────────────────────
+// Fire & forget — Fehler blockieren nie die Hauptantwort.
+function logToSheets(string $vorname, string $telefon, string $email, string $instagram, string $niche, string $city, string $page, string $mode): void {
+    if (!SHEETS_WEBHOOK_URL) return;
+    try {
+        $ch = curl_init(SHEETS_WEBHOOK_URL);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => json_encode(compact('vorname', 'telefon', 'email', 'instagram', 'niche', 'city', 'page', 'mode')),
+            CURLOPT_HTTPHEADER     => ['Content-Type: application/json'],
+            CURLOPT_TIMEOUT        => 5,
+        ]);
+        curl_exec($ch);
+        curl_close($ch);
+    } catch (\Throwable $e) {}
+}
+
 // ── E-Book lead path (Leitfaden-Download, Salesflare only) ────────────────────
 // Gated Download: Name + Handynummer (+ Instagram). Legt Lead in Salesflare an,
 // pingt Telegram und gibt success zurück — keine Boomerang-Karte. Der Frontend-
@@ -328,6 +349,7 @@ if (($body['mode'] ?? '') === 'ebook') {
     }
 
     notifyTelegramLead($firstName, $phone, $email, $instagram, $niche ?: 'cafe', $mode, $utm, 'ebook');
+    logToSheets($firstName, $phone, $email, $instagram, $niche ?: 'cafe', $reqCity, $body['ebook'] ?? 'leitfaden-koeln', 'ebook');
 
     echo json_encode(['success' => true]);
     exit;
@@ -384,6 +406,8 @@ if (($body['mode'] ?? '') === 'lead' || ($body['lang'] ?? '') === 'fr') {
 // ── Step 0: Record lead in Salesflare FIRST (never lost on Boomerang failure) ─
 recordSalesflareLead($firstName, $instagram, $phone, $niche, $mode, $source, $reqCity, $utm);
 notifyTelegramLead($firstName, $phone, $email, $instagram, $niche, $mode, $utm);
+$leadPage = str_replace('-', '/', ($utm['utm_campaign'] ?? ''));
+logToSheets($firstName, $phone, $email, $instagram, $niche, $reqCity, $leadPage, $mode ?: 'demo');
 
 // ── Step 1: Create customer ───────────────────────────────────────────────────
 $customerPayload = ['firstName' => $firstName];
