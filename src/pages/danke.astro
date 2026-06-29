@@ -103,22 +103,45 @@ import { pabbly } from '../config/integrations'
         </ol>
       </div>
 
-      <!-- Leitfaden -->
-      <a
-        href="/downloads/leitfaden-stammkunden-cafes-koeln.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-5 border border-amber/20 bg-paper p-6 sm:p-8 hover:border-amber/50 transition-colors group"
-      >
-        <img src="/images/leitfaden-cover.png" alt="Stammkunden-Leitfaden Cover" class="w-12 h-16 object-cover shrink-0" />
-        <div class="flex-1">
-          <p class="text-ink text-xs font-bold tracking-[0.2em] uppercase mb-1">Kostenloser Leitfaden</p>
-          <p class="text-ink/70 text-sm font-normal leading-relaxed">Wie Kölner Cafés mit digitalen Stempelkarten mehr Stammkunden gewinnen — PDF zum Lesen bis zu unserem Termin.</p>
+      <!-- 3 eBook-Karten -->
+      <div class="border border-amber/20 bg-paper p-6 sm:p-8">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-1 h-1 bg-amber"></span>
+          <p class="text-ink text-xs font-bold tracking-[0.25em] uppercase">Dein Bonus — 3 kostenlose Leitfäden</p>
         </div>
-        <svg aria-hidden="true" class="w-5 h-5 text-amber shrink-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
+        <div class="grid grid-cols-3 gap-4">
+          <a href="/downloads/leitfaden-stammkunden-cafes-koeln.pdf" target="_blank" rel="noopener noreferrer" class="group flex flex-col">
+            <div class="overflow-hidden mb-3 border border-ink/8">
+              <img
+                src="/images/ebook-cover-stammkunden.png"
+                alt="Stammkunden-Leitfaden"
+                class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p class="text-ink text-xs font-normal leading-snug group-hover:text-amber transition-colors">Stammkunden-Leitfaden Cafés</p>
+          </a>
+          <a href="/downloads/leitfaden-cafe-abo.pdf" target="_blank" rel="noopener noreferrer" class="group flex flex-col">
+            <div class="overflow-hidden mb-3 border border-ink/8">
+              <img
+                src="/images/ebook-cover-cafe-abo.png"
+                alt="Das Café-Abo"
+                class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p class="text-ink text-xs font-normal leading-snug group-hover:text-amber transition-colors">Das Café-Abo</p>
+          </a>
+          <a href="/downloads/leitfaden-yoga-studios.pdf" target="_blank" rel="noopener noreferrer" class="group flex flex-col">
+            <div class="overflow-hidden mb-3 border border-ink/8">
+              <img
+                src="/images/ebook-cover-yoga.png"
+                alt="Yoga-Studio Leitfaden"
+                class="w-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <p class="text-ink text-xs font-normal leading-snug group-hover:text-amber transition-colors">Yoga-Studio Leitfaden</p>
+          </a>
+        </div>
+      </div>
 
       <!-- Testimonial — Tim, Erste Liebe -->
       <div class="border border-amber/20 bg-paper p-6 sm:p-8">
