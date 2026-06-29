@@ -319,34 +319,49 @@ function logToSheets(string $vorname, string $telefon, string $email, string $in
 function sendEbookMail(string $firstName, string $email, string $pdfUrl) {
     if (!$email || !MAILERCLOUD_API_KEY || MAILERCLOUD_API_KEY === 'DEIN_MAILERCLOUD_API_KEY_HIER') return;
     try {
-        $html = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;background:#F6F1E8;font-family:\'Helvetica Neue\',Arial,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#F6F1E8;padding:40px 20px;">
-  <tr><td align="center">
-    <table width="560" cellpadding="0" cellspacing="0" style="background:#1A1410;max-width:560px;width:100%;">
-      <tr><td style="padding:32px 40px 24px;">
-        <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#F25C24;">bonuskarte.digital</p>
-        <h1 style="margin:0;font-size:26px;font-weight:700;color:#F6F1E8;line-height:1.2;">Dein Leitfaden<br>ist da' . ($firstName ? ', ' . htmlspecialchars($firstName) : '') . '!</h1>
-      </td></tr>
-      <tr><td style="padding:0 40px 28px;">
-        <p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:rgba(246,241,232,0.75);">
-          Dein kostenloser Stammkunden-Leitfaden für Kölner Cafés ist bereit — 13 Seiten, 7 Kartentypen, sofort umsetzbar.
-        </p>
-        <table cellpadding="0" cellspacing="0"><tr><td>
-          <a href="' . $pdfUrl . '" style="display:inline-block;background:#F25C24;color:#000;font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;padding:14px 32px;">
-            Zum Leitfaden →
-          </a>
-        </td></tr></table>
-      </td></tr>
-      <tr><td style="padding:20px 40px;border-top:1px solid rgba(246,241,232,0.1);">
-        <p style="margin:0;font-size:12px;color:rgba(246,241,232,0.35);line-height:1.6;">
-          Du erhältst diese Mail, weil du den Leitfaden auf bonuskarte.digital angefordert hast.<br>
-          bonuskarte.digital · Sülzburgstraße 234 · 50937 Köln
-        </p>
-      </td></tr>
-    </table>
-  </td></tr>
-</table>
-</body></html>';
+        $name   = $firstName ? htmlspecialchars($firstName) : '';
+        $safePdf = htmlspecialchars($pdfUrl);
+        $html = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>'
+              . '<body style="margin:0;padding:0;background:#EEEBE4;font-family:\'Helvetica Neue\',Arial,sans-serif;">'
+              . '<table width="100%" cellpadding="0" cellspacing="0" style="background:#EEEBE4;padding:32px 16px;"><tr><td align="center">'
+              . '<table width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;border-collapse:collapse;">'
+              // Header
+              . '<tr><td style="background:#0E0B09;padding:18px 32px;">'
+              . '<p style="margin:0;font-size:10px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#F25C24;">BONUSKARTE.DIGITAL</p>'
+              . '</td></tr>'
+              // Hero stat block
+              . '<tr><td style="background:#1A1410;padding:40px 32px 28px;border-bottom:1px solid rgba(246,241,232,0.06);">'
+              . '<p style="margin:0 0 4px;font-size:80px;font-weight:900;color:#F25C24;line-height:1;letter-spacing:-0.04em;">73%</p>'
+              . '<p style="margin:0 0 20px;font-size:18px;font-weight:700;color:#F6F1E8;line-height:1.35;">der Erstbesucher kommen nie wieder.<br><span style="color:rgba(246,241,232,0.55);font-weight:400;font-size:15px;">Dein Leitfaden zeigt dir, wie du das &auml;nderst.</span></p>'
+              . '</td></tr>'
+              // Teaser bullets
+              . '<tr><td style="background:#1A1410;padding:28px 32px 32px;">'
+              . '<p style="margin:0 0 18px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(246,241,232,0.35);">Was dich erwartet</p>'
+              . '<table cellpadding="0" cellspacing="0" width="100%">'
+              . '<tr><td style="padding:0 0 12px 0;"><table cellpadding="0" cellspacing="0"><tr>'
+              . '<td style="padding-right:12px;vertical-align:top;color:#F25C24;font-size:16px;font-weight:700;line-height:1.4;">&#8594;</td>'
+              . '<td style="font-size:14px;line-height:1.6;color:rgba(246,241,232,0.75);">Warum Rabatt-Aktionen Stammkunden kosten statt bringen &mdash; und was wirklich wirkt</td>'
+              . '</tr></table></td></tr>'
+              . '<tr><td style="padding:0 0 12px 0;"><table cellpadding="0" cellspacing="0"><tr>'
+              . '<td style="padding-right:12px;vertical-align:top;color:#F25C24;font-size:16px;font-weight:700;line-height:1.4;">&#8594;</td>'
+              . '<td style="font-size:14px;line-height:1.6;color:rgba(246,241,232,0.75);">Die 7 Kartentypen im Vergleich: Welche f&uuml;r dein Caf&eacute; sofort mehr Besuche bringt</td>'
+              . '</tr></table></td></tr>'
+              . '<tr><td style="padding:0 0 28px 0;"><table cellpadding="0" cellspacing="0"><tr>'
+              . '<td style="padding-right:12px;vertical-align:top;color:#F25C24;font-size:16px;font-weight:700;line-height:1.4;">&#8594;</td>'
+              . '<td style="font-size:14px;line-height:1.6;color:rgba(246,241,232,0.75);">In 15 Minuten live: kein App-Download, kein QR-Chaos, kein IT-Aufwand</td>'
+              . '</tr></table></td></tr>'
+              . '</table>'
+              . '<table cellpadding="0" cellspacing="0"><tr><td style="background:#F25C24;">'
+              . '<a href="' . $safePdf . '" style="display:inline-block;color:#000;font-size:11px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;padding:16px 36px;">LEITFADEN LESEN &#8594;</a>'
+              . '</td></tr></table>'
+              . '</td></tr>'
+              // Footer
+              . '<tr><td style="background:#0E0B09;padding:18px 32px;">'
+              . '<p style="margin:0;font-size:11px;color:rgba(246,241,232,0.25);line-height:1.7;">Du erh&auml;ltst diese Mail, weil du den Leitfaden auf bonuskarte.digital angefordert hast. &middot; bonuskarte.digital &middot; S&uuml;lzburgstr. 234 &middot; 50937 K&ouml;ln</p>'
+              . '</td></tr>'
+              . '</table>'
+              . '</td></tr></table>'
+              . '</body></html>';
 
         apiRequest('POST', MAILERCLOUD_BASE, '/email', [
             'Authorization: ' . MAILERCLOUD_API_KEY,
