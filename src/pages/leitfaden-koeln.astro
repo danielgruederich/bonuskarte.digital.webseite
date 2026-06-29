@@ -45,5 +45,33 @@ import EbookSection from '../components/EbookSection.astro'
   <!-- ── DOWNLOAD-BEREICH ──────────────────────────────────────── -->
   <EbookSection id="leitfaden" />
 
+  <!-- ── TERMIN-CTA ────────────────────────────────────────────── -->
+  <section class="bg-ink py-14 sm:py-16 border-t border-paper/10">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+        <div class="flex-1">
+          <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Für Kölner Cafés</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-paper leading-tight">
+            Lieber direkt persönlich?
+          </h2>
+          <p class="text-paper/50 text-sm mt-2 leading-relaxed">
+            15 Minuten reichen — danach weißt du genau, welche Karte zu deinem Café passt.
+          </p>
+        </div>
+        <a
+          href="https://termin.bonuskarte.digital/barista"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors"
+        >
+          Termin buchen
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <Footer />
 </BaseLayout>
