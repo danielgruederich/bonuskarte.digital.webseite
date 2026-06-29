@@ -233,7 +233,8 @@ function notifyTelegramLead(
     string $instagram,
     string $niche,
     string $mode,
-    array $utm
+    array $utm,
+    string $context = 'demo'
 ) {
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
         return;
@@ -252,13 +253,16 @@ function notifyTelegramLead(
                 $digits = '49' . substr($digits, 1);
             }
             if ($digits) {
-                $greeting = "Hallo {$firstName}, hier ist Daniel von bonuskarte.digital 👋 Danke, dass du dir eine Demo-Karte erstellt hast! Wann passt dir ein kurzer Call?";
+                $greeting = $context === 'ebook'
+                    ? "Hallo {$firstName}, hier ist Daniel von bonuskarte.digital 👋 Danke, dass du dir den Café-Leitfaden geladen hast! Wenn du magst, zeige ich dir in 10 Minuten, wie deine eigene Wallet-Karte aussehen würde."
+                    : "Hallo {$firstName}, hier ist Daniel von bonuskarte.digital 👋 Danke, dass du dir eine Demo-Karte erstellt hast! Wann passt dir ein kurzer Call?";
                 $waLink = 'https://wa.me/' . $digits . '?text=' . rawurlencode($greeting);
             }
         }
 
+        $ctxBadge = $context === 'ebook' ? ' · 📖 E-Book' : ($mode === 'gruender' ? ' · Gründer' : '');
         $lines   = [];
-        $lines[] = '🎯 <b>Neuer Lead</b> — ' . htmlspecialchars($nicheLabel) . ($mode === 'gruender' ? ' · Gründer' : '');
+        $lines[] = '🎯 <b>Neuer Lead</b> — ' . htmlspecialchars($nicheLabel) . $ctxBadge;
         $lines[] = '👤 ' . htmlspecialchars($firstName);
         $lines[] = '📱 ' . ($phone ? htmlspecialchars($phone) : '—');
         if ($email)     $lines[] = '✉️ ' . htmlspecialchars($email);
@@ -277,6 +281,56 @@ function notifyTelegramLead(
     } catch (\Throwable $e) {
         // Telegram failure never blocks the main response
     }
+}
+
+// ── E-Book lead path (Leitfaden-Download, Salesflare only) ────────────────────
+// Gated Download: Name + Handynummer (+ Instagram). Legt Lead in Salesflare an,
+// pingt Telegram und gibt success zurück — keine Boomerang-Karte. Der Frontend-
+// Erfolgsschritt schaltet danach den PDF-Download frei.
+if (($body['mode'] ?? '') === 'ebook') {
+    $utmCampaign  = $utm['utm_campaign'] ?? '';
+    $ebookTag     = trim($body['ebook'] ?? 'leitfaden-cafes-koeln');
+    $tags         = array_values(array_filter(['ebook', $ebookTag, $niche ?: 'cafe', $reqCity, $utmCampaign]));
+    $instagramUrl = $instagram ? 'https://www.instagram.com/' . $instagram : null;
+
+    try {
+        // Account (das Geschäft)
+        $accountPayload = ['name' => $instagram ? '@' . $instagram : $firstName, 'tags' => $tags];
+        if ($phone && $instagramUrl) {
+            $accountPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
+            $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        } elseif ($phone) {
+            $accountPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
+        } elseif ($instagramUrl) {
+            $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        }
+        $accountRes = salesflare('POST', '/accounts', $accountPayload);
+        $accountId  = $accountRes['body']['id'] ?? null;
+
+        // Contact (die Person)
+        $contactPayload = ['firstname' => $firstName, 'tags' => $tags];
+        if ($email)        $contactPayload['email']           = $email;
+        if ($phone)        $contactPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
+        if ($instagramUrl) $contactPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
+        if ($accountId)    $contactPayload['account']          = $accountId;
+        salesflare('POST', '/contacts', $contactPayload);
+
+        // Opportunity
+        if ($accountId) {
+            salesflare('POST', '/opportunities', [
+                'name'    => 'E-Book · Café-Leitfaden Köln · @' . ($instagram ?: $firstName),
+                'account' => $accountId,
+                'tags'    => $tags,
+            ]);
+        }
+    } catch (\Throwable $e) {
+        // Salesflare-Fehler blockiert die Antwort nie
+    }
+
+    notifyTelegramLead($firstName, $phone, $email, $instagram, $niche ?: 'cafe', $mode, $utm, 'ebook');
+
+    echo json_encode(['success' => true]);
+    exit;
 }
 
 // ── FR / lead-only path (skip Boomerang, record in Salesflare only) ───────────

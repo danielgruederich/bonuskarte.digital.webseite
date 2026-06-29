@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import EbookSection from '../components/EbookSection.astro'
+---
+
+<BaseLayout
+  title="Gratis E-Book: Mehr Stammkunden für Kölner Cafés | bonuskarte.digital"
+  description="Kostenloser Leitfaden für Café-Betreiber: 8 digitale Kartentypen, mit denen du Stammkunden bindest – ohne großes Marketingbudget. Jetzt gratis als PDF herunterladen."
+  ogImage="/images/leitfaden-cover.png"
+>
+  <Navbar ctaHref="#leitfaden" ctaLabel="Gratis-Leitfaden" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="relative bg-paper overflow-hidden pt-32 pb-12 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-ink"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-8">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">Gratis E-Book</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl leading-[1.12] tracking-tight mb-6">
+        <span class="font-normal text-ink block mb-2">Mehr Stammkunden,</span>
+        <span class="font-bold text-amber block">mehr Umsatz.</span>
+      </h1>
+
+      <p class="text-ink text-base font-normal leading-relaxed max-w-xl mx-auto mb-4">
+        Der digitale Leitfaden für Kölner Cafés. 8 digitale Karten, ein Ziel:
+        Gäste, die immer wiederkommen — ganz ohne großes Marketingbudget.
+      </p>
+
+      <a href="#leitfaden" class="inline-flex items-center gap-2 text-ink/60 hover:text-amber text-xs tracking-widest uppercase transition-colors">
+        Direkt zum Download
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── DOWNLOAD-BEREICH ──────────────────────────────────────── -->
+  <EbookSection id="leitfaden" />
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,74 @@
+---
+/**
+ * E-Book Lead-Magnet Sektion — „Mehr Stammkunden, mehr Umsatz".
+ * Gated Download: Name + Handynummer + Instagram → Lead in Salesflare (mode:ebook),
+ * danach PDF-Download. Als wiederverwendbarer Bereich (z. B. auf der Startseite)
+ * oder auf der Landingpage /leitfaden-koeln eingebunden.
+ */
+import EbookLeadForm from './EbookLeadForm.tsx'
+
+interface Props {
+  id?: string
+}
+const { id = 'leitfaden' } = Astro.props
+
+const benefits = [
+  'Die 8 wichtigsten digitalen Kartentypen — von Stempelkarte bis Café-Club',
+  'Konkrete Praxisbeispiele mit echten Kölner Preisen & Zahlen',
+  'Pro Kapitel ein „Quick Win", den du noch heute umsetzt',
+  'Wie du Stammkunden bindest — ganz ohne großes Marketingbudget',
+]
+---
+
+<section id={id} class="relative bg-paper border-t border-ink/10 py-20 sm:py-28 overflow-hidden">
+  <div class="absolute inset-0 bg-grid-ink opacity-60 pointer-events-none"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left: Pitch + Cover -->
+      <div>
+        <p class="text-xs tracking-[0.3em] uppercase text-amber mb-4">Gratis E-Book · 12 Seiten</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-ink leading-tight mb-5">
+          Mehr Stammkunden,<br />mehr Umsatz.
+        </h2>
+        <p class="text-ink/70 text-base leading-relaxed max-w-md mb-8">
+          Der digitale Leitfaden für Kölner Cafés. 8 digitale Karten, ein Ziel:
+          Gäste, die immer wiederkommen — praxisnah erklärt, sofort umsetzbar.
+        </p>
+
+        <ul class="space-y-3 mb-10">
+          {benefits.map((b) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1.5 flex-none w-2 h-2 rounded-full bg-amber"></span>
+              <span class="text-ink/85 text-sm leading-relaxed">{b}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="relative inline-block">
+          <img
+            src="/images/leitfaden-cover.png"
+            alt="Cover: Mehr Stammkunden, mehr Umsatz — Der digitale Leitfaden für Kölner Cafés"
+            width={1406}
+            height={1988}
+            loading="lazy"
+            class="w-44 sm:w-52 border border-ink/10 shadow-2xl shadow-ink/20"
+          />
+        </div>
+      </div>
+
+      <!-- Right: Form Card -->
+      <div class="bg-paper-dark/60 border border-ink/10 p-7 sm:p-9">
+        <h3 class="font-display text-xl font-semibold tracking-tight text-ink mb-2">
+          Jetzt kostenlos sichern
+        </h3>
+        <p class="text-ink/60 text-sm mb-7">
+          Trag dich ein und lade den Leitfaden direkt herunter.
+        </p>
+        <EbookLeadForm client:visible />
+      </div>
+
+    </div>
+  </div>
+</section>
