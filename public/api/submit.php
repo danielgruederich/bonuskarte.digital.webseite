@@ -344,7 +344,7 @@ function sendEbookMail(string $firstName, string $email, string $pdfUrl) {
               . '</tr></table></td></tr>'
               . '<tr><td style="padding:0 0 12px 0;"><table cellpadding="0" cellspacing="0"><tr>'
               . '<td style="padding-right:12px;vertical-align:top;color:#F25C24;font-size:16px;font-weight:700;line-height:1.4;">&#8594;</td>'
-              . '<td style="font-size:14px;line-height:1.6;color:rgba(246,241,232,0.75);">Die 7 Kartentypen im Vergleich: Welche f&uuml;r dein Caf&eacute; sofort mehr Besuche bringt</td>'
+              . '<td style="font-size:14px;line-height:1.6;color:rgba(246,241,232,0.75);">Die 7 Kartentypen im Vergleich: Welche f&uuml;r deinen Betrieb sofort mehr Besuche bringt</td>'
               . '</tr></table></td></tr>'
               . '<tr><td style="padding:0 0 28px 0;"><table cellpadding="0" cellspacing="0"><tr>'
               . '<td style="padding-right:12px;vertical-align:top;color:#F25C24;font-size:16px;font-weight:700;line-height:1.4;">&#8594;</td>'

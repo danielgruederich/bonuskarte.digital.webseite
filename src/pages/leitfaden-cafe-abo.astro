@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import EbookLeadForm from '../components/EbookLeadForm.tsx'
+---
+
+<BaseLayout
+  title="Gratis E-Book: Das Café-Abo — Wiederkehrende Einnahmen für Café-Betreiber | bonuskarte.digital"
+  description="Kostenloser Leitfaden für Café-Betreiber: So funktioniert das Café-Abo-Modell — planbare Einnahmen, mehr Stammgäste, kein Marketingbudget nötig. Jetzt gratis als PDF herunterladen."
+  ogImage="/images/leitfaden-cover.png"
+>
+  <Navbar ctaHref="#download" ctaLabel="Gratis-Leitfaden" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="relative bg-paper overflow-hidden pt-32 pb-12 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-ink"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-8">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">Gratis E-Book</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl leading-[1.12] tracking-tight mb-6">
+        <span class="font-normal text-ink block mb-2">Das Café-Abo:</span>
+        <span class="font-bold text-amber block">planbare Einnahmen, treue Gäste.</span>
+      </h1>
+
+      <p class="text-ink text-base font-normal leading-relaxed max-w-xl mx-auto mb-4">
+        Wie du mit einem Abo-Modell Stammgäste fest an dein Café bindest — und jeden Monat
+        verlässliche Einnahmen einfährst, ohne Rabatte zu geben.
+      </p>
+
+      <a href="#download" class="inline-flex items-center gap-2 text-ink/60 hover:text-amber text-xs tracking-widest uppercase transition-colors">
+        Direkt zum Download
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── DOWNLOAD-BEREICH ──────────────────────────────────────── -->
+  <section id="download" class="relative bg-paper border-t border-ink/10 py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-60 pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Left: Pitch -->
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-amber mb-4">Gratis E-Book · Café-Abo</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-ink leading-tight mb-5">
+            Jeden Monat<br />verlässliche Einnahmen.
+          </h2>
+          <p class="text-ink/70 text-base leading-relaxed max-w-md mb-8">
+            Das Café-Abo-Modell gibt dir planbare Umsätze und einen festen Stamm an Gästen —
+            ohne Rabattschlachten, ohne großes Marketingbudget.
+          </p>
+
+          <ul class="space-y-3 mb-10">
+            {[
+              'Wie das Abo-Modell im Café funktioniert — von der Preisgestaltung bis zur Kündigung',
+              'Welche Abo-Varianten Gäste wirklich abschließen (und welche nicht)',
+              'Wie du dein erstes Abo in einer Woche live bringst — ohne App, ohne Technik-Stress',
+              'Was erfolgreiche Café-Abos von floppenden unterscheidet',
+            ].map((b) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 flex-none w-2 h-2 rounded-full bg-amber"></span>
+                <span class="text-ink/85 text-sm leading-relaxed">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Right: Form Card -->
+        <div class="bg-paper-dark/60 border border-ink/10 p-7 sm:p-9">
+          <h3 class="font-display text-xl font-semibold tracking-tight text-ink mb-2">
+            Jetzt kostenlos sichern
+          </h3>
+          <p class="text-ink/60 text-sm mb-7">
+            Trag dich ein und lade den Leitfaden direkt herunter.
+          </p>
+          <EbookLeadForm
+            client:visible
+            pdfUrl="/downloads/leitfaden-cafe-abo.pdf"
+            pdfName="Leitfaden-Cafe-Abo.pdf"
+            ebookTag="leitfaden-cafe-abo"
+            niche="cafe"
+            city="koeln"
+            submitLabel="Café-Abo-Leitfaden herunterladen"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TERMIN-CTA ────────────────────────────────────────────── -->
+  <section class="bg-ink py-14 sm:py-16 border-t border-paper/10">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+        <div class="flex-1">
+          <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Für Kölner Cafés</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-paper leading-tight">
+            Lieber direkt persönlich?
+          </h2>
+          <p class="text-paper/50 text-sm mt-2 leading-relaxed">
+            15 Minuten reichen — danach weißt du genau, welches Abo-Modell zu deinem Café passt.
+          </p>
+        </div>
+        <a
+          href="https://termin.bonuskarte.digital/barista"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors"
+        >
+          Termin buchen
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
