@@ -163,7 +163,7 @@ function recordSalesflareLead(
         $pathParts     = explode('-', $utmCampaign);
         $leadCity      = $pathParts[0] ?? 'unbekannt';
         $leadPage      = str_replace('-', '/', $utmCampaign); // koeln/nippes/cafes
-        $baseTags = [$niche, $leadCity, $utmCampaign];
+        $baseTags = ['online', $niche, $leadCity, $utmCampaign];
         if ($mode === 'gruender') {
             $baseTags[] = 'gruender-100';
             $baseTags[] = 'lifetime-100eur';
