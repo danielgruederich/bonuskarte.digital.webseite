@@ -29,12 +29,11 @@ const categoryColors: Record<string, string> = {
   title="Blog Köln – bonuskarte.digital | Kundenbindung für Kölner Betriebe"
   description="Tipps, Anleitungen und Strategien zur digitalen Kundenbindung speziell für Cafés, Restaurants und Dönerläden in Köln – Ehrenfeld, Nippes, Innenstadt und mehr."
 >
-  <Navbar dark={true} ctaHref="/#demo" />
+  <Navbar ctaHref="/#demo" />
 
   <!-- Hero -->
   <section class="relative bg-paper overflow-hidden pt-32 pb-20">
     <div class="absolute inset-0 bg-grid-ink opacity-100 pointer-events-none"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-paper via-black/80 to-black pointer-events-none"></div>
     <div class="relative max-w-6xl mx-auto px-5 sm:px-8">
       <div class="max-w-2xl">
         <div class="inline-flex items-center gap-2 text-amber text-xs font-bold tracking-[0.3em] uppercase mb-6">
@@ -83,16 +82,16 @@ const categoryColors: Record<string, string> = {
               <span class={`text-xs font-semibold tracking-wide uppercase px-2.5 py-1 rounded-sm ${categoryColors[featured.data.category]}`}>
                 {featured.data.category}
               </span>
-              <span class="text-ink/55 text-xs">{featured.data.readingTime} Min. Lesezeit</span>
+              <span class="text-paper/55 text-xs">{featured.data.readingTime} Min. Lesezeit</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-bold text-ink leading-snug mb-4 group-hover:text-amber transition-colors">
+            <h2 class="text-2xl sm:text-3xl font-bold text-paper leading-snug mb-4 group-hover:text-amber transition-colors">
               {featured.data.title}
             </h2>
-            <p class="text-ink/50 leading-relaxed text-sm mb-6 line-clamp-3">
+            <p class="text-paper/50 leading-relaxed text-sm mb-6 line-clamp-3">
               {featured.data.description}
             </p>
             <div class="flex items-center justify-between">
-              <span class="text-ink/55 text-xs">{formatDate(featured.data.pubDate)}</span>
+              <span class="text-paper/55 text-xs">{formatDate(featured.data.pubDate)}</span>
               <span class="inline-flex items-center gap-2 text-amber text-xs font-bold tracking-widest uppercase group-hover:gap-3 transition-all">
                 Weiterlesen
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +152,7 @@ const categoryColors: Record<string, string> = {
   <section class="bg-ink border-t border-ink/30 py-20">
     <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
       <div class="text-xs font-bold tracking-[0.3em] uppercase text-amber mb-4">Für Kölner Betriebe</div>
-      <h2 class="text-3xl sm:text-4xl font-black text-ink mb-5 leading-tight">
+      <h2 class="text-3xl sm:text-4xl font-black text-paper mb-5 leading-tight">
         Bereit für Ihre eigene<br/>digitale Kundenkarte in Köln?
       </h2>
       <p class="text-ink/50 mb-8 text-base leading-relaxed">
