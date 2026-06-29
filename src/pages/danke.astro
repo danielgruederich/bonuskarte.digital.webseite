@@ -115,11 +115,11 @@ import { pabbly } from '../config/integrations'
       // Personalize hero
       const firstName = fullName.split(' ')[0]
       if (firstName) {
-        var nameEl = document.getElementById('invitee-name')
+        const nameEl = document.getElementById('invitee-name')
         if (nameEl) nameEl.textContent = firstName + '!'
       }
       if (startsAt) {
-        var subtextEl = document.getElementById('hero-subtext')
+        const subtextEl = document.getElementById('hero-subtext')
         if (subtextEl) subtextEl.textContent = 'Dein Termin am ' + startsAt + ' ist reserviert. Wir freuen uns drauf.'
       }
 
