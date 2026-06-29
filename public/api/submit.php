@@ -42,7 +42,7 @@ const TELEGRAM_CHAT_ID    = '128525956';
 const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxIKBXDVaAYfZcD6RV7lTodupreX7J5P0YV1OQ4FsOKArhRWhGBWSmmke4drEdLWgkX8Q/exec';
 
 // MailerCloud Transactional Email
-const MAILERCLOUD_API_KEY = 'DEIN_MAILERCLOUD_API_KEY_HIER';
+const MAILERCLOUD_API_KEY = 'kfAGX-693429be4f95623a037df4632f4b515d-25bf1d91b4b9625fb417d5440c87fc09';
 const MAILERCLOUD_BASE    = 'https://email-api.mailercloud.com';
 
 // Add new niche template IDs here as you create them in Boomerang
