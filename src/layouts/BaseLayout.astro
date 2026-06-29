@@ -7,11 +7,12 @@ interface Props {
   locale?: string                                     // 'de_DE' | 'fr_FR'
   alternates?: { hreflang: string; href: string }[]   // hreflang pairs; default empty
   noindex?: boolean                                   // when true, emit <meta robots="noindex,follow">
+  showStickyCta?: boolean                             // sticky mobile CTA bar (default true)
 }
 
 import Zipchat from '../components/integrations/Zipchat.astro'
 
-const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false } = Astro.props
+const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false, showStickyCta = true } = Astro.props
 const canonicalUrl = new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
 const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuskarte.digital').href
 ---
@@ -89,6 +90,30 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
   <body class="bg-paper text-ink antialiased">
     <slot />
     <Zipchat />
+
+    {showStickyCta && (
+      <div
+        id="sticky-cta"
+        class="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-paper border-t border-ink/20 px-4 py-3 flex items-center gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.07)] translate-y-full transition-transform duration-300"
+        aria-hidden="true"
+      >
+        <div class="flex-1 min-w-0">
+          <p class="text-ink text-xs font-semibold leading-tight">3 Felder, 2 Minuten –</p>
+          <p class="text-ink/50 text-xs leading-tight">wir machen den Rest.</p>
+        </div>
+        <a
+          href="/koeln"
+          data-city-cta
+          class="flex-shrink-0 inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-black px-5 py-3 text-xs font-bold tracking-[0.15em] uppercase transition-colors"
+        >
+          Kostenlos testen
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    )}
+
     <script>
       ;(function () {
         const CITIES = ['berlin','hamburg','duesseldorf','muenchen','frankfurt','koeln','bonn','essen','hannover','dortmund','dresden','nuernberg','leipzig','stuttgart','huerth']
@@ -99,6 +124,21 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
         document.querySelectorAll('[data-city-cta]').forEach(function (el) {
           el.setAttribute('href', '/' + detected)
         })
+
+        // Sticky CTA: einblenden nach 300px Scroll
+        const sticky = document.getElementById('sticky-cta')
+        if (sticky) {
+          sticky.setAttribute('aria-hidden', 'true')
+          window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+              sticky.classList.remove('translate-y-full')
+              sticky.setAttribute('aria-hidden', 'false')
+            } else {
+              sticky.classList.add('translate-y-full')
+              sticky.setAttribute('aria-hidden', 'true')
+            }
+          }, { passive: true })
+        }
       })()
     </script>
   </body>
