@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import { pabbly } from '../config/integrations'
+---
+
+<BaseLayout
+  title="Buchung bestätigt | bonuskarte.digital"
+  description="Dein Termin ist gebucht. Wir freuen uns auf das Gespräch!"
+  noindex={true}
+  showStickyCta={false}
+>
+  <Navbar ctaHref="/koeln" ctaLabel="Zur Startseite" />
+
+  <!-- Hero -->
+  <section class="relative bg-paper overflow-hidden pt-28 pb-12 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-ink"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-8">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">
+          Buchung bestätigt
+        </span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl leading-[1.1] tracking-tight mb-6">
+        <span class="font-normal text-ink block mb-2">Wir sehen uns,</span>
+        <span id="invitee-name" class="font-bold text-amber block">bald!</span>
+      </h1>
+      <p id="hero-subtext" class="text-ink/60 text-base font-normal leading-relaxed max-w-lg mx-auto">
+        Dein Termin ist reserviert. Wir freuen uns drauf.
+      </p>
+    </div>
+  </section>
+
+  <!-- Details + Next Steps + CTA -->
+  <section class="bg-ink pb-16 px-5 sm:px-8">
+    <div class="max-w-3xl mx-auto space-y-6 pt-8">
+
+      <!-- Buchungsdetails -->
+      <div class="border border-amber/20 bg-paper p-6 sm:p-8 space-y-4">
+        <div id="row-date" class="hidden items-start gap-4">
+          <svg class="w-5 h-5 text-amber mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span id="meeting-date" class="text-ink text-sm font-normal leading-relaxed"></span>
+        </div>
+        <div id="row-email" class="hidden items-start gap-4">
+          <svg class="w-5 h-5 text-amber mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span id="invitee-email-text" class="text-ink text-sm font-normal"></span>
+        </div>
+        <div id="row-type" class="hidden items-start gap-4">
+          <svg class="w-5 h-5 text-amber mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+          <span id="meeting-type-text" class="text-ink text-sm font-normal"></span>
+        </div>
+      </div>
+
+      <!-- Nächste Schritte -->
+      <div class="border border-amber/20 bg-paper p-6 sm:p-8">
+        <h2 class="text-ink text-xs font-bold tracking-[0.25em] uppercase mb-6">Was passiert als nächstes?</h2>
+        <ol class="space-y-5">
+          <li class="flex items-start gap-4">
+            <span class="text-amber text-xs font-bold tracking-widest mt-0.5 shrink-0">01</span>
+            <p class="text-ink/70 text-sm font-normal leading-relaxed">
+              Du bekommst eine Bestätigungsmail von SimplyMeet.me mit allen Details.
+            </p>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-amber text-xs font-bold tracking-widest mt-0.5 shrink-0">02</span>
+            <p class="text-ink/70 text-sm font-normal leading-relaxed">
+              Bereite gerne ein paar Infos vor: dein Name, Branche, und ungefähr wie viele Kunden du hast.
+            </p>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-amber text-xs font-bold tracking-widest mt-0.5 shrink-0">03</span>
+            <p class="text-ink/70 text-sm font-normal leading-relaxed">
+              Bei Fragen erreichst du uns jederzeit per
+              <a href="https://wa.me/DEINENUMMER" class="text-amber hover:underline">WhatsApp</a>
+              oder <a href="mailto:hallo@bonuskarte.digital" class="text-amber hover:underline">E-Mail</a>.
+            </p>
+          </li>
+        </ol>
+      </div>
+
+      <!-- CTA -->
+      <a
+        href="/koeln"
+        class="flex items-center justify-center w-full bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
+      >
+        Zur Startseite
+      </a>
+
+    </div>
+  </section>
+
+  <Footer />
+
+  <script define:vars={{ webhookUrl: pabbly.webhookUrl }}>
+    (function () {
+      const KEY = 'booking_tracked'
+      const params = new URLSearchParams(window.location.search)
+
+      const fullName  = params.get('invitee_full_name')    || ''
+      const email     = params.get('invitee_email')         || ''
+      const startsAt  = params.get('meeting_starts_at')     || ''
+      const type      = params.get('meeting_type')          || ''
+      const phone     = params.get('invitee_phone_number')  || ''
+
+      // Personalize hero
+      const firstName = fullName.split(' ')[0]
+      if (firstName) {
+        var nameEl = document.getElementById('invitee-name')
+        if (nameEl) nameEl.textContent = firstName + '!'
+      }
+      if (startsAt) {
+        var subtextEl = document.getElementById('hero-subtext')
+        if (subtextEl) subtextEl.textContent = 'Dein Termin am ' + startsAt + ' ist reserviert. Wir freuen uns drauf.'
+      }
+
+      // Show booking detail rows
+      function showRow(rowId, contentId, text) {
+        if (!text) return
+        var row     = document.getElementById(rowId)
+        var content = document.getElementById(contentId)
+        if (row && content) {
+          content.textContent = text
+          row.classList.remove('hidden')
+          row.classList.add('flex')
+        }
+      }
+      showRow('row-date',  'meeting-date',       startsAt)
+      showRow('row-email', 'invitee-email-text', email)
+      showRow('row-type',  'meeting-type-text',  type)
+
+      // Pabbly webhook — once per session, only when email present
+      if (email && webhookUrl && !sessionStorage.getItem(KEY)) {
+        sessionStorage.setItem(KEY, '1')
+        fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            invitee_full_name:    fullName,
+            invitee_email:        email,
+            meeting_starts_at:    startsAt,
+            meeting_type:         type,
+            invitee_phone_number: phone,
+            source:               'simplymeet'
+          })
+        }).catch(function () {
+          // Webhook-Fehler ist still — User Experience unberührt
+        })
+      }
+    })()
+  </script>
+
+</BaseLayout>
