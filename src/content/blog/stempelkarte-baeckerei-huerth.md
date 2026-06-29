@@ -2,7 +2,7 @@
 title: "Digitale Stempelkarte für Hürther Bäckereien: Morgenkunden zu Stammkunden machen"
 description: "Hürther Bäckereien haben gegenüber Kölner Innenstadtlagen einen entscheidenden Vorteil: echte Stammkundschaft. Wie digitale Stempelkarten diesen Vorteil ausbauen."
 pubDate: 2026-07-12
-heroImage: "/images/mockup-coffee.png"
+heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

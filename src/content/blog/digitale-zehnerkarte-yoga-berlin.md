@@ -2,7 +2,7 @@
 title: "Digitale Zehnerkarte für Berliner Yoga-Studios: Prenzlauer Berg bis Mitte"
 description: "Wie Berliner Yoga-Studios mit digitalen Zehner- und Monatskarten ihre Stammschüler binden – ohne App-Download, ohne Zettelwirtschaft."
 pubDate: 2026-07-02
-heroImage: "/images/mockup-coffee.png"
+heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

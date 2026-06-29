@@ -2,7 +2,7 @@
 title: "Digitale Stempelkarte für Düsseldorfer Bäckereien: Stammkunden statt Laufkunden"
 description: "Düsseldorfer Traditionsbäcker gegen große Ketten: Wie digitale Stempelkarten den Unterschied machen – und warum Stammkunden die Seele jeder Bäckerei sind."
 pubDate: 2026-07-10
-heroImage: "/images/mockup-coffee.png"
+heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

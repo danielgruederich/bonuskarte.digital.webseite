@@ -2,7 +2,7 @@
 title: "Digitale Zehnerkarte für Bonner Yoga-Studios: Innenstadt, Beuel und Bad Godesberg"
 description: "Wie Bonner Yoga-Studios ihre Stammschüler mit digitalen Zehnerkarten binden – kein Papierchaos, kein App-Download, funktioniert sofort."
 pubDate: 2026-07-04
-heroImage: "/images/mockup-coffee.png"
+heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

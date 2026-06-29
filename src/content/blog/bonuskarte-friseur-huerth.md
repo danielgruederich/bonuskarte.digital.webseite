@@ -2,7 +2,7 @@
 title: "Digitale Bonuskarte für Hürther Friseursalons: Stammkunden die nicht zu Kölner Ketten wechseln"
 description: "Hürther Friseursalons konkurrieren mit Kölner Ketten und günstigen Anbietern. Wie digitale Bonuskarten helfen, die eigene Stammkundschaft zu binden und zu vergrößern."
 pubDate: 2026-07-26
-heroImage: "/images/mockup-coffee.png"
+heroImage: "/images/hero-friseur.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

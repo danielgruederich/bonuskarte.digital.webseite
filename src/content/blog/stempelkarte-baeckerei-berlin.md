@@ -2,7 +2,7 @@
 title: "Digitale Stempelkarte für Berliner Bäckereien: Kiez-Bäcker schlägt Kette"
 description: "Wie Berliner Traditionsbäcker mit digitalen Stempelkarten gegen Backwerk & Co. bestehen – und warum Kiez-Loyalität ihr größter Vorteil ist."
 pubDate: 2026-07-09
-heroImage: "/images/mockup-green.png"
+heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

@@ -2,7 +2,7 @@
 title: "Digitale Bonuskarte für Berliner Friseursalons: Stammkunden statt Laufkunden"
 description: "Berliner Friseursalons kämpfen gegen Großketten und Online-Buchungsplattformen. Wie digitale Bonuskarten helfen, Stammkunden dauerhaft zu binden."
 pubDate: 2026-07-23
-heroImage: "/images/mockup-green.png"
+heroImage: "/images/hero-friseur.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

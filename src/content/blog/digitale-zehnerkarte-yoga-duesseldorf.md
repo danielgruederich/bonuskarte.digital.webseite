@@ -2,7 +2,7 @@
 title: "Digitale Zehnerkarte für Düsseldorfer Yoga-Studios: Von Flingern bis Oberkassel"
 description: "Wie Düsseldorfer Yoga-Studios mit digitalen Zehner- und Monatskarten ihre Stammschüler binden – ohne App-Download, ohne Papierchaos."
 pubDate: 2026-07-03
-heroImage: "/images/mockup-green.png"
+heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

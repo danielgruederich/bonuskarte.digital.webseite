@@ -2,7 +2,7 @@
 title: "Digitale Bonuskarte für Bonner Restaurants: Stammgäste in der ehemaligen Hauptstadt"
 description: "Bonn hat eine stolze Gastro-Szene mit loyalen Stammgästen. Wie lokale Restaurants digitale Bonuskarten einsetzen, um diese Loyalität zu stärken."
 pubDate: 2026-07-25
-heroImage: "/images/mockup-green.png"
+heroImage: "/images/hero-restaurant.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

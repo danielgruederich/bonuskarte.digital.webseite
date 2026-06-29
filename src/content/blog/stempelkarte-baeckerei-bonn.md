@@ -2,7 +2,7 @@
 title: "Digitale Stempelkarte für Bonner Bäckereien: Wie Stammkunden zum Frühstücks-Ritual werden"
 description: "Bonner Bäckereien haben eine treue Stammkundschaft – wenn sie das richtige Tool nutzen. Wie digitale Stempelkarten das Frühstücks-Ritual zum Kundenbindungs-Motor machen."
 pubDate: 2026-07-11
-heroImage: "/images/mockup-green.png"
+heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

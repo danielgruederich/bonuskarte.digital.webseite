@@ -2,7 +2,7 @@
 title: "Digitale Zehnerkarte für Hürther Yoga-Studios: Stammschüler binden ohne Papierchaos"
 description: "Wie Yoga-Studios in Hürth und Umgebung mit digitalen Zehnerkarten ihre Stammschüler dauerhaft binden – einfach, schnell, ohne App."
 pubDate: 2026-07-05
-heroImage: "/images/mockup-green.png"
+heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

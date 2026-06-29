@@ -2,7 +2,7 @@
 title: "Kundenbindung für Berliner Restaurants: Was Gäste in Kreuzberg, Mitte & Charlottenburg wirklich wollen"
 description: "Berliner Restaurant-Gäste sind anspruchsvoll und haben die Wahl. So bauen Berliner Betriebe echte Stammgäste auf – ohne Rabatte, ohne Preisdumping."
 pubDate: 2026-07-16
-heroImage: "/images/mockup-coffee.png"
+heroImage: "/images/hero-restaurant.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false

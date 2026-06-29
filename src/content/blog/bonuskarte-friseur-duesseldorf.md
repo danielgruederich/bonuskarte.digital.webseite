@@ -2,7 +2,7 @@
 title: "Digitale Bonuskarte für Düsseldorfer Friseursalons: Kundenbindung in der Modestadt"
 description: "Düsseldorf gilt als Modehauptstadt Deutschlands – und Friseursalons stehen im harten Wettbewerb. Wie digitale Bonuskarten helfen, Stammkunden dauerhaft zu binden."
 pubDate: 2026-07-24
-heroImage: "/images/mockup-coffee.png"
+heroImage: "/images/hero-friseur.jpg"
 category: "Ratgeber"
 readingTime: 7
 featured: false
