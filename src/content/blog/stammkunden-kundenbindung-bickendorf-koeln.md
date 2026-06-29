@@ -2,7 +2,7 @@
 title: "Kundenbindung in Bickendorf: Was Stammkunden wollen"
 description: "Warum Kundenbindung in Bickendorf anders tickt als in der Kölner Innenstadt – und wie digitale Stempelkarten Stammkunden zu echten Fürsprechern machen."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1493770348161-369560ae357d?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 4
 featured: false

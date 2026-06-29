@@ -2,7 +2,7 @@
 title: "Bonner Cafés & Restaurants: Mit digitaler Bonuskarte mehr Stammgäste"
 description: "Bonn ist eine Stadt der kurzen Wege und treuen Gäste – wenn man sie richtig anspricht. So nutzen Bonner Café- und Restaurantbetriebe digitale Bonuskarten für echte Stammkundenbindung."
 pubDate: 2026-05-01
-heroImage: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
 readingTime: 6
 featured: false

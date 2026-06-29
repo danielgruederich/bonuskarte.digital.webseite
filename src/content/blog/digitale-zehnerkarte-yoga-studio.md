@@ -2,7 +2,7 @@
 title: "Die digitale 10er-Karte für Yoga-Studios: Weniger Verwaltung, mehr Flow"
 description: "Wie Yoga- und Pilates-Studios mit der digitalen 10er-Karte im Wallet Kurse verwalten, Kunden binden und den Verwaltungsaufwand halbieren."
 pubDate: 2026-04-07
-heroImage: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
 readingTime: 5
 featured: false

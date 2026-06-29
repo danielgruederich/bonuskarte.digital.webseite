@@ -2,7 +2,7 @@
 title: "Kundenbindung Köln Innenstadt: Stammkunden aufbauen"
 description: "Volle Kasse am Samstag, leere Tische am Montag: Warum Frequenz nicht Loyalität ist und was kluge Betriebe in der Kölner Innenstadt wirklich anders machen."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 3
 featured: false

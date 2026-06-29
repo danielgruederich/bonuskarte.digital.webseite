@@ -2,7 +2,7 @@
 title: "Ein Gratis-Eis auf Instagram. Und plötzlich hast du einen Stammkunden."
 description: "Poste einen Coupon in deiner Insta-Story, setz ein 4-Stunden-Limit — und sieh zu, wie sich der Coupon automatisch in eine 10er Stempelkarte verwandelt."
 pubDate: 2026-04-03
-heroImage: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "How-to"
 readingTime: 6
 featured: false

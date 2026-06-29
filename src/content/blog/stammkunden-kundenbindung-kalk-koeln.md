@@ -2,7 +2,7 @@
 title: "Kundenbindung in Kalk: Stammkunden halten"
 description: "Kalk wächst – aber wer seine Stammkunden nicht aktiv hält, verliert sie. Wie eine digitale Stempelkarte an der Kalker Hauptstraße für Kundenbindung sorgt."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
 readingTime: 3
 featured: false

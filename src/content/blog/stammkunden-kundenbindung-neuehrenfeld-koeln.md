@@ -2,7 +2,7 @@
 title: "Kundenbindung in Neuehrenfeld: Der stille Vorteil"
 description: "Neuehrenfeld hat Ehrenfelds Charme, aber noch nicht dessen Konkurrenz. Warum Kundenbindung hier gerade leichter ist als in anderen Kölner Stadtteilen."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 3
 featured: false

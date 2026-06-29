@@ -2,7 +2,7 @@
 title: "Kundenbindung in der Düsseldorfer Gastronomie: Der Guide für Altstadt & Co."
 description: "Die Düsseldorfer Altstadt gilt als längste Theke der Welt – doch echte Stammkunden entstehen nicht durch Zufall. So bauen Gastrobetriebe in Düsseldorf nachhaltige Kundenbindung auf."
 pubDate: 2026-04-15
-heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Strategie"
 readingTime: 8
 featured: false

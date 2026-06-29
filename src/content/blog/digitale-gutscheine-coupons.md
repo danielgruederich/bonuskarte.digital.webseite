@@ -2,7 +2,7 @@
 title: "Digitale Gutscheine für Kölner Betriebe: Mehr Neukunden, mehr Umsatz"
 description: "Wie digitale Gutscheine und Rabattkarten Kölner Cafés, Dönerläden und Restaurants helfen, stille Tage zu überbrücken, Neukunden zu gewinnen und Stammkunden zu reaktivieren."
 pubDate: 2026-03-05
-heroImage: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Strategie"
 readingTime: 5
 featured: false

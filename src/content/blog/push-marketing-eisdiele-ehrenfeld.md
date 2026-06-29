@@ -2,7 +2,7 @@
 title: "Eine Kugel zum Geburtstag. Dein Kunde vergisst das nie."
 description: "Geburtstags-Grüße, Sonnenschein-Alerts, Freitags-Specials — wie Eisdielen in Ehrenfeld mit Push-Nachrichten Umsatz machen, ohne einen Cent für Werbung auszugeben."
 pubDate: 2026-03-27
-heroImage: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Strategie"
 readingTime: 6
 featured: false

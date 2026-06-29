@@ -2,7 +2,7 @@
 title: "Stammkunden in Porz: Das System dahinter"
 description: "Kundenbindung Porz Köln: Wie Inhaber an Hauptstraße und Marktplatz aus Laufkunden treue Stammgäste machen – ohne Rabatt-Spirale und ohne Marketingbudget."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
 readingTime: 4
 featured: false

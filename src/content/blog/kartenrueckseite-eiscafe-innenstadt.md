@@ -2,7 +2,7 @@
 title: "Die Rückseite deiner Kundenkarte. Dein bestgehütetes Geheimnis."
 description: "Bis zu 9 Links auf der Rückseite deiner digitalen Kundenkarte — plus Geo-Push, wenn Kunden an deiner Eisdiele in der Innenstadt vorbeigehen."
 pubDate: 2026-04-08
-heroImage: "https://images.unsplash.com/photo-1513558161293-cdaf765ed514?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 6
 featured: false

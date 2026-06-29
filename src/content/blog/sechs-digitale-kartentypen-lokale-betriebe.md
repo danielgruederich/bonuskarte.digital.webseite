@@ -2,7 +2,7 @@
 title: "Mehr als nur Stempelkarten: 6 digitale Kartentypen für lokale Betriebe"
 description: "Stempelkarte, Punktekarte, Mitgliedskarte, Geschenkkarte, Guthabenkarte, 10er-Karte – welcher Kartentyp passt zu welchem Geschäft? Ein Überblick."
 pubDate: 2026-04-08
-heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 8
 featured: true

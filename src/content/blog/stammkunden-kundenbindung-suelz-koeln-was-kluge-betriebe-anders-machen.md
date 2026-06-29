@@ -2,7 +2,7 @@
 title: "Kundenbindung Sülz Köln: Was kluge Betriebe anders machen"
 description: "Gewohnheit ist keine Bindung — und Betriebe in Sülz Köln, die das früh verstehen, gewinnen Stammkunden, während andere täglich neue Laufkundschaft verlieren."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
 readingTime: 3
 featured: false

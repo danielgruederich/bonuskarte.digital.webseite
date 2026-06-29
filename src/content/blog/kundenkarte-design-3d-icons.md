@@ -2,7 +2,7 @@
 title: "Flache Standard-Icons? So sieht deine Kundenkarte plötzlich teuer aus"
 description: "Deine digitale Kundenkarte liegt im Wallet zwischen Bank-App und KVB-Ticket. Wie du sie mit 3D-Icons aus einem kostenlosen KI-Tool hochwertiger gestaltest – und wo du bewusst flach bleibst."
 pubDate: 2026-06-09
-heroImage: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "How-to"
 readingTime: 6
 featured: false

@@ -2,7 +2,7 @@
 title: "Eine Eisflatrate. Klingt verrückt. Bis du die Zahlen siehst."
 description: "50 Abo-Kunden, 29 Euro im Monat, 6 Monate garantiert. Warum eine Eisflatrate in Sülz funktioniert, und wie Stripe das Geld automatisch einzieht."
 pubDate: 2026-04-01
-heroImage: "https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Strategie"
 readingTime: 7
 featured: false

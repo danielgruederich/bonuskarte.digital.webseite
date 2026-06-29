@@ -2,7 +2,7 @@
 title: "Kundenkarte für Cafés in Köln: Was wirklich funktioniert"
 description: "Viele Kölner Cafés versuchen Kundenbindung – und scheitern an Papier-Stempelkarten. Was wirklich funktioniert, zeigt dieser Praxis-Guide für Cafés in Ehrenfeld, Nippes und der Südstadt."
 pubDate: 2026-03-15
-heroImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
 readingTime: 7
 featured: false

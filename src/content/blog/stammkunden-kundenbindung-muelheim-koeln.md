@@ -2,7 +2,7 @@
 title: "Kundenbindung Mülheim Köln: So geht's richtig"
 description: "Mülheimer Stammkunden kommen täglich wieder – aber nur wenn du aktiv bindest. Wie digitale Stempelkarten Kundenbindung in Mülheim Köln systematisch machen."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
 readingTime: 4
 featured: false

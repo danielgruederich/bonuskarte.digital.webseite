@@ -2,7 +2,7 @@
 title: "Digitale Stempelkarte für Berliner Cafés: So bindet ihr Kiez-Stammkunden"
 description: "Berlin ist die Hauptstadt der Cafés – und der Konkurrenz. Wie digitale Stempelkarten Berliner Café-Betreibern helfen, Kiez-Stammkunden dauerhaft zu binden."
 pubDate: 2026-04-01
-heroImage: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 7
 featured: false

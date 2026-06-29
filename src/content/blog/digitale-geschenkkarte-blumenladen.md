@@ -2,7 +2,7 @@
 title: "Digitale Geschenkkarte für Blumenläden: Sträuße verschenken per Link"
 description: "Wie Blumenläden mit digitalen Geschenkkarten neue Kunden gewinnen – und aus Beschenkten Stammkunden machen."
 pubDate: 2026-04-07
-heroImage: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 5
 featured: false

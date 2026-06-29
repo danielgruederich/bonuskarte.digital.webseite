@@ -2,7 +2,7 @@
 title: "Kundenbindung Ossendorf Köln: Stammkunden halten"
 description: "Ossendorf hat treue Stammkunden – aber hält dein Laden sie wirklich? Wie eine digitale Stempelkarte die Kundenbindung in Ossendorf Köln messbar stärkt."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 3
 featured: false

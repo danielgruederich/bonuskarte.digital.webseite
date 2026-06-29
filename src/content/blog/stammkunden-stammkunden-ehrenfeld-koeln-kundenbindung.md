@@ -2,7 +2,7 @@
 title: "Stammkunden in Ehrenfeld: Das Problem der klügsten Betriebe"
 description: "Kundenbindung Ehrenfeld Köln: Warum Cafés und Betriebe nicht wissen, ob Gäste wirklich wiederkommen – und was die klügsten Inhaber jetzt schon besser machen."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 4
 featured: false

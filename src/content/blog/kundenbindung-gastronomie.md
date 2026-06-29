@@ -2,7 +2,7 @@
 title: "Kundenbindung in der Kölner Gastronomie: Warum Stammkunden Gold wert sind"
 description: "In Köln kämpfen Cafés, Restaurants und Dönerläden Viertel für Viertel um dieselben Stammkunden. Wie Sie in Ehrenfeld, Nippes oder der Innenstadt echte Loyalität aufbauen."
 pubDate: 2026-03-03
-heroImage: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Strategie"
 readingTime: 8
 featured: false

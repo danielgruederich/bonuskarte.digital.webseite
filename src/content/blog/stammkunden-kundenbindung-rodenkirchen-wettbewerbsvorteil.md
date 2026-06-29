@@ -2,7 +2,7 @@
 title: "Kundenbindung Rodenkirchen: Der stille Wettbewerbsvorteil"
 description: "Stammkunden sind in Rodenkirchen das Geschäftsmodell. Wer die Kundenbindung Rodenkirchen Köln noch dem Zufall überlässt, gibt seinen Vorteil freiwillig ab."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 3
 featured: false

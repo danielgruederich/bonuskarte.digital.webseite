@@ -2,7 +2,7 @@
 title: "Digitale Mitgliedskarte für Fitnessstudios: Schluss mit Plastikkarten"
 description: "Warum immer mehr Fitnessstudios auf digitale Mitgliedsausweise in Apple & Google Wallet setzen – und wie du in 24 Stunden live bist."
 pubDate: 2026-04-08
-heroImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 6
 featured: false

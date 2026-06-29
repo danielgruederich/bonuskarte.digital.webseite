@@ -2,7 +2,7 @@
 title: "Stammkunden in Longerich: Gold wert oder Zufall?"
 description: "Longerich lebt von treuer Laufkundschaft — aber hältst du diese Bindung aktiv oder dem Zufall? Was digitale Stempelkarten hier konkret ändern."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 4
 featured: false

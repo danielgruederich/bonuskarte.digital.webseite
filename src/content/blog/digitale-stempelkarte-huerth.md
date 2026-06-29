@@ -2,7 +2,7 @@
 title: "Digitale Stempelkarte für Hürther Cafés & Restaurants: Stammkunden dauerhaft binden"
 description: "Hürth ist eine Stadt der kurzen Wege und gewachsener Stammkundschaft. So nutzen Hürther Gastrobetriebe digitale Stempelkarten, um aus Laufkundschaft loyale Stammgäste zu machen."
 pubDate: 2026-05-15
-heroImage: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
 readingTime: 6
 featured: false

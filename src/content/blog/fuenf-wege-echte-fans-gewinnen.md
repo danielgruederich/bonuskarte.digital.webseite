@@ -2,7 +2,7 @@
 title: "5 Wege, wie dein Café echte Fans gewinnt"
 description: "Gelegenheitsgäste zu echten Fans machen: 5 praxisnahe Strategien für Cafés, Dönerläden und Restaurants in Köln."
 pubDate: 2026-04-09
-heroImage: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Strategie"
 readingTime: 7
 featured: false

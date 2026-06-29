@@ -2,7 +2,7 @@
 title: "Kundenbindung Chorweiler: Was Stammkunden bringen"
 description: "Chorweiler ist kein Touristenviertel — hier kaufen Leute bei denselben Läden ein. So nutzt du Kundenbindung Chorweiler Köln als konkreten Wettbewerbsvorteil."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
 readingTime: 3
 featured: false

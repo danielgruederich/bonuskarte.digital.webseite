@@ -2,7 +2,7 @@
 title: "Kundenbindung in Deutz: Warum Köln hier anders tickt"
 description: "Büropendler mittags, Messe-Besucher am Wochenende, Stammkunden abends: Wer in Deutz einen Laden betreibt, hat drei Zielgruppen. So bindest du alle drei."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1467803738586-46b7eb7b16a1?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Lokales"
 readingTime: 4
 featured: false

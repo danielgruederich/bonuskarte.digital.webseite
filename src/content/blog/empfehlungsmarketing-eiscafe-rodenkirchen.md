@@ -2,7 +2,7 @@
 title: "Dein bester Verkäufer? Der Kunde, der gerade gegangen ist."
 description: "Empfehlungsmarketing und automatische Google-Review-Anfragen: wie Eisdielen in Rodenkirchen Kunden zu Verkäufern machen."
 pubDate: 2026-04-10
-heroImage: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Strategie"
 readingTime: 7
 featured: false

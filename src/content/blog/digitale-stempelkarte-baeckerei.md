@@ -2,7 +2,7 @@
 title: "Digitale Stempelkarte für Bäckereien: Jeden Morgen dieselbe Bäckerei"
 description: "Warum die Bäckerei der perfekte Ort für eine digitale Stempelkarte ist – und wie du aus Laufkundschaft treue Stammkunden machst."
 pubDate: 2026-04-06
-heroImage: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
 readingTime: 6
 featured: false

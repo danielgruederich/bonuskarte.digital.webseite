@@ -2,7 +2,7 @@
 title: "Was ist eine digitale Stempelkarte? Leitfaden für Kölner Betriebe"
 description: "Wie digitale Stempelkarten für Cafés, Dönerläden und Restaurants in Köln funktionieren – und warum immer mehr Kölner Betriebe auf Apple Wallet & Google Wallet setzen."
 pubDate: 2026-02-10
-heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 7
 featured: true

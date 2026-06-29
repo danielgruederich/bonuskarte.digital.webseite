@@ -2,7 +2,7 @@
 title: "Deine Gäste sind nicht untreu – sie sind ungebunden"
 description: "Warum Gäste abwandern hat oft nichts mit deinem Essen zu tun. Was 'ungebundene Konsumenten' für Kölner Gastronomen bedeuten, und wie du sie erreichst."
 pubDate: 2026-04-11
-heroImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Strategie"
 readingTime: 6
 featured: false

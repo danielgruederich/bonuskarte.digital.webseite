@@ -2,7 +2,7 @@
 title: "Digitale vs. Papier-Stempelkarte: Was Kölner Betriebe wirklich brauchen"
 description: "Papier-Stempelkarten sind günstig – aber für Kölner Cafés, Dönerläden und Restaurants bringen digitale Karten messbare Vorteile. Ein ehrlicher Vergleich."
 pubDate: 2026-02-17
-heroImage: "https://images.unsplash.com/photo-1609429019995-8c40f49535a5?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 5
 featured: false

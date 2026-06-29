@@ -2,7 +2,7 @@
 title: "Apple Wallet & Google Wallet: Wie Kölner Gastronomen davon profitieren"
 description: "Apple Wallet und Google Wallet sind auf jedem Kölner Smartphone vorinstalliert. Wie lokale Betriebe in Ehrenfeld, Nippes und der Innenstadt diese Plattformen für Kundenbindung nutzen."
 pubDate: 2026-02-24
-heroImage: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 6
 featured: false

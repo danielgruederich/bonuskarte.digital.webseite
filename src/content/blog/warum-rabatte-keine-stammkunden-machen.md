@@ -2,7 +2,7 @@
 title: "Warum Rabatte allein keine Stammkunden machen"
 description: "Rabatte locken Schnäppchenjäger, keine Stammkunden. Warum echte Kundenbindung in der Gastronomie mehr braucht als '10. Kaffee gratis' – und was stattdessen funktioniert."
 pubDate: 2026-04-07
-heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-green.png"
 category: "Strategie"
 readingTime: 6
 featured: false

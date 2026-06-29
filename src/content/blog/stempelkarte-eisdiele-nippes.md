@@ -2,7 +2,7 @@
 title: "Deine Kunden lieben dein Eis. Sie erinnern sich nur nicht an dich."
 description: "Deine Eisdiele in Nippes ist voll — aber die Hälfte kommt nie wieder. Wie du mit einer digitalen Stempelkarte aus Laufkunden Stammkunden machst."
 pubDate: 2026-03-25
-heroImage: "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
 readingTime: 6
 featured: false

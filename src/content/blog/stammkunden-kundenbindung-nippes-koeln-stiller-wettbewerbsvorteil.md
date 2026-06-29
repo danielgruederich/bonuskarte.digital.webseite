@@ -2,7 +2,7 @@
 title: "Kundenbindung Nippes Köln: Der stille Wettbewerbsvorteil"
 description: "Kundenbindung in Nippes Köln: Wie Cafés und Bäckereien mit digitalen Stempelkarten Stammkunden gewinnen – und warum Laufkundschaft allein nicht reicht."
 pubDate: 2026-06-19
-heroImage: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
 readingTime: 3
 featured: false

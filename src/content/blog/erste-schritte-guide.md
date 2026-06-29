@@ -2,7 +2,7 @@
 title: "In 5 Schritten zur Kundenkarte – Starter-Guide für Kölner Betriebe"
 description: "Wie Kölner Cafés, Dönerläden und Restaurants in weniger als 10 Minuten eine digitale Stempelkarte einrichten, teilen und die ersten Stammkunden gewinnen."
 pubDate: 2026-03-10
-heroImage: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=1200&h=630&q=80&auto=format&fit=crop"
+heroImage: "/images/mockup-coffee.png"
 category: "How-to"
 readingTime: 4
 featured: false
