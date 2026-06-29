@@ -22,6 +22,7 @@ interface Props {
   /** Analytics-source; default = mode. Erlaubt z.B. 'gruender_walkin' bei identischem mode. */
   source?: string
   bookingUrl?: string
+  bookingType?: string
 }
 
 interface CardLinks {
@@ -50,6 +51,7 @@ export default function LeadForm({
   nicheOptions = [],
   source,
   bookingUrl,
+  bookingType,
 }: Props) {
   const [state, setState] = useState<State>('idle')
   const [card, setCard] = useState<CardLinks | null>(null)
@@ -117,8 +119,9 @@ export default function LeadForm({
           niche:     effectiveNiche.toLowerCase(),
           city:      city.toLowerCase(),
           mode,
-          source:    trackSource,
-          utm:       getUtmParams(),
+          source:       trackSource,
+          booking_type: bookingType ?? '',
+          utm:          getUtmParams(),
         }),
       })
       const json = await res.json()

@@ -28,9 +28,11 @@ export function getStaticPaths() {
 
 const { veedelData, nicheData } = Astro.props
 const whatsappUrl = 'https://wa.me/491705594140'
-const bookingUrl = nicheData.slug === 'cafes'
-  ? 'https://termin.bonuskarte.digital/barista'
-  : 'https://termin.bonuskarte.digital/15min'
+const GASTRO_NICHES = ['doener', 'pizza', 'restaurant', 'eiscafe']
+const bookingType = nicheData.slug === 'cafes'
+  ? 'barista'
+  : GASTRO_NICHES.includes(nicheData.slug) ? 'gastro' : '15min'
+const bookingUrl = `https://termin.bonuskarte.digital/${bookingType}`
 
 // Resolve all templated strings at build time — no JS injection needed
 const r = (s: string) =>
@@ -162,7 +164,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
             Per WhatsApp anfragen
           </a>
         </div>
-        <a href="{bookingUrl}"
+        <a href={bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
           onclick="if(typeof gtag!=='undefined')gtag('event','demo_booking',{source:'hero'})"
@@ -213,7 +215,8 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
                 niche={nicheData.label}
                 city="Köln"
                 whatsappUrl={whatsappUrl}
-                bookingUrl="{bookingUrl}"
+                bookingUrl={bookingUrl}
+                bookingType={bookingType}
               />
             </div>
           </>

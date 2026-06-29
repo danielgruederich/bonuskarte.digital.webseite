@@ -16,6 +16,8 @@ const { post } = Astro.props
 const { Content } = await post.render()
 const bookingUrl = post.data.niche === 'cafe'
   ? 'https://termin.bonuskarte.digital/barista'
+  : post.data.niche === 'gastro'
+  ? 'https://termin.bonuskarte.digital/gastro'
   : 'https://termin.bonuskarte.digital/15min'
 
 function formatDate(date: Date) {

@@ -68,7 +68,8 @@ $niche     = strtolower(trim($body['niche'] ?? 'cafe'));
 $utm       = $body['utm'] ?? [];
 $mode      = strtolower(trim($body['mode'] ?? 'standard'));
 $source    = strtolower(trim($body['source'] ?? ''));
-$reqCity   = strtolower(trim($body['city'] ?? ''));
+$reqCity      = strtolower(trim($body['city'] ?? ''));
+$bookingType  = strtolower(trim($body['booking_type'] ?? ''));
 
 // Normalize display names to template keys
 $nicheAliases = [
@@ -156,7 +157,8 @@ function recordSalesflareLead(
     string $mode,
     string $source,
     string $reqCity,
-    array $utm
+    array $utm,
+    string $bookingType = ''
 ) {
     try {
         // Extract city/veedel/niche from utm_campaign (e.g. "koeln-nippes-cafes")
@@ -165,6 +167,9 @@ function recordSalesflareLead(
         $leadCity      = $pathParts[0] ?? 'unbekannt';
         $leadPage      = str_replace('-', '/', $utmCampaign); // koeln/nippes/cafes
         $baseTags = ['online', $niche, $leadCity, $utmCampaign];
+        if ($bookingType) {
+            $baseTags[] = 'termin-' . $bookingType;
+        }
         if ($mode === 'gruender') {
             $baseTags[] = 'gruender-100';
             $baseTags[] = 'lifetime-100eur';
@@ -405,7 +410,7 @@ if (($body['mode'] ?? '') === 'lead' || ($body['lang'] ?? '') === 'fr') {
 }
 
 // ── Step 0: Record lead in Salesflare FIRST (never lost on Boomerang failure) ─
-recordSalesflareLead($firstName, $instagram, $phone, $niche, $mode, $source, $reqCity, $utm);
+recordSalesflareLead($firstName, $instagram, $phone, $niche, $mode, $source, $reqCity, $utm, $bookingType);
 notifyTelegramLead($firstName, $phone, $email, $instagram, $niche, $mode, $utm);
 $leadPage = str_replace('-', '/', ($utm['utm_campaign'] ?? ''));
 logToSheets($firstName, $phone, $email, $instagram, $niche, $reqCity, $leadPage, $mode ?: 'demo');
