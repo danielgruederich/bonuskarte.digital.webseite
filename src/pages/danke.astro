@@ -191,15 +191,28 @@ import { pabbly } from '../config/integrations'
       const type      = params.get('meeting_type')          || ''
       const phone     = params.get('invitee_phone_number')  || ''
 
+      // Parse dd-mm-yyyy HH:MM → "Montag, 29. Juni 2026, 14:30 Uhr"
+      function formatDate(str) {
+        if (!str) return str
+        const m = str.match(/^(\d{2})-(\d{2})-(\d{4})(?:[\s,]+(\d{2}):(\d{2}))?/)
+        if (!m) return str
+        const [, dd, mm, yyyy, hh, min] = m
+        const d = new Date(+yyyy, +mm - 1, +dd, hh ? +hh : 0, min ? +min : 0)
+        const datePart = d.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+        return hh ? datePart + ', ' + hh + ':' + min + ' Uhr' : datePart
+      }
+
+      const startsAtFormatted = formatDate(startsAt)
+
       // Personalize hero
       const firstName = fullName.split(' ')[0]
       if (firstName) {
         const nameEl = document.getElementById('invitee-name')
         if (nameEl) nameEl.textContent = firstName + '!'
       }
-      if (startsAt) {
+      if (startsAtFormatted) {
         const subtextEl = document.getElementById('hero-subtext')
-        if (subtextEl) subtextEl.textContent = 'Dein Termin am ' + startsAt + ' ist reserviert. Wir freuen uns drauf.'
+        if (subtextEl) subtextEl.textContent = 'Dein Termin am ' + startsAtFormatted + ' ist reserviert. Wir freuen uns drauf.'
       }
 
       // Show booking detail rows
@@ -213,7 +226,7 @@ import { pabbly } from '../config/integrations'
           row.classList.add('flex')
         }
       }
-      showRow('row-date',  'meeting-date',       startsAt)
+      showRow('row-date',  'meeting-date',       startsAtFormatted)
       showRow('row-email', 'invitee-email-text', email)
       showRow('row-type',  'meeting-type-text',  type)
 
