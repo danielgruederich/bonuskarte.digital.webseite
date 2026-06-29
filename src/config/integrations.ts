@@ -37,4 +37,14 @@ export const trafft = {
   allowEmbed: false,
 }
 
-export const integrations = { zipchat, trafft }
+// ── Pabbly Connect (Buchungsbestätigung → SimplyMeet.me /danke) ──────────────
+export const pabbly = {
+  /**
+   * Pabbly Connect Webhook-URL für Buchungsbestätigungen von SimplyMeet.me.
+   * Leer lassen → kein Webhook wird gefeuert, Seite bleibt voll funktional.
+   * Eintragen sobald Pabbly-Workflow erstellt ist.
+   */
+  webhookUrl: '' as string,
+}
+
+export const integrations = { zipchat, trafft, pabbly }
