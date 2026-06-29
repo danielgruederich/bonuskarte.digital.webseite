@@ -14,9 +14,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 const { Content } = await post.render()
-const bookingUrl = post.data.niche === 'cafe'
+const bookingUrl = ['cafe', 'eiscafe'].includes(post.data.niche)
   ? 'https://termin.bonuskarte.digital/barista'
-  : post.data.niche === 'gastro'
+  : ['restaurant', 'gastro', 'doener', 'pizza'].includes(post.data.niche)
   ? 'https://termin.bonuskarte.digital/gastro'
   : 'https://termin.bonuskarte.digital/15min'
 
