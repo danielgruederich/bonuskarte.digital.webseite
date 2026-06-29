@@ -354,7 +354,7 @@ function sendEbookMail(string $firstName, string $email, string $pdfUrl) {
         ], [
             'version' => '1.0',
             'email' => [
-                'from'      => 'noreply@bonuskarte.digital',
+                'from'      => 'noreply@fuerte.digital',
                 'fromName'  => 'bonuskarte.digital',
                 'subject'   => 'Dein Stammkunden-Leitfaden ist da' . ($firstName ? ', ' . $firstName : '') . '!',
                 'html'      => $html,
