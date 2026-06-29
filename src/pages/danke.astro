@@ -180,59 +180,67 @@ import { pabbly } from '../config/integrations'
 
   <Footer />
 
+  <!-- Pass server-side config to client -->
   <script define:vars={{ webhookUrl: pabbly.webhookUrl }}>
-    (function () {
-      const KEY = 'booking_tracked'
-      const params = new URLSearchParams(window.location.search)
+    window.__dankeWebhookUrl = webhookUrl
+  </script>
 
-      const fullName  = params.get('invitee_full_name')    || ''
-      const email     = params.get('invitee_email')         || ''
-      const startsAt  = params.get('meeting_starts_at')     || ''
-      const type      = params.get('meeting_type')          || ''
-      const phone     = params.get('invitee_phone_number')  || ''
+  <script>
+    import { formatDate } from '../lib/booking'
 
-      // Parse dd-mm-yyyy HH:MM → "Montag, 29. Juni 2026, 14:30 Uhr"
-      function formatDate(str) {
-        if (!str) return str
-        const m = str.match(/^(\d{2})-(\d{2})-(\d{4})(?:[\s,]+(\d{2}):(\d{2}))?/)
-        if (!m) return str
-        const [, dd, mm, yyyy, hh, min] = m
-        const d = new Date(+yyyy, +mm - 1, +dd, hh ? +hh : 0, min ? +min : 0)
-        const datePart = d.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
-        return hh ? datePart + ', ' + hh + ':' + min + ' Uhr' : datePart
+    const KEY    = 'booking_tracked'
+    const params = new URLSearchParams(window.location.search)
+
+    const fullName = params.get('invitee_full_name')    || ''
+    const email    = params.get('invitee_email')         || ''
+    const startsAt = params.get('meeting_starts_at')     || ''
+    const type     = params.get('meeting_type')          || ''
+    const phone    = params.get('invitee_phone_number')  || ''
+
+    const startsAtFormatted = formatDate(startsAt)
+
+    // Personalize hero
+    const firstName = fullName.split(' ')[0]
+    if (firstName) {
+      const nameEl = document.getElementById('invitee-name')
+      if (nameEl) nameEl.textContent = firstName + '!'
+    }
+    if (startsAtFormatted) {
+      const subtextEl = document.getElementById('hero-subtext')
+      if (subtextEl) subtextEl.textContent = 'Dein Termin am ' + startsAtFormatted + ' ist reserviert. Wir freuen uns drauf.'
+    }
+
+    // Show booking detail rows
+    function showRow(rowId: string, contentId: string, text: string) {
+      if (!text) return
+      const row     = document.getElementById(rowId)
+      const content = document.getElementById(contentId)
+      if (row && content) {
+        content.textContent = text
+        row.classList.remove('hidden')
+        row.classList.add('flex')
+      }
+    }
+    showRow('row-date',  'meeting-date',       startsAtFormatted)
+    showRow('row-email', 'invitee-email-text', email)
+    showRow('row-type',  'meeting-type-text',  type)
+
+    // Pabbly webhook + GA event — once per session, only when email present
+    const webhookUrl = (window as any).__dankeWebhookUrl as string
+    if (email && !sessionStorage.getItem(KEY)) {
+      sessionStorage.setItem(KEY, '1')
+
+      // GA4 — booking confirmed
+      // @ts-ignore – gtag wird global vom GA4-Snippet bereitgestellt
+      if (typeof gtag === 'function') {
+        gtag('event', 'booking_confirmed', {
+          meeting_type: type || 'unknown',
+          source: 'simplymeet',
+        })
       }
 
-      const startsAtFormatted = formatDate(startsAt)
-
-      // Personalize hero
-      const firstName = fullName.split(' ')[0]
-      if (firstName) {
-        const nameEl = document.getElementById('invitee-name')
-        if (nameEl) nameEl.textContent = firstName + '!'
-      }
-      if (startsAtFormatted) {
-        const subtextEl = document.getElementById('hero-subtext')
-        if (subtextEl) subtextEl.textContent = 'Dein Termin am ' + startsAtFormatted + ' ist reserviert. Wir freuen uns drauf.'
-      }
-
-      // Show booking detail rows
-      function showRow(rowId, contentId, text) {
-        if (!text) return
-        const row     = document.getElementById(rowId)
-        const content = document.getElementById(contentId)
-        if (row && content) {
-          content.textContent = text
-          row.classList.remove('hidden')
-          row.classList.add('flex')
-        }
-      }
-      showRow('row-date',  'meeting-date',       startsAtFormatted)
-      showRow('row-email', 'invitee-email-text', email)
-      showRow('row-type',  'meeting-type-text',  type)
-
-      // Pabbly webhook — once per session, only when email present
-      if (email && webhookUrl && !sessionStorage.getItem(KEY)) {
-        sessionStorage.setItem(KEY, '1')
+      // Pabbly webhook
+      if (webhookUrl) {
         fetch(webhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -242,13 +250,11 @@ import { pabbly } from '../config/integrations'
             meeting_starts_at:    startsAt,
             meeting_type:         type,
             invitee_phone_number: phone,
-            source:               'simplymeet'
-          })
-        }).catch(function () {
-          // Webhook-Fehler ist still — User Experience unberührt
-        })
+            source:               'simplymeet',
+          }),
+        }).catch(() => {})
       }
-    })()
+    }
   </script>
 
 </BaseLayout>

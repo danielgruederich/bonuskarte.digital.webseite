@@ -67,6 +67,14 @@ export const analytics = {
     track('demo_booking', { source }),
 
   /**
+   * SimplyMeet.me-Buchung bestätigt — feuert auf /danke einmalig pro Session.
+   * Feuert NUR wenn `invitee_email` als URL-Param vorhanden (echter Redirect).
+   * Messplan-Event: booking_confirmed (Key Event in GA4)
+   */
+  bookingConfirmed: (meeting_type: string = 'unknown') =>
+    track('booking_confirmed', { meeting_type, source: 'simplymeet' }),
+
+  /**
    * Chatbot (ZipChat) geöffnet. TODO: ZipChat-Widget ist derzeit NICHT auf bonuskarte.digital
    * eingebaut (nur Outreach-Tool). Sobald Widget eingebettet ist, im onOpen-Hook rufen.
    */
