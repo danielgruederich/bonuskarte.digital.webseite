@@ -41,6 +41,10 @@ const TELEGRAM_CHAT_ID    = '128525956';
 // Google Sheets Logging — Apps Script Web App URL (nach Deployment eintragen)
 const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxIKBXDVaAYfZcD6RV7lTodupreX7J5P0YV1OQ4FsOKArhRWhGBWSmmke4drEdLWgkX8Q/exec';
 
+// MailerCloud Transactional Email
+const MAILERCLOUD_API_KEY = 'DEIN_MAILERCLOUD_API_KEY_HIER';
+const MAILERCLOUD_BASE    = 'https://email-api.mailercloud.com';
+
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
     'cafe'       => 1046392, // Kölner Kaffee Laden — active ✅
@@ -310,6 +314,62 @@ function logToSheets(string $vorname, string $telefon, string $email, string $in
     } catch (\Throwable $e) {}
 }
 
+// ── MailerCloud Transactional Email ──────────────────────────────────────────
+// Sendet die Ebook-Bestätigungsmail mit Download-Button. Fire & forget.
+function sendEbookMail(string $firstName, string $email, string $pdfUrl) {
+    if (!$email || !MAILERCLOUD_API_KEY || MAILERCLOUD_API_KEY === 'DEIN_MAILERCLOUD_API_KEY_HIER') return;
+    try {
+        $html = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;background:#F6F1E8;font-family:\'Helvetica Neue\',Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#F6F1E8;padding:40px 20px;">
+  <tr><td align="center">
+    <table width="560" cellpadding="0" cellspacing="0" style="background:#1A1410;max-width:560px;width:100%;">
+      <tr><td style="padding:32px 40px 24px;">
+        <p style="margin:0 0 4px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#F25C24;">bonuskarte.digital</p>
+        <h1 style="margin:0;font-size:26px;font-weight:700;color:#F6F1E8;line-height:1.2;">Dein Leitfaden<br>ist da' . ($firstName ? ', ' . htmlspecialchars($firstName) : '') . '!</h1>
+      </td></tr>
+      <tr><td style="padding:0 40px 28px;">
+        <p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:rgba(246,241,232,0.75);">
+          Dein kostenloser Stammkunden-Leitfaden für Kölner Cafés ist bereit — 13 Seiten, 7 Kartentypen, sofort umsetzbar.
+        </p>
+        <table cellpadding="0" cellspacing="0"><tr><td>
+          <a href="' . $pdfUrl . '" style="display:inline-block;background:#F25C24;color:#000;font-size:13px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;padding:14px 32px;">
+            Zum Leitfaden →
+          </a>
+        </td></tr></table>
+      </td></tr>
+      <tr><td style="padding:20px 40px;border-top:1px solid rgba(246,241,232,0.1);">
+        <p style="margin:0;font-size:12px;color:rgba(246,241,232,0.35);line-height:1.6;">
+          Du erhältst diese Mail, weil du den Leitfaden auf bonuskarte.digital angefordert hast.<br>
+          bonuskarte.digital · Sülzburgstraße 234 · 50937 Köln
+        </p>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+</body></html>';
+
+        apiRequest('POST', MAILERCLOUD_BASE, '/email', [
+            'Authorization: ' . MAILERCLOUD_API_KEY,
+            'Content-Type: application/json',
+        ], [
+            'version' => '1.0',
+            'email' => [
+                'from'      => 'noreply@bonuskarte.digital',
+                'fromName'  => 'bonuskarte.digital',
+                'subject'   => 'Dein Stammkunden-Leitfaden ist da' . ($firstName ? ', ' . $firstName : '') . '!',
+                'html'      => $html,
+                'recipients' => ['to' => [['name' => $firstName ?: 'Hallo', 'email' => $email]]],
+            ],
+            'metadata' => [
+                'campaignType' => 'TRANSACTIONAL',
+                'messageId'    => uniqid('ebook-', true),
+            ],
+        ]);
+    } catch (\Throwable $e) {
+        // Mail-Fehler blockiert nie die Hauptantwort
+    }
+}
+
 // ── E-Book lead path (Leitfaden-Download, Salesflare only) ────────────────────
 // Gated Download: Name + Handynummer (+ Instagram). Legt Lead in Salesflare an,
 // pingt Telegram und gibt success zurück — keine Boomerang-Karte. Der Frontend-
@@ -356,6 +416,7 @@ if (($body['mode'] ?? '') === 'ebook') {
 
     notifyTelegramLead($firstName, $phone, $email, $instagram, $niche ?: 'cafe', $mode, $utm, 'ebook');
     logToSheets($firstName, $phone, $email, $instagram, $niche ?: 'cafe', $reqCity, $body['ebook'] ?? 'leitfaden-koeln', 'ebook');
+    sendEbookMail($firstName, $email, 'https://bonuskarte.digital/downloads/leitfaden-stammkunden-cafes-koeln.pdf');
 
     echo json_encode(['success' => true]);
     exit;
