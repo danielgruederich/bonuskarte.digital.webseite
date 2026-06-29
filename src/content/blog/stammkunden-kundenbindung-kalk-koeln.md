@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 3
 featured: false
 city: koeln
+faqItems:
+  - q: "Wie halte ich meine Stammkunden an der Kalker Hauptstraße aktiv?"
+    a: "Ein einfaches Bonusprogramm reicht. Kein kompliziertes System, keine App. Dein Kunde bekommt nach einer festgelegten Anzahl Besuche eine Belohnung, zum Beispiel nach zehn Döner den elften gratis. Das schafft Grund wiederzukommen, bevor der neue Laden auf der anderen Straßenseite die Gelegenheit nutzt."
+  - q: "Was unterscheidet eine digitale von einer Papier-Stempelkarte in Kalk?"
+    a: "Die Papierkarte liegt zuhause oder geht verloren. Die digitale Karte sitzt im Handy, ist immer dabei und kann nicht vergessen werden. Als Inhaber siehst du, wann jemand zuletzt bei dir war und wer gerade kurz vor der Prämie steht."
+  - q: "Muss ich für eine digitale Stempelkarte in Kalk ein IT-Profi sein?"
+    a: "Nein. Einrichten dauert unter zehn Minuten. Deine Kunden brauchen keine App-Installation, nur eine Handykamera zum Scannen des QR-Codes. Das war es."
+  - q: "Was kostet eine digitale Stempelkarte für meinen Betrieb in Kalk?"
+    a: "Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Kein Vertrag, keine Einrichtungsgebühr."
 ---
 
 ## Welche Stammkundschaft hat Kalk wirklich?

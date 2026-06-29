@@ -8,6 +8,15 @@ readingTime: 6
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Was kann ich auf der Rückseite meiner digitalen Kundenkarte eintragen?"
+    a: "Bis zu 9 Links. Typische Inhalte: Instagram-Account, Öffnungszeiten, Google-Bewertungsseite, Catering-Anfrage, Lieferservice, Personalsuche, E-Mail und TikTok. Du wählst, was für deine Kunden am nützlichsten ist."
+  - q: "Wie funktioniert Geo-Push und muss ich ihn manuell auslösen?"
+    a: "Geo-Push läuft vollautomatisch. Du trägst einmal deinen Standort und einen Radius ein, zum Beispiel 100 Meter, und schreibst die Nachricht. Ab dann bekommen Karteninhaber automatisch eine Push-Benachrichtigung, wenn sie in der Nähe sind. Du musst nichts tun."
+  - q: "Wie oft bekommt ein Kunde einen Geo-Push?"
+    a: "Maximal einmal pro Tag. Niemand will mehrfach täglich eine Benachrichtigung. Der Geo-Push ist am stärksten, wenn er selten kommt und dafür zum richtigen Moment."
+  - q: "Kann ich die Links auf der Rückseite nachträglich ändern?"
+    a: "Ja, jederzeit. Neue Sorte im Angebot? Neuer Link. Personalsuche beendet? Link entfernen. Die Änderung wird sofort auf allen Karten deiner Kunden sichtbar, ohne dass sie etwas tun müssen."
 ---
 
 Deine digitale Kundenkarte hat eine Vorderseite. Logo, Stempelfortschritt, dein Name. Das kennt jeder.

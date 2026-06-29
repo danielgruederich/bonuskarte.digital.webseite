@@ -54,6 +54,17 @@ const related = allPosts
     {"@type": "ListItem", "position": 4, "name": post.data.title, "item": `https://bonuskarte.digital/bonn/blog/${post.slug}`}
   ]
 })} />
+  {post.data.faqItems && post.data.faqItems.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": post.data.faqItems.map((item: {q: string, a: string}) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a }
+      }))
+    })} />
+  )}
   <Navbar ctaHref="/#demo" />
 
   <div class="fixed top-0 left-0 right-0 z-[100] h-0.5 bg-transparent">

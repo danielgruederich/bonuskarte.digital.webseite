@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 4
 featured: false
 city: koeln
+faqItems:
+  - q: "Warum tickt Kundenbindung in Bickendorf anders als in der Kölner Innenstadt?"
+    a: "Bickendorf hat keine Touristen und keine Laufkundschaft vom Hauptbahnhof. Wer hier kauft, wohnt hier. Das bedeutet: Wer einen Kunden einmal überzeugt, hat echtes Stammkundenpotenzial. Gleichzeitig entscheiden diese Kunden täglich neu, weil Wettbewerb leise aus der Nachbarschaft kommt."
+  - q: "Was bringt eine digitale Stempelkarte einem Café oder Imbiss an der Vitalisstraße konkret?"
+    a: "Der Kunde hat die Karte immer im Handy dabei, vergisst sie nicht und wird automatisch gestempelt. Du siehst, wer wann zuletzt da war, kannst gezielt Anreize setzen und erkennst, an welchem Wochentag dein Laden am schwächsten läuft. Das gibt dir Daten, die du mit Papierkarten nie hattest."
+  - q: "Brauchen meine Kunden in Bickendorf eine App, um die digitale Stempelkarte zu nutzen?"
+    a: "Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone bereits vorinstalliert sind. Dein Kunde scannt einmal den QR-Code an der Theke, die Karte ist sofort gespeichert."
+  - q: "Was kostet eine digitale Stempelkarte für meinen Betrieb in Bickendorf?"
+    a: "Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Keine Einrichtungsgebühr, kein Vertrag, keine Kreditkarte nötig zum Starten."
 ---
 
 ## Warum fehlt Bickendorf der Laufkunden-Luxus?

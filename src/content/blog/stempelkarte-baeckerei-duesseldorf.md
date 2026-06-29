@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: duesseldorf
 niche: baeckerei
+faqItems:
+  - q: "Klappt das auch mit älteren Stammkunden, die wenig mit Smartphones machen?"
+    a: "Ja, mit einer kleinen Anpassung. Wer erklärt, dass die Karte automatisch in die vorhandene Wallet-App kommt – ohne Download, ohne Registrierung – nimmt die größte Hürde weg. In der Praxis zeigt sich, dass viele ältere Kunden die Wallet-Karte sogar schätzen, weil sie die Papierkarte nicht mehr suchen müssen. Es lohnt sich, beim ersten Mal kurz zu helfen."
+  - q: "Was, wenn der Kunde das Handy vergessen hat?"
+    a: "Das passiert. In diesem Fall kann der Bäcker den Besuch manuell im System nachtragen oder den Kunden bitten, beim nächsten Mal zwei Stempel auf einmal zu sammeln. Kein System ist 100 % friktionsfrei – aber vergessene Handys sind seltener als verlorene Papierkarten."
+  - q: "Ist die Einrichtung teuer für eine kleine Bäckerei in Düsseldorf?"
+    a: "Bonuskarte.digital ist speziell für kleine Betriebe konzipiert. Die monatlichen Kosten sind deutlich geringer als ein gedruckter Vorrat Papierkarten auf Jahressicht – und der Verwaltungsaufwand sinkt erheblich, weil kein manuelles Nachzählen mehr nötig ist."
+  - q: "Kann ich die Karte auf Saison-Aktionen anpassen – z. B. zur Karnevalssaison in Düsseldorf?"
+    a: "Ja. Die digitale Karte lässt sich jederzeit aktualisieren. Zur Karnevalssaison, zum Weihnachtsgeschäft oder zum Stadtfest kann der Text oder das Design geändert werden. Alle Kunden, die die Karte bereits gespeichert haben, sehen die Änderung automatisch – ohne neue Karte herunterladen zu müssen."
 ---
 
 Freitagmorgen in Bilk: Vor der kleinen Familienbäckerei an der Bilker Allee schlängelt sich eine kurze Schlange. Die meisten kennen sich beim Namen. Ein paar Stammkunden rufen schon beim Eintreten ihre Bestellung – zwei Röggelchen, ein Vollkornbrot. Das ist der Puls eines Düsseldorfer Kiez-Bäckers. Und genau dieser Puls gerät unter Druck, wenn Backwerk um die Ecke aufmacht und Kamps an der nächsten U-Bahn-Haltestelle den Laufkundenstrom abfängt.

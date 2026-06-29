@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: berlin
 niche: baeckerei
+faqItems:
+  - q: "Zählen nur Brötchen – oder auch Brot, Kuchen und Kaffee?"
+    a: "Das entscheidest du. Viele Bäckereien zählen jeden Einkauf ab einem Mindesteinkauf, unabhängig vom Produkt. Das ist einfacher zu kommunizieren als Kategorien. Wenn du einen Kaffee-Automaten hast, kann jeder Kauf – Backware oder Kaffee – als Stempel zählen."
+  - q: "Wie gehe ich mit Frühstücksgästen um, die täglich kommen, aber immer nur 1,50 € ausgeben?"
+    a: "Das ist deine Entscheidung als Betreiber. Du kannst einen Mindesteinkauf von 2 € einrichten, oder du lässt es ohne Minimum laufen. Jemand, der täglich kommt und 1,50 € ausgibt, ist wertvoller als jemand, der einmal im Monat für 10 € einkauft."
+  - q: "Was ist der Vorteil gegenüber der klassischen Lochkarte, die wir schon haben?"
+    a: "Die digitale Karte liegt immer im Handy. Sie geht nicht verloren, wird nicht zerknittert, kann nicht gefälscht werden. Du siehst im Dashboard, wie viele Karten aktiv sind. Und wenn ein Gast längere Zeit nicht da war, kannst du ihn sanft erinnern – ohne Newsletter, direkt über die Wallet-Karte."
+  - q: "Brauche ich für jede Bestellung am Tresen einen neuen Scan?"
+    a: "Du hast einen festen QR-Code an der Kasse. Der Gast zeigt seinen Karten-QR-Code, du scannst kurz mit dem Handy oder Tablet – das war es. Der Prozess dauert unter fünf Sekunden und stört den Kassenablauf nicht."
 ---
 
 Berliner Bäckereien kämpfen an mehreren Fronten gleichzeitig. Die Backstuben-Filialen von Kamps und Backwerk sitzen an U-Bahn-Eingängen und S-Bahnhöfen und fangen den Morgenpendler schon auf dem Weg zur Arbeit ab. Großsupermarkt-Backstationen produzieren Brötchen im Minutentakt. Und dann sind da noch die hippen Sauerteig-Bäckereien aus Prenzlauer Berg, die auf Instagram zehntausend Follower haben und für ein Brot zwölf Euro aufrufen.

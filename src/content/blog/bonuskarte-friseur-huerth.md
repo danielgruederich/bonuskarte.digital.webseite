@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: huerth
 niche: friseur
+faqItems:
+  - q: "Kann ich als Inhaberin eines kleinen Salons in Hermülheim das System selbst einrichten?"
+    a: "Ja. Die Einrichtung dauert rund 15 Minuten und erfordert keine Technik-Kenntnisse. Name, Logo hochladen, Bonusmodell festlegen – fertig. Es gibt keine Software-Installation und kein Hardware-Gerät. Das Tablet oder Smartphone, das bereits an der Rezeption liegt, reicht als Scanner."
+  - q: "Wie verhindere ich, dass Kunden die Karte mehrfach einlösen oder manipulieren?"
+    a: "Das System ist manipulationssicher. Jede Karte hat eine eindeutige ID, Stempel können nur über das verifizierte Scanner-Gerät des Salons vergeben werden. Der Kunde kann seine eigene Karte nicht selbst stempeln. Das ist eine der häufigsten Sorgen – und im System technisch gelöst."
+  - q: "Funktioniert die Bonuskarte auch, wenn mein Kunde sein Handy wechselt oder neu einrichtet?"
+    a: "Ja. Die Karte ist mit der E-Mail-Adresse des Kunden verknüpft und kann jederzeit neu auf das Wallet-App gespeichert werden. Der Stempelstand bleibt erhalten. Das ist ein konkreter Vorteil gegenüber Papierkarten, die beim Handywechsel einfach verloren gehen."
+  - q: "Lohnt sich das für meinen Hürther Salon, wenn ich nur 40-50 Stammkunden habe?"
+    a: "Gerade dann. Bei einem kleinen Kundenstamm hat jeder Stammkunde ein hohes Gewicht. Wenn drei dieser 40 Kunden durch die Bonuskarte häufiger kommen und einen Freund mitbringen, ist das eine messbare Veränderung. Große Ketten brauchen Skalierung – kleine Hürther Salons brauchen Tiefe."
 ---
 
 Hürth ist kein Kölner Innenstadt-Szenebezirk – und das ist für lokale Friseursalons ein echter Vorteil. Wer in Hermülheim oder Efferen seinen Stammfriseur hat, wechselt nicht ohne Grund. Die kurzen Wege, das vertraute Gesicht, die Erfahrung mit den eigenen Haaren: Das sind Werte, die kein Discounter-Angebot kurzfristig aushebeln kann.

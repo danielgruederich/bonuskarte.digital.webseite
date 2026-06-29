@@ -7,6 +7,15 @@ category: "How-to"
 readingTime: 4
 featured: false
 city: koeln
+faqItems:
+  - q: "Wie lange dauert die Einrichtung einer digitalen Stempelkarte?"
+    a: "Weniger als 10 Minuten. Du registrierst dich, gestaltest die Karte mit deinem Logo und deinen Farben, legst die Stempel-Regel fest und kopierst den fertigen Link. Technische Vorkenntnisse brauchst du keine."
+  - q: "Brauchen meine Gäste eine App, um die Stempelkarte zu nutzen?"
+    a: "Nein. Die Karte landet direkt in der Apple Wallet oder Google Wallet des Gastes. Kein App-Download, kein Passwort, kein Login. Ein Kamera-Scan des QR-Codes reicht."
+  - q: "Wie viele Stempel sollte ich für eine Belohnung verlangen?"
+    a: "8 bis 10 Stempel sind der bewährte Wert. Weniger fühlt sich nach nichts an, mehr verlieren Kunden die Motivation. Beliebte Belohnungen: ein gratis Espresso, ein gratis Mittagsmenü, eine gratis Pizza."
+  - q: "Was ist der schnellste Weg, die ersten Kunden zur Karte zu bringen?"
+    a: "Frag aktiv beim Zahlen: \"Haben Sie schon unsere digitale Bonuskarte?\" Das ist in Köln die Methode mit der höchsten Einlöserate. Zusätzlich den QR-Code gut sichtbar an der Kasse platzieren."
 ---
 
 **Kurz zusammengefasst:** In 5 Schritten und weniger als 10 Minuten ist deine digitale Stempelkarte eingerichtet und live – ohne Hardware, ohne App-Zwang für Kunden.

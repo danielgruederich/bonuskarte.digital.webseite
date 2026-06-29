@@ -8,6 +8,15 @@ readingTime: 6
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Wie funktioniert die automatische Umwandlung eines Coupons in eine Stempelkarte?"
+    a: "Dein Kunde löst den Gratis-Coupon an der Theke ein. Danach verwandelt sich die Coupon-Karte in seiner Wallet automatisch in eine 10er Stempelkarte, mit dem ersten Stempel bereits eingetragen. Kein zweiter Scan, keine neue Karte."
+  - q: "Wie oft sollte ich einen Coupon auf Instagram posten?"
+    a: "Einmal pro Woche ist das Maximum. Häufiger postest du, verliert der Coupon seinen Reiz. Der Freitagnachmittag ist die beste Zeit, wenn die Leute ihr Wochenende planen und spontan vorbeikommen können."
+  - q: "Lohnt sich eine Gratis-Kugel als Werbeaktion?"
+    a: "Ja, wenn du die Folgebesuche mitberechnest. Eine Kugel kostet dich etwa 50 Cent. Wer die 10er Stempelkarte danach im Schnitt sechs Mal nutzt, bringt rund 21 Euro Umsatz. Du gibst 50 Cent aus und gewinnst einen Stammkunden."
+  - q: "Brauche ich viele Follower, damit der Coupon etwas bringt?"
+    a: "Nein. Entscheidend ist, wie lokal und aktiv deine Follower sind. 800 echte Veedel-Follower bringen mehr als 5.000 anonyme Abonnenten. Wer deinen Content sieht und in der Nähe wohnt, kommt auch vorbei."
 ---
 
 Du hast 800 Follower auf Instagram. Vielleicht 1.200. Vielleicht sogar 3.000. Die liken deine Eis-Fotos, kommentieren mit Herz-Emojis, taggen ihre Freunde unter dem Pistazie-Post.

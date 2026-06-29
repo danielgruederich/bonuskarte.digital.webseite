@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: duesseldorf
 niche: cafe
+faqItems:
+  - q: "Müssen Kunden in Düsseldorf wirklich keine App herunterladen?"
+    a: "Nein. Apple Wallet und Google Wallet sind bereits vorinstalliert. Die digitale Stempelkarte von bonuskarte.digital wird über einen Link oder QR-Code direkt in diese Apps gespeichert – kein Download erforderlich."
+  - q: "Funktioniert das auch für ältere Kunden, die wenig mit Smartphone-Apps vertraut sind?"
+    a: "Ja. Der einzige Schritt ist \"QR-Code scannen, Knopf tippen\". Das ist einfacher als viele andere Dinge, die Kunden täglich mit dem Handy machen. Wer kontaktlos bezahlt, kommt auch mit der Wallet-Karte zurecht. Wer beim ersten Mal Hilfe braucht, ist in zwei Minuten dabei."
+  - q: "Warum sehen manche Düsseldorfer Betriebe das trotzdem skeptisch?"
+    a: "Weil das Missverständnis \"Kunden müssen eine App downloaden\" weit verbreitet ist. Viele Betreiber haben schon schlechte Erfahrungen mit eigenen Apps gemacht oder von anderen gehört. Die Wallet-Karte ist das Gegenteil dieser Erfahrung – kein Entwicklungsaufwand, keine Wartung, keine App-Store-Gebühren."
+  - q: "Kann ich die Karte für mehrere Nischen in Düsseldorf nutzen – also gleichzeitig für ein Café und ein Yoga-Studio?"
+    a: "Wenn es derselbe Betreiber ist, ja. Über bonuskarte.digital lassen sich mehrere Karten für verschiedene Standorte oder Konzepte verwalten. Ein Düsseldorfer Betreiber, der ein Café in Flingern und ein kleines Yoga-Studio in Oberkassel betreibt, kann beide Karten separat einrichten und unabhängig steuern."
 ---
 
 Das Gespräch läuft fast überall gleich ab: Ein Düsseldorfer Café-Inhaber in Flingern hört von digitalen Stempelkarten. Klingt gut, denkt er – bis jemand sagt: "Dann müssen deine Kunden aber eine App runterladen." Und damit ist das Thema erledigt. Zu viel Hürde, zu wenig Akzeptanz, zu kompliziert für den schnellen Morgenbetrieb.

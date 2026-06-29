@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 3
 featured: false
 city: koeln
+faqItems:
+  - q: "Was ist das Nippes-Paradox bei der Kundenbindung?"
+    a: "Nippes hat hohe Laufkundschaft durch die Neusser Straße und den Wilhelmsplatz, aber diese Frequenz erzeugt kein automatisches Stammkunden-Wachstum. Viele Betriebe füllen die Kasse, wissen aber nicht, wer nächste Woche wiederkommt und wer still zur Konkurrenz gewechselt ist. Viel Frequenz verschleiert das Problem."
+  - q: "Wie erkenne ich, ob ein Stammkunde kurz davor ist, wegzubleiben?"
+    a: "Ohne System gar nicht. Mit einer digitalen Stempelkarte siehst du, wann ein Gast das letzte Mal aktiv war. Wer drei Wochen pausiert, ist kein Stammkunde mehr, er ist auf dem Weg zur Konkurrenz. Das System kann dann automatisch eine Erinnerung schicken, noch bevor der Verlust endgültig ist."
+  - q: "Lohnt sich eine digitale Stempelkarte schon für kleine Betriebe in Nippes?"
+    a: "Gerade für kleine Betriebe. Große Ketten haben Budgets und Apps, aber kein Kiez-Gefühl. Ein kleiner Laden in Nippes, der seine 30 häufigsten Gäste kennt und wertschätzt, schlägt jede Kette bei der Kundenloyalität, wenn er ein einfaches System nutzt. Der Vorteil kostet hier keine Investition, nur den Einstieg."
+  - q: "Wie lange dauert es, bis man nach 90 Tagen wirklich einen Unterschied sieht?"
+    a: "Nach 90 Tagen ist die Stammkundenrate messbar statt gefühlt. Du siehst, an welchen Wochentagen die Frequenz schwächelt, welche Gäste regelmäßig kommen und wer seit Wochen ausgeblieben ist. Das sind Daten, die kein Bauchgefühl ersetzen kann."
 ---
 
 # Kundenbindung Nippes Köln: Der stille Wettbewerbsvorteil

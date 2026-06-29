@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: huerth
 niche: baeckerei
+faqItems:
+  - q: "Brauche ich in meiner Hürther Bäckerei schnelles WLAN für die digitalen Stempelkarten?"
+    a: "Nicht zwingend. Das Scannen der Kundenkarte funktioniert auch mit mobilem Datennetz. Eine stabile Internetverbindung ist nur beim Einrichten des Systems und beim Abrufen von Statistiken nötig. Im laufenden Betrieb reichen wenige Sekunden Online-Zeit pro Scan."
+  - q: "Was ist, wenn ein Stammkunde aus Fischenich sein Handy vergessen hat?"
+    a: "Das passiert, und das System ist darauf vorbereitet. Der Kunde kann die Karte über seinen E-Mail-Link nachträglich einlösen, oder der Betreiber trägt den Stempel manuell nach. Papierkarten haben dieses Problem genauso – nur ohne Backup-Option."
+  - q: "Können mehrere Mitarbeiter in meiner Bäckerei die Karten stempeln?"
+    a: "Ja. Mehrere Kassengeräte oder Smartphones können gleichzeitig als Scanner registriert werden. Alle Stempel laufen auf dieselbe Kundenkarte ein, egal an welchem Gerät gescannt wurde. Das ist besonders für Bäckereien mit mehreren Standorten in Hürth oder einer Filiale in Efferen relevant."
+  - q: "Lohnt sich das auch im Sommer, wenn weniger Laufkundschaft in Hürth ist?"
+    a: "Ja – eher sogar mehr als im Herbst oder Winter. In Hürth bleibt die Stammkundschaft auch im Sommer konstant. Die Urlaubszeit ist der ideale Moment, um die Karte einzuführen, weil die Schlangen kürzer sind und Zeit bleibt, Stammkunden persönlich anzusprechen."
 ---
 
 Samstagmorgen in Fischenich: Die Schlange vor dem Bäcker reicht bis auf den Bürgersteig. Dieselben Gesichter wie letzte Woche. Dieselbe Bestellung. Dieselbe kurze Unterhaltung über das Wetter. Was in der Kölner Innenstadt undenkbar wäre, ist in Hürths Stadtteilen gelebter Alltag – und das wertvollste Gut, das ein lokaler Bäcker besitzen kann.

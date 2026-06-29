@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: bonn
 niche: cafe
+faqItems:
+  - q: "Funktioniert das auch auf älteren Smartphones ohne NFC?"
+    a: "Ja. Alle Aktionen können über den QR-Code-Scan erledigt werden. NFC ist optional, nicht notwendig. QR-Codes funktionieren auf jedem Smartphone mit Kamera – also praktisch auf jedem Gerät ab etwa 2015."
+  - q: "Ich betreibe sowohl ein Café als auch eine kleine Bäckerei nebenan. Kann ich eine Karte für beide nutzen?"
+    a: "Nein – aber das ist absichtlich so. Jeder Betrieb bekommt eine eigene Karte, die an seinen Standort und seine Zielgruppe angepasst ist. Zwei Karten sind zwei separate Kundenbindungsprogramme. Das hat Vorteile: Die Karte des Cafés bindet Café-Gäste, die Karte der Bäckerei bindet Bäckerei-Stammkunden – ohne Verwirrung."
+  - q: "Bonn ist eine Universitätsstadt mit vielen Datenschutz-sensiblen Zielgruppen. Welche Daten werden gesammelt?"
+    a: "Die Grundkarte sammelt keine personenbezogenen Daten. Der Gast fügt die Karte anonym hinzu – ohne Name, E-Mail oder Telefonnummer. Der Betrieb sieht nur aggregierte Statistiken: wie viele Karten aktiv sind, wie viele Stempel vergeben wurden. Für Betriebe, die freiwillig Kundendaten erfassen möchten, gibt es eine optionale Opt-in-Funktion."
+  - q: "Was kostet bonuskarte.digital und wie lange ist die Testphase?"
+    a: "Die ersten 90 Tage sind kostenlos – ohne Kreditkarte, ohne automatische Verlängerung. Das reicht, um in einem vollen Bonner Semester auszuprobieren, ob die Karte funktioniert. Danach gibt es ein transparentes Abo-Modell ohne versteckte Kosten."
 ---
 
 „Habt ihr eine App?" – Diese Frage hören Betreiber, die eine digitale Stempelkarte einführen wollen, von ihren Mitarbeitenden, Steuerberatern und manchmal sogar von Kunden. Die Antwort überrascht oft: Nein. Keine App. Kein App-Store-Eintrag, keine Installation, kein Update. Die Stempelkarte lebt direkt in Apple Wallet oder Google Wallet – also in der Anwendung, die auf jedem iPhone und Android-Smartphone bereits vorinstalliert ist.

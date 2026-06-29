@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 4
 featured: false
 city: koeln
+faqItems:
+  - q: "Sind Kunden in Porz wirklich loyaler als in anderen Kölner Stadtteilen?"
+    a: "Porzer Kunden verhalten sich bodenständiger und vergleichen seltener als in innenstadtnahen Vierteln. Wer seinen Friseur an der Hauptstraße hat oder seinen Mittagsdöner am Marktplatz kennt, wechselt nicht beim ersten Neuöffnungs-Angebot. Diese natürliche Loyalität ist aber kein Selbstläufer, sie braucht einen konkreten Anreiz um sich zu festigen."
+  - q: "Was passiert, wenn ein Stammkunde seine Papierstempelkarte verliert?"
+    a: "Der gesamte aufgebaute Fortschritt ist weg, und damit oft auch die Motivation, wieder anzufangen. Bei einer digitalen Karte passiert das nicht: Sie liegt auf dem Handy, geht nicht verloren und ist nach einer Urlaubspause sofort wieder abrufbar."
+  - q: "Welche Belohnung macht bei Stammkunden in Porz am meisten Sinn?"
+    a: "Einfach und greifbar gewinnt immer. Ein Gratis-Kaffee nach dem fünften Besuch, ein Gratis-Falafel nach dem zehnten, ein Aperitif nach dem dritten Abendessen. Der Gast muss die Belohnung sofort verstehen und wertschätzen. Komplizierte Punktesysteme funktionieren in kleinen Betrieben nicht."
+  - q: "Wie erkenne ich, ob ein Stammkunde gerade kurz davor ist, wegzubleiben?"
+    a: "Ohne System gar nicht. Mit einer digitalen Stempelkarte siehst du, wann jemand zuletzt aktiv war. Wer vier Wochen pausiert, ist kein Stammkunde mehr. Du kannst dann eine gezielte Erinnerung schicken, bevor er dauerhaft bei der Konkurrenz gelandet ist."
 ---
 
 ## Porz hat Stammkunden. Aber hast du ein System, das sie hält?

@@ -8,6 +8,15 @@ readingTime: 6
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Was kostet es, Push-Nachrichten an Kunden einer Eisdiele in Ehrenfeld zu schicken?"
+    a: "Nichts extra. Push-Nachrichten sind im System enthalten, sobald deine Kunden eine digitale Stempelkarte im Wallet haben. Du zahlst keine Klickpreise und keine Agenturgebühren. Schreib die Nachricht, drück auf Senden, fertig."
+  - q: "Wie bekomme ich als Eisdiele in Ehrenfeld Push-Nachrichten auf die Handys meiner Kunden?"
+    a: "Deine Kunden installieren einmal deine digitale Stempelkarte aus Apple Wallet oder Google Wallet. Ab diesem Moment kannst du ihnen Push-Nachrichten schicken, direkt auf den Sperrbildschirm, ohne App-Download und ohne dass du ihre Handynummer brauchst."
+  - q: "Was ist der Unterschied zwischen Push-Nachrichten und einem Instagram-Post?"
+    a: "Mit Instagram erreichst du einen Bruchteil deiner Follower, weil der Algorithmus entscheidet, wer deinen Post sieht. Eine Push-Nachricht an Karteninhaber erreicht jeden von ihnen, sofort, direkt auf dem Sperrbildschirm. Kein Algorithmus, keine Streuung."
+  - q: "Wie oft sollte eine Eisdiele in Ehrenfeld Push-Nachrichten verschicken?"
+    a: "Weniger ist mehr. Eine bis zwei Nachrichten pro Woche sind realistisch und angemessen, zum Beispiel ein Freitags-Special und ein Geburtstagspush im Hintergrund. Wer täglich sendet, verliert schnell Aufmerksamkeit. Wer gar nicht sendet, wird vergessen."
 ---
 
 Stell dir vor: Es ist ein Mittwoch im Juli. Dein Kunde — nennen wir ihn Tim — hat Geburtstag. Er sitzt im Büro, scrollt durch WhatsApp-Nachrichten, und dann vibriert sein Handy. Nicht von seiner Mutter. Nicht von seinem besten Kumpel. Sondern von dir.

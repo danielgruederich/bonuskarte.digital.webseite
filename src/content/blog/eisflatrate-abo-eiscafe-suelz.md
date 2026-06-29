@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Was kostet eine Eisflatrate und lohnt die sich wirklich?"
+    a: "Bei 29 Euro pro Monat und 50 Abo-Kunden bekommst du rund 1.450 Euro im Monat, bevor ein einziger Gast durch die Tür kommt. Der eigentliche Vorteil ist die Planbarkeit: Das Geld ist am Ersten des Monats auf deinem Konto, unabhängig vom Wetter oder der Saison."
+  - q: "Kommen Abo-Kunden jeden Tag und fressen den Gewinn auf?"
+    a: "Nein. Die Erfahrung aus anderen Flatrate-Modellen zeigt, dass Kunden ihr Abo durchschnittlich an 40 bis 60 Prozent der möglichen Tage nutzen. Der Rest ist dein Gewinn. Dazu kommt: Ein Abo-Kunde, der oft kommt, bringt Freunde mit und kauft manchmal eine zweite Kugel."
+  - q: "Wie wird die monatliche Zahlung bei einer Eisflatrate abgewickelt?"
+    a: "Die Zahlung läuft automatisch via Stripe. Dein Kunde richtet das Abo einmal ein, und Stripe zieht den Betrag jeden Monat ab. Du musst nicht nachfragen, mahnen oder manuell abrechnen."
+  - q: "Kann ich den Preis selbst festlegen?"
+    a: "Ja. Du bestimmst, was das Abo kostet und was es enthält. Ob 19 Euro für Studenten, 29 Euro als Standardpreis oder 39 Euro für eine Premium-Variante mit zwei Kugeln pro Tag, das liegt komplett bei dir."
 ---
 
 Netflix hat es gemacht. Dein Fitnessstudio auch. Die Waschanlage um die Ecke bietet eine Flatrate an. Sogar dein Rasiererhersteller schickt dir Klingen im Abo.

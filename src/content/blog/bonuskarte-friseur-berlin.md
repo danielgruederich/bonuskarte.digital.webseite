@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: berlin
 niche: friseur
+faqItems:
+  - q: "Zählen Colorationen, Schnitte und Pflegebehandlungen gleichermaßen als Stempel?"
+    a: "Das entscheidest du. Viele Salons zählen jeden Besuch unabhängig vom Service – das ist am einfachsten zu kommunizieren. Andere setzen einen Mindestumsatz (z.B. ab 30 €), damit ein reiner Augenbrauen-Service keinen Haarschnitt-Stempel auslöst. Beide Varianten funktionieren, solange die Regel klar kommuniziert wird."
+  - q: "Viele Berliner Kunden wechseln oft die Wohnadresse – verlieren sie die Karte?"
+    a: "Nein. Die Karte ist an das Smartphone geknüpft, nicht an eine Adresse. Wer nach Neukölln zieht, hat die Karte trotzdem noch – und wenn er in die Gegend kommt, erinnert ihn die Wallet-Karte sogar aktiv daran."
+  - q: "Wie unterscheide ich mich damit von Treatwell's eigenem Loyalty-System?"
+    a: "Treatwell bindet Kunden an Treatwell – nicht an dich. Deine eigene Bonuskarte bindet Kunden an deinen Salon. Das ist der entscheidende Unterschied. Wenn ein Stammkunde deine Bonuskarte hat, ist sein Anreiz die Direktbuchung – nicht der Vergleich auf einer Plattform."
+  - q: "Brauche ich für jeden Haarschnitt einen eigenen Scan-Vorgang?"
+    a: "Ja, aber er dauert unter zehn Sekunden. Der Kunde zeigt seinen Karten-QR-Code, du scannst mit dem Handy oder Tablet. Der Stempel wird gesetzt. Das ist der gesamte Prozess – keine separate App, kein Laptop nötig."
 ---
 
 Wer in Berlin einen Haarschnitt bucht, hat Optionen. Treatwell zeigt einem in Friedrichshain auf einen Blick zwanzig Salons mit Bewertungen, Preisvergleich und Sofortbuchung. Fresha macht dasselbe. Und wer gerade in einem neuen Kiez wohnt – in Berlin wechselt man Wohnung öfter als anderswo – fängt von vorne an zu suchen.

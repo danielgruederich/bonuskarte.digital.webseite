@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: bonn
 niche: cafe
+faqItems:
+  - q: "Was passiert, wenn ein Student nach dem Semester Bonn verlässt?"
+    a: "Die Karte bleibt im Wallet und der Stempelstand bleibt erhalten. Wer für eine Prüfung zurückkommt, für einen Freund oder für ein Master-Studium, kehrt auch zum Café zurück – weil da noch drei Stempel warten. Das ist ein Wiederaktivierungseffekt, den kein anderes System hat."
+  - q: "Können Cafés in Beuel oder Kessenich von der Uni-Viertel-Dynamik profitieren?"
+    a: "Ja. Viele Studierende wohnen in Beuel oder Kessenich und pendeln zum Campus. Cafés auf dem Weg zur Universität – an Bushaltestellen, an S-Bahn-Stationen – profitieren genauso. Die Karte läuft Café-spezifisch, nicht stadtteil-spezifisch."
+  - q: "Wie unterscheidet sich bonuskarte.digital von einer App, die ich selbst entwickeln lassen müsste?"
+    a: "Grundsätzlich. Eine eigene App kostet 10.000–30.000 Euro in der Entwicklung, braucht Wartung und wird von den meisten Kunden nie heruntergeladen. bonuskarte.digital nutzt Apple Wallet und Google Wallet – also Programme, die bereits auf jedem Smartphone sind. Die Einrichtung dauert 15 Minuten, die erste Karte ist am selben Tag aktiv."
+  - q: "Ist die Karte DSGVO-konform? Studierende in Bonn sind oft datenschutzbewusst."
+    a: "Die Karte sammelt keine persönlichen Daten ohne aktive Zustimmung. Kein Name, keine E-Mail-Adresse, kein Nutzerprofil. Der Gast fügt die Karte hinzu und sammelt – anonym. Das unterscheidet bonuskarte.digital von klassischen Kundenprogrammen mit Kundenkonto und Datenbank."
 ---
 
 Die Universität Bonn wurde 1818 gegründet und gehört zu den ältesten und renommiertesten Universitäten Deutschlands. Heute studieren dort über 35.000 Menschen – und ein großer Teil von ihnen verbringt täglich Zeit in einem der unzähligen Cafés rund um den Campus. Poppelsdorf, der Kaiserplatz, die Innenstadt: Bonner Café-Betreiber haben eine Zielgruppe vor der Tür, die Cafés liebt, regelmäßig kommt und trotzdem flüchtig bleibt.

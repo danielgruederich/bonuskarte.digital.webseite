@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: duesseldorf
 niche: yoga
+faqItems:
+  - q: "Müssen meine Schüler in Düsseldorf eine neue App herunterladen?"
+    a: "Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf den meisten Android-Geräten. Die digitale Karte wird über einen Link oder QR-Code direkt in die bestehende Wallet-App gespeichert – kein App-Store-Besuch, keine Anmeldung."
+  - q: "Funktioniert das auch für Yoga-Studios ohne feste Rezeption?"
+    a: "Ja. Viele Studios in Düsseldorf arbeiten ohne klassische Rezeption. In diesem Fall bekommt der Schüler einen QR-Code beim Eingang zum Selbst-Einstempeln. Das System läuft ohne Personal und funktioniert auch bei frühen Morgenkursen oder späten Abendklassen."
+  - q: "Ist die digitale Zehnerkarte für Flingerner und Oberkasseler Klientel wirklich akzeptiert?"
+    a: "In der Praxis ja. Die Düsseldorfer Yoga-Klientel ist jung bis mittelalt, technologieaffin und erwartet digitale Lösungen. Die Erfahrung zeigt, dass gerade diese Zielgruppe die Wallet-Karte schneller annimmt als ältere, konservativere Kundensegmente."
+  - q: "Was passiert, wenn ein Schüler das Handy wechselt?"
+    a: "Die Karte ist an die Wallet-App gebunden, nicht an ein Gerät. Bei einem Handywechsel kann der Schüler über denselben Link die Karte erneut in die neue Wallet laden. Der Stempelstand bleibt erhalten."
 ---
 
 Düsseldorf ist eine Stadt im Bewusstsein für Körper und Stil. Wer hier lebt, achtet auf Haltung – im wörtlichen wie übertragenen Sinn. Die Yoga-Szene in Stadtteilen wie Flingern, Oberkassel, Bilk und Pempelfort ist lebendig, wächst kontinuierlich und zieht eine Klientel an, die Qualität, Authentizität und Bequemlichkeit schätzt. Genau diese Klientel erwartet von ihrem Lieblings-Studio auch beim Thema Kundenbindung ein zeitgemäßes Erlebnis – und keine zerknitterte Papierkarte am Boden der Sporttasche.

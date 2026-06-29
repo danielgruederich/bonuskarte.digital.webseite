@@ -7,6 +7,15 @@ category: "Ratgeber"
 readingTime: 6
 featured: false
 city: koeln
+faqItems:
+  - q: "Wie viele Stempel sollte eine Bäckerei-Stempelkarte haben?"
+    a: "10 Einkäufe für ein Gratisbrot hat sich bewährt. Für Kunden, die täglich kommen, ist das in zwei Wochen erreichbar. Das Ziel ist nah genug, um zu motivieren, und weit genug, dass du als Bäcker keinen Verlust machst."
+  - q: "Müssen meine Kunden etwas herunterladen?"
+    a: "Nein. Der Gast scannt den QR-Code an deiner Theke einmal mit der Handy-Kamera, und die Karte landet sofort in Apple Wallet oder Google Wallet. Beide Apps sind auf jedem Smartphone vorinstalliert. Kein Account, kein Passwort."
+  - q: "Wie stempele ich bei jedem Einkauf?"
+    a: "Du stellst ein Gerät oder einen Aufsteller mit deinem Stempel-QR-Code an der Kasse auf. Der Gast scannt kurz, der Stempel ist gesetzt. Das dauert zwei bis drei Sekunden und stört den Ablauf an der Theke nicht."
+  - q: "Was passiert, wenn ein Kunde sein Handy wechselt?"
+    a: "Die Karte ist im Wallet gespeichert und wird durch die automatische Backup-Funktion des Smartphones auf das neue Gerät übertragen. Wenn das nicht klappt, scannt der Gast einfach neu, und du kannst den Stempelstand manuell wiederherstellen."
 ---
 
 **Kurz zusammengefasst:** Bäckereien sind der perfekte Ort für digitale Stempelkarten – Kunden kommen täglich, und ein konkreter Anreiz sorgt dafür, dass sie immer bei dir kaufen statt beim Konkurrenten um die Ecke.

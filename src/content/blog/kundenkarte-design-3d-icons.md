@@ -8,6 +8,15 @@ readingTime: 6
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Welches kostenlose Tool eignet sich am besten für 3D-Icons auf einer Kundenkarte?"
+    a: "perchance.org/ai-icon-generator ist ein guter Einstieg: kein Account, kein Download, sofort nutzbar. Du beschreibst dein Icon auf Englisch, das Tool erzeugt mehrere Varianten. Lade immer die Version mit transparentem Hintergrund herunter, damit das Icon sauber auf der Karte liegt."
+  - q: "Warum wirkt ein flaches Standard-Icon auf einer digitalen Stempelkarte schnell billig?"
+    a: "Weil Apple Wallet und Google Wallet eine Umgebung sind, in der alle anderen Karten, von Banken bis Konzerttickets, mit Volumen, Schatten und Politur gestaltet sind. Ein flaches, generisches Symbol fällt als Fremdkörper auf. Der Kunde nimmt das unbewusst wahr und überträgt diesen Eindruck auf deinen Laden."
+  - q: "Wo sollte das Haupt-Logo der Karte eher einfach bleiben?"
+    a: "Das kleine Karten-Icon, das Wallet als Thumbnail anzeigt, muss auch bei Daumennagel-Größe sofort lesbar sein. Zu viele Details werden unscharf. Halte es simpel und kontraststark. Detailreiche 3D-Icons gehören auf größere Flächen wie das Belohnungs-Symbol oder den Theken-Aufsteller."
+  - q: "Wie viele Farben sollte ein 3D-Icon für eine Kundenkarte haben?"
+    a: "Zwei bis drei Hauptfarben sind das Maximum. Mehr macht das Icon unruhig und lässt es günstiger wirken. Greif die Farben deines Logos oder deiner Ladeneinrichtung auf und gib sie direkt im Prompt mit an, zum Beispiel: \"gold and black colors\". So fühlt sich das Icon an, als wäre es speziell für dich gemacht worden."
 ---
 
 Dein Kunde öffnet sein Wallet. Da liegt die Bank-Karte mit ihrem polierten Logo. Daneben das KVB-Ticket. Die Payback-Karte. Das Konzertticket aus der Lanxess Arena. Und irgendwo dazwischen: deine Kundenkarte.

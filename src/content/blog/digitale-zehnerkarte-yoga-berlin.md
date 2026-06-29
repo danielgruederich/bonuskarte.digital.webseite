@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: berlin
 niche: yoga
+faqItems:
+  - q: "Funktioniert die Zehnerkarte für alle Kursformate – auch für Workshops?"
+    a: "Ja. Du kannst die Mechanik frei definieren. Reguläre Stunden werden normal gestempelt, Workshops können als Doppelstempel zählen oder separat behandelt werden. Wichtig ist, dass die Regel am Anfang klar kommuniziert wird – dann gibt es keine Verwirrung."
+  - q: "Berliner Schülerinnen machen oft Pausen im Sommer – verliert die Karte ihren Wert?"
+    a: "Nein. Die Karte läuft unbegrenzt, solange du keine Ablaufzeit einstellst. Du kannst aber bewusst eine Gültigkeit von z.B. 12 Monaten setzen – das schafft sanften Anreiz, regelmäßiger zu kommen, ohne Druck aufzubauen."
+  - q: "Ist der Datenschutz bei der Wallet-Karte DSGVO-konform?"
+    a: "Die Karte speichert keine persönlichen Daten außer einem anonymen Token für den Besuchsfortschritt. Kein Name, keine E-Mail-Adresse, keine Zahlungsdaten. Das ist einer der Hauptgründe, warum die Lösung gerade in Berlin gut angenommen wird."
+  - q: "Was kostet die Einführung – und rechnet sie sich für ein kleines Studio?"
+    a: "bonuskarte.digital ist 90 Tage kostenlos testbar. Danach liegt der Monatsbeitrag in einem Bereich, der sich bereits ab einer Handvoll Stammschülerinnen mehr rechnet als Papier-Karten. Ein einzelner Schüler, der wegen der Karte zweimal öfter pro Monat kommt, deckt die Kosten."
 ---
 
 Berlin ist Deutschlands Yoga-Hauptstadt. In Prenzlauer Berg gibt es mehr Yoga-Studios pro Straßenabschnitt als in mancher Großstadt insgesamt. In Mitte haben Boutique-Studios mit Holzboden und handgemachten Matten längst die klassischen Fitness-Ketten verdrängt. Und Kreuzberg hat seinen eigenen Vibe entwickelt: politisch, gemeinschaftsorientiert, bewusst – genau wie seine Yoga-Community.

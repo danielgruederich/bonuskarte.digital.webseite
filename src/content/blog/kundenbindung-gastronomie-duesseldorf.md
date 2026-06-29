@@ -7,6 +7,15 @@ category: "Strategie"
 readingTime: 8
 featured: false
 city: duesseldorf
+faqItems:
+  - q: "Funktioniert eine digitale Stempelkarte in der Düsseldorfer Altstadt genauso wie in ruhigeren Stadtteilen?"
+    a: "Ja, aber mit unterschiedlicher Dynamik. In der Altstadt mit hoher Laufkundschaft brauchst du aktive Einladung am Tresen und einen klaren Anreiz. In Wohnvierteln wie Pempelfort oder Oberkassel spielt Nachbarschafts-Empfehlung eine größere Rolle. Die Stempelkarte passt in beide Szenarien."
+  - q: "Wie viele Stempel sollte eine Belohnung in einem Düsseldorfer Gastrobetrieb kosten?"
+    a: "8 bis 10 Stempel für eine sinnvolle Belohnung sind der bewährte Richtwert. Bei Restaurants kann der Wert des Gratis-Angebots auch etwas höher liegen, weil das Publikum in Stadtteilen wie Oberkassel stärker auf Premium-Belohnungen reagiert als auf Standard-Rabatte."
+  - q: "Brauchen meine Gäste eine App, um die Kundenkarte zu nutzen?"
+    a: "Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert. Jedes iPhone und jedes aktuelle Android-Smartphone unterstützt das, ohne Download, ohne Registrierung."
+  - q: "Ab wann lohnt sich eine digitale Stempelkarte für einen Düsseldorfer Gastrobetrieb?"
+    a: "Sobald du Stammkunden hast, die du nicht verlieren willst. Die Einrichtung dauert etwa 15 Minuten, die ersten 90 Tage sind kostenlos. Ob 30 oder 300 aktive Kunden, der Aufwand bleibt gleich."
 ---
 
 Düsseldorf hat eine der lebendigsten Gastronomieszenen in Deutschland. Die Altstadt – von Einheimischen stolz als "längste Theke der Welt" bezeichnet – zieht täglich Tausende Besucher an. Aber zwischen Touristen-Laufkundschaft und echten Stammkunden liegt ein fundamentaler Unterschied.

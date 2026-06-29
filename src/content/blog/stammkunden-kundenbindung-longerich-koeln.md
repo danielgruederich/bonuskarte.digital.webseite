@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 4
 featured: false
 city: koeln
+faqItems:
+  - q: "Was macht einen Stammkunden in Longerich so wertvoll?"
+    a: "Ein Kunde, der zweimal pro Woche kommt, bringt dir in einem Jahr über hundert Besuche. Das ist mehr als das Zehnfache eines einmaligen Laufkunden. Dazu empfiehlt er dich weiter, weil er sich zugehörig fühlt. In Longerich, wo man sich kennt, ist das bares Geld wert."
+  - q: "Wie erkenne ich, welche Kunden kurz davor stehen, mein Geschäft nicht mehr zu besuchen?"
+    a: "Mit einer Papierstempelkarte gar nicht. Eine digitale Stempelkarte zeigt dir automatisch, wer seit drei Wochen nicht mehr da war. Diese Kunden bekommt du mit einer gezielten Push-Benachrichtigung zurück, bevor sie sich an einen anderen Laden gewöhnt haben."
+  - q: "Funktioniert eine digitale Stempelkarte in einem kleinen Veedel wie Longerich?"
+    a: "Gerade dort. Longerich ist kein anonymer Markt, hier kaufen Menschen bei denselben Läden, weil sie in der Nachbarschaft leben. Eine Stempelkarte passt exakt in diese Logik: Sie macht das persönliche Band sichtbar und gibt dem Kunden einen handfesten Grund, den Handschlag an der Theke fortzusetzen."
+  - q: "Was kostet eine digitale Stempelkarte für meinen Laden in Longerich?"
+    a: "Die ersten 90 Tage sind kostenlos, danach ab 29 Euro im Monat. Keine Kreditkarte nötig zum Starten, kein Vertrag."
 ---
 
 ## Warum sind Stammkunden in Longerich mehr wert?

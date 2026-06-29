@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: berlin
 niche: cafe
+faqItems:
+  - q: "Muss mein Gast eine App herunterladen, um die Stempelkarte zu nutzen?"
+    a: "Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone vorinstalliert sind. Der Gast scannt den QR-Code einmal mit der Kamera, tippt auf \"Hinzufügen\" und ist fertig. Kein Login, kein Account."
+  - q: "Wie spreche ich Berliner Café-Gäste am besten auf die Stempelkarte an?"
+    a: "Direkt und kurz: \"Haben Sie schon unsere digitale Stempelkarte? Braucht keine App, geht sofort.\" Das ist alles. Gäste, die bereit sind, reagieren sofort. Wer nicht interessiert ist, winkt ab, ohne sich belästigt zu fühlen. Kein Erklärungsaufwand, kein Druck."
+  - q: "Welche Stempel-Mechanik funktioniert in Berliner Cafés am besten?"
+    a: "8 Stempel für ein Gratis-Getränk hat sich als Standard etabliert. Einfach, klar, schnell verständlich. Komplizierte Punkte-Systeme oder gestaffelte Belohnungen kosten Erklärungszeit und werden seltener genutzt."
+  - q: "Was hält Kiez-Gäste davon ab, zum Café nebenan zu wechseln?"
+    a: "Der aufgebaute Fortschritt auf der Stempelkarte ist ein echter Anreiz, im Kiez zu bleiben. Wer schon 6 von 8 Stempeln hat, geht nicht zur Konkurrenz. Das System arbeitet still für dich, ohne dass du aktiv etwas tun musst."
 ---
 
 Berlin hat mehr Cafés pro Einwohner als fast jede andere Stadt in Europa. In Prenzlauer Berg reiht sich Café an Café, in Kreuzberg kämpfen Hipster-Röstereien um dieselbe Stammkundschaft, und in Neukölln ist der Kampf um den Latte macchiato ein täglicher Überlebenskampf.

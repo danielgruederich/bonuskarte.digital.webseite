@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 3
 featured: false
 city: koeln
+faqItems:
+  - q: "Wie bleibe ich als Betrieb in Rodenkirchen informiert, wenn Stammkunden ausbleiben?"
+    a: "Nur mit einem digitalen System. Eine Erinnerungsnotiz im Kopf funktioniert bei fünf Gästen, nicht bei fünfzig. Eine digitale Stempelkarte zeigt dir, wann jemand zuletzt aktiv war. Wer den 30-Tage-Schwellenwert erreicht, bekommt automatisch eine Einladung zurückzukommen, ohne dass du aktiv eingreifen musst."
+  - q: "Warum reicht das gute Gedächtnis des Inhabers nicht für Kundenbindung in Rodenkirchen?"
+    a: "Sobald ein zweiter Mitarbeiter an der Kasse steht oder Urlaub ansteht, bricht das persönliche Wissen weg. Die neue Aushilfe kennt die Stammkundin nicht, die Urlaubsvertretung hat keinen Überblick. Kundenbindung darf nicht an einer einzigen Person hängen, sie muss im System liegen."
+  - q: "Macht ein Bonusprogramm bei der kaufkraftstarken Kundschaft in Rodenkirchen einen Unterschied?"
+    a: "Gerade hier. Stammkunden in Rodenkirchen entscheiden nicht nach Preis, sondern nach Wertschätzung. Ein Bonusprogramm ist kein Rabattsystem, es ist ein Signal: Dieser Betrieb kennt mich und erkennt, dass ich wiederkomme. Das ist der Unterschied zu einem anonymen Konkurrenten."
+  - q: "Lohnt sich eine digitale Stempelkarte auch, wenn ich nur ein kleines Cafe oder Yoga-Studio habe?"
+    a: "Besonders dann. Je kleiner der Betrieb, desto wichtiger ist jeder Stammkunde. Wenn ein Café in Rodenkirchen 40 wirklich treue Gäste hat und diese nachweislich hält, ist das stabiler als 200 wechselhafte Laufkunden. Das System hilft, diese 40 zu kennen und nicht zu verlieren."
 ---
 
 # Kundenbindung Rodenkirchen: Der stille Wettbewerbsvorteil

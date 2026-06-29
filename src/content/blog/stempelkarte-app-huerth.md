@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: huerth
 niche: cafe
+faqItems:
+  - q: "Ich bin Bäcker in Fischenich und habe kein eigenes WLAN im Laden. Funktioniert das trotzdem?"
+    a: "Ja. Das Scanner-Gerät benötigt nur kurze Momente mit Datennetz – während des Scannens selbst. Ein normales Mobilfunknetz mit 4G reicht vollständig aus. Wenn das Netz kurz aussetzen sollte, kann der Scan auch offline gespeichert und beim nächsten Verbindungsaufbau automatisch synchronisiert werden."
+  - q: "Meine Kundschaft in Stotzheim ist älter. Kommen die mit einer digitalen Karte zurecht?"
+    a: "In der Praxis ja, überraschend oft. Wallet-Karten sind so konzipiert, dass nach dem einmaligen Scan nichts mehr erklärt werden muss. Die Karte erscheint einfach beim Öffnen des Handys. Kunden, die bereits mit dem Handy bezahlen oder Fotos machen, kommen problemlos damit zurecht. Kunden, die kein Smartphone nutzen, behalten selbstverständlich ihre Papierkarte – die digitale Karte ersetzt nur, was bereits geht."
+  - q: "Kann ich die digitale Stempelkarte für mein Café in Gleuel und meinen zweiten Standort in Hürth-Mitte gleichzeitig nutzen?"
+    a: "Ja. Mehrere Standorte können über dasselbe System verwaltet werden. Die Kunden können an beiden Standorten stempeln, und die Stempel laufen auf dieselbe Karte ein. Das ist besonders relevant für Betriebe, die in mehr als einem Hürther Stadtteil aktiv sind."
+  - q: "Was passiert nach den 90 kostenlosen Tagen?"
+    a: "Nach dem Testzeitraum entscheidet der Betrieb, ob er weitermacht. Wenn die Ergebnisse überzeugen, läuft das System mit einem monatlichen Betrag weiter – vergleichbar mit einer Vereinsmitgliedschaft oder einem Streaming-Abo. Wenn nicht, ist nach 90 Tagen nichts verloren und nichts verpflichtet. Alle aufgebauten Kunden und Stempel gehören dem Betrieb."
 ---
 
 "Ich bin doch kein IT-Unternehmen." Dieser Satz fällt häufig, wenn man Inhaber kleiner Betriebe in Hürth auf digitale Kundenkarten anspricht. Der Bäcker in Efferen, die Friseurin in Hermülheim, der Café-Betreiber in Gleuel – sie alle kennen das Thema, haben schon davon gehört und winken meistens ab. Zu kompliziert. Zu teuer. Braucht man eine App.

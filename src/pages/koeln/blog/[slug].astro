@@ -79,6 +79,17 @@ const related = allPosts
     {"@type": "ListItem", "position": 4, "name": post.data.title, "item": `https://bonuskarte.digital/koeln/blog/${post.slug}`}
   ]
 })} />
+  {post.data.faqItems && post.data.faqItems.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": post.data.faqItems.map((item: {q: string, a: string}) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a }
+      }))
+    })} />
+  )}
   <Navbar ctaHref="/#demo" />
 
   <!-- Reading progress bar -->

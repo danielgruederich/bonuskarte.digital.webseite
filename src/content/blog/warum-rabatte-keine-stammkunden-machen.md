@@ -8,6 +8,15 @@ readingTime: 6
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Warum binden Rabatte keine echten Stammkunden?"
+    a: "Rabatte belohnen den Kauf, nicht die Beziehung. Ein Gast, der wegen 10 Prozent Nachlass kommt, wechselt zum nächsten Anbieter, der 12 Prozent bietet. Er ist preissensibel, nicht loyal. Echte Stammkunden kommen, weil sie sich zugehörig fühlen, nicht weil der Deal stimmt."
+  - q: "Was ist der Unterschied zwischen Rabatt-Bindung und echter Kundenbindung?"
+    a: "Rabatt-Bindung hält, solange der Preisvorteil besteht. Echte Bindung hält auch nach einem schlechten Tag, einem Fehler oder einer Preiserhöhung, weil der Gast das Gefühl hat, dazuzugehören. Der Unterschied zeigt sich, wenn der Laden nebenan eine Aktion macht: Der Rabattjäger geht, der echte Stammkunde bleibt."
+  - q: "Ist eine Stempelkarte dann nicht auch nur ein Rabattsystem?"
+    a: "Eine Stempelkarte ist ein Anlass, wiederzukommen, kein Preisnachlass. Der Wert liegt nicht im Gratis-Kaffee, sondern darin, dass dein Gast dauerhaft auf dem Handy an dich erinnert wird. Die Karte in Apple Wallet oder Google Wallet ist Präsenz im Alltag, kein Coupon."
+  - q: "Was muss ein Betrieb tun, damit Gäste wirklich wegen mehr als einem Rabatt wiederkommen?"
+    a: "Es geht um Werte, Gemeinschaft und Gefühl. Ein Gast bleibt, wenn dein Laden zu seiner Welt passt, wenn er sich dort versteht, wenn sein Morgenritual oder sein Mittagessen dort funktioniert. Das lässt sich nicht kaufen, aber es lässt sich durch Verlässlichkeit und echte Wertschätzung aufbauen."
 ---
 
 Du kennst das: Ein Gast kommt dreimal die Woche, trinkt seinen Cappuccino, kennt dein Team beim Vornamen. Dann eröffnet zwei Straßen weiter ein neues Café mit „Jeder 5. Kaffee gratis", und dein Stammgast ist weg. **War er je wirklich ein Stammkunde?**

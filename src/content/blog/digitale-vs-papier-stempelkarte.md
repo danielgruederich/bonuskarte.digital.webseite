@@ -7,6 +7,15 @@ category: "Ratgeber"
 readingTime: 5
 featured: false
 city: koeln
+faqItems:
+  - q: "Ist eine digitale Stempelkarte wirklich besser als eine Papierkarte?"
+    a: "Für die meisten Kölner Betriebe ja. Die Papierkarte ist günstig, aber sie liegt oft zu Hause, geht verloren und kann nichts aktiv tun. Eine digitale Karte ist immer im Smartphone, erinnert Kunden automatisch und zeigt dir, was in deinem Betrieb wirklich passiert."
+  - q: "Was passiert, wenn ein älterer Gast kein Smartphone hat oder Wallet nicht kennt?"
+    a: "Das ist die Ausnahme, aber sie existiert. In diesem Fall bietet sich eine einfache Lösung an: Du behältst die Papierkarte parallel als Backup. Erfahrungsgemäß wechseln auch ältere Gäste schnell, wenn jemand kurz zeigt, wie es geht."
+  - q: "Wie wird Betrug bei digitalen Stempelkarten verhindert?"
+    a: "Jeder digitale Stempel ist verschlüsselt und an das Gerät des Kunden gebunden. Ein Stempel kann nicht nachträglich manuell eingetragen werden, und eine Karte lässt sich nicht kopieren oder weitergeben."
+  - q: "Was kostet die Umstellung auf eine digitale Stempelkarte?"
+    a: "Die Druckkosten für Papierkarten fallen weg. bonuskarte.digital kostet nach dem 90-tägigen Testzeitraum ab 29 Euro pro Monat. Es gibt keine Einrichtungsgebühr, keinen Vertrag mit langer Laufzeit und du kannst jederzeit kündigen."
 ---
 
 **Kurz zusammengefasst:** Papier-Stempelkarten kosten wenig, bringen aber auch wenig – digitale Karten liegen dauerhaft im Wallet, schicken Push-Nachrichten und zeigen dir wann Kunden zuletzt da waren.

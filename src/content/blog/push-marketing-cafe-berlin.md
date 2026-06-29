@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: berlin
 niche: cafe
+faqItems:
+  - q: "Sehen meine Gäste, dass die Erinnerung automatisch ausgelöst wird, wenn sie am Café vorbeigehen?"
+    a: "Nein. Die Benachrichtigung erscheint als Hinweis auf dem Sperrbildschirm – wie eine stille Erinnerung. Der Gast sieht deinen Café-Namen und den Text der Benachrichtigung. Ob sie standort-basiert oder manuell ausgelöst wurde, ist nicht erkennbar."
+  - q: "Gilt das DSGVO-konform – darf ich Wallet-Push-Nachrichten einfach schicken?"
+    a: "Ja. Indem der Gast die Karte in sein Wallet aufnimmt, akzeptiert er die Bedingungen der Wallet-App (Apple / Google). Das schließt Benachrichtigungen ein, die direkt zum Inhalt der Karte gehören. Du schickst keine E-Mail, du rufst nicht an – die Nachricht ist Teil der Karte selbst. Für klassisches Newsletter-Marketing gilt das nicht – hier bleibt DSGVO-Opt-in nötig."
+  - q: "Wie oft ist zu oft? Ich will meine Gäste nicht nerven."
+    a: "Faustregel: Maximal zwei manuelle Nachrichten pro Monat – und auch das nur mit konkretem Anlass. Standort-Trigger sind davon getrennt und werden von Gästen kaum als \"Werbung\" wahrgenommen. Lieber eine wirklich gute Nachricht im Monat als vier mittelmäßige."
+  - q: "Mein Café ist in Kreuzberg – funktioniert das auch in einem Kiez mit viel Laufkundschaft und wenig Stammpublikum?"
+    a: "Gerade dann ist das Tool wertvoll. Laufkundschaft, die einmal kommt und die Stempelkarte speichert, ist der erste Schritt zu einem Stammgast. Die Push-Erinnerung, wenn sie wieder in der Nähe sind, ist der zweite Schritt. Ohne System verlierst du diese Gäste nach dem ersten Besuch."
 ---
 
 Ein Stammgast kommt drei Wochen lang nicht. Du merkst es – aber du weißt nicht warum. War er im Urlaub? Hat er ein neues Café entdeckt? Ist er krank? In einem kleinen Berliner Kiez-Café kennt man seine Stammgäste. Man weiß, wer morgens immer um acht kommt, wer freitags zum Brunch erscheint, wer den Cortado ohne Zucker trinkt. Was man nicht hat: eine Möglichkeit, diesen Gast gezielt anzusprechen, ohne seine Telefonnummer zu kennen oder einen Newsletter zu verschicken.

@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 3
 featured: false
 city: koeln
+faqItems:
+  - q: "Was ist der Unterschied zwischen einem Laufkunden und einem Stammkunden in Sülz?"
+    a: "Ein Laufkunde wiederholt sich zufällig, ein Stammkunde kehrt bewusst zurück. Der Laufkunde an der Sülzburgstraße kommt, weil er grade vorbeigeht. Der Stammkunde kommt, weil er erwartet wird und weiß, dass sein Besuch zählt. Psychologisch ist das eine Weggabelung, die direkten Einfluss auf den Monatsumsatz hat."
+  - q: "Wie binde ich Studenten aus dem Uni-Umfeld in Sülz langfristig?"
+    a: "Studenten entscheiden in den ersten Wochen in einem neuen Viertel, wo sie ihre Routinen aufbauen. Wer in diesem Fenster einen konkreten Anreiz gibt, macht aus einer Neugier eine Gewohnheit. Eine digitale Stempelkarte gibt dem Studenten einen Grund, nach dem Semesterwechsel wieder bei dir anzufangen statt die Konkurrenz auszuprobieren."
+  - q: "Was passiert mit Grüngürtel-Besuchern, die nur einmal in Sülz vorbeikommen?"
+    a: "Mit einer digitalen Stempelkarte machst du aus dem Einmaligen einen potenziellen Wiederkommer. Der Satz \"Karte holen, beim nächsten Mal einen Stempel weiter\" kostet dich zehn Sekunden an der Kasse. Ohne diese Einladung ist der Gast nach dem Spaziergang einfach weg."
+  - q: "Wie viel Aufwand bedeutet eine digitale Stempelkarte für den täglichen Betrieb?"
+    a: "Fast keinen. Der Kunde scannt seinen QR-Code selbst, die Karte landet automatisch auf dem Handy. Du siehst die Aktivität im Dashboard, ohne etwas einzutragen. Der einzige aktive Schritt ist der Stempel beim Bezahlen, der genauso schnell geht wie eine Quittung."
 ---
 
 # Kundenbindung Sülz Köln: Was kluge Betriebe anders machen

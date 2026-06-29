@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: huerth
 niche: cafe
+faqItems:
+  - q: "Kann mein Betrieb in Hürth-Mitte mit einem Einkaufszentrum wirklich konkurrieren?"
+    a: "Direkte Konkurrenz ist das falsche Framing. Das Rhein-Center zieht Kunden an, die einkaufen und dabei einen Kaffee trinken wollen. Lokale Cafés in Hürth-Mitte ziehen Kunden an, die ihren Stammplatz haben, bekannte Gesichter treffen und sich wohlfühlen wollen. Das sind unterschiedliche Bedürfnisse – und der lokale Betrieb gewinnt das zweite Feld klar."
+  - q: "Lohnt sich eine digitale Stempelkarte auch für Betriebe in Fischenich oder Gleuel?"
+    a: "Ja – besonders dort. In kleineren Hürther Stadtteilen wie Fischenich, Gleuel oder Stotzheim ist die Vernetzung noch enger als in Hürth-Mitte. Eine Stammkundschaft, die sozial dicht vernetzt ist, trägt Empfehlungen schneller und zuverlässiger weiter. Das multipliziert den Effekt der digitalen Karte."
+  - q: "Müssen meine Kunden technisch versiert sein?"
+    a: "Nein. Apple Wallet und Google Wallet sind auf jedem modernen Smartphone vorinstalliert. Die Karte wird per QR-Code-Scan in wenigen Sekunden gespeichert – ohne Registrierung, ohne App-Download, ohne Passwort. In der Praxis haben sich auch Kunden über 60 problemlos damit zurechtgefunden."
+  - q: "Was kostet das für einen kleinen Hürther Betrieb?"
+    a: "bonuskarte.digital bietet 90 Tage kostenlosen Testzeitraum. In dieser Zeit kann der Betrieb das System vollständig testen, Stammkunden ansprechen und erste Ergebnisse beobachten – ohne finanzielle Verpflichtung und ohne Kreditkarte beim Start."
 ---
 
 Das Rhein-Center Hürth ist eines der größten Einkaufszentren im Kölner Umland. Es zieht Kunden aus Hürth, Brühl, Erftstadt und dem gesamten Rhein-Erft-Kreis an – mit über 120 Geschäften, kostenlosen Parkplätzen und allem, was eine Kette bieten kann. Für lokale Betriebe in Hürth-Mitte, Hermülheim oder Efferen klingt das nach einer schwierigen Ausgangslage.

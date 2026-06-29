@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: huerth
 niche: yoga
+faqItems:
+  - q: "Funktioniert das auch für kleine Yoga-Studios ohne Empfangstheke in Hürth?"
+    a: "Ja, gerade für kleine Studios in Hermülheim oder Gleuel ist das System ideal. Es gibt keine feste Rezeption, die bedient werden muss. Der Schüler scannt beim Eingang selbst, der Stempel wird automatisch vergeben. Das Studio braucht dafür kein eigenes Gerät – der Prozess läuft komplett über das Handy des Schülers."
+  - q: "Müssen meine Schüler eine neue App herunterladen?"
+    a: "Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf den meisten Android-Geräten. Die digitale Karte landet per Link oder QR-Code direkt in der bestehenden Wallet-App. Kein App-Store, keine Passwort-Vergabe, kein Einrichtungsaufwand für den Schüler."
+  - q: "Wie lange dauert die Einrichtung für ein Hürther Studio?"
+    a: "Erfahrungsgemäß rund 15 Minuten für die Grundkonfiguration: Kartendesign, Stempel-Anzahl, Belohnung. Der erste QR-Code ist sofort einsatzbereit. Komplexere Einstellungen wie Geo-Benachrichtigungen oder automatische Erinnerungen können jederzeit ergänzt werden."
+  - q: "Kann ich die Zehnerkarte später auf eine andere Mechanik umstellen?"
+    a: "Ja. Das System ist flexibel. Wer im Herbst auf eine Monatskarte wechseln will oder die Stempelanzahl anpassen möchte, kann das jederzeit in der Verwaltungsoberfläche ändern. Bestehende Karten der Schüler werden automatisch aktualisiert."
 ---
 
 Hürth hat etwas, das viele größere Städte nicht haben: echte Viertel-Loyalität. Wer in Hermülheim oder Efferen wohnt und dort sein Yoga-Studio gefunden hat, kommt nicht wegen eines Schnäppchenangebots – sondern wegen der Gemeinschaft, der Atmosphäre, der kurzen Wege. Und genau diese Loyalität ist das größte Kapital eines Yoga-Studios in Hürth – sofern man sie aktiv pflegt.

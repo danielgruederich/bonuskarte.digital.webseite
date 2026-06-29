@@ -8,6 +8,15 @@ readingTime: 6
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Warum kommen Gäste nicht wieder, obwohl mein Essen gut ist?"
+    a: "Sie kommen nicht wegen dir nicht wieder, sie sind schlicht ungebunden. Moderne Konsumenten fühlen sich keiner Marke verpflichtet. Ohne einen konkreten Anlass, zurückzukommen, geht der nächste Impuls an das nächste Café, das gerade sichtbar ist."
+  - q: "Was bringt wirklich mehr als ein klassisches Treueprogramm mit Rabatten?"
+    a: "Präsenz im Alltag. Eine Stempelkarte in der Apple Wallet oder Google Wallet liegt immer beim Gast, ohne aufdringlich zu sein. Sie erscheint, wenn er in deiner Nähe ist, und gibt ihm einen Grund, sich zu entscheiden. Das ist kein Deal, das ist Gewohnheit."
+  - q: "Wie werde ich als lokaler Gastronom Teil des Veedel-Alltags?"
+    a: "Indem du nicht nur Essen verkaufst, sondern eine Rolle spielst: Werte zeigen, lokale Events unterstützen, mit Nachbarläden kooperieren. Je mehr dein Laden mit dem Viertel verschmilzt, desto weniger bist du austauschbar."
+  - q: "Haben lokale Gastronomen gegenüber Ketten und Lieferplattformen überhaupt eine Chance?"
+    a: "Ja, und das ist der Kernpunkt. Ketten kämpfen darum, persönlich zu wirken. Du bist es bereits. Was dir fehlt, ist oft nur die Sichtbarkeit zwischen den Besuchen. Wer das löst, hat einen Vorteil, den keine Kette kaufen kann."
 ---
 
 **Kurz zusammengefasst:** Gäste kommen nicht wegen dir nicht wieder – sie sind schlicht nicht gebunden. Wer ihnen einen konkreten Anlass gibt zurückzukehren, gewinnt sie als Stammkunden.

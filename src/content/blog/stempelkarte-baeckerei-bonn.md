@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: bonn
 niche: baeckerei
+faqItems:
+  - q: "Funktioniert die digitale Stempelkarte auch für ältere Stammkunden in Endenich oder Kessenich?"
+    a: "Ja. Apple Wallet und Google Wallet sind auf praktisch jedem Smartphone vorinstalliert. Der Scan-Vorgang ist einfacher als eine WhatsApp-Nachricht lesen. Die meisten älteren Stammkunden sind nach einer kurzen Demo begeistert – weil sie endlich eine Karte haben, die sie nicht verlieren können."
+  - q: "Kann ich die Karte für Sonderaktionen nutzen, zum Beispiel zum Weihnachtsmarkt oder zum Frühstücksbuffet am Sonntag?"
+    a: "Ja. Push-Benachrichtigungen lassen sich gezielt ausspielen. Alle Karteninhaber bekommen zur passenden Zeit einen Hinweis auf das Sonntagsbuffet oder die Weihnachtsgebäck-Aktion. Das ist direktes Marketing ohne Streuung – nur eigene Stammkunden werden angesprochen."
+  - q: "Wie gehe ich damit um, wenn ein Bonner Stammkunde seine Karte verliert oder das Handy wechselt?"
+    a: "Die Karte ist an das Gerät des Nutzers gebunden, nicht an eine externe Datenbank mit persönlichen Daten. Bei einem Handywechsel wird die Karte einfach neu hinzugefügt. Der Stand kann manuell wiederhergestellt werden – das funktioniert unkompliziert über das Dashboard von bonuskarte.digital."
+  - q: "Ist die digitale Stempelkarte auch für eine kleine Einzelbäckerei sinnvoll, nicht nur für Ketten?"
+    a: "Gerade für Einzelbäckereien. Die Stärke der digitalen Karte liegt nicht im Volumen, sondern in der persönlichen Bindung. Eine kleine Bäckerei in Bonn-Beuel, die 80 Stammkunden kennt, kann mit einer digitalen Karte genau diese 80 Menschen besser halten als jede Kettenfiliale mit Loyalty-App."
 ---
 
 Wer morgens um acht Uhr durch Endenich, Kessenich oder die Bonner Innenstadt geht, erlebt eine Stadt, die frühstückt. Die Schlange vor der Lieblingsbäckerei gehört in vielen Bonner Vierteln zum Tagesrhythmus wie die S-Bahn. Das ist kein Zufall: Bonn hat eine ausgeprägte Frühstückskultur, die sich aus der Mischung von Studierenden, Pendlern und eingesessenen Familien speist.

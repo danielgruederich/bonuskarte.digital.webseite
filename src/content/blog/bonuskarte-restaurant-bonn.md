@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: bonn
 niche: restaurant
+faqItems:
+  - q: "Funktioniert die digitale Bonuskarte auch für Abendgäste, nicht nur den Mittagstisch?"
+    a: "Ja, und oft noch besser. Abendgäste in Bonner Restaurants haben in der Regel höhere Ausgaben und sind emotional stärker mit dem Restaurant verbunden. Eine Bonuskarte, die nach dem fünften Abendessen einen gratis Aperitivo oder ein Dessert schenkt, fühlt sich wie persönliche Wertschätzung an – nicht wie ein Supermarkt-Bonusprogramm."
+  - q: "Können internationale Gäste aus dem UN-Viertel oder den Botschaften die Karte nutzen?"
+    a: "Ja. Apple Wallet und Google Wallet funktionieren international – auf jedem Smartphone, unabhängig vom Land des Geräts. Internationale Gäste aus dem Bonner UN-Viertel oder aus Botschaftskreisen kennen digitale Treueprogramme oft besser als deutsche Gäste."
+  - q: "Was passiert, wenn ein Stammgast das Restaurant für mehrere Monate nicht besucht, zum Beispiel wegen Urlaub oder Elternzeit?"
+    a: "Die Karte und der Stempelstand bleiben erhalten. Wenn der Gast zurückkommt, ist alles noch da. Das ist ein aktiver Rückkehranreiz: Wer noch drei Stempel bis zur Gratismahlzeit hat, kommt eher zurück als jemand ohne offene Punkte."
+  - q: "Wie unterscheidet sich das von einem analogen Stammgästeprogramm, das wir schon haben?"
+    a: "Analoge Programme – Visitenkarten einsammeln, Namen in Listen eintragen, manuelle Rabatte vergeben – sind fehleranfällig und nicht skalierbar. Die digitale Karte läuft automatisch, dokumentiert jeden Besuch und ermöglicht es, alle Stammgäste gleichzeitig mit einer Push-Nachricht zu erreichen. Das ist strukturell ein anderes Instrument."
 ---
 
 Bonn ist nicht mehr Hauptstadt – aber die Stadt hat ihre Hauptstadt-Mentalität nie verloren. Die Bundesministerien, die UN-Organisationen am Rheinufer, die Botschaften und internationalen Unternehmen im ehemaligen Regierungsviertel: Sie alle haben eine Zielgruppe in Bonn hinterlassen, die Restaurantbesuche ernst nimmt. Ein Mittagessen im Bonner Stadtbezirk ist oft ein Geschäftsessen, ein Teamlunch oder ein gepflegtes Arbeitsessen – keine Ausweichlösung.

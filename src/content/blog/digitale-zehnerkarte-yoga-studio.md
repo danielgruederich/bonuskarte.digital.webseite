@@ -7,6 +7,17 @@ category: "Ratgeber"
 readingTime: 5
 featured: false
 city: koeln
+faqItems:
+  - q: "Wie sieht eine digitale Zehnerkarte auf dem Handy aus?"
+    a: "Die Karte liegt in Apple Wallet oder Google Wallet und zeigt auf einen Blick: Name des Studios, wie viele Einheiten noch übrig sind, und den QR-Code zum Einlösen. Deine Kundin sieht sofort \"3 von 10 Einheiten\", ohne nachfragen zu müssen."
+  - q: "Wann bekommt meine Kundin eine Erinnerung, dass die Karte fast leer ist?"
+    a: "Wenn du es so einrichtest, wird automatisch eine Push-Nachricht geschickt, wenn nur noch die letzte Einheit übrig ist. Die Kundin bekommt die Nachricht direkt auf dem Sperrbildschirm, ohne eine App öffnen zu müssen."
+  - q: "Funktioniert das auch bei Pilates, Tanz oder Kampfsport?"
+    a: "Ja. Das Prinzip ist immer gleich: Einheiten kaufen, nutzen, rechtzeitig nachkaufen. bonuskarte.digital lässt sich für jedes Studio einrichten, das mit Kurspaketen arbeitet. Pilates, Tai Chi, Tanzschulen und Personal Training funktionieren genauso."
+  - q: "Was passiert, wenn meine Kundin ihr Handy verliert?"
+    a: "Die Karte ist mit dem Wallet-Backup der Kundin verknüpft. Nach einem Handy-Wechsel oder einer Neu-Einrichtung stellt sie die Karte mit dem aktuellen Stundenstand wieder her. Kein Verlust der gesammelten Einheiten."
+  - q: "Muss meine Kundin eine App herunterladen?"
+    a: "Nein. Apple Wallet und Google Wallet sind auf jedem iPhone und Android-Gerät vorinstalliert. Deine Kundin scannt den QR-Code oder klickt auf den Link einmal, und die Karte ist sofort im Wallet, ohne Login oder Registrierung."
 ---
 
 **Kurz zusammengefasst:** Die digitale 10er-Karte im Wallet macht Schluss mit Zettelchaos – Kunden sehen ihren Stundenstand immer, und ein Push-Reminder wenn die Karte fast leer ist sorgt automatisch für den Nachkauf.

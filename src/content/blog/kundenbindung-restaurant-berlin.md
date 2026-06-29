@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: berlin
 niche: restaurant
+faqItems:
+  - q: "Funktioniert das auch für Restaurants mit viel Touristen-Laufkundschaft in Mitte?"
+    a: "Ja – aber die Strategie ist anders. Touristen werden in der Regel keine Stammgäste, dafür aber lokale Gäste und Berliner, die in Mitte arbeiten. Fokussiere die Stammgast-Karte auf die Mittagsgäste und die Abendgäste aus dem näheren Umfeld. Touristen können die Karte trotzdem bekommen – schadet nicht, hilft manchmal bei Wiederkehr-Berlinern."
+  - q: "Was ist der Unterschied zur Kundenkarte eines Bistros – geht das auch für gehobene Restaurants?"
+    a: "Ja. Die Karte kann optisch und kommunikativ hochwertig gestaltet werden. Statt \"Gratis-Kaffee nach 5 Besuchen\" eher: \"Unser fünfter gemeinsamer Abend – auf uns.\" Die Mechanik bleibt dieselbe, der Tonfall ist ein anderer. Wertschätzung funktioniert auf jedem Preisniveau."
+  - q: "Wie reagieren Berliner Gäste auf die Ansprache am Tisch?"
+    a: "In der Regel positiv, wenn die Formulierung stimmt. \"Haben Sie unsere Stammgast-Karte?\" ist unaufdringlich. Wer nicht interessiert ist, sagt kurz nein. Wer interessiert ist, fragt nach. Die Quote liegt erfahrungsgemäß bei 30–50% der aktiv angesprochenen Gäste."
+  - q: "Kann ich Push-Nachrichten schicken, wenn ein Gast lange nicht da war?"
+    a: "Ja – das ist eine der stärksten Funktionen. Du siehst im Dashboard, wann der letzte Besuch stattfand. Gäste, die 4–6 Wochen nicht da waren, können eine sanfte Erinnerung erhalten: \"Es ist eine Weile her – wir freuen uns auf Sie.\" Keine Werbung, kein Angebot – nur ein Zeichen, dass sie vermisst werden."
 ---
 
 Berlin hat rund 7.000 Restaurants – und jeder Berliner kennt gefühlt nur zehn davon wirklich. Das liegt nicht an Desinteresse. Es liegt daran, dass Berlin-Gäste unter Überangebot leiden. Die Auswahl ist so groß, dass viele Menschen am Ende immer wieder zu denselben drei, vier Stellen gehen, die sie kennen und mögen.

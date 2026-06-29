@@ -8,6 +8,15 @@ readingTime: 6
 featured: false
 city: koeln
 approved: true
+faqItems:
+  - q: "Brauchen meine Kunden eine App, um die digitale Stempelkarte zu nutzen?"
+    a: "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf fast jedem Smartphone bereits vorinstalliert sind. Der Kunde scannt einmal den QR-Code an der Theke, tippt auf \"Hinzufügen\" und ist fertig. Kein Download, kein Passwort, kein Aufwand."
+  - q: "Wie lange hält der Effekt einer Stempelkarte bei einer Eisdiele in Nippes?"
+    a: "Solange die Saison läuft und der Anreiz greifbar bleibt. Wer im April anfängt, hat bis September sechs Monate, um echte Stammkunden aufzubauen. Familien aus dem Blücherpark-Umfeld, die einmal gesammelt haben, kommen im nächsten Frühling gezielt zurück, weil sie den Fortschritt auf dem Handy sehen."
+  - q: "Was kostet eine digitale Stempelkarte für meine Eisdiele?"
+    a: "Die ersten 90 Tage sind komplett kostenlos, kein Risiko und keine Kreditkarte nötig. Du testest mit allen Funktionen und siehst selbst, wie viele Stammkunden du in einer Saison aufbauen kannst. Danach gibt es flexible Tarife abhängig von der Kundenzahl."
+  - q: "Was passiert mit Kunden, die ihre Papierstempelkarte verloren haben?"
+    a: "Gar nichts, im negativen Sinne. Der gesamte Fortschritt ist weg, und der Kunde fängt von vorne an, wenn er Lust hat, oder wechselt direkt zur Eisdiele nebenan. Mit einer digitalen Karte im Handy passiert das nicht, sie kann nicht verloren gehen."
 ---
 
 Samstagnachmittag in Nippes. Die Sonne brennt, der Blücherpark ist voll, und vor deiner Eisdiele steht eine Schlange bis zum Bürgersteig. Drei Kugeln Mango, zwei Kugeln Pistazie, einmal Spaghetti-Eis für die Kleine. Die Kasse klingelt.

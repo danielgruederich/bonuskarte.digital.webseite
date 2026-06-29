@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 4
 featured: false
 city: koeln
+faqItems:
+  - q: "Wie gewinne ich als Betrieb in Mülheim aktiv Stammkunden?"
+    a: "Stammkunden entstehen nicht durch gute Qualität allein, sondern durch einen konkreten Grund zum Wiederkommen. Ein einfacher Anreiz wie eine digitale Stempelkarte reicht oft aus: Der Gast sieht seinen Fortschritt auf dem Handy, erinnert sich beim nächsten Hunger an deinen Laden und kommt gezielt zurück. Nach dem dritten oder vierten Besuch entsteht Gewohnheit."
+  - q: "Bringt eine digitale Stempelkarte wirklich mehr als die Papier-Variante?"
+    a: "Ja, aus einem simplen Grund: Die digitale Karte liegt dauerhaft auf dem Handy des Kunden, die Papier-Karte verschwindet in der Jackentasche oder geht verloren. Ohne Karte kein Anreiz. Ohne Anreiz kein zweiter Besuch. Das gilt besonders in Mülheim, wo viele Läden direkt nebeneinander stehen."
+  - q: "Warum ist der zweite Besuch so viel wichtiger als der erste?"
+    a: "Ein Gast, der einmal kommt, ist ein Laufkunde. Wer zweimal kommt, fängt an, dich als Option zu sehen. Wer dreimal kommt, ist auf dem Weg zur Gewohnheit. Die meisten Betriebe investieren alles in den ersten Besuch und ignorieren den zweiten, dabei ist er die entscheidende Weggabelung zwischen Laufkunde und Stammkunde."
+  - q: "Wie lange dauert die Einrichtung einer digitalen Stempelkarte?"
+    a: "Die Einrichtung dauert unter zehn Minuten. Du brauchst keine technischen Kenntnisse und keine spezielle Hardware. Am Ende hast du einen QR-Code, den du an der Theke aufhängst, und deine Kunden können sofort starten."
 ---
 
 ## Was ist das Geheimnis erfolgreicher Läden in Mülheim?

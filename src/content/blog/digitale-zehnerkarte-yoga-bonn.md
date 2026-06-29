@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: bonn
 niche: yoga
+faqItems:
+  - q: "Funktioniert das auch für ältere Yoga-Schüler in Bad Godesberg?"
+    a: "Ja. Apple Wallet ist auf jedem iPhone ab iOS 6 vorinstalliert, Google Wallet auf allen modernen Android-Geräten. Das Hinzufügen einer Karte dauert zwei Tipper. Viele Studios in Bonn berichten, dass auch Gäste Mitte 60 die digitale Karte problemlos nutzen – weil sie keine App, kein Passwort und kein Konto brauchen."
+  - q: "Kann ich verschiedene Karten für verschiedene Kursformate anbieten?"
+    a: "Ja. Wer Hatha, Yin und Power Yoga separat abrechnet, kann mehrere Kartentypen anlegen. Die Gäste sehen im Wallet dann genau, welche Karte für welchen Kurs gilt. Das ist besonders praktisch für Studios in Bonn-Innenstadt, die ein breites Kursangebot haben."
+  - q: "Was passiert mit den Zehnerkartenständen, wenn ein Student das Semester abbricht oder die Stadt verlässt?"
+    a: "Die digitale Karte bleibt im Wallet erhalten. Wenn der Student nach einem Auslandssemester zurückkommt oder wieder in Bonn ist, sind seine gesammelten Einheiten noch da. Das schafft echte Loyalität – auch über Lebensabschnitte hinaus."
+  - q: "Wie lange dauert die Einrichtung bis zum ersten Einsatz?"
+    a: "Unter 30 Minuten. Das Template aufsetzen, anpassen, QR-Code generieren – fertig. Keine technische Infrastruktur, keine App-Entwicklung, kein Server-Setup. Das ist besonders relevant für kleine Studios in Beuel oder Kessenich, die keine eigene IT-Abteilung haben."
 ---
 
 Bonn ist eine Stadt der Gegensätze: alte Bundesbehörden neben jungen Startup-Büros, Rheinpromenade neben Uni-Campus, Rentner in Bad Godesberg neben Studierenden in Poppelsdorf. Diese Mischung spiegelt sich auch in der Yoga-Szene wider. Bonner Yoga-Studios haben eine außergewöhnlich breite Zielgruppe – von der Universitätsprofessorin bis zur Studentin im zweiten Semester, vom pensionierten Beamten bis zur jungen Mutter in Beuel.

@@ -15,6 +15,7 @@ const blog = defineCollection({
     niche: z.string().optional(), // e.g. 'cafe', 'eiscafe', 'baeckerei' — used for booking URL
     approved: z.boolean().default(true), // false = Entwurf, true = freigegeben
     needsEdit: z.boolean().default(false), // true = Änderungen nötig
+    faqItems: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   }),
 })
 

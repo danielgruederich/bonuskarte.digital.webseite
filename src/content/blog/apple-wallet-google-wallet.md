@@ -7,6 +7,17 @@ category: "Ratgeber"
 readingTime: 6
 featured: false
 city: koeln
+faqItems:
+  - q: "Muss mein Gast eine App herunterladen, um die Wallet-Karte zu nutzen?"
+    a: "Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf nahezu jedem Android-Gerät. Der Gast tippt einmal auf den Link oder scannt den QR-Code, und die Karte landet direkt im Wallet. Kein Download, kein Account, kein Passwort."
+  - q: "Was ist der Unterschied zwischen Apple Wallet und Google Wallet?"
+    a: "Apple Wallet läuft auf iPhones, Google Wallet auf Android-Geräten. Beide funktionieren nach demselben Prinzip: Karte hinzufügen, stempeln, Belohnung einlösen. Mit bonuskarte.digital erstellst du eine Karte, die für beide Plattformen gleichzeitig funktioniert."
+  - q: "Wie funktionieren standortbasierte Erinnerungen im Wallet?"
+    a: "Du hinterlegst deine Adresse in der Karte. Wenn ein Gast in der Nähe deines Lokals ist, erscheint die Karte automatisch oben auf dem Sperrbildschirm. Das passiert ohne Kosten und ohne Werbebudget, solange der Gast die Karte im Wallet hat."
+  - q: "Was passiert, wenn ein Gast sein Handy wechselt?"
+    a: "Die Karte bleibt über den Wallet-Link oder die automatische Datensicherung des Smartphones erhalten. Im Zweifelsfall scannt der Gast einfach nochmal den QR-Code und fügt die Karte mit dem aktuellen Stempelstand erneut hinzu."
+  - q: "Kann ich die Karte auch ohne eigene Website oder App nutzen?"
+    a: "Ja. Du brauchst weder eine Website noch eine App. bonuskarte.digital stellt dir einen Link und einen QR-Code bereit, den du überall teilen kannst: am Tresen, in der Instagram-Bio, im WhatsApp-Status oder auf Google Business."
 ---
 
 **Kurz zusammengefasst:** Apple Wallet und Google Wallet sind auf jedem Smartphone vorinstalliert – lokale Betriebe können diese Plattform nutzen, um Kundenkarten direkt dorthin zu bringen, ohne App-Download oder Registrierung.

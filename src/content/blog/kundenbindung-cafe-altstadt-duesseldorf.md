@@ -8,6 +8,15 @@ readingTime: 7
 featured: false
 city: duesseldorf
 niche: cafe
+faqItems:
+  - q: "Lohnt sich eine Stempelkarte überhaupt in der Altstadt, wo so viele Gäste Touristen sind?"
+    a: "Ja – aber der Fokus liegt auf dem Anteil der Stammgäste. Selbst wenn 60 % der Gäste Touristen sind, macht das bei 70 Gästen täglich noch 28 potenzielle Stammkunden pro Tag. Diese 28 sind die Zielgruppe der Karte. Touristen, die sie spontan mitnehmen, kommen manchmal beim nächsten Düsseldorf-Besuch wieder – und suchen aktiv das Café, in dem sie noch Punkte haben."
+  - q: "Kann ich die Stempelkarte auch im Carlsplatz-Bereich einsetzen, wo Gäste oft im Stehen trinken?"
+    a: "Absolut. Der Stempel-Vorgang dauert unter fünf Sekunden und blockiert die Warteschlange nicht. Im Gegenteil: Gäste, die die Karte bereits haben, gehen schneller durch den Bezahlvorgang, weil sie mit dem QR-Code bereit sind."
+  - q: "Wie unterscheide ich mich als Altstadtcafé von den Kettenangeboten mit ähnlichen Treueprogrammen?"
+    a: "Durch Persönlichkeit. Eine Starbucks-Karte fühlt sich nach System an. Eine Karte mit dem Namen \"Café zur Alten Post\" und einem handgeschriebenen Satz auf der Rückseite fühlt sich nach Heimat an. Diese emotionale Differenzierung ist mit digitalen Wallet-Karten genauso möglich wie mit Papier – nur haltbarer."
+  - q: "Funktioniert das auch für saisonale Stände oder Cafés mit wechselnden Standorten?"
+    a: "Ja. Die Wallet-Karte ist standortunabhängig. Wer z. B. im Sommer am Rheinufer und im Winter in der Altstadt betreibt, kann dieselbe Karte nutzen. Der Gast stempelt unabhängig vom Standort – das System erkennt nur den Scan, nicht den Ort."
 ---
 
 Wer ein Café in der Düsseldorfer Altstadt betreibt, kennt den Widerspruch: Tagsüber strömen Besucher aus dem Umland, Geschäftsreisende und Touristen, die einmal probieren und nie wiederkommen. Gleichzeitig gibt es – besonders in den Nebenstraßen hinter Bolkerstraße und Hunsrückenstraße – eine stille, aber treue Stammgäste-Gemeinschaft, die das Café als verlängerten Wohnraum betrachtet. Wer als Betreiber nicht unterscheidet, verliert genau die zweite Gruppe an Konzepte, die besser darin sind, Nähe zu erzeugen.

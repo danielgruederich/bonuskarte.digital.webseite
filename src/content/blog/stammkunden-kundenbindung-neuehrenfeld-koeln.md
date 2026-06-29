@@ -7,6 +7,15 @@ category: "Lokales"
 readingTime: 3
 featured: false
 city: koeln
+faqItems:
+  - q: "Warum ist Kundenbindung in Neuehrenfeld gerade jetzt besonders wichtig?"
+    a: "Das Viertel ist noch nicht so dicht mit Läden besetzt wie Ehrenfeld direkt nebenan. Wer jetzt seine Stammkunden-Infrastruktur aufbaut, hat in zwei Jahren einen Vorsprung, den neue Mitbewerber nicht mehr einfach einholen. Je mehr Läden kommen, desto teurer wird das Gewinnen jedes einzelnen Stammkunden."
+  - q: "Was ist der Vorteil einer digitalen Stempelkarte gegenüber der aus Pappe?"
+    a: "Eine Papierkarte geht verloren, wird vergessen oder liegt zu Hause, wenn der Kunde gerade einkauft. Eine digitale Karte sitzt im Handy zwischen Kreditkarte und KVB-Ticket. Sie erinnert zur richtigen Zeit, und der Betrieb sieht, wer gerade aktiv sammelt und wer seit Wochen nicht mehr aufgetaucht ist."
+  - q: "Wie schnell wirkt ein digitales Bonusprogramm in Neuehrenfeld?"
+    a: "Die ersten spürbaren Effekte zeigen sich nach vier bis acht Wochen. Gäste, die sonst zufällig wiederkamen, kommen bewusst zurück, weil sie wissen, wo sie gerade im Stempelfortschritt stehen. Die Besuchsfrequenz steigt im Schnitt um 20 bis 40 Prozent, je nach Branche und wie aktiv das Programm beworben wird."
+  - q: "Muss mein Kunde eine App herunterladen?"
+    a: "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf fast jedem Smartphone bereits vorinstalliert sind. Der Kunde scannt einmal einen QR-Code, tippt auf \"Hinzufügen\" und ist fertig."
 ---
 
 ## Warum ist Neuehrenfeld kein zweites Ehrenfeld?

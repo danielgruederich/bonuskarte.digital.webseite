@@ -7,6 +7,15 @@ category: "Strategie"
 readingTime: 5
 featured: false
 city: koeln
+faqItems:
+  - q: "Was ist der Unterschied zwischen einem digitalen Gutschein und einer Stempelkarte?"
+    a: "Eine Stempelkarte belohnt treue Stammkunden nach mehreren Besuchen. Ein Gutschein gibt einen sofortigen Anreiz, oft beim ersten Besuch oder an stillen Tagen. Beide Instrumente ergänzen sich: Der Gutschein holt den Neukunden, die Stempelkarte hält ihn."
+  - q: "Wie verhindere ich, dass digitale Gutscheine mehrfach genutzt werden?"
+    a: "Digitale Coupons über bonuskarte.digital sind personalisiert und einmalig einlösbar. Der Code ist nach der ersten Verwendung gesperrt. Kein Gast kann denselben Code zweimal nutzen oder ihn mit Freunden teilen."
+  - q: "Wie verteile ich Gutscheine an meine Kölner Kunden?"
+    a: "Am einfachsten funktionieren drei Kanäle: QR-Code an der Tür oder am Tresen für Walk-ins, Instagram-Story für deine Follower und WhatsApp-Status oder Broadcast für bestehende Stammkunden. Du teilst einen Link oder QR-Code, der Rest läuft automatisch."
+  - q: "Wie lange sollte ein Gutschein gültig sein?"
+    a: "Eine Laufzeit von 7 bis 14 Tagen hat sich bewährt. \"Gültig bis Sonntag\" ist konkret genug, um Kunden zum Handeln zu bewegen, ohne sie unter Druck zu setzen. Gutscheine ohne Ablaufdatum werden häufig aufgeschoben und am Ende nicht genutzt."
 ---
 
 **Kurz zusammengefasst:** Digitale Gutscheine füllen stille Tage und gewinnen Neukunden – sie ergänzen die Stempelkarte und reaktivieren Gäste, die länger nicht da waren.
