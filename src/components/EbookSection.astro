@@ -47,29 +47,29 @@ const benefits = [
         </ul>
 
         <!-- Argument Carousel -->
-        <div class="relative" id="ebook-carousel-wrap">
-          <div class="relative overflow-hidden min-h-[160px] sm:min-h-[130px]">
-            <div class="ebook-slide absolute inset-0 border-l-2 border-amber pl-5 transition-all duration-500" data-slide="0">
-              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Kartentypen</p>
-              <p class="text-ink font-semibold text-base leading-snug mb-1">7 Karten — eine Entscheidung.</p>
-              <p class="text-ink/65 text-sm leading-relaxed">Stempelkarte, Cashback, Coupon, Rabatt, Geschenk, Multipass & VIP-Club — alle erklärt, alle sofort umsetzbar.</p>
+        <div class="relative bg-ink border border-ink p-6 sm:p-7" id="ebook-carousel-wrap">
+          <div class="relative overflow-hidden min-h-[160px] sm:min-h-[140px]">
+            <div class="ebook-slide absolute inset-0 transition-all duration-500" data-slide="0">
+              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-3">Kartentypen</p>
+              <p class="text-paper font-bold text-lg leading-snug mb-2">7 Karten — eine Entscheidung.</p>
+              <p class="text-paper/65 text-sm leading-relaxed">Stempelkarte, Cashback, Coupon, Rabatt, Geschenk, Multipass & VIP-Club — alle erklärt, alle sofort umsetzbar.</p>
             </div>
-            <div class="ebook-slide absolute inset-0 border-l-2 border-amber pl-5 transition-all duration-500 opacity-0" data-slide="1">
-              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Wirtschaftlichkeit</p>
-              <p class="text-ink font-semibold text-base leading-snug mb-1">Stammkunden kosten 5× weniger.</p>
-              <p class="text-ink/65 text-sm leading-relaxed">Als neue Gäste zu gewinnen — mit echten Zahlen aus der Gastronomie, nicht aus dem Lehrbuch.</p>
+            <div class="ebook-slide absolute inset-0 transition-all duration-500 opacity-0" data-slide="1">
+              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-3">Wirtschaftlichkeit</p>
+              <p class="text-paper font-bold text-lg leading-snug mb-2">Stammkunden kosten 5× weniger.</p>
+              <p class="text-paper/65 text-sm leading-relaxed">Als neue Gäste zu gewinnen — mit echten Zahlen aus der Gastronomie, nicht aus dem Lehrbuch.</p>
             </div>
-            <div class="ebook-slide absolute inset-0 border-l-2 border-amber pl-5 transition-all duration-500 opacity-0" data-slide="2">
-              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Umsetzung</p>
-              <p class="text-ink font-semibold text-base leading-snug mb-1">Kein Marketingbudget nötig.</p>
-              <p class="text-ink/65 text-sm leading-relaxed">Alle Strategien funktionieren mit deinem Smartphone — speziell auf Kölner Cafés zugeschnitten.</p>
+            <div class="ebook-slide absolute inset-0 transition-all duration-500 opacity-0" data-slide="2">
+              <p class="text-xs tracking-[0.25em] uppercase text-amber mb-3">Umsetzung</p>
+              <p class="text-paper font-bold text-lg leading-snug mb-2">Kein Marketingbudget nötig.</p>
+              <p class="text-paper/65 text-sm leading-relaxed">Alle Strategien funktionieren mit deinem Smartphone — speziell auf Kölner Cafés zugeschnitten.</p>
             </div>
           </div>
           <!-- Dots -->
           <div class="flex gap-2 mt-5">
             <button class="ebook-dot w-6 h-1 bg-amber transition-all" data-dot="0" aria-label="Folie 1"></button>
-            <button class="ebook-dot w-2 h-1 bg-ink/20 transition-all" data-dot="1" aria-label="Folie 2"></button>
-            <button class="ebook-dot w-2 h-1 bg-ink/20 transition-all" data-dot="2" aria-label="Folie 3"></button>
+            <button class="ebook-dot w-2 h-1 bg-paper/20 transition-all" data-dot="1" aria-label="Folie 2"></button>
+            <button class="ebook-dot w-2 h-1 bg-paper/20 transition-all" data-dot="2" aria-label="Folie 3"></button>
           </div>
         </div>
       </div>
@@ -101,11 +101,11 @@ const benefits = [
     function goTo(idx) {
       slides[current].classList.add('opacity-0')
       dots[current].classList.remove('w-6', 'bg-amber')
-      dots[current].classList.add('w-2', 'bg-ink/20')
+      dots[current].classList.add('w-2', 'bg-paper/20')
 
       current = idx
       slides[current].classList.remove('opacity-0')
-      dots[current].classList.remove('w-2', 'bg-ink/20')
+      dots[current].classList.remove('w-2', 'bg-paper/20')
       dots[current].classList.add('w-6', 'bg-amber')
     }
 
