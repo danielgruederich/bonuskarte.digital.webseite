@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import LeadForm from '../components/LeadForm.tsx'
+
+const BARISTA_BOOKING = 'https://termin.bonuskarte.digital/barista'
+const WHATSAPP = 'https://wa.me/491705594140'
+
+const benefits = [
+  {
+    title: 'Push-Nachrichten, kostenlos',
+    text: 'Erreich deine Gäste direkt aufs Handy. Kein SMS-Versand, keine Druckkosten.',
+  },
+  {
+    title: 'Gäste kommen zurück',
+    text: 'Wer länger nicht da war, bekommt automatisch eine freundliche Erinnerung. Ohne Aufwand für dich.',
+  },
+  {
+    title: 'Geburtstags-Bonus automatisch',
+    text: 'Am Geburtstag deiner Stammgäste geht eine persönliche Nachricht raus. Komplett ohne Aufwand.',
+  },
+  {
+    title: 'Kein Papier mehr',
+    text: 'Keine verlorenen Kärtchen, kein Nachdrucken. Stempel vergibst du per App.',
+  },
+]
+---
+
+<BaseLayout
+  title="Digitale Stempelkarte fürs Café | bonuskarte.digital"
+  description="Die digitale Stempelkarte für Cafés. Deine Stammgäste sammeln Stempel direkt in Apple oder Google Wallet, ohne Plastik und ohne App-Download. Jetzt kostenlose Demo-Karte erstellen."
+>
+  <Navbar ctaHref="#start" ctaLabel="Demo-Karte erstellen" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="relative bg-paper overflow-hidden pt-32 pb-16 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-ink"></div>
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Left: Pitch -->
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-amber mb-7 font-medium">
+            Digitale Stempelkarte fürs Café
+          </p>
+          <h1 class="text-5xl sm:text-6xl leading-[1.02] tracking-tight mb-7 font-bold">
+            <span class="block text-ink">Sammeln.</span>
+            <span class="block text-ink">Belohnen.</span>
+            <span class="block text-ink/40">Direkt im Handy.</span>
+          </h1>
+          <p class="text-ink/70 text-base sm:text-lg leading-relaxed max-w-md mb-8">
+            Die digitale Stempelkarte für Cafés. Deine Stammgäste sammeln Stempel
+            direkt in Apple oder Google Wallet, ganz ohne Plastik und ohne App-Download.
+          </p>
+          <a href="#start" class="inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors">
+            Kostenlose Demo-Karte
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right: Stempelkarten-Preview -->
+        <div class="relative">
+          <div class="bg-white border border-ink/10 rounded-2xl p-7 shadow-sm">
+            <div class="flex items-center justify-between mb-5">
+              <span class="text-sm font-semibold text-ink">Deine Stempelkarte</span>
+              <span class="text-xs font-semibold text-ink/40 tracking-widest">07 / 10</span>
+            </div>
+            <div class="grid grid-cols-5 gap-2.5 mb-5">
+              {Array.from({ length: 10 }).map((_, i) => (
+                i < 7 ? (
+                  <div class="aspect-square rounded-full bg-amber flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                ) : (
+                  <div class="aspect-square rounded-full border-2 border-ink/15"></div>
+                )
+              ))}
+            </div>
+            <p class="text-sm text-ink/60">
+              Noch <strong class="text-amber">3 Stempel</strong> bis zum Freikaffee.
+            </p>
+          </div>
+          <div class="mt-4 flex items-center justify-center gap-2 text-xs text-ink/40 tracking-wide">
+            <span>Läuft mit Apple &amp; Google Wallet</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VORTEILE ──────────────────────────────────────────────── -->
+  <section class="bg-paper border-t border-ink/10 py-20 sm:py-24 px-5 sm:px-8">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs tracking-[0.3em] uppercase text-amber mb-3 font-medium">Was die Karte für dein Café tut</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-ink leading-tight mb-12 max-w-xl">
+        Mehr Stammgäste, weniger Aufwand.
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-x-12 gap-y-9">
+        {benefits.map((b) => (
+          <div class="flex items-start gap-4">
+            <span class="flex-none mt-0.5 inline-flex w-10 h-[22px] rounded-full bg-amber items-center justify-end px-1">
+              <span class="w-4 h-4 rounded-full bg-white"></span>
+            </span>
+            <div>
+              <p class="text-base font-semibold text-ink mb-1">{b.title}</p>
+              <p class="text-sm text-ink/65 leading-relaxed">{b.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEMO-KARTE / FORM ─────────────────────────────────────── -->
+  <section id="start" class="relative bg-paper border-t border-ink/10 py-20 sm:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-60 pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Left: Pitch -->
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-amber mb-4 font-medium">In 30 Sekunden ausprobieren</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-ink leading-tight mb-5">
+            Sieh deine Karte,<br />bevor du dich entscheidest.
+          </h2>
+          <p class="text-ink/70 text-base leading-relaxed max-w-md mb-8">
+            Trag dich ein und wir erstellen dir sofort eine Demo-Karte fürs Wallet.
+            So siehst du genau, wie es bei deinen Gästen aussieht. Danach richten wir
+            sie mit deinem eigenen Branding ein.
+          </p>
+
+          <ul class="space-y-3">
+            {[
+              'Kein App-Download für dich oder deine Gäste',
+              'Funktioniert auf iPhone und Android',
+              '90 Tage kostenlos testen, kein Risiko',
+            ].map((b) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 flex-none w-2 h-2 rounded-full bg-amber"></span>
+                <span class="text-ink/85 text-sm leading-relaxed">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Right: Form Card -->
+        <div class="bg-paper-dark/60 border border-ink/10 p-7 sm:p-9">
+          <h3 class="font-display text-xl font-semibold tracking-tight text-ink mb-2">
+            Demo-Karte erstellen
+          </h3>
+          <p class="text-ink/60 text-sm mb-7">
+            Kostenlos und unverbindlich. Du bekommst die Karte sofort.
+          </p>
+          <LeadForm
+            client:visible
+            niche="cafe"
+            city="koeln"
+            source="cafe-landing"
+            whatsappUrl={WHATSAPP}
+            bookingUrl={BARISTA_BOOKING}
+            bookingType="barista"
+            submitLabel="Demo-Karte erstellen"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TERMIN-CTA ────────────────────────────────────────────── -->
+  <section class="bg-ink py-14 sm:py-16 border-t border-paper/10 px-5 sm:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+        <div class="flex-1">
+          <p class="text-xs tracking-[0.25em] uppercase text-amber mb-2">Lieber direkt persönlich?</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-paper leading-tight">
+            15 Minuten, dann weißt du alles.
+          </h2>
+          <p class="text-paper/50 text-sm mt-2 leading-relaxed">
+            Bei dir im Café oder per Video. Such dir einfach einen Slot aus.
+          </p>
+        </div>
+        <a
+          href={BARISTA_BOOKING}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors"
+        >
+          Termin buchen
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
