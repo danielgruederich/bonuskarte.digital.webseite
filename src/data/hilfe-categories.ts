@@ -10,7 +10,9 @@ export const hilfeCategories: HilfeCategory[] = [
   { slug: 'scanner-app', label: 'Scanner App', icon: '📱', order: 2 },
   { slug: 'kartentypen', label: 'Kartentypen', icon: '💳', order: 3 },
   { slug: 'push-nachrichten', label: 'Push-Nachrichten', icon: '🔔', order: 4 },
-  { slug: 'support', label: 'Support', icon: '💬', order: 5 },
+  { slug: 'automatisierungen', label: 'Automatisierungen', icon: '⚡', order: 5 },
+  { slug: 'inspiration', label: 'Inspiration', icon: '💡', order: 6 },
+  { slug: 'support', label: 'Support', icon: '💬', order: 7 },
 ]
 
 /** Get display label for a category slug */

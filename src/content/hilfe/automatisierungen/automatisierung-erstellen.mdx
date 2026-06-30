@@ -1,0 +1,110 @@
+---
+title: "Automatisierung erstellen"
+description: "So erstellst du automatische Workflows, die bei Kundenaktivitäten selbstständig Aktionen auslösen."
+order: 1
+---
+
+import Callout from '@/components/hilfe/Callout.astro'
+import Screenshot from '@/components/hilfe/Screenshot.astro'
+
+# Automatisierung erstellen
+
+Mit Automatisierungen erstellst du Workflows, die bei bestimmten Kundenaktivitäten automatisch Aktionen auslösen. Statt manuell Nachrichten zu versenden oder Punkte zu vergeben, läuft alles im Hintergrund — du richtest es einmal ein, und es arbeitet für dich.
+
+Automatisierungen funktionieren mit allen 8 Kartentypen, und es gibt keine Begrenzung bei der Anzahl der Schritte in einer Kette.
+
+## So erstellst du eine Automatisierung
+
+1. Öffne dein **Dashboard** unter bonuskarte.digital
+2. Gehe zum Bereich **Automatisierungen**
+3. Klicke oben rechts auf **Automatisierung erstellen** und vergib einen Namen
+
+<Screenshot src="/hilfe/automatisierungen/automatisierung-erstellen.jpg" alt="Dialog zum Erstellen einer neuen Automatisierung" />
+
+4. Wähle einen **Auslöser** aus
+
+<Screenshot src="/hilfe/automatisierungen/trigger-auswaehlen.jpg" alt="Liste der verfügbaren Auslöser" />
+
+5. Füge optional **Bedingungen** hinzu
+6. Füge eine oder mehrere **Aktionen** hinzu
+
+<Screenshot src="/hilfe/automatisierungen/workflow-beispiel.jpg" alt="Beispiel-Workflow: Stempelanzahl erreicht → 1 Stunde warten → Push senden" caption="Beispiel: Bei Erreichen einer Stempelzahl wird nach 1 Stunde eine Push-Nachricht gesendet." />
+
+7. Schalte die Automatisierung auf **Working Mode**, um sie zu aktivieren
+
+<Callout type="info">
+Neben dem Namen der Automatisierung siehst du einen Zähler — er zeigt, wie oft die Automatisierung bisher ausgelöst wurde.
+</Callout>
+
+## Draft Mode vs. Working Mode
+
+Wenn du eine Automatisierung erstellst, startet sie im **Draft Mode**. In diesem Modus ist sie gespeichert, aber nicht aktiv — es werden keine Aktionen ausgelöst. So kannst du alles in Ruhe aufbauen und prüfen, bevor du live gehst.
+
+Sobald du fertig bist, schaltest du die Automatisierung in den **Working Mode**. Ab diesem Moment verarbeitet sie Auslöser in Echtzeit.
+
+<Callout type="tipp">
+Du kannst jederzeit zwischen Draft Mode und Working Mode wechseln — zum Beispiel, wenn du eine Automatisierung vorübergehend pausieren möchtest.
+</Callout>
+
+## Verfügbare Auslöser
+
+Auslöser sind Ereignisse, die eine Automatisierung starten.
+
+### Kundenereignisse
+- **Kunde erstellt** — ein neues Kundenprofil wird angelegt
+- **Kunde gelöscht** — ein Kundenprofil wird entfernt
+- **Geburtstag heute** — löst am Geburtstag des Kunden aus
+
+### Kartenereignisse
+- **Karte installiert** — ein Kunde speichert die Karte auf seinem Gerät
+- **Karte abgelaufen** — das Ablaufdatum der Karte ist überschritten
+- **Karte gelöscht** — die Karte wird vom Gerät entfernt
+- **Karte ausgestellt** — eine Karte wird einem Kunden zugewiesen
+- **Karte gescannt** — die Karte wird über die Scanner-App gescannt
+
+### Loyalitätsaktivitäten
+- **Coupon eingelöst** — ein Coupon wird verwendet
+- **Stempelzahl erreicht** — der Kunde hat eine bestimmte Anzahl Stempel gesammelt
+- **Punktzahl erreicht** — der Kunde hat eine bestimmte Punktzahl erreicht
+- **Prämienanzahl erreicht** — der Kunde hat eine bestimmte Anzahl Prämien verdient
+- **Eingelöste Prämien erreicht** — der Kunde hat eine bestimmte Anzahl Prämien eingelöst
+- **Stempel laufen ab** — Stempel stehen kurz vor dem Ablauf
+- **Boni laufen ab** — Bonuspunkte stehen kurz vor dem Ablauf
+
+### Sonstiges
+- **Bewertung hinterlassen** — ein Kunde gibt eine Bewertung ab
+- **RFM-Segment gewechselt** — ein Kunde wechselt in ein bestimmtes RFM-Segment (z.B. loyal, gefährdet, verloren)
+- **Eingehender Webhook** — wird von einem externen System per Webhook ausgelöst
+
+## Verfügbare Aktionen
+
+Aktionen legen fest, was nach einem Auslöser passiert. Du kannst mehrere Aktionen zu einer Kette verbinden.
+
+- **Warten** — Pause für eine bestimmte Zeit, bevor die nächste Aktion ausgeführt wird
+- **Bedingung** — prüft bestimmte Kriterien, bevor weitergemacht wird
+- **E-Mail senden** — sendet eine E-Mail an den Kunden
+- **SMS senden** — sendet eine SMS an den Kunden
+- **Push-Nachricht senden** — sendet eine Push-Benachrichtigung auf das Gerät des Kunden
+- **Gutschreiben** — fügt Stempel, Punkte oder Boni zur Karte hinzu
+- **Einlösen** — zieht Stempel, Punkte ab oder löst eine Prämie ein
+- **HTTP-Anfrage senden** — überträgt Daten an ein externes System
+- **Conversion an Meta Ads senden** — sendet ein Conversion-Ereignis über die Meta Conversions API
+- **Kartenverfallsdatum ändern** — aktualisiert das Ablaufdatum der Kundenkarte
+
+## Bedingungen und Filter
+
+Mit Bedingungen fügst du Logik zu deiner Automatisierung hinzu — zum Beispiel „nur, wenn der Kunde mehr als 500 Punkte hat" oder „nur, wenn die Karte aktiv ist". Welche Bedingungen verfügbar sind, hängt vom gewählten Auslöser und dem Kartentyp ab.
+
+<Callout type="info">
+Der Filter **Kartenbonusguthaben** ist nur für Reward-Karten verfügbar. Damit kannst du Aktionen auslösen, wenn ein Kunde einen bestimmten Bonusschwellenwert erreicht.
+</Callout>
+
+## Wichtige Hinweise
+
+<Callout type="info">
+**Punktzahl erreicht** funktioniert nur mit Cashback-, Reward- und Geschenkkarten. **Prämienanzahl** und **Eingelöste Prämien** funktionieren nur mit Stempelkarten.
+</Callout>
+
+<Callout type="warnung">
+Für E-Mail- und SMS-Aktionen müssen die entsprechenden Dienste in deinem Konto verbunden sein. Kontaktiere uns, wenn du diese Funktionen nutzen möchtest.
+</Callout>
