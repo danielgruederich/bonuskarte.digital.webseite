@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarEn from '../../components/NavbarEn.astro'
+import FooterEn from '../../components/FooterEn.astro'
+---
+<BaseLayout
+  title="Legal notice & terms | bonuskarte.digital"
+  description="Legal notice for bonuskarte.digital – fuerte.digital, Sülzburgstrasse 234, 50937 Köln, Germany."
+  lang="en"
+  locale="en_US"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/impressum' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/terms' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/mentions-legales' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/impressum' },
+  ]}
+>
+  <NavbarEn />
+  <main class="bg-paper min-h-screen text-ink">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 py-24">
+      <p class="text-amber text-[10px] tracking-[0.4em] uppercase mb-4">Legal</p>
+      <h1 class="text-3xl font-bold mb-12">Legal notice & terms</h1>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">Publisher</h2>
+        <p class="text-ink/80 leading-relaxed">
+          D. Grüderich<br />
+          fuerte.digital<br />
+          Sülzburgstrasse 234<br />
+          50937 Köln<br />
+          Germany
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">Contact</h2>
+        <p class="text-ink/80 leading-relaxed">
+          Phone: <a href="tel:+491737130733" class="hover:text-amber transition-colors">+49 173 7130733</a><br />
+          Email: <a href="mailto:hello@fuerte.digital" class="hover:text-amber transition-colors">hello@fuerte.digital</a>
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">Responsible for content</h2>
+        <p class="text-ink/80 leading-relaxed">
+          D. Grüderich<br />
+          Sülzburgstrasse 234<br />
+          50937 Köln<br />
+          Germany
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">Hosting</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          This site is hosted by Starthost (20i Ltd.), 20-22 Wenlock Road, London, N1 7GU, United Kingdom.<br />
+          The servers used comply with GDPR requirements.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">Intellectual property</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          All content on this site (texts, images, graphics, logo, icons) is the exclusive property of fuerte.digital, unless stated otherwise. Any reproduction, distribution, modification or use of this content, even in part, is prohibited without prior written permission.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">Limitation of liability</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          The information on this site is provided for general guidance. fuerte.digital strives to keep it accurate and up to date but cannot guarantee the absence of errors or omissions. fuerte.digital cannot be held liable for any direct or indirect damages resulting from the use of this site or the information it contains.
+        </p>
+      </section>
+    </div>
+  </main>
+  <FooterEn />
+</BaseLayout>

@@ -59,6 +59,8 @@ const isCityCta = !ctaHref.startsWith('#')
           class:list={[dark ? 'text-paper/40' : 'text-ink/30']}>
           <span class="text-amber">DE</span>
           <span class="mx-1">|</span>
+          <a href="/en/" class="hover:text-amber transition-colors">EN</a>
+          <span class="mx-1">|</span>
           <a href="/fr/" class="hover:text-amber transition-colors">FR</a>
         </span>
         <a
@@ -95,6 +97,7 @@ const isCityCta = !ctaHref.startsWith('#')
       <a href="/koeln/blog"           class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Blog</a>
       <a href="/faq"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">FAQ</a>
       <a href="/hilfe"                class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Hilfe</a>
+      <a href="/en/"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">🇬🇧 English version (EN)</a>
       <a href="/fr/"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">🇫🇷 Version française (FR)</a>
       <a href={ctaHref} data-city-cta={isCityCta ? '' : undefined} class="block w-full bg-amber hover:bg-amber-dark text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full text-center transition-colors">
         {ctaLabel}

@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarEn from '../../components/NavbarEn.astro'
+import FooterEn from '../../components/FooterEn.astro'
+
+const cards = [
+  {
+    slug: 'carte-a-tampons',
+    name: 'Stamp card',
+    tag: 'Most popular card',
+    tagline: '10 visits, 1 free.',
+    description: 'The digital stamp card replaces paper cards straight inside Apple Wallet & Google Wallet. Customers collect a stamp on every visit or purchase and redeem their reward in one click.',
+    useCases: ['Café & Bakery', 'Hair salon & Beauty', 'Restaurant & Takeaway'],
+    accent: '#8B7300',
+    color: '#d4aa2a',
+    stampCount: 10,
+    stampsFilled: 7,
+    cardLabel: 'Loyalty card',
+    cardSub: '7 / 10 stamps',
+    installLink: 'https://take.cards/xyBTG',
+    highlight: true,
+  },
+  {
+    slug: 'carte-10-seances',
+    name: '10-visit card',
+    tag: 'For service providers',
+    tagline: '10 bought, 11 received.',
+    description: 'Customers buy a package up front — for example 10 yoga sessions. The card shows the remaining balance in real time. Ideal for anyone offering regular appointments.',
+    useCases: ['Yoga & Pilates', 'Fitness & Personal coaching', 'Massage & Therapy'],
+    accent: '#1a6b4a',
+    color: '#3aaa77',
+    stampCount: 10,
+    stampsFilled: 4,
+    cardLabel: 'Visit card',
+    cardSub: '4 of 10 sessions',
+    installLink: 'https://take.cards/Joa7T',
+    highlight: false,
+  },
+  {
+    slug: 'coupon',
+    name: 'Coupon card',
+    tag: 'New-customer magnet',
+    tagline: 'A welcome offer, digital.',
+    description: 'A one-time discount or free offer for new customers — right in the Wallet. No printing, nothing to lose. The customer scans, the staff member confirms, done.',
+    useCases: ['Welcome discount', 'Happy-hour coupons', 'Seasonal promotions'],
+    accent: '#8B2500',
+    color: '#e05030',
+    stampCount: 0,
+    stampsFilled: 0,
+    cardLabel: '10% off',
+    cardSub: 'Valid on first visit',
+    installLink: 'https://take.cards/WTwtQ',
+    highlight: false,
+  },
+  {
+    slug: 'carte-cadeau',
+    name: 'Gift card',
+    tag: 'Gift idea',
+    tagline: 'A digital balance to give.',
+    description: 'Digital gift vouchers in Apple Wallet & Google Wallet. Customers buy, gift and redeem — fully paperless. The balance updates automatically after every use.',
+    useCases: ['Gifts & Occasions', 'Spa & Wellness', 'Retail'],
+    accent: '#5B3A8B',
+    color: '#9b7acc',
+    stampCount: 0,
+    stampsFilled: 0,
+    cardLabel: '€50 voucher',
+    cardSub: '€32.50 still available',
+    installLink: 'https://take.cards/dYns7',
+    highlight: false,
+  },
+  {
+    slug: 'carte-de-membre',
+    name: 'Membership card',
+    tag: 'VIP & Subscription',
+    tagline: 'A digital membership card.',
+    description: 'The digital membership card holds the name, photo (optional) and membership status — always up to date in the Wallet. Perfect for clubs, studios and every subscription model.',
+    useCases: ['Gym & Studio', 'Club & Association', 'VIP programs'],
+    accent: '#1a4a6b',
+    color: '#4a9acc',
+    stampCount: 0,
+    stampsFilled: 0,
+    cardLabel: 'VIP member',
+    cardSub: 'Valid until Dec 2026',
+    installLink: 'https://take.cards/viNUR',
+    highlight: false,
+  },
+  {
+    slug: 'carte-de-reduction',
+    name: 'Discount card',
+    tag: 'Revenue-based',
+    tagline: 'The more you spend, the more you save.',
+    description: 'Discount tiers (Bronze, Silver, Gold) rise automatically with revenue. The more a customer spends, the higher their permanent discount — a strong incentive for repeat purchases.',
+    useCases: ['Fashion & Lifestyle', 'Electronics & Tech', 'Premium retail'],
+    accent: '#6B4F1A',
+    color: '#c4903a',
+    stampCount: 0,
+    stampsFilled: 0,
+    cardLabel: 'Gold status',
+    cardSub: '25% off from €1,000',
+    installLink: 'https://take.cards/0RthB',
+    highlight: false,
+  },
+  {
+    slug: 'cashback',
+    name: 'Cashback card',
+    tag: 'Instant benefit',
+    tagline: 'Buy, get balance back.',
+    description: 'A percentage of every purchase comes back automatically as balance on the card. Customers see their balance in real time and use it on their next visit.',
+    useCases: ['Supermarket & Food', 'Drugstore & Pharmacy', 'Gas station & Services'],
+    accent: '#1A5C2A',
+    color: '#4aaa5a',
+    stampCount: 0,
+    stampsFilled: 0,
+    cardLabel: 'Cashback card',
+    cardSub: '€3.50 balance',
+    installLink: 'https://take.cards/h3dmR',
+    highlight: false,
+  },
+  {
+    slug: 'carte-a-points',
+    name: 'Points card',
+    tag: 'Flexible collecting',
+    tagline: 'Collect points, choose your rewards.',
+    description: 'Customers collect points on every purchase and redeem them for rewards. Different reward tiers encourage repeat visits — like Miles & More, but for local businesses.',
+    useCases: ['Hospitality & Catering', 'Retail', 'Online & In-store'],
+    accent: '#3A1A6B',
+    color: '#8a6acc',
+    stampCount: 0,
+    stampsFilled: 0,
+    cardLabel: 'Points card',
+    cardSub: '1,240 points',
+    installLink: 'https://take.cards/DLt8y',
+    highlight: false,
+  },
+]
+---
+
+<BaseLayout
+  title="All card types – stamp card, gift card, membership & more | bonuskarte.digital"
+  description="8 digital loyalty cards for local businesses: stamp card, 10-visit card, coupon, gift card, membership card, discount card, cashback & points card – all in Apple Wallet & Google Wallet."
+  lang="en"
+  locale="en_US"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/karten' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/cards' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/cartes' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/karten' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/en/" },
+      { "@type": "ListItem", "position": 2, "name": "All cards" }
+    ]
+  })} />
+
+  <NavbarEn ctaHref="/en/#get-started" ctaLabel="Get started" />
+
+  <!-- HERO -->
+  <section class="bg-paper pt-28 pb-14 px-5 sm:px-8 border-b border-ink/30">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
+        <a href="/en/" class="hover:text-ink/60 transition-colors">Home</a>
+        <span>›</span>
+        <span class="text-ink/60">All cards</span>
+      </nav>
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">8 card types</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-4">
+        The right loyalty card<br />
+        <span class="font-bold text-amber">for every local business.</span>
+      </h1>
+      <p class="text-ink/60 text-base leading-relaxed max-w-2xl">
+        Whether you run a café, a gym or a shop — bonuskarte.digital has the card type you need. Every card lands straight in Apple Wallet & Google Wallet. No app download, no sign-up.
+      </p>
+    </div>
+  </section>
+
+  <!-- CARDS GRID -->
+  <section class="bg-paper py-14 px-5 sm:px-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {cards.map((card) => (
+          <div class={`border ${card.highlight ? 'border-amber/40' : 'border-ink/8'} hover:border-ink/20 transition-colors p-0 overflow-hidden flex flex-col`}>
+
+            <!-- Card mockup placeholder -->
+            <div class="relative bg-paper p-6 flex items-center justify-center min-h-[160px]">
+              {card.highlight && (
+                <div class="absolute top-3 right-3 bg-amber text-black text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-0.5">
+                  Most popular card
+                </div>
+              )}
+
+              <!-- Wallet card mockup -->
+              <div class="w-full max-w-[280px] rounded-xl overflow-hidden shadow-2xl" style={`background: #111; border: 1px solid rgba(255,255,255,0.08);`}>
+                <!-- Card top bar -->
+                <div class="px-4 pt-3 pb-2 flex items-center justify-between" style={`background: ${card.accent}22; border-bottom: 1px solid ${card.accent}33;`}>
+                  <span class="text-white/90 text-[11px] font-semibold tracking-wide">{card.cardLabel}</span>
+                  <svg class="w-5 h-5 opacity-60" viewBox="0 0 24 24" fill="none">
+                    <rect x="2" y="5" width="20" height="14" rx="2" stroke="white" stroke-width="1.5"/>
+                    <path d="M2 10h20" stroke="white" stroke-width="1.5"/>
+                  </svg>
+                </div>
+
+                <!-- Card body -->
+                <div class="px-4 py-3">
+                  {card.stampCount > 0 ? (
+                    <!-- Stamp grid -->
+                    <div class="grid grid-cols-5 gap-1.5 mb-3">
+                      {Array.from({ length: card.stampCount }).map((_, i) => (
+                        <div
+                          class={`w-full aspect-square rounded-full border ${i < card.stampsFilled ? 'border-0' : 'border-white/15'}`}
+                          style={i < card.stampsFilled ? `background: ${card.accent}` : 'background: rgba(255,255,255,0.05)'}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <!-- Non-stamp visual -->
+                    <div class="h-10 rounded flex items-center px-3 mb-3" style={`background: ${card.accent}18; border: 1px solid ${card.accent}33;`}>
+                      <span class="text-white/80 text-sm font-normal">{card.cardSub}</span>
+                    </div>
+                  )}
+                  <div class="flex items-center justify-between">
+                    <span class="text-white/40 text-[10px]">{card.cardSub}</span>
+                    <div class="flex items-center gap-0.5">
+                      <div class="w-4 h-4 rounded-full bg-white/10" />
+                      <div class="w-4 h-4 rounded-full bg-white/20 -ml-1" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <div>
+                  <span class="text-[10px] tracking-[0.25em] uppercase font-medium mb-1 block" style={`color: ${card.color}`}>
+                    {card.tag}
+                  </span>
+                  <h2 class="text-ink text-xl font-bold tracking-tight">{card.name}</h2>
+                  <p class="text-ink/50 text-sm font-normal mt-0.5">{card.tagline}</p>
+                </div>
+              </div>
+
+              <p class="text-ink/65 text-sm leading-relaxed mb-4">{card.description}</p>
+
+              <!-- Use cases -->
+              <div class="flex flex-wrap gap-2 mb-5">
+                {card.useCases.map(uc => (
+                  <span class="text-ink/40 text-[11px] border border-ink/8 px-2.5 py-1 tracking-wide">{uc}</span>
+                ))}
+              </div>
+
+              <!-- CTA -->
+              <div class="mt-auto">
+                {card.installLink !== '#' ? (
+                  <a
+                    href={card.installLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-black text-xs font-bold tracking-[0.2em] uppercase px-5 py-3 hover:opacity-90 transition-opacity"
+                    style={`background: ${card.highlight ? '#8B7300' : 'rgba(255,255,255,0.9)'}`}
+                  >
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+                    </svg>
+                    Test this card
+                  </a>
+                ) : (
+                  <a
+                    href="/en/#get-started"
+                    class="inline-flex items-center gap-2 text-ink/60 text-xs font-medium tracking-[0.15em] uppercase px-5 py-3 border border-ink/10 hover:border-ink/20 transition-colors"
+                  >
+                    Request the card
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON NOTE -->
+  <section class="bg-paper py-10 px-5 sm:px-8 border-t border-ink/30">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <div class="flex-1">
+        <p class="text-ink/80 text-base font-normal leading-relaxed">
+          <span class="text-ink font-semibold">Not sure which card to pick?</span><br class="sm:hidden" />
+          <span class="text-ink/60"> 90% of our customers start with the stamp card. We advise you for free within 24 hours.</span>
+        </p>
+      </div>
+      <a
+        href="/en/pricing"
+        class="flex-shrink-0 inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all"
+      >
+        See pricing
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <FooterEn />
+</BaseLayout>

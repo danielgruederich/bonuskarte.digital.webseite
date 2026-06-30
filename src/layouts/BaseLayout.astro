@@ -3,8 +3,8 @@ interface Props {
   title: string
   description: string
   ogImage?: string
-  lang?: 'de' | 'fr'
-  locale?: string                                     // 'de_DE' | 'fr_FR'
+  lang?: 'de' | 'fr' | 'en'
+  locale?: string                                     // 'de_DE' | 'fr_FR' | 'en_US'
   alternates?: { hreflang: string; href: string }[]   // hreflang pairs; default empty
   noindex?: boolean                                   // when true, emit <meta robots="noindex,follow">
   showStickyCta?: boolean                             // sticky mobile CTA bar (default true)
