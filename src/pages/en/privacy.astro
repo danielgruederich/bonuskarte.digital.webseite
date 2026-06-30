@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarEn from '../../components/NavbarEn.astro'
+import FooterEn from '../../components/FooterEn.astro'
+---
+<BaseLayout
+  title="Privacy policy | bonuskarte.digital"
+  description="Privacy policy of bonuskarte.digital – fuerte.digital, Köln. GDPR compliance, data we collect, user rights."
+  lang="en"
+  locale="en_US"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/datenschutz' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/privacy' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/confidentialite' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/datenschutz' },
+  ]}
+>
+  <NavbarEn />
+  <main class="bg-paper min-h-screen text-ink">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 py-24">
+      <p class="text-amber text-[10px] tracking-[0.4em] uppercase mb-4">Legal</p>
+      <h1 class="text-3xl font-bold mb-12">Privacy policy</h1>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">1. Data controller</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          D. Grüderich · fuerte.digital<br />
+          Sülzburgstrasse 234, 50937 Köln, Germany<br />
+          Email: <a href="mailto:hello@fuerte.digital" class="hover:text-amber transition-colors">hello@fuerte.digital</a>
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">2. Data we collect and purposes</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          When you submit the contact form, we collect the following data: first name, last name, business name, email address, phone number and Instagram handle. This data is used exclusively to contact you and to set up your digital loyalty card.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">3. Legal basis for processing</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          The processing of your data is based on your consent (Art. 6(1)(a) GDPR) at the time you submit the form, as well as on the performance of pre-contractual measures at your request (Art. 6(1)(b) GDPR).
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">4. Sharing data with third parties</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          Your data is not sold to third parties. To provide the digital loyalty card, we use the bonuskarte.digital service. Hosting takes place on GDPR-compliant servers.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">5. Retention period</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          Your data is stored for as long as necessary for the purpose for which it was collected, or until you exercise your right to erasure. Data from forms that do not lead to a contractual relationship is deleted within 6 months.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">6. Your rights (GDPR)</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          Under the General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:<br /><br />
+          — <strong>Right of access</strong>: to obtain confirmation that data about you is being processed and to receive a copy of it.<br />
+          — <strong>Right to rectification</strong>: to have inaccurate or incomplete data corrected.<br />
+          — <strong>Right to erasure</strong> (“right to be forgotten”): to request the deletion of your data where the legal conditions are met.<br />
+          — <strong>Right to restriction</strong>: to request the restriction of processing of your data in certain situations.<br />
+          — <strong>Right to object</strong>: to object to the processing of your data, in particular for direct marketing purposes.<br />
+          — <strong>Right to data portability</strong>: to receive your data in a structured, commonly used format.<br /><br />
+          To exercise any of these rights, contact us at: <a href="mailto:hello@fuerte.digital" class="hover:text-amber transition-colors">hello@fuerte.digital</a>.<br /><br />
+          You also have the right to lodge a complaint with a competent supervisory authority.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">7. Cookies</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          This site does not use tracking cookies. No analytics or advertising cookies are set. Google Analytics 4 is used with IP-address anonymization enabled (the <code>anonymize_ip</code> setting) in line with the GDPR.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xs font-bold tracking-widest uppercase text-ink/40 mb-4">8. Hosting & server logs</h2>
+        <p class="text-ink/80 leading-relaxed text-sm">
+          Our hosting provider automatically collects server logs (IP address, browser type, timestamp). This data cannot be linked to an identified person and is deleted within 7 days at most.
+        </p>
+      </section>
+    </div>
+  </main>
+  <FooterEn />
+</BaseLayout>

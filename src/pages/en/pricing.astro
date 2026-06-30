@@ -1,0 +1,324 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarEn from '../../components/NavbarEn.astro'
+import FooterEn from '../../components/FooterEn.astro'
+import Icon from '../../components/icons/TrustIcons.astro'
+
+const faq = [
+  {
+    q: 'What happens after 90 days?',
+    a: 'You decide whether to continue. No automatic switch, no hidden contract. We reach out to you before the trial ends.',
+  },
+  {
+    q: 'What counts as a "location"?',
+    a: 'A location is one point of sale or branch. Each location gets its own digital loyalty card with its own branding.',
+  },
+  {
+    q: 'Do my customers need an app?',
+    a: 'No. The card is saved directly to Apple Wallet or Google Wallet — preinstalled on every iPhone and Android phone. No download, no account needed.',
+  },
+  {
+    q: 'How long does setup take?',
+    a: 'Your card is live in under 24 hours. We handle everything — you just send us your branding (logo, color, reward).',
+  },
+  {
+    q: 'Can I cancel any time?',
+    a: 'Yes. Monthly cancellation, no minimum term, no setup fee. Zero risk.',
+  },
+  {
+    q: 'What is Push Automation?',
+    a: 'Automatic push notifications sent to your loyal customers — for example when a customer has not visited in a while, or when you have a new offer.',
+  },
+]
+---
+
+<BaseLayout
+  title="Pricing – Digital loyalty card | bonuskarte.digital"
+  description="Simple, transparent pricing for the digital loyalty card. 1 location from €29/month. From 10 locations, unlimited plan at €100/month. Free trial, 90 days — no credit card."
+  lang="en"
+  locale="en_US"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/preise' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/pricing' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/tarifs' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/preise' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a,
+      }
+    }))
+  })} />
+
+  <NavbarEn ctaHref="/en/#get-started" ctaLabel="Try 90 days free" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="relative bg-paper overflow-hidden pt-32 pb-16 px-5 sm:px-8">
+    <div class="absolute inset-0 bg-grid-ink"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+
+    <div class="relative max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-8">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">
+          Transparent · Fair · No risk
+        </span>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
+        <span class="font-normal text-ink block mb-3">Loyalty card</span>
+        <span class="font-bold text-amber block">pricing.</span>
+      </h1>
+      <p class="text-ink text-base font-normal leading-relaxed max-w-lg mx-auto mb-10">
+        Start your free trial for 90 days. After that, you only pay if you are happy —
+        monthly cancellation, no setup fee.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6">
+        {['✅ 90 days free', '🔒 GDPR compliant', '⚡ Live in 24h', '📱 Apple & Google Wallet'].map(t => (
+          <span class="text-xs tracking-widest uppercase text-ink">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ─────────────────────────────────────────────── -->
+  <section id="pricing" class="py-12 sm:py-16 px-5 sm:px-8 bg-paper">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
+
+        <!-- SOLO -->
+        <div class="relative border border-ink/10 hover:border-ink/30 transition-colors p-8 flex flex-col h-full">
+          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-5">Solo</p>
+          <div class="flex items-baseline gap-1.5 mb-1">
+            <span class="text-5xl font-black text-ink">€29</span>
+            <span class="text-sm text-ink font-normal">/ month</span>
+          </div>
+          <p class="text-xs text-ink mb-8">per location · excl. VAT</p>
+
+          <div class="space-y-3.5 flex-1 mb-8">
+            {[
+              '1 location',
+              'Unlimited customer cards',
+              'Push notifications to loyal customers',
+              'Real-time stats (cards, stamps)',
+              'QR code for stamping',
+              'Custom branding (logo, color)',
+              'Apple Wallet & Google Wallet',
+              'Live in under 24h',
+            ].map(f => (
+              <div class="flex items-start gap-3">
+                <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-0.5 flex-shrink-0" />
+                <span class="text-sm text-ink font-normal">{f}</span>
+              </div>
+            ))}
+          </div>
+
+          <a href="/en/#get-started"
+            class="w-full inline-flex items-center justify-center border border-ink/30 hover:border-amber/40 text-ink hover:text-ink px-6 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
+            Start free
+          </a>
+        </div>
+
+        <!-- CHAIN — highlighted -->
+        <div class="relative border-2 border-amber/60 bg-gradient-to-b from-amber/[0.04] to-transparent shadow-[0_0_80px_rgba(139,115,0,0.1)] p-10 flex flex-col md:scale-105 md:-my-4 z-10">
+          <!-- Top gold line -->
+          <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber to-transparent"></div>
+
+          <!-- Badge -->
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+            <span class="bg-amber text-black text-[9px] font-bold tracking-[0.2em] uppercase px-4 py-1.5">
+              Most popular
+            </span>
+          </div>
+
+          <p class="text-xs tracking-[0.3em] uppercase text-amber mb-5">Chain</p>
+          <div class="flex items-baseline gap-1.5 mb-1">
+            <span class="text-5xl font-black text-ink">€100</span>
+            <span class="text-sm text-ink font-normal">/ month</span>
+          </div>
+          <p class="text-xs text-ink mb-8">from 10 locations · unlimited plan · excl. VAT</p>
+
+          <div class="space-y-3.5 flex-1 mb-8">
+            {[
+              'From 10 locations — unlimited plan',
+              'Everything in Solo',
+              'Push Automation (absence trigger)',
+              'Centralized multi-location dashboard',
+              'All locations in one overview',
+              'Priority support',
+              'Custom subdomain available',
+              'Live in under 24h',
+            ].map(f => (
+              <div class="flex items-start gap-3">
+                <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-0.5 flex-shrink-0" />
+                <span class="text-sm text-ink font-normal">{f}</span>
+              </div>
+            ))}
+          </div>
+
+          <a href="/en/#get-started"
+            class="w-full inline-flex items-center justify-center bg-amber hover:bg-amber-dark text-black px-6 py-4 text-xs font-bold tracking-[0.15em] uppercase transition-all">
+            Start now
+          </a>
+        </div>
+
+        <!-- FRANCHISE -->
+        <div class="relative border border-ink/10 hover:border-ink/30 transition-colors p-8 flex flex-col h-full">
+          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-5">Franchise</p>
+          <div class="flex items-baseline gap-1.5 mb-1">
+            <span class="text-5xl font-black text-ink">€250</span>
+            <span class="text-sm text-ink font-normal">/ month</span>
+          </div>
+          <p class="text-xs text-ink mb-8">Franchise systems · excl. VAT</p>
+
+          <div class="space-y-3.5 flex-1 mb-8">
+            {[
+              'Up to 20 locations included',
+              'Everything in Chain',
+              'Custom domain (yourcard.com)',
+              'Centralized franchise dashboard',
+              'Centralized campaign management',
+              'Push notifications to the whole network',
+              'Individual reports per location',
+              'Priority support',
+            ].map(f => (
+              <div class="flex items-start gap-3">
+                <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-0.5 flex-shrink-0" />
+                <span class="text-sm text-ink font-normal">{f}</span>
+              </div>
+            ))}
+          </div>
+
+          <a href="https://wa.me/491705594140" target="_blank" rel="noopener noreferrer"
+            class="w-full inline-flex items-center justify-center border border-ink/30 hover:border-amber/40 text-ink hover:text-ink px-6 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
+            Request a quote
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Enterprise -->
+      <div class="mt-8 border border-ink/10 hover:border-ink/30 transition-colors p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-2">Enterprise</p>
+          <p class="text-ink text-lg font-semibold mb-1">Custom offer for large chains & network catering</p>
+          <p class="text-ink text-sm font-normal">Unlimited locations · API integration · White-label · SLA guarantee · Dedicated account manager</p>
+        </div>
+        <a href="https://wa.me/491705594140" target="_blank" rel="noopener noreferrer"
+          class="flex-shrink-0 inline-flex items-center justify-center border border-ink/30 hover:border-amber/40 text-ink hover:text-ink px-8 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
+          Contact us
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-6">
+        {[
+          '✅ 90 days free',
+          '🔄 No automatic switch',
+          '📅 Monthly cancellation',
+          '🚫 No setup fee',
+        ].map(t => (
+          <span class="text-xs tracking-widest uppercase text-ink">{t}</span>
+        ))}
+      </div>
+
+      <p class="text-center text-ink text-xs tracking-wide mt-4">
+        All prices exclude VAT.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON ─────────────────────────────────────────── -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <div class="flex items-center gap-4 mb-14">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Paper vs. digital</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-ink/30">
+              <th class="text-left text-ink text-xs tracking-[0.3em] uppercase font-normal pb-4 pr-8">Feature</th>
+              <th class="text-center text-ink text-xs tracking-[0.3em] uppercase font-normal pb-4 px-4">Paper card</th>
+              <th class="text-center text-amber text-xs tracking-[0.3em] uppercase font-normal pb-4 pl-4">bonuskarte.digital</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            {[
+              ['Always on the customer', '✗', '✓'],
+              ['Push notifications on mobile', '✗', '✓'],
+              ['Stats & analytics', '✗', '✓'],
+              ['Lost card', 'Often', 'Never'],
+              ['Hygienic', '✗', '✓'],
+              ['Cost', 'Printing + paper', 'From €29/month'],
+              ['App download required', '—', 'No'],
+              ['Setup time', 'Immediate', 'Under 24h'],
+            ].map(([feature, paper, digital]) => (
+              <tr>
+                <td class="py-4 pr-8 text-ink font-normal">{feature}</td>
+                <td class="py-4 px-4 text-center text-ink">{paper}</td>
+                <td class="py-4 pl-4 text-center text-amber font-medium">{digital}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────── -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-4 mb-14">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Frequently asked questions</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <div class="space-y-px">
+        {faq.map(item => (
+          <div class="border border-ink/30 p-6 hover:border-amber/20 transition-colors">
+            <p class="text-ink text-sm font-semibold mb-2">{item.q}</p>
+            <p class="text-ink text-sm font-normal leading-relaxed">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ──────────────────────────────────────────── -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-2xl mx-auto text-center">
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">No risk</p>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
+        90 days free
+      </h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">
+        to try.
+      </h2>
+      <a href="/en/#get-started"
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        Start free
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <FooterEn />
+</BaseLayout>

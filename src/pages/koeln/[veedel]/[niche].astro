@@ -201,7 +201,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
           />
         ) : (
           <>
-            <div class="opacity-60 scale-75 origin-top hidden md:block">
+            <div class="scale-75 origin-top hidden md:block">
               <WalletMockup
                 businessName={nicheData.walletMockup.businessName}
                 reward={nicheData.walletMockup.reward}
@@ -209,7 +209,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
                 total={nicheData.walletMockup.total}
               />
             </div>
-            <div id="demo" class="w-full border border-amber/20 bg-ink/60 backdrop-blur-sm p-6 sm:p-8">
+            <div id="demo" class="w-full border border-amber/20 bg-paper p-6 sm:p-8">
               <LeadForm
                 client:load
                 niche={nicheData.label}

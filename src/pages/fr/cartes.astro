@@ -1,134 +1,134 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarFr from '../../components/NavbarFr.astro'
+import FooterFr from '../../components/FooterFr.astro'
 
 const cards = [
   {
-    slug: 'stempelkarte',
-    name: 'Stempelkarte',
-    tag: 'Beliebteste Karte',
-    tagline: '10 Besuche, 1 gratis.',
-    description: 'Die digitale Stempelkarte ersetzt Papier-Stempelkarten direkt in Apple Wallet & Google Wallet. Kunden sammeln Stempel nach jedem Besuch oder Kauf und lösen ihre Belohnung mit einem Klick ein.',
-    useCases: ['Café & Bäckerei', 'Friseur & Beauty', 'Restaurant & Imbiss'],
+    slug: 'carte-a-tampons',
+    name: 'Carte à tampons',
+    tag: 'Carte la plus populaire',
+    tagline: '10 visites, 1 offerte.',
+    description: 'La carte à tampons numérique remplace les cartes papier directement dans Apple Wallet & Google Wallet. Les clients collectent des tampons à chaque visite ou achat et obtiennent leur récompense en un clic.',
+    useCases: ['Café & Boulangerie', 'Coiffeur & Beauté', 'Restaurant & Snack'],
     accent: '#8B7300',
     color: '#d4aa2a',
     stampCount: 10,
     stampsFilled: 7,
-    cardLabel: 'Treuekarte',
-    cardSub: '7 / 10 Stempel',
+    cardLabel: 'Carte de fidélité',
+    cardSub: '7 / 10 tampons',
     installLink: 'https://take.cards/xyBTG',
     highlight: true,
   },
   {
-    slug: '10er-karte',
-    name: '10er-Karte',
-    tag: 'Für Dienstleister',
-    tagline: '10 kaufen, 11 erhalten.',
-    description: 'Kunden kaufen ein Kontingent im Voraus — zum Beispiel 10 Yoga-Einheiten. Die Karte zeigt das verbleibende Guthaben in Echtzeit. Ideal für alle, die regelmäßige Termine vergeben.',
-    useCases: ['Yoga & Pilates', 'Fitness & Personal Training', 'Massage & Therapie'],
+    slug: 'carte-10-seances',
+    name: 'Carte 10 séances',
+    tag: 'Pour les prestataires',
+    tagline: '10 achetées, 11 reçues.',
+    description: "Les clients achètent un forfait à l'avance — par exemple 10 séances de yoga. La carte affiche le solde restant en temps réel. Idéal pour tous ceux qui proposent des rendez-vous réguliers.",
+    useCases: ['Yoga & Pilates', 'Fitness & Coaching personnel', 'Massage & Thérapie'],
     accent: '#1a6b4a',
     color: '#3aaa77',
     stampCount: 10,
     stampsFilled: 4,
-    cardLabel: 'Einheitenkarte',
-    cardSub: '4 von 10 Einheiten',
+    cardLabel: 'Carte de séances',
+    cardSub: '4 sur 10 séances',
     installLink: 'https://take.cards/Joa7T',
     highlight: false,
   },
   {
     slug: 'coupon',
-    name: 'Coupon-Karte',
-    tag: 'Neukunden-Magnet',
-    tagline: 'Erstbesuch-Angebot, digital.',
-    description: 'Ein einmaliger Rabatt oder ein Gratisangebot für Neukunden — direkt in der Wallet. Kein Ausdrucken, kein Verlieren. Kunden scannen, Mitarbeiter lösen ein, fertig.',
-    useCases: ['Erstbesuch-Rabatt', 'Happy-Hour-Coupons', 'Saisonale Aktionen'],
+    name: 'Carte coupon',
+    tag: 'Aimant à nouveaux clients',
+    tagline: 'Offre de bienvenue, en numérique.',
+    description: "Une réduction unique ou une offre gratuite pour les nouveaux clients — directement dans le Wallet. Pas d'impression, rien à perdre. Le client scanne, l'employé valide, c'est fait.",
+    useCases: ['Réduction de bienvenue', 'Coupons happy hour', 'Promotions saisonnières'],
     accent: '#8B2500',
     color: '#e05030',
     stampCount: 0,
     stampsFilled: 0,
-    cardLabel: '10% Rabatt',
-    cardSub: 'Gültig beim Erstbesuch',
+    cardLabel: '10 % de réduction',
+    cardSub: 'Valable à la première visite',
     installLink: 'https://take.cards/WTwtQ',
     highlight: false,
   },
   {
-    slug: 'gutscheinkarte',
-    name: 'Gutscheinkarte',
-    tag: 'Geschenk-Idee',
-    tagline: 'Digitales Guthaben, verschenkbar.',
-    description: 'Wertgutscheine digital in Apple Wallet & Google Wallet. Kunden kaufen, verschenken und einlösen — komplett ohne Papier. Das Guthaben wird nach jeder Nutzung automatisch aktualisiert.',
-    useCases: ['Geschenke & Anlässe', 'Spa & Wellness', 'Einzelhandel'],
+    slug: 'carte-cadeau',
+    name: 'Carte cadeau',
+    tag: 'Idée cadeau',
+    tagline: 'Solde numérique, à offrir.',
+    description: "Des bons d'achat numériques dans Apple Wallet & Google Wallet. Les clients achètent, offrent et utilisent — entièrement sans papier. Le solde se met à jour automatiquement après chaque utilisation.",
+    useCases: ['Cadeaux & Occasions', 'Spa & Bien-être', 'Commerce de détail'],
     accent: '#5B3A8B',
     color: '#9b7acc',
     stampCount: 0,
     stampsFilled: 0,
-    cardLabel: 'Gutschein 50 €',
-    cardSub: 'Noch 32,50 € verfügbar',
+    cardLabel: 'Bon de 50 €',
+    cardSub: '32,50 € encore disponibles',
     installLink: 'https://take.cards/dYns7',
     highlight: false,
   },
   {
-    slug: 'mitgliedskarte',
-    name: 'Mitgliedskarte',
-    tag: 'VIP & Abo',
-    tagline: 'Digitaler Mitgliedsausweis.',
-    description: 'Der digitale Mitgliedsausweis trägt Name, Foto (optional) und Mitgliedsstatus — immer aktuell in der Wallet. Perfekt für Clubs, Studios und alle Abo-Modelle.',
-    useCases: ['Fitnessstudio & Studio', 'Club & Verein', 'VIP-Programme'],
+    slug: 'carte-de-membre',
+    name: 'Carte de membre',
+    tag: 'VIP & Abonnement',
+    tagline: 'Carte de membre numérique.',
+    description: "La carte de membre numérique contient le nom, la photo (en option) et le statut d'adhésion — toujours à jour dans le Wallet. Parfait pour les clubs, les studios et tous les modèles d'abonnement.",
+    useCases: ['Salle de sport & Studio', 'Club & Association', 'Programmes VIP'],
     accent: '#1a4a6b',
     color: '#4a9acc',
     stampCount: 0,
     stampsFilled: 0,
-    cardLabel: 'VIP Mitglied',
-    cardSub: 'Gültig bis Dez. 2026',
+    cardLabel: 'Membre VIP',
+    cardSub: "Valable jusqu'en déc. 2026",
     installLink: 'https://take.cards/viNUR',
     highlight: false,
   },
   {
-    slug: 'rabattkarte',
-    name: 'Rabattkarte',
-    tag: 'Umsatz-basiert',
-    tagline: 'Mehr ausgeben, mehr sparen.',
-    description: 'Rabattstufen (Bronze, Silber, Gold) steigen automatisch mit dem Umsatz. Je mehr ein Kunde ausgibt, desto höher sein dauerhafter Rabatt — ein starker Anreiz für wiederkehrende Käufe.',
-    useCases: ['Fashion & Lifestyle', 'Elektronik & Technik', 'Premium-Handel'],
+    slug: 'carte-de-reduction',
+    name: 'Carte de réduction',
+    tag: "Basée sur le chiffre d'affaires",
+    tagline: 'Plus vous dépensez, plus vous économisez.',
+    description: "Les niveaux de réduction (Bronze, Argent, Or) augmentent automatiquement avec le chiffre d'affaires. Plus un client dépense, plus sa réduction permanente est élevée — une forte incitation aux achats répétés.",
+    useCases: ['Mode & Lifestyle', 'Électronique & Tech', 'Commerce premium'],
     accent: '#6B4F1A',
     color: '#c4903a',
     stampCount: 0,
     stampsFilled: 0,
-    cardLabel: 'Gold-Status',
-    cardSub: '25% Rabatt ab 1.000 €',
+    cardLabel: 'Statut Or',
+    cardSub: '25 % de réduction dès 1 000 €',
     installLink: 'https://take.cards/0RthB',
     highlight: false,
   },
   {
     slug: 'cashback',
-    name: 'Cashback-Karte',
-    tag: 'Direkter Mehrwert',
-    tagline: 'Kaufen, Guthaben erhalten.',
-    description: 'Ein Prozentsatz jedes Kaufs fließt automatisch als Guthaben zurück auf die Karte. Kunden sehen ihren Kontostand in Echtzeit und lösen ihr Guthaben beim nächsten Besuch ein.',
-    useCases: ['Supermarkt & Lebensmittel', 'Drogerie & Apotheke', 'Tankstelle & Service'],
+    name: 'Carte cashback',
+    tag: 'Avantage immédiat',
+    tagline: 'Achetez, recevez du solde.',
+    description: "Un pourcentage de chaque achat revient automatiquement sous forme de solde sur la carte. Les clients voient leur solde en temps réel et l'utilisent lors de leur prochaine visite.",
+    useCases: ['Supermarché & Alimentation', 'Droguerie & Pharmacie', 'Station-service & Services'],
     accent: '#1A5C2A',
     color: '#4aaa5a',
     stampCount: 0,
     stampsFilled: 0,
-    cardLabel: 'Cashback-Karte',
-    cardSub: '3,50 € Guthaben',
+    cardLabel: 'Carte cashback',
+    cardSub: '3,50 € de solde',
     installLink: 'https://take.cards/h3dmR',
     highlight: false,
   },
   {
-    slug: 'punktekarte',
-    name: 'Punktekarte',
-    tag: 'Flexibles Sammeln',
-    tagline: 'Punkte sammeln, Prämien wählen.',
-    description: 'Kunden sammeln Punkte bei jedem Kauf und lösen sie gegen Prämien ein. Verschiedene Prämienstufen motivieren zum Wiederkommen — ähnlich wie Miles & More, aber für lokale Betriebe.',
-    useCases: ['Hotel & Gastronomie', 'Einzelhandel', 'Online & Offline'],
+    slug: 'carte-a-points',
+    name: 'Carte à points',
+    tag: 'Collecte flexible',
+    tagline: 'Cumulez des points, choisissez vos récompenses.',
+    description: 'Les clients cumulent des points à chaque achat et les échangent contre des récompenses. Différents paliers de récompenses incitent au retour — comme Miles & More, mais pour les commerces locaux.',
+    useCases: ['Hôtellerie & Restauration', 'Commerce de détail', 'En ligne & En boutique'],
     accent: '#3A1A6B',
     color: '#8a6acc',
     stampCount: 0,
     stampsFilled: 0,
-    cardLabel: 'Punktekarte',
-    cardSub: '1.240 Punkte',
+    cardLabel: 'Carte à points',
+    cardSub: '1 240 points',
     installLink: 'https://take.cards/DLt8y',
     highlight: false,
   },
@@ -136,38 +136,45 @@ const cards = [
 ---
 
 <BaseLayout
-  title="Alle Kartentypen – Stempelkarte, Gutschein, Abo & mehr | bonuskarte.digital"
-  description="8 digitale Loyalitätskarten für lokale Betriebe: Stempelkarte, 10er-Karte, Coupon, Gutscheinkarte, Mitgliedskarte, Rabattkarte, Cashback & Punktekarte – alle in Apple Wallet & Google Wallet."
+  title="Tous les types de cartes – Carte à tampons, carte cadeau, abonnement & plus | bonuskarte.digital"
+  description="8 cartes de fidélité numériques pour les commerces locaux : carte à tampons, carte 10 séances, coupon, carte cadeau, carte de membre, carte de réduction, cashback & carte à points – toutes dans Apple Wallet & Google Wallet."
+  lang="fr"
+  locale="fr_FR"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/karten' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/cartes' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/karten' },
+  ]}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/" },
-      { "@type": "ListItem", "position": 2, "name": "Alle Karten" }
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Toutes les cartes" }
     ]
   })} />
 
-  <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
+  <NavbarFr ctaHref="/fr/paris/" ctaLabel="Commencer maintenant" />
 
   <!-- HERO -->
   <section class="bg-paper pt-28 pb-14 px-5 sm:px-8 border-b border-ink/30">
     <div class="max-w-4xl mx-auto">
       <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
-        <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
+        <a href="/fr/" class="hover:text-ink/60 transition-colors">Accueil</a>
         <span>›</span>
-        <span class="text-ink/60">Alle Karten</span>
+        <span class="text-ink/60">Toutes les cartes</span>
       </nav>
       <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
         <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
-        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">8 Kartentypen</span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">8 types de cartes</span>
       </div>
       <h1 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-4">
-        Die richtige Karte<br />
-        <span class="font-bold text-amber">für jeden Betrieb.</span>
+        La bonne carte<br />
+        <span class="font-bold text-amber">pour chaque établissement.</span>
       </h1>
       <p class="text-ink/60 text-base leading-relaxed max-w-2xl">
-        Ob Café, Fitnessstudio oder Boutique — bonuskarte.digital hat den passenden Kartentyp. Alle Karten landen direkt in Apple Wallet & Google Wallet. Kein App-Download, keine Registrierung.
+        Que vous soyez un café, une salle de sport ou une boutique — bonuskarte.digital a le type de carte qu'il vous faut. Toutes les cartes arrivent directement dans Apple Wallet & Google Wallet. Aucun téléchargement d'application, aucune inscription.
       </p>
     </div>
   </section>
@@ -183,7 +190,7 @@ const cards = [
             <div class="relative bg-paper p-6 flex items-center justify-center min-h-[160px]">
               {card.highlight && (
                 <div class="absolute top-3 right-3 bg-amber text-black text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-0.5">
-                  Beliebteste Karte
+                  Carte la plus populaire
                 </div>
               )}
 
@@ -261,15 +268,14 @@ const cards = [
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
                     </svg>
-                    Diese Karte testen
+                    Tester cette carte
                   </a>
                 ) : (
                   <a
-                    href="/koeln"
-                    data-city-cta
+                    href="/fr/paris/"
                     class="inline-flex items-center gap-2 text-ink/60 text-xs font-medium tracking-[0.15em] uppercase px-5 py-3 border border-ink/10 hover:border-ink/20 transition-colors"
                   >
-                    Karte anfragen
+                    Demander la carte
                   </a>
                 )}
               </div>
@@ -285,16 +291,15 @@ const cards = [
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
       <div class="flex-1">
         <p class="text-ink/80 text-base font-normal leading-relaxed">
-          <span class="text-ink font-semibold">Nicht sicher, welche Karte passt?</span><br class="sm:hidden" />
-          <span class="text-ink/60"> 90 % unserer Kunden starten mit der Stempelkarte. Wir beraten dich kostenlos innerhalb von 24 Stunden.</span>
+          <span class="text-ink font-semibold">Vous ne savez pas quelle carte choisir ?</span><br class="sm:hidden" />
+          <span class="text-ink/60"> 90 % de nos clients commencent avec la carte à tampons. Nous vous conseillons gratuitement sous 24 heures.</span>
         </p>
       </div>
       <a
-        href="/koeln"
-        data-city-cta
+        href="/fr/paris/"
         class="flex-shrink-0 inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all"
       >
-        Kostenlos starten
+        Démarrer gratuitement
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
@@ -302,5 +307,5 @@ const cards = [
     </div>
   </section>
 
-  <Footer />
+  <FooterFr />
 </BaseLayout>

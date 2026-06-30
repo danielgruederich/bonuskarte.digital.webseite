@@ -1,0 +1,59 @@
+---
+import { uiEn } from '../data/en/ui-en'
+---
+<footer class="bg-ink border-t border-paper/10 text-paper">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-14">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-5">
+          <img src="/brand/lockup-horizontal-on-dark.svg"
+            alt="bonuskarte.digital"
+            class="h-7 w-auto"
+            width="380" height="70" />
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">
+          {uiEn.footer.tagline}
+        </p>
+        <address class="not-italic mt-5 text-sm space-y-1">
+          <p>Sülzburgstrasse 234, 50937 Köln</p>
+          <p><a href="tel:+491737130733" class="hover:text-amber transition-colors">+49 173 7130733</a></p>
+          <p><a href="https://wa.me/491705594140" class="hover:text-amber transition-colors">WhatsApp →</a></p>
+        </address>
+      </div>
+
+      <!-- Industries -->
+      <div>
+        <h3 class="text-paper text-xs font-bold tracking-widest uppercase mb-5">{uiEn.footer.industries}</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/en/cards" class="hover:text-amber transition-colors">All cards</a></li>
+          <li><a href="/en/cards" class="hover:text-amber transition-colors">🥐 Bakeries</a></li>
+          <li><a href="/en/cards" class="hover:text-amber transition-colors">☕ Cafés</a></li>
+          <li><a href="/en/cards" class="hover:text-amber transition-colors">🍽️ Restaurants</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-paper text-xs font-bold tracking-widest uppercase mb-5">{uiEn.footer.legal}</h3>
+        <ul class="space-y-3 text-sm">
+          <li><a href="/en/pricing" class="hover:text-amber transition-colors">{uiEn.footer.pricing}</a></li>
+          <li><a href="/en/terms" class="hover:text-amber transition-colors">{uiEn.footer.terms}</a></li>
+          <li><a href="/en/privacy" class="hover:text-amber transition-colors">{uiEn.footer.privacy}</a></li>
+          <li><a href="/sitemap-index.xml" class="hover:text-amber transition-colors">Sitemap</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-paper/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <span>© {new Date().getFullYear()} bonuskarte.digital by fuerte.digital</span>
+      <div class="flex items-center gap-5">
+        <span>🔒 GDPR compliant</span>
+        <a href="/" class="hover:text-amber transition-colors">🇩🇪 German version</a>
+        <a href="/fr/" class="hover:text-amber transition-colors">🇫🇷 French version</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,49 +1,56 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import NavbarFr from '../../components/NavbarFr.astro'
-import FooterFr from '../../components/FooterFr.astro'
-import { uiFr } from '../../data/fr/ui-fr'
-import { nichesFr } from '../../data/fr/niches-fr'
+import NavbarEn from '../../components/NavbarEn.astro'
+import FooterEn from '../../components/FooterEn.astro'
+import { uiEn } from '../../data/en/ui-en'
 import PhoneMockup from '../../components/PhoneMockup.tsx'
-import RotatingWordFr from '../../components/RotatingWordFr.tsx'
+import RotatingWordEn from '../../components/RotatingWordEn.tsx'
+import LeadFormEn from '../../components/LeadFormEn.tsx'
 
 const howItWorks = [
-  { step: '01', title: 'Créer votre carte', desc: 'Nous configurons votre carte de fidélité numérique avec votre logo et vos couleurs en moins de 24 heures.' },
-  { step: '02', title: 'Inviter vos clients', desc: 'Vos clients scannent un QR code et enregistrent la carte directement dans leur Wallet — sans application.' },
-  { step: '03', title: 'Tamponner en un clic', desc: 'Un clic depuis votre tableau de bord et le tampon apparaît instantanément sur le téléphone de votre client.' },
-  { step: '04', title: 'Fidéliser durablement', desc: 'Notifications push, statistiques en temps réel, récompenses automatiques. Tout inclus, zéro effort.' },
+  { step: '01', title: 'Create your card', desc: 'We set up your digital loyalty card with your logo and colors in under 24 hours.' },
+  { step: '02', title: 'Invite your customers', desc: 'Your customers scan a QR code and save the card straight to their Wallet — no app.' },
+  { step: '03', title: 'Stamp in one click', desc: 'One click from your dashboard and the stamp appears instantly on your customer’s phone.' },
+  { step: '04', title: 'Build lasting loyalty', desc: 'Push notifications, real-time stats, automatic rewards. All included, zero effort.' },
 ]
 
 const problems = [
-  'Impossible de savoir combien de cartes papier sont encore utilisées',
-  'Aucun canal direct pour contacter vos habitués',
-  'Clients irréguliers faute d\'incentive à revenir',
-  'Zéro données sur votre activité et vos clients',
+  'No way to know how many paper cards are still in use',
+  'No direct channel to reach your regulars',
+  'Irregular customers with no incentive to come back',
+  'Zero data about your business and your customers',
 ]
 
 const solutions = [
-  'Carte toujours présente — directement dans Apple & Google Wallet',
-  'Chiffres réels : cartes actives, tampons, taux de récompense',
-  'Notifications push qui ramènent vos clients au bon moment',
-  'Tableau de bord clair : qui sont vos meilleurs habitués',
+  'A card that is always there — right inside Apple & Google Wallet',
+  'Real numbers: active cards, stamps, reward rate',
+  'Push notifications that bring customers back at the right moment',
+  'A clear dashboard: who your best regulars are',
 ]
 
-// Show a sample of niches for the teaser
-const nicheTeaser = nichesFr.slice(0, 6)
+const industries = [
+  { emoji: '🥐', label: 'Bakeries' },
+  { emoji: '☕', label: 'Cafés' },
+  { emoji: '🍽️', label: 'Restaurants' },
+  { emoji: '✂️', label: 'Hair salons' },
+  { emoji: '🧘', label: 'Yoga studios' },
+  { emoji: '🏋️', label: 'Gyms' },
+]
 ---
 
 <BaseLayout
-  title="Carte de fidélité numérique pour commerçants | bonuskarte.digital"
-  description="Programme de fidélité numérique pour commerces de proximité — boulangeries, cafés, restaurants, coiffeurs. Apple & Google Wallet, sans application. 90 jours gratuits."
-  lang="fr"
-  locale="fr_FR"
+  title="Digital loyalty card & stamp card for local businesses | bonuskarte.digital"
+  description="The digital loyalty card and stamp card for local businesses — in Apple Wallet & Google Wallet, no app. Loyalty program with push notifications and rewards. 90 days free."
+  lang="en"
+  locale="en_US"
   alternates={[
     { hreflang: 'de', href: 'https://bonuskarte.digital/' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/' },
     { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/' },
     { hreflang: 'x-default', href: 'https://bonuskarte.digital/' },
   ]}
 >
-  <NavbarFr ctaHref="/fr/paris/" ctaLabel={uiFr.nav.cta} />
+  <NavbarEn ctaHref="/en/#get-started" ctaLabel={uiEn.nav.cta} />
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
   <section class="relative flex items-center bg-paper overflow-hidden min-h-screen">
@@ -58,44 +65,44 @@ const nicheTeaser = nichesFr.slice(0, 6)
           <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6 sm:mb-10">
             <span class="w-1 h-1 bg-amber animate-pulse-slow flex-shrink-0"></span>
             <span class="text-amber text-[10px] sm:text-xs font-normal tracking-[0.3em] uppercase">
-              Boulangeries · Cafés · Restaurants · Coiffeurs
+              Bakeries · Cafés · Restaurants · Hair salons
             </span>
           </div>
 
           <!-- H1 -->
           <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-5 sm:mb-8">
-            <span class="font-normal text-ink block mb-2">La carte de fidélité</span>
-            <RotatingWordFr client:idle />
+            <span class="font-normal text-ink block mb-2">The digital loyalty</span>
+            <RotatingWordEn client:idle />
           </h1>
 
           <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-normal">
-            Plus de clients réguliers, plus de chiffre d'affaires. Votre carte de fidélité numérique directement dans leur téléphone — sans papier, sans application, sans effort.
+            More regulars, more revenue. Your digital loyalty card right inside their phone — no paper, no app, no hassle.
           </p>
 
           <!-- Free trial badge -->
           <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2.5 mb-6 sm:mb-10">
             <span class="text-amber text-xs tracking-[0.15em] font-normal">
-              90 JOURS GRATUITS — SANS CARTE BANCAIRE
+              90 DAYS FREE — NO CREDIT CARD
             </span>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <a href="/fr/paris/"
+            <a href="/en/#get-started"
               class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
-              Commencer gratuitement
+              Start free
               <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <a href="#comment-ca-marche"
+            <a href="/en/#how-it-works"
               class="inline-flex items-center justify-center border border-ink/10 hover:border-amber/40 text-ink px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all">
-              Comment ça marche
+              How it works
             </a>
           </div>
 
           <!-- Trust row -->
           <div class="flex flex-wrap gap-6 mt-6 sm:mt-10 justify-center md:justify-start">
-            {uiFr.trust.map(t => (
+            {uiEn.trust.map(t => (
               <span class="text-[10px] tracking-widest uppercase text-ink/50">{t}</span>
             ))}
           </div>
@@ -117,13 +124,13 @@ const nicheTeaser = nichesFr.slice(0, 6)
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-8 sm:mb-12">
         <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Le problème</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">The problem</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="border border-ink/30 p-8">
-          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Carte tampon papier</p>
+          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Paper stamp card</p>
           <ul class="space-y-4">
             {problems.map(t => (
               <li class="flex items-start gap-3 text-base text-ink font-normal">
@@ -149,13 +156,13 @@ const nicheTeaser = nichesFr.slice(0, 6)
     </div>
   </section>
 
-  <!-- ── COMMENT ÇA MARCHE ─────────────────────────────────────── -->
-  <section id="comment-ca-marche" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+  <!-- ── HOW IT WORKS ──────────────────────────────────────────── -->
+  <section id="how-it-works" class="scroll-mt-20 py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
         <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Comment ça marche</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">How the digital loyalty card works</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
@@ -171,22 +178,22 @@ const nicheTeaser = nichesFr.slice(0, 6)
     </div>
   </section>
 
-  <!-- ── SECTEURS ──────────────────────────────────────────────── -->
-  <section id="secteurs" class="scroll-mt-20 py-8 sm:py-16 px-5 sm:px-8 bg-paper">
+  <!-- ── INDUSTRIES ────────────────────────────────────────────── -->
+  <section id="industries" class="scroll-mt-20 py-8 sm:py-16 px-5 sm:px-8 bg-paper">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
         <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Secteurs disponibles</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Loyalty cards for every local business</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <p class="text-ink/40 text-sm font-normal text-center mb-10 max-w-xl mx-auto">
-        Boulangeries, cafés, restaurants, coiffeurs, kebabs, pizzerias, glaciers, fleuristes, salles de sport, instituts de beauté — la carte de fidélité numérique s'adapte à chaque type de commerce.
+        Bakeries, cafés, restaurants, hair salons, kebab shops, pizzerias, ice cream shops, florists, gyms, beauty salons — the digital loyalty card fits every kind of local business.
       </p>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
-        {nicheTeaser.map(n => (
-          <a href={`/fr/paris/1er/${n.slug}`}
+        {industries.map(n => (
+          <a href="/en/cards"
             class="group border border-ink/30 hover:border-amber hover:bg-amber/5 p-5 text-center transition-all hover:-translate-y-1">
             <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">{n.emoji}</div>
             <div class="text-xs font-semibold tracking-widest uppercase text-ink group-hover:text-amber transition-colors">{n.label}</div>
@@ -195,9 +202,9 @@ const nicheTeaser = nichesFr.slice(0, 6)
       </div>
 
       <div class="text-center">
-        <a href="/fr/paris/"
+        <a href="/en/cards"
           class="group inline-flex items-center gap-2 border border-amber/50 hover:border-amber text-amber px-8 py-3 text-xs font-bold tracking-widest uppercase transition-all">
-          Voir tous les secteurs à Paris
+          See all card types
           <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
           </svg>
@@ -206,29 +213,29 @@ const nicheTeaser = nichesFr.slice(0, 6)
     </div>
   </section>
 
-  <!-- ── TARIFS TEASER ─────────────────────────────────────────── -->
+  <!-- ── PRICING TEASER ────────────────────────────────────────── -->
   <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
     <div class="relative max-w-3xl mx-auto text-center">
       <div class="flex items-center gap-4 mb-8">
         <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Tarifs</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Pricing</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
-      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-4">Sans engagement</p>
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-4">No commitment</p>
       <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
-        90 jours gratuits.
+        90 days free.
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">
-        Ensuite à partir de 29 €/mois.
+        Then from €29/month.
       </h2>
       <p class="text-ink/40 text-sm font-normal mb-10 max-w-lg mx-auto">
-        Cartes illimitées, notifications push, statistiques en temps réel — tout inclus. Sans frais d'installation. Résiliable chaque mois.
+        Unlimited cards, push notifications, real-time stats — all included. No setup fee. Cancel any month.
       </p>
-      <a href="/fr/tarifs"
+      <a href="/en/pricing"
         class="group inline-flex items-center gap-3 border border-amber/40 hover:border-amber text-amber px-8 py-4 text-xs font-bold tracking-widest uppercase transition-all">
-        Voir les tarifs complets
+        See full pricing
         <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
         </svg>
@@ -241,35 +248,35 @@ const nicheTeaser = nichesFr.slice(0, 6)
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-4 mb-6 sm:mb-10">
         <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Questions fréquentes</span>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Frequently asked questions</span>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
 
       <div class="space-y-4">
         {[
           {
-            q: 'Les 90 jours sont vraiment gratuits ?',
-            a: 'Oui, sans aucune condition. Pas de carte bancaire requise. Au bout de 90 jours, vous décidez si vous continuez — à partir de 29 €/mois, sans engagement, résiliable à tout moment.',
+            q: 'Are the 90 days really free?',
+            a: 'Yes, with no strings attached. No credit card required. After 90 days you decide whether to continue — from €29/month, no commitment, cancel any time.',
           },
           {
-            q: 'Mes clients ont-ils besoin de télécharger une application ?',
-            a: 'Non. La carte est enregistrée directement dans Apple Wallet ou Google Wallet, préinstallés sur tous les smartphones. Aucun compte, aucun téléchargement pour vos clients.',
+            q: 'Do my customers need to download an app?',
+            a: 'No. The card is saved directly to Apple Wallet or Google Wallet, preinstalled on every smartphone. No account, no download for your customers.',
           },
           {
-            q: 'Combien de temps prend la mise en place ?',
-            a: 'Vous remplissez un formulaire en 5 minutes. Nous créons votre carte avec votre logo et vos couleurs. Vous êtes opérationnel en moins de 24 heures.',
+            q: 'How long does setup take?',
+            a: 'You fill out a form in 5 minutes. We create your card with your logo and colors. You are live in under 24 hours.',
           },
           {
-            q: 'Est-ce conforme au RGPD ?',
-            a: 'Oui. Toutes les données sont traitées conformément au RGPD. Pas de cookies de suivi sur le téléphone de vos clients, pas de revente de données.',
+            q: 'Is it GDPR compliant?',
+            a: 'Yes. All data is processed in line with the GDPR. No tracking cookies on your customers’ phones, no reselling of data.',
           },
           {
-            q: 'Ça fonctionne pour quel type de commerce ?',
-            a: 'Boulangeries, cafés, restaurants, coiffeurs, kebabs, pizzerias, glaciers, fleuristes, salles de sport, instituts de beauté — et bien d\'autres. Si vous avez des clients réguliers, ça fonctionne pour vous.',
+            q: 'What kind of business does it work for?',
+            a: 'Bakeries, cafés, restaurants, hair salons, kebab shops, pizzerias, ice cream shops, florists, gyms, beauty salons — and many more. If you have regular customers, it works for you.',
           },
           {
-            q: 'Que se passe-t-il si mon client perd son téléphone ?',
-            a: 'La carte est liée au compte Apple ou Google du client. Elle est automatiquement restaurée sur le nouvel appareil — les tampons et la progression sont conservés.',
+            q: 'What if my customer loses their phone?',
+            a: 'The card is tied to the customer’s Apple or Google account. It is automatically restored on the new device — stamps and progress are kept.',
           },
         ].map(faq => (
           <details class="group border border-ink/30 hover:border-amber/20 transition-colors">
@@ -288,21 +295,45 @@ const nicheTeaser = nichesFr.slice(0, 6)
     </div>
   </section>
 
+  <!-- ── GET STARTED ───────────────────────────────────────────── -->
+  <section id="get-started" class="scroll-mt-20 py-8 sm:py-16 px-5 sm:px-8 bg-paper">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center gap-4 mb-8 sm:mb-12">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Get started</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-3">
+          Get your <span class="font-bold text-amber">digital loyalty card</span>
+        </h2>
+        <p class="text-ink/60 text-sm font-normal max-w-md mx-auto">
+          Fill in 3 fields and we build your free demo card for Apple Wallet & Google Wallet — live in 24 hours.
+        </p>
+      </div>
+
+      <div class="border border-amber/20 bg-paper p-8 sm:p-10">
+        <LeadFormEn client:load whatsappUrl="https://wa.me/491705594140" />
+      </div>
+    </div>
+  </section>
+
   <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
   <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
     <div class="relative max-w-3xl mx-auto text-center">
-      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 jours gratuits</p>
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 days free</p>
       <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
-        Prêt à fidéliser
+        Ready to keep
       </h2>
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">
-        vos clients ?
+        your customers coming back?
       </h2>
-      <p class="text-ink text-xs tracking-widest uppercase mb-10">Sans carte bancaire. Résiliable chaque mois. Zéro risque.</p>
-      <a href="/fr/paris/"
+      <p class="text-ink text-xs tracking-widest uppercase mb-10">No credit card. Cancel any month. Zero risk.</p>
+      <a href="/en/#get-started"
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
-        Commencer gratuitement
+        Start free
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
@@ -310,12 +341,12 @@ const nicheTeaser = nichesFr.slice(0, 6)
 
       <!-- Trust row -->
       <div class="flex flex-wrap gap-6 mt-10 justify-center">
-        {uiFr.trust.map(t => (
+        {uiEn.trust.map(t => (
           <span class="text-[10px] tracking-widest uppercase text-ink/50">{t}</span>
         ))}
       </div>
     </div>
   </section>
 
-  <FooterFr />
+  <FooterEn />
 </BaseLayout>
