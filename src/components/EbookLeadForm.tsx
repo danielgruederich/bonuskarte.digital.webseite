@@ -16,7 +16,7 @@ interface Props {
 type State = 'idle' | 'submitting' | 'success' | 'error'
 
 const inputClass =
-  'w-full px-4 py-3 bg-ink/20 border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-ink/8 transition-colors'
+  'w-full px-4 py-3 bg-white border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-white transition-colors'
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-ink/60 mb-2'
 
 export default function EbookLeadForm({

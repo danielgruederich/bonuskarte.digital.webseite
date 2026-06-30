@@ -31,13 +31,21 @@ const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = false } = Astro.props
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiFr.nav.howItWorks}
         </a>
-        <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/fr/#secteurs" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiFr.nav.secteurs}
+        </a>
+        <a href="/fr/cartes" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+          class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
+          {uiFr.nav.cartes}
         </a>
         <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiFr.nav.tarifs}
+        </a>
+        <a href="/fr/#faq" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+          class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
+          {uiFr.nav.faq}
         </a>
 
         <!-- Language switcher -->
@@ -77,11 +85,17 @@ const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = false } = Astro.props
       <a href="/fr/#comment-ca-marche" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiFr.nav.howItWorks}
       </a>
-      <a href="/fr/paris/" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
+      <a href="/fr/#secteurs" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiFr.nav.secteurs}
+      </a>
+      <a href="/fr/cartes" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
+        {uiFr.nav.cartes}
       </a>
       <a href="/fr/tarifs" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiFr.nav.tarifs}
+      </a>
+      <a href="/fr/#faq" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
+        {uiFr.nav.faq}
       </a>
       <a href="/" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         🇩🇪 Version (DE)
