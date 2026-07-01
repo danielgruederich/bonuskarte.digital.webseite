@@ -1,20 +1,26 @@
 ---
 import { getCollection } from 'astro:content'
-import { hilfeCategories, getCategoryFromSlug } from '@/data/hilfe-categories'
+import { hilfeCategories, getCategoryFromSlug, getCategoryLabel, getLangFromSlug, stripLang, hilfeBase, HILFE_UI, type Lang } from '@/data/hilfe-categories'
 
 interface Props {
   currentSlug?: string
+  lang?: Lang
 }
 
-const { currentSlug } = Astro.props
+const { currentSlug, lang = 'de' } = Astro.props
 const allEntries = await getCollection('hilfe')
+const langEntries = allEntries.filter(e => getLangFromSlug(e.slug) === lang)
 
 const grouped = hilfeCategories.map(cat => ({
   ...cat,
-  entries: allEntries
+  entries: langEntries
     .filter(e => getCategoryFromSlug(e.slug) === cat.slug)
     .sort((a, b) => a.data.order - b.data.order),
 }))
+
+const base = hilfeBase(lang)
+// "Navigation" is identical across DE/FR/EN
+const navLabel = 'Navigation'
 ---
 
 <div class="lg:hidden mb-6">
@@ -22,21 +28,21 @@ const grouped = hilfeCategories.map(cat => ({
     id="hilfe-sidebar-toggle"
     class="w-full flex items-center justify-between bg-white/5 border border-paper/10 rounded-lg px-4 py-3 text-sm text-paper/70"
   >
-    <span>Navigation</span>
+    <span>{navLabel}</span>
     <svg class="w-4 h-4 transition-transform" id="hilfe-sidebar-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
     </svg>
   </button>
 
   <div id="hilfe-sidebar-mobile" class="hidden mt-2 bg-ink/95 border border-paper/10 rounded-lg p-4">
-    <a href="/hilfe" class="block text-xs font-bold tracking-widest uppercase text-amber mb-4">
-      Hilfe & Tutorials
+    <a href={base} class="block text-xs font-bold tracking-widest uppercase text-amber mb-4">
+      {HILFE_UI[lang].centerTitle}
     </a>
 
     {grouped.map(cat => (
       <div class="mb-4">
         <p class="text-xs font-bold tracking-widest uppercase text-paper/70 mb-2">
-          <span class="mr-1.5">{cat.icon}</span>{cat.label}
+          <span class="mr-1.5">{cat.icon}</span>{getCategoryLabel(cat.slug, lang)}
         </p>
         <ul class="space-y-1">
           {cat.entries.map(entry => {
@@ -44,7 +50,7 @@ const grouped = hilfeCategories.map(cat => ({
             return (
               <li>
                 <a
-                  href={`/hilfe/${entry.slug}`}
+                  href={`${base}/${stripLang(entry.slug)}`}
                   class:list={[
                     'block pl-4 py-1.5 text-sm transition-colors',
                     isActive ? 'text-amber font-medium' : 'text-paper/80',

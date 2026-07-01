@@ -1,44 +1,68 @@
 ---
 import BaseLayout from './BaseLayout.astro'
 import Navbar from '@/components/Navbar.astro'
+import NavbarFr from '@/components/NavbarFr.astro'
+import NavbarEn from '@/components/NavbarEn.astro'
 import Footer from '@/components/Footer.astro'
+import FooterFr from '@/components/FooterFr.astro'
+import FooterEn from '@/components/FooterEn.astro'
 import HilfeSidebar from '@/components/hilfe/HilfeSidebar.astro'
 import HilfeSidebarMobile from '@/components/hilfe/HilfeSidebarMobile.astro'
 import PrevNext from '@/components/hilfe/PrevNext.astro'
-import { getCategoryFromSlug, getCategoryLabel } from '@/data/hilfe-categories'
+import { getCategoryFromSlug, getCategoryLabel, stripLang, hilfeBase, HILFE_UI, type Lang } from '@/data/hilfe-categories'
 
 interface Props {
   title: string
   description: string
   slug: string
+  lang?: Lang
 }
 
-const { title, description, slug } = Astro.props
+const { title, description, slug, lang = 'de' } = Astro.props
 const categorySlug = getCategoryFromSlug(slug)
-const categoryLabel = getCategoryLabel(categorySlug)
+const categoryLabel = getCategoryLabel(categorySlug, lang)
+
+const base = hilfeBase(lang)
+const ui = HILFE_UI[lang]
+const articleUrl = `https://bonuskarte.digital${base}/${stripLang(slug)}`
+
+// Localized title suffix + html lang/locale
+const titleSuffix = lang === 'fr' ? 'Aide' : lang === 'en' ? 'Help' : 'Hilfe'
+const htmlLocale = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_US' : 'de_DE'
 ---
 
-<BaseLayout title={`${title} — Hilfe | bonuskarte.digital`} description={description}>
+<BaseLayout
+  title={`${title} — ${titleSuffix} | bonuskarte.digital`}
+  description={description}
+  lang={lang}
+  locale={htmlLocale}
+>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": title,
     "description": description,
-    "url": `https://bonuskarte.digital/hilfe/${slug}`,
+    "url": articleUrl,
     "publisher": {
       "@type": "Organization",
       "name": "bonuskarte.digital",
       "url": "https://bonuskarte.digital"
     }
   })} />
-  <Navbar ctaHref="/hilfe" ctaLabel="Hilfe" />
+  {lang === 'fr' ? (
+    <NavbarFr ctaHref={base} ctaLabel={ui.navLabel} />
+  ) : lang === 'en' ? (
+    <NavbarEn ctaHref={base} ctaLabel={ui.navLabel} />
+  ) : (
+    <Navbar ctaHref={base} ctaLabel={ui.navLabel} />
+  )}
 
   <main class="min-h-screen bg-ink pt-24 pb-16">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
 
       <!-- Breadcrumb -->
       <nav class="mb-8 text-xs text-paper/40">
-        <a href="/hilfe" class="hover:text-amber transition-colors">Hilfe</a>
+        <a href={base} class="hover:text-amber transition-colors">{ui.breadcrumb}</a>
         <span class="mx-2">/</span>
         <span class="hover:text-amber transition-colors">{categoryLabel}</span>
         <span class="mx-2">/</span>
@@ -47,12 +71,12 @@ const categoryLabel = getCategoryLabel(categorySlug)
 
       <div class="flex gap-12">
         <!-- Sidebar (desktop) -->
-        <HilfeSidebar currentSlug={slug} />
+        <HilfeSidebar currentSlug={slug} lang={lang} />
 
         <!-- Content -->
         <article class="flex-1 min-w-0">
           <!-- Mobile sidebar -->
-          <HilfeSidebarMobile currentSlug={slug} />
+          <HilfeSidebarMobile currentSlug={slug} lang={lang} />
 
           <h1 class="text-3xl sm:text-4xl font-bold text-paper mb-8">{title}</h1>
 
@@ -71,11 +95,17 @@ const categoryLabel = getCategoryLabel(categorySlug)
             <slot />
           </div>
 
-          <PrevNext currentSlug={slug} />
+          <PrevNext currentSlug={slug} lang={lang} />
         </article>
       </div>
     </div>
   </main>
 
-  <Footer />
+  {lang === 'fr' ? (
+    <FooterFr />
+  ) : lang === 'en' ? (
+    <FooterEn />
+  ) : (
+    <Footer />
+  )}
 </BaseLayout>

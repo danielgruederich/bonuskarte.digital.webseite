@@ -26,6 +26,7 @@ const hilfe = defineCollection({
     description: z.string(),
     order: z.number(),
     video: z.string().url().optional(),
+    lang: z.enum(['de', 'fr', 'en']).default('de'),
   }),
 })
 

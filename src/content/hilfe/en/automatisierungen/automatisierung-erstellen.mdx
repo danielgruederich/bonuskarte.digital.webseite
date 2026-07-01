@@ -1,0 +1,111 @@
+---
+title: "Create an automation"
+description: "How to build automated workflows that trigger actions on their own when customers do something."
+order: 1
+lang: "en"
+---
+
+import Callout from '@/components/hilfe/Callout.astro'
+import Screenshot from '@/components/hilfe/Screenshot.astro'
+
+# Create an automation
+
+With automations you build workflows that fire actions automatically whenever a customer does something specific. Instead of sending messages or awarding points by hand, everything happens in the background — you set it up once, and it works for you.
+
+Automations work with all 8 card types, and there's no limit on how many steps you can chain together.
+
+## How to create an automation
+
+1. Open your **dashboard** at bonuskarte.digital
+2. Go to the **Automations** section
+3. Click **Create automation** in the top right and give it a name
+
+<Screenshot src="/hilfe/automatisierungen/automatisierung-erstellen.jpg" alt="Dialog for creating a new automation" />
+
+4. Choose a **trigger**
+
+<Screenshot src="/hilfe/automatisierungen/trigger-auswaehlen.jpg" alt="List of available triggers" />
+
+5. Optionally add **conditions**
+6. Add one or more **actions**
+
+<Screenshot src="/hilfe/automatisierungen/workflow-beispiel.jpg" alt="Example workflow: stamp count reached, wait 1 hour, send push" caption="Example: when a stamp count is reached, a push notification is sent after 1 hour." />
+
+7. Switch the automation to **Working Mode** to activate it
+
+<Callout type="info">
+Next to the automation's name you'll see a counter — it shows how many times the automation has fired so far.
+</Callout>
+
+## Draft Mode vs. Working Mode
+
+When you create an automation, it starts in **Draft Mode**. In this mode it's saved but not active — no actions are triggered. That gives you room to build and review everything before you go live.
+
+Once you're ready, you switch the automation to **Working Mode**. From that moment on, it processes triggers in real time.
+
+<Callout type="tipp">
+You can switch between Draft Mode and Working Mode at any time — for example, if you want to pause an automation temporarily.
+</Callout>
+
+## Available triggers
+
+Triggers are the events that start an automation.
+
+### Customer events
+- **Customer created** — a new customer profile is added
+- **Customer deleted** — a customer profile is removed
+- **Birthday today** — fires on the customer's birthday
+
+### Card events
+- **Card installed** — a customer saves the card to their device
+- **Card expired** — the card's expiry date has passed
+- **Card deleted** — the card is removed from the device
+- **Card issued** — a card is assigned to a customer
+- **Card scanned** — the card is scanned with the scanner app
+
+### Loyalty activity
+- **Coupon redeemed** — a coupon is used
+- **Stamp count reached** — the customer has collected a set number of stamps
+- **Point count reached** — the customer has reached a set number of points
+- **Reward count reached** — the customer has earned a set number of rewards
+- **Redeemed rewards reached** — the customer has redeemed a set number of rewards
+- **Stamps expiring** — stamps are about to expire
+- **Bonuses expiring** — bonus points are about to expire
+
+### Other
+- **Review left** — a customer leaves a review
+- **RFM segment changed** — a customer moves into a specific RFM segment (e.g. loyal, at risk, lost)
+- **Incoming webhook** — triggered by an external system via webhook
+
+## Available actions
+
+Actions define what happens after a trigger. You can chain several actions together.
+
+- **Wait** — pause for a set amount of time before the next action runs
+- **Condition** — checks certain criteria before continuing
+- **Send email** — sends an email to the customer
+- **Send SMS** — sends an SMS to the customer
+- **Send push notification** — sends a push notification to the customer's device
+- **Credit** — adds stamps, points or bonuses to the card
+- **Redeem** — deducts stamps or points, or redeems a reward
+- **Send HTTP request** — passes data to an external system
+- **Send conversion to Meta Ads** — sends a conversion event via the Meta Conversions API
+- **Change card expiry date** — updates the expiry date on the customer's card
+
+## Conditions and filters
+
+Conditions add logic to your automation — for example "only if the customer has more than 500 points" or "only if the card is active". Which conditions are available depends on the trigger you chose and the card type.
+
+<Callout type="info">
+The **Card bonus balance** filter is only available for reward cards. It lets you trigger actions when a customer reaches a certain bonus threshold.
+</Callout>
+
+## Good to know
+
+<Callout type="info">
+**Point count reached** works only with cashback, reward and gift cards. **Reward count** and **Redeemed rewards** work only with stamp cards.
+</Callout>
+
+<Callout type="warnung">
+Email and SMS actions require the relevant services to be connected in your account. Get in touch if you'd like to use these features.
+</Callout>

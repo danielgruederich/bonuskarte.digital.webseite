@@ -5,35 +5,32 @@ interface Props {
 
 const { type = 'info' } = Astro.props
 
+// Derive language from the URL so Callout labels match the page language,
+// without having to pass a prop from every MDX file.
+const path = Astro.url.pathname
+const lang: 'de' | 'fr' | 'en' = path.startsWith('/fr/') ? 'fr' : path.startsWith('/en/') ? 'en' : 'de'
+
+const LABELS: Record<'de' | 'fr' | 'en', Record<'tipp' | 'warnung' | 'info', string>> = {
+  de: { tipp: 'Tipp',    warnung: 'Wichtig',   info: 'Info' },
+  fr: { tipp: 'Conseil', warnung: 'Important', info: 'Info' },
+  en: { tipp: 'Tip',     warnung: 'Important', info: 'Note' },
+}
+
 const styles = {
-  tipp: {
-    border: 'border-amber/50',
-    bg: 'bg-amber/5',
-    icon: '💡',
-    label: 'Tipp',
-  },
-  warnung: {
-    border: 'border-red-500/30',
-    bg: 'bg-red-500/5',
-    icon: '⚠️',
-    label: 'Wichtig',
-  },
-  info: {
-    border: 'border-paper/10',
-    bg: 'bg-white/5',
-    icon: 'ℹ️',
-    label: 'Info',
-  },
+  tipp:    { border: 'border-amber/50',    bg: 'bg-amber/5',    icon: '💡' },
+  warnung: { border: 'border-red-500/30',  bg: 'bg-red-500/5',  icon: '⚠️' },
+  info:    { border: 'border-paper/10',    bg: 'bg-white/5',    icon: 'ℹ️' },
 }
 
 const s = styles[type]
+const label = LABELS[lang][type]
 ---
 
 <div class={`my-6 rounded-lg border ${s.border} ${s.bg} p-4`}>
   <div class="flex items-start gap-3">
     <span class="text-lg flex-shrink-0 mt-0.5">{s.icon}</span>
     <div>
-      <p class="text-xs font-bold tracking-widest uppercase text-paper/60 mb-1">{s.label}</p>
+      <p class="text-xs font-bold tracking-widest uppercase text-paper/60 mb-1">{label}</p>
       <div class="text-sm text-paper/80 leading-relaxed [&>p]:mb-0">
         <slot />
       </div>

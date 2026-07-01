@@ -1,33 +1,37 @@
 ---
 import { getCollection } from 'astro:content'
-import { hilfeCategories, getCategoryFromSlug } from '@/data/hilfe-categories'
+import { hilfeCategories, getCategoryFromSlug, getCategoryLabel, getLangFromSlug, stripLang, hilfeBase, HILFE_UI, type Lang } from '@/data/hilfe-categories'
 
 interface Props {
   currentSlug?: string
+  lang?: Lang
 }
 
-const { currentSlug } = Astro.props
+const { currentSlug, lang = 'de' } = Astro.props
 const allEntries = await getCollection('hilfe')
+const langEntries = allEntries.filter(e => getLangFromSlug(e.slug) === lang)
 
 const grouped = hilfeCategories.map(cat => ({
   ...cat,
-  entries: allEntries
+  entries: langEntries
     .filter(e => getCategoryFromSlug(e.slug) === cat.slug)
     .sort((a, b) => a.data.order - b.data.order),
 }))
+
+const base = hilfeBase(lang)
 ---
 
 <!-- Desktop sidebar -->
 <aside class="hilfe-sidebar w-64 flex-shrink-0 hidden lg:block">
   <nav class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4">
-    <a href="/hilfe" class="block text-xs font-bold tracking-widest uppercase text-amber mb-6">
-      Hilfe & Tutorials
+    <a href={base} class="block text-xs font-bold tracking-widest uppercase text-amber mb-6">
+      {HILFE_UI[lang].centerTitle}
     </a>
 
     {grouped.map(cat => (
       <div class="mb-5">
         <p class="text-xs font-bold tracking-widest uppercase text-paper/70 mb-2">
-          <span class="mr-1.5">{cat.icon}</span>{cat.label}
+          <span class="mr-1.5">{cat.icon}</span>{getCategoryLabel(cat.slug, lang)}
         </p>
         <ul class="space-y-1 ml-1 border-l border-paper/10">
           {cat.entries.map(entry => {
@@ -35,7 +39,7 @@ const grouped = hilfeCategories.map(cat => ({
             return (
               <li>
                 <a
-                  href={`/hilfe/${entry.slug}`}
+                  href={`${base}/${stripLang(entry.slug)}`}
                   class:list={[
                     'block pl-4 py-1.5 text-sm transition-colors border-l -ml-px',
                     isActive

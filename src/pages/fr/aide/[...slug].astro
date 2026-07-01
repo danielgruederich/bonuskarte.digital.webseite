@@ -1,12 +1,12 @@
 ---
 import { getCollection } from 'astro:content'
 import HilfeLayout from '@/layouts/HilfeLayout.astro'
-import { getLangFromSlug } from '@/data/hilfe-categories'
+import { getLangFromSlug, stripLang } from '@/data/hilfe-categories'
 
 export async function getStaticPaths() {
-  const entries = (await getCollection('hilfe')).filter(e => getLangFromSlug(e.slug) === 'de')
+  const entries = (await getCollection('hilfe')).filter(e => getLangFromSlug(e.slug) === 'fr')
   return entries.map(entry => ({
-    params: { slug: entry.slug },
+    params: { slug: stripLang(entry.slug) },
     props: { entry },
   }))
 }
@@ -15,7 +15,7 @@ const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
 
-<HilfeLayout title={entry.data.title} description={entry.data.description} slug={entry.slug} lang="de">
+<HilfeLayout title={entry.data.title} description={entry.data.description} slug={entry.slug} lang="fr">
   {entry.data.video && (
     <div class="mb-8">
       <div class="relative w-full overflow-hidden rounded-lg border border-ink/10" style="padding-bottom: 56.25%;">

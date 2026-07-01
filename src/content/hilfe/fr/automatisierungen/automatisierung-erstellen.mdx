@@ -1,0 +1,111 @@
+---
+title: "Créer une automatisation"
+description: "Comment construire des workflows automatiques qui déclenchent des actions dès qu'un client agit."
+order: 1
+lang: "fr"
+---
+
+import Callout from '@/components/hilfe/Callout.astro'
+import Screenshot from '@/components/hilfe/Screenshot.astro'
+
+# Créer une automatisation
+
+Les automatisations vous permettent de construire des workflows qui déclenchent des actions dès qu'un client réalise une action précise. Plus besoin d'envoyer des messages ou d'attribuer des points à la main : tout se passe en arrière-plan. Vous réglez le workflow une seule fois, et il travaille pour vous.
+
+Les automatisations fonctionnent avec les 8 types de cartes, et le nombre d'étapes d'une chaîne n'est pas limité.
+
+## Comment créer une automatisation
+
+1. Ouvrez votre **tableau de bord** sur bonuskarte.digital
+2. Rendez-vous dans la rubrique **Automatisations**
+3. En haut à droite, cliquez sur **Créer une automatisation** et donnez-lui un nom
+
+<Screenshot src="/hilfe/automatisierungen/automatisierung-erstellen.jpg" alt="Fenêtre de création d'une nouvelle automatisation" />
+
+4. Choisissez un **déclencheur**
+
+<Screenshot src="/hilfe/automatisierungen/trigger-auswaehlen.jpg" alt="Liste des déclencheurs disponibles" />
+
+5. Ajoutez éventuellement des **conditions**
+6. Ajoutez une ou plusieurs **actions**
+
+<Screenshot src="/hilfe/automatisierungen/workflow-beispiel.jpg" alt="Exemple de workflow : nombre de tampons atteint → attendre 1 heure → envoyer une notification push" caption="Exemple : lorsqu'un nombre de tampons est atteint, une notification push part au bout d'une heure." />
+
+7. Basculez l'automatisation en **Working Mode** pour l'activer
+
+<Callout type="info">
+À côté du nom de l'automatisation figure un compteur : il indique combien de fois l'automatisation s'est déjà déclenchée.
+</Callout>
+
+## Draft Mode et Working Mode
+
+Quand vous créez une automatisation, elle démarre en **Draft Mode**. Dans ce mode, elle est enregistrée mais inactive : aucune action n'est déclenchée. Vous pouvez donc tout construire et vérifier tranquillement avant de passer en production.
+
+Une fois prêt, basculez l'automatisation en **Working Mode**. À partir de ce moment, elle traite les déclencheurs en temps réel.
+
+<Callout type="tipp">
+Vous pouvez passer du Draft Mode au Working Mode à tout moment, par exemple pour mettre une automatisation en pause temporairement.
+</Callout>
+
+## Les déclencheurs disponibles
+
+Un déclencheur est un événement qui met une automatisation en route.
+
+### Événements clients
+- **Client créé** — un nouveau profil client est enregistré
+- **Client supprimé** — un profil client est retiré
+- **Anniversaire aujourd'hui** — se déclenche le jour de l'anniversaire du client
+
+### Événements liés à la carte
+- **Carte installée** — un client enregistre la carte sur son appareil
+- **Carte expirée** — la date d'expiration de la carte est dépassée
+- **Carte supprimée** — la carte est retirée de l'appareil
+- **Carte émise** — une carte est attribuée à un client
+- **Carte scannée** — la carte est scannée via l'application scanner
+
+### Activités de fidélité
+- **Coupon utilisé** — un coupon est employé
+- **Nombre de tampons atteint** — le client a collecté un certain nombre de tampons
+- **Nombre de points atteint** — le client a atteint un certain nombre de points
+- **Nombre de récompenses atteint** — le client a gagné un certain nombre de récompenses
+- **Récompenses utilisées atteint** — le client a utilisé un certain nombre de récompenses
+- **Tampons bientôt expirés** — des tampons approchent de leur date d'expiration
+- **Bonus bientôt expirés** — des points bonus approchent de leur date d'expiration
+
+### Autres
+- **Avis laissé** — un client dépose un avis
+- **Segment RFM modifié** — un client passe dans un segment RFM donné (par exemple fidèle, à risque, perdu)
+- **Webhook entrant** — déclenché par un système externe via webhook
+
+## Les actions disponibles
+
+Les actions déterminent ce qui se passe après un déclencheur. Vous pouvez en enchaîner plusieurs.
+
+- **Attendre** — marque une pause d'une durée définie avant l'action suivante
+- **Condition** — vérifie certains critères avant de poursuivre
+- **Envoyer un e-mail** — envoie un e-mail au client
+- **Envoyer un SMS** — envoie un SMS au client
+- **Envoyer une notification push** — envoie une notification push sur l'appareil du client
+- **Créditer** — ajoute des tampons, des points ou des bonus sur la carte
+- **Débiter** — retire des tampons ou des points, ou utilise une récompense
+- **Envoyer une requête HTTP** — transmet des données à un système externe
+- **Envoyer une conversion à Meta Ads** — envoie un événement de conversion via l'API Meta Conversions
+- **Modifier la date d'expiration de la carte** — met à jour la date d'expiration de la carte du client
+
+## Conditions et filtres
+
+Les conditions ajoutent de la logique à votre automatisation, par exemple « uniquement si le client a plus de 500 points » ou « uniquement si la carte est active ». Les conditions disponibles dépendent du déclencheur choisi et du type de carte.
+
+<Callout type="info">
+Le filtre **Solde bonus de la carte** n'est disponible que pour les cartes de récompense. Il vous permet de déclencher des actions lorsqu'un client atteint un certain seuil de bonus.
+</Callout>
+
+## À retenir
+
+<Callout type="info">
+**Nombre de points atteint** ne fonctionne qu'avec les cartes de cashback, de récompense et cadeau. **Nombre de récompenses** et **Récompenses utilisées** ne fonctionnent qu'avec les cartes à tampons.
+</Callout>
+
+<Callout type="warnung">
+Pour les actions d'e-mail et de SMS, les services correspondants doivent être connectés à votre compte. Contactez-nous si vous souhaitez utiliser ces fonctions.
+</Callout>
