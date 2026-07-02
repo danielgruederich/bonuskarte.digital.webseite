@@ -18,7 +18,6 @@ const niches = [
     emoji: '☕',
     desc: 'Kaffee, Kuchen, Stammgäste',
     href: `/dresden/${data.slug}/cafes`,
-    fomo: data.fomoCount.cafe,
   },
   {
     key: 'doener',
@@ -26,7 +25,6 @@ const niches = [
     emoji: '🥙',
     desc: 'Imbiss & Dönerläden',
     href: `/dresden/${data.slug}/doener`,
-    fomo: data.fomoCount.doener,
   },
   {
     key: 'restaurant',
@@ -34,7 +32,6 @@ const niches = [
     emoji: '🍽️',
     desc: 'Restaurants & Bistros',
     href: `/dresden/${data.slug}/restaurant`,
-    fomo: data.fomoCount.restaurant,
   },
   {
     key: 'pizza',
@@ -42,7 +39,6 @@ const niches = [
     emoji: '🍕',
     desc: 'Pizzerien & Lieferdienste',
     href: `/dresden/${data.slug}/pizza`,
-    fomo: data.fomoCount.pizza,
   },
   {
     key: 'eiscafe',
@@ -50,7 +46,6 @@ const niches = [
     emoji: '🍦',
     desc: 'Eiscafés & Eisdielen',
     href: `/dresden/${data.slug}/eiscafe`,
-    fomo: data.fomoCount.eiscafe,
   },
   {
     key: 'baeckerei',
@@ -58,7 +53,6 @@ const niches = [
     emoji: '🥐',
     desc: 'Bäckereien & Konditoreien',
     href: `/dresden/${data.slug}/baeckerei`,
-    fomo: data.fomoCount.baeckerei,
   },
   {
     key: 'friseur',
@@ -66,7 +60,6 @@ const niches = [
     emoji: '💇',
     desc: 'Friseure & Barbershops',
     href: `/dresden/${data.slug}/friseur`,
-    fomo: data.fomoCount.friseur,
   },
   {
     key: 'fitnessstudio',
@@ -74,7 +67,6 @@ const niches = [
     emoji: '💪',
     desc: 'Fitnessstudios & Gyms',
     href: `/dresden/${data.slug}/fitnessstudio`,
-    fomo: data.fomoCount.fitnessstudio,
   },
   {
     key: 'yoga',
@@ -82,7 +74,6 @@ const niches = [
     emoji: '🧘',
     desc: 'Yoga- & Pilates-Studios',
     href: `/dresden/${data.slug}/yoga`,
-    fomo: data.fomoCount.yoga,
   },
   {
     key: 'blumenladen',
@@ -90,7 +81,6 @@ const niches = [
     emoji: '💐',
     desc: 'Blumenläden & Floristik',
     href: `/dresden/${data.slug}/blumenladen`,
-    fomo: data.fomoCount.blumenladen,
   },
 ]
 ---
@@ -130,11 +120,6 @@ const niches = [
             href={n.href}
             class="group relative border border-ink/30 hover:border-amber bg-ink/2 hover:bg-amber/5 p-6 text-center transition-all hover:-translate-y-1"
           >
-            {n.fomo > 0 && (
-              <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-amber text-black text-[9px] font-black tracking-wider uppercase px-2.5 py-1 whitespace-nowrap">
-                {n.fomo} bereits dabei
-              </div>
-            )}
 
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{n.emoji}</div>
             <div class="text-ink font-bold text-sm tracking-wide mb-1">{n.label}</div>
