@@ -18,8 +18,6 @@ const niches = [
   { label: 'Blumenladen',       emoji: '💐',  slug: 'blumenladen',    desc: 'Blumenläden & Floristik' },
 ]
 
-const totalBetriebe = veedel.reduce((acc, v) =>
-  acc + v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza + v.fomoCount.eiscafe + v.fomoCount.baeckerei + v.fomoCount.friseur + v.fomoCount.fitnessstudio + v.fomoCount.yoga + v.fomoCount.blumenladen, 0)
 ---
 
 <BaseLayout
@@ -57,14 +55,6 @@ const totalBetriebe = veedel.reduce((acc, v) =>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-amber rounded-full blur-[200px] opacity-5"></div>
 
     <div class="relative max-w-5xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
-
-      <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-10">
-        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
-        <span class="text-amber text-[10px] font-normal tracking-[0.3em] uppercase">
-          {totalBetriebe}+ Kölner Betriebe bereits dabei
-        </span>
-      </div>
 
       <!-- H1 -->
       <h1 class="text-5xl sm:text-6xl leading-[1.1] tracking-tight mb-6">
@@ -151,22 +141,15 @@ const totalBetriebe = veedel.reduce((acc, v) =>
         <div class="h-px flex-1 bg-ink/20"></div>
       </div>
       <p class="text-center text-ink/40 text-sm font-normal mb-12">
-        Wähle dein Viertel und sieh, welche Betriebe dort bereits dabei sind.
+        Wähle dein Kölner Veedel und entdecke die digitale Kundenkarte für dein Viertel.
       </p>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-        {veedel.map(v => {
-          const total = v.fomoCount.cafe + v.fomoCount.doener + v.fomoCount.restaurant + v.fomoCount.pizza + v.fomoCount.eiscafe + v.fomoCount.baeckerei + v.fomoCount.friseur + v.fomoCount.fitnessstudio + v.fomoCount.yoga + v.fomoCount.blumenladen
-          return (
+        {veedel.map(v => (
             <a
               href={`/koeln/${v.slug}`}
               class="group relative border border-ink/30 hover:border-amber bg-ink/2 hover:bg-amber/5 p-4 text-center transition-all"
             >
-              {total > 0 && (
-                <div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-amber text-black text-[8px] font-black tracking-wider uppercase px-2 py-0.5 whitespace-nowrap">
-                  {total} dabei
-                </div>
-              )}
               <div class="text-ink font-semibold text-xs tracking-wide group-hover:text-amber transition-colors">
                 {v.name}
               </div>
@@ -175,7 +158,7 @@ const totalBetriebe = veedel.reduce((acc, v) =>
               </div>
             </a>
           )
-        })}
+        )}
       </div>
     </div>
   </section>
