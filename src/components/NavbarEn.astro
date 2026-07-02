@@ -13,16 +13,15 @@ const { ctaHref = '/en/#get-started', ctaLabel = uiEn.nav.cta, dark = false } = 
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="flex items-center justify-between h-16">
 
-      <!-- Logo: Zwei-Kreise-Mark + Wordmark -->
-      <a href="/en/" class="flex items-center gap-3 group" aria-label="bonuskarte.digital — Home">
-        <svg viewBox="0 0 44 28" class="w-9 h-auto flex-shrink-0" aria-hidden="true">
-          <circle cx="12" cy="14" r="11" fill="none"
-            stroke={dark ? '#F6F1E8' : '#1A1410'} stroke-width="1.5"/>
-          <circle cx="28" cy="14" r="11" fill="#F25C24"/>
-        </svg>
-        <span class="text-sm font-semibold leading-none" class:list={[dark ? 'text-paper' : 'text-ink']}>
-          bonuskarte<span class="text-amber">.digital</span>
-        </span>
+      <!-- Logo -->
+      <a href="/en/" aria-label="bonuskarte.digital — Home">
+        <img
+          src={dark ? '/images/logo-lockup-dark.png' : '/images/logo-lockup-primary.png'}
+          alt="bonuskarte.digital"
+          class="h-7 w-auto"
+          width="210"
+          height="28"
+        />
       </a>
 
       <!-- Desktop nav -->
