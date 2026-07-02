@@ -1,13 +1,18 @@
 ---
 import { getCollection } from 'astro:content'
+import { getLangFromSlug } from '@/data/hilfe-categories'
 
 // Redirect old /blog/[slug] URLs to city-specific /koeln/blog/[slug]
+// Only DE posts belong here — FR/EN posts (slug-prefixed fr/, en/) have their
+// own /fr/blog and /en/blog routes and must not create /blog → city redirects.
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
-  return posts.map(post => ({
-    params: { slug: post.slug },
-    props: { city: post.data.city },
-  }))
+  return posts
+    .filter(post => getLangFromSlug(post.slug) === 'de')
+    .map(post => ({
+      params: { slug: post.slug },
+      props: { city: post.data.city },
+    }))
 }
 
 const { slug } = Astro.params

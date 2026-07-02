@@ -51,6 +51,10 @@ const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = false } = Astro.props
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiFr.nav.aide}
         </a>
+        <a href="/fr/blog" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+          class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
+          {uiFr.nav.blog}
+        </a>
 
         <!-- Language switcher -->
         <span class="text-xs font-medium tracking-widest uppercase"
@@ -105,6 +109,9 @@ const { ctaHref = '#demo', ctaLabel = uiFr.nav.cta, dark = false } = Astro.props
       </a>
       <a href="/fr/aide" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiFr.nav.aide}
+      </a>
+      <a href="/fr/blog" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
+        {uiFr.nav.blog}
       </a>
       <a href="/" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         🇩🇪 Version (DE)

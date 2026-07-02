@@ -1,0 +1,178 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import NavbarFr from '@/components/NavbarFr.astro'
+import FooterFr from '@/components/FooterFr.astro'
+import { getCollection } from 'astro:content'
+import { getLangFromSlug, stripLang } from '@/data/hilfe-categories'
+import { BLOG_UI, blogBase, getBlogCategoryLabel, blogCategoryColors } from '@/data/blog-i18n'
+
+const lang = 'fr' as const
+const ui = BLOG_UI[lang]
+const base = blogBase(lang)
+
+const now = new Date()
+const allPosts = await getCollection('blog')
+const posts = allPosts
+  .filter(p => getLangFromSlug(p.slug) === lang && p.data.pubDate <= now && p.data.approved !== false)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+
+const featured = posts.find(p => p.data.featured) ?? posts[0]
+const rest = posts.filter(p => p.slug !== featured.slug)
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat(ui.dateLocale, { day: 'numeric', month: 'long', year: 'numeric' }).format(date)
+}
+---
+
+<BaseLayout
+  title={ui.metaTitle}
+  description={ui.metaDescription}
+  lang={lang}
+  locale={ui.locale}
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/koeln/blog' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/blog' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/blog' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/koeln/blog' },
+  ]}
+>
+  <NavbarFr ctaHref="/fr/" />
+
+  <!-- Hero -->
+  <section class="relative bg-paper overflow-hidden pt-32 pb-16">
+    <div class="absolute inset-0 bg-grid-ink opacity-100 pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 text-amber text-xs font-bold tracking-[0.3em] uppercase mb-6">
+          <span class="w-8 h-px bg-amber"></span>
+          {ui.heroEyebrow}
+        </div>
+        <h1 class="text-5xl sm:text-6xl font-black text-ink tracking-tight leading-none mb-5">
+          BLOG
+        </h1>
+        <p class="text-lg text-ink/50 leading-relaxed max-w-lg">
+          {ui.heroSubtitle}
+        </p>
+        <nav class="flex items-center gap-2 text-xs text-ink/55 mt-8 tracking-wide">
+          <a href="/fr/" class="hover:text-ink/60 transition-colors">{ui.breadcrumbHome}</a>
+          <span>›</span>
+          <span class="text-ink/50">{ui.breadcrumbBlog}</span>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  {featured && (
+    <section class="bg-paper">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <a href={`${base}/${stripLang(featured.slug)}`} class="group block">
+          <div class="grid md:grid-cols-2 gap-0 border border-ink/10 hover:border-amber/40 transition-colors duration-300 overflow-hidden">
+            <div class="relative overflow-hidden aspect-[4/3] md:aspect-auto min-h-[280px] bg-paper-dark flex items-center justify-center">
+              <img
+                src={featured.data.heroImage}
+                alt={featured.data.title}
+                class="max-h-[280px] w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-700 p-6"
+                loading="eager"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="inline-block bg-amber text-white text-xs font-bold tracking-widest uppercase px-3 py-1.5">
+                  {ui.featured}
+                </span>
+              </div>
+            </div>
+            <div class="bg-white p-8 sm:p-10 flex flex-col justify-center border-l border-ink/10">
+              <div class="flex items-center gap-3 mb-5">
+                <span class={`text-xs font-semibold tracking-wide uppercase px-2.5 py-1 rounded-sm ${blogCategoryColors[featured.data.category]}`}>
+                  {getBlogCategoryLabel(featured.data.category, lang)}
+                </span>
+                <span class="text-ink/50 text-xs">{featured.data.readingTime} {ui.readingTime}</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold text-ink leading-snug mb-4 group-hover:text-amber transition-colors">
+                {featured.data.title}
+              </h2>
+              <p class="text-ink/50 leading-relaxed text-sm mb-6 line-clamp-3">
+                {featured.data.description}
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-ink/50 text-xs">{formatDate(featured.data.pubDate)}</span>
+                <span class="inline-flex items-center gap-2 text-amber text-xs font-bold tracking-widest uppercase group-hover:gap-3 transition-all">
+                  {ui.read}
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- Rest of posts -->
+  <section class="bg-paper py-16">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="flex items-center gap-4 mb-10">
+        <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-ink/40">{ui.allArticles}</h2>
+        <div class="flex-1 h-px bg-ink/15"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10">
+        {rest.map(post => (
+          <a href={`${base}/${stripLang(post.slug)}`} class="group bg-white hover:bg-paper-dark transition-colors duration-200 p-7 flex flex-col">
+            <div class="relative overflow-hidden aspect-video mb-6 bg-paper-dark flex items-center justify-center">
+              <img
+                src={post.data.heroImage}
+                alt={post.data.title}
+                class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 p-4"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class={`text-xs font-semibold tracking-wide uppercase px-2 py-0.5 rounded-sm ${blogCategoryColors[post.data.category]}`}>
+                {getBlogCategoryLabel(post.data.category, lang)}
+              </span>
+              <span class="text-ink/50 text-xs">{post.data.readingTime} {ui.readingTimeShort}</span>
+            </div>
+            <h3 class="text-base font-bold text-ink leading-snug mb-3 group-hover:text-amber transition-colors flex-1">
+              {post.data.title}
+            </h3>
+            <p class="text-ink/40 text-sm leading-relaxed line-clamp-2 mb-5">
+              {post.data.description}
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-4 border-t border-ink/10">
+              <span class="text-ink/50 text-xs">{formatDate(post.data.pubDate)}</span>
+              <svg class="w-4 h-4 text-ink/50 group-hover:text-amber group-hover:translate-x-1 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-ink py-20">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <div class="text-xs font-bold tracking-[0.3em] uppercase text-amber mb-4">{ui.ctaEyebrow}</div>
+      <h2 class="text-3xl sm:text-4xl font-black text-paper mb-5 leading-tight">
+        {ui.ctaTitle}
+      </h2>
+      <p class="text-paper/50 mb-8 text-base leading-relaxed">
+        {ui.ctaText}
+      </p>
+      <a
+        href="/fr/"
+        class="inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-white font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors group"
+      >
+        {ui.ctaButton}
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <FooterFr />
+</BaseLayout>

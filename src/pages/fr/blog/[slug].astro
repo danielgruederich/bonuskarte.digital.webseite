@@ -1,0 +1,432 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import NavbarFr from '@/components/NavbarFr.astro'
+import FooterFr from '@/components/FooterFr.astro'
+import { getLangFromSlug, stripLang } from '@/data/hilfe-categories'
+import { BLOG_UI, blogBase, getBlogCategoryLabel, blogCategoryColors } from '@/data/blog-i18n'
+
+const lang = 'fr' as const
+const ui = BLOG_UI[lang]
+const base = blogBase(lang)
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog')
+  return posts
+    .filter(p => getLangFromSlug(p.slug) === 'fr')
+    .map(post => ({
+      params: { slug: stripLang(post.slug) },
+      props: { post },
+    }))
+}
+
+const { post } = Astro.props
+const { Content } = await post.render()
+const articleUrl = `https://bonuskarte.digital${base}/${stripLang(post.slug)}`
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat(ui.dateLocale, { day: 'numeric', month: 'long', year: 'numeric' }).format(date)
+}
+
+const allPosts = await getCollection('blog')
+const related = allPosts
+  .filter(p => getLangFromSlug(p.slug) === 'fr' && p.slug !== post.slug)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
+---
+
+<BaseLayout
+  title={`${post.data.title} — bonuskarte.digital`}
+  description={post.data.description}
+  ogImage={post.data.heroImage}
+  lang={lang}
+  locale={ui.locale}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "image": post.data.heroImage,
+    "inLanguage": "fr",
+    "datePublished": post.data.pubDate.toISOString(),
+    "dateModified": (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    "author": { "@type": "Person", "name": "Daniel Grüderich", "url": "https://www.linkedin.com/in/dgruederich/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "bonuskarte.digital",
+      "logo": { "@type": "ImageObject", "url": "https://bonuskarte.digital/favicon.svg" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": articleUrl }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": ui.breadcrumbHome, "item": "https://bonuskarte.digital/fr/"},
+      {"@type": "ListItem", "position": 2, "name": ui.breadcrumbBlog, "item": `https://bonuskarte.digital${base}`},
+      {"@type": "ListItem", "position": 3, "name": post.data.title, "item": articleUrl}
+    ]
+  })} />
+  {post.data.faqItems && post.data.faqItems.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": post.data.faqItems.map((item: {q: string, a: string}) => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a }
+      }))
+    })} />
+  )}
+  <NavbarFr ctaHref="/fr/" />
+
+  <!-- Reading progress bar -->
+  <div class="fixed top-0 left-0 right-0 z-[100] h-0.5 bg-transparent">
+    <div id="progress-bar" class="h-full bg-amber transition-none" style="width:0%"></div>
+  </div>
+
+  <!-- ── Article Header ───────────────────────── -->
+  <header class="bg-paper pt-28 pb-10 sm:pb-14 border-b border-ink/10">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8">
+
+      <nav class="flex items-center flex-wrap gap-1.5 text-xs text-ink/55 mb-7 tracking-wide">
+        <a href="/fr/" class="hover:text-ink transition-colors">{ui.breadcrumbHome}</a>
+        <span>›</span>
+        <a href={base} class="hover:text-ink transition-colors">{ui.breadcrumbBlog}</a>
+        <span>›</span>
+        <span class="text-ink/50">{getBlogCategoryLabel(post.data.category, lang)}</span>
+      </nav>
+
+      <div class="flex flex-wrap items-center gap-2.5 mb-5">
+        <span class={`text-xs font-semibold tracking-wide uppercase px-2.5 py-1 ${blogCategoryColors[post.data.category]}`}>
+          {getBlogCategoryLabel(post.data.category, lang)}
+        </span>
+        <span class="text-ink/50 text-xs">{post.data.readingTime} {ui.readingTime}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-black text-ink leading-tight tracking-tight mb-5">
+        {post.data.title}
+      </h1>
+
+      <p class="text-ink/55 text-base sm:text-lg leading-relaxed mb-7">
+        {post.data.description}
+      </p>
+
+      <div class="flex items-center gap-3 pt-5 border-t border-ink/10">
+        <img src="/images/daniel-gruederich.png" alt="Daniel Grüderich" class="w-9 h-9 rounded-full object-cover object-top flex-shrink-0" />
+        <div>
+          <div class="text-ink text-sm font-semibold leading-none mb-1">Daniel Grüderich</div>
+          <div class="text-ink/60 text-xs">{ui.authorRole} · {formatDate(post.data.pubDate)}</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ── Hero Image ───────────────────────────── -->
+  <div class="bg-paper">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 py-8 sm:py-10">
+      <div class="flex items-center justify-center bg-paper-dark min-h-[200px] sm:min-h-[320px] p-6 sm:p-10">
+        <img
+          src={post.data.heroImage}
+          alt={post.data.title}
+          class="max-h-[200px] sm:max-h-[300px] w-auto max-w-full object-contain drop-shadow-2xl"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Article Body ─────────────────────────── -->
+  <main class="bg-white">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+      <article id="article-body" class="article-body">
+        <Content />
+      </article>
+    </div>
+  </main>
+
+  <!-- ── Author Bio ───────────────────────────── -->
+  <section class="bg-paper-dark py-10 sm:py-12 border-t border-ink/10">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8">
+      <div class="flex items-start gap-5">
+        <img src="/images/daniel-gruederich.png" alt="Daniel Grüderich" class="w-16 h-16 rounded-full object-cover object-top flex-shrink-0" />
+        <div>
+          <div class="text-xs font-bold tracking-[0.2em] uppercase text-ink/40 mb-1">{ui.authorHeading}</div>
+          <div class="text-ink font-semibold text-sm mb-0.5">Daniel Grüderich</div>
+          <div class="text-amber text-xs font-medium mb-2">{ui.authorRole}</div>
+          <p class="text-ink/70 text-sm leading-relaxed">{ui.authorBio}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Banner ───────────────────────────── -->
+  <section class="bg-ink py-14 sm:py-20">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+        <div class="flex-1">
+          <div class="text-amber text-xs font-bold tracking-[0.25em] uppercase mb-2">{ui.ctaEyebrow}</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-paper leading-tight">
+            {ui.ctaTitle}
+          </h2>
+          <p class="text-paper/45 text-sm mt-2 leading-relaxed">
+            {ui.ctaText}
+          </p>
+        </div>
+        <div class="flex-shrink-0">
+          <a
+            href="/fr/"
+            class="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-white font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors group"
+          >
+            {ui.ctaButton}
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Related Posts ────────────────────────── -->
+  {related.length > 0 && (
+    <section class="bg-white py-14 sm:py-16 border-t border-ink/10">
+      <div class="max-w-2xl mx-auto px-5 sm:px-8">
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-xs font-bold tracking-[0.25em] uppercase text-ink/40">{ui.relatedTitle}</h2>
+          <a href={base} class="text-xs text-amber hover:text-amber tracking-widest uppercase transition-colors font-medium">
+            {ui.relatedAll}
+          </a>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-px bg-ink/10">
+          {related.map(p => (
+            <a href={`${base}/${stripLang(p.slug)}`} class="group bg-white hover:bg-paper-dark transition-colors p-5 flex flex-col gap-3">
+              <div class="bg-paper-dark flex items-center justify-center aspect-video overflow-hidden">
+                <img
+                  src={p.data.heroImage}
+                  alt={p.data.title}
+                  class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500 p-3"
+                  loading="lazy"
+                />
+              </div>
+              <span class="text-amber text-xs font-semibold tracking-wide uppercase">{getBlogCategoryLabel(p.data.category, lang)}</span>
+              <h3 class="text-sm font-bold text-ink leading-snug group-hover:text-amber transition-colors">
+                {p.data.title}
+              </h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <FooterFr />
+</BaseLayout>
+
+<!-- Reading progress bar script -->
+<script>
+  const bar = document.getElementById('progress-bar')
+  const article = document.getElementById('article-body')
+
+  if (bar && article) {
+    window.addEventListener('scroll', () => {
+      const articleTop = article.getBoundingClientRect().top + window.scrollY
+      const articleH   = article.offsetHeight
+      const winH       = window.innerHeight
+      const scrolled   = window.scrollY - articleTop
+      const total      = articleH - winH
+      const pct        = total > 0 ? Math.min(100, Math.max(0, (scrolled / total) * 100)) : 0
+      bar.style.width  = pct + '%'
+    }, { passive: true })
+  }
+</script>
+
+<style is:global>
+/* ── Base ── */
+.article-body {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #374151;
+}
+
+/* ── Headings ── */
+.article-body h2 {
+  font-size: 1.4375rem;
+  font-weight: 800;
+  color: #000;
+  margin-top: 3.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  padding-left: 1rem;
+  border-left: 3px solid #F25C24;
+}
+
+.article-body h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+/* ── Paragraph ── */
+.article-body p {
+  margin-bottom: 1.375rem;
+}
+
+.article-body h2 + p {
+  margin-top: 0.25rem;
+}
+
+/* ── Bold ── */
+.article-body strong {
+  font-weight: 700;
+  color: #111;
+}
+
+/* ── Links ── */
+.article-body a {
+  color: #F25C24;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(139,115,0,0.35);
+  transition: border-color 0.15s;
+}
+.article-body a:hover {
+  border-bottom-color: #F25C24;
+}
+
+/* ── Lists ── */
+.article-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+.article-body ul li {
+  position: relative;
+  padding-left: 1.625rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.75;
+}
+.article-body ul li::before {
+  content: '→';
+  color: #F25C24;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+}
+.article-body ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  counter-reset: ol-counter;
+}
+.article-body ol li {
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+  counter-increment: ol-counter;
+}
+.article-body ol li::before {
+  content: counter(ol-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Blockquote — editorial dark card ── */
+.article-body blockquote {
+  background: #0d0d0d;
+  border: none;
+  border-left: 3px solid #F25C24;
+  padding: 1.375rem 1.5rem;
+  margin: 2rem 0;
+  font-style: normal;
+}
+.article-body blockquote p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.article-body blockquote strong {
+  color: #c9a84c;
+  font-weight: 700;
+}
+
+/* ── Tables — mobile scrollable ── */
+.article-body table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.875rem;
+}
+.article-body thead th {
+  background: #000;
+  color: #fff;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.article-body thead th:first-child {
+  border-left: 3px solid #F25C24;
+}
+.article-body tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.1s;
+}
+.article-body tbody tr:hover {
+  background: #fafafa;
+}
+.article-body tbody td {
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+  color: #374151;
+  white-space: nowrap;
+}
+.article-body tbody td:first-child {
+  font-weight: 600;
+  color: #111;
+  white-space: normal;
+}
+
+/* ── HR ── */
+.article-body hr {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 3rem 0;
+}
+
+/* ── Code ── */
+.article-body code {
+  background: #f4f4f5;
+  padding: 0.15em 0.45em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  color: #111;
+}
+</style>

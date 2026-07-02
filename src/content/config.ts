@@ -12,6 +12,7 @@ const blog = defineCollection({
     readingTime: z.number(),
     featured: z.boolean().default(false),
     city: z.string(), // e.g. 'koeln', 'hamburg', 'berlin'
+    lang: z.enum(['de', 'fr', 'en']).default('de'), // i18n: DE default, FR/EN posts live in blog/fr, blog/en
     niche: z.string().optional(), // e.g. 'cafe', 'eiscafe', 'baeckerei' — used for booking URL
     approved: z.boolean().default(true), // false = Entwurf, true = freigegeben
     needsEdit: z.boolean().default(false), // true = Änderungen nötig
