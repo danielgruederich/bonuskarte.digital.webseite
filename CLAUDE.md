@@ -56,6 +56,7 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `src/data/niches.ts` | Zentrale Nischen-Config (slug, SEO, Copy, Template ID) |
 | `src/data/veedel.ts` | 15 Kölner Veedel mit FOMO-Counts |
 | `src/pages/koeln/[veedel]/[niche].astro` | Unified Landing Page (60 Seiten) |
+| `src/pages/funktionen.astro` | Feature-Übersicht (Boomerangme-Featureset, Stand Juli 2026) |
 | `src/pages/koeln/walkin.astro` | Walk-in-Landingpage fürs iPad (noindex, `source='gruender_walkin'`), nische-unabhängig |
 | `src/components/CityNichePage.astro` | Gemeinsames Landing-Page-Template aller Städte außer Köln (Formular im Hero, WhatsApp-CTA, Termin-Link, FAQ + Schema.org, Sticky-CTA) |
 | `src/components/LandingFaq.astro` | FAQ-Sektion + FAQPage-Schema für Landing Pages |

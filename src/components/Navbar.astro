@@ -11,10 +11,11 @@ const isCityCta = !ctaHref.startsWith('#')
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SiteNavigationElement",
-  "name": ["Wie es funktioniert", "Branchen", "Preise", "Blog", "FAQ", "Köln"],
+  "name": ["Wie es funktioniert", "Branchen", "Funktionen", "Preise", "Blog", "FAQ", "Köln"],
   "url": [
     "https://bonuskarte.digital/#wie-es-funktioniert",
     "https://bonuskarte.digital/#branchen",
+    "https://bonuskarte.digital/funktionen",
     "https://bonuskarte.digital/preise",
     "https://bonuskarte.digital/koeln/blog",
     "https://bonuskarte.digital/faq",
@@ -42,6 +43,7 @@ const isCityCta = !ctaHref.startsWith('#')
         {[
           { href: '/#wie-es-funktioniert', label: 'Wie es funktioniert' },
           { href: '/#branchen',            label: 'Branchen' },
+          { href: '/funktionen',           label: 'Funktionen' },
           { href: '/karten',               label: 'Karten' },
           { href: '/preise',               label: 'Preise' },
           { href: '/koeln/blog',           label: 'Blog' },
@@ -91,6 +93,7 @@ const isCityCta = !ctaHref.startsWith('#')
     <div id="mobile-menu" class="lg:hidden hidden border-t border-ink/10 py-6 flex flex-col gap-5 bg-paper/98 backdrop-blur-md">
       <a href="/#wie-es-funktioniert" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Wie es funktioniert</a>
       <a href="/#branchen"            class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Branchen</a>
+      <a href="/funktionen"           class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Funktionen</a>
       <a href="/karten"               class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Karten</a>
       <a href="/preise"               class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Preise</a>
       <a href="/koeln/blog"           class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Blog</a>

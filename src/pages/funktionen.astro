@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import Icon from '../components/icons/TrustIcons.astro'
+
+const groups = [
+  {
+    title: 'Karten & Wallet',
+    kicker: 'Die Basis',
+    features: [
+      { name: '8 Kartentypen', desc: 'Stempelkarte, 10er-Karte, Coupon, Gutschein, Mitgliedskarte, Rabattkarte, Cashback & Punktekarte – für jeden Betrieb die passende Mechanik.', href: '/karten', isNew: false },
+      { name: 'Apple Wallet & Google Wallet', desc: 'Die Karte landet direkt im Wallet – auf jedem Smartphone vorinstalliert. Kein App-Download, keine Registrierung.', isNew: false },
+      { name: 'Eigenes Branding', desc: 'Logo, Farben, Belohnung und Kartentexte – deine Karte sieht aus wie dein Betrieb, nicht wie eine Software.', isNew: false },
+      { name: 'Flexibles Anmeldeformular', desc: 'Du bestimmst, welche Daten Kunden bei der Karten-Installation angeben – Felder frei konfigurierbar, Pflichtfelder inklusive.', isNew: false },
+      { name: 'Happy-Hour-Regeln', desc: 'Extra-Stempel oder höhere Rabatte in frei definierbaren Zeitfenstern – ideal, um schwache Stunden zu füllen.', isNew: false },
+      { name: 'Tages-Stempellimit', desc: 'Begrenze, wie viele Stempel ein Kunde pro Tag sammeln kann – schützt dein Programm vor Missbrauch.', isNew: true },
+    ],
+  },
+  {
+    title: 'Push-Nachrichten',
+    kicker: 'Der direkte Kanal',
+    features: [
+      { name: 'Unbegrenzte Push-Nachrichten', desc: 'Direkt auf den Sperrbildschirm deiner Kunden – in jedem Paket inklusive, ohne SMS-Kosten.', isNew: false },
+      { name: 'Geo-Push', desc: 'Kommt ein Kunde in die Nähe deines Geschäfts (ca. 100 m, iPhone), erscheint deine Karte automatisch auf dem Sperrbildschirm. Einmal einrichten, läuft von selbst.', isNew: true },
+      { name: 'Push Automation', desc: 'Automatische Nachrichten zum Geburtstag, bei längerer Abwesenheit oder als Terminerinnerung – du stellst es einmal ein.', isNew: false },
+      { name: 'Transaktions-Push', desc: 'Nach jedem Stempel oder Punkt bekommt der Kunde automatisch eine Bestätigung – der aktuelle Stand ist immer sichtbar.', isNew: false },
+      { name: 'Verfalls-Erinnerung', desc: 'Laufen Stempel oder Punkte bald ab, wird der Kunde automatisch erinnert – der stärkste Anreiz, nochmal vorbeizukommen.', isNew: true },
+    ],
+  },
+  {
+    title: 'Bewertungen & Empfehlungen',
+    kicker: 'Neukunden auf Autopilot',
+    features: [
+      { name: 'Feedback nach dem Besuch', desc: 'Etwa eine Stunde nach dem Besuch fragt die Karte automatisch nach einer Bewertung – du erfährst sofort, wenn etwas nicht passt.', isNew: true },
+      { name: 'Google-Bewertungen sammeln', desc: 'Zufriedene Kunden werden automatisch gebeten, dich auf Google zu bewerten – mehr Sichtbarkeit, ohne dass du fragen musst.', isNew: true },
+      { name: 'Empfehlungsprogramm', desc: 'Kunden teilen deine Karte per Link – Werber und Geworbener bekommen einen Bonus (z. B. Extra-Stempel). Höhe und Zeitpunkt bestimmst du.', isNew: true },
+    ],
+  },
+  {
+    title: 'Automatisierung & KI',
+    kicker: 'Läuft ohne dich',
+    features: [
+      { name: 'Automations-Baukasten', desc: 'Trigger, Bedingung, Aktion – baue eigene Abläufe per Drag & Drop, z. B. "3 Wochen nicht da → Angebot senden".', isNew: true },
+      { name: 'KI-Marketing-Assistent', desc: 'Die KI analysiert das Verhalten deiner Kunden und verschickt zur richtigen Zeit die richtige Nachricht – inklusive wöchentlichem Bericht.', isNew: true },
+      { name: 'Automatische Berichte', desc: 'Deine wichtigsten Zahlen kommen täglich, wöchentlich oder monatlich per E-Mail – ganz ohne Login.', isNew: false },
+    ],
+  },
+  {
+    title: 'Kunden & Statistiken',
+    kicker: 'Echte Zahlen',
+    features: [
+      { name: 'Live-Dashboard', desc: 'Besuche, aktive Karten, Wiederkehr-Rate, Feedback und Empfehlungen – alles in Echtzeit auf einen Blick.', isNew: false },
+      { name: 'Kundenprofile & Filter', desc: 'Jeder Kunde mit Historie: Besuche, Stempel, Einlösungen. Filterbar und als CSV importier- und exportierbar.', isNew: false },
+      { name: 'Segmente & gezielte Aktionen', desc: 'Stammkunden, Gelegenheitsgäste, inaktive Kunden – sprich jede Gruppe getrennt an, statt alle gleich.', isNew: false },
+    ],
+  },
+  {
+    title: 'Team & Betrieb',
+    kicker: 'Im Alltag',
+    features: [
+      { name: 'Scanner-App im Browser', desc: 'Stempeln mit jedem Smartphone oder Tablet – Browser auf, QR scannen, fertig. Kein Kassensystem, keine Hardware.', isNew: false },
+      { name: 'Mitarbeiter-Zugänge', desc: 'Eigene Zugangsdaten pro Mitarbeiter, mit Aktivitäts-Statistik – du siehst, wer wann gestempelt hat, pro Standort oder Schicht.', isNew: false },
+      { name: 'Kiosk-Modus', desc: 'Kunden stempeln selbst am Tablet an der Theke – ohne dass dein Team etwas tun muss. Ideal für Stoßzeiten.', isNew: true },
+      { name: 'Kundensuche ohne Scan', desc: 'Handy vergessen? Kunden lassen sich auch über Name, Telefonnummer oder Kartennummer finden und stempeln.', isNew: false },
+      { name: 'Stempel-Korrektur', desc: 'Falsch oder doppelt gestempelt? Jede Buchung ist im Dashboard nachvollziehbar und korrigierbar.', isNew: false },
+      { name: '16 Sprachen', desc: 'Karten und Kunden-Ansichten in 16 Sprachen – auch für internationales Publikum und Touristen.', isNew: true },
+    ],
+  },
+  {
+    title: 'Integrationen & Enterprise',
+    kicker: 'Für Ketten & Systeme',
+    features: [
+      { name: 'Multi-Standort-Dashboard', desc: 'Alle Filialen in einer Übersicht, Kampagnen zentral steuern – für Ketten und Franchise-Systeme.', isNew: false },
+      { name: 'API & Webhooks', desc: 'Binde die Karten an deine eigenen Systeme an – Karten, Stempel und Kundendaten per Schnittstelle (Enterprise).', isNew: false },
+      { name: 'Zapier & Make', desc: 'Verbinde dein Bonusprogramm mit über 5.000 Tools – vom Newsletter bis zur Buchhaltung.', isNew: false },
+      { name: 'White-Label & eigene Domain', desc: 'Deine Karte unter deiner Domain, komplett in deinem Look – für Franchise- und Enterprise-Pakete.', isNew: false },
+    ],
+  },
+]
+---
+
+<BaseLayout
+  title="Alle Funktionen – Push, Geo-Push, Google-Bewertungen & mehr | bonuskarte.digital"
+  description="Alle Funktionen der digitalen Bonuskarte im Überblick: unbegrenzte Push-Nachrichten, Geo-Push, Google-Bewertungen sammeln, Empfehlungsprogramm, Automatisierungen, Live-Statistiken, Scanner-App & mehr."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/" },
+      { "@type": "ListItem", "position": 2, "name": "Funktionen" }
+    ]
+  })} />
+
+  <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
+
+  <!-- HERO -->
+  <section class="bg-paper pt-28 pb-14 px-5 sm:px-8 border-b border-ink/30">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
+        <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
+        <span>›</span>
+        <span class="text-ink/60">Funktionen</span>
+      </nav>
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">Alle Funktionen · Ein Preis</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-4">
+        Mehr als eine<br />
+        <span class="font-bold text-amber">Stempelkarte.</span>
+      </h1>
+      <p class="text-ink/60 text-base leading-relaxed max-w-2xl">
+        Push-Nachrichten, Geo-Push, Google-Bewertungen, Empfehlungsprogramm, Automatisierungen,
+        Live-Statistiken – die Plattform hinter bonuskarte.digital wird laufend weiterentwickelt.
+        Neue Funktionen erscheinen automatisch in deinem Konto, ohne Aufpreis.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURE GROUPS -->
+  <section class="bg-paper py-14 px-5 sm:px-8">
+    <div class="max-w-5xl mx-auto space-y-14">
+      {groups.map(group => (
+        <div>
+          <div class="flex items-center gap-4 mb-8">
+            <span class="text-xs tracking-[0.4em] uppercase text-amber whitespace-nowrap">{group.kicker}</span>
+            <div class="h-px flex-1 bg-ink/20"></div>
+            <h2 class="text-ink text-lg font-bold tracking-tight whitespace-nowrap">{group.title}</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {group.features.map(f => (
+              <div class="border border-ink/10 hover:border-amber/30 transition-colors p-6 flex flex-col">
+                <div class="flex items-start justify-between gap-3 mb-2">
+                  <div class="flex items-start gap-2.5">
+                    <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-1 flex-shrink-0" />
+                    <h3 class="text-ink text-sm font-semibold leading-snug">{f.name}</h3>
+                  </div>
+                  {f.isNew && (
+                    <span class="bg-amber text-black text-[9px] font-bold tracking-[0.2em] uppercase px-2 py-0.5 flex-shrink-0">Neu</span>
+                  )}
+                </div>
+                <p class="text-ink/60 text-sm leading-relaxed flex-1">{f.desc}</p>
+                {f.href && (
+                  <a href={f.href} class="mt-3 text-amber text-xs font-medium tracking-[0.15em] uppercase hover:text-amber-dark transition-colors">
+                    Alle Kartentypen →
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <p class="text-center text-ink/50 text-sm leading-relaxed max-w-2xl mx-auto">
+        Welche Funktionen in welchem Paket enthalten sind, siehst du auf der
+        <a href="/preise" class="text-amber hover:text-amber-dark transition-colors">Preise-Seite</a>.
+        Push-Nachrichten, Statistiken und unbegrenzte Karten sind in jedem Paket inklusive.
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-2xl mx-auto text-center">
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Kein Risiko</p>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
+        Alle Funktionen
+      </h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">
+        90 Tage gratis testen.
+      </h2>
+      <a href="/koeln" data-city-cta
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        Jetzt kostenlos starten
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
