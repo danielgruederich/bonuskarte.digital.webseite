@@ -1,5 +1,5 @@
 export const uiEn = {
-  nav: { howItWorks: 'How it works', industries: 'Industries', cards: 'Cards', pricing: 'Pricing', faq: 'FAQ', help: 'Help', blog: 'Blog', cta: 'Try 90 days free' },
+  nav: { howItWorks: 'How it works', industries: 'Industries', features: 'Features', cards: 'Cards', pricing: 'Pricing', faq: 'FAQ', help: 'Help', blog: 'Blog', cta: 'Try 90 days free' },
   trust: ['✅ 90 days free', '🔒 GDPR', '⚡ Live in 24h', '📱 Apple & Google Wallet'],
   footer: {
     tagline: 'Digital loyalty cards for Apple Wallet & Google Wallet. No app, no hassle.',
