@@ -59,6 +59,7 @@ const pageUrl   = `https://bonuskarte.digital/${citySlug}/${stadtteilData.slug}/
 <BaseLayout
   title={r(nicheData.seoTitle).replace('Köln', cityName)}
   description={r(nicheData.seoDescription).replace('Köln', cityName)}
+  showStickyCta={false}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
