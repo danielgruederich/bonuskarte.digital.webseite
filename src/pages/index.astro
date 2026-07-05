@@ -4,8 +4,15 @@ import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import PhoneMockup from '../components/PhoneMockup.tsx'
 import RotatingWord from '../components/RotatingWord.tsx'
+import LeadForm from '../components/LeadForm.tsx'
+import StickyMobileCta from '../components/StickyMobileCta.astro'
 import Icon from '../components/icons/TrustIcons.astro'
 import { cardBranchPairs } from '../data/card-branch-pairs'
+import { niches } from '../data/niches'
+
+const nicheOptions = niches.map((n) => ({ slug: n.slug, label: n.label }))
+const whatsappUrl = 'https://wa.me/491705594140'
+const bookingUrl = 'https://termin.bonuskarte.digital/15min'
 
 const howItWorks = [
   { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine digitale Karte mit deinem Branding in unter 24 Stunden.' },
@@ -81,6 +88,7 @@ const testimonials = [
     { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/' },
     { hreflang: 'x-default', href: 'https://bonuskarte.digital/' },
   ]}
+  showStickyCta={false}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -131,7 +139,7 @@ const testimonials = [
       { "@type": "Question", "name": "Ist das DSGVO-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden." } }
     ]
   })} />
-  <Navbar ctaHref="/koeln" ctaLabel="Jetzt starten" />
+  <Navbar ctaHref="#demo" ctaLabel="Jetzt starten" />
 
   <!-- ── HERO ──────────────────────────────────────────────────── -->
   <section class="relative flex items-center bg-paper overflow-hidden">
@@ -176,7 +184,7 @@ const testimonials = [
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <a href="/koeln" data-city-cta
+            <a href="#demo"
               class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
               Kostenlos testen
               <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -277,6 +285,43 @@ const testimonials = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
+  <section id="demo" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber rounded-full blur-[180px] opacity-5"></div>
+    <div class="relative max-w-xl mx-auto">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2 mb-8">
+          <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
+          <span class="text-amber text-xs tracking-[0.3em] uppercase">
+            90 Tage kostenlos testen
+          </span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">Demo-Karte</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-6">direkt ins Wallet.</h2>
+        <p class="text-ink text-base font-normal leading-relaxed max-w-sm mx-auto">
+          Branche wählen, eintragen – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
+        </p>
+      </div>
+      <div class="relative border border-amber/20 bg-paper p-6 sm:p-10">
+        <LeadForm
+          client:load
+          niche=""
+          city=""
+          whatsappUrl={whatsappUrl}
+          bookingUrl={bookingUrl}
+          bookingType="15min"
+          source="homepage"
+          selectableNiche={true}
+          nicheOptions={nicheOptions}
+        />
+      </div>
+      <p class="text-center text-ink text-sm mt-5">
+        Nach 90 Tagen ab 29 €/Monat — unter 1 € pro Tag ·
+        <a href="/preise" class="text-amber hover:text-amber underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
+      </p>
     </div>
   </section>
 
@@ -429,7 +474,7 @@ const testimonials = [
         Stammkunden?
       </h2>
       <p class="text-ink text-xs tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
-      <a href="/koeln" data-city-cta
+      <a href="#demo"
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
         Kostenlos starten
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -439,5 +484,6 @@ const testimonials = [
     </div>
   </section>
 
+  <StickyMobileCta label="Kostenlos testen" />
   <Footer />
 </BaseLayout>

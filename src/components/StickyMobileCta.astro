@@ -10,7 +10,7 @@ interface Props {
 const { label = 'Jetzt 90 Tage gratis testen', href = '#demo' } = Astro.props
 ---
 <div
-  id="sticky-cta"
+  id="sticky-demo-cta"
   class="fixed bottom-0 inset-x-0 z-40 md:hidden translate-y-full transition-transform duration-300"
   aria-hidden="true"
 >
@@ -29,7 +29,7 @@ const { label = 'Jetzt 90 Tage gratis testen', href = '#demo' } = Astro.props
 </div>
 
 <script>
-  const bar = document.getElementById('sticky-cta')
+  const bar = document.getElementById('sticky-demo-cta')
   if (bar) {
     let pastHero = false
     let demoVisible = false
