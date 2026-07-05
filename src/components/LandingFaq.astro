@@ -1,0 +1,64 @@
+---
+/**
+ * FAQ-Sektion für Landing Pages inkl. FAQPage-Schema (JSON-LD).
+ * Beantwortet die häufigsten Einwände direkt vor dem Lead-Formular.
+ */
+const faqs = [
+  {
+    q: 'Ist das wirklich 90 Tage kostenlos?',
+    a: 'Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar.',
+  },
+  {
+    q: 'Brauchen meine Kunden eine App?',
+    a: 'Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet – beide sind auf jedem Smartphone vorinstalliert. Kein Download, keine Registrierung.',
+  },
+  {
+    q: 'Wie viel Aufwand habe ich bei der Einrichtung?',
+    a: 'Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live.',
+  },
+  {
+    q: 'Was kostet es nach der Testphase?',
+    a: 'Ab 29 €/Monat für einen Standort – das sind unter 1 € pro Tag. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Kommt nur ein Gast pro Monat wegen der Karte einmal mehr, hat es sich schon bezahlt. Keine Setup-Gebühr, monatlich kündbar.',
+  },
+  {
+    q: 'Ist das DSGVO-konform?',
+    a: 'Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden.',
+  },
+]
+---
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+})} />
+
+<section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
+  <div class="relative max-w-3xl mx-auto">
+    <div class="flex items-center gap-4 mb-10">
+      <div class="h-px flex-1 bg-ink/20"></div>
+      <span class="text-xs tracking-[0.4em] uppercase text-ink">Häufige Fragen</span>
+      <div class="h-px flex-1 bg-ink/20"></div>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map(faq => (
+        <details class="group border border-ink/30 hover:border-amber/20 transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
+            <span class="text-ink text-sm sm:text-base font-medium pr-4">{faq.q}</span>
+            <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6">
+            <p class="text-ink text-sm leading-relaxed font-normal">{faq.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

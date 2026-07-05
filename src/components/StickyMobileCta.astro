@@ -1,0 +1,63 @@
+---
+/**
+ * Sticky CTA-Leiste für Mobile: erscheint nach dem Scrollen am Hero vorbei,
+ * versteckt sich, solange das Lead-Formular (#demo) im Viewport ist.
+ */
+interface Props {
+  label?: string
+  href?: string
+}
+const { label = 'Jetzt 90 Tage gratis testen', href = '#demo' } = Astro.props
+---
+<div
+  id="sticky-cta"
+  class="fixed bottom-0 inset-x-0 z-40 md:hidden translate-y-full transition-transform duration-300"
+  aria-hidden="true"
+>
+  <div class="bg-paper/95 backdrop-blur border-t border-amber/30 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+    <a
+      href={href}
+      onclick="if(typeof gtag!=='undefined')gtag('event','cta_clicked',{location:'sticky_mobile'})"
+      class="flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-6 py-3.5 text-xs font-bold tracking-[0.2em] uppercase transition-all"
+    >
+      {label}
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById('sticky-cta')
+  if (bar) {
+    let pastHero = false
+    let demoVisible = false
+
+    const update = () => {
+      const show = pastHero && !demoVisible
+      bar.classList.toggle('translate-y-full', !show)
+      bar.setAttribute('aria-hidden', String(!show))
+    }
+
+    const demo = document.getElementById('demo')
+    if (demo) {
+      new IntersectionObserver(
+        entries => {
+          demoVisible = entries[0].isIntersecting
+          update()
+        },
+        { rootMargin: '0px 0px -15% 0px' },
+      ).observe(demo)
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        pastHero = window.scrollY > window.innerHeight * 0.7
+        update()
+      },
+      { passive: true },
+    )
+  }
+</script>

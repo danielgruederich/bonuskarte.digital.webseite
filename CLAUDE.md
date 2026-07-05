@@ -57,8 +57,11 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `src/data/veedel.ts` | 15 Kölner Veedel mit FOMO-Counts |
 | `src/pages/koeln/[veedel]/[niche].astro` | Unified Landing Page (60 Seiten) |
 | `src/pages/koeln/walkin.astro` | Walk-in-Landingpage fürs iPad (noindex, `source='gruender_walkin'`), nische-unabhängig |
+| `src/components/CityNichePage.astro` | Gemeinsames Landing-Page-Template aller Städte außer Köln (Formular im Hero, WhatsApp-CTA, Termin-Link, FAQ + Schema.org, Sticky-CTA) |
+| `src/components/LandingFaq.astro` | FAQ-Sektion + FAQPage-Schema für Landing Pages |
+| `src/components/StickyMobileCta.astro` | Sticky CTA-Leiste auf Mobile (versteckt sich, solange `#demo` sichtbar ist) |
 | `src/components/LeadForm.tsx` | Hauptformular (Café, Restaurant, Pizza, Eiscafé) |
-| `src/components/LeadFormDoener.tsx` | Vereinfachtes Formular für Döner |
+| `src/components/LeadFormDoener.tsx` | Vereinfachtes Formular für Döner (Props: `niche`, `city` für korrekte Lead-Attribution) |
 | `src/components/ui/gooey-text-morphing.tsx` | GooeyText-Animation (morphende Wörter, nur Eiscafé-Hero) |
 | `public/api/submit.php` | PHP API Handler → Boomerang |
 
