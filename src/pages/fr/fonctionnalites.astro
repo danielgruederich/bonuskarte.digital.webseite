@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarFr from '../../components/NavbarFr.astro'
+import FooterFr from '../../components/FooterFr.astro'
+import Icon from '../../components/icons/TrustIcons.astro'
+
+const groups = [
+  {
+    title: 'Cartes & Wallet',
+    kicker: 'La base',
+    features: [
+      { name: '8 types de cartes', desc: 'Carte à tampons, carte 10 séances, coupon, carte cadeau, carte de membre, carte de réduction, cashback & carte à points — la bonne mécanique pour chaque commerce.', href: '/fr/cartes', isNew: false },
+      { name: 'Apple Wallet & Google Wallet', desc: 'La carte arrive directement dans le wallet — préinstallé sur chaque smartphone. Aucune application à télécharger, aucune inscription.', isNew: false },
+      { name: 'Branding personnalisé', desc: 'Logo, couleurs, récompense et textes de la carte — votre carte ressemble à votre commerce, pas à un logiciel.', isNew: false },
+      { name: 'Formulaire d\'inscription flexible', desc: 'Vous décidez quelles informations vos clients fournissent à l\'installation de la carte — champs entièrement configurables, champs obligatoires inclus.', isNew: false },
+      { name: 'Règles happy hour', desc: 'Tampons supplémentaires ou réductions majorées pendant les créneaux que vous définissez — idéal pour remplir les heures creuses.', isNew: false },
+      { name: 'Limite de tampons par jour', desc: 'Limitez le nombre de tampons qu\'un client peut collecter par jour — protège votre programme contre les abus.', isNew: true },
+    ],
+  },
+  {
+    title: 'Notifications push',
+    kicker: 'Le canal direct',
+    features: [
+      { name: 'Notifications push illimitées', desc: 'Directement sur l\'écran verrouillé de vos clients — incluses dans chaque forfait, sans frais de SMS.', isNew: false },
+      { name: 'Géo-push', desc: 'Lorsqu\'un client passe à environ 100 mètres de votre commerce (iPhone), votre carte apparaît automatiquement sur son écran verrouillé. Configurez une fois — ensuite tout fonctionne tout seul.', isNew: true },
+      { name: 'Push Automation', desc: 'Messages automatiques pour les anniversaires, les absences prolongées ou les rappels de rendez-vous — vous configurez une fois, c\'est tout.', isNew: false },
+      { name: 'Push transactionnel', desc: 'Après chaque tampon ou point, le client reçoit automatiquement une confirmation — le solde actuel est toujours visible.', isNew: false },
+      { name: 'Rappel d\'expiration', desc: 'Quand des tampons ou des points arrivent à expiration, le client est automatiquement prévenu — la meilleure incitation à revenir.', isNew: true },
+    ],
+  },
+  {
+    title: 'Avis & parrainage',
+    kicker: 'Nouveaux clients en pilote automatique',
+    features: [
+      { name: 'Feedback après la visite', desc: 'Environ une heure après la visite, la carte demande automatiquement un avis — vous êtes informé immédiatement si quelque chose ne va pas.', isNew: true },
+      { name: 'Collecter des avis Google', desc: 'Les clients satisfaits sont automatiquement invités à vous laisser un avis Google — plus de visibilité, sans que votre équipe ait à demander.', isNew: true },
+      { name: 'Programme de parrainage', desc: 'Vos clients partagent votre carte via un lien — parrain et filleul reçoivent tous deux un bonus (p. ex. des tampons supplémentaires). Vous fixez le montant et le moment.', isNew: true },
+    ],
+  },
+  {
+    title: 'Automatisation & IA',
+    kicker: 'Fonctionne sans vous',
+    features: [
+      { name: 'Constructeur d\'automatisations', desc: 'Déclencheur, condition, action — créez vos propres scénarios par glisser-déposer, p. ex. « absent 3 semaines → envoyer une offre ».', isNew: true },
+      { name: 'Assistant marketing IA', desc: 'L\'IA analyse le comportement de vos clients et envoie le bon message au bon moment — avec un rapport hebdomadaire.', isNew: true },
+      { name: 'Rapports automatiques', desc: 'Vos chiffres clés arrivent par e-mail chaque jour, semaine ou mois — sans connexion nécessaire.', isNew: false },
+    ],
+  },
+  {
+    title: 'Clients & statistiques',
+    kicker: 'De vrais chiffres',
+    features: [
+      { name: 'Tableau de bord en direct', desc: 'Visites, cartes actives, taux de fidélisation, avis et parrainages — tout en un coup d\'œil, en temps réel.', isNew: false },
+      { name: 'Profils clients & filtres', desc: 'Chaque client avec son historique : visites, tampons, récompenses. Filtrable, avec import et export CSV.', isNew: false },
+      { name: 'Segments & campagnes ciblées', desc: 'Habitués, clients occasionnels, clients inactifs — adressez chaque groupe séparément au lieu de traiter tout le monde pareil.', isNew: false },
+    ],
+  },
+  {
+    title: 'Équipe & quotidien',
+    kicker: 'Au comptoir',
+    features: [
+      { name: 'App de scan dans le navigateur', desc: 'Tamponnez avec n\'importe quel smartphone ou tablette — ouvrez le navigateur, scannez le QR code, terminé. Pas de caisse, pas de matériel.', isNew: false },
+      { name: 'Accès équipe', desc: 'Identifiants individuels par employé, avec statistiques d\'activité — voyez qui a tamponné quand, par établissement ou par service.', isNew: false },
+      { name: 'Mode kiosque', desc: 'Les clients tamponnent eux-mêmes sur une tablette au comptoir — sans que votre équipe intervienne. Idéal aux heures de pointe.', isNew: true },
+      { name: 'Recherche client sans scan', desc: 'Téléphone oublié ? Retrouvez et tamponnez vos clients par nom, numéro de téléphone ou numéro de carte.', isNew: false },
+      { name: 'Correction de tampons', desc: 'Tamponné deux fois ou par erreur ? Chaque transaction est traçable et corrigeable dans le tableau de bord.', isNew: false },
+      { name: '16 langues', desc: 'Cartes et vues client en 16 langues — aussi pour une clientèle internationale et les touristes.', isNew: true },
+    ],
+  },
+  {
+    title: 'Intégrations & Enterprise',
+    kicker: 'Pour chaînes & franchises',
+    features: [
+      { name: 'Tableau de bord multi-établissements', desc: 'Toutes les succursales dans une vue d\'ensemble, campagnes gérées de façon centralisée — pour chaînes et franchises.', isNew: false },
+      { name: 'API & webhooks', desc: 'Connectez les cartes à vos propres systèmes — cartes, tampons et données clients via API (Enterprise).', isNew: false },
+      { name: 'Zapier & Make', desc: 'Connectez votre programme de fidélité à plus de 5 000 outils — de la newsletter à la comptabilité.', isNew: false },
+      { name: 'White-label & domaine personnalisé', desc: 'Votre carte sous votre domaine, entièrement à votre image — pour les forfaits Franchise et Enterprise.', isNew: false },
+    ],
+  },
+]
+---
+
+<BaseLayout
+  title="Toutes les fonctionnalités – push, géo-push, avis Google & plus | bonuskarte.digital"
+  description="Toutes les fonctionnalités de la carte de fidélité numérique : notifications push illimitées, géo-push, collecte d'avis Google, programme de parrainage, automatisations, statistiques en direct, app de scan & plus."
+  lang="fr"
+  locale="fr_FR"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/funktionen' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/features' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/fonctionnalites' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/funktionen' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Fonctionnalités" }
+    ]
+  })} />
+
+  <NavbarFr ctaHref="/fr/paris/" ctaLabel="Commencer maintenant" />
+
+  <!-- HERO -->
+  <section class="bg-paper pt-28 pb-14 px-5 sm:px-8 border-b border-ink/30">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
+        <a href="/fr/" class="hover:text-ink/60 transition-colors">Accueil</a>
+        <span>›</span>
+        <span class="text-ink/60">Fonctionnalités</span>
+      </nav>
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">Toutes les fonctionnalités · Un seul prix</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-4">
+        Plus qu'une<br />
+        <span class="font-bold text-amber">carte à tampons.</span>
+      </h1>
+      <p class="text-ink/60 text-base leading-relaxed max-w-2xl">
+        Notifications push, géo-push, avis Google, programme de parrainage, automatisations,
+        statistiques en direct — la plateforme derrière bonuskarte.digital évolue en permanence.
+        Les nouvelles fonctionnalités apparaissent automatiquement dans votre compte, sans supplément.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURE GROUPS -->
+  <section class="bg-paper py-14 px-5 sm:px-8">
+    <div class="max-w-5xl mx-auto space-y-14">
+      {groups.map(group => (
+        <div>
+          <div class="flex items-center gap-4 mb-8">
+            <span class="text-xs tracking-[0.4em] uppercase text-amber whitespace-nowrap">{group.kicker}</span>
+            <div class="h-px flex-1 bg-ink/20"></div>
+            <h2 class="text-ink text-lg font-bold tracking-tight whitespace-nowrap">{group.title}</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {group.features.map(f => (
+              <div class="border border-ink/10 hover:border-amber/30 transition-colors p-6 flex flex-col">
+                <div class="flex items-start justify-between gap-3 mb-2">
+                  <div class="flex items-start gap-2.5">
+                    <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-1 flex-shrink-0" />
+                    <h3 class="text-ink text-sm font-semibold leading-snug">{f.name}</h3>
+                  </div>
+                  {f.isNew && (
+                    <span class="bg-amber text-black text-[9px] font-bold tracking-[0.2em] uppercase px-2 py-0.5 flex-shrink-0">Nouveau</span>
+                  )}
+                </div>
+                <p class="text-ink/60 text-sm leading-relaxed flex-1">{f.desc}</p>
+                {f.href && (
+                  <a href={f.href} class="mt-3 text-amber text-xs font-medium tracking-[0.15em] uppercase hover:text-amber-dark transition-colors">
+                    Tous les types de cartes →
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <p class="text-center text-ink/50 text-sm leading-relaxed max-w-2xl mx-auto">
+        Retrouvez les fonctionnalités incluses dans chaque forfait sur la
+        <a href="/fr/tarifs" class="text-amber hover:text-amber-dark transition-colors">page des tarifs</a>.
+        Notifications push, statistiques et cartes illimitées sont incluses dans chaque forfait.
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-2xl mx-auto text-center">
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Zéro risque</p>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
+        Toutes les fonctionnalités
+      </h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">
+        90 jours gratuits.
+      </h2>
+      <a href="/fr/paris/"
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        Commencer gratuitement
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <FooterFr />
+</BaseLayout>

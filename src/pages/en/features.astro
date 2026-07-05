@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import NavbarEn from '../../components/NavbarEn.astro'
+import FooterEn from '../../components/FooterEn.astro'
+import Icon from '../../components/icons/TrustIcons.astro'
+
+const groups = [
+  {
+    title: 'Cards & Wallet',
+    kicker: 'The foundation',
+    features: [
+      { name: '8 card types', desc: 'Stamp card, punch card, coupon, gift card, membership, discount, cashback & points card — the right mechanic for every business.', href: '/en/cards', isNew: false },
+      { name: 'Apple Wallet & Google Wallet', desc: 'The card goes straight into the wallet — preinstalled on every smartphone. No app download, no sign-up.', isNew: false },
+      { name: 'Custom branding', desc: 'Logo, colors, reward and card copy — your card looks like your business, not like software.', isNew: false },
+      { name: 'Flexible sign-up form', desc: 'You decide which details customers provide when installing the card — fields fully configurable, required fields included.', isNew: false },
+      { name: 'Happy-hour rules', desc: 'Extra stamps or higher discounts during time windows you define — perfect for filling slow hours.', isNew: false },
+      { name: 'Daily stamp limit', desc: 'Cap how many stamps a customer can collect per day — protects your program from abuse.', isNew: true },
+    ],
+  },
+  {
+    title: 'Push notifications',
+    kicker: 'The direct channel',
+    features: [
+      { name: 'Unlimited push notifications', desc: 'Straight to your customers’ lock screens — included in every plan, no SMS costs.', isNew: false },
+      { name: 'Geo-push', desc: 'When a customer comes within about 100 metres of your business (iPhone), your card automatically appears on their lock screen. Set it up once — it runs by itself.', isNew: true },
+      { name: 'Push automation', desc: 'Automatic messages for birthdays, long absences or appointment reminders — configure once and forget.', isNew: false },
+      { name: 'Transactional push', desc: 'After every stamp or point the customer automatically gets a confirmation — the current balance is always visible.', isNew: false },
+      { name: 'Expiration reminders', desc: 'When stamps or points are about to expire, customers are reminded automatically — the strongest nudge to come back.', isNew: true },
+    ],
+  },
+  {
+    title: 'Reviews & referrals',
+    kicker: 'New customers on autopilot',
+    features: [
+      { name: 'Post-visit feedback', desc: 'About an hour after the visit, the card automatically asks for a rating — you hear about problems right away.', isNew: true },
+      { name: 'Collect Google reviews', desc: 'Happy customers are automatically invited to review you on Google — more visibility without your team having to ask.', isNew: true },
+      { name: 'Referral program', desc: 'Customers share your card via a link — referrer and referee both get a bonus (e.g. extra stamps). You set the amount and timing.', isNew: true },
+    ],
+  },
+  {
+    title: 'Automation & AI',
+    kicker: 'Runs without you',
+    features: [
+      { name: 'Automation flow builder', desc: 'Trigger, condition, action — build your own flows with drag & drop, e.g. "away for 3 weeks → send an offer".', isNew: true },
+      { name: 'AI marketing assistant', desc: 'The AI analyses customer behaviour and sends the right message at the right time — including a weekly report.', isNew: true },
+      { name: 'Automatic reports', desc: 'Your key numbers arrive by email daily, weekly or monthly — no login needed.', isNew: false },
+    ],
+  },
+  {
+    title: 'Customers & analytics',
+    kicker: 'Real numbers',
+    features: [
+      { name: 'Live dashboard', desc: 'Visits, active cards, retention rate, feedback and referrals — everything at a glance, in real time.', isNew: false },
+      { name: 'Customer profiles & filters', desc: 'Every customer with full history: visits, stamps, redemptions. Filterable, with CSV import and export.', isNew: false },
+      { name: 'Segments & targeted campaigns', desc: 'Regulars, occasional visitors, inactive customers — address each group separately instead of treating everyone the same.', isNew: false },
+    ],
+  },
+  {
+    title: 'Team & operations',
+    kicker: 'Day to day',
+    features: [
+      { name: 'Scanner app in the browser', desc: 'Stamp with any smartphone or tablet — open the browser, scan the QR code, done. No POS system, no hardware.', isNew: false },
+      { name: 'Staff accounts', desc: 'Individual credentials per employee, with activity stats — see who stamped when, per location or shift.', isNew: false },
+      { name: 'Kiosk mode', desc: 'Customers stamp themselves on a tablet at the counter — without your team lifting a finger. Ideal for rush hour.', isNew: true },
+      { name: 'Customer lookup without scanning', desc: 'Phone forgotten? Find and stamp customers by name, phone number or card number.', isNew: false },
+      { name: 'Stamp corrections', desc: 'Stamped twice or by mistake? Every transaction is traceable and correctable in the dashboard.', isNew: false },
+      { name: '16 languages', desc: 'Cards and customer views in 16 languages — also for international audiences and tourists.', isNew: true },
+    ],
+  },
+  {
+    title: 'Integrations & enterprise',
+    kicker: 'For chains & franchises',
+    features: [
+      { name: 'Multi-location dashboard', desc: 'All branches in one overview, campaigns managed centrally — for chains and franchise systems.', isNew: false },
+      { name: 'API & webhooks', desc: 'Connect the cards to your own systems — cards, stamps and customer data via API (Enterprise).', isNew: false },
+      { name: 'Zapier & Make', desc: 'Connect your loyalty program to 5,000+ tools — from newsletters to accounting.', isNew: false },
+      { name: 'White-label & custom domain', desc: 'Your card under your domain, fully in your look — for Franchise and Enterprise plans.', isNew: false },
+    ],
+  },
+]
+---
+
+<BaseLayout
+  title="All features – push, geo-push, Google reviews & more | bonuskarte.digital"
+  description="All features of the digital loyalty card at a glance: unlimited push notifications, geo-push, Google review collection, referral program, automations, live analytics, scanner app & more."
+  lang="en"
+  locale="en_US"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/funktionen' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/features' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/fonctionnalites' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/funktionen' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Features" }
+    ]
+  })} />
+
+  <NavbarEn ctaHref="/en/#get-started" ctaLabel="Start now" />
+
+  <!-- HERO -->
+  <section class="bg-paper pt-28 pb-14 px-5 sm:px-8 border-b border-ink/30">
+    <div class="max-w-4xl mx-auto">
+      <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide">
+        <a href="/en/" class="hover:text-ink/60 transition-colors">Home</a>
+        <span>›</span>
+        <span class="text-ink/60">Features</span>
+      </nav>
+      <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
+        <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+        <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">All features · One price</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-4">
+        More than a<br />
+        <span class="font-bold text-amber">stamp card.</span>
+      </h1>
+      <p class="text-ink/60 text-base leading-relaxed max-w-2xl">
+        Push notifications, geo-push, Google reviews, referral program, automations,
+        live analytics — the platform behind bonuskarte.digital is continuously evolving.
+        New features appear automatically in your account, at no extra cost.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURE GROUPS -->
+  <section class="bg-paper py-14 px-5 sm:px-8">
+    <div class="max-w-5xl mx-auto space-y-14">
+      {groups.map(group => (
+        <div>
+          <div class="flex items-center gap-4 mb-8">
+            <span class="text-xs tracking-[0.4em] uppercase text-amber whitespace-nowrap">{group.kicker}</span>
+            <div class="h-px flex-1 bg-ink/20"></div>
+            <h2 class="text-ink text-lg font-bold tracking-tight whitespace-nowrap">{group.title}</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {group.features.map(f => (
+              <div class="border border-ink/10 hover:border-amber/30 transition-colors p-6 flex flex-col">
+                <div class="flex items-start justify-between gap-3 mb-2">
+                  <div class="flex items-start gap-2.5">
+                    <Icon name="diamond" class="w-3.5 h-3.5 text-amber mt-1 flex-shrink-0" />
+                    <h3 class="text-ink text-sm font-semibold leading-snug">{f.name}</h3>
+                  </div>
+                  {f.isNew && (
+                    <span class="bg-amber text-black text-[9px] font-bold tracking-[0.2em] uppercase px-2 py-0.5 flex-shrink-0">New</span>
+                  )}
+                </div>
+                <p class="text-ink/60 text-sm leading-relaxed flex-1">{f.desc}</p>
+                {f.href && (
+                  <a href={f.href} class="mt-3 text-amber text-xs font-medium tracking-[0.15em] uppercase hover:text-amber-dark transition-colors">
+                    All card types →
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <p class="text-center text-ink/50 text-sm leading-relaxed max-w-2xl mx-auto">
+        See which features are included in which plan on the
+        <a href="/en/pricing" class="text-amber hover:text-amber-dark transition-colors">pricing page</a>.
+        Push notifications, analytics and unlimited cards are included in every plan.
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-2xl mx-auto text-center">
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Zero risk</p>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
+        Try all features
+      </h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">
+        free for 90 days.
+      </h2>
+      <a href="/en/#get-started"
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        Start free now
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <FooterEn />
+</BaseLayout>
