@@ -5,6 +5,7 @@ interface Props {
   formspreeId?: string
   whatsappUrl: string
   niche?: string
+  city?: string
 }
 
 interface CardLinks {
@@ -19,7 +20,8 @@ const inputClass =
 
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-ink/60 mb-2'
 
-export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props) {
+export default function LeadFormDoener({ whatsappUrl, niche = 'doener', city = 'Köln' }: Props) {
+  const trackCity = city.toLowerCase()
   const [state, setState] = useState<State>('idle')
   const [card, setCard] = useState<CardLinks | null>(null)
   const [vorname, setVorname] = useState('')
@@ -52,7 +54,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
     const data = Object.fromEntries(new FormData(form))
     setVorname((data.vorname as string) ?? '')
     const cleanInstagram = String(data.instagram ?? '').replace(/^@+/, '')
-    analytics.signupSubmitAttempt(niche, 'koeln', 'doener')
+    analytics.signupSubmitAttempt(niche, trackCity, 'doener')
 
     try {
       const res = await fetch('/api/submit.php', {
@@ -63,6 +65,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
           instagram: cleanInstagram,
           telefon:   data.telefon,
           niche:     niche,
+          city:      trackCity,
           utm:       getUtmParams(),
         }),
       })
@@ -72,18 +75,18 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
           installLink: json.installLink,
           directInstallLink: json.directInstallLink,
         })
-        analytics.demoCardCreated(niche, 'koeln')
-        analytics.signupSubmit(niche, 'koeln', 'doener')
+        analytics.demoCardCreated(niche, trackCity)
+        analytics.signupSubmit(niche, trackCity, 'doener')
         setState('success')
         form.reset()
         setInstagram('')
       } else {
-        analytics.signupSubmitError(niche, 'koeln', 'api_error', 'doener')
+        analytics.signupSubmitError(niche, trackCity, 'api_error', 'doener')
         setErrorMsg('Etwas ist schiefgelaufen. Bitte versuche es erneut.')
         setState('error')
       }
     } catch {
-      analytics.signupSubmitError(niche, 'koeln', 'network_error', 'doener')
+      analytics.signupSubmitError(niche, trackCity, 'network_error', 'doener')
       setErrorMsg('Keine Verbindung. Bitte Internetverbindung prüfen und erneut versuchen.')
       setState('error')
     }
@@ -164,7 +167,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener' }: Props)
   function handleFirstFocus() {
     if (!formStartedRef.current) {
       formStartedRef.current = true
-      analytics.signupFormStart(niche, 'koeln', 'doener')
+      analytics.signupFormStart(niche, trackCity, 'doener')
     }
   }
 
