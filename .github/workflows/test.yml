@@ -1,0 +1,59 @@
+name: Tests (Lead-Pipeline)
+
+# Sichert den kompletten Sales-Prozess ab:
+#   1. Konsistenz  — Nischen/Template-IDs/Booking-URL dürfen nicht driften
+#   2. API         — submit.php end-to-end gegen gemockte Boomerang/Salesflare/Telegram
+#   3. E2E         — Lead-Formulare im echten Browser (Desktop + Mobile)
+# Kein Test spricht echte APIs an — es entstehen keine Leads/Conversions.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: curl
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Konsistenztests (Config-Drift)
+        run: npm run test:consistency
+
+      - name: API-Integrationstests (submit.php)
+        run: npm run test:api
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: E2E-Tests (Lead-Formulare)
+        run: npm run test:e2e
+
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7

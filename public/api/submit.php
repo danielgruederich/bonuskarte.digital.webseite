@@ -28,14 +28,17 @@ if (!$body) {
 }
 
 // ── Config ───────────────────────────────────────────────────────────────────
-const BOOMERANG_API_KEY  = 'a34f3829b32b7c629059a780a0919a13';
-const BOOMERANG_BASE     = 'https://api.digitalwallet.cards';
-const SALESFLARE_API_KEY = 'Lh1Qucl715Sp6Pwy4DZpoxzlGWt64Ugz7GA3M9G5_NKjm';
-const SALESFLARE_BASE    = 'https://api.salesflare.com';
+// Alle Werte per Env-Var überschreibbar (Integrationstests zeigen die Base-URLs
+// auf einen lokalen Mock-Server; Produktion nutzt die Fallbacks unverändert).
+define('BOOMERANG_API_KEY',  getenv('BOOMERANG_API_KEY')  ?: 'a34f3829b32b7c629059a780a0919a13');
+define('BOOMERANG_BASE',     getenv('BOOMERANG_BASE')     ?: 'https://api.digitalwallet.cards');
+define('SALESFLARE_API_KEY', getenv('SALESFLARE_API_KEY') ?: 'Lh1Qucl715Sp6Pwy4DZpoxzlGWt64Ugz7GA3M9G5_NKjm');
+define('SALESFLARE_BASE',    getenv('SALESFLARE_BASE')    ?: 'https://api.salesflare.com');
 
 // Telegram Lead-Alert (eigener Bot @bonuskarte_leads_bot)
-const TELEGRAM_BOT_TOKEN = '8557794026:AAHVILm2tKZFbTaTEG7s7wkxZJl8mQ-QsB8';
-const TELEGRAM_CHAT_ID    = '128525956';
+define('TELEGRAM_BASE',      getenv('TELEGRAM_BASE')      ?: 'https://api.telegram.org');
+define('TELEGRAM_BOT_TOKEN', getenv('TELEGRAM_BOT_TOKEN') ?: '8557794026:AAHVILm2tKZFbTaTEG7s7wkxZJl8mQ-QsB8');
+define('TELEGRAM_CHAT_ID',   getenv('TELEGRAM_CHAT_ID')   ?: '128525956');
 
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
@@ -68,12 +71,15 @@ $reqCity   = strtolower(trim($body['city'] ?? ''));
 
 // Normalize display names to template keys
 $nicheAliases = [
-    'café'      => 'cafe',
-    'cafés'     => 'cafe',
-    'cafes'     => 'cafe',
-    'pizzeria'  => 'pizza',
-    'döner'     => 'doener',
-    'doner'     => 'doener',
+    'café'        => 'cafe',
+    'cafés'       => 'cafe',
+    'cafes'       => 'cafe',
+    'pizzeria'    => 'pizza',
+    'döner'       => 'doener',
+    'doner'       => 'doener',
+    'eiscafé'     => 'eiscafe',
+    'bäckerei'    => 'baeckerei',
+    'yoga-studio' => 'yoga',
 ];
 $niche = $nicheAliases[$niche] ?? $niche;
 
@@ -266,7 +272,7 @@ function notifyTelegramLead(
         if ($leadPage)  $lines[] = '🔗 ' . htmlspecialchars($leadPage);
         if ($waLink)    $lines[] = "\n<a href=\"" . htmlspecialchars($waLink) . "\">📲 Auf WhatsApp antworten</a>";
 
-        apiRequest('POST', 'https://api.telegram.org', '/bot' . TELEGRAM_BOT_TOKEN . '/sendMessage', [
+        apiRequest('POST', TELEGRAM_BASE, '/bot' . TELEGRAM_BOT_TOKEN . '/sendMessage', [
             'Content-Type: application/json',
         ], [
             'chat_id'                  => TELEGRAM_CHAT_ID,

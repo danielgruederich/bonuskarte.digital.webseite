@@ -9,3 +9,5 @@ iphone mockups/
 deploy.php
 site.zip
 .superpowers/
+test-results/
+playwright-report/

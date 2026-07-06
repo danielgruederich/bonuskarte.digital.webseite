@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "npm run test:consistency && npm run test:api && npm run test:e2e",
+    "test:consistency": "node --test tests/consistency/*.test.mjs",
+    "test:api": "node --test tests/api/*.test.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",
@@ -22,6 +26,7 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "tailwindcss": "^3.4.17"

@@ -43,10 +43,14 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
     <title>{title}</title>
 
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFS45SFQ8S"></script>
-    <script>
+    <!-- is:inline ist PFLICHT: ohne bündelt Astro das Script als ES-Modul und
+         `gtag` ist nie global — kein Funnel-Event und keine Ads-Conversion
+         würde feuern (typeof gtag === 'undefined' in analytics.ts). -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HFS45SFQ8S"></script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', 'G-HFS45SFQ8S', {
         anonymize_ip: true
