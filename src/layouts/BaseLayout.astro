@@ -8,12 +8,13 @@ interface Props {
   alternates?: { hreflang: string; href: string }[]   // hreflang pairs; default empty
   noindex?: boolean                                   // when true, emit <meta robots="noindex,follow">
   showStickyCta?: boolean                             // sticky mobile CTA bar (default true)
+  canonical?: string                                  // override canonical URL (e.g. A/B-Variante → Original)
 }
 
 import Zipchat from '../components/integrations/Zipchat.astro'
 
-const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false, showStickyCta = true } = Astro.props
-const canonicalUrl = new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
+const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false, showStickyCta = true, canonical } = Astro.props
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
 const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuskarte.digital').href
 ---
 <!doctype html>

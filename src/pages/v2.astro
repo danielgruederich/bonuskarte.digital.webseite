@@ -1,0 +1,771 @@
+---
+// A/B-Test-Variante der Startseite ("Bestellzettel"-Design).
+// Canonical zeigt auf / — diese Seite konsolidiert alle SEO-Signale aufs Original
+// und ist aus der Sitemap ausgeschlossen (astro.config.mjs).
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const whatsappUrl = 'https://wa.me/491705594140'
+
+const branchen = [
+  { label: 'Café', value: 'cafe' },
+  { label: 'Bäckerei', value: 'baeckerei' },
+  { label: 'Döner / Imbiss', value: 'doener' },
+  { label: 'Pizzeria', value: 'pizza' },
+  { label: 'Restaurant', value: 'restaurant' },
+  { label: 'Eiscafé', value: 'eiscafe' },
+  { label: 'Friseur / Salon', value: 'friseur' },
+  { label: 'Fitness / Gym', value: 'fitnessstudio' },
+  { label: 'Yoga-Studio', value: 'yoga' },
+  { label: 'Anderes', value: 'cafe' },
+]
+
+const brancheChips = [
+  { label: 'Cafés', href: '/koeln/innenstadt/cafes', rot: -1 },
+  { label: 'Döner & Imbiss', href: '/koeln/innenstadt/doener', rot: 0 },
+  { label: 'Pizza & Restaurant', href: '/koeln/innenstadt/pizza', rot: 1 },
+  { label: 'Eiscafés', href: '/koeln/innenstadt/eiscafe', rot: 0 },
+  { label: 'Bäckereien', href: '/koeln/innenstadt/baeckerei', rot: -1 },
+  { label: 'Friseur & Salon', href: '/koeln/innenstadt/friseur', rot: 0 },
+  { label: 'Fitness & Gym', href: '/koeln/innenstadt/fitnessstudio', rot: 0.8 },
+  { label: 'Yoga-Studios', href: '/koeln/innenstadt/yoga', rot: 0 },
+]
+
+const staedte = [
+  ['Köln', '/koeln'], ['Berlin', '/berlin'], ['Hamburg', '/hamburg'], ['München', '/muenchen'],
+  ['Frankfurt', '/frankfurt'], ['Düsseldorf', '/duesseldorf'], ['Stuttgart', '/stuttgart'], ['Leipzig', '/leipzig'],
+  ['Bonn', '/bonn'], ['Dortmund', '/dortmund'], ['Essen', '/essen'], ['Hannover', '/hannover'],
+]
+
+const faqs = [
+  { q: 'Brauchen meine Kund:innen eine App?', a: 'Nein. Die digitale Stempelkarte liegt direkt in Apple Wallet oder Google Wallet – ein Tipp, gespeichert. Kein App-Download, kein Konto, kein Plastik.' },
+  { q: 'Wie schnell bin ich startklar?', a: 'In der Regel innerhalb von 24 Stunden. Du schickst uns Name, Branche und Kontakt – wir bauen deine Kundenkarte mit deinem Logo und deiner Belohnung und melden uns.' },
+  { q: 'Was kostet bonuskarte.digital?', a: 'Ab 29 € im Monat. Die ersten 90 Tage sind kostenlos, ganz ohne Kreditkarte. Keine Einrichtungsgebühr, monatlich kündbar.' },
+  { q: 'Wie geben meine Kund:innen Stempel ab?', a: 'Du oder dein Team vergebt Stempel mit einem Tipp im Dashboard oder per Code-Scan an der Theke. Die Treuekarte in der Wallet aktualisiert sich sofort.' },
+  { q: 'Ist das DSGVO-konform?', a: 'Ja. Hosting in Deutschland, Datenverarbeitung nach DSGVO. Wir sind keine Marketing-Plattform – wir sammeln keine Daten, die du nicht brauchst.' },
+  { q: 'Kann ich mein eigenes Logo und Design nutzen?', a: 'Ja. Deine Karte, dein Logo, deine Farben, deine Belohnung. Die Bonuskarte sieht aus wie dein Laden – nicht wie eine Software.' },
+]
+
+const steps = [
+  { t: '1 · Du meldest dich', d: 'Drei Felder ausfüllen. Das war dein Teil.', z: '2 Min' },
+  { t: '2 · Wir bauen deine Karte', d: 'Logo, Farben, Belohnung – fertig eingerichtet.', z: '24 h' },
+  { t: '3 · Gäste speichern sie', d: 'Ein Tipp – ab in Apple oder Google Wallet.', z: '1 Tipp' },
+  { t: '4 · Stempeln & wiederkommen', d: 'Du vergibst Stempel, sie kommen zurück.', z: '∞' },
+]
+---
+
+<BaseLayout
+  title="Digitale Stempelkarte für Cafés & lokale Geschäfte · bonuskarte.digital"
+  description="Die digitale Stempelkarte für lokale Geschäfte: Bonuskarte & Kundenkarte direkt in Apple Wallet und Google Wallet – kein App-Download, kein Plastik. Mehr Stammkunden, live in 24 h. 90 Tage kostenlos, ab 29 €/Monat, DSGVO-konform."
+  canonical="https://bonuskarte.digital/"
+  showStickyCta={false}
+>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question", "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  })} />
+
+  <div class="v2">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="v2-header">
+      <div class="v2-header-inner">
+        <a href="/" aria-label="bonuskarte.digital – Startseite" style="display:flex;align-items:center;flex-shrink:0">
+          <img src="/brand/lockup-horizontal-primary.svg" alt="bonuskarte.digital" width="192" height="30" style="height:30px;width:auto;display:block" />
+        </a>
+        <nav aria-label="Hauptnavigation" style="display:flex;align-items:center;gap:26px">
+          <span class="v2-navlinks">
+            <a href="#ausprobieren" class="v2-navlink">Ausprobieren</a>
+            <a href="#so-laeufts" class="v2-navlink">So läuft's</a>
+            <a href="#preis" class="v2-navlink">Preis</a>
+            <a href="#branchen" class="v2-navlink">Branchen</a>
+            <a href="#faq" class="v2-navlink">FAQ</a>
+          </span>
+          <button type="button" class="v2-btn v2-btn-sm" data-scroll-to-form>Kostenlos testen</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ═══ HERO ═══ -->
+      <section style="position:relative;padding:clamp(40px,7vw,84px) 24px clamp(56px,8vw,96px)">
+        <div aria-hidden="true" style="position:absolute;top:8%;right:6%;width:190px;height:190px;border-radius:50%;border:6px solid rgba(242,92,36,0.10);pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;bottom:10%;left:4%;width:120px;height:120px;border-radius:50%;border:2px dashed var(--v2-ink-14);pointer-events:none"></div>
+
+        <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
+          <div style="flex:1 1 440px;min-width:300px;padding-top:clamp(8px,3vw,40px)">
+            <p class="v2-kicker">Apple Wallet · Google Wallet</p>
+            <h1 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale Stempelkarte für <span style="color:var(--v2-accent);white-space:nowrap">deinen Laden</span>.</h1>
+            <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--v2-ink-72);margin:22px 0 0;max-width:30ch">Mehr Stammkund:innen, kein Papier, keine App. Deine Gäste sammeln Stempel direkt in ihrer Wallet – du gewinnst Wiederkommer.</p>
+
+            <div class="v2-trustrow" style="margin-top:26px">
+              <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--v2-accent)">·</span>
+              <span>keine Kreditkarte</span><span aria-hidden="true" style="color:var(--v2-accent)">·</span>
+              <span>live in 24 h</span><span aria-hidden="true" style="color:var(--v2-accent)">·</span>
+              <span>DSGVO</span>
+            </div>
+
+            <div style="margin-top:34px;display:flex;align-items:flex-start;gap:14px;max-width:380px">
+              <span style="font-family:'Caveat',cursive;font-size:22px;color:var(--v2-accent);line-height:1.1;transform:rotate(-4deg);flex-shrink:0;padding-top:2px">3 Felder,<br />2 Minuten →</span>
+              <p style="font-size:14px;color:var(--v2-ink-56);line-height:1.5;margin:0">Sag uns kurz, wer du bist. Den Rest – Karte bauen, Logo einsetzen, in die Wallet bringen – machen wir.</p>
+            </div>
+          </div>
+
+          <!-- Bestellzettel (Formular A) -->
+          <div style="flex:1 1 380px;min-width:300px;max-width:460px" id="lead">
+            <div style="position:relative;transform:rotate(-1.1deg)">
+              <div aria-hidden="true" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:var(--v2-accent);box-shadow:var(--v2-shadow-md);z-index:2"></div>
+              <div style="background:var(--v2-white);border:1px solid var(--v2-border);border-radius:20px;box-shadow:var(--v2-shadow-lg);padding:28px clamp(22px,4vw,34px) 30px;overflow:hidden">
+                <div aria-hidden="true" style="display:flex;justify-content:center;gap:9px;margin:-6px 0 18px">
+                  <span class="v2-perf"></span><span class="v2-perf"></span><span class="v2-perf"></span><span class="v2-perf"></span><span class="v2-perf"></span>
+                </div>
+
+                <form class="v2-leadform" data-form-id="hero" style="display:flex;flex-direction:column">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1.5px dashed var(--v2-ink-24);padding-bottom:12px;margin-bottom:20px">
+                    <h2 style="font-family:'Zilla Slab',Georgia,serif;font-size:22px;font-weight:600;margin:0;letter-spacing:-0.01em">Bestellzettel</h2>
+                    <span class="v2-mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--v2-ink-40)">Nr. 24H</span>
+                  </div>
+                  <p style="font-family:'Caveat',cursive;font-size:20px;color:var(--v2-ink-72);margin:-8px 0 20px">3 Felder, 2 Minuten – wir machen den Rest.</p>
+
+                  <label style="display:block;margin-bottom:18px">
+                    <span class="v2-label">Name des Betriebs</span>
+                    <input class="v2-input" type="text" name="betrieb" required autocomplete="organization" placeholder="z. B. Café Hügel" />
+                  </label>
+                  <label style="display:block;margin-bottom:18px">
+                    <span class="v2-label">Branche</span>
+                    <select class="v2-input v2-select" name="branche" required>
+                      <option value="">Bitte wählen …</option>
+                      {branchen.map(b => <option value={b.value}>{b.label}</option>)}
+                    </select>
+                  </label>
+                  <label style="display:block;margin-bottom:24px">
+                    <span class="v2-label">Handynummer oder E-Mail</span>
+                    <input class="v2-input" type="text" name="kontakt" required autocomplete="tel" placeholder="0176 … oder du@laden.de" />
+                  </label>
+
+                  <p class="v2-formerror" hidden>Etwas ist schiefgelaufen. Bitte versuche es erneut – oder schreib uns direkt auf WhatsApp.</p>
+                  <button type="submit" class="v2-btn v2-btn-lg" style="width:100%">Kostenlos starten</button>
+                  <p style="text-align:center;font-size:12.5px;color:var(--v2-ink-56);margin:14px 0 0;line-height:1.5">Keine Kreditkarte. Wir melden uns innerhalb von 24 h.</p>
+                </form>
+
+                <div class="v2-success" hidden style="text-align:center;padding:14px 0 6px">
+                  <div style="width:64px;height:64px;border-radius:50%;background:var(--v2-accent);display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:var(--v2-shadow-md)">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </div>
+                  <h2 style="font-family:'Zilla Slab',Georgia,serif;font-size:24px;font-weight:600;margin:0 0 8px;letter-spacing:-0.01em">Angekommen.</h2>
+                  <p style="font-size:15px;color:var(--v2-ink-72);line-height:1.55;margin:0 auto 18px;max-width:32ch">Danke! Wir melden uns innerhalb von 24 Stunden – meist schneller. Lade dir schon mal deine Demo-Karte ins Wallet:</p>
+                  <a class="v2-btn v2-btn-lg v2-installlink" href="#" target="_blank" rel="noopener noreferrer" hidden style="width:100%;box-sizing:border-box;margin-bottom:14px">Demo-Karte ins Wallet laden</a>
+                  <p style="font-size:13px;color:var(--v2-ink-56);margin:0 0 10px">Lieber sofort quatschen?</p>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="v2-ghostbtn">Auf WhatsApp schreiben</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ INTERAKTIVE DEMO ═══ -->
+      <section id="ausprobieren" style="padding:clamp(56px,8vw,104px) 24px;border-top:1px solid var(--v2-border)">
+        <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center">
+          <div style="flex:1 1 320px;min-width:280px;position:relative">
+            <div aria-hidden="true" style="position:absolute;top:-16px;left:-10px;width:150px;height:150px;border-radius:50%;border:5px solid rgba(242,92,36,0.10)"></div>
+            <img src="/images/mockup-coffee.png" alt="Digitale Stempelkarte in Apple Wallet auf einem iPhone" loading="lazy"
+              style="display:block;width:100%;max-width:420px;margin:0 auto;border-radius:24px;transform:rotate(1.2deg)" />
+          </div>
+
+          <div style="flex:1 1 360px;min-width:300px">
+            <p class="v2-kicker">Zum Ausprobieren</p>
+            <h2 class="v2-h2">Tipp drauf. So fühlt sich Sammeln an.</h2>
+            <p style="font-size:17px;line-height:1.6;color:var(--v2-ink-72);margin:0 0 26px;max-width:42ch">Genau das erleben deine Stammkund:innen – nur echt, in ihrer Wallet. Fünfmal tippen, und die Belohnung ist frei.</p>
+
+            <div role="button" tabindex="0" aria-label="Stempel hinzufügen" id="demo-card"
+              style="position:relative;cursor:pointer;background:var(--v2-white);border:1px solid var(--v2-border);border-radius:28px;box-shadow:var(--v2-shadow-md);padding:28px;user-select:none">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+                <div>
+                  <div style="font-weight:600;font-size:17px">Café Hügel</div>
+                  <div class="v2-mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--v2-ink-40)">Stempelkarte</div>
+                </div>
+                <span aria-hidden="true" style="display:inline-flex"><span style="width:16px;height:16px;border-radius:50%;border:2px solid var(--v2-ink-40);box-sizing:border-box"></span><span style="width:16px;height:16px;border-radius:50%;background:var(--v2-accent);margin-left:-6px"></span></span>
+              </div>
+
+              <div id="demo-stamps" style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:360px">
+                {[0,1,2,3,4].map(() => (
+                  <span class="v2-stamp" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </span>
+                ))}
+              </div>
+
+              <div id="demo-reward" hidden style="margin-top:22px;display:flex;align-items:center;gap:12px;background:var(--v2-amber-tint);border-radius:14px;padding:14px 16px">
+                <span style="width:34px;height:34px;border-radius:50%;background:var(--v2-accent);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <div><div style="font-weight:600;font-size:15px;color:var(--v2-ink)">Gratis Kaffee – freigeschaltet.</div><div style="font-size:12.5px;color:var(--v2-ink-56)">Nochmal tippen für einen neuen Durchlauf.</div></div>
+              </div>
+              <p id="demo-hint" style="font-family:'Caveat',cursive;font-size:20px;color:var(--v2-accent);margin:20px 0 0;text-align:center;animation:bk-nudge 2s ease-in-out infinite">↑ noch <span id="demo-left">5</span>× tippen</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ VORHER / NACHHER ═══ -->
+      <section style="padding:clamp(56px,8vw,104px) 24px;background:var(--v2-sunken)">
+        <div style="max-width:920px;margin:0 auto;text-align:center">
+          <p class="v2-kicker">Vom Papier in die Hosentasche</p>
+          <h2 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.2;letter-spacing:-0.01em;margin:0 auto 40px;max-width:24ch;text-wrap:balance">Die Papierkarte lag im Portemonnaie, bis sie durchweichte. Die neue wohnt im Handy.</h2>
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,56px);align-items:center;justify-content:center">
+            <div aria-hidden="true" style="flex:0 0 auto;position:relative;transform:rotate(-3deg)">
+              <div style="width:230px;background:#EFE7D6;border:1px solid var(--v2-ink-14);border-radius:8px;padding:18px 18px 16px;box-shadow:var(--v2-shadow-sm);opacity:0.85">
+                <div style="font-family:'Caveat',cursive;font-size:19px;color:var(--v2-ink-72);margin-bottom:12px;text-align:left">Stammkarte</div>
+                <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+                  {[...Array(10)].map((_, i) => (
+                    <span style={`aspect-ratio:1;border-radius:50%;border:1.5px ${i < 2 ? 'solid var(--v2-ink-40);background:rgba(242,92,36,0.5)' : 'dashed var(--v2-ink-24)'}`}></span>
+                  ))}
+                </div>
+              </div>
+              <div style="position:absolute;bottom:-8px;right:-8px;width:60px;height:60px;border-radius:50%;border:3px solid rgba(26,20,16,0.12)"></div>
+            </div>
+
+            <span aria-hidden="true" style="font-family:'Caveat',cursive;font-size:26px;color:var(--v2-accent);transform:rotate(-4deg)">wird zu →</span>
+
+            <!-- Wallet-Pass (hell) -->
+            <div class="v2-pass v2-pass-light" style="transform:rotate(2deg)">
+              <div class="v2-pass-head">
+                <div>
+                  <div style="font-weight:600;font-size:16px">Café Hügel</div>
+                  <div class="v2-mono v2-pass-sub">Treuekarte</div>
+                </div>
+                <span aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid currentColor;opacity:0.4;box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
+              </div>
+              <div class="v2-pass-grid">
+                {[...Array(10)].map(() => <span class="v2-pass-stamp v2-pass-stamp-filled"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>)}
+              </div>
+              <div class="v2-pass-foot">
+                <span style="font-weight:600;font-size:13.5px;color:var(--v2-accent)">Gratis Kaffee</span>
+                <span class="v2-mono" style="font-size:10.5px;letter-spacing:0.08em;opacity:0.5">BK-7F2A-9X</span>
+              </div>
+              <div class="v2-pass-barcode" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <p style="font-size:17px;line-height:1.65;color:var(--v2-ink-72);margin:44px auto 0;max-width:56ch;text-wrap:pretty">Kein Verlieren, kein Nachdrucken, kein „Ich hatte die Karte gerade nicht dabei". Die Treuekarte ist immer da – und du siehst, wer wiederkommt.</p>
+        </div>
+      </section>
+
+      <!-- ═══ DUNKLE WALLET-SEKTION (Scroll-Stempel) ═══ -->
+      <section style="background:var(--v2-ink);color:var(--v2-paper);padding:clamp(64px,9vw,120px) 24px;position:relative;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;top:-40px;right:-40px;width:260px;height:260px;border-radius:50%;border:2px solid rgba(246,241,232,0.10)"></div>
+        <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(36px,6vw,80px);align-items:center">
+          <div style="flex:1 1 380px;min-width:300px">
+            <p class="v2-kicker">In der Wallet, wo alle schon sind</p>
+            <h2 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(34px,5.5vw,60px);line-height:1.02;letter-spacing:-0.02em;margin:0 0 22px;color:var(--v2-paper)">Sammeln.<br />Belohnen.<br />Im Handy.</h2>
+            <p style="font-size:18px;line-height:1.6;color:rgba(246,241,232,0.72);margin:0 0 12px;max-width:44ch">Die Karte liegt neben Bordkarte und Bankkarte – dort, wo dein Gast jeden Tag ohnehin hinschaut. Jeder Stempel landet automatisch drin, jede volle Karte wird zur Einladung, wiederzukommen.</p>
+            <p style="font-family:'Caveat',cursive;font-size:22px;color:var(--v2-accent);margin:22px 0 0">↓ scroll weiter – wir stempeln mit</p>
+          </div>
+          <div style="flex:0 0 auto;margin:0 auto" id="scroll-pass">
+            <div class="v2-pass v2-pass-dark">
+              <div class="v2-pass-head">
+                <div>
+                  <div style="font-weight:600;font-size:16px">Café Hügel</div>
+                  <div class="v2-mono v2-pass-sub">Treuekarte</div>
+                </div>
+                <span aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid currentColor;opacity:0.4;box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
+              </div>
+              <div class="v2-pass-grid" id="scroll-stamps">
+                {[...Array(10)].map(() => <span class="v2-pass-stamp"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>)}
+              </div>
+              <div class="v2-pass-foot">
+                <span style="font-weight:600;font-size:13.5px;color:var(--v2-accent)">Gratis Kaffee</span>
+                <span class="v2-mono" style="font-size:10.5px;letter-spacing:0.08em;opacity:0.5">BK-7F2A-9X</span>
+              </div>
+              <div class="v2-pass-barcode" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ TESTIMONIALS ═══ -->
+      <section style="padding:clamp(56px,8vw,110px) 24px">
+        <div style="max-width:1100px;margin:0 auto">
+          <p class="v2-kicker" style="margin-bottom:30px">Kunden, die schon stempeln</p>
+
+          <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,52px);align-items:center">
+            <div style="flex:0 1 300px;min-width:220px">
+              <img src="/images/testimonials/donermacher.png" alt="Der Dönermacher, Köln Braunsfeld" loading="lazy"
+                style="display:block;width:100%;max-width:300px;margin:0 auto;border-radius:20px;box-shadow:var(--v2-shadow-lg);transform:rotate(-1.4deg);border:1px solid var(--v2-border)" />
+            </div>
+            <blockquote style="flex:1 1 380px;min-width:300px;margin:0">
+              <p style="font-family:'Zilla Slab',Georgia,serif;font-weight:500;font-size:clamp(22px,3vw,32px);line-height:1.25;letter-spacing:-0.01em;color:var(--v2-ink);margin:0 0 22px;text-wrap:pretty">„Wir haben viele Schüler als Kunden und können über Push-Nachrichten viele direkt erreichen. Seit wir über 1.000 aktive Karten draußen haben, kommen deutlich mehr Stammkunden wieder."</p>
+              <footer style="display:flex;align-items:center;gap:14px">
+                <span aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid var(--v2-ink-40);box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
+                <div><div style="font-weight:600;font-size:16px">Yussuf</div><div style="font-size:14px;color:var(--v2-ink-56)">Der Dönermacher, Köln Braunsfeld</div></div>
+              </footer>
+            </blockquote>
+          </article>
+
+          <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:48px">
+            <div style="flex:1 1 300px;min-width:260px;background:var(--v2-white);border:1px solid var(--v2-border);border-radius:20px;box-shadow:var(--v2-shadow-sm);padding:22px 24px;transform:rotate(-1deg)">
+              <p style="font-size:16px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„GoLive war 24 Stunden später. Keine Ausfälle, Kunden lieben es. Wir haben schon 200 Karten im Umlauf."</p>
+              <div style="font-size:13px;color:var(--v2-ink-56)">Tim · Café Erste Liebe, Köln</div>
+            </div>
+            <div style="flex:1 1 300px;min-width:260px;background:var(--v2-white);border:1px solid var(--v2-border);border-radius:20px;box-shadow:var(--v2-shadow-sm);padding:22px 24px;transform:rotate(1.2deg)">
+              <p style="font-size:16px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„Simple, effective – a Coupon, 3 Stamp cards and a VIP card, all within one system. Fully recommended."</p>
+              <div style="font-size:13px;color:var(--v2-ink-56)">Jao · ASAP Cafe, Fuerteventura</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SO LÄUFT'S (KASSENBON) ═══ -->
+      <section id="so-laeufts" style="padding:clamp(56px,8vw,104px) 24px;background:var(--v2-sunken)">
+        <div style="max-width:760px;margin:0 auto;text-align:center">
+          <p class="v2-kicker">In vier Schritten</p>
+          <h2 class="v2-h2" style="margin-bottom:44px">So läuft's – aufgedruckt.</h2>
+        </div>
+
+        <div style="max-width:420px;margin:0 auto;position:relative">
+          <div class="v2-mono" style="background:var(--v2-white);box-shadow:var(--v2-shadow-lg);padding:30px clamp(24px,5vw,38px);color:var(--v2-ink)">
+            <div style="text-align:center;border-bottom:1.5px dashed var(--v2-ink-24);padding-bottom:16px;margin-bottom:8px">
+              <div style="font-size:14px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600">bonuskarte.digital</div>
+              <div style="font-size:11px;letter-spacing:0.1em;color:var(--v2-ink-40);margin-top:4px">BELEG · SO LÄUFT'S</div>
+            </div>
+            {steps.map((s, i) => (
+              <div style={`display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:${i === steps.length - 1 ? '1.5px dashed var(--v2-ink-24)' : '1px dashed var(--v2-ink-14)'}`}>
+                <div style="text-align:left"><div class="v2-sans" style="font-size:15px;font-weight:600">{s.t}</div><div class="v2-sans" style="font-size:13px;color:var(--v2-ink-56);margin-top:3px">{s.d}</div></div>
+                <span style="font-size:13px;color:var(--v2-ink-72);white-space:nowrap">{s.z}</span>
+              </div>
+            ))}
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:18px">
+              <span style="font-size:15px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600">Summe</span>
+              <span style="font-size:18px;font-weight:600;color:var(--v2-accent)">mehr Stammkunden</span>
+            </div>
+            <div style="text-align:center;font-size:11px;color:var(--v2-ink-40);margin-top:14px;letter-spacing:0.06em">* * * DANKE, KOMM WIEDER * * *</div>
+          </div>
+          <div aria-hidden="true" style="height:12px;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2212%22%3E%3Cpath d=%22M0 0 L12 12 L24 0 Z%22 fill=%22%23ffffff%22/%3E%3C/svg%3E') repeat-x top center"></div>
+        </div>
+      </section>
+
+      <!-- ═══ BRANCHEN & STÄDTE ═══ -->
+      <section id="branchen" style="padding:clamp(56px,8vw,104px) 24px">
+        <div style="max-width:1100px;margin:0 auto">
+          <p class="v2-kicker">Für deine Branche, in deiner Stadt</p>
+          <h2 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.1;letter-spacing:-0.01em;margin:0 0 12px;max-width:20ch">Digitale Kundenkarte – überall dort, wo Stammkund:innen zählen.</h2>
+          <p style="font-size:16px;line-height:1.6;color:var(--v2-ink-72);margin:0 0 40px;max-width:60ch">Ob Stempelkarte fürs Café, Treuekarte für den Imbiss oder Bonuskarte fürs Fitnessstudio – bonuskarte.digital passt sich deiner Branche und deiner Stadt an.</p>
+
+          <h3 class="v2-mono v2-subhead">Branchen</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px">
+            {brancheChips.map(c => (
+              <a href={c.href} class="v2-chip-dashed" style={`transform:rotate(${c.rot}deg)`}>{c.label}</a>
+            ))}
+          </div>
+
+          <h3 class="v2-mono v2-subhead">Städte</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            {staedte.map(([label, href]) => (
+              <a href={href} class="v2-chip-city v2-mono">{label}</a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ PREIS ═══ -->
+      <section id="preis" style="padding:clamp(48px,7vw,88px) 24px;border-top:1px solid var(--v2-border)">
+        <div style="max-width:760px;margin:0 auto;text-align:center">
+          <p class="v2-kicker">Ehrlicher Preis</p>
+          <p style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-0.015em;margin:0 0 12px">Ab <span style="color:var(--v2-accent)">29 €</span> im Monat.</p>
+          <p style="font-size:18px;line-height:1.6;color:var(--v2-ink-72);margin:0 auto;max-width:44ch">Die ersten 90 Tage kostenlos, ganz ohne Kreditkarte. Keine Einrichtungsgebühr, monatlich kündbar. Kein Kleingedrucktes.</p>
+          <p style="font-size:14px;margin:18px 0 0"><a href="/preise" style="color:var(--v2-accent);text-decoration:none;font-weight:600">Alle Pakete & Funktionen →</a></p>
+        </div>
+      </section>
+
+      <!-- ═══ FAQ ═══ -->
+      <section id="faq" style="padding:clamp(56px,8vw,104px) 24px;background:var(--v2-sunken)">
+        <div style="max-width:760px;margin:0 auto">
+          <h2 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0 0 36px">Häufige Fragen</h2>
+          {faqs.map(f => (
+            <details class="v2-faq">
+              <summary>{f.q}<span aria-hidden="true">+</span></summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+          <p style="font-size:15px;color:var(--v2-ink-56);margin:28px 0 0">Noch eine Frage? <a href="/faq" style="color:var(--v2-accent);text-decoration:none;font-weight:600">Alle Antworten im FAQ →</a></p>
+        </div>
+      </section>
+
+      <!-- ═══ FINAL CTA (Formular B) ═══ -->
+      <section style="padding:clamp(56px,8vw,110px) 24px">
+        <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center">
+          <div style="flex:1 1 340px;min-width:280px">
+            <h2 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(30px,4.6vw,50px);line-height:1.05;letter-spacing:-0.015em;margin:0 0 18px">Erzähl uns von deinem Laden.</h2>
+            <p style="font-size:18px;line-height:1.6;color:var(--v2-ink-72);margin:0 0 20px;max-width:42ch">Drei Felder, zwei Minuten. Wir bauen deine Karte und du hast sie – kostenlos – noch morgen in der Hand.</p>
+            <div class="v2-trustrow">
+              <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--v2-accent)">·</span><span>keine Kreditkarte</span><span aria-hidden="true" style="color:var(--v2-accent)">·</span><span>live in 24 h</span>
+            </div>
+          </div>
+
+          <div style="flex:1 1 360px;min-width:300px;max-width:460px">
+            <div style="position:relative;transform:rotate(1deg)">
+              <div style="background:var(--v2-white);border:1px solid var(--v2-border);border-radius:20px;box-shadow:var(--v2-shadow-lg);padding:28px clamp(22px,4vw,34px) 30px">
+                <form class="v2-leadform" data-form-id="footer" style="display:flex;flex-direction:column">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1.5px dashed var(--v2-ink-24);padding-bottom:12px;margin-bottom:20px">
+                    <h3 style="font-family:'Zilla Slab',Georgia,serif;font-size:20px;font-weight:600;margin:0;letter-spacing:-0.01em">3 Felder, 2 Minuten</h3>
+                    <span class="v2-mono" style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--v2-ink-40)">Nr. 24H</span>
+                  </div>
+                  <label style="display:block;margin-bottom:18px">
+                    <span class="v2-label">Name des Betriebs</span>
+                    <input class="v2-input" type="text" name="betrieb" required autocomplete="organization" placeholder="z. B. Café Hügel" />
+                  </label>
+                  <label style="display:block;margin-bottom:18px">
+                    <span class="v2-label">Branche</span>
+                    <select class="v2-input v2-select" name="branche" required>
+                      <option value="">Bitte wählen …</option>
+                      {branchen.map(b => <option value={b.value}>{b.label}</option>)}
+                    </select>
+                  </label>
+                  <label style="display:block;margin-bottom:24px">
+                    <span class="v2-label">Handynummer oder E-Mail</span>
+                    <input class="v2-input" type="text" name="kontakt" required autocomplete="tel" placeholder="0176 … oder du@laden.de" />
+                  </label>
+                  <p class="v2-formerror" hidden>Etwas ist schiefgelaufen. Bitte versuche es erneut – oder schreib uns direkt auf WhatsApp.</p>
+                  <button type="submit" class="v2-btn v2-btn-lg" style="width:100%">Kostenlos starten</button>
+                  <p style="text-align:center;font-size:12.5px;color:var(--v2-ink-56);margin:14px 0 0;line-height:1.5">Keine Kreditkarte. Wir melden uns innerhalb von 24 h.</p>
+                </form>
+                <div class="v2-success" hidden style="text-align:center;padding:14px 0 6px">
+                  <div style="width:64px;height:64px;border-radius:50%;background:var(--v2-accent);display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:var(--v2-shadow-md)">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </div>
+                  <h3 style="font-family:'Zilla Slab',Georgia,serif;font-size:24px;font-weight:600;margin:0 0 8px;letter-spacing:-0.01em">Angekommen.</h3>
+                  <p style="font-size:15px;color:var(--v2-ink-72);line-height:1.55;margin:0 auto 18px;max-width:32ch">Danke! Wir melden uns innerhalb von 24 Stunden – meist schneller. Lade dir schon mal deine Demo-Karte ins Wallet:</p>
+                  <a class="v2-btn v2-btn-lg v2-installlink" href="#" target="_blank" rel="noopener noreferrer" hidden style="width:100%;box-sizing:border-box;margin-bottom:14px">Demo-Karte ins Wallet laden</a>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="v2-ghostbtn">Auf WhatsApp schreiben</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer style="background:var(--v2-ink);color:var(--v2-paper);padding:clamp(48px,7vw,80px) 24px clamp(32px,4vw,44px)">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
+          <div style="flex:1 1 260px;max-width:320px">
+            <img src="/brand/lockup-horizontal-on-dark.svg" alt="bonuskarte.digital" width="192" height="30" style="height:30px;width:auto;display:block;margin-bottom:16px" />
+            <p style="font-size:14px;line-height:1.6;color:rgba(246,241,232,0.72);margin:0">Die digitale Stempelkarte für lokale Geschäfte. Kein Plastik, kein App-Download – deine Bonuskarte in Apple & Google Wallet.</p>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 class="v2-mono v2-foothead">Produkt</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <a href="#ausprobieren" class="v2-footlink">Ausprobieren</a>
+              <a href="#so-laeufts" class="v2-footlink">So läuft's</a>
+              <a href="/preise" class="v2-footlink">Preise</a>
+              <a href="/funktionen" class="v2-footlink">Funktionen</a>
+              <a href="/blog" class="v2-footlink">Blog</a>
+            </div>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 class="v2-mono v2-foothead">Branchen</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <a href="/koeln/innenstadt/cafes" class="v2-footlink">Cafés</a>
+              <a href="/koeln/innenstadt/doener" class="v2-footlink">Döner & Imbiss</a>
+              <a href="/koeln/innenstadt/pizza" class="v2-footlink">Pizza & Restaurant</a>
+              <a href="/koeln/innenstadt/friseur" class="v2-footlink">Friseur & Salon</a>
+              <a href="/koeln/innenstadt/fitnessstudio" class="v2-footlink">Fitness & Gym</a>
+            </div>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 class="v2-mono v2-foothead">Städte</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <a href="/koeln" class="v2-footlink">Köln</a>
+              <a href="/berlin" class="v2-footlink">Berlin</a>
+              <a href="/hamburg" class="v2-footlink">Hamburg</a>
+              <a href="/muenchen" class="v2-footlink">München</a>
+            </div>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 class="v2-mono v2-foothead">Rechtliches</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <a href="/impressum" class="v2-footlink">Impressum</a>
+              <a href="/datenschutz" class="v2-footlink">Datenschutz</a>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #322A22;margin-top:44px;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+          <span class="v2-mono" style="font-size:13px;color:rgba(246,241,232,0.56)">© {new Date().getFullYear()} bonuskarte.digital</span>
+          <span style="font-size:13px;color:rgba(246,241,232,0.56)">Ein Projekt von <a href="https://fuerte.digital" style="color:rgba(246,241,232,0.72);text-decoration:none">fuerte.digital</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ═══ STICKY MOBILE CTA ═══ -->
+    <div id="v2-sticky" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(246,241,232,0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--v2-border);padding:12px 16px;display:flex;align-items:center;gap:14px;box-shadow:0 -6px 20px rgba(26,20,16,0.10)">
+      <div style="flex:1;line-height:1.2">
+        <div style="font-weight:600;font-size:14px">90 Tage kostenlos</div>
+        <div style="font-size:12px;color:var(--v2-ink-56)">keine Kreditkarte · live in 24 h</div>
+      </div>
+      <button type="button" class="v2-btn" data-scroll-to-form style="height:44px">Kostenlos testen</button>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .v2 {
+    --v2-accent: #F25C24;
+    --v2-accent-hover: #E2531F;
+    --v2-amber-tint: #FBE4D8;
+    --v2-ink: #1A1410;
+    --v2-paper: #F6F1E8;
+    --v2-white: #FFFFFF;
+    --v2-sunken: #EFE8DB;
+    --v2-ink-72: rgba(26,20,16,0.72);
+    --v2-ink-56: rgba(26,20,16,0.56);
+    --v2-ink-40: rgba(26,20,16,0.40);
+    --v2-ink-24: rgba(26,20,16,0.24);
+    --v2-ink-14: rgba(26,20,16,0.14);
+    --v2-border: rgba(26,20,16,0.14);
+    --v2-border-strong: rgba(26,20,16,0.24);
+    --v2-shadow-sm: 0 2px 6px rgba(26,20,16,0.07);
+    --v2-shadow-md: 0 6px 18px rgba(26,20,16,0.09);
+    --v2-shadow-lg: 0 14px 40px rgba(26,20,16,0.13);
+    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+    background: var(--v2-paper);
+    color: var(--v2-ink);
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  .v2 ::selection { background: var(--v2-amber-tint); }
+  .v2 .v2-mono, .v2 .v2-mono * { font-family: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace; }
+  .v2 .v2-mono .v2-sans { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; }
+
+  @keyframes bk-thunk { 0% { transform: scale(0.55) rotate(-8deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+  @keyframes bk-rise { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes bk-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+
+  /* Header */
+  .v2-header { position: sticky; top: 0; z-index: 60; background: rgba(246,241,232,0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--v2-border); }
+  .v2-header-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .v2-navlink { font-size: 15px; font-weight: 500; color: var(--v2-ink-72); text-decoration: none; }
+  .v2-navlink:hover { color: var(--v2-ink); }
+  .v2-navlinks { display: flex; align-items: center; gap: 26px; }
+  @media (max-width: 819px) { .v2-navlinks { display: none; } }
+
+  /* Typo helpers */
+  .v2-kicker { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v2-accent); font-weight: 500; margin: 0 0 16px; }
+  .v2-h2 { font-family: 'Zilla Slab', Georgia, serif; font-weight: 600; font-size: clamp(28px,4vw,42px); line-height: 1.06; letter-spacing: -0.01em; margin: 0 0 16px; }
+  .v2-trustrow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.04em; color: var(--v2-ink-56); }
+  .v2-subhead { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--v2-ink-40); font-weight: 500; margin: 0 0 16px; }
+
+  /* Buttons */
+  .v2-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--v2-accent); color: var(--v2-paper); border: none; border-radius: 14px; font-family: inherit; font-weight: 600; font-size: 15px; cursor: pointer; text-decoration: none; padding: 0 22px; height: 44px; transition: background 0.15s ease; }
+  .v2-btn:hover { background: var(--v2-accent-hover); }
+  .v2-btn:disabled { opacity: 0.6; cursor: wait; }
+  .v2-btn-sm { height: 36px; padding: 0 16px; font-size: 14px; }
+  .v2-btn-lg { height: 54px; font-size: 16px; border-radius: 14px; }
+  .v2-ghostbtn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 14px; border: 1px solid var(--v2-border-strong); color: var(--v2-ink); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .v2-ghostbtn:hover { background: rgba(26,20,16,0.04); }
+
+  /* Formular */
+  .v2-perf { width: 6px; height: 6px; border-radius: 50%; background: var(--v2-sunken); }
+  .v2-label { display: block; font-size: 13px; font-weight: 600; color: var(--v2-ink); margin-bottom: 2px; }
+  .v2-input { width: 100%; box-sizing: border-box; border: none; border-bottom: 1.5px solid var(--v2-ink-24); border-radius: 0; background: transparent; padding: 8px 2px; font-family: inherit; font-size: 16px; color: var(--v2-ink); outline: none; }
+  .v2-input:focus { border-bottom-color: var(--v2-accent); }
+  .v2-select { appearance: none; -webkit-appearance: none; cursor: pointer; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%2214%22 fill=%22none%22 stroke=%22%231A1410%22 stroke-width=%222.4%22 stroke-linecap=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 2px center; }
+  .v2-formerror { font-size: 13.5px; color: #B23A2B; background: #F4E2DE; border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; line-height: 1.5; }
+  .v2-success { animation: bk-rise 0.4s ease-out both; }
+
+  /* Demo-Stempel */
+  .v2-stamp { display: inline-flex; align-items: center; justify-content: center; aspect-ratio: 1; border-radius: 50%; border: 1.5px dashed var(--v2-ink-24); background: transparent; transition: background 0.15s ease, border-color 0.15s ease; }
+  .v2-stamp svg { opacity: 0; transform: scale(0.55) rotate(-8deg); transition: none; }
+  .v2-stamp.is-filled { background: var(--v2-accent); border-color: var(--v2-accent); border-style: solid; }
+  .v2-stamp.is-filled svg { opacity: 1; transform: scale(1) rotate(0); animation: bk-thunk 0.3s ease-out both; }
+  #demo-reward { animation: bk-rise 0.35s ease-out both; }
+
+  /* Wallet-Pass */
+  .v2-pass { flex: 0 0 auto; width: 290px; border-radius: 22px; padding: 20px 20px 0; box-shadow: var(--v2-shadow-lg); text-align: left; overflow: hidden; }
+  .v2-pass-light { background: var(--v2-white); border: 1px solid var(--v2-border); color: var(--v2-ink); }
+  .v2-pass-dark { background: #241D17; border: 1px solid #322A22; color: var(--v2-paper); width: 320px; }
+  .v2-pass-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .v2-pass-sub { font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.5; }
+  .v2-pass-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+  .v2-pass-stamp { display: inline-flex; align-items: center; justify-content: center; aspect-ratio: 1; border-radius: 50%; border: 1.5px dashed rgba(128,118,108,0.45); }
+  .v2-pass-stamp svg { opacity: 0; }
+  .v2-pass-stamp-filled, .v2-pass-stamp.is-filled { background: var(--v2-accent); border-color: var(--v2-accent); border-style: solid; }
+  .v2-pass-stamp-filled svg { opacity: 1; }
+  .v2-pass-stamp.is-filled svg { opacity: 1; animation: bk-thunk 0.3s ease-out both; }
+  .v2-pass-foot { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; }
+  .v2-pass-barcode { height: 42px; margin: 0 -20px; background: repeating-linear-gradient(90deg, currentColor 0 2px, transparent 2px 5px, currentColor 5px 6px, transparent 6px 10px); opacity: 0.65; }
+  .v2-pass-light .v2-pass-barcode { background-color: transparent; color: var(--v2-ink); }
+  .v2-pass-dark .v2-pass-barcode { color: var(--v2-paper); }
+
+  /* Chips */
+  .v2-chip-dashed { display: inline-flex; align-items: center; height: 42px; padding: 0 20px; border-radius: 999px; border: 1.5px dashed var(--v2-ink-24); color: var(--v2-ink); text-decoration: none; font-weight: 500; font-size: 15px; }
+  .v2-chip-dashed:hover { border-color: var(--v2-accent); color: var(--v2-accent); }
+  .v2-chip-city { display: inline-flex; align-items: center; height: 38px; padding: 0 16px; border-radius: 999px; background: var(--v2-white); border: 1px solid var(--v2-border); color: var(--v2-ink); text-decoration: none; font-size: 14px; }
+  .v2-chip-city:hover { border-color: var(--v2-accent); color: var(--v2-accent); }
+
+  /* FAQ */
+  .v2-faq { border-bottom: 1px solid var(--v2-border); padding: 6px 0; }
+  .v2-faq summary { cursor: pointer; list-style: none; padding: 16px 0; font-weight: 600; font-size: 18px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+  .v2-faq summary::-webkit-details-marker { display: none; }
+  .v2-faq summary span { color: var(--v2-accent); font-weight: 400; font-size: 22px; transition: transform 0.2s ease; }
+  .v2-faq[open] summary span { transform: rotate(45deg); }
+  .v2-faq p { font-size: 16px; line-height: 1.65; color: var(--v2-ink-72); margin: 0 0 16px; }
+
+  /* Footer */
+  .v2-foothead { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(246,241,232,0.56); font-weight: 500; margin: 0 0 16px; }
+  .v2-footlink { color: rgba(246,241,232,0.72); text-decoration: none; font-size: 14px; }
+  .v2-footlink:hover { color: var(--v2-paper); }
+
+  @media (min-width: 820px) { #v2-sticky { display: none !important; } }
+</style>
+
+<script>
+  import { analytics } from '../lib/analytics'
+
+  const SOURCE = 'v2'
+  const CITY = ''
+
+  // ── Header/Sticky CTA → zum Hero-Formular scrollen ──
+  const lead = document.getElementById('lead')
+  document.querySelectorAll('[data-scroll-to-form]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!lead) return
+      const y = lead.getBoundingClientRect().top + window.scrollY - 80
+      window.scrollTo({ top: y, behavior: 'smooth' })
+      lead.querySelector<HTMLInputElement>('input[name="betrieb"]')?.focus({ preventScroll: true })
+    })
+  })
+
+  // ── Demo-Stempelkarte (5 Tipps → Belohnung) ──
+  const demoCard = document.getElementById('demo-card')
+  const demoStamps = Array.from(document.querySelectorAll('#demo-stamps .v2-stamp'))
+  const demoReward = document.getElementById('demo-reward')
+  const demoHint = document.getElementById('demo-hint')
+  const demoLeft = document.getElementById('demo-left')
+  let filled = 0
+  function renderDemo() {
+    demoStamps.forEach((s, i) => s.classList.toggle('is-filled', i < filled))
+    const done = filled >= 5
+    if (demoReward) demoReward.hidden = !done
+    if (demoHint) demoHint.style.display = done ? 'none' : ''
+    if (demoLeft) demoLeft.textContent = String(5 - filled)
+  }
+  function tap() { filled = filled >= 5 ? 0 : filled + 1; renderDemo() }
+  demoCard?.addEventListener('click', tap)
+  demoCard?.addEventListener('keydown', (e) => { if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') { e.preventDefault(); tap() } })
+
+  // ── Scroll-Stempel im dunklen Wallet-Pass (füllt bis 7/10) ──
+  const scrollPass = document.getElementById('scroll-pass')
+  const scrollStamps = Array.from(document.querySelectorAll('#scroll-stamps .v2-pass-stamp'))
+  let scrollStarted = false
+  function runScrollStamps() {
+    let n = 0
+    const step = () => {
+      if (n < 7) { scrollStamps[n]?.classList.add('is-filled'); n++; setTimeout(step, 320) }
+    }
+    setTimeout(step, 400)
+  }
+  if (scrollPass && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !scrollStarted) { scrollStarted = true; runScrollStamps(); io.disconnect() }
+      })
+    }, { threshold: 0.35 })
+    io.observe(scrollPass)
+  } else {
+    scrollStamps.slice(0, 7).forEach(s => s.classList.add('is-filled'))
+  }
+
+  // ── Sticky Mobile CTA: zeigen, sobald Hero-Formular aus dem Bild ist ──
+  const sticky = document.getElementById('v2-sticky')
+  let submitted = false
+  if (sticky && lead && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { sticky.hidden = e.isIntersecting || submitted })
+    }, { threshold: 0.1 })
+    io.observe(lead)
+  }
+
+  // ── Lead-Formulare → /api/submit.php (source: v2) ──
+  function getUtmParams(): Record<string, string> {
+    const params = new URLSearchParams(window.location.search)
+    const utm: Record<string, string> = {
+      utm_source: params.get('utm_source') || 'bonuskarte.digital',
+      utm_medium: params.get('utm_medium') || 'landing-page',
+      utm_campaign: params.get('utm_campaign') || 'v2',
+    }
+    for (const k of ['utm_content', 'utm_term', 'fbclid']) {
+      const v = params.get(k)
+      if (v) utm[k] = v
+    }
+    return utm
+  }
+
+  document.querySelectorAll<HTMLFormElement>('.v2-leadform').forEach(form => {
+    const container = form.parentElement!
+    const success = container.querySelector<HTMLElement>('.v2-success')
+    const errorEl = form.querySelector<HTMLElement>('.v2-formerror')
+    const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]')
+    let started = false
+
+    form.addEventListener('focusin', () => {
+      if (!started) { started = true; analytics.signupFormStart('unbekannt', CITY, SOURCE) }
+    })
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const data = Object.fromEntries(new FormData(form)) as Record<string, string>
+      const niche = (data.branche || 'cafe').toLowerCase()
+      if (errorEl) errorEl.hidden = true
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Karte wird erstellt …' }
+      analytics.signupSubmitAttempt(niche, CITY, SOURCE)
+
+      try {
+        const res = await fetch('/api/submit.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ladenname: data.betrieb,
+            kontakt: data.kontakt,
+            niche,
+            city: CITY,
+            mode: 'standard',
+            source: SOURCE,
+            utm: getUtmParams(),
+          }),
+        })
+        const json = await res.json()
+        if (res.ok && json.success) {
+          analytics.demoCardCreated(niche, CITY)
+          analytics.signupSubmit(niche, CITY, SOURCE)
+          const link = json.directInstallLink?.universal ?? json.installLink
+          if (success) {
+            const installEl = success.querySelector<HTMLAnchorElement>('.v2-installlink')
+            if (installEl && link) { installEl.href = link; installEl.hidden = false }
+            form.hidden = true
+            success.hidden = false
+          }
+          submitted = true
+          if (sticky) sticky.hidden = true
+        } else {
+          analytics.signupSubmitError(niche, CITY, 'api_error', SOURCE)
+          if (errorEl) errorEl.hidden = false
+        }
+      } catch {
+        analytics.signupSubmitError(niche, CITY, 'network_error', SOURCE)
+        if (errorEl) errorEl.hidden = false
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Kostenlos starten' }
+      }
+    })
+  })
+</script>
