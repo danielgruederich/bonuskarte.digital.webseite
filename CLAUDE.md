@@ -29,7 +29,7 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
 ## Boomerang Cards API
 - Base URL: `https://api.digitalwallet.cards`
 - Auth: `X-API-Key` Header
-- API Key: in `public/api/submit.php` (nicht öffentlich committen)
+- API Key: liegt mit allen anderen Secrets (Salesflare, Telegram, Sheets-Webhook, MailerCloud) in `~/bonuskarte-secrets.php` auf dem Server, AUSSERHALB des Webroots. Vorlage: `bonuskarte-secrets.example.php` im Repo-Root. Keys gehören niemals ins Repo — das Repo ist öffentlich!
 - Template IDs (alle 10 verdrahtet):
   - `cafes` → 1046392 ✅
   - `eiscafe` → 1060441 ✅
@@ -71,8 +71,7 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 - **Stil:** Geometrisch, minimal, thin Typography, all-caps
 
 ## Offene TODOs
-- [ ] Boomerang Templates für Döner, Pizza, Restaurant, Eiscafé erstellen → IDs in `submit.php` eintragen
-- [ ] Logo SVG durch echtes PNG ersetzen
+- [ ] API-Keys rotieren (Boomerang, Salesflare, Telegram-Bot, MailerCloud) — alte Keys lagen im öffentlichen Repo und in der Git-History
 - [ ] FTP-Passwort rotieren (wurde im Klartext geteilt)
 - [ ] Blog-Sektion aufbauen (2×/Monat, hyper-lokal, SEO)
 
