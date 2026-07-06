@@ -53,3 +53,17 @@ jobs:
             "https://bonuskarte.digital/deploy.php?token=${{ secrets.DEPLOY_TOKEN }}")
           echo "Response: $(cat /tmp/resp.json)"
           [ "$STATUS" = "200" ] || (echo "Webhook failed — HTTP $STATUS" && exit 1)
+
+      # Nebenwirkungsfreier Formular-Check: POST ohne Kontaktdaten wird von
+      # submit.php mit 400 abgelehnt — aber erst NACH dem Laden der Secrets-
+      # Datei. Kommt stattdessen "Serverkonfiguration unvollständig", fehlt
+      # die Secrets-Datei auf dem Server und der Deploy schlägt laut fehl.
+      - name: Smoke-Test Lead-Formular
+        run: |
+          sleep 5
+          RESP=$(curl -s -X POST https://bonuskarte.digital/api/submit.php \
+            -H 'Content-Type: application/json' \
+            -d '{"vorname":"Deploy-Smoketest"}')
+          echo "Response: $RESP"
+          echo "$RESP" | grep -q "E-Mail oder Telefon ist erforderlich" \
+            || { echo "::error::Lead-Formular-Endpoint defekt — Secrets-Datei auf dem Server pruefen!"; exit 1; }
