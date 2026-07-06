@@ -29,21 +29,36 @@ if (!$body) {
 }
 
 // ── Config ───────────────────────────────────────────────────────────────────
-const BOOMERANG_API_KEY  = 'a34f3829b32b7c629059a780a0919a13';
-const BOOMERANG_BASE     = 'https://api.digitalwallet.cards';
-const SALESFLARE_API_KEY = 'Lh1Qucl715Sp6Pwy4DZpoxzlGWt64Ugz7GA3M9G5_NKjm';
-const SALESFLARE_BASE    = 'https://api.salesflare.com';
+// Secrets liegen AUSSERHALB des Webroots in bonuskarte-secrets.php und werden
+// beim Deploy nicht überschrieben. Vorlage: bonuskarte-secrets.example.php im
+// Repo-Root. Keys gehören niemals in dieses (öffentliche) Repo.
+$secretsFile = null;
+foreach ([dirname(__DIR__, 2), dirname(__DIR__, 3)] as $dir) {
+    if (is_file($dir . '/bonuskarte-secrets.php')) {
+        $secretsFile = $dir . '/bonuskarte-secrets.php';
+        break;
+    }
+}
+if ($secretsFile === null) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Serverkonfiguration unvollständig (Secrets-Datei fehlt)']);
+    exit;
+}
+$secrets = require $secretsFile;
 
+define('BOOMERANG_API_KEY',   $secrets['boomerang_api_key']   ?? '');
+define('SALESFLARE_API_KEY',  $secrets['salesflare_api_key']  ?? '');
 // Telegram Lead-Alert (eigener Bot @bonuskarte_leads_bot)
-const TELEGRAM_BOT_TOKEN = '8557794026:AAHVILm2tKZFbTaTEG7s7wkxZJl8mQ-QsB8';
-const TELEGRAM_CHAT_ID    = '128525956';
-
-// Google Sheets Logging — Apps Script Web App URL (nach Deployment eintragen)
-const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxIKBXDVaAYfZcD6RV7lTodupreX7J5P0YV1OQ4FsOKArhRWhGBWSmmke4drEdLWgkX8Q/exec';
-
+define('TELEGRAM_BOT_TOKEN',  $secrets['telegram_bot_token']  ?? '');
+define('TELEGRAM_CHAT_ID',    $secrets['telegram_chat_id']    ?? '');
+// Google Sheets Logging — Apps Script Web App URL
+define('SHEETS_WEBHOOK_URL',  $secrets['sheets_webhook_url']  ?? '');
 // MailerCloud Transactional Email
-const MAILERCLOUD_API_KEY = 'kfAGX-693429be4f95623a037df4632f4b515d-25bf1d91b4b9625fb417d5440c87fc09';
-const MAILERCLOUD_BASE    = 'https://email-api.mailercloud.com';
+define('MAILERCLOUD_API_KEY', $secrets['mailercloud_api_key'] ?? '');
+
+const BOOMERANG_BASE   = 'https://api.digitalwallet.cards';
+const SALESFLARE_BASE  = 'https://api.salesflare.com';
+const MAILERCLOUD_BASE = 'https://email-api.mailercloud.com';
 
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
