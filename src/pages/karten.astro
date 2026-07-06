@@ -17,7 +17,8 @@ const cards = [
     stampsFilled: 7,
     cardLabel: 'Treuekarte',
     cardSub: '7 / 10 Stempel',
-    installLink: 'https://take.cards/xyBTG',
+    installLink: 'https://bonuscard.fuerte.digital/getpass/eSriep',
+    image: '/images/karten/stempelkarte.webp',
     highlight: true,
   },
   {
@@ -182,11 +183,22 @@ const cards = [
             <!-- Card mockup placeholder -->
             <div class="relative bg-paper p-6 flex items-center justify-center min-h-[160px]">
               {card.highlight && (
-                <div class="absolute top-3 right-3 bg-amber text-black text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-0.5">
+                <div class="absolute top-3 right-3 z-10 bg-amber text-black text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-0.5">
                   Beliebteste Karte
                 </div>
               )}
 
+              {card.image ? (
+                <!-- Real screenshots: back (detail view) behind, front (card) in front -->
+                <img
+                  src={card.image}
+                  alt={`${card.name} in Apple Wallet – Vorder- und Rückseite`}
+                  width="900"
+                  height="1774"
+                  loading="lazy"
+                  class="h-[360px] w-auto"
+                />
+              ) : (
               <!-- Wallet card mockup -->
               <div class="w-full max-w-[280px] rounded-xl overflow-hidden shadow-2xl" style={`background: #111; border: 1px solid rgba(255,255,255,0.08);`}>
                 <!-- Card top bar -->
@@ -225,6 +237,7 @@ const cards = [
                   </div>
                 </div>
               </div>
+              )}
             </div>
 
             <!-- Content -->
