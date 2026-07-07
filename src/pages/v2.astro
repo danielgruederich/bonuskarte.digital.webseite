@@ -176,8 +176,41 @@ const steps = [
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center">
           <div style="flex:1 1 320px;min-width:280px;position:relative">
             <div aria-hidden="true" style="position:absolute;top:-16px;left:-10px;width:150px;height:150px;border-radius:50%;border:5px solid rgba(242,92,36,0.10)"></div>
-            <img src="/images/mockup-coffee.png" alt="Digitale Stempelkarte in Apple Wallet auf einem iPhone" loading="lazy"
-              style="display:block;width:100%;max-width:420px;margin:0 auto;border-radius:24px;transform:rotate(1.2deg)" />
+            <!-- Personalisierbares Handy-Mockup.
+                 ?card=<Bild-URL> zeigt die ECHTE Boomerang-Karte; sonst die
+                 personalisierbare CSS-Karte (Name via ?laden, Farbe via ?color). -->
+            <div class="v2-phone" style="transform:rotate(1.2deg)">
+              <span class="v2-phone-notch" aria-hidden="true"></span>
+              <div class="v2-phone-screen">
+                <!-- Echtes Kartenbild (nur bei ?card sichtbar) -->
+                <img class="mockup-card-img" alt="" hidden style="display:block;width:100%;border-radius:14px;box-shadow:var(--v2-shadow-md)" />
+                <!-- Fallback: personalisierbare CSS-Karte -->
+                <div class="mockup-card-fallback v2-pass v2-pass-light" style="width:100%;box-shadow:none;border-radius:18px">
+                  <div class="v2-pass-head">
+                    <div>
+                      <div class="mockup-ladenname" style="font-weight:600;font-size:16px">Café Hügel</div>
+                      <div class="v2-mono v2-pass-sub">Stempelkarte</div>
+                    </div>
+                    <img class="mockup-logo-img" alt="" hidden style="height:26px;width:auto;max-width:100px;object-fit:contain;border-radius:5px" /><span class="mockup-logo-fallback" aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid currentColor;opacity:0.4;box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
+                  </div>
+                  <div class="v2-pass-grid">
+                    {[...Array(10)].map((_, i) => (
+                      <span class={`v2-pass-stamp${i < 4 ? ' v2-pass-stamp-filled' : ''}`}><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                    ))}
+                  </div>
+                  <div class="v2-pass-foot">
+                    <span style="font-weight:600;font-size:13.5px;color:var(--v2-accent)">Gratis Kaffee</span>
+                    <span class="v2-mono" style="font-size:10.5px;letter-spacing:0.08em;opacity:0.5">4 / 10</span>
+                  </div>
+                  <div class="v2-pass-barcode" aria-hidden="true"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Direkter Install-Button (nur bei ?pass sichtbar) -->
+            <a class="mockup-pass-link v2-btn v2-btn-lg" href="#" target="_blank" rel="noopener noreferrer" hidden style="margin:20px auto 0;max-width:420px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+              Diese Karte ins Wallet laden
+            </a>
           </div>
 
           <div style="flex:1 1 360px;min-width:300px">
@@ -608,6 +641,11 @@ const steps = [
   .v2-pass-light .v2-pass-barcode { background-color: transparent; color: var(--v2-ink); }
   .v2-pass-dark .v2-pass-barcode { color: var(--v2-paper); }
 
+  /* Handy-Mockup (rahmt die personalisierbare Karte / das echte Kartenbild) */
+  .v2-phone { position: relative; width: 100%; max-width: 340px; margin: 0 auto; aspect-ratio: 41 / 84; background: #1a1410; border-radius: 44px; padding: 12px; box-shadow: var(--v2-shadow-lg); }
+  .v2-phone-notch { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 108px; height: 26px; background: #1a1410; border-radius: 999px; z-index: 2; }
+  .v2-phone-screen { width: 100%; height: 100%; background: #f2eee6; border-radius: 34px; padding: 48px 16px 24px; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+
   /* Chips */
   .v2-chip-dashed { display: inline-flex; align-items: center; height: 42px; padding: 0 20px; border-radius: 999px; border: 1.5px dashed var(--v2-ink-24); color: var(--v2-ink); text-decoration: none; font-weight: 500; font-size: 15px; }
   .v2-chip-dashed:hover { border-color: var(--v2-accent); color: var(--v2-accent); }
@@ -634,7 +672,8 @@ const steps = [
   import { analytics } from '../lib/analytics'
 
   const SOURCE = 'v2'
-  const CITY = ''
+  // ABM-Outreach läuft aktuell nur in Köln → Lead-Attribution fest auf Köln
+  const CITY = 'koeln'
 
   // ── Header/Sticky CTA → zum Hero-Formular scrollen ──
   const lead = document.getElementById('lead')
@@ -697,11 +736,15 @@ const steps = [
     io.observe(lead)
   }
 
-  // ── ABM-Personalisierung über URL-Parameter ──
-  // ?laden=Café+Heugeld       → Ladenname in Mockups + Headline, Formular vorausgefüllt
-  // ?color=1a6b4a             → Brand-Farbe (Hex ohne #) für Stempel, Buttons, Akzente
-  // ?logo=https://…/logo.png  → Logo in den Karten-Mockups (auch /abm/… möglich)
+  // ── ABM-Personalisierung über URL-Parameter (Direct Outreach) ──
+  // ?laden=Café+Rotkehlchen         → Name in Headline + Mockups, Formular vorausgefüllt
+  // ?color=e0654c                   → Brand-Farbe (Hex ohne #) für Stempel/Buttons/Akzente
+  // ?card=https://…/karte.png       → ECHTES Boomerang-Kartenbild im Handy-Mockup
+  // ?pass=https://bonuscard…/getpass/xxx → Install-Link der echten Karte für alle CTAs
+  // ?logo=https://…/logo.png        → nur Logo (falls kein volles Kartenbild vorliegt)
+  // ?branche=cafe                   → Branchen-Dropdown vorauswählen
   const abm = new URLSearchParams(window.location.search)
+  const isRelOrHttp = (v: string) => /^(https?:\/\/|\/(?!\/))/i.test(v)
 
   const laden = abm.get('laden')?.trim()
   if (laden) {
@@ -716,14 +759,48 @@ const steps = [
     root?.style.setProperty('--v2-accent-hover', `#${brandColor}`)
   }
 
+  // Echtes Kartenbild → ersetzt die CSS-Platzhalterkarte im Handy-Mockup
+  const cardImg = abm.get('card')
+  if (cardImg && isRelOrHttp(cardImg)) {
+    const imgs = document.querySelectorAll<HTMLImageElement>('.mockup-card-img')
+    let ok = false
+    imgs.forEach(img => {
+      img.addEventListener('load', () => {
+        ok = true
+        document.querySelectorAll<HTMLElement>('.mockup-card-fallback').forEach(el => { el.hidden = true })
+        img.hidden = false
+      }, { once: true })
+      img.addEventListener('error', () => { img.hidden = true }, { once: true })
+      img.src = cardImg
+    })
+    if (laden) imgs.forEach(img => { img.alt = `Stempelkarte von ${laden} in Apple Wallet` })
+  }
+
+  // Nur-Logo-Variante (wenn kein volles Kartenbild übergeben wurde)
   const brandLogo = abm.get('logo')
-  if (brandLogo && /^(https?:\/\/|\/(?!\/))/i.test(brandLogo)) {
+  if (brandLogo && !cardImg && isRelOrHttp(brandLogo)) {
     document.querySelectorAll<HTMLImageElement>('.mockup-logo-img').forEach(img => {
       img.addEventListener('error', () => { img.hidden = true }, { once: true })
       img.src = brandLogo
       img.hidden = false
     })
     document.querySelectorAll<HTMLElement>('.mockup-logo-fallback').forEach(el => { el.hidden = true })
+  }
+
+  // Install-Link der echten Karte → Mockup-Button + Erfolgs-CTA
+  const passUrl = abm.get('pass')
+  if (passUrl && /^https?:\/\//i.test(passUrl)) {
+    document.querySelectorAll<HTMLAnchorElement>('.mockup-pass-link').forEach(a => { a.href = passUrl; a.hidden = false })
+    document.querySelectorAll<HTMLAnchorElement>('.v2-installlink').forEach(a => { a.dataset.passUrl = passUrl })
+  }
+
+  // Branchen-Dropdown vorauswählen
+  const branche = abm.get('branche')?.toLowerCase()
+  if (branche) {
+    document.querySelectorAll<HTMLSelectElement>('.v2-leadform select[name="branche"]').forEach(sel => {
+      const opt = Array.from(sel.options).find(o => o.value.toLowerCase() === branche)
+      if (opt) sel.value = opt.value
+    })
   }
 
   // ── Lead-Formulare → /api/submit.php (source: v2) ──
@@ -778,9 +855,10 @@ const steps = [
         if (res.ok && json.success) {
           analytics.demoCardCreated(niche, CITY)
           analytics.signupSubmit(niche, CITY, SOURCE)
-          const link = json.directInstallLink?.universal ?? json.installLink
+          const installEl = success?.querySelector<HTMLAnchorElement>('.v2-installlink')
+          // Bei ABM (?pass) die echte Karte verlinken, sonst die frisch erstellte Demo-Karte
+          const link = installEl?.dataset.passUrl ?? json.directInstallLink?.universal ?? json.installLink
           if (success) {
-            const installEl = success.querySelector<HTMLAnchorElement>('.v2-installlink')
             if (installEl && link) { installEl.href = link; installEl.hidden = false }
             form.hidden = true
             success.hidden = false
