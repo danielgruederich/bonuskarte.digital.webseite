@@ -10,11 +10,11 @@ const { ctaHref = '/en/#get-started', ctaLabel = uiEn.nav.cta, dark = false } = 
 ---
 
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-paper border-b border-ink/30">
-  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="flex items-center justify-between h-16">
 
       <!-- Logo -->
-      <a href="/en/" aria-label="bonuskarte.digital — Home">
+      <a href="/en/" aria-label="bonuskarte.digital — Home" class="flex-shrink-0">
         <img
           src={dark ? '/images/logo-lockup-dark.png' : '/images/logo-lockup-primary.png'}
           alt="bonuskarte.digital"
@@ -25,36 +25,36 @@ const { ctaHref = '/en/#get-started', ctaLabel = uiEn.nav.cta, dark = false } = 
       </a>
 
       <!-- Desktop nav -->
-      <nav class="hidden lg:flex items-center gap-5 lg:gap-8 ml-12">
-        <a href="/en/#how-it-works" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+      <nav class="hidden xl:flex items-center gap-4 2xl:gap-6 ml-8">
+        <a href="/en/#how-it-works" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.howItWorks}
         </a>
-        <a href="/en/#industries" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/en/#industries" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.industries}
         </a>
-        <a href="/en/features" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/en/features" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.features}
         </a>
-        <a href="/en/cards" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/en/cards" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.cards}
         </a>
-        <a href="/en/pricing" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/en/pricing" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.pricing}
         </a>
-        <a href="/en/#faq" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/en/#faq" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.faq}
         </a>
-        <a href="/en/help" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/en/help" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.help}
         </a>
-        <a href="/en/blog" class="text-xs font-medium tracking-widest uppercase transition-colors hover:text-amber"
+        <a href="/en/blog" class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
           class:list={[dark ? 'text-paper/80' : 'text-ink/60']}>
           {uiEn.nav.blog}
         </a>
@@ -81,7 +81,7 @@ const { ctaHref = '/en/#get-started', ctaLabel = uiEn.nav.cta, dark = false } = 
       </nav>
 
       <!-- Mobile toggle -->
-      <button id="mobile-toggle" class="lg:hidden p-2 transition-colors hover:text-amber"
+      <button id="mobile-toggle" class="xl:hidden p-2 transition-colors hover:text-amber"
         class:list={[dark ? 'text-paper' : 'text-ink']}
         aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg id="icon-open" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ const { ctaHref = '/en/#get-started', ctaLabel = uiEn.nav.cta, dark = false } = 
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="lg:hidden hidden border-t border-ink/10 py-6 flex flex-col gap-5 bg-paper/98 backdrop-blur-md">
+    <div id="mobile-menu" class="xl:hidden hidden border-t border-ink/10 py-6 flex flex-col gap-5 bg-paper/98 backdrop-blur-md">
       <a href="/en/#how-it-works" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">
         {uiEn.nav.howItWorks}
       </a>

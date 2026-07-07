@@ -17,6 +17,7 @@ import LandingFaq from './LandingFaq.astro'
 import StickyMobileCta from './StickyMobileCta.astro'
 import Icon from './icons/TrustIcons.astro'
 import type { NicheData } from '../data/niches'
+import { inStadtteil, InStadtteil } from '../lib/stadtteil-grammatik'
 
 interface StadtteilLike {
   name: string
@@ -46,10 +47,14 @@ const bookingType = nicheData.slug === 'cafes'
   : GASTRO_NICHES.includes(nicheData.slug) ? 'gastro' : '15min'
 const bookingUrl = `https://termin.bonuskarte.digital/${bookingType}`
 
-// Templated Strings zur Buildzeit auflösen; SEO-Texte sind auf Köln verfasst → Stadtname tauschen
+// Templated Strings zur Buildzeit auflösen; SEO-Texte sind auf Köln verfasst → Stadtname tauschen.
+// "in {veedelName}" wird als Ortsangabe mit korrektem Artikel aufgelöst
+// ("in Nippes", aber "in der Innenstadt/Altstadt", "im Zentrum").
 const r = (s: string) =>
-  s.replace('{veedelName}', stadtteilData.name)
-   .replace('{fomoCount}', String(stadtteilData.fomoCount[nicheData.fomoKey]))
+  s.replace(/\bin \{veedelName\}/g, inStadtteil(stadtteilData.name))
+   .replace(/\bIn \{veedelName\}/g, InStadtteil(stadtteilData.name))
+   .replace(/\{veedelName\}/g, stadtteilData.name)
+   .replace(/\{fomoCount\}/g, String(stadtteilData.fomoCount[nicheData.fomoKey]))
 
 const fomoCount = stadtteilData.fomoCount[nicheData.fomoKey]
 const showFomo  = fomoCount > 0
@@ -68,13 +73,13 @@ const pageUrl   = `https://bonuskarte.digital/${citySlug}/${stadtteilData.slug}/
       { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/" },
       { "@type": "ListItem", "position": 2, "name": cityName, "item": `https://bonuskarte.digital/${citySlug}/` },
       { "@type": "ListItem", "position": 3, "name": stadtteilData.name, "item": `https://bonuskarte.digital/${citySlug}/${stadtteilData.slug}/` },
-      { "@type": "ListItem", "position": 4, "name": `${nicheData.label} in ${stadtteilData.name}` }
+      { "@type": "ListItem", "position": 4, "name": `${nicheData.label} ${inStadtteil(stadtteilData.name)}` }
     ]
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": `Digitale ${nicheData.cardType} für ${nicheData.label} in ${stadtteilData.name}`,
+    "name": `Digitale ${nicheData.cardType} für ${nicheData.label} ${inStadtteil(stadtteilData.name)}`,
     "description": r(nicheData.seoDescription).replace('Köln', cityName),
     "url": pageUrl,
     "provider": {
@@ -153,8 +158,8 @@ const pageUrl   = `https://bonuskarte.digital/${citySlug}/${stadtteilData.slug}/
           target="_blank"
           rel="noopener noreferrer"
           onclick="if(typeof gtag!=='undefined')gtag('event','demo_booking',{source:'hero'})"
-          class="inline-flex items-center gap-2 text-ink/50 hover:text-ink/80 text-xs tracking-[0.15em] uppercase transition-colors py-1">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          class="mt-3 inline-flex items-center justify-center gap-3 w-full sm:w-auto border border-amber/60 bg-amber/5 hover:bg-amber/15 text-ink px-8 py-3.5 text-xs font-bold tracking-[0.2em] uppercase transition-all">
+          <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
           Erst informieren? Termin buchen
@@ -286,7 +291,7 @@ const pageUrl   = `https://bonuskarte.digital/${citySlug}/${stadtteilData.slug}/
           <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2 mb-8">
             <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
             <span class="text-amber text-xs tracking-[0.3em] uppercase">
-              Exklusiv für {nicheData.emoji} in {stadtteilData.name}
+              Exklusiv für {nicheData.emoji} {inStadtteil(stadtteilData.name)}
             </span>
           </div>
           <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">Demo-Karte</h2>
