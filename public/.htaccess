@@ -1,0 +1,52 @@
+# bonuskarte.digital — Performance (Kompression + Caching)
+# Wird via public/ → dist/ → FTP-Root deployed.
+
+# ── Kompression ───────────────────────────────────────────────
+# Brotli (falls vom Host unterstützt)
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json
+  AddOutputFilterByType BROTLI_COMPRESS application/xml application/rss+xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml font/woff2
+</IfModule>
+
+# gzip (Fallback)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ── Browser-Caching ───────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Gehashte Astro-Assets: unveränderlich, 1 Jahr
+  <FilesMatch "\.(js|css|woff2|webp|jpg|jpeg|png|svg|gif|ico)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML: immer revalidieren (Inhalte ändern sich beim Rebuild)
+  <FilesMatch "\.html$">
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Korrekter MIME-Type + langer Cache für Fonts (auch ohne mod_expires)
+<IfModule mod_headers.c>
+  <FilesMatch "\.woff2$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>
+
+# Keep-Alive
+<IfModule mod_headers.c>
+  Header set Connection keep-alive
+</IfModule>
