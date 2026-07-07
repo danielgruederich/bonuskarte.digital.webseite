@@ -16,7 +16,8 @@ let mock, php
 
 before(async () => {
   mock = await startMockUpstream()
-  php = await startPhpServer(mock.url)
+  // Rate-Limit im Haupt-Server aus (die Suite feuert viele Requests von 127.0.0.1).
+  php = await startPhpServer(mock.url, { RATE_LIMIT_MAX: '0' })
 })
 
 after(async () => {
@@ -89,6 +90,7 @@ test('Standard-Lead: Salesflare → Telegram → Boomerang, in dieser Reihenfolg
 
   const paths = mock.state.requests.map((r) => `${r.method} ${r.path}`)
   assert.deepEqual(paths, [
+    'GET /contacts', // Dedup-Lookup (findet nichts → legt neu an)
     'POST /accounts',
     'POST /contacts',
     'POST /opportunities',
@@ -129,8 +131,9 @@ test('Salesflare: Account, Kontakt und Opportunity korrekt verknüpft und getagg
   assert.equal(account.body.phone_numbers[0].number, '0170 5551234')
   assert.equal(account.body.social_profiles[0].username, 'test_laden')
 
-  const [contact] = mock.sent('/contacts')
+  const [contact] = mock.sent('/contacts', 'POST')
   assert.equal(contact.body.firstname, 'Testkunde')
+  assert.equal(contact.body.email, 'test@example.com', 'E-Mail muss im CRM-Kontakt landen')
   assert.equal(contact.body.account, 9001, 'Kontakt muss am Account hängen')
 
   const [opp] = mock.sent('/opportunities')
@@ -223,8 +226,8 @@ test('Boomerang komplett down → 500-Antwort, ABER Lead ist in Salesflare + Tel
   const res = await php.submit(standardLead())
   assert.equal(res.status, 500, 'Nutzer sieht Fehler (kann es erneut versuchen)')
 
-  assert.equal(mock.sent('/accounts').length, 1, 'CRM hat den Lead trotzdem')
-  assert.equal(mock.sent('/contacts').length, 1)
+  assert.equal(mock.sent('/accounts', 'POST').length, 1, 'CRM hat den Lead trotzdem')
+  assert.equal(mock.sent('/contacts', 'POST').length, 1)
   assert.equal(mock.sent('/bot').length, 1, 'Telegram-Alert ging trotzdem raus')
 })
 
@@ -301,7 +304,47 @@ test('nur erlaubte UTM-Parameter werden an Wallet-Links angehängt', async () =>
   assert.doesNotMatch(json.installLink, /random_junk/)
 })
 
-// ── Bekannte Lücken (dokumentiert, noch nicht gefixt) ────────────────────────
+// ── Dedup (früher offene Bugs, jetzt gefixt) ─────────────────────────────────
 
-test.todo('BUG: optionale E-Mail wird an recordSalesflareLead() nicht durchgereicht — Lead-E-Mail fehlt im CRM (submit.php:147)')
-test.todo('BUG: Salesflare legt bei jedem Retry neue Accounts/Kontakte an (kein Dedup wie Boomerangs 409-Handling)')
+test('Dedup: existierender Kontakt (gleiche E-Mail) → kein zweiter Account/Kontakt/Opportunity', async () => {
+  mock.state.mode = 'existingContact'
+  const res = await php.submit(standardLead())
+  assert.equal((await res.json()).success, true, 'Demo-Karte läuft trotzdem durch')
+
+  assert.equal(mock.sent('/accounts', 'POST').length, 0, 'kein doppelter Account')
+  assert.equal(mock.sent('/contacts', 'POST').length, 0, 'kein doppelter Kontakt')
+  assert.equal(mock.sent('/opportunities', 'POST').length, 0, 'keine doppelte Opportunity')
+  assert.equal(mock.sent('/api/v2/cards').length, 1, 'Boomerang-Karte kommt trotzdem')
+})
+
+// ── Honeypot & Rate-Limit (Spam-Schutz) ──────────────────────────────────────
+
+test('Honeypot: ausgefülltes `website`-Feld → still verworfen, KEINE Upstream-Calls', async () => {
+  const res = await php.submit(standardLead({ website: 'http://spam.example' }))
+  assert.equal(res.status, 200)
+  assert.equal((await res.json()).success, true, 'Bot sieht Fake-Erfolg (kein Retry-Anreiz)')
+  assert.equal(mock.state.requests.length, 0, 'kein CRM, kein Telegram, kein Boomerang')
+})
+
+test('Rate-Limit: nach RATE_LIMIT_MAX Anfragen derselben IP → 429, Lead-Verarbeitung stoppt', async () => {
+  const mock2 = await startMockUpstream()
+  const php2 = await startPhpServer(mock2.url, {
+    RATE_LIMIT_MAX: '3',
+    RATE_LIMIT_WINDOW: '600',
+    RATE_LIMIT_DIR: `/tmp/bk_rl_${Date.now()}_${process.pid}`,
+  })
+  try {
+    for (let i = 0; i < 3; i++) {
+      const ok = await php2.submit(standardLead())
+      assert.equal(ok.status, 200, `Anfrage ${i + 1} muss durchgehen`)
+    }
+    const blocked = await php2.submit(standardLead())
+    assert.equal(blocked.status, 429, '4. Anfrage muss geblockt werden')
+    const before = mock2.state.requests.length
+    await php2.submit(standardLead())
+    assert.equal(mock2.state.requests.length, before, 'geblockte Anfrage darf keine Upstreams treffen')
+  } finally {
+    php2.close()
+    await mock2.close()
+  }
+})

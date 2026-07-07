@@ -69,6 +69,15 @@ export async function startMockUpstream() {
         if (state.mode === 'salesflareFail') return json(500, { error: 'boom' })
         return json(200, { id: 9001 })
       }
+      if (url.pathname === '/contacts' && req.method === 'GET') {
+        // Dedup-Lookup. 'existingContact' → passender Kontakt; sonst leer.
+        if (state.mode === 'existingContact') {
+          return json(200, [
+            { id: 9002, email: 'test@example.com', account: 9001, phone_numbers: [{ number: '0170 5551234' }] },
+          ])
+        }
+        return json(200, [])
+      }
       if (url.pathname === '/contacts') return json(200, { id: 9002 })
       if (url.pathname === '/opportunities') return json(200, { id: 9003 })
 
@@ -103,15 +112,15 @@ export async function startMockUpstream() {
       state.requests.length = 0
       state.mode = 'ok'
     },
-    /** Requests an einen Pfad-Präfix, in Reihenfolge */
-    sent(prefix) {
-      return state.requests.filter((r) => r.path.startsWith(prefix))
+    /** Requests an einen Pfad-Präfix (optional nach Methode gefiltert), in Reihenfolge */
+    sent(prefix, method) {
+      return state.requests.filter((r) => r.path.startsWith(prefix) && (!method || r.method === method))
     },
     close: () => new Promise((resolve) => server.close(resolve)),
   }
 }
 
-export async function startPhpServer(upstreamUrl) {
+export async function startPhpServer(upstreamUrl, extraEnv = {}) {
   const port = 8100 + Math.floor(Math.random() * 800)
   const child = spawn('php', ['-S', `127.0.0.1:${port}`, '-t', path.join(ROOT, 'public')], {
     env: {
@@ -120,6 +129,7 @@ export async function startPhpServer(upstreamUrl) {
       SALESFLARE_BASE: upstreamUrl,
       TELEGRAM_BASE: upstreamUrl,
       ...TEST_KEYS,
+      ...extraEnv,
     },
     stdio: ['ignore', 'ignore', 'pipe'],
   })

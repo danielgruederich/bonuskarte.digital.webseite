@@ -27,6 +27,15 @@ if (!$body) {
     exit;
 }
 
+// ── Honeypot ──────────────────────────────────────────────────────────────────
+// Das Feld `website` ist im Formular für Menschen unsichtbar (offscreen,
+// aria-hidden, tabindex -1). Nur Bots füllen es aus. Wir tun so, als hätte es
+// geklappt (kein Retry-Anreiz) und verwerfen still — kein CRM, kein Boomerang.
+if (!empty($body['website'])) {
+    echo json_encode(['success' => true]);
+    exit;
+}
+
 // ── Config ───────────────────────────────────────────────────────────────────
 // Alle Werte per Env-Var überschreibbar (Integrationstests zeigen die Base-URLs
 // auf einen lokalen Mock-Server; Produktion nutzt die Fallbacks unverändert).
@@ -39,6 +48,11 @@ define('SALESFLARE_BASE',    getenv('SALESFLARE_BASE')    ?: 'https://api.salesf
 define('TELEGRAM_BASE',      getenv('TELEGRAM_BASE')      ?: 'https://api.telegram.org');
 define('TELEGRAM_BOT_TOKEN', getenv('TELEGRAM_BOT_TOKEN') ?: '8557794026:AAHVILm2tKZFbTaTEG7s7wkxZJl8mQ-QsB8');
 define('TELEGRAM_CHAT_ID',   getenv('TELEGRAM_CHAT_ID')   ?: '128525956');
+
+// Rate-Limit pro IP (dateibasiert, fail-open). 0 = deaktiviert (z.B. in Tests).
+define('RATE_LIMIT_MAX',    (int) (getenv('RATE_LIMIT_MAX')    !== false ? getenv('RATE_LIMIT_MAX')    : 8));
+define('RATE_LIMIT_WINDOW', (int) (getenv('RATE_LIMIT_WINDOW') !== false ? getenv('RATE_LIMIT_WINDOW') : 600));
+define('RATE_LIMIT_DIR',    getenv('RATE_LIMIT_DIR') ?: sys_get_temp_dir() . '/bk_ratelimit');
 
 // Add new niche template IDs here as you create them in Boomerang
 const TEMPLATE_IDS = [
@@ -54,6 +68,14 @@ const TEMPLATE_IDS = [
     'blumenladen'   => 1115415, // active ✅
 ];
 const TEMPLATE_FALLBACK = 1046392; // used if niche has no template yet
+
+// ── Rate-Limit (pro IP, fail-open) ────────────────────────────────────────────
+$clientIp = $_SERVER['REMOTE_ADDR'] ?? '';
+if ($clientIp && isRateLimited($clientIp)) {
+    http_response_code(429);
+    echo json_encode(['error' => 'Zu viele Anfragen. Bitte einen Moment warten.']);
+    exit;
+}
 
 // ── Extract fields ────────────────────────────────────────────────────────────
 $firstName = trim($body['vorname']   ?? $body['firstName'] ?? '');
@@ -128,6 +150,38 @@ function apiRequest(string $method, string $baseUrl, string $path, array $header
     return ['code' => $httpCode, 'body' => json_decode($raw, true)];
 }
 
+// ── Rate-Limit-Helfer ─────────────────────────────────────────────────────────
+// Gleitendes Fenster pro IP in einer JSON-Datei. Bei JEDEM Fehler (kein Schreib-
+// recht, kaputte Datei …) wird durchgelassen — ein echter Lead darf nie an der
+// Spam-Bremse verloren gehen.
+function isRateLimited(string $ip): bool
+{
+    if (RATE_LIMIT_MAX <= 0) {
+        return false;
+    }
+    try {
+        $dir = RATE_LIMIT_DIR;
+        if (!is_dir($dir)) {
+            @mkdir($dir, 0700, true);
+        }
+        $file = $dir . '/' . md5($ip) . '.json';
+        $now  = time();
+        $hits = [];
+        if (is_readable($file)) {
+            $hits = json_decode((string) @file_get_contents($file), true) ?: [];
+        }
+        $hits = array_values(array_filter($hits, fn($t) => is_int($t) && $t > $now - RATE_LIMIT_WINDOW));
+        if (count($hits) >= RATE_LIMIT_MAX) {
+            return true;
+        }
+        $hits[] = $now;
+        @file_put_contents($file, json_encode($hits), LOCK_EX);
+    } catch (\Throwable $e) {
+        return false;
+    }
+    return false;
+}
+
 // ── Boomerang API helper ──────────────────────────────────────────────────────
 function boomerang(string $method, string $path, array $data = []): array
 {
@@ -146,6 +200,45 @@ function salesflare(string $method, string $path, array $data = []): array
     ], $data);
 }
 
+// ── Salesflare-Dedup ──────────────────────────────────────────────────────────
+// Sucht einen bestehenden Kontakt per E-Mail (sonst Telefon) und liefert dessen
+// Account-ID zurück. WICHTIG: Wir übernehmen nur bei EXAKTEM Match — falls die
+// API den Filter ignoriert und alle Kontakte liefert, würde sonst ein fremder
+// Account getroffen. Kein Match / Fehler → null (es wird neu angelegt).
+function salesflareFindExistingAccount(string $email, string $phone): ?int
+{
+    $query = $email
+        ? 'email=' . rawurlencode($email)
+        : ($phone ? 'phone_number=' . rawurlencode($phone) : '');
+    if (!$query) {
+        return null;
+    }
+    $res        = salesflare('GET', '/contacts?' . $query);
+    $candidates = is_array($res['body'] ?? null) ? $res['body'] : [];
+    $needPhone  = $phone ? preg_replace('/\D+/', '', $phone) : '';
+
+    foreach ($candidates as $c) {
+        if (!is_array($c)) {
+            continue;
+        }
+        $matchEmail = $email && strtolower((string) ($c['email'] ?? '')) === strtolower($email);
+        $matchPhone = false;
+        if ($needPhone) {
+            foreach (($c['phone_numbers'] ?? []) as $pn) {
+                if (isset($pn['number']) && preg_replace('/\D+/', '', $pn['number']) === $needPhone) {
+                    $matchPhone = true;
+                    break;
+                }
+            }
+        }
+        if ($matchEmail || $matchPhone) {
+            $acc = $c['account'] ?? null;
+            return is_array($acc) ? ($acc['id'] ?? null) : $acc;
+        }
+    }
+    return null;
+}
+
 // ── Salesflare lead recorder ──────────────────────────────────────────────────
 // Speichert Account + Kontakt + Opportunity. Läuft VOR Boomerang, damit ein Fehler
 // bei der Demo-Karten-Erstellung den Lead nie mehr verschluckt. Fehler hier
@@ -154,6 +247,7 @@ function recordSalesflareLead(
     string $firstName,
     string $instagram,
     string $phone,
+    string $email,
     string $niche,
     string $mode,
     string $source,
@@ -161,6 +255,11 @@ function recordSalesflareLead(
     array $utm
 ) {
     try {
+        // Dedup: bei Retry / Zweit-Anfrage denselben Account nicht doppelt anlegen.
+        if (salesflareFindExistingAccount($email, $phone)) {
+            return;
+        }
+
         // Extract city/veedel/niche from utm_campaign (e.g. "koeln-nippes-cafes")
         $utmCampaign   = $utm['utm_campaign'] ?? '';
         $pathParts     = explode('-', $utmCampaign);
@@ -204,6 +303,9 @@ function recordSalesflareLead(
             'firstname' => $firstName,
             'tags'      => $tags,
         ];
+        if ($email) {
+            $contactPayload['email'] = $email;
+        }
         if ($phone) {
             $contactPayload['phone_numbers'] = [['number' => $phone, 'type' => 'mobile']];
         }
@@ -334,7 +436,7 @@ if (($body['mode'] ?? '') === 'lead' || ($body['lang'] ?? '') === 'fr') {
 }
 
 // ── Step 0: Record lead in Salesflare FIRST (never lost on Boomerang failure) ─
-recordSalesflareLead($firstName, $instagram, $phone, $niche, $mode, $source, $reqCity, $utm);
+recordSalesflareLead($firstName, $instagram, $phone, $email, $niche, $mode, $source, $reqCity, $utm);
 notifyTelegramLead($firstName, $phone, $email, $instagram, $niche, $mode, $utm);
 
 // ── Step 1: Create customer ───────────────────────────────────────────────────
