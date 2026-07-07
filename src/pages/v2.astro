@@ -102,7 +102,7 @@ const steps = [
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
           <div style="flex:1 1 440px;min-width:300px;padding-top:clamp(8px,3vw,40px)">
             <p class="v2-kicker">Apple Wallet · Google Wallet</p>
-            <h1 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale Stempelkarte für <span style="color:var(--v2-accent);white-space:nowrap">deinen Laden</span>.</h1>
+            <h1 style="font-family:'Zilla Slab',Georgia,serif;font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale Stempelkarte für <span class="mockup-ladenname" style="color:var(--v2-accent);white-space:nowrap">deinen Laden</span>.</h1>
             <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--v2-ink-72);margin:22px 0 0;max-width:30ch">Mehr Stammkund:innen, kein Papier, keine App. Deine Gäste sammeln Stempel direkt in ihrer Wallet – du gewinnst Wiederkommer.</p>
 
             <div class="v2-trustrow" style="margin-top:26px">
@@ -189,10 +189,10 @@ const steps = [
               style="position:relative;cursor:pointer;background:var(--v2-white);border:1px solid var(--v2-border);border-radius:28px;box-shadow:var(--v2-shadow-md);padding:28px;user-select:none">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
                 <div>
-                  <div style="font-weight:600;font-size:17px">Café Hügel</div>
+                  <div class="mockup-ladenname" style="font-weight:600;font-size:17px">Café Hügel</div>
                   <div class="v2-mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--v2-ink-40)">Stempelkarte</div>
                 </div>
-                <span aria-hidden="true" style="display:inline-flex"><span style="width:16px;height:16px;border-radius:50%;border:2px solid var(--v2-ink-40);box-sizing:border-box"></span><span style="width:16px;height:16px;border-radius:50%;background:var(--v2-accent);margin-left:-6px"></span></span>
+                <img class="mockup-logo-img" alt="" hidden style="height:26px;width:auto;max-width:100px;object-fit:contain;border-radius:5px" /><span class="mockup-logo-fallback" aria-hidden="true" style="display:inline-flex"><span style="width:16px;height:16px;border-radius:50%;border:2px solid var(--v2-ink-40);box-sizing:border-box"></span><span style="width:16px;height:16px;border-radius:50%;background:var(--v2-accent);margin-left:-6px"></span></span>
               </div>
 
               <div id="demo-stamps" style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:360px">
@@ -238,10 +238,10 @@ const steps = [
             <div class="v2-pass v2-pass-light" style="transform:rotate(2deg)">
               <div class="v2-pass-head">
                 <div>
-                  <div style="font-weight:600;font-size:16px">Café Hügel</div>
+                  <div class="mockup-ladenname" style="font-weight:600;font-size:16px">Café Hügel</div>
                   <div class="v2-mono v2-pass-sub">Treuekarte</div>
                 </div>
-                <span aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid currentColor;opacity:0.4;box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
+                <img class="mockup-logo-img" alt="" hidden style="height:24px;width:auto;max-width:90px;object-fit:contain;border-radius:5px" /><span class="mockup-logo-fallback" aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid currentColor;opacity:0.4;box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
               </div>
               <div class="v2-pass-grid">
                 {[...Array(10)].map(() => <span class="v2-pass-stamp v2-pass-stamp-filled"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>)}
@@ -272,10 +272,10 @@ const steps = [
             <div class="v2-pass v2-pass-dark">
               <div class="v2-pass-head">
                 <div>
-                  <div style="font-weight:600;font-size:16px">Café Hügel</div>
+                  <div class="mockup-ladenname" style="font-weight:600;font-size:16px">Café Hügel</div>
                   <div class="v2-mono v2-pass-sub">Treuekarte</div>
                 </div>
-                <span aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid currentColor;opacity:0.4;box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
+                <img class="mockup-logo-img" alt="" hidden style="height:24px;width:auto;max-width:90px;object-fit:contain;border-radius:5px" /><span class="mockup-logo-fallback" aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid currentColor;opacity:0.4;box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--v2-accent);margin-left:-5px"></span></span>
               </div>
               <div class="v2-pass-grid" id="scroll-stamps">
                 {[...Array(10)].map(() => <span class="v2-pass-stamp"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>)}
@@ -543,6 +543,8 @@ const steps = [
     -webkit-font-smoothing: antialiased;
   }
   .v2 ::selection { background: var(--v2-amber-tint); }
+  /* hidden-Attribut muss auch gegen inline display:flex gewinnen (Reward-Banner, Sticky-CTA, Install-Link) */
+  .v2 [hidden] { display: none !important; }
   .v2 .v2-mono, .v2 .v2-mono * { font-family: 'Geist Mono', ui-monospace, 'SFMono-Regular', monospace; }
   .v2 .v2-mono .v2-sans { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; }
 
@@ -693,6 +695,35 @@ const steps = [
       entries.forEach(e => { sticky.hidden = e.isIntersecting || submitted })
     }, { threshold: 0.1 })
     io.observe(lead)
+  }
+
+  // ── ABM-Personalisierung über URL-Parameter ──
+  // ?laden=Café+Heugeld       → Ladenname in Mockups + Headline, Formular vorausgefüllt
+  // ?color=1a6b4a             → Brand-Farbe (Hex ohne #) für Stempel, Buttons, Akzente
+  // ?logo=https://…/logo.png  → Logo in den Karten-Mockups (auch /abm/… möglich)
+  const abm = new URLSearchParams(window.location.search)
+
+  const laden = abm.get('laden')?.trim()
+  if (laden) {
+    document.querySelectorAll('.mockup-ladenname').forEach(el => { el.textContent = laden })
+    document.querySelectorAll<HTMLInputElement>('.v2-leadform input[name="betrieb"]').forEach(i => { i.value = laden })
+  }
+
+  const brandColor = abm.get('color')
+  if (brandColor && /^([0-9a-f]{3}|[0-9a-f]{6})$/i.test(brandColor)) {
+    const root = document.querySelector<HTMLElement>('.v2')
+    root?.style.setProperty('--v2-accent', `#${brandColor}`)
+    root?.style.setProperty('--v2-accent-hover', `#${brandColor}`)
+  }
+
+  const brandLogo = abm.get('logo')
+  if (brandLogo && /^(https?:\/\/|\/(?!\/))/i.test(brandLogo)) {
+    document.querySelectorAll<HTMLImageElement>('.mockup-logo-img').forEach(img => {
+      img.addEventListener('error', () => { img.hidden = true }, { once: true })
+      img.src = brandLogo
+      img.hidden = false
+    })
+    document.querySelectorAll<HTMLElement>('.mockup-logo-fallback').forEach(el => { el.hidden = true })
   }
 
   // ── Lead-Formulare → /api/submit.php (source: v2) ──
