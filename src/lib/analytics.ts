@@ -60,15 +60,15 @@ export const analytics = {
     track('demo_card_created', { niche, city }),
 
   /**
-   * Demo-Termin gebucht. TODO: aktuell kein Calendly/cal.com auf der Site eingebaut.
-   * Sobald Termin-Buchen-Feature existiert, im Booking-Erfolg aufrufen.
+   * Demo-Termin gebucht. Live: Trafft-Buchung (termin.fuerte.digital), eingebaut in
+   * /termin und als CTA im Hero + unter dem Formular. Feuert aus den Booking-CTAs.
    */
   demoBooking: (source: string = 'standard') =>
     track('demo_booking', { source }),
 
   /**
-   * Chatbot (ZipChat) geöffnet. TODO: ZipChat-Widget ist derzeit NICHT auf bonuskarte.digital
-   * eingebaut (nur Outreach-Tool). Sobald Widget eingebettet ist, im onOpen-Hook rufen.
+   * Chatbot (ZipChat) geöffnet. Live: Widget global via BaseLayout (config/integrations.ts).
+   * Feuert einmal pro Session beim ersten Klick auf den Launcher (Zipchat.astro).
    */
   chatbotOpen: (location: string = 'unknown') =>
     track('chatbot_open', { location }),

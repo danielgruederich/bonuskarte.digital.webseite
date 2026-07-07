@@ -75,6 +75,7 @@ export default function LeadFormFr({ niche, arr }: Props) {
           vorname:   currentPrenom,
           telefon:   currentPhone,
           instagram: cleanInstagram,
+          website:   (data.website as string) ?? '', // Honeypot
           niche:     niche,
           lang:      'fr',
           mode:      'lead',
@@ -140,6 +141,11 @@ export default function LeadFormFr({ niche, arr }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <p className="text-xs tracking-[0.2em] uppercase text-ink/55 mb-1">2 champs requis · 30 secondes</p>
+
+      {/* Honeypot: offscreen — seuls les bots le remplissent (vérifié dans submit.php) */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+        <label>Website<input type="text" name="website" tabIndex={-1} autoComplete="off" defaultValue="" /></label>
+      </div>
 
       {/* Prénom */}
       <div>

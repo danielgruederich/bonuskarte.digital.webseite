@@ -8,7 +8,7 @@ export interface NicheData {
   cardType: string    // z.B. "Stempelkarte", "Mitgliedskarte", "10er-Karte"
   label: string       // display name ("Café", "Döner", …)
   emoji: string
-  formType: FormType  // 'full' = LeadForm, 'simple' = LeadFormDoener
+  formType: FormType  // 'full' = LeadForm (mit E-Mail), 'simple' = LeadForm variant="simple"
   seoTitle: string    // use {veedelName} as token
   seoDescription: string
   heroCopy: {

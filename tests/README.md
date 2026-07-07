@@ -32,7 +32,9 @@ fehl, wenn sie auseinanderlaufen:
 - Salesflare-/Telegram-Label-Maps müssen jeden Template-Key kennen.
 - Doku-Template-IDs in CLAUDE.md == Code.
 - Hardcodete Booking-URLs == `trafft.bookingUrl` (eine Quelle der Wahrheit).
-- Jede Stadt-Nischen-Seite bindet beide Formulare mit `city`-Prop ein.
+- Jede Stadt-Nischen-Seite ist ein Wrapper um `NicheLanding` (cityName/citySlug/
+  nicheData/fomoCount); die gemeinsame Komponente bindet LeadForm (full + simple)
+  und den Booking-CTA ein.
 
 **Beim Anlegen einer neuen Nische oder Stadt zuerst diese Tests laufen lassen.**
 
@@ -49,7 +51,9 @@ Mock-Server um, der jeden Request aufzeichnet. Abgedeckt:
 - **Resilienz:** Boomerang down → Lead trotzdem in CRM + Telegram;
   Salesflare down → Demo-Karte kommt trotzdem; 409 → Kunden-Lookup.
 - Modi: Gründer/Walk-in-Tags, FR-Lead-only (kein Boomerang).
-- `test.todo`-Einträge dokumentieren bekannte, noch offene Bugs.
+- **Spam-Schutz:** Honeypot (`website`-Feld → still verworfen), IP-Rate-Limit → 429.
+- **CRM-Qualität:** E-Mail landet im Salesflare-Kontakt; Dedup (existierender
+  Kontakt → kein zweiter Account/Kontakt/Opportunity).
 
 ### 3. `tests/e2e/` — Formulare im Browser (Playwright)
 

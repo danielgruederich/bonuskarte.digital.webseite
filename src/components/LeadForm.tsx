@@ -22,6 +22,8 @@ interface Props {
   /** Analytics-source; default = mode. Erlaubt z.B. 'gruender_walkin' bei identischem mode. */
   source?: string
   bookingUrl?: string
+  /** 'full' = alle Felder (Standard/Gründer). 'simple' = ohne E-Mail (früher LeadFormDoener). */
+  variant?: 'full' | 'simple'
 }
 
 interface CardLinks {
@@ -50,6 +52,7 @@ export default function LeadForm({
   nicheOptions = [],
   source,
   bookingUrl,
+  variant = 'full',
 }: Props) {
   const [state, setState] = useState<State>('idle')
   const [card, setCard] = useState<CardLinks | null>(null)
@@ -114,6 +117,7 @@ export default function LeadForm({
           instagram: cleanInstagram,
           telefon:   data.telefon,
           email:     (data.email as string) ?? '',
+          website:   (data.website as string) ?? '', // Honeypot — muss leer bleiben
           niche:     effectiveNiche.toLowerCase(),
           city:      city.toLowerCase(),
           mode,
@@ -183,7 +187,9 @@ export default function LeadForm({
         {isMobile && universalLink && (
           <>
             <p className="text-ink text-sm leading-relaxed max-w-sm mx-auto mb-8">
-              {mode === 'gruender'
+              {trackSource === 'gruender_walkin'
+                ? 'Wir richten dein Branding gleich fertig ein — du hörst heute noch von uns. Lade schon mal deine Demo-Karte ins Wallet, dann siehst du direkt, wie es aussieht.'
+                : mode === 'gruender'
                 ? 'Wir melden uns innerhalb 24 h. Lade jetzt deine Demo-Karte ins Wallet — so siehst du schon mal, wie es aussieht.'
                 : 'Lade sie jetzt ins Wallet — kein Download, keine App nötig.'}
             </p>
@@ -293,7 +299,14 @@ export default function LeadForm({
         </div>
       )}
       <form onSubmit={handleSubmit} className="space-y-5">
-        <p className="text-xs tracking-[0.2em] uppercase text-ink/55 mb-1">2 Pflichtfelder · E-Mail optional · 30 Sekunden</p>
+        <p className="text-xs tracking-[0.2em] uppercase text-ink/55 mb-1">
+          {variant === 'simple' ? '2 Pflichtfelder · 30 Sekunden' : '2 Pflichtfelder · E-Mail optional · 30 Sekunden'}
+        </p>
+
+        {/* Honeypot: offscreen + aria-hidden — nur Bots füllen es aus (Prüfung in submit.php) */}
+        <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+          <label>Website<input type="text" name="website" tabIndex={-1} autoComplete="off" defaultValue="" /></label>
+        </div>
 
       {selectableNiche && (
         <div>
@@ -326,20 +339,22 @@ export default function LeadForm({
         <input id="telefon" name="telefon" type="tel" required placeholder="+49 170 …" autoComplete="tel" inputMode="tel" className={inputClass} />
       </div>
 
-      <div>
-        <label htmlFor="email" className={labelClass}>E-Mail <span className="text-ink/30 font-normal normal-case tracking-normal">(optional)</span></label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="max@muster.de"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          autoComplete="email"
-          inputMode="email"
-          className={inputClass}
-        />
-      </div>
+      {variant === 'full' && (
+        <div>
+          <label htmlFor="email" className={labelClass}>E-Mail <span className="text-ink/30 font-normal normal-case tracking-normal">(optional)</span></label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="max@muster.de"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            autoComplete="email"
+            inputMode="email"
+            className={inputClass}
+          />
+        </div>
+      )}
 
       <div>
         <label htmlFor="instagram" className={labelClass}>Instagram oder Geschäftsname</label>

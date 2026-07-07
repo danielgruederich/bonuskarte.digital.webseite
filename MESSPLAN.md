@@ -74,16 +74,15 @@ page_view  →  demo_card_view  →  niche_selected  →  signup_form_start  →
 - **Status:** ✅ Live, historisch (kann mittelfristig entfernt werden, da redundant zu `signup_submit`).
 
 ### `demo_booking`
-- **Bedeutet:** Ein Demo-/Beratungstermin wurde gebucht (Calendly o.ä.).
-- **Trigger:** TODO — derzeit ist KEIN Termin-Buch-Feature auf der Site eingebaut.
-- **Anleitung sobald Feature kommt:** In `analytics.ts` ist `demoBooking(source)` bereits angelegt. Im Calendly-Success-Webhook oder onSubmit-Callback aufrufen.
-- **Status:** ⏳ Funktion angelegt, Aufruf-Stelle existiert noch nicht.
+- **Bedeutet:** Ein Demo-/Beratungstermin wurde gebucht (Trafft, `termin.fuerte.digital`).
+- **Trigger:** Klick auf die Booking-CTAs (Hero „Erst informieren? Termin buchen", Link unter dem Formular, `source='form'`/`'hero'`) sowie Interaktion mit dem Trafft-iframe auf `/termin` (`source='trafft_embed'`/`'trafft_link'`). Feuert einmal pro Session.
+- **Hinweis:** Das Event ist ein Engagement-Proxy (Klick/Fokus). Die echte Buchungs-Bestätigung kommt serverseitig über den Trafft-Webhook.
+- **Status:** ✅ Live.
 
 ### `chatbot_open`
 - **Bedeutet:** Chatbot-Widget (ZipChat) auf bonuskarte.digital wurde vom User geöffnet.
-- **Trigger:** TODO — Site hat derzeit KEIN ZipChat-Widget eingebettet (ZipChat läuft nur im Outreach-Tool).
-- **Anleitung sobald Widget kommt:** In `analytics.ts` ist `chatbotOpen(location)` bereits angelegt. Im ZipChat-onOpen-Callback aufrufen.
-- **Status:** ⏳ Funktion angelegt, Widget existiert noch nicht.
+- **Trigger:** Erster Klick auf den ZipChat-Launcher (delegiert in `Zipchat.astro`, einmal pro Session). Widget global via `BaseLayout` + `config/integrations.ts`.
+- **Status:** ✅ Live.
 
 ### Engagement-Events (nicht im Haupt-Funnel)
 - `cta_clicked(location)` — Klick auf goldenen CTA-Button.

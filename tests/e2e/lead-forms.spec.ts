@@ -121,7 +121,7 @@ test('Pflichtfelder: leeres Formular löst keinen API-Call aus (HTML5-Validierun
 
 // ── Döner-Formular (vereinfachte Variante) ───────────────────────────────────
 
-test('Köln/Nippes/Döner: LeadFormDoener sendet Slug-Nische und zeigt Wallet-Success', async ({ page }) => {
+test('Köln/Nippes/Döner: simple-Formular (ohne E-Mail) sendet Nische und zeigt Wallet-Success', async ({ page }) => {
   const captured = await mockSubmit(page)
   await page.goto('/koeln/nippes/doener/')
   await waitForHydration(page, 'input[name="vorname"]')
@@ -134,7 +134,9 @@ test('Köln/Nippes/Döner: LeadFormDoener sendet Slug-Nische und zeigt Wallet-Su
   await expect(page.getByRole('heading', { name: /Deine Demo-Karte ist fertig, Ali E2E/ })).toBeVisible()
 
   const p = captured.payloads[0]
-  expect(p).toMatchObject({ vorname: 'Ali E2E', telefon: '0221 998877', niche: 'doener' })
+  // niche kommt jetzt als Label (kleingeschrieben) — submit.php-Alias 'döner'→'doener' greift (siehe API-Tests)
+  expect(p).toMatchObject({ vorname: 'Ali E2E', telefon: '0221 998877', niche: 'döner' })
+  expect(p.city).toBe('köln') // früher fälschlich immer 'koeln' hardcodet — jetzt echte Stadt
   expect((p.utm as Record<string, string>).utm_campaign).toBe('koeln-nippes-doener')
 })
 

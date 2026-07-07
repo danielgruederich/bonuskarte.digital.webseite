@@ -138,24 +138,35 @@ test('hardcodete Booking-URLs in Seiten == trafft.bookingUrl aus integrations.ts
 
 // ── Formular-Einbindung in allen Städten ─────────────────────────────────────
 
-test('jede Stadt-Nischen-Seite bindet LeadForm UND LeadFormDoener ein und ruft /api/submit.php-kompatible Props auf', () => {
+test('jede Stadt-Nischen-Seite ist ein Wrapper um NicheLanding mit cityName + nicheData + fomoCount', () => {
   const pagesDir = path.join(ROOT, 'src/pages')
   const nichePages = []
   for (const city of readdirSync(pagesDir, { withFileTypes: true })) {
     if (!city.isDirectory()) continue
     for (const sub of readdirSync(path.join(pagesDir, city.name), { withFileTypes: true })) {
       if (sub.isDirectory() && /^\[(viertel|veedel)\]$/.test(sub.name)) {
-        const p = path.join('src/pages', city.name, sub.name, '[niche].astro')
-        nichePages.push(p)
+        nichePages.push(path.join('src/pages', city.name, sub.name, '[niche].astro'))
       }
     }
   }
-  assert.ok(nichePages.length >= 14, `erwartet ≥14 Stadt-Seiten, gefunden: ${nichePages.length}`)
+  assert.ok(nichePages.length >= 15, `erwartet ≥15 Stadt-Seiten, gefunden: ${nichePages.length}`)
 
   for (const p of nichePages) {
     const src = read(p)
-    assert.match(src, /LeadForm[\s\S]*client:load/, `${p}: LeadForm fehlt oder ist nicht hydratisiert`)
-    assert.match(src, /LeadFormDoener/, `${p}: LeadFormDoener (simple-Nischen) fehlt`)
-    assert.match(src, /city="/, `${p}: city-Prop fehlt — Analytics wäre stadtlos`)
+    assert.match(src, /<NicheLanding/, `${p}: rendert nicht NicheLanding`)
+    assert.match(src, /cityName="[^"]+"/, `${p}: cityName-Prop fehlt — Analytics/SEO wäre stadtlos`)
+    assert.match(src, /citySlug="[^"]+"/, `${p}: citySlug-Prop fehlt`)
+    assert.match(src, /nicheData=\{nicheData\}/, `${p}: nicheData wird nicht durchgereicht`)
+    assert.match(src, /fomoCount=\{fomoCount\}/, `${p}: fomoCount fehlt`)
   }
+})
+
+test('NicheLanding bindet das gemeinsame Formular ein: LeadForm (full + variant=simple) + Booking-CTA', () => {
+  const src = read('src/components/NicheLanding.astro')
+  assert.match(src, /client:load/, 'LeadForm muss hydratisiert sein')
+  assert.match(src, /variant="simple"/, 'simple-Variante (früher LeadFormDoener) fehlt')
+  assert.match(src, /source="doener"/, 'source=doener für simple-Nische fehlt')
+  assert.match(src, /city=\{cityName\}/, 'city wird nicht aus cityName gespeist → Analytics stadtlos')
+  assert.match(src, /bookingUrl=\{bookingUrl\}/, 'Termin-CTA (bookingUrl) fehlt im Hero-Formular')
+  assert.doesNotMatch(src, /LeadFormDoener/, 'alte LeadFormDoener-Referenz darf nicht zurückkommen')
 })
