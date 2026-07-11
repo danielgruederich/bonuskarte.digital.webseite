@@ -1,0 +1,31 @@
+---
+// Pizza-Stempel-Grid für die v2-Redesign-Wallet-Karten.
+// filled = initial gefüllte Stempel; JS toggelt später die .is-filled-Klasse.
+interface Props {
+  total?: number
+  filled: number
+  gap?: string
+  gridId?: string
+}
+const { total = 12, filled, gap = '10px', gridId } = Astro.props
+---
+<div id={gridId} style={`display:grid;grid-template-columns:repeat(6,1fr);gap:${gap};margin-top:22px`}>
+  {Array.from({ length: total }).map((_, i) => (
+    <div class:list={['bk-stamp', { 'is-filled': i < filled }]} style="aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(255,255,255,0.45);display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 24 24" class="bk-stamp-on" style="width:62%;height:62%" aria-hidden="true">
+        <path d="M5 8.6 A9.2 9.2 0 0 1 19 8.6" stroke="#F25C24" stroke-width="2.6" fill="none" stroke-linecap="round"></path>
+        <path d="M6.4 11.6 L17.6 11.6 L12 21.6 Z" fill="#F25C24" stroke="#F25C24" stroke-width="1.4" stroke-linejoin="round"></path>
+        <circle cx="10.3" cy="13.5" r="1.05" fill="#1A160F"></circle>
+        <circle cx="13.9" cy="13.9" r="1.05" fill="#1A160F"></circle>
+        <circle cx="12" cy="16.9" r="1.05" fill="#1A160F"></circle>
+      </svg>
+      <svg viewBox="0 0 24 24" class="bk-stamp-off" style="width:62%;height:62%" aria-hidden="true">
+        <path d="M5 8.6 A9.2 9.2 0 0 1 19 8.6" stroke="rgba(255,255,255,0.62)" stroke-width="2.6" fill="none" stroke-linecap="round"></path>
+        <path d="M6.4 11.6 L17.6 11.6 L12 21.6 Z" fill="rgba(255,255,255,0.62)" stroke="rgba(255,255,255,0.62)" stroke-width="1.4" stroke-linejoin="round"></path>
+        <circle cx="10.3" cy="13.5" r="1.05" fill="#1A160F"></circle>
+        <circle cx="13.9" cy="13.9" r="1.05" fill="#1A160F"></circle>
+        <circle cx="12" cy="16.9" r="1.05" fill="#1A160F"></circle>
+      </svg>
+    </div>
+  ))}
+</div>
