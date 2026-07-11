@@ -65,7 +65,10 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `src/components/LeadForm.tsx` | Hauptformular (Café, Restaurant, Pizza, Eiscafé) |
 | `src/components/LeadFormDoener.tsx` | Vereinfachtes Formular für Döner (Props: `niche`, `city` für korrekte Lead-Attribution) |
 | `src/components/ui/gooey-text-morphing.tsx` | GooeyText-Animation (morphende Wörter, nur Eiscafé-Hero) |
-| `public/api/submit.php` | PHP API Handler → Boomerang |
+| `public/api/submit.php` | PHP API Handler → Salesflare + Boomerang + Telegram + Sheets + MailerCloud |
+| `src/pages/v2.astro` | A/B-Redesign "Bestellzettel + Wallet-Demo" (Juli 2026), Forms → submit.php, canonical auf / |
+| `src/components/StampGridV2.astro` | Pizza-Stempel-Grid für die v2-Wallet-Karten |
+| `scripts/compose_karte.py` | Compositor für /karten-Mockups (Karten-Export → iPhone-Template → WebP); braucht AppScreens-Template in ~/Downloads |
 
 ## Brand
 - **Farben:** Schwarz `#000000` + Gold `#8B7300` (Tailwind: `text-yellow-600` als Annäherung)
