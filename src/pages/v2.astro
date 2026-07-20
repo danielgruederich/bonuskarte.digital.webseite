@@ -793,8 +793,9 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
     }
 
     // ── Scroll-Stempel-Sektion (füllt sich beim Reinscrollen) ──────────────
-    let scrollFilled = 5
-    let stampStarted = false
+    const SCROLL_START = 5
+    let scrollFilled = SCROLL_START
+    let stampAnimating = false
     const scrollPass = document.getElementById('scroll-pass')
     const scrollStamps = document.querySelectorAll('#scroll-stamps .bk-stamp')
     const scrollLeftLabel = document.getElementById('scroll-left-label')
@@ -804,23 +805,32 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       if (scrollLeftLabel) scrollLeftLabel.textContent = scrollFilled >= TOTAL ? 'Geschenk frei' : `${TOTAL - scrollFilled} Stempel`
     }
     function runStamps() {
+      if (stampAnimating || scrollFilled >= TOTAL) return
+      stampAnimating = true
+      scrollFilled = SCROLL_START
+      renderScroll()
       const step = () => {
         scrollFilled = Math.min(scrollFilled + 1, TOTAL)
         renderScroll()
-        if (scrollFilled < TOTAL) setTimeout(step, 320)
+        if (scrollFilled < TOTAL) setTimeout(step, 240)
+        else stampAnimating = false
       }
-      setTimeout(step, 400)
+      setTimeout(step, 200)
     }
     if (scrollPass && 'IntersectionObserver' in window) {
+      // Niedrige Schwelle + rootMargin: feuert auch auf kleinen Displays zuverlässig.
+      // Beim Verlassen wird zurückgesetzt → spielt beim Zurückscrollen erneut
+      // (auf Mobile scrollt man sonst am einmaligen Ablauf vorbei).
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting && !stampStarted) {
-            stampStarted = true
+          if (e.isIntersecting) {
             runStamps()
-            io.disconnect()
+          } else if (!stampAnimating) {
+            scrollFilled = SCROLL_START
+            renderScroll()
           }
         })
-      }, { threshold: 0.35 })
+      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' })
       io.observe(scrollPass)
     } else {
       scrollFilled = TOTAL
