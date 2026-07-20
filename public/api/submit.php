@@ -115,6 +115,10 @@ if (!$firstName && $business) {
     $firstName = $business;
 }
 
+// Telefon → E.164 (DE-aware), damit Boomerang/CRM Land + Format korrekt erkennen.
+// Ohne das wird "0173…" roh gespeichert und als "+0173…" ohne Land angezeigt.
+$phone = normalizePhoneE164De($phone);
+
 // ── Validate ──────────────────────────────────────────────────────────────────
 if (!$firstName) {
     http_response_code(400);
@@ -579,3 +583,20 @@ echo json_encode([
     'directInstallLink' => $directInstallLink,
     'qrLink'            => $card['qrLink'] ?? null,
 ]);
+
+// ── Telefon → E.164 (DE-aware) ────────────────────────────────────────────────
+// "01737130733" → "+491737130733" · "0049…" → "+49…" · "49…" → "+49…" · "+…" bleibt.
+// Ohne Normalisierung zeigt Boomerang die Rohnummer als "+0173…" ohne Landeskennung.
+function normalizePhoneE164De(string $raw): string
+{
+    $raw = trim($raw);
+    if ($raw === '') return '';
+    $isIntl = (strpos($raw, '+') === 0);
+    $digits = preg_replace('/\D+/', '', $raw);
+    if ($digits === '') return '';
+    if ($isIntl)                     return '+' . $digits;              // schon international
+    if (strpos($digits, '00') === 0) return '+' . substr($digits, 2);  // 0049… → +49…
+    if (strpos($digits, '0')  === 0) return '+49' . substr($digits, 1); // 0173… → +49173…
+    if (strpos($digits, '49') === 0) return '+' . $digits;             // 49173… → +49173…
+    return '+49' . $digits;                                            // Fallback: DE
+}
