@@ -189,7 +189,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
           <!-- copy column -->
           <div style="flex:1 1 440px;min-width:300px;padding-top:clamp(8px,3vw,40px)">
-            <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Stammkunden-System · Apple &amp; Google Wallet</p>
+            <p id="hero-eyebrow" style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Stammkunden-System · Apple &amp; Google Wallet</p>
             <h1 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Aus Erstbesuchern werden <span style="color:var(--accent);position:relative;white-space:nowrap">Stammkunden</span>.</h1>
             <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:42ch">Wir helfen lokalen Betrieben, dass Gäste häufiger wiederkommen – mit einem einfachen Stammkunden-System direkt im Apple &amp; Google Wallet. Ohne App, ohne Papierkarte, ohne Aufwand.</p>
 
@@ -251,6 +251,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
                   </div>
                   <h2 style="font-family:var(--font-serif);font-size:24px;font-weight:600;margin:0 0 8px;letter-spacing:-0.01em">Angekommen.</h2>
                   <p style="font-size:15px;color:var(--ink-72);line-height:1.55;margin:0 auto 20px;max-width:32ch">Danke! Wir melden uns innerhalb von 24 Stunden – meist schneller. Dann steht deine Karte.</p>
+                  <a class="bk-installlink bk-btn bk-btn--md" hidden target="_blank" rel="noopener noreferrer" style="width:auto;margin-bottom:16px">Demo-Karte ins Wallet laden</a>
                   <p style="font-size:13px;color:var(--ink-56);margin:0 0 10px">Lieber sofort quatschen?</p>
                   <a href={whatsappUrl} class="bk-whatsapp" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:14px;border:1px solid var(--border-strong);color:var(--v2-ink);text-decoration:none;font-weight:600;font-size:15px">Auf WhatsApp schreiben</a>
                 </div>
@@ -350,6 +351,8 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
                         <div style="text-align:center;font-size:12.5px;color:#000;margin-top:4px">Deine Digitale Stempelkarte</div>
                       </div>
                     </div>
+                    <!-- ABM: echtes Boomerang-Kartenbild (nur bei ?card=… sichtbar, ersetzt die interaktive Demo-Karte) -->
+                    <img id="abm-card-img" alt="Deine Stempelkarte in Apple Wallet" hidden style="width:100%;max-width:318px;border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,0.55);display:block" />
                   </div>
                   <!-- home indicator -->
                   <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;z-index:60;height:34px;display:flex;justify-content:center;align-items:flex-end;padding-bottom:8px;pointer-events:none">
@@ -364,7 +367,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
           <div style="flex:1 1 360px;min-width:300px">
             <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Dein Stammkunden-System</p>
             <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 16px">Wir erklären's dir nicht. Wir zeigen's dir.</h2>
-            <p style="font-size:17px;line-height:1.6;color:var(--ink-72);margin:0 0 26px;max-width:42ch">Genau so sieht die Karte deiner Kund:innen aus – direkt in Apple oder Google Wallet. Tipp selbst drauf und stemple mit. Kein Papier, kein Download: ein sichtbarer Grund, wiederzukommen, der immer im Handy dabei ist.</p>
+            <p id="demo-copy" style="font-size:17px;line-height:1.6;color:var(--ink-72);margin:0 0 26px;max-width:42ch">Genau so sieht die Karte deiner Kund:innen aus – direkt in Apple oder Google Wallet. Tipp selbst drauf und stemple mit. Kein Papier, kein Download: ein sichtbarer Grund, wiederzukommen, der immer im Handy dabei ist.</p>
 
             <p id="demo-hint" style="font-family:var(--font-hand);font-size:22px;color:var(--accent);margin:0;animation:bk-nudge 2s var(--ease-in-out) infinite">tipp auf die Karte – noch <span id="demo-taps-left">5</span>×</p>
             <div id="demo-done" hidden style="display:flex;align-items:center;gap:12px;background:var(--amber-tint);border-radius:var(--radius-md);padding:14px 16px;animation:bk-rise 0.35s var(--ease-out) both;max-width:380px">
@@ -373,6 +376,8 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             </div>
 
             <div style="margin-top:30px">
+              <!-- ABM: Install-Link der echten Karte (nur bei ?pass=… sichtbar) -->
+              <a id="abm-pass-link" class="bk-btn bk-btn--md" hidden target="_blank" rel="noopener noreferrer" style="width:auto;margin-bottom:14px">Diese Karte ins Wallet laden</a>
               <button type="button" class="bk-btn bk-btn--md" data-scroll-to-form style="width:auto">Erstelle deine eigene Karte – kostenlos</button>
               <p style="font-size:13px;color:var(--ink-56);margin:12px 0 0">Mit deinem Logo, deiner Belohnung. Einrichtung inklusive, in unter 24 h live.</p>
             </div>
@@ -489,31 +494,37 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <!-- ======================= TESTIMONIAL ======================= -->
       <section style="padding:clamp(56px,8vw,110px) 24px">
         <div style="max-width:1100px;margin:0 auto">
-          <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 30px">Ein Kunde, eine Geschichte</p>
+          <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 30px">Echte Betriebe, echte Zahlen</p>
 
           <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,52px);align-items:center">
             <div style="flex:1 1 300px;min-width:260px;position:relative">
-              <!-- TODO(Daniel): Stand-in — Design wünscht "Inhaberin hinter der Theke ihres Cafés, warmes Licht" -->
-              <img src="/images/hero-baeckerei.jpg" alt="Theke mit frischem Gebäck, warmes Licht" loading="lazy" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;box-shadow:var(--shadow-lg);transform:rotate(-1.4deg)" />
+              <!-- TODO(Daniel): Stand-in — hier echtes Foto von Tim / Café Erste Liebe einsetzen -->
+              <img src="/images/hero-baeckerei.jpg" alt="Café-Theke mit frischem Gebäck, warmes Licht" loading="lazy" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;box-shadow:var(--shadow-lg);transform:rotate(-1.4deg)" />
             </div>
             <blockquote style="flex:1 1 380px;min-width:300px;margin:0">
-              <p style="font-family:var(--font-serif);font-weight:500;font-size:clamp(24px,3.4vw,38px);line-height:1.22;letter-spacing:-0.01em;color:var(--v2-ink);margin:0 0 22px;text-wrap:pretty">„Meine Gäste haben ihre Papierkärtchen ständig vergessen. Jetzt halten sie ihr Handy kurz unter den Scanner, fertig. Seit dem Umstieg kommen die Kunden spürbar häufiger.“</p>
-              <footer style="display:flex;align-items:center;gap:14px">
-                <span aria-hidden="true" style="display:inline-flex"><span style="width:14px;height:14px;border-radius:50%;border:2px solid var(--ink-40);box-sizing:border-box"></span><span style="width:14px;height:14px;border-radius:50%;background:var(--accent);margin-left:-5px"></span></span>
-                <div><div style="font-weight:600;font-size:16px">Marlene K.</div><div style="font-size:14px;color:var(--ink-56)">Café in Köln-Ehrenfeld</div></div>
+              <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-56);margin:0 0 14px">Café Erste Liebe · Köln, Neustadt Süd</p>
+              <p style="font-family:var(--font-serif);font-weight:500;font-size:clamp(22px,3vw,34px);line-height:1.24;letter-spacing:-0.01em;color:var(--v2-ink);margin:0 0 22px;text-wrap:pretty">„Daniel kam schon bei der Eröffnung von Erste Liebe auf uns zu. GoLive war 24 Stunden später. Keine Ausfälle, Kunden lieben es. Wir haben schon 200 Karten im Umlauf – und nutzen bisher nur 10 % der Plattform.“</p>
+              <footer style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+                <img src="/images/testimonials/erste-liebe.jpg" alt="" width="44" height="44" loading="lazy" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0" />
+                <div><div style="font-weight:600;font-size:16px">Tim</div><div style="font-size:14px;color:var(--ink-56)">Inhaber, Café Erste Liebe</div></div>
               </footer>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">
+                {[ 'Live in 24 h', '200 Karten im Umlauf', '0 Ausfälle' ].map(s => (
+                  <span style="display:inline-flex;align-items:center;gap:8px;background:var(--amber-tint);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--amber-press)">{s}</span>
+                ))}
+              </div>
             </blockquote>
           </article>
 
-          <!-- pinned clippings -->
+          <!-- pinned clippings (echte Kundenstimmen von der Startseite) -->
           <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:48px">
             <div style="flex:1 1 300px;min-width:260px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:22px 24px;transform:rotate(-1deg)">
-              <p style="font-size:16px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„Einrichtung war ein Anruf und ein Logo. Am nächsten Tag lief's.“</p>
-              <div style="font-size:13px;color:var(--ink-56)">Deniz · Döner &amp; Grill, Berlin</div>
+              <p style="font-size:16px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„Seit wir über 1.000 aktive Karten draußen haben, kommen deutlich mehr Stammkunden wieder.“</p>
+              <div style="font-size:13px;color:var(--ink-56)">Yussuf · Der Dönermacher, Köln Braunsfeld</div>
             </div>
             <div style="flex:1 1 300px;min-width:260px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:22px 24px;transform:rotate(1.2deg)">
-              <p style="font-size:16px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„Kein Plastik, keine App-Diskussion mehr. Die Kund:innen lieben's.“</p>
-              <div style="font-size:13px;color:var(--ink-56)">Sara · Salon Nord, Hamburg</div>
+              <p style="font-size:16px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„Simple, effective – and despite our disbelief, even in a touristic village like Corralejo. … Fully recommended.“</p>
+              <div style="font-size:13px;color:var(--ink-56)">Jao · ASAP Cafe, Fuerteventura</div>
             </div>
           </div>
         </div>
@@ -566,6 +577,47 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
           <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Ehrlicher Preis</p>
           <p style="font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-0.015em;margin:0 0 12px">Ab <span style="color:var(--accent)">29 €</span> im Monat.</p>
           <p style="font-size:18px;line-height:1.6;color:var(--ink-72);margin:0 auto;max-width:44ch">Die ersten 90 Tage kostenlos, ganz ohne Kreditkarte. Keine Einrichtungsgebühr, monatlich kündbar. Kein Kleingedrucktes.</p>
+        </div>
+      </section>
+
+      <!-- ======================= KÖLNER PILOTPROGRAMM ======================= -->
+      <section id="pilot" style="padding:clamp(56px,8vw,104px) 24px;background:var(--v2-ink);color:var(--v2-paper);position:relative;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;border:2px dashed var(--paper-16)"></div>
+        <div style="max-width:820px;margin:0 auto;text-align:center;position:relative">
+          <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Kölner Pilotprogramm</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4.4vw,48px);line-height:1.08;letter-spacing:-0.015em;margin:0 auto 16px;max-width:22ch;color:var(--v2-paper);text-wrap:balance">Wir bauen gerade Kölns Stammkunden-Netzwerk auf.</h2>
+          <p style="font-size:18px;line-height:1.6;color:var(--paper-72);margin:0 auto 32px;max-width:48ch">Dafür suchen wir Betriebe, die von Anfang an dabei sind – aus jedem Veedel, aus jeder Branche. Für die ersten 100 Kölner Betriebe gilt:</p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:36px">
+            {[
+              { t: 'Einmalig 99 €', d: 'statt 29 € jeden Monat' },
+              { t: 'Einrichtung inklusive', d: 'Logo, Belohnung, Setup – wir machen das' },
+              { t: 'Dauerhaft nutzbar', d: 'kein Abo, kein Ablaufdatum' },
+            ].map(b => (
+              <div style="flex:1 1 200px;min-width:190px;max-width:250px;background:var(--ink-raised);border:1px solid var(--border-ink);border-radius:var(--radius-md);padding:20px 18px;text-align:left">
+                <div style="font-family:var(--font-serif);font-weight:600;font-size:20px;color:var(--accent);margin-bottom:5px">{b.t}</div>
+                <div style="font-size:14px;line-height:1.5;color:var(--paper-72)">{b.d}</div>
+              </div>
+            ))}
+          </div>
+
+          <button type="button" class="bk-btn bk-btn--lg" data-scroll-to-form style="width:auto;padding:0 32px">Teil des Kölner Pilotprogramms werden</button>
+          <p style="font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.04em;color:var(--paper-56);margin:16px 0 0">Begrenzt auf 100 Betriebe · wir melden uns innerhalb von 24 h</p>
+        </div>
+      </section>
+
+      <!-- ======================= BRANCHEN ======================= -->
+      <section id="branchen" style="padding:clamp(48px,7vw,88px) 24px">
+        <div style="max-width:820px;margin:0 auto;text-align:center">
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3.8vw,40px);line-height:1.1;letter-spacing:-0.01em;margin:0 auto 14px;max-width:24ch;text-wrap:balance">Für Betriebe, bei denen Wiederkommen zählt.</h2>
+          <p style="font-size:17px;line-height:1.6;color:var(--ink-72);margin:0 auto 32px;max-width:46ch">Ob Kaffee, Haarschnitt oder Yogastunde – wo Gäste regelmäßig kommen können, lohnt sich ein Grund, es auch zu tun.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+            {[
+              ['☕', 'Café'], ['🥐', 'Bäckerei'], ['🥙', 'Döner'], ['🍕', 'Pizza'], ['🍦', 'Eiscafé'], ['💇', 'Friseur'], ['💪', 'Fitness'], ['🧘', 'Yoga'],
+            ].map(([e, t]) => (
+              <span style="display:inline-flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:11px 20px;box-shadow:var(--shadow-sm);font-size:15px;font-weight:600;color:var(--v2-ink)"><span aria-hidden="true">{e}</span>{t}</span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -629,6 +681,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
                   </div>
                   <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:600;margin:0 0 8px;letter-spacing:-0.01em">Angekommen.</h3>
                   <p style="font-size:15px;color:var(--ink-72);line-height:1.55;margin:0 auto 20px;max-width:32ch">Danke! Wir melden uns innerhalb von 24 Stunden – meist schneller.</p>
+                  <a class="bk-installlink bk-btn bk-btn--md" hidden target="_blank" rel="noopener noreferrer" style="width:auto;margin-bottom:16px">Demo-Karte ins Wallet laden</a>
                   <a href={whatsappUrl} class="bk-whatsapp" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:14px;border:1px solid var(--border-strong);color:var(--v2-ink);text-decoration:none;font-weight:600;font-size:15px">Auf WhatsApp schreiben</a>
                 </div>
               </div>
@@ -687,6 +740,8 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
     import { analytics } from '../lib/analytics'
 
     const TOTAL = 12
+    // ABM-Outreach läuft aktuell nur in Köln → Lead-Attribution fest auf Köln
+    const CITY = 'koeln'
 
     // ── Interaktive Demo-Karte (tippen = stempeln) ─────────────────────────
     let demoFilled = 7
@@ -763,6 +818,64 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       })
     })
 
+    // ── ABM-Personalisierung über URL-Parameter (Direct Outreach) ──
+    // ?laden=Café+Hügel    → Formular-Prefill + persönliche Ansprache (Hero-Eyebrow, Demo-Copy)
+    // ?color=e0654c        → Akzentfarbe (Hex ohne #) für Buttons/Stempel/Akzente
+    // ?card=https://…png   → echtes Boomerang-Kartenbild im iPhone statt interaktiver Demo-Karte
+    // ?pass=https://…      → Install-Link der echten Karte (Button unter der Demo + im Success)
+    // ?branche=cafe        → Branchen-Dropdown vorauswählen
+    const abm = new URLSearchParams(window.location.search)
+    const isHttpOrRel = (v: string) => /^(https?:\/\/|\/(?!\/))/i.test(v)
+
+    const laden = abm.get('laden')?.trim()
+    if (laden) {
+      document.querySelectorAll<HTMLInputElement>('input[name="betrieb"]').forEach((i) => { i.value = laden })
+      const eyebrow = document.getElementById('hero-eyebrow')
+      if (eyebrow) eyebrow.textContent = `Persönlich für ${laden}`
+      const demoCopy = document.getElementById('demo-copy')
+      if (demoCopy) demoCopy.textContent = `Genau so liegt die Karte von ${laden} bei deinen Kund:innen in Apple oder Google Wallet – ein sichtbarer Grund, wiederzukommen, der immer im Handy dabei ist.`
+    }
+
+    const brandColor = abm.get('color')
+    if (brandColor && /^[0-9a-f]{6}$/i.test(brandColor)) {
+      const root = document.querySelector<HTMLElement>('.bk-v2')
+      ;['--amber', '--accent', '--amber-hover', '--amber-press'].forEach((p) => root?.style.setProperty(p, `#${brandColor}`))
+    }
+
+    const cardUrl = abm.get('card')
+    if (cardUrl && isHttpOrRel(cardUrl)) {
+      const abmImg = document.getElementById('abm-card-img') as HTMLImageElement | null
+      if (abmImg) {
+        abmImg.addEventListener('load', () => {
+          // Interaktive Demo-Karte durch die ECHTE Karte des Betriebs ersetzen
+          document.getElementById('demo-card')?.setAttribute('hidden', '')
+          if (demoHint) demoHint.style.display = 'none'
+          abmImg.hidden = false
+        }, { once: true })
+        abmImg.addEventListener('error', () => { abmImg.hidden = true }, { once: true })
+        if (laden) abmImg.alt = `Stempelkarte von ${laden} in Apple Wallet`
+        abmImg.src = cardUrl
+      }
+    }
+
+    const passUrl = abm.get('pass')
+    if (passUrl && /^https?:\/\//i.test(passUrl)) {
+      const passLink = document.getElementById('abm-pass-link') as HTMLAnchorElement | null
+      if (passLink) {
+        passLink.href = passUrl
+        passLink.hidden = false
+        passLink.addEventListener('click', () => analytics.walletInstallClicked('v2-abm'))
+      }
+    }
+
+    const brancheParam = abm.get('branche')?.toLowerCase()
+    if (brancheParam) {
+      document.querySelectorAll<HTMLSelectElement>('select[name="branche"]').forEach((sel) => {
+        const opt = Array.from(sel.options).find((o) => o.value.toLowerCase() === brancheParam)
+        if (opt) sel.value = opt.value
+      })
+    }
+
     // ── Formulare → /api/submit.php (Salesflare + Boomerang + Telegram …) ──
     const params = new URLSearchParams(window.location.search)
     const utm: Record<string, string> = {
@@ -784,13 +897,13 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       form.addEventListener('focusin', () => {
         if (started) return
         started = true
-        analytics.signupFormStart('', '', 'v2')
+        analytics.signupFormStart('', CITY, 'v2')
       })
       form.querySelector('select[name="branche"]')?.addEventListener('change', (e) => {
         const v = (e.target as HTMLSelectElement).value
         if (!v || nicheTracked) return
         nicheTracked = true
-        analytics.nicheSelected(v, '', 'v2')
+        analytics.nicheSelected(v, CITY, 'v2')
       })
 
       form.addEventListener('submit', async (e) => {
@@ -805,7 +918,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
           return
         }
 
-        analytics.signupSubmitAttempt(niche, '', 'v2')
+        analytics.signupSubmitAttempt(niche, CITY, 'v2')
         form.classList.add('bk-submitting')
         if (submitBtn) submitBtn.textContent = 'Einen Moment …'
 
@@ -813,20 +926,30 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
           const res = await fetch('/api/submit.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ business, niche, kontakt, utm, mode: 'standard', source: `v2-form-${key}` }),
+            body: JSON.stringify({ business, niche, kontakt, city: CITY, utm, mode: 'standard', source: `v2-form-${key}` }),
           })
           const json = await res.json().catch(() => ({}))
           if (res.ok && json.success) {
-            analytics.demoCardCreated(niche, '')
-            analytics.signupSubmit(niche, '', 'v2')
+            analytics.demoCardCreated(niche, CITY)
+            analytics.signupSubmit(niche, CITY, 'v2')
             form.hidden = true
-            if (successEl) successEl.hidden = false
+            if (successEl) {
+              successEl.hidden = false
+              // Bei ABM (?pass) die echte Karte verlinken, sonst die frisch erstellte Demo-Karte
+              const installEl = successEl.querySelector<HTMLAnchorElement>('.bk-installlink')
+              const installLink = passUrl ?? json.directInstallLink?.universal ?? json.installLink
+              if (installEl && installLink) {
+                installEl.href = installLink
+                installEl.hidden = false
+                installEl.addEventListener('click', () => analytics.walletInstallClicked(niche || 'v2'), { once: true })
+              }
+            }
             if (key === 'a') document.getElementById('bk-sticky')?.classList.add('is-hidden')
           } else {
             throw new Error(json.error || 'api_error')
           }
         } catch (err) {
-          analytics.signupSubmitError(niche, '', err instanceof TypeError ? 'network_error' : 'api_error', 'v2')
+          analytics.signupSubmitError(niche, CITY, err instanceof TypeError ? 'network_error' : 'api_error', 'v2')
           errorEl?.classList.add('is-visible')
         } finally {
           form.classList.remove('bk-submitting')
