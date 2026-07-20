@@ -277,6 +277,26 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
         </div>
       </section>
 
+      <!-- ======================= PROOF / ZAHLEN ======================= -->
+      <section aria-label="Zahlen" style="padding:clamp(32px,5vw,52px) 24px;background:var(--v2-ink);color:var(--v2-paper)">
+        <div style="max-width:1000px;margin:0 auto">
+          <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 26px;text-align:center">Und es funktioniert – längst</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,5vw,28px)">
+            {[
+              { n: '23', l: 'Betriebe aktiv' },
+              { n: '2.400+', l: 'Karten im Umlauf' },
+              { n: '15', l: 'Städte live' },
+              { n: '24 h', l: 'bis deine Karte live ist' },
+            ].map(s => (
+              <div style="flex:1 1 160px;min-width:140px;max-width:230px;text-align:center;padding:8px 4px">
+                <div style="font-family:var(--font-serif);font-weight:600;font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:-0.02em;color:var(--v2-paper)">{s.n}</div>
+                <div style="font-size:14px;line-height:1.4;color:var(--paper-72);margin-top:8px">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <!-- ======================= VOM BESUCH ZUR ROUTINE ======================= -->
       <section id="routine" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
         <div style="max-width:1000px;margin:0 auto;text-align:center">
