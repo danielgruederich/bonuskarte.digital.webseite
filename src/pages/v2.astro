@@ -23,12 +23,12 @@ const branchen = [
 ]
 
 const faqs = [
-  { q: 'Brauchen meine Kund:innen eine App?', a: 'Nein. Die digitale Stempelkarte liegt direkt in Apple Wallet oder Google Wallet – ein Tipp, gespeichert. Kein App-Download, kein Konto, kein Plastik.' },
-  { q: 'Wie schnell bin ich startklar?', a: 'In der Regel innerhalb von 24 Stunden. Du schickst uns Name, Branche und Kontakt – wir bauen deine Kundenkarte mit deinem Logo und deiner Belohnung und melden uns.' },
-  { q: 'Was kostet bonuskarte.digital?', a: 'Ab 29 € im Monat. Die ersten 90 Tage sind kostenlos, ganz ohne Kreditkarte. Keine Einrichtungsgebühr, monatlich kündbar.' },
-  { q: 'Wie geben meine Kund:innen Stempel ab?', a: 'Du oder dein Team vergebt Stempel mit einem Tipp im Dashboard oder per Code-Scan an der Theke. Die Treuekarte in der Wallet aktualisiert sich sofort.' },
+  { q: 'Brauchen meine Kund:innen eine App?', a: 'Nein. Die Karte liegt direkt in Apple Wallet oder Google Wallet – beides ist auf jedem Smartphone schon installiert. Ein Tipp, gespeichert. Kein Download, kein Plastik.' },
+  { q: 'Müssen sich meine Kund:innen registrieren?', a: 'Nein. Kein Konto, kein Passwort, keine E-Mail-Pflicht. Deine Gäste speichern die Karte mit einem Tipp – das ist alles.' },
+  { q: 'Funktioniert das auch mit älteren Kund:innen?', a: 'Ja. Gerade weil keine neue App nötig ist: Apple und Google Wallet sind auf dem Handy vorinstalliert. Karte antippen, speichern, fertig – kein Technik-Wissen nötig.' },
+  { q: 'Was passiert nach den 90 Tagen?', a: 'Du entscheidest selbst. Keine automatische Verlängerung, kein versteckter Vertrag – wir melden uns vorher. Danach ab 29 € im Monat, monatlich kündbar.' },
+  { q: 'Wie schnell bin ich startklar?', a: 'In der Regel innerhalb von 24 Stunden. Du schickst uns Name, Branche und Kontakt – wir bauen dein Stammkunden-System mit deinem Logo und deiner Belohnung und melden uns.' },
   { q: 'Ist das DSGVO-konform?', a: 'Ja. Server in Deutschland, Datenverarbeitung nach DSGVO. Wir sind keine Marketing-Plattform – wir sammeln keine Daten, die du nicht brauchst.' },
-  { q: 'Kann ich mein eigenes Logo und Design nutzen?', a: 'Ja. Deine Karte, dein Logo, deine Farben, deine Belohnung. Die Bonuskarte sieht aus wie dein Laden – nicht wie eine Software.' },
 ]
 
 const softwareLd = {
@@ -37,7 +37,7 @@ const softwareLd = {
   name: 'bonuskarte.digital',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Apple Wallet, Google Wallet, Web',
-  description: 'Digitale Stempelkarte, Bonuskarte und Kundenkarte für lokale Geschäfte – direkt in Apple Wallet und Google Wallet, ohne App-Download.',
+  description: 'Das einfache Stammkunden-System für lokale Betriebe – macht aus Erstbesuchern regelmäßige Kunden, direkt in Apple Wallet und Google Wallet, ohne App-Download.',
   url: 'https://bonuskarte.digital/',
   offers: { '@type': 'Offer', price: '29', priceCurrency: 'EUR', description: 'ab 29 € pro Monat, 90 Tage kostenlos testen' },
   publisher: { '@type': 'Organization', name: 'fuerte.digital', brand: 'bonuskarte.digital' },
@@ -54,8 +54,8 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
 ---
 
 <BaseLayout
-  title="Digitale Stempelkarte für Cafés & lokale Geschäfte | bonuskarte.digital"
-  description="Die digitale Stempelkarte für lokale Geschäfte: Bonuskarte & Kundenkarte direkt in Apple Wallet und Google Wallet – kein App-Download, kein Plastik. Mehr Stammkunden, live in 24 h. 90 Tage kostenlos, ab 29 €/Monat, DSGVO-konform."
+  title="Aus Erstbesuchern werden Stammkunden | bonuskarte.digital"
+  description="Das einfache Stammkunden-System für lokale Betriebe – direkt in Apple & Google Wallet. Aus einmaligen Gästen werden regelmäßige Kunden: ohne App, ohne Papierkarte, ohne Aufwand. 90 Tage kostenlos, ab 29 €/Monat, DSGVO-konform."
   canonical="https://bonuskarte.digital/"
   showStickyCta={false}
 >
@@ -175,7 +175,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             <a href="#preis" class="bk-navlink">Preis</a>
             <a href="#faq" class="bk-navlink">FAQ</a>
           </span>
-          <button type="button" class="bk-btn bk-btn--sm" data-scroll-to-form>Kostenlos testen</button>
+          <button type="button" class="bk-btn bk-btn--sm" data-scroll-to-form>Demo-Karte erstellen</button>
         </nav>
       </div>
     </header>
@@ -189,15 +189,15 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
           <!-- copy column -->
           <div style="flex:1 1 440px;min-width:300px;padding-top:clamp(8px,3vw,40px)">
-            <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Apple Wallet · Google Wallet</p>
-            <h1 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale Stempelkarte für <span style="color:var(--accent);position:relative;white-space:nowrap">Kölner</span> Cafés.</h1>
-            <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:30ch">Mehr Stammkund:innen, kein Papier, keine App. Deine Gäste sammeln Stempel direkt in ihrer Wallet – du gewinnst Wiederkommer.</p>
+            <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Stammkunden-System · Apple &amp; Google Wallet</p>
+            <h1 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Aus Erstbesuchern werden <span style="color:var(--accent);position:relative;white-space:nowrap">Stammkunden</span>.</h1>
+            <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:42ch">Wir helfen lokalen Betrieben, dass Gäste häufiger wiederkommen – mit einem einfachen Stammkunden-System direkt im Apple &amp; Google Wallet. Ohne App, ohne Papierkarte, ohne Aufwand.</p>
 
             <div style="margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-family:var(--font-mono);font-size:12.5px;letter-spacing:0.04em;color:var(--ink-56)">
+              <span>In 30 Sekunden ausprobieren</span><span aria-hidden="true" style="color:var(--accent)">·</span>
+              <span>Einrichtung inklusive</span><span aria-hidden="true" style="color:var(--accent)">·</span>
               <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--accent)">·</span>
-              <span>keine Kreditkarte</span><span aria-hidden="true" style="color:var(--accent)">·</span>
-              <span>live in 24 h</span><span aria-hidden="true" style="color:var(--accent)">·</span>
-              <span>DSGVO</span>
+              <span>monatlich kündbar</span>
             </div>
 
             <div style="margin-top:34px;display:flex;align-items:flex-start;gap:14px;max-width:380px">
@@ -240,7 +240,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
                     <input type="text" name="kontakt" required autocomplete="tel email" inputmode="text" placeholder="0176 … oder du@laden.de" class="bk-field" style={fieldStyle} />
                   </label>
 
-                  <button type="submit" class="bk-btn bk-btn--lg">Kostenlos starten</button>
+                  <button type="submit" class="bk-btn bk-btn--lg">Meine Stammkunden-Karte erstellen</button>
                   <p class="bk-form-error" role="alert">Das hat leider nicht geklappt. Versuch's nochmal – oder schreib uns direkt auf WhatsApp.</p>
                   <p style="text-align:center;font-size:12.5px;color:var(--ink-56);margin:14px 0 0;line-height:1.5">Keine Kreditkarte. Wir melden uns innerhalb von 24 h.</p>
                 </form>
@@ -257,6 +257,47 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- ======================= PROBLEM ======================= -->
+      <section id="problem" style="padding:clamp(56px,8vw,104px) 24px;border-top:1px solid var(--border)">
+        <div style="max-width:840px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Jeder Betrieb kennt das</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,4vw,42px);line-height:1.12;letter-spacing:-0.01em;margin:0 auto;max-width:20ch;text-wrap:balance">Ein Gast kommt heute. Aber warum kommt er nächste Woche wieder?</h2>
+
+          <div aria-hidden="true" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:38px 0">
+            <span style="display:inline-flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:10px 18px;box-shadow:var(--shadow-sm);font-size:15px;font-weight:600;color:var(--v2-ink)"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>Heute: ein Gast steht bei dir</span>
+            <svg width="20" height="26" viewBox="0 0 20 26" fill="none" stroke="var(--ink-40)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 1v20"/><path d="m3 15 7 8 7-8"/></svg>
+            <span style="display:inline-flex;align-items:center;gap:9px;background:transparent;border:1.5px dashed var(--border-strong);border-radius:999px;padding:10px 18px;font-size:15px;font-weight:600;color:var(--ink-56)">Nächste Woche: kommt er wieder? <span style="font-family:var(--font-hand);font-size:22px;color:var(--accent);line-height:1">?</span></span>
+          </div>
+
+          <p style="font-size:18px;line-height:1.65;color:var(--ink-72);margin:0 auto;max-width:54ch;text-wrap:pretty">Viele lokale Betriebe stecken viel Energie in <em style="font-style:normal;color:var(--v2-ink);font-weight:600">neue</em> Kunden. Aber der wertvollste Gast ist oft der, der schon einmal da war – denn aus einem einzelnen Besuch entsteht nicht von allein eine Beziehung.</p>
+        </div>
+      </section>
+
+      <!-- ======================= VOM BESUCH ZUR ROUTINE ======================= -->
+      <section id="routine" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
+        <div style="max-width:1000px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 16px">Vom Besuch zur Routine</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0 auto 14px;max-width:22ch;text-wrap:balance">Der erste Besuch ist nur der Anfang.</h2>
+          <p style="font-size:18px;line-height:1.6;color:var(--ink-72);margin:0 auto 44px;max-width:50ch">Stammkunden entstehen nicht durch einen Rabatt. Sie entstehen, wenn Menschen einen Grund haben, wiederzukommen.</p>
+
+          <ol style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;justify-content:center">
+            {[
+              { n: '1', t: 'Erster Besuch', d: 'Der Gast entdeckt dich – und bekommt seine Karte in die Wallet.', fill: 0.10 },
+              { n: '2', t: 'Zweiter Besuch', d: 'Ein Stempel mehr. Ein sichtbarer Grund, wiederzukommen.', fill: 0.30 },
+              { n: '3', t: 'Regelmäßiger Gast', d: 'Die Karte erinnert – dein Laden wird zur Gewohnheit.', fill: 0.60 },
+              { n: '★', t: 'Stammkunde', d: 'Aus dem Besuch ist eine Beziehung geworden.', fill: 1 },
+            ].map((s, i) => (
+              <li style={`flex:1 1 200px;min-width:190px;max-width:260px;position:relative;background:var(--white);border:1px solid var(--border);border-top:3px solid rgba(242,92,36,${s.fill});border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:22px 20px;text-align:left`}>
+                <span style={`display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-weight:700;font-size:14px;margin-bottom:12px;${s.fill >= 1 ? 'background:var(--accent);color:var(--v2-paper)' : 'background:var(--amber-tint);color:var(--amber-press)'}`}>{s.n}</span>
+                <div style="font-family:var(--font-serif);font-weight:600;font-size:18px;color:var(--v2-ink);margin-bottom:6px">{s.t}</div>
+                <div style="font-size:14px;line-height:1.5;color:var(--ink-56)">{s.d}</div>
+                {i < 3 && <span aria-hidden="true" style="display:none"></span>}
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -321,14 +362,19 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
 
           <!-- copy -->
           <div style="flex:1 1 360px;min-width:300px">
-            <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Zum Ausprobieren</p>
-            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 16px">Tipp drauf. So fühlt sich Sammeln an.</h2>
-            <p style="font-size:17px;line-height:1.6;color:var(--ink-72);margin:0 0 26px;max-width:42ch">Genau so sieht die Stempelkarte deiner Kund:innen aus – direkt in Apple oder Google Wallet. Tipp auf die Karte im iPhone und stemple selbst: Fünf Stempel fehlen noch bis zum Geschenk.</p>
+            <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Dein Stammkunden-System</p>
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 16px">Wir erklären's dir nicht. Wir zeigen's dir.</h2>
+            <p style="font-size:17px;line-height:1.6;color:var(--ink-72);margin:0 0 26px;max-width:42ch">Genau so sieht die Karte deiner Kund:innen aus – direkt in Apple oder Google Wallet. Tipp selbst drauf und stemple mit. Kein Papier, kein Download: ein sichtbarer Grund, wiederzukommen, der immer im Handy dabei ist.</p>
 
             <p id="demo-hint" style="font-family:var(--font-hand);font-size:22px;color:var(--accent);margin:0;animation:bk-nudge 2s var(--ease-in-out) infinite">tipp auf die Karte – noch <span id="demo-taps-left">5</span>×</p>
             <div id="demo-done" hidden style="display:flex;align-items:center;gap:12px;background:var(--amber-tint);border-radius:var(--radius-md);padding:14px 16px;animation:bk-rise 0.35s var(--ease-out) both;max-width:380px">
               <span style="width:34px;height:34px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;animation:bk-thunk 0.35s var(--ease-out) both"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
               <div><div style="font-weight:600;font-size:15px;color:var(--v2-ink)">Gratis Pizza – freigeschaltet.</div><div style="font-size:12.5px;color:var(--ink-56)">Nochmal tippen für einen neuen Durchlauf.</div></div>
+            </div>
+
+            <div style="margin-top:30px">
+              <button type="button" class="bk-btn bk-btn--md" data-scroll-to-form style="width:auto">Erstelle deine eigene Karte – kostenlos</button>
+              <p style="font-size:13px;color:var(--ink-56);margin:12px 0 0">Mit deinem Logo, deiner Belohnung. Einrichtung inklusive, in unter 24 h live.</p>
             </div>
           </div>
         </div>
@@ -411,6 +457,31 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
                 <div style="text-align:center;font-size:12.5px;color:#000;margin-top:4px">Deine Digitale Stempelkarte</div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= WAS DAS BEDEUTET (BENEFITS) ======================= -->
+      <section id="vorteile" style="padding:clamp(56px,8vw,104px) 24px">
+        <div style="max-width:1100px;margin:0 auto">
+          <div style="max-width:640px;margin:0 0 44px">
+            <p style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Was das für deinen Laden bedeutet</p>
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0;text-wrap:balance">Kein Feature-Zoo. Nur vier Gründe, warum Gäste wiederkommen.</h2>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:18px">
+            {[
+              { k: 'Bleib im Kopf deiner Kund:innen', d: 'Erinnere Gäste zum richtigen Zeitpunkt daran, wieder vorbeizukommen – mit einer Nachricht direkt aufs Handy, nicht im überfüllten Postfach.' },
+              { k: 'Keine App-Hürde', d: 'Deine Kund:innen brauchen keinen Download und kein Passwort. Die Karte liegt in Apple & Google Wallet – dort, wo alle schon sind.' },
+              { k: 'Gib einen Grund zurückzukommen', d: 'Sichtbarer Fortschritt motiviert Menschen, ihr Ziel zu erreichen. Jeder Stempel ist eine kleine Einladung für den nächsten Besuch.' },
+              { k: 'Verstehe deine Stammkunden', d: 'Sieh, welche Kund:innen aktiv sind und wer zurückkommt – statt zu raten, was funktioniert.' },
+            ].map((f, i) => (
+              <div style="flex:1 1 240px;min-width:230px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:26px 24px">
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--amber-tint);color:var(--amber-press);font-family:var(--font-mono);font-weight:600;font-size:14px;margin-bottom:16px">{`0${i + 1}`}</span>
+                <h3 style="font-family:var(--font-serif);font-weight:600;font-size:20px;line-height:1.2;color:var(--v2-ink);margin:0 0 8px">{f.k}</h3>
+                <p style="font-size:15px;line-height:1.6;color:var(--ink-56);margin:0">{f.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -548,7 +619,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
                     <span style="display:block;font-size:13px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Handynummer oder E-Mail</span>
                     <input type="text" name="kontakt" required autocomplete="tel email" placeholder="0176 … oder du@laden.de" class="bk-field" style={fieldStyle} />
                   </label>
-                  <button type="submit" class="bk-btn bk-btn--lg">Kostenlos starten</button>
+                  <button type="submit" class="bk-btn bk-btn--lg">Meine Stammkunden-Karte erstellen</button>
                   <p class="bk-form-error" role="alert">Das hat leider nicht geklappt. Versuch's nochmal – oder schreib uns direkt auf WhatsApp.</p>
                   <p style="text-align:center;font-size:12.5px;color:var(--ink-56);margin:14px 0 0;line-height:1.5">Keine Kreditkarte. Wir melden uns innerhalb von 24 h.</p>
                 </form>
@@ -607,7 +678,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
         <div style="font-weight:600;font-size:14px">90 Tage kostenlos</div>
         <div style="font-size:12px;color:var(--ink-56)">keine Kreditkarte · live in 24 h</div>
       </div>
-      <button type="button" class="bk-btn bk-btn--md" data-scroll-to-form>Kostenlos testen</button>
+      <button type="button" class="bk-btn bk-btn--md" data-scroll-to-form>Demo-Karte erstellen</button>
     </div>
 
   </div>
@@ -759,7 +830,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
           errorEl?.classList.add('is-visible')
         } finally {
           form.classList.remove('bk-submitting')
-          if (submitBtn) submitBtn.textContent = 'Kostenlos starten'
+          if (submitBtn) submitBtn.textContent = 'Meine Stammkunden-Karte erstellen'
         }
       })
     })
