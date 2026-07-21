@@ -149,6 +149,35 @@ In GA4-Berichten dann als sekundäre Dimension aktivieren → Daten lassen sich 
 
 ---
 
+## A/B-Test: Hero-Headline (`hero_variant`) — nur `/v2`
+
+Seit 2026-07-21 läuft auf `/v2` ein Split-Test der Hero-Headline. Die Variante wird beim ersten Aufruf zufällig 50/50 zugelost, in `localStorage` (`v2_hero_variant`) fixiert (gleicher Besucher = immer dieselbe Variante) und als GA4-User-Property gesetzt.
+
+| Variante | Headline |
+|---|---|
+| `A` | „Aus Erstbesuchern werden Stammkunden." (server-gerendert, Default) |
+| `B` | „Aus einem Besuch wird eine Routine." (client-seitig eingeblendet) |
+
+**Was gefeuert wird** (Inline-Script in `src/pages/v2.astro`, Hero):
+- `gtag('set', 'user_properties', { hero_variant: 'A' | 'B' })` — hängt an ALLE folgenden Events der Session, damit auch an `signup_submit`.
+- `gtag('event', 'experiment_impression', { experiment: 'hero_headline', variant: 'A' | 'B' })` — eine Impression pro Page-Load (= Nenner für die Conversion-Rate).
+
+**Einmalig in GA4 registrieren** (Pflicht — sonst ist `hero_variant` in Berichten nicht auswählbar; Daten werden aber ab dem Deploy schon gesammelt):
+1. GA4 → **Verwalten (⚙️) → Benutzerdefinierte Definitionen → Benutzerdefinierte Dimensionen → Erstellen**
+2. Dimensionsname: `hero_variant` · **Bereich: Nutzer** (User-scoped!) · Nutzereigenschaft: `hero_variant`
+3. Speichern. Danach ~24–48 h, bis die Dimension in Berichten erscheint (rückwirkend erst ab Registrierung — also besser früh anlegen).
+
+**Auswerten** (Conversion pro Variante):
+1. **Erkunden → Leeres Format**
+2. Zeile: `hero_variant` · Wert: `Ereignisanzahl`
+3. Filter 1: `Ereignisname = signup_submit` → Conversions je Variante.
+4. Zweite Tabelle mit Filter `Ereignisname = experiment_impression` → Impressions je Variante.
+5. Rate = `signup_submit / experiment_impression` pro Variante → A vs. B vergleichen.
+
+> Faustregel: erst ab ~100 Conversions pro Arm belastbar. Bis dahin laufen lassen, nicht voreilig eine Variante abschalten.
+
+---
+
 ## Trial → Zahlend (manuelles Tracking)
 
 GA4 + Google Ads zeigen Trial-Anmeldungen (`signup_submit`). **Den Übergang Trial → zahlend muss du selbst pflegen**, weil Bezahlung außerhalb des Webflows passiert (Salesflare-CRM + manuelle Buchhaltung).
@@ -228,3 +257,5 @@ Auth läuft über `~/.config/fuerte-agency/google-ads.yaml` (geteilt mit anderen
 Wenn ein Event-Schema sich ändert (neue Felder, andere Bedeutung), hier dokumentieren. Beispiel-Eintrag:
 
 > **2026-05-27** — Initial-Spec (Daniel + Claude). Funnel-Events `signup_form_start`, `signup_submit`, `demo_card_view` live; `demo_booking` + `chatbot_open` als Stub angelegt.
+>
+> **2026-07-21** — A/B-Test Hero-Headline auf `/v2` live: User-Property `hero_variant` (A/B) + Event `experiment_impression`. Custom Dimension `hero_variant` (Bereich: Nutzer) in GA4 registrieren, siehe Abschnitt „A/B-Test: Hero-Headline".
