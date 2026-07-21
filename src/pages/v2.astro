@@ -148,6 +148,11 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       .bk-sticky:not(.is-hidden) { display: flex; }
     }
 
+    /* Hero-Beiwerk (Papierkarte + Pfeil) nur ab Tablet — Mobile zeigt nur das Handy */
+    @media (max-width: 600px) {
+      .bk-hero-aside { display: none !important; }
+    }
+
     /* hidden-Attribut muss auch gegen Inline-display gewinnen */
     .bk-v2 [hidden] { display: none !important; }
 
@@ -188,26 +193,90 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
 
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
           <!-- copy column -->
-          <div style="flex:1 1 440px;min-width:300px;padding-top:clamp(8px,3vw,40px)">
+          <div style="flex:1 1 440px;min-width:300px">
             <p id="hero-eyebrow" style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Stammkunden-System · Apple &amp; Google Wallet</p>
-            <h1 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Aus einem Besuch wird eine <span style="color:var(--accent);position:relative;white-space:nowrap">Routine</span>.</h1>
-            <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:42ch">Wir helfen lokalen Betrieben, dass Gäste häufiger wiederkommen – mit einem einfachen Stammkunden-System direkt im Apple &amp; Google Wallet. Ohne App, ohne Papierkarte, ohne Aufwand.</p>
+            <h1 id="hero-h1" style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Aus Erstbesuchern werden <span style="color:var(--accent);position:relative;white-space:nowrap">Stammkunden</span>.</h1>
+            <script is:inline>
+              (function () {
+                try {
+                  var K = 'v2_hero_variant';
+                  var v = localStorage.getItem(K);
+                  if (v !== 'A' && v !== 'B') { v = (Math.random() < 0.5) ? 'A' : 'B'; localStorage.setItem(K, v); }
+                  if (v === 'B') {
+                    var el = document.getElementById('hero-h1');
+                    if (el) el.innerHTML = 'Aus einem Besuch wird eine <span style="color:var(--accent);position:relative;white-space:nowrap">Routine</span>.';
+                  }
+                  window.__v2HeroVariant = v;
+                  if (typeof gtag === 'function') {
+                    gtag('set', 'user_properties', { hero_variant: v });
+                    gtag('event', 'experiment_impression', { experiment: 'hero_headline', variant: v });
+                  }
+                } catch (e) {}
+              })();
+            </script>
+            <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:44ch">Wir helfen lokalen Betrieben, dass Gäste häufiger wiederkommen – mit einem einfachen Stammkunden-System direkt im Apple &amp; Google Wallet. Ohne App, ohne Papierkarte, ohne Aufwand.</p>
 
-            <div style="margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--ink-56)">
-              <span>In 30 Sekunden ausprobieren</span><span aria-hidden="true" style="color:var(--accent)">·</span>
+            <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+              <button type="button" class="bk-btn bk-btn--lg" data-scroll-to-form style="width:auto;padding:0 30px">Eigene Demo-Karte erstellen</button>
+              <span style="font-family:var(--font-hand);font-size:20px;color:var(--accent);transform:rotate(-3deg)">in 30 Sekunden →</span>
+            </div>
+
+            <div style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--ink-56)">
               <span>Einrichtung inklusive</span><span aria-hidden="true" style="color:var(--accent)">·</span>
               <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--accent)">·</span>
               <span>monatlich kündbar</span>
             </div>
-
-            <div style="margin-top:34px;display:flex;align-items:flex-start;gap:14px;max-width:380px">
-              <span style="font-family:var(--font-hand);font-size:22px;color:var(--accent);line-height:1.1;transform:rotate(-4deg);flex-shrink:0;padding-top:2px">3 Felder,<br />2 Minuten →</span>
-              <p style="font-size:15px;color:var(--ink-56);line-height:1.5;margin:0">Sag uns kurz, wer du bist. Den Rest – Karte bauen, Logo einsetzen, in die Wallet bringen – machen wir.</p>
-            </div>
           </div>
 
-          <!-- lead form (Bestellzettel) -->
-          <div style="flex:1 1 380px;min-width:300px;max-width:460px" id="lead">
+          <!-- product visual: Papier → Wallet → Smartphone -->
+          <div style="flex:1 1 380px;min-width:280px;display:flex;justify-content:center;align-items:center">
+            <div style="position:relative;width:240px;max-width:100%">
+
+              <!-- Papier-Stempelkarte (dahinter, links) -->
+              <div class="bk-hero-aside" aria-hidden="true" style="position:absolute;left:-62px;bottom:36px;z-index:1;transform:rotate(-9deg);width:164px">
+                <div style="background:#EFE7D6;border:1px solid var(--ink-14);border-radius:10px;padding:14px 14px 12px;box-shadow:var(--shadow-lg)">
+                  <div style="font-family:var(--font-hand);font-size:17px;color:var(--ink-72);margin-bottom:10px">Stammkarte</div>
+                  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">
+                    <span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
+                    <span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- oranger Pfeil Papier → Handy -->
+              <svg class="bk-hero-aside" aria-hidden="true" width="80" height="62" viewBox="0 0 80 62" style="position:absolute;left:-10px;top:32%;z-index:3">
+                <path d="M4 50 C 24 56, 46 40, 62 14" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round" />
+                <path d="M50 8 L70 9 L60 26 Z" fill="var(--accent)" />
+              </svg>
+
+              <!-- iPhone mit Wallet-Karte -->
+              <div style="position:relative;z-index:2;margin-left:auto;width:240px;max-width:100%;aspect-ratio:9 / 19;background:#1A160F;border-radius:38px;padding:8px;box-shadow:0 30px 70px rgba(26,20,16,0.32)">
+                <div style="position:relative;width:100%;height:100%;background:#F6F1E8;border-radius:31px;overflow:hidden;box-sizing:border-box;padding:26px 13px 16px;display:flex;flex-direction:column">
+                  <span aria-hidden="true" style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:76px;height:20px;background:#1A160F;border-radius:999px"></span>
+                  <div style="background:#1A160F;border-radius:13px;padding:13px 12px 11px;box-shadow:0 8px 20px rgba(0,0,0,0.28)">
+                    <img src="/images/v2/lockup-horizontal-on-dark.svg" alt="bonuskarte.digital" width="118" height="19" style="height:19px;width:auto;display:block" />
+                    <div style="font-size:9px;color:rgba(255,255,255,0.6);margin:3px 0 0 1px">Stammkunden-Karte</div>
+                    <StampGridV2 filled={8} gap="5px" />
+                    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px">
+                      <div><div style="font-size:7.5px;font-weight:600;letter-spacing:0.06em;color:rgba(255,255,255,0.65)">VORNAME</div><div style="font-size:15px;color:#fff;line-height:1.1;margin-top:2px">Daniel</div></div>
+                      <div style="text-align:right"><div style="font-size:7.5px;font-weight:600;letter-spacing:0.06em;color:rgba(255,255,255,0.65)">BIS GESCHENK</div><div style="font-size:15px;color:#fff;line-height:1.1;margin-top:2px">4 Stempel</div></div>
+                    </div>
+                    <div style="margin-top:11px;background:#fff;border-radius:6px;padding:6px 8px 4px">
+                      <img src="/images/v2/pass-barcode.png" alt="" width="706" height="212" style="width:100%;height:auto;display:block" />
+                    </div>
+                  </div>
+                  <div style="font-family:var(--font-hand);font-size:15px;color:var(--accent);text-align:center;margin-top:auto;padding-top:10px">wohnt im Handy</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= DEMO-KARTE / LEAD-FORMULAR ======================= -->
+      <section style="padding:0 24px clamp(48px,7vw,88px)">
+        <div id="lead" style="max-width:460px;margin:0 auto;scroll-margin-top:90px">
             <div style="position:relative;transform:rotate(-1.1deg)">
               <div aria-hidden="true" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:var(--accent);box-shadow:var(--shadow-md);z-index:2"></div>
               <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:28px clamp(22px,4vw,34px) 30px;overflow:hidden">
@@ -258,7 +327,6 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       <!-- ======================= PROBLEM ======================= -->
@@ -386,7 +454,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
           <!-- copy -->
           <div style="flex:1 1 360px;min-width:300px">
             <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Selbst ausprobieren</p>
-            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 16px">Erlebe dein eigenes Stammkunden-System.</h2>
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 16px">Wir verändern nicht dein Geschäft. Wir verändern den nächsten Besuch.</h2>
             <p id="demo-copy" style="font-size:19px;line-height:1.6;color:var(--ink-72);margin:0 0 26px;max-width:42ch">Die digitale Karte ist der Teil, den deine Kund:innen sehen – der sichtbare Teil deines Stammkunden-Systems. Tipp selbst drauf und stemple mit: genau so liegt sie in Apple oder Google Wallet. Kein Papier, kein Download – ein sichtbarer Grund, wiederzukommen, immer dabei im Handy.</p>
 
             <p id="demo-hint" style="font-family:var(--font-hand);font-size:22px;color:var(--accent);margin:0;animation:bk-nudge 2s var(--ease-in-out) infinite">tipp auf die Karte – noch <span id="demo-taps-left">5</span>×</p>
