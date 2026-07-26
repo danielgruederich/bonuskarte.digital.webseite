@@ -27,7 +27,7 @@ Alle drei Annahmen sind falsch. Digitale Stempelkarten für Hürther Betriebe si
 
 Das Missverständnis liegt oft im Wort "digital". Viele Betriebe denken dabei an eine eigene App, die programmiert, veröffentlicht und von den Kunden heruntergeladen werden muss. Das entspricht dem Stand von vor zehn Jahren.
 
-Heute laufen digitale Stempelkarten über Apple Wallet und Google Wallet – also über die Apps, die auf jedem modernen Smartphone bereits vorinstalliert sind. Kein App-Store-Besuch, keine Registrierung, kein Passwort. Der Kunde scannt einen QR-Code, die Karte erscheint sofort in seiner Wallet-App – genauso wie ein Boarding-Pass oder eine Veranstaltungskarte.
+Heute laufen digitale Stempelkarten über Apple Wallet und Google Wallet – also über die Apps, die auf jedem modernen Smartphone bereits vorinstalliert sind. Kein App-Store-Besuch, kein Passwort. Der Kunde scannt einen QR-Code, die Karte erscheint sofort in seiner Wallet-App – genauso wie ein Boarding-Pass oder eine Veranstaltungskarte.
 
 Für Hürther Betriebe bedeutet das: Die eigene technische Infrastruktur ist komplett irrelevant. Es braucht weder eine Website, noch ein Kassensystem mit Schnittstelle, noch eine Fachkraft für Digitales. Es braucht ein Smartphone oder Tablet mit der kostenlosen Scanner-App – und das war's.
 

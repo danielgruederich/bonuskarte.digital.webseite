@@ -43,7 +43,7 @@ Bonner Yoga-Gäste sind informiert und kritisch. Ein Bonusprogramm, das sich wie
 
 **Was sehr gut funktioniert:**
 
-Die digitale Karte über Apple Wallet oder Google Wallet braucht keine Registrierung, keine App, kein Passwort. Der Gast fügt die Karte einmal hinzu – fertig. Das entspricht genau dem, was Bonner Yoga-Gäste erwarten: unkompliziert, sauber, professionell.
+Die digitale Karte über Apple Wallet oder Google Wallet braucht keine App und kein Passwort. Der Gast fügt die Karte einmal hinzu – fertig. Das entspricht genau dem, was Bonner Yoga-Gäste erwarten: unkompliziert, sauber, professionell.
 
 In Beuel, wo viele junge Familien wohnen, funktioniert die Erinnerungsfunktion besonders gut. Eine Push-Benachrichtigung, wenn eine Karte lange nicht genutzt wurde, holt gestresste Eltern zurück in die Matte. In Bad Godesberg, wo die Zielgruppe etwas älter und etablierter ist, punktet die Zehnerkarte mit Seriosität – die digitale Version wirkt professioneller als ein zerknittertes Stück Papier.
 

@@ -11,7 +11,7 @@ faqItems:
   - q: "Warum ist Kundenbindung in Chorweiler besonders wichtig?"
     a: "Chorweiler ist kein Touristenviertel. Wer hier einkauft, lebt hier. Das bedeutet: Jeder überzeugte Stammkunde kommt immer wieder. Gleichzeitig ist die Auswahl an Läden überschaubar, was das stille Rennen um Gewohnheiten früh entscheidend macht."
   - q: "Müssen meine Kunden in Chorweiler eine App herunterladen, um die Stempelkarte zu nutzen?"
-    a: "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet. Kein Download, kein Passwort, kein Account. Dein Kunde tippt einmal, die Karte ist im Handy gespeichert."
+    a: "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet. Kein Download und kein Passwort – nur eine kurze Anmeldung beim ersten Scan. Dein Kunde tippt einmal, die Karte ist im Handy gespeichert."
   - q: "Wie schnell merken Kunden in Chorweiler einen Effekt durch eine digitale Stempelkarte?"
     a: "Oft schon beim ersten Gespräch. Wer einem Stammgast zeigt, dass er zwei Stempel hat und noch drei bis zum Gratis-Döner fehlen, schafft sofort einen konkreten Grund wiederzukommen. Das Gespräch dauert zehn Sekunden und sitzt."
   - q: "Was kostet eine digitale Stempelkarte für einen Laden in Chorweiler?"
@@ -66,7 +66,7 @@ Chorweiler ist kein Touristenviertel. Wer hier einkauft, lebt hier. Das bedeutet
 
 ### Müssen meine Kunden in Chorweiler eine App herunterladen, um die Stempelkarte zu nutzen?
 
-Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet. Kein Download, kein Passwort, kein Account. Dein Kunde tippt einmal, die Karte ist im Handy gespeichert.
+Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet. Kein Download und kein Passwort – nur eine kurze Anmeldung beim ersten Scan. Dein Kunde tippt einmal, die Karte ist im Handy gespeichert.
 
 ### Wie schnell merken Kunden in Chorweiler einen Effekt durch eine digitale Stempelkarte?
 

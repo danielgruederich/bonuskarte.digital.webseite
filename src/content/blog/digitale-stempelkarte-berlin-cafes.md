@@ -10,7 +10,7 @@ city: berlin
 niche: cafe
 faqItems:
   - q: "Muss mein Gast eine App herunterladen, um die Stempelkarte zu nutzen?"
-    a: "Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone vorinstalliert sind. Der Gast scannt den QR-Code einmal mit der Kamera, tippt auf \"Hinzufügen\" und ist fertig. Kein Login, kein Account."
+    a: "Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone vorinstalliert sind. Der Gast scannt den QR-Code einmal mit der Kamera, tippt auf \"Hinzufügen\" und ist fertig. Die Anmeldung dauert beim ersten Scan weniger als eine Minute."
   - q: "Wie spreche ich Berliner Café-Gäste am besten auf die Stempelkarte an?"
     a: "Direkt und kurz: \"Haben Sie schon unsere digitale Stempelkarte? Braucht keine App, geht sofort.\" Das ist alles. Gäste, die bereit sind, reagieren sofort. Wer nicht interessiert ist, winkt ab, ohne sich belästigt zu fühlen. Kein Erklärungsaufwand, kein Druck."
   - q: "Welche Stempel-Mechanik funktioniert in Berliner Cafés am besten?"
@@ -108,7 +108,7 @@ Der Betreiber: *"Die haben wir nicht durch Werbung gewonnen, sondern durch die F
 
 ### Muss mein Gast eine App herunterladen, um die Stempelkarte zu nutzen?
 
-Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone vorinstalliert sind. Der Gast scannt den QR-Code einmal mit der Kamera, tippt auf "Hinzufügen" und ist fertig. Kein Login, kein Account.
+Nein. Die Karte wird direkt in Apple Wallet oder Google Wallet gespeichert, die auf jedem Smartphone vorinstalliert sind. Der Gast scannt den QR-Code einmal mit der Kamera, tippt auf "Hinzufügen" und ist fertig. Die Anmeldung dauert beim ersten Scan weniger als eine Minute.
 
 ### Wie spreche ich Berliner Café-Gäste am besten auf die Stempelkarte an?
 

@@ -29,7 +29,7 @@ Die klassische Papier-Zehnerkarte kennt jedes Studio. Sie liegt in der Tasche, w
 
 Eine digitale Zehnerkarte läuft über Apple Wallet oder Google Wallet. Die Funktionsweise ist dieselbe – aber die Umsetzung ist völlig anders: Der Schüler speichert die Karte einmalig nach einem QR-Code-Scan auf dem Smartphone. Beim Check-in wird gestempelt oder ein Besuch eingetragen. Nach zehn Besuchen gibt es einen gratis. Die Karte aktualisiert sich automatisch.
 
-Kein App-Download, kein Account, keine Daten außer dem Besuchsfortschritt. Für Berliner, die datenschutzbewusst denken, ist das ein echtes Verkaufsargument.
+Kein App-Download, nur eine kurze Anmeldung beim ersten Scan – und die Daten gehören dir als Betrieb. Für Berliner, die datenschutzbewusst denken, ist das ein echtes Verkaufsargument.
 
 ## Was funktioniert in Berlin – und was nicht?
 

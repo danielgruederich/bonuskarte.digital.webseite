@@ -25,7 +25,7 @@ Die Herausforderung: Viele Hürther Yoga-Schüler sind Kölner Pendler. Sie fahr
 
 ## Wie funktioniert eine digitale Zehnerkarte in Hürth?
 
-Das Prinzip ist einfach: Zehn Stunden besucht, die elfte gibt es gratis. Der Unterschied zur Papierkarte liegt in der Ausführung. Die digitale Zehnerkarte lebt direkt in der Apple Wallet oder Google Wallet des Schülers – also in der App, die auf jedem Smartphone bereits vorinstalliert ist. Kein Download, keine Registrierung, keine Hürde.
+Das Prinzip ist einfach: Zehn Stunden besucht, die elfte gibt es gratis. Der Unterschied zur Papierkarte liegt in der Ausführung. Die digitale Zehnerkarte lebt direkt in der Apple Wallet oder Google Wallet des Schülers – also in der App, die auf jedem Smartphone bereits vorinstalliert ist. Kein Download, keine Hürde.
 
 Für Yoga-Studios in Hürth-Mitte, Hermülheim oder Gleuel bedeutet das konkret: Der Schüler scannt beim ersten Besuch einen QR-Code am Eingang, die Karte erscheint sofort im Handy. Bei jedem weiteren Besuch wird digital gestempelt. Wenn die Karte voll ist, erkennt das System das automatisch.
 
