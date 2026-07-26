@@ -9,7 +9,7 @@ featured: false
 city: koeln
 faqItems:
   - q: "Muss mein Gast eine App herunterladen, um die Wallet-Karte zu nutzen?"
-    a: "Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf nahezu jedem Android-Gerät. Der Gast tippt einmal auf den Link oder scannt den QR-Code, und die Karte landet direkt im Wallet. Kein Download, kein Account, kein Passwort."
+    a: "Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf nahezu jedem Android-Gerät. Der Gast tippt einmal auf den Link oder scannt den QR-Code, und die Karte landet direkt im Wallet. Kein Download und kein Passwort – nur eine kurze Anmeldung beim ersten Scan."
   - q: "Was ist der Unterschied zwischen Apple Wallet und Google Wallet?"
     a: "Apple Wallet läuft auf iPhones, Google Wallet auf Android-Geräten. Beide funktionieren nach demselben Prinzip: Karte hinzufügen, stempeln, Belohnung einlösen. Mit bonuskarte.digital erstellst du eine Karte, die für beide Plattformen gleichzeitig funktioniert."
   - q: "Wie funktionieren standortbasierte Erinnerungen im Wallet?"
@@ -101,7 +101,7 @@ Nach zwei Wochen ins Dashboard schauen: Wann werden Karten hinzugefügt? Wann wi
 
 ### Muss mein Gast eine App herunterladen, um die Wallet-Karte zu nutzen?
 
-Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf nahezu jedem Android-Gerät. Der Gast tippt einmal auf den Link oder scannt den QR-Code, und die Karte landet direkt im Wallet. Kein Download, kein Account, kein Passwort.
+Nein. Apple Wallet ist auf jedem iPhone vorinstalliert, Google Wallet auf nahezu jedem Android-Gerät. Der Gast tippt einmal auf den Link oder scannt den QR-Code, und die Karte landet direkt im Wallet. Kein Download und kein Passwort – nur eine kurze Anmeldung beim ersten Scan.
 
 ### Was ist der Unterschied zwischen Apple Wallet und Google Wallet?
 

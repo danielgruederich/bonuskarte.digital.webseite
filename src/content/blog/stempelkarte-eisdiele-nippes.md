@@ -52,7 +52,7 @@ Stell dir vor, deine Stempelkarte wäre nicht aus Pappe — sondern auf dem Smar
 **So funktioniert es:**
 
 1. Dein Kunde scannt einen QR-Code an deiner Theke
-2. Die Stempelkarte landet sofort in seiner Wallet — kein App-Download, keine Registrierung, kein Passwort
+2. Die Stempelkarte landet sofort in seiner Wallet — kein App-Download, kein Passwort
 3. Bei jedem Besuch scannst du den Code und der nächste Stempel erscheint
 4. Nach 8 Kugeln gibt's eine gratis
 

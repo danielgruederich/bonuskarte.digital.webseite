@@ -49,7 +49,7 @@ export const niches: NicheData[] = [
     },
     walletMockup: { businessName: 'Café Sonnenschein', reward: 'Gratis-Kaffee', stamped: 7, total: 10 },
     arguments: [
-      { icon: '📱', title: 'Immer dabei', desc: 'Apple Wallet & Google Wallet. Keine App, keine Registrierung für eure Gäste.' },
+      { icon: '📱', title: 'Immer dabei', desc: 'Apple Wallet & Google Wallet. Keine App – nur eine kurze Anmeldung beim ersten Scan.' },
       { icon: '🔔', title: 'Push-Nachrichten', desc: 'Erinnert Stammkunden an Aktionen, direkt auf dem Sperrbildschirm.' },
       { icon: '📊', title: 'Live-Statistiken', desc: 'Seht in Echtzeit, wie viele Karten aktiv sind und wie oft gestempelt wird.' },
     ],
@@ -126,7 +126,7 @@ export const niches: NicheData[] = [
     arguments: [
       { icon: '📱', title: 'Stammkunden, die wiederkommen', desc: 'Dein Restaurant bleibt auf dem Handy Deiner Gäste. Ein Blick auf die Karte, und der Tisch ist reserviert.' },
       { icon: '🔔', title: 'Push-Nachrichten', desc: 'Neues Saisonmenü, Freitagsspecial, Last-Minute-Tische? Direkt aufs Sperrbildschirm. Ohne Social-Media-Algorithmus.' },
-      { icon: '🤝', title: 'Keine App für Deine Gäste', desc: 'Apple Wallet & Google Wallet, vorinstalliert auf jedem Smartphone. Kein Download, keine Registrierung nötig.' },
+      { icon: '🤝', title: 'Keine App für Deine Gäste', desc: 'Apple Wallet & Google Wallet, vorinstalliert auf jedem Smartphone. Kein Download – nur eine kurze Anmeldung beim ersten Scan.' },
     ],
     contentBody: '<p>Restaurants haben ein gut dokumentiertes Wochenmitte-Problem: Freitag und Samstag sind die Tische voll, Dienstag und Mittwoch ist das Lokal halb leer, obwohl dieselben Menschen in {veedelName} wohnen und täglich essen. Der Grund ist Sichtbarkeit: Was aus dem Blickfeld verschwindet, verschwindet aus dem Plan. Bain und Company haben gemessen: Stammkunden geben im Schnitt 67 Prozent mehr pro Besuch aus als Erstkunden.</p><p>Eine digitale Punktekarte in Apple Wallet oder Google Wallet hält dein Restaurant auch unter der Woche präsent. Gäste sehen ihren aktuellen Punktestand, und ein gezielter Push an einem Dienstag "Heute Abend doppelte Punkte bis 20 Uhr" erreicht die Menschen die dich kennen und nur einen Anlass brauchen. Das ist keine Werbung, das ist Kommunikation mit deiner bestehenden Kundschaft in {veedelName}.</p><p>Bond Brand Loyalty Report 2024: Die Wahrscheinlichkeit dass jemand nach drei Besuchen wiederkommt liegt bei über 62 Prozent. Das Ziel ist nicht der zufällige Tisch, sondern die Gäste die regelmäßig kommen, mehr ausgeben und die leeren Dienstage füllen.</p>',
   },

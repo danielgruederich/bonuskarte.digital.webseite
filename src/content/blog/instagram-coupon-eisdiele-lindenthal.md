@@ -35,7 +35,7 @@ Das war's. Ein Satz. Ein Zeitlimit. Ein Link.
 
 **Warum das funktioniert:** Gamification und Urgency. Dein Follower sieht die Story und denkt nicht „Vielleicht nächste Woche." Er denkt: „4 Stunden. Ich bin gerade am Lindenthaler Tierpark. Das schaffe ich." Und plötzlich ist er unterwegs — zu dir.
 
-Der digitale Coupon liegt als Link in deiner Instagram-Bio. Ein Tap, und der Coupon landet in der Apple Wallet oder Google Wallet deines Followers. Kein App-Download, keine Registrierung, kein Passwort.
+Der digitale Coupon liegt als Link in deiner Instagram-Bio. Ein Tap, und der Coupon landet in der Apple Wallet oder Google Wallet deines Followers. Kein App-Download, kein Passwort.
 
 ## Was passiert nach der ersten Einlösung?
 

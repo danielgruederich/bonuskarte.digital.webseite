@@ -15,7 +15,7 @@ faqItems:
   - q: "Kann ein Betrieb zwei verschiedene Kartentypen gleichzeitig anbieten?"
     a: "Ja. Ein Fitnessstudio kann eine Mitgliedskarte für den Zugang und eine 10er-Karte für Personal Training kombinieren. Das macht dann Sinn, wenn zwei verschiedene Angebote mit unterschiedlichen Kaufmustern bedient werden."
   - q: "Brauchen Kunden eine App, um eine digitale Stempelkarte zu nutzen?"
-    a: "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf jedem iPhone und Android-Gerät bereits vorinstalliert sind. Kein Download, keine Registrierung. Der Kunde scannt einmal einen QR-Code, die Karte ist sofort im Wallet."
+    a: "Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf jedem iPhone und Android-Gerät bereits vorinstalliert sind. Kein Download. Der Kunde scannt einmal einen QR-Code, die Karte ist sofort im Wallet."
 ---
 
 Wenn Sie „digitale Kundenkarte" hören, denken Sie vermutlich an eine Stempelkarte: zehn Kaffee kaufen, einen gratis. Das ist der Klassiker – aber bei Weitem nicht die einzige Option.
@@ -152,4 +152,4 @@ Ja. Ein Fitnessstudio kann eine Mitgliedskarte für den Zugang und eine 10er-Kar
 
 ### Brauchen Kunden eine App, um eine digitale Stempelkarte zu nutzen?
 
-Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf jedem iPhone und Android-Gerät bereits vorinstalliert sind. Kein Download, keine Registrierung. Der Kunde scannt einmal einen QR-Code, die Karte ist sofort im Wallet.
+Nein. Die Karte landet direkt in Apple Wallet oder Google Wallet, die auf jedem iPhone und Android-Gerät bereits vorinstalliert sind. Kein Download. Der Kunde scannt einmal einen QR-Code, die Karte ist sofort im Wallet.

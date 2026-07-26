@@ -25,7 +25,7 @@ Die Herausforderung für Yoga-Studios in Düsseldorf ist real: Viele Schüler pe
 
 ## Wie funktioniert eine digitale Zehnerkarte in Düsseldorf?
 
-Im Kern ist die Idee dieselbe wie bei der klassischen Papierkarte: Der Schüler besucht zehn Stunden und erhält die elfte gratis. Der Unterschied liegt in der Ausführung. Statt einer gestempelten Karte aus Papier lebt die Zehnerkarte direkt in der Apple Wallet oder Google Wallet des Schülers – also in der App, die auf jedem iPhone und Android-Smartphone bereits vorinstalliert ist. Kein Download, keine Registrierung, keine Hürde.
+Im Kern ist die Idee dieselbe wie bei der klassischen Papierkarte: Der Schüler besucht zehn Stunden und erhält die elfte gratis. Der Unterschied liegt in der Ausführung. Statt einer gestempelten Karte aus Papier lebt die Zehnerkarte direkt in der Apple Wallet oder Google Wallet des Schülers – also in der App, die auf jedem iPhone und Android-Smartphone bereits vorinstalliert ist. Kein Download, keine Hürde.
 
 In Düsseldorf funktioniert das besonders gut, weil die Zielgruppe technologieaffin ist. Wer im Flingerner Kiez oder in Oberkassel wohnt, zahlt bereits mit dem Handy an der Kasse, nutzt digitale Kalender-Apps für Buchungen und erwartet, dass sein Studio ähnlich aufgestellt ist. Die Zehnerkarte erscheint nach dem Einlösen automatisch auf dem Sperrbildschirm, wenn der Schüler zum Studio geht – ein kleiner, aber psychologisch wirkungsvoller Moment der Erinnerung.
 
