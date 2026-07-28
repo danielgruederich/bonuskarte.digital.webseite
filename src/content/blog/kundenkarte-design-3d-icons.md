@@ -116,7 +116,7 @@ Das Beste daran: Du musst nichts davon riskieren, um es zu sehen. Mit bonuskarte
 
 Schnapp dir ein 3D-Icon, das zu deinem Laden passt, und schau, wie viel hochwertiger deine Karte plötzlich wirkt.
 
-**[Jetzt kostenlos starten →](/koeln/ehrenfeld/cafes)**
+**[Jetzt kostenlos starten →](/koeln/ehrenfeld/cafes/)**
 
 ## Häufig gestellte Fragen
 

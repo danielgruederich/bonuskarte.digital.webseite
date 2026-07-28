@@ -29,8 +29,9 @@ function formatDate(date: Date) {
 }
 
 const allPosts = await getCollection('blog')
+const relatedNow = new Date()
 const related = allPosts
-  .filter(p => getLangFromSlug(p.slug) === 'en' && p.slug !== post.slug)
+  .filter(p => getLangFromSlug(p.slug) === 'en' && p.slug !== post.slug && p.data.pubDate <= relatedNow)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3)
 ---
@@ -93,7 +94,7 @@ const related = allPosts
       <nav class="flex items-center flex-wrap gap-1.5 text-xs text-ink/55 mb-7 tracking-wide">
         <a href="/en/" class="hover:text-ink transition-colors">{ui.breadcrumbHome}</a>
         <span>›</span>
-        <a href={base} class="hover:text-ink transition-colors">{ui.breadcrumbBlog}</a>
+        <a href={`${base}/`} class="hover:text-ink transition-colors">{ui.breadcrumbBlog}</a>
         <span>›</span>
         <span class="text-ink/50">{getBlogCategoryLabel(post.data.category, lang)}</span>
       </nav>
@@ -196,13 +197,13 @@ const related = allPosts
       <div class="max-w-2xl mx-auto px-5 sm:px-8">
         <div class="flex items-center justify-between mb-8">
           <h2 class="text-xs font-bold tracking-[0.25em] uppercase text-ink/40">{ui.relatedTitle}</h2>
-          <a href={base} class="text-xs text-amber hover:text-amber tracking-widest uppercase transition-colors font-medium">
+          <a href={`${base}/`} class="text-xs text-amber hover:text-amber tracking-widest uppercase transition-colors font-medium">
             {ui.relatedAll}
           </a>
         </div>
         <div class="grid sm:grid-cols-3 gap-px bg-ink/10">
           {related.map(p => (
-            <a href={`${base}/${stripLang(p.slug)}`} class="group bg-white hover:bg-paper-dark transition-colors p-5 flex flex-col gap-3">
+            <a href={`${base}/${stripLang(p.slug)}/`} class="group bg-white hover:bg-paper-dark transition-colors p-5 flex flex-col gap-3">
               <div class="bg-paper-dark flex items-center justify-center aspect-video overflow-hidden">
                 <img
                   src={p.data.heroImage}

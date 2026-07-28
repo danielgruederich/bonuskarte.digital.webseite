@@ -73,4 +73,4 @@ Ja. Mehrere Kassengeräte oder Smartphones können gleichzeitig als Scanner regi
 
 Ja – eher sogar mehr als im Herbst oder Winter. In Hürth bleibt die Stammkundschaft auch im Sommer konstant. Die Urlaubszeit ist der ideale Moment, um die Karte einzuführen, weil die Schlangen kürzer sind und Zeit bleibt, Stammkunden persönlich anzusprechen.
 
-Eine digitale Stempelkarte macht aus dem nächsten Samstagmorgen-Brötchenkunden einen Stammkunden, der bewusst zu Ihrer Bäckerei zurückkommt – nicht zur Konkurrenz im Rhein-Center. Jetzt kostenlos testen: [bonuskarte.digital/huerth/huerth-mitte/baeckerei](/huerth/huerth-mitte/baeckerei)
+Eine digitale Stempelkarte macht aus dem nächsten Samstagmorgen-Brötchenkunden einen Stammkunden, der bewusst zu Ihrer Bäckerei zurückkommt – nicht zur Konkurrenz im Rhein-Center. Jetzt kostenlos testen: [bonuskarte.digital/huerth/huerth-mitte/baeckerei](/huerth/huerth-mitte/baeckerei/)

@@ -42,11 +42,11 @@ Die digitale Stempelkarte wird oft als Rabatt-Tool betrachtet. Das ist die Oberf
 
 Konkret: Ein Café an der Bonner Straße setzt eine Rückhol-Nachricht auf 30 Tage Inaktivität. Wer länger nicht erscheint, bekommt eine persönliche Einladung – automatisch, ohne dass ein Mitarbeiter aktiv werden muss. Der Gast spürt: **Hier werde ich vermisst, nicht nur bedient.** Das ist der Unterschied zwischen einem Betrieb, der Gäste zählt, und einem, der sie kennt.
 
-Das Prinzip gilt branchenübergreifend. Für [Cafés in Rodenkirchen](/koeln/rodenkirchen/cafes) funktioniert es genauso wie für [Restaurants in Rodenkirchen](/koeln/rodenkirchen/restaurant) – und genauso für jeden anderen Betrieb, der von wiederkehrenden Kunden lebt. Wer heute anfängt, hat in zwölf Monaten eine Wissensbasis, die kein Wettbewerber einfach übernehmen kann.
+Das Prinzip gilt branchenübergreifend. Für [Cafés in Rodenkirchen](/koeln/rodenkirchen/cafes/) funktioniert es genauso wie für [Restaurants in Rodenkirchen](/koeln/rodenkirchen/restaurant/) – und genauso für jeden anderen Betrieb, der von wiederkehrenden Kunden lebt. Wer heute anfängt, hat in zwölf Monaten eine Wissensbasis, die kein Wettbewerber einfach übernehmen kann.
 
 ## Wer profitiert zuerst von digitaler Kundenbindung in Rodenkirchen?
 
-In einem Veedel dieser Größe reicht ein einziger Betrieb mit System, um den Standard zu setzen. Wenn das [Yoga-Studio an der Uferstraße](/koeln/rodenkirchen/yoga) seine Mitglieder erkennt und der Nachbarbetrieb weiterhin auf Bauchgefühl setzt, fällt das auf. Nicht laut – aber es fällt auf.
+In einem Veedel dieser Größe reicht ein einziger Betrieb mit System, um den Standard zu setzen. Wenn das [Yoga-Studio an der Uferstraße](/koeln/rodenkirchen/yoga/) seine Mitglieder erkennt und der Nachbarbetrieb weiterhin auf Bauchgefühl setzt, fällt das auf. Nicht laut – aber es fällt auf.
 
 **Kundenbindung Rodenkirchen Köln** wird für frühe Einsteiger zum echten Wettbewerbsvorteil. Für alle anderen wird sie irgendwann zur Pflicht. Den Unterschied macht der Zeitpunkt, nicht die Absicht.
 
@@ -75,7 +75,7 @@ Wie viele deiner Stammgäste vom letzten Monat sind diesen Monat nicht mehr aufg
 ---
 
 **Bonuskarte digital für Betriebe in Rodenkirchen:**
-- [Cafés in Rodenkirchen – digitale Stempelkarte](/koeln/rodenkirchen/cafes)
-- [Restaurants in Rodenkirchen – Kundenbindung](/koeln/rodenkirchen/restaurant)
-- [Yoga-Studios in Rodenkirchen – Mitgliederkarte digital](/koeln/rodenkirchen/yoga)
-- [Blumenläden in Rodenkirchen – Stammkunden gewinnen](/koeln/rodenkirchen/blumenladen)
+- [Cafés in Rodenkirchen – digitale Stempelkarte](/koeln/rodenkirchen/cafes/)
+- [Restaurants in Rodenkirchen – Kundenbindung](/koeln/rodenkirchen/restaurant/)
+- [Yoga-Studios in Rodenkirchen – Mitgliederkarte digital](/koeln/rodenkirchen/yoga/)
+- [Blumenläden in Rodenkirchen – Stammkunden gewinnen](/koeln/rodenkirchen/blumenladen/)

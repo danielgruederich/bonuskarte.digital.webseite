@@ -40,7 +40,7 @@ Das Florastraßen-Flair ersetzt kein System. Ein Kiez-Feeling bindet, solange ke
 
 Eine digitale Stempelkarte entsteht beim Bezahlen — kein extra Schritt, keine App die der Gast erst herunterladen muss. Der Bezahlmoment ist der Touchpoint, weil er ohnehin schon passiert. Für die Gürtel-nahen Betriebe in Nippes ist das besonders relevant: Der Bereich hat eine hohe Fluktuation junger Zielgruppen — viele Zugezogene, viele die gerade schauen, wo sie sich regelmäßig aufhalten. Wer in diesem Entscheidungsfenster sichtbar bleibt, gewinnt.
 
-Genau diese Gruppe entscheidet in den ersten 90 Tagen, ob sie Stammkunde wird oder nicht. Wer in diesem Fenster einen Grund zum Wiederkommen bekommt — einen kleinen Bonus, eine Erinnerung nach zehn Tagen Pause — **der bleibt**. Die [Cafés in Nippes](/koeln/nippes/cafes) und [Bäckereien in Nippes](/koeln/nippes/baeckerei), die das heute schon einsetzen, bauen einen Vorsprung auf, der sich nicht sofort zeigt — aber nach drei Monaten kaum mehr aufholbar ist.
+Genau diese Gruppe entscheidet in den ersten 90 Tagen, ob sie Stammkunde wird oder nicht. Wer in diesem Fenster einen Grund zum Wiederkommen bekommt — einen kleinen Bonus, eine Erinnerung nach zehn Tagen Pause — **der bleibt**. Die [Cafés in Nippes](/koeln/nippes/cafes/) und [Bäckereien in Nippes](/koeln/nippes/baeckerei/), die das heute schon einsetzen, bauen einen Vorsprung auf, der sich nicht sofort zeigt — aber nach drei Monaten kaum mehr aufholbar ist.
 
 ## Was ist nach 90 Tagen mit Stempelkarte anders?
 
@@ -48,7 +48,7 @@ Nach drei Monaten mit einem echten System ist die Stammkundenrate **messbar stat
 
 Das ist der Grund, warum Nippes-Betriebe mit System für Filial-Ketten schwer kopierbar sind. Eine Kette kann Ausstattung kopieren, Preise angleichen, Öffnungszeiten anpassen — **aber keine gewachsene Beziehungstiefe mit dem Kiez**. Die entsteht nur, wenn man die Daten hat und konsequent nutzt.
 
-[Restaurants in Nippes](/koeln/nippes/restaurant) sehen Stammgäste alle zwei Wochen, [Friseursalons in Nippes](/koeln/nippes/friseur) alle sechs Wochen. Das verlängert das sinnvolle Erinnerungsfenster — eine Nachricht nach drei Tagen Pause ergibt beim Café Sinn, beim Friseur wäre sie irritierend. Das System muss das Intervall kennen, nicht der Inhaber.
+[Restaurants in Nippes](/koeln/nippes/restaurant/) sehen Stammgäste alle zwei Wochen, [Friseursalons in Nippes](/koeln/nippes/friseur/) alle sechs Wochen. Das verlängert das sinnvolle Erinnerungsfenster — eine Nachricht nach drei Tagen Pause ergibt beim Café Sinn, beim Friseur wäre sie irritierend. Das System muss das Intervall kennen, nicht der Inhaber.
 
 **Kundenbindung in Nippes Köln** ist kein Vorteil für alle — nur für die, die anfangen, bevor es alle tun.
 

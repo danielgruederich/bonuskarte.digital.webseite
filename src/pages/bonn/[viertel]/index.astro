@@ -12,10 +12,10 @@ const { viertel: slug } = Astro.params
 const data = getStadtteilBySlug(slug) ?? fallbackStadtteil
 
 const niches = [
-  { key: 'cafe',       label: 'Café',               emoji: '☕', desc: 'Kaffee, Kuchen, Stammgäste',  href: `/bonn/${data.slug}/cafes`,      fomo: data.fomoCount.cafe },
-  { key: 'doener',     label: 'Döner',               emoji: '🥙', desc: 'Imbiss & Dönerläden',         href: `/bonn/${data.slug}/doener`,     fomo: data.fomoCount.doener },
-  { key: 'restaurant', label: 'Restaurant & Bistro',  emoji: '🍽️', desc: 'Restaurants & Bistros',      href: `/bonn/${data.slug}/restaurant`, fomo: data.fomoCount.restaurant },
-  { key: 'pizza',      label: 'Pizza',               emoji: '🍕', desc: 'Pizzerien & Lieferdienste',   href: `/bonn/${data.slug}/pizza`,      fomo: data.fomoCount.pizza },
+  { key: 'cafe',       label: 'Café',               emoji: '☕', desc: 'Kaffee, Kuchen, Stammgäste',  href: `/bonn/${data.slug}/cafes/`,      fomo: data.fomoCount.cafe },
+  { key: 'doener',     label: 'Döner',               emoji: '🥙', desc: 'Imbiss & Dönerläden',         href: `/bonn/${data.slug}/doener/`,     fomo: data.fomoCount.doener },
+  { key: 'restaurant', label: 'Restaurant & Bistro',  emoji: '🍽️', desc: 'Restaurants & Bistros',      href: `/bonn/${data.slug}/restaurant/`, fomo: data.fomoCount.restaurant },
+  { key: 'pizza',      label: 'Pizza',               emoji: '🍕', desc: 'Pizzerien & Lieferdienste',   href: `/bonn/${data.slug}/pizza/`,      fomo: data.fomoCount.pizza },
 ]
 ---
 

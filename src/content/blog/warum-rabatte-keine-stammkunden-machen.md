@@ -84,4 +84,4 @@ Es geht um Werte, Gemeinschaft und Gefühl. Ein Gast bleibt, wenn dein Laden zu 
 
 Was viele Gastronomen in Köln längst spüren, bestätigt sich immer wieder: Preiskampf funktioniert nicht dauerhaft. Was funktioniert, ist eine Kombination aus echtem Mehrwert, Gemeinschaftsgefühl und smarter Präsenz im Alltag deiner Gäste.
 
-**Willst du sehen, wie eine digitale Stempelkarte das für dein Geschäft leisten kann?** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes) – ohne Risiko, ohne Kreditkarte.
+**Willst du sehen, wie eine digitale Stempelkarte das für dein Geschäft leisten kann?** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes/) – ohne Risiko, ohne Kreditkarte.

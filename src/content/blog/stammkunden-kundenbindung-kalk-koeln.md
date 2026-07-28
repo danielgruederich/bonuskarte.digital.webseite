@@ -34,9 +34,9 @@ Genau das leistet ein simples Bonusprogramm. Kein kompliziertes System, keine Ap
 
 Viele Läden setzen noch auf die klassische Papierstempelkarte. Das Prinzip ist gut, die Umsetzung hat aber ein Problem: Die Karte liegt zuhause, der Kunde kommt trotzdem — aber der Stempel fehlt. Oder die Karte geht verloren. Oder sie läuft nie voll, weil der Besuchsabstand zu groß ist.
 
-**Eine digitale Stempelkarte sitzt im Handy.** Sie ist immer dabei, kann nicht verloren gehen, und du siehst als Inhaber wann jemand zuletzt da war. Für einen [Döner-Imbiss in Kalk](/koeln/kalk/doener), der täglich Laufkundschaft hat, bedeutet das: weniger vergessene Stempel, mehr Wiederkäufer.
+**Eine digitale Stempelkarte sitzt im Handy.** Sie ist immer dabei, kann nicht verloren gehen, und du siehst als Inhaber wann jemand zuletzt da war. Für einen [Döner-Imbiss in Kalk](/koeln/kalk/doener/), der täglich Laufkundschaft hat, bedeutet das: weniger vergessene Stempel, mehr Wiederkäufer.
 
-Für eine [Pizzeria in Kalk](/koeln/kalk/pizza) mit Abholbestellungen funktioniert dasselbe Prinzip — nur dass der Bonus nach der zehnten Pizza automatisch auf dem Handy des Kunden erscheint, ohne dass jemand eine Karte zücken muss.
+Für eine [Pizzeria in Kalk](/koeln/kalk/pizza/) mit Abholbestellungen funktioniert dasselbe Prinzip — nur dass der Bonus nach der zehnten Pizza automatisch auf dem Handy des Kunden erscheint, ohne dass jemand eine Karte zücken muss.
 
 ## Was bringt Kundenbindung in Kalk konkret?
 
@@ -50,7 +50,7 @@ Ein Bonusprogramm ist dieser Anreiz. Kein Trick, kein Rabatt-Chaos. Einfach ein 
 
 Du musst kein Tech-Profi sein um das aufzusetzen. Eine digitale Stempelkarte ist in unter 10 Minuten eingerichtet — und dein Kunde braucht dafür keine App-Installation, nur eine Handy-Kamera.
 
-Wenn du ein [Café in Kalk](/koeln/kalk/cafes) betreibst oder eine [Bäckerei](/koeln/kalk/baeckerei) an der Kalker Hauptstraße: Deine Stammkunden sind schon da. Die Frage ist nur, ob sie auch in drei Monaten noch regelmäßig kommen — oder ob sie irgendwann zum neuen Laden auf der anderen Straßenseite abbiegen.
+Wenn du ein [Café in Kalk](/koeln/kalk/cafes/) betreibst oder eine [Bäckerei](/koeln/kalk/baeckerei/) an der Kalker Hauptstraße: Deine Stammkunden sind schon da. Die Frage ist nur, ob sie auch in drei Monaten noch regelmäßig kommen — oder ob sie irgendwann zum neuen Laden auf der anderen Straßenseite abbiegen.
 
 **Kundenbindung Kalk Köln beginnt nicht mit einem riesigen Marketing-Budget.** Sie beginnt damit, dass deine Stammkunden das Gefühl haben: Dieser Laden sieht mich.
 

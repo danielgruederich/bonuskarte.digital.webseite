@@ -120,4 +120,4 @@ Eine Laufzeit von 7 bis 14 Tagen hat sich bewährt. "Gültig bis Sonntag" ist ko
 
 Digitale Gutscheine sind kein Ersatz für Stempelkarten – sie sind die perfekte Ergänzung. Mit dem richtigen Mix aus Treueprogramm und gezielten Aktionen bauen Kölner Betriebe eine Kundenbasis, die nicht nur wiederkommt, sondern auch wächst.
 
-[Starten Sie jetzt kostenlos](/koeln/ehrenfeld/cafes) – 90 Tage, keine Kreditkarte, keine Pflichten.
+[Starten Sie jetzt kostenlos](/koeln/ehrenfeld/cafes/) – 90 Tage, keine Kreditkarte, keine Pflichten.

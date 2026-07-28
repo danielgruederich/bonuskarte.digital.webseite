@@ -95,4 +95,4 @@ Die Karte sammelt keine persönlichen Daten ohne aktive Zustimmung. Kein Name, k
 
 Das Bonner Uni-Viertel ist kein einfaches Pflaster – aber es ist eines, auf dem Cafés mit der richtigen Strategie echte Stammkunden aufbauen können. Die digitale Kundenkarte ist dabei kein nettes Extra, sondern das entscheidende Werkzeug, das aus dem flüchtigen Semestergast einen loyalen Stammgast macht.
 
-**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/cafes](/bonn/innenstadt/cafes)
+**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/cafes](/bonn/innenstadt/cafes/)

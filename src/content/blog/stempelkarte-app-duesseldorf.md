@@ -87,4 +87,4 @@ Wenn es derselbe Betreiber ist, ja. Über bonuskarte.digital lassen sich mehrere
 
 Das Argument "zu kompliziert für meine Kunden" hat in Düsseldorf keine Basis mehr – nicht in einer Stadt, in der der Alltag längst digital ist, von der U-Bahn-Abfahrt in der App bis zum kontaktlosen Bezahlen an der Bäckereifrühstückstheke. Die digitale Stempelkarte ohne App ist nicht die Zukunft. Sie ist die Gegenwart, und die meisten Kunden warten schon darauf.
 
-Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/cafes](/duesseldorf/altstadt/cafes)
+Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/cafes](/duesseldorf/altstadt/cafes/)

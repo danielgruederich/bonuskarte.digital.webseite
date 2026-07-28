@@ -123,4 +123,4 @@ Gerade dann ist das Tool wertvoll. Laufkundschaft, die einmal kommt und die Stem
 
 Push-Nachrichten über Apple Wallet und Google Wallet sind kein Massen-Marketing-Kanal. Sie sind ein Präzisionswerkzeug für Berliner Kiez-Cafés, die ihre besten Gäste im Blick behalten wollen – ohne Spam, ohne Social-Media-Budget, ohne Lärm. Eine kurze, echte Nachricht zur richtigen Zeit holt mehr Stammkunden zurück als jede Instagram-Kampagne.
 
-[Jetzt kostenlos für Ihr Berliner Café starten →](/berlin/mitte/cafes)
+[Jetzt kostenlos für Ihr Berliner Café starten →](/berlin/mitte/cafes/)

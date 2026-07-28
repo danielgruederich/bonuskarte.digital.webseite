@@ -36,8 +36,9 @@ const categoryColors: Record<string, string> = {
 }
 
 const allPosts = await getCollection('blog')
+const relatedNow = new Date()
 const related = allPosts
-  .filter(p => p.data.city === 'koeln' && p.slug !== post.slug)
+  .filter(p => p.data.city === 'koeln' && p.slug !== post.slug && p.data.pubDate <= relatedNow)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3)
 ---
@@ -105,9 +106,9 @@ const related = allPosts
       <nav class="flex items-center flex-wrap gap-1.5 text-xs text-paper/55 mb-7 tracking-wide">
         <a href="/" class="hover:text-paper/60 transition-colors">Home</a>
         <span>›</span>
-        <a href="/koeln" class="hover:text-paper/60 transition-colors">Köln</a>
+        <a href="/koeln/" class="hover:text-paper/60 transition-colors">Köln</a>
         <span>›</span>
-        <a href="/koeln/blog" class="hover:text-paper/60 transition-colors">Blog</a>
+        <a href="/koeln/blog/" class="hover:text-paper/60 transition-colors">Blog</a>
         <span>›</span>
         <span class="text-paper/50">{post.data.category}</span>
       </nav>
@@ -228,13 +229,13 @@ const related = allPosts
       <div class="max-w-2xl mx-auto px-5 sm:px-8">
         <div class="flex items-center justify-between mb-8">
           <h2 class="text-xs font-bold tracking-[0.25em] uppercase text-black/40">Weitere Artikel</h2>
-          <a href="/koeln/blog" class="text-xs text-amber hover:text-amber tracking-widest uppercase transition-colors font-medium">
+          <a href="/koeln/blog/" class="text-xs text-amber hover:text-amber tracking-widest uppercase transition-colors font-medium">
             Alle →
           </a>
         </div>
         <div class="grid sm:grid-cols-3 gap-px bg-gray-100">
           {related.map(p => (
-            <a href={`/koeln/blog/${p.slug}`} class="group bg-white hover:bg-gray-50 transition-colors p-5 flex flex-col gap-3">
+            <a href={`/koeln/blog/${p.slug}/`} class="group bg-white hover:bg-gray-50 transition-colors p-5 flex flex-col gap-3">
               <div class="bg-gray-50 flex items-center justify-center aspect-video overflow-hidden">
                 <img
                   src={p.data.heroImage}

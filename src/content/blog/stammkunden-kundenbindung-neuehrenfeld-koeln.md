@@ -30,7 +30,7 @@ Neuehrenfeld hat in den letzten Jahren eine stille Aufwertung erlebt, ohne dabei
 
 Am Lenauplatz sieht man das besonders gut. Wer dort seinen Kaffee trinkt, fährt danach nicht nach Hause und bestellt online. Der entscheidende Unterschied zu Ehrenfeld: Hier fehlt noch das dichte Netz an Alternativläden, das den Kunden ständig abzieht. Wer sich jetzt klar positioniert, ist für viele Bewohner schlicht *der* Laden für seine Kategorie.
 
-Das heißt konkret: Ein [Café in Neuehrenfeld](/koeln/neuehrenfeld/cafes), das eine digitale Stempelkarte einführt, kämpft nicht gegen andere Cafés. Es kämpft gegen die Bequemlichkeit – und das ist ein viel einfacherer Gegner.
+Das heißt konkret: Ein [Café in Neuehrenfeld](/koeln/neuehrenfeld/cafes/), das eine digitale Stempelkarte einführt, kämpft nicht gegen andere Cafés. Es kämpft gegen die Bequemlichkeit – und das ist ein viel einfacherer Gegner.
 
 ## Warum reichen Papier-Stempelkarten in Neuehrenfeld nicht mehr?
 
@@ -38,7 +38,7 @@ An der Stammheimer Straße findest du Läden, die noch mit dem Kartonstempel arb
 
 Digitale Stempelkarten landen nicht zwischen Einkaufszettel und Kassenbon. Sie erinnern – im richtigen Moment, auf dem Handy, ohne dass du dabei sein musst. Das ist kein Luxus, **das ist Infrastruktur.**
 
-[Bäckereien in Neuehrenfeld](/koeln/neuehrenfeld/baeckerei) profitieren besonders davon. Der Morgen-Ritual-Kunde kommt sowieso – aber ein digitales Programm macht aus dem Gewohnheits-Besucher jemanden, der auch nach einer Urlaubswoche bewusst zurückkommt. Der Unterschied im Jahresumsatz lässt sich direkt ablesen.
+[Bäckereien in Neuehrenfeld](/koeln/neuehrenfeld/baeckerei/) profitieren besonders davon. Der Morgen-Ritual-Kunde kommt sowieso – aber ein digitales Programm macht aus dem Gewohnheits-Besucher jemanden, der auch nach einer Urlaubswoche bewusst zurückkommt. Der Unterschied im Jahresumsatz lässt sich direkt ablesen.
 
 ## Was sagen die Daten zur Kundenbindung?
 

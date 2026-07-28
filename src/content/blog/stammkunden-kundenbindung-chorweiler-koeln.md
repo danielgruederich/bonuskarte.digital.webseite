@@ -36,7 +36,7 @@ Viele Ladeninhaber denken: "Meine Kunden kommen sowieso wieder." Das stimmt — 
 
 **Ohne ein System verlierst du Stammkunden still — und merkst es zu spät.** Eine digitale Stempelkarte ist kein Rabattheft. Sie ist eine Erinnerung: *Wir sehen dich, du bist hier bekannt, du bekommst etwas zurück.* Das reicht oft schon — gerade in Chorweiler, wo Verlässlichkeit zählt.
 
-[Döner & Imbisse in Chorweiler](/koeln/chorweiler/doener) nutzen das bereits: Wer einmal pro Woche isst, sammelt schnell fünf Stempel. Und [Friseure in Chorweiler](/koeln/chorweiler/friseur) profitieren genauso — ein Besuch alle vier Wochen, nach fünf Besuchen ein Dankeschön. Das Gespräch dazu dauert zehn Sekunden.
+[Döner & Imbisse in Chorweiler](/koeln/chorweiler/doener/) nutzen das bereits: Wer einmal pro Woche isst, sammelt schnell fünf Stempel. Und [Friseure in Chorweiler](/koeln/chorweiler/friseur/) profitieren genauso — ein Besuch alle vier Wochen, nach fünf Besuchen ein Dankeschön. Das Gespräch dazu dauert zehn Sekunden.
 
 ## Was bedeutet das konkret für dich?
 
@@ -52,11 +52,11 @@ Das ist keine Magie. Das ist Psychologie: Wer angefangen hat, macht weiter.
 
 Chorweiler wächst. Neue Läden kommen. **Die Frage ist nicht, ob du Stammkunden brauchst — sondern wer sie zuerst bindet.**
 
-Eine digitale Stempelkarte ist in 15 Minuten eingerichtet. Kein IT-Wissen nötig — deine Kunden laden sie aufs Handy, fertig. Schau dir an, was [Pizzerien in Chorweiler](/koeln/chorweiler/pizza) und [Bäckereien in Chorweiler](/koeln/chorweiler/baeckerei) bereits daraus machen.
+Eine digitale Stempelkarte ist in 15 Minuten eingerichtet. Kein IT-Wissen nötig — deine Kunden laden sie aufs Handy, fertig. Schau dir an, was [Pizzerien in Chorweiler](/koeln/chorweiler/pizza/) und [Bäckereien in Chorweiler](/koeln/chorweiler/baeckerei/) bereits daraus machen.
 
 **Welcher Stammkunde bei dir käme als erstes in Frage — der, der zweimal pro Woche kommt, aber nie aktiv zurückgeholt wird?** Stell dir vor, was passiert, wenn er das nächste Mal mit einem Stempel auf dem Handy rausgeht.
 
-[Jetzt kostenlos starten →](/kontakt)
+[Jetzt kostenlos starten →](/termin/)
 
 ## Häufig gestellte Fragen
 

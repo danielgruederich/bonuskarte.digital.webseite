@@ -123,4 +123,4 @@ Ja. Du brauchst weder eine Website noch eine App. bonuskarte.digital stellt dir 
 
 Apple Wallet und Google Wallet sind keine Zukunftstechnologie – sie sind täglich auf dem Smartphone Ihrer Kölner Gäste. **bonuskarte.digital** öffnet Ihnen die Tür zu diesen Plattformen: ohne Programmierkenntnisse, ohne App-Entwicklung.
 
-Nutzen Sie die digitale Infrastruktur, die bereits in jeder Kölner Hosentasche steckt – für Ihre lokale Kundenbindung. [Jetzt 90 Tage kostenlos testen →](/koeln/ehrenfeld/cafes)
+Nutzen Sie die digitale Infrastruktur, die bereits in jeder Kölner Hosentasche steckt – für Ihre lokale Kundenbindung. [Jetzt 90 Tage kostenlos testen →](/koeln/ehrenfeld/cafes/)
