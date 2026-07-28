@@ -110,4 +110,4 @@ Ja – das ist eine der stärksten Funktionen. Du siehst im Dashboard, wann der 
 
 Berliner Restaurant-Gäste wählen ihre Stammrestaurants nicht rational – sie wählen emotional. Ein System, das ihnen zeigt, dass ihre Besuche zählen, ist der direkteste Weg in ihre feste Rotation. Keine Rabatte, kein Preisdumping – nur Anerkennung, die sich auszahlt.
 
-[Jetzt kostenlos für Ihr Berliner Restaurant starten →](/berlin/mitte/restaurant)
+[Jetzt kostenlos für Ihr Berliner Restaurant starten →](/berlin/mitte/restaurant/)

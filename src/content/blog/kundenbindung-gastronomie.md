@@ -102,6 +102,6 @@ Die ersten 90 Tage sind kostenlos. Danach ab 29 Euro pro Monat, ohne Umsatzantei
 
 Kundenbindung in der Kölner Gastronomie ist keine Raketenwissenschaft. Es braucht ein einfaches Versprechen, ein zuverlässiges System und die Bereitschaft, Kunden aktiv anzusprechen.
 
-Digitale Stempelkarten über [bonuskarte.digital](/koeln/ehrenfeld/cafes) machen genau das möglich – ohne IT-Kenntnisse, auf jedem Smartphone, 90 Tage kostenlos.
+Digitale Stempelkarten über [bonuskarte.digital](/koeln/ehrenfeld/cafes/) machen genau das möglich – ohne IT-Kenntnisse, auf jedem Smartphone, 90 Tage kostenlos.
 
 Ihre Stammkunden sind bereits in Ihrem Veedel. Geben Sie ihnen einen Grund zu bleiben.

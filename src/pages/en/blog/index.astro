@@ -65,7 +65,7 @@ function formatDate(date: Date) {
   {featured && (
     <section class="bg-paper">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <a href={`${base}/${stripLang(featured.slug)}`} class="group block">
+        <a href={`${base}/${stripLang(featured.slug)}/`} class="group block">
           <div class="grid md:grid-cols-2 gap-0 border border-ink/10 hover:border-amber/40 transition-colors duration-300 overflow-hidden">
             <div class="relative overflow-hidden aspect-[4/3] md:aspect-auto min-h-[280px] bg-paper-dark flex items-center justify-center">
               <img
@@ -119,7 +119,7 @@ function formatDate(date: Date) {
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/10">
         {rest.map(post => (
-          <a href={`${base}/${stripLang(post.slug)}`} class="group bg-white hover:bg-paper-dark transition-colors duration-200 p-7 flex flex-col">
+          <a href={`${base}/${stripLang(post.slug)}/`} class="group bg-white hover:bg-paper-dark transition-colors duration-200 p-7 flex flex-col">
             <div class="relative overflow-hidden aspect-video mb-6 bg-paper-dark flex items-center justify-center">
               <img
                 src={post.data.heroImage}

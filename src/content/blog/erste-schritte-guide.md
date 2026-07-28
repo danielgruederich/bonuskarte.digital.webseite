@@ -124,4 +124,4 @@ Egal ob Café in Ehrenfeld, Dönerladen in Nippes, Restaurant in Deutz oder Pizz
 
 Die Einrichtung dauert keine 10 Minuten. Die ersten 90 Tage sind kostenlos.
 
-Bereit? [Starten Sie jetzt.](/koeln/ehrenfeld/cafes)
+Bereit? [Starten Sie jetzt.](/koeln/ehrenfeld/cafes/)

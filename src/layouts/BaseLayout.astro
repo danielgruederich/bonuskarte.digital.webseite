@@ -109,7 +109,7 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
           <p class="text-ink/50 text-xs leading-tight">wir machen den Rest.</p>
         </div>
         <a
-          href="/koeln"
+          href="/koeln/"
           data-city-cta
           class="flex-shrink-0 inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-black px-5 py-3 text-xs font-bold tracking-[0.15em] uppercase transition-colors"
         >
@@ -129,7 +129,7 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
 
         const detected = sessionStorage.getItem('bkCity') || 'koeln'
         document.querySelectorAll('[data-city-cta]').forEach(function (el) {
-          el.setAttribute('href', '/' + detected)
+          el.setAttribute('href', '/' + detected + '/')
         })
 
         // Sticky CTA: einblenden nach 300px Scroll

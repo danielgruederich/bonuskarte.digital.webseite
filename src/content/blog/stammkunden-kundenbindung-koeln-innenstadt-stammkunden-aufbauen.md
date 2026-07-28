@@ -44,13 +44,13 @@ Die Betriebe rund um den Rudolfplatz und in der Altstadt, die heute eine treue S
 
 Das eigentliche Asset ist nicht der zehnte Kaffee umsonst. Das eigentliche Asset ist die Information: Dieser Gast war in den letzten vier Wochen sechsmal hier. Jener andere war drei Wochen nicht mehr da. **Automatisierte Wiederaktivierung bedeutet: Der zweite Gast bekommt eine Push-Benachrichtigung** — einen kleinen Anlass zurückzukommen — bevor er sich an einen anderen Betrieb gewöhnt hat.
 
-[Cafés in der Innenstadt](/koeln/innenstadt/cafes), die dieses System einsetzen, berichten von Besuchsfrequenzen, die sich verdoppeln. Nicht weil das Essen besser wurde. Weil das Gedächtnis besser wurde.
+[Cafés in der Innenstadt](/koeln/innenstadt/cafes/), die dieses System einsetzen, berichten von Besuchsfrequenzen, die sich verdoppeln. Nicht weil das Essen besser wurde. Weil das Gedächtnis besser wurde.
 
 ## Was bedeutet das für deinen Betrieb?
 
 Ein Stammkunde kommt statistisch sechsmal so oft wie ein Neukunde. Die Innenstadt-Lage macht den initialen Kontakt erst möglich — **aber sie macht den zweiten Besuch nicht automatisch.** Den musst du aktiv verdienen.
 
-Wettbewerbsvorteil entsteht nicht durch besseres Essen oder günstigere Preise. Beide Hebel kosten Marge. Er entsteht durch ein besseres Gedächtnis — und das ist skalierbar. [Restaurants in der Innenstadt](/koeln/innenstadt/restaurant), [Pizzerien](/koeln/innenstadt/pizza) und [Friseursalons](/koeln/innenstadt/friseur) stehen vor exakt dem gleichen strukturellen Problem der **Kundenbindung in der Kölner Innenstadt** und lösen es auf die gleiche Art.
+Wettbewerbsvorteil entsteht nicht durch besseres Essen oder günstigere Preise. Beide Hebel kosten Marge. Er entsteht durch ein besseres Gedächtnis — und das ist skalierbar. [Restaurants in der Innenstadt](/koeln/innenstadt/restaurant/), [Pizzerien](/koeln/innenstadt/pizza/) und [Friseursalons](/koeln/innenstadt/friseur/) stehen vor exakt dem gleichen strukturellen Problem der **Kundenbindung in der Kölner Innenstadt** und lösen es auf die gleiche Art.
 
 Wer jetzt anfängt, baut in 90 Tagen eine Datenbasis, die kein Mitbewerber hat — weil der noch gerade überlegt, ob er die Papier-Stempelkarten nachbestellt.
 

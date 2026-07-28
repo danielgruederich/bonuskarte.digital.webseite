@@ -48,7 +48,7 @@ const categoryColors: Record<string, string> = {
         <nav class="flex items-center gap-2 text-xs text-ink/55 mt-8 tracking-wide">
           <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
           <span>›</span>
-          <a href="/berlin" class="hover:text-ink/60 transition-colors">Berlin</a>
+          <a href="/berlin/" class="hover:text-ink/60 transition-colors">Berlin</a>
           <span>›</span>
           <span class="text-ink/50">Blog</span>
         </nav>
@@ -59,7 +59,7 @@ const categoryColors: Record<string, string> = {
   {featured && (
     <section class="bg-ink">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <a href={`/berlin/blog/${featured.slug}`} class="group block">
+        <a href={`/berlin/blog/${featured.slug}/`} class="group block">
           <div class="grid md:grid-cols-2 gap-0 border border-ink/10 hover:border-amber/40 transition-colors duration-300 overflow-hidden">
             <div class="relative overflow-hidden aspect-[4/3] md:aspect-auto min-h-[280px]">
               <img src={featured.data.heroImage} alt={featured.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="eager" />
@@ -98,7 +98,7 @@ const categoryColors: Record<string, string> = {
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/20">
           {rest.map(post => (
-            <a href={`/berlin/blog/${post.slug}`} class="group bg-paper hover:bg-ink-900 transition-colors duration-200 p-7 flex flex-col">
+            <a href={`/berlin/blog/${post.slug}/`} class="group bg-paper hover:bg-ink-900 transition-colors duration-200 p-7 flex flex-col">
               <div class="relative overflow-hidden aspect-video mb-6">
                 <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               </div>
@@ -126,7 +126,7 @@ const categoryColors: Record<string, string> = {
         Bereit für Ihre eigene<br/>digitale Kundenkarte in Berlin?
       </h2>
       <p class="text-ink/50 mb-8 text-base leading-relaxed">90 Tage kostenlos. Keine Kreditkarte. Läuft auf jedem Smartphone in Ihrem Kiez.</p>
-      <a href="/berlin/mitte/cafes" class="inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors group">
+      <a href="/berlin/mitte/cafes/" class="inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-8 py-4 transition-colors group">
         Jetzt gratis starten
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>

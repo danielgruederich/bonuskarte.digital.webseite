@@ -25,8 +25,9 @@ function formatDate(date: Date) {
 }
 
 const allPosts = await getCollection('blog')
+const relatedNow = new Date()
 const related = allPosts
-  .filter(p => p.data.city === 'huerth' && p.slug !== post.slug)
+  .filter(p => p.data.city === 'huerth' && p.slug !== post.slug && p.data.pubDate <= relatedNow)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3)
 ---
@@ -75,8 +76,8 @@ const related = allPosts
     <div class="max-w-2xl mx-auto px-5 sm:px-8">
       <nav class="flex items-center flex-wrap gap-1.5 text-xs text-paper/55 mb-7 tracking-wide">
         <a href="/" class="hover:text-paper/60 transition-colors">Home</a><span>›</span>
-        <a href="/huerth" class="hover:text-paper/60 transition-colors">Hürth</a><span>›</span>
-        <a href="/huerth/blog" class="hover:text-paper/60 transition-colors">Blog</a><span>›</span>
+        <a href="/huerth/" class="hover:text-paper/60 transition-colors">Hürth</a><span>›</span>
+        <a href="/huerth/blog/" class="hover:text-paper/60 transition-colors">Blog</a><span>›</span>
         <span class="text-paper/50">{post.data.category}</span>
       </nav>
       <div class="flex flex-wrap items-center gap-2.5 mb-5">
@@ -136,7 +137,7 @@ const related = allPosts
           <h2 class="text-2xl sm:text-3xl font-black text-paper leading-tight">Jetzt 90 Tage kostenlos starten</h2>
         </div>
         <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-          <a href="/huerth/huerth-mitte/cafes" class="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
+          <a href="/huerth/huerth-mitte/cafes/" class="inline-flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark text-black font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
             Gratis starten →
           </a>
           <a href={bookingUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 border border-paper/30 hover:border-paper/60 text-paper font-bold text-xs tracking-widest uppercase px-7 py-4 transition-colors">
@@ -152,11 +153,11 @@ const related = allPosts
       <div class="max-w-2xl mx-auto px-5 sm:px-8">
         <div class="flex items-center justify-between mb-8">
           <h2 class="text-xs font-bold tracking-[0.25em] uppercase text-black/40">Weitere Artikel</h2>
-          <a href="/huerth/blog" class="text-xs text-amber hover:text-amber tracking-widest uppercase font-medium">Alle →</a>
+          <a href="/huerth/blog/" class="text-xs text-amber hover:text-amber tracking-widest uppercase font-medium">Alle →</a>
         </div>
         <div class="grid sm:grid-cols-3 gap-px bg-gray-100">
           {related.map(p => (
-            <a href={`/huerth/blog/${p.slug}`} class="group bg-white hover:bg-gray-50 transition-colors p-5 flex flex-col gap-3">
+            <a href={`/huerth/blog/${p.slug}/`} class="group bg-white hover:bg-gray-50 transition-colors p-5 flex flex-col gap-3">
               <div class="bg-gray-50 flex items-center justify-center aspect-video overflow-hidden">
                 <img src={p.data.heroImage} alt={p.data.title} class="max-h-full max-w-full object-contain" loading="lazy" />
               </div>

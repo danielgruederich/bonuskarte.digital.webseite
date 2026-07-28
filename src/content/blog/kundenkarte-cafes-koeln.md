@@ -89,5 +89,5 @@ Eine Kundenkarte für Ihr Kölner Café funktioniert dann, wenn sie:
 
 **bonuskarte.digital** bietet Kölner Cafés genau das – fertig eingerichtet in unter 15 Minuten, 90 Tage kostenlos.
 
-[Jetzt kostenlos starten →](/koeln/innenstadt/cafes)
+[Jetzt kostenlos starten →](/koeln/innenstadt/cafes/)
 

@@ -36,11 +36,11 @@ Eine digitale Stempelkarte sitzt im Handy. Sie sendet eine Push-Benachrichtigung
 
 ## Was bedeutet das konkret für deinen Betrieb?
 
-Stell dir folgendes vor: Du betreibst ein [Fitnessstudio in Ossendorf](/koeln/ossendorf/fitnessstudio) oder eine [Pizzeria in Ossendorf](/koeln/ossendorf/pizza) an der Leyendeckerstraße. Jeden Monat kommen 40 Leute regelmäßig – aber du weißt nicht, wer gerade zwei Wochen pausiert oder wer kurz davor ist, zum Konkurrenten zu wechseln. **Kundenbindung in Ossendorf Köln bedeutet konkret: Sichtbarkeit behalten, auch wenn der Laden gerade leer ist.**
+Stell dir folgendes vor: Du betreibst ein [Fitnessstudio in Ossendorf](/koeln/ossendorf/fitnessstudio/) oder eine [Pizzeria in Ossendorf](/koeln/ossendorf/pizza/) an der Leyendeckerstraße. Jeden Monat kommen 40 Leute regelmäßig – aber du weißt nicht, wer gerade zwei Wochen pausiert oder wer kurz davor ist, zum Konkurrenten zu wechseln. **Kundenbindung in Ossendorf Köln bedeutet konkret: Sichtbarkeit behalten, auch wenn der Laden gerade leer ist.**
 
 Mit einer digitalen Stempelkarte siehst du, wer zuletzt aktiv war. Du schickst gezielt eine Erinnerung: "Dein nächster Stempel fehlt noch – komm vorbei." Kein Newsletter, kein Social-Media-Post – eine direkte Nachricht zur richtigen Zeit an die richtige Person.
 
-Das gilt für [Restaurants in Ossendorf](/koeln/ossendorf/restaurant) genauso wie für [Döner & Imbisse in Ossendorf](/koeln/ossendorf/doener): Der Gastronomie-Wettbewerb in angrenzenden Stadtteilen ist deutlich härter. Wer in Ossendorf seine Stammkunden aktiv pflegt, baut auf stabilem Fundament – ohne den Preiskampf mitmachen zu müssen.
+Das gilt für [Restaurants in Ossendorf](/koeln/ossendorf/restaurant/) genauso wie für [Döner & Imbisse in Ossendorf](/koeln/ossendorf/doener/): Der Gastronomie-Wettbewerb in angrenzenden Stadtteilen ist deutlich härter. Wer in Ossendorf seine Stammkunden aktiv pflegt, baut auf stabilem Fundament – ohne den Preiskampf mitmachen zu müssen.
 
 ## Wie schnell kannst du in Ossendorf loslegen?
 
@@ -72,4 +72,4 @@ Der Setup dauert unter 15 Minuten. Kein App-Download für Kunden, keine Kassenin
 
 **Willst du wissen, wie viele deiner aktuellen Kunden du bei einer Pause verlieren würdest?** Das ist die Zahl, die zählt.
 
-[Jetzt kostenlos starten → bonuskarte.digital](/koeln/ossendorf/cafes)
+[Jetzt kostenlos starten → bonuskarte.digital](/koeln/ossendorf/cafes/)

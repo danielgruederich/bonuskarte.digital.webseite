@@ -79,4 +79,4 @@ Nein. bonuskarte.digital ist ohne Programmierkenntnisse einrichtbar. Die Konfigu
 
 Düsseldorf ist eine Stadt, in der Äußeres zählt und Qualität erwartet wird. Friseursalons, die das verstehen und ihre Stammkunden sichtbar wertschätzen, bauen eine Bindung auf, die kein Buchungsalgorithmus auflösen kann. Die digitale Bonuskarte ist das Instrument dafür – zeitlos im Prinzip, modern in der Ausführung.
 
-Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/friseur](/duesseldorf/altstadt/friseur)
+Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/friseur](/duesseldorf/altstadt/friseur/)

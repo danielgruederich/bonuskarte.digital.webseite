@@ -79,4 +79,4 @@ Ja. Die digitale Karte lässt sich jederzeit aktualisieren. Zur Karnevalssaison,
 
 Der Düsseldorfer Kiez-Bäcker hat einen Trumpf, den keine Kette aufholen kann: persönliche Bindung. Die digitale Stempelkarte macht diese Bindung sichtbar, messbar und dauerhaft. Stammkunden werden belohnt – und das mit einem Aufwand, der im Morgenbetrieb kaum auffällt.
 
-Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/baeckerei](/duesseldorf/altstadt/baeckerei)
+Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/baeckerei](/duesseldorf/altstadt/baeckerei/)

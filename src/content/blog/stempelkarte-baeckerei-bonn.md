@@ -95,4 +95,4 @@ Gerade für Einzelbäckereien. Die Stärke der digitalen Karte liegt nicht im Vo
 
 Die digitale Stempelkarte ist kein Upgrade für Technologiefans – sie ist das einfachste Werkzeug, das eine Bonner Bäckerei hat, um aus dem täglichen Frühstücksritual echte Stammkundenbindung zu machen. Wer heute startet, hat morgen früh die ersten Karten im Wallet seiner Gäste.
 
-**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/baeckerei](/bonn/innenstadt/baeckerei)
+**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/baeckerei](/bonn/innenstadt/baeckerei/)

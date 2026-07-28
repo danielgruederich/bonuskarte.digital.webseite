@@ -106,4 +106,4 @@ In einer familiengeprägten, überschaubaren Stadt wie Hürth ist der persönlic
 
 **bonuskarte.digital** hilft Hürther Gastrobetrieben, in unter 15 Minuten loszulegen – 90 Tage kostenlos, ohne IT-Aufwand.
 
-[Jetzt kostenlos für Ihren Hürther Betrieb starten →](/huerth/huerth-mitte/cafes)
+[Jetzt kostenlos für Ihren Hürther Betrieb starten →](/huerth/huerth-mitte/cafes/)

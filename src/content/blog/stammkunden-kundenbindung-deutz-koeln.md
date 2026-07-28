@@ -32,7 +32,7 @@ Das Tückische: **Alle drei kaufen bei dir — aber nur einer kommt von allein w
 
 Eine physische Stempelkarte funktioniert für den Stammkunden — solange er sie dabei hat. Aber der Messe-Gast, der spontan hereinkommt, zieht keine neue Karte. Der will schnell bezahlen und weiter.
 
-**Mit einem QR-Code an der Kasse** scannt er einmal, hat die Karte sofort in der Wallet-App seines Handys — kein Download, kein Passwort, kein Aufwand. Das nächste Mal, wenn er in der Nähe der Lanxess Arena ist, sieht er seinen Stempelstand und erinnert sich an deinen Laden. Für [Cafés in Deutz](/koeln/deutz/cafes) mit starkem Messe-Publikum ist das kein Nebeneffekt — das ist echtes Wachstum aus Besuchen, die sonst spurlos verschwinden.
+**Mit einem QR-Code an der Kasse** scannt er einmal, hat die Karte sofort in der Wallet-App seines Handys — kein Download, kein Passwort, kein Aufwand. Das nächste Mal, wenn er in der Nähe der Lanxess Arena ist, sieht er seinen Stempelstand und erinnert sich an deinen Laden. Für [Cafés in Deutz](/koeln/deutz/cafes/) mit starkem Messe-Publikum ist das kein Nebeneffekt — das ist echtes Wachstum aus Besuchen, die sonst spurlos verschwinden.
 
 Für den Büropendler funktioniert dieselbe Karte anders: Er kommt regelmäßig, braucht aber einen Grund, nicht zur Konkurrenz zu laufen. Eine Push-Benachrichtigung, wenn er kurz vor der Prämie steht, erinnert ihn genau im richtigen Moment. **Das Vergessen ist das größte Leck im Umsatz** — und digitale Karten stopfen es.
 
@@ -40,7 +40,7 @@ Für den Büropendler funktioniert dieselbe Karte anders: Er kommt regelmäßig,
 
 Das Veedel hat echten Kiez-Charakter. Leute kennen sich, reden miteinander, empfehlen gezielt weiter. Ein Stammkunde mit aktiver Stempelkarte ist ein Multiplikator, weil er einen konkreten Anlass hat, über dich zu sprechen. **"Ich hab schon acht Stempel, noch zwei bis zum Gratis-Kaffee"** ist ein Satz, den man bei Tisch sagt. Analoge Karten, die zu Hause liegen, sind kein Gesprächsstarter.
 
-Gerade für [Döner & Imbisse in Deutz](/koeln/deutz/doener) rechnet sich das besonders schnell: Der Mittagsgast kommt vielleicht fünfmal pro Woche. Wenn er beim zehnten Besuch seinen Döner gratis bekommt, kommt er elfmal. Das ist kein Verlust — das ist **Kundenbindung in Deutz**, die sich selbst bezahlt.
+Gerade für [Döner & Imbisse in Deutz](/koeln/deutz/doener/) rechnet sich das besonders schnell: Der Mittagsgast kommt vielleicht fünfmal pro Woche. Wenn er beim zehnten Besuch seinen Döner gratis bekommt, kommt er elfmal. Das ist kein Verlust — das ist **Kundenbindung in Deutz**, die sich selbst bezahlt.
 
 ### Was das konkret für deinen Laden bedeutet
 
@@ -48,7 +48,7 @@ Du musst nichts an deinem Angebot ändern. Du brauchst kein neues Werbebudget un
 
 **Der Aufwand ist überschaubar**: Einen QR-Code an die Kasse, einen auf den Tisch, einen auf die Tür. Kein App-Download für deine Kunden, kein Schulungsaufwand für dein Team. Dazu siehst du auf einen Blick, welche Kunden aktiv sind und wann jemand länger nicht mehr aufgetaucht ist — ohne Bauchgefühl, mit echten Zahlen.
 
-[Restaurants in Deutz](/koeln/deutz/restaurant) und [Fitnessstudios in Deutz](/koeln/deutz/fitnessstudio) in deiner Nachbarschaft nutzen das bereits. Wer jetzt noch auf Papierstempel setzt, zahlt denselben Preis — nur ohne den Gegenwert.
+[Restaurants in Deutz](/koeln/deutz/restaurant/) und [Fitnessstudios in Deutz](/koeln/deutz/fitnessstudio/) in deiner Nachbarschaft nutzen das bereits. Wer jetzt noch auf Papierstempel setzt, zahlt denselben Preis — nur ohne den Gegenwert.
 
 ### Die Frage, die zählt
 

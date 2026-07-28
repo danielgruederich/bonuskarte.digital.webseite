@@ -109,4 +109,4 @@ Bonn ist eine Stadt, in der Stammkunden der echte Unternehmenswert sind. Digital
 
 **bonuskarte.digital** richtet Ihre digitale Kundenkarte für Ihren Bonner Betrieb in unter 15 Minuten ein – 90 Tage kostenlos.
 
-[Jetzt für Ihren Bonner Betrieb starten →](/bonn/innenstadt/cafes)
+[Jetzt für Ihren Bonner Betrieb starten →](/bonn/innenstadt/cafes/)

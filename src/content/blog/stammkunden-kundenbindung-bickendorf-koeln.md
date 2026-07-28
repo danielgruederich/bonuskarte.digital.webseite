@@ -32,7 +32,7 @@ Dazu kommt: Der Wettbewerb wächst leise. Wenn ein neuer Laden zwei Querstraßen
 
 Stempelkarten funktionieren. Das Prinzip ist psychologisch erprobt und seit Jahrzehnten in deutschen Läden bewährt. **Was nicht funktioniert, ist die zerknitterte Karte in der Hosentasche.** Dein Kunde vergisst sie, du stempelst auf einer Rückseite ohne Platz, beim zehnten Stempel fehlt irgendwie der vierte – und das geplante Erfolgserlebnis wird zur kleinen Peinlichkeit an der Kasse.
 
-Für [Cafés in Bickendorf](/koeln/bickendorf/cafes) oder [Döner & Imbisse in Bickendorf](/koeln/bickendorf/doener) ist das besonders spürbar: schnelle Transaktionen, viele Stammgäste, kaum Zeit für Papierkram. **Eine digitale Stempelkarte sitzt im Wallet des Telefons, ist immer dabei und wird automatisch gestempelt.** Kein Suchen, kein Vergessen, keine peinliche Szene an der Kasse.
+Für [Cafés in Bickendorf](/koeln/bickendorf/cafes/) oder [Döner & Imbisse in Bickendorf](/koeln/bickendorf/doener/) ist das besonders spürbar: schnelle Transaktionen, viele Stammgäste, kaum Zeit für Papierkram. **Eine digitale Stempelkarte sitzt im Wallet des Telefons, ist immer dabei und wird automatisch gestempelt.** Kein Suchen, kein Vergessen, keine peinliche Szene an der Kasse.
 
 ## Was wollen Bickendorf-Kunden wirklich?
 
@@ -44,7 +44,7 @@ Ein digitales System bildet genau das ab. Du siehst, wann jemand seinen fünften
 
 Du musst kein CRM kaufen und keine Agentur beauftragen. **Eine digitale Stempelkarte kostet dich weniger als eine Tasse Kaffee pro Tag** – und gibt dir Daten zurück, die du vorher nicht hattest: Wie viele Stammkunden kommen wöchentlich? Wann fallen einzelne Gäste weg? Welcher Wochentag ist eigentlich dein schwächster?
 
-Für [Bäckereien in Bickendorf](/koeln/bickendorf/baeckerei) ist der Morgenrush die natürliche Stempelkarten-Situation: Wer jeden Morgen sein Brötchen holt, freut sich über das zehnte umsonst. Für [Restaurants in Bickendorf](/koeln/bickendorf/restaurant) liegt der Hebel eher beim ruhigen Dienstagabend – du kannst gezielt Anreize setzen, wenn Treue am wichtigsten ist. Das ist **Kundenbindung, die mit deinem Veedel mitdenkt** – nicht gegen es.
+Für [Bäckereien in Bickendorf](/koeln/bickendorf/baeckerei/) ist der Morgenrush die natürliche Stempelkarten-Situation: Wer jeden Morgen sein Brötchen holt, freut sich über das zehnte umsonst. Für [Restaurants in Bickendorf](/koeln/bickendorf/restaurant/) liegt der Hebel eher beim ruhigen Dienstagabend – du kannst gezielt Anreize setzen, wenn Treue am wichtigsten ist. Das ist **Kundenbindung, die mit deinem Veedel mitdenkt** – nicht gegen es.
 
 ## Welcher Laden in Bickendorf macht den ersten Schritt?
 
@@ -52,7 +52,7 @@ Du brauchst keinen Umbau, keine neue Kasse und keinen Techniker. Du richtest es 
 
 Die Frage ist: Welcher Laden an der Vitalisstraße oder am Gürtelbogen macht es zuerst – und holt sich die Stammkunden, bevor es der Nachbar tut?
 
-[Jetzt kostenlos starten](/starten) – keine Kreditkarte nötig.
+[Jetzt kostenlos starten](/koeln/) – keine Kreditkarte nötig.
 
 ## Häufig gestellte Fragen
 

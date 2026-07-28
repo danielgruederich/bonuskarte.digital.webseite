@@ -128,4 +128,4 @@ Berlin belohnt Betriebe, die ihre Kiez-Stammkunden ernst nehmen. Digitale Stempe
 
 **bonuskarte.digital** gibt Berliner Cafés eine professionelle Kundenkarte in 15 Minuten – 90 Tage kostenlos.
 
-[Jetzt kostenlos für Ihr Berliner Café starten →](/berlin/mitte/cafes)
+[Jetzt kostenlos für Ihr Berliner Café starten →](/berlin/mitte/cafes/)

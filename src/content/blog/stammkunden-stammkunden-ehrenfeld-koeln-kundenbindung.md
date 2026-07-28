@@ -32,19 +32,19 @@ Das macht Ehrenfeld nicht schlechter als andere Viertel — es macht die Anforde
 
 Hier liegt das Paradox: Ehrenfelder Szenekunden sind loyaler als ihr Ruf. Wenn der Vibe stimmt und sie das Gefühl haben, **wirklich wahrgenommen zu werden**, kommen sie wieder — und bringen Leute mit, die genauso denken. Das Problem ist kein mangelndes Interesse, es ist ein fehlendes Erkennungssystem. Ohne eines ist jeder Gast beim fünften Besuch noch immer ein Fremder.
 
-An der Körnerstraße verliert eine Bäckerei ihren Frühstammgast an das [Café nebenan](/koeln/ehrenfeld/cafes) — nicht weil Kaffee oder Brötchen schlechter sind, sondern weil der Gast dort das Gefühl hat: **hier zähle ich etwas**. Ein System, das erkennt wer wiederkommt und wer nicht, ist kein Nice-to-have. Es ist die Voraussetzung dafür, dass Treue überhaupt entsteht.
+An der Körnerstraße verliert eine Bäckerei ihren Frühstammgast an das [Café nebenan](/koeln/ehrenfeld/cafes/) — nicht weil Kaffee oder Brötchen schlechter sind, sondern weil der Gast dort das Gefühl hat: **hier zähle ich etwas**. Ein System, das erkennt wer wiederkommt und wer nicht, ist kein Nice-to-have. Es ist die Voraussetzung dafür, dass Treue überhaupt entsteht.
 
 ## Was machen die klügsten Betriebe in Ehrenfeld gerade anders?
 
 Die Betriebe, die bei der **Kundenbindung in Ehrenfeld Köln** vorne liegen, machen keine große Sache daraus. Sie setzen eine digitale Stempelkarte als passives Erkennungssystem ein — kein Aufwand für den Gast, kein Workflow-Bruch für das Team. **Das Entscheidende ist nicht der Stempel selbst, sondern die Daten dahinter.**
 
-Ein Café an der Venloer sieht, wenn ein Stammgast zwei Wochen ausbleibt — und schickt eine stille Erinnerung, bevor der Gast überhaupt bemerkt, dass er nicht mehr da war. Dasselbe Prinzip funktioniert für [Döner & Imbisse in Ehrenfeld](/koeln/ehrenfeld/doener), die ihr Mittags-Stammgesicht auch donnerstagabends sehen wollen. **Wer seine Daten kennt, muss nicht mehr auf Zufall hoffen — er kann handeln.**
+Ein Café an der Venloer sieht, wenn ein Stammgast zwei Wochen ausbleibt — und schickt eine stille Erinnerung, bevor der Gast überhaupt bemerkt, dass er nicht mehr da war. Dasselbe Prinzip funktioniert für [Döner & Imbisse in Ehrenfeld](/koeln/ehrenfeld/doener/), die ihr Mittags-Stammgesicht auch donnerstagabends sehen wollen. **Wer seine Daten kennt, muss nicht mehr auf Zufall hoffen — er kann handeln.**
 
 Und der Effekt ist messbar. Betriebe, die Stammkunden aktiv tracken, sehen nach wenigen Wochen, wann ihre treuesten Gäste kommen, wie oft — und wann sie zum ersten Mal fehlen. Das ist keine Big-Data-Magie, sondern einfache Sichtbarkeit, die bisher niemand hatte. Und Sichtbarkeit ist der erste Schritt zu echter Bindung.
 
 ## Was bedeutet das für deinen Betrieb in Ehrenfeld?
 
-Nicht jeder Gast ist ein Laufkunde — aber **ohne System weißt du es nicht**. Und solange du es nicht weißt, kannst du nicht unterscheiden, wen du halten willst und wer ohnehin nicht wiederkommt. Für [Bäckereien in Ehrenfeld](/koeln/ehrenfeld/baeckerei) ist das besonders deutlich: Frühstücks-Stammkunden sind das stabilste Segment — aber auch das am schwierigsten messbare ohne digitales Tracking. Die ersten 30 davon zu erfassen dauert weniger als eine Woche.
+Nicht jeder Gast ist ein Laufkunde — aber **ohne System weißt du es nicht**. Und solange du es nicht weißt, kannst du nicht unterscheiden, wen du halten willst und wer ohnehin nicht wiederkommt. Für [Bäckereien in Ehrenfeld](/koeln/ehrenfeld/baeckerei/) ist das besonders deutlich: Frühstücks-Stammkunden sind das stabilste Segment — aber auch das am schwierigsten messbare ohne digitales Tracking. Die ersten 30 davon zu erfassen dauert weniger als eine Woche.
 
 **Der Datenvorteil gegenüber Nachbarn, die noch zögern, ist real.** Nicht weil du plötzlich mehr weißt als sie, sondern weil du früher angefangen hast. Wer im Herbst entscheidet, fängt nach dem Winter an. Wer heute anfängt, hat im Herbst schon belastbare Zahlen — und weiß zum ersten Mal wirklich, wer sein Viertel ist.
 
@@ -52,10 +52,10 @@ Nicht jeder Gast ist ein Laufkunde — aber **ohne System weißt du es nicht**. 
 
 **Für Betriebe in Ehrenfeld:**
 
-- [Cafés in Ehrenfeld](/koeln/ehrenfeld/cafes) — digitale Stempelkarte für Cafés
-- [Döner & Imbisse in Ehrenfeld](/koeln/ehrenfeld/doener) — Kundenbindung im Schnellrestaurant
-- [Bäckereien in Ehrenfeld](/koeln/ehrenfeld/baeckerei) — Frühstücks-Stammkunden aufbauen
-- [Yoga-Studios in Ehrenfeld](/koeln/ehrenfeld/yoga) — Kursbucher zu Stammkunden machen
+- [Cafés in Ehrenfeld](/koeln/ehrenfeld/cafes/) — digitale Stempelkarte für Cafés
+- [Döner & Imbisse in Ehrenfeld](/koeln/ehrenfeld/doener/) — Kundenbindung im Schnellrestaurant
+- [Bäckereien in Ehrenfeld](/koeln/ehrenfeld/baeckerei/) — Frühstücks-Stammkunden aufbauen
+- [Yoga-Studios in Ehrenfeld](/koeln/ehrenfeld/yoga/) — Kursbucher zu Stammkunden machen
 
 ## Häufig gestellte Fragen
 

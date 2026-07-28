@@ -43,7 +43,7 @@ const categories = hilfeCategories.map(cat => ({
       "url": "https://bonuskarte.digital"
     }
   })} />
-  <NavbarFr ctaHref={base} ctaLabel={ui.navLabel} />
+  <NavbarFr ctaHref={`${base}/`} ctaLabel={ui.navLabel} />
 
   <main class="min-h-screen bg-paper pt-24 pb-16">
     <div class="max-w-4xl mx-auto px-5 sm:px-8">
@@ -65,7 +65,7 @@ const categories = hilfeCategories.map(cat => ({
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.filter(cat => cat.firstSlug).map(cat => (
           <a
-            href={`${base}/${stripLang(cat.firstSlug)}`}
+            href={`${base}/${stripLang(cat.firstSlug)}/`}
             class="group block border border-ink/10 rounded-lg p-6 hover:border-amber/50 hover:bg-ink/[0.02] transition-all"
           >
             <span class="text-3xl mb-4 block">{cat.icon}</span>

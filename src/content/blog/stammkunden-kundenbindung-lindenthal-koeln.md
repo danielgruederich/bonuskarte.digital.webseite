@@ -38,19 +38,19 @@ Der häufige Fehler: Alle Wiederholungsbesuche werden gleich behandelt. Ein Stam
 
 ## Was lösen Stempel aus und warum versagt Papier?
 
-Die meisten [Cafés in Lindenthal](/koeln/lindenthal/cafes) haben irgendwann Stempelkarten ausprobiert. Papier, selbst gestempelt, irgendwo zwischen Kassenbon und Taschenfutter verschwunden. Das Problem ist nicht die Idee – das Problem ist die fehlende Sichtbarkeit.
+Die meisten [Cafés in Lindenthal](/koeln/lindenthal/cafes/) haben irgendwann Stempelkarten ausprobiert. Papier, selbst gestempelt, irgendwo zwischen Kassenbon und Taschenfutter verschwunden. Das Problem ist nicht die Idee – das Problem ist die fehlende Sichtbarkeit.
 
 **Eine digitale Stempelkarte sitzt im Smartphone, nicht in der Jackentasche.** Der Kunde öffnet sie beim Bezahlen, sieht seinen Fortschritt, bekommt eine Benachrichtigung wenn er kurz vor der Prämie ist. Das klingt nach Details – macht aber den Unterschied zwischen "hab ich irgendwo" und "komm ich nächste Woche wieder".
 
 An der Dürener Straße, wo sich Bäckereien, Friseure und Restaurants abwechseln, entscheidet oft die tägliche Routine welchen Laden jemand betritt. **Wer in diese Routine eingebaut ist, gewinnt.** Wer es nicht schafft, verliert an den Nächsten drei Meter weiter.
 
-Gleiches gilt für [Restaurants in Lindenthal](/koeln/lindenthal/restaurant): Wer seinen Mittagsgästen eine digitale Stempelkarte anbietet, gibt ihnen einen konkreten Grund wiederzukommen – ohne den Wert des Angebots zu entwerten.
+Gleiches gilt für [Restaurants in Lindenthal](/koeln/lindenthal/restaurant/): Wer seinen Mittagsgästen eine digitale Stempelkarte anbietet, gibt ihnen einen konkreten Grund wiederzukommen – ohne den Wert des Angebots zu entwerten.
 
 ---
 
 ## Was bedeutet das für deinen Laden?
 
-Es geht nicht darum, mehr Rabatte zu geben. Es geht darum, **Kontaktpunkte zu schaffen, die ohne Aufwand funktionieren**. Für [Yoga-Studios in Lindenthal](/koeln/lindenthal/yoga) bedeutet das: Wer jede zehnte Einheit gratis anbietet, spricht genau die Kunden an, die sowieso mehr Einheiten buchen. Die Prämie ist kein Preisnachlass – sie ist eine Bestätigung.
+Es geht nicht darum, mehr Rabatte zu geben. Es geht darum, **Kontaktpunkte zu schaffen, die ohne Aufwand funktionieren**. Für [Yoga-Studios in Lindenthal](/koeln/lindenthal/yoga/) bedeutet das: Wer jede zehnte Einheit gratis anbietet, spricht genau die Kunden an, die sowieso mehr Einheiten buchen. Die Prämie ist kein Preisnachlass – sie ist eine Bestätigung.
 
 **Kundenbindung in Lindenthal Köln** beginnt damit, einen einzigen Schritt zu tun: herausfinden, wer schon zurückkommt – und ihn sichtbar dafür belohnen. Nicht alle Kunden sind gleich bindbar. Aber die, die es sind, wollen auch nicht verloren gehen.
 

@@ -87,6 +87,6 @@ Nein. Die Einrichtung dauert wenige Minuten. Kein Code, kein Design-Wissen nöti
 
 ## Fazit
 
-Digitale Stempelkarten sind die logische Weiterentwicklung eines Systems, das in Köln seit Jahrzehnten funktioniert. Mit [bonuskarte.digital](/koeln/ehrenfeld/cafes) machen Kölner Betriebe den Schritt von der Papier-Karte zum smarten Kundenbindungs-Tool.
+Digitale Stempelkarten sind die logische Weiterentwicklung eines Systems, das in Köln seit Jahrzehnten funktioniert. Mit [bonuskarte.digital](/koeln/ehrenfeld/cafes/) machen Kölner Betriebe den Schritt von der Papier-Karte zum smarten Kundenbindungs-Tool.
 
 Die ersten 90 Tage sind kostenlos. Kein Risiko, kein Aufwand – nur mehr Stammkunden in Ihrem Kölner Lokal.

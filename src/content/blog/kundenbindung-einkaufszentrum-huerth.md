@@ -73,4 +73,4 @@ Nein. Apple Wallet und Google Wallet sind auf jedem modernen Smartphone vorinsta
 
 bonuskarte.digital bietet 90 Tage kostenlosen Testzeitraum. In dieser Zeit kann der Betrieb das System vollständig testen, Stammkunden ansprechen und erste Ergebnisse beobachten – ohne finanzielle Verpflichtung und ohne Kreditkarte beim Start.
 
-Lokale Betriebe in Hürth haben einen strukturellen Vorteil gegenüber Ketten im Rhein-Center: echte Beziehungen. Digitale Stempelkarten machen diesen Vorteil sichtbar und dauerhaft. Jetzt 90 Tage kostenlos starten: [bonuskarte.digital/huerth/huerth-mitte/cafes](/huerth/huerth-mitte/cafes)
+Lokale Betriebe in Hürth haben einen strukturellen Vorteil gegenüber Ketten im Rhein-Center: echte Beziehungen. Digitale Stempelkarten machen diesen Vorteil sichtbar und dauerhaft. Jetzt 90 Tage kostenlos starten: [bonuskarte.digital/huerth/huerth-mitte/cafes](/huerth/huerth-mitte/cafes/)

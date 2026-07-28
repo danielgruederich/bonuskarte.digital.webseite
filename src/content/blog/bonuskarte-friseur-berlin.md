@@ -108,4 +108,4 @@ Ja, aber er dauert unter zehn Sekunden. Der Kunde zeigt seinen Karten-QR-Code, d
 
 Berliner Friseursalons können mit Plattformen nicht über den Preis konkurrieren – und das müssen sie auch nicht. Wer auf Stammkunden-Aufbau setzt, braucht kein größeres Budget für Treatwell, sondern ein einfaches System, das Wiederkehren belohnt. Eine digitale Bonuskarte ist genau das – und sie ist in 15 Minuten live.
 
-[Jetzt kostenlos für Ihren Berliner Friseursalon starten →](/berlin/charlottenburg/friseur)
+[Jetzt kostenlos für Ihren Berliner Friseursalon starten →](/berlin/charlottenburg/friseur/)

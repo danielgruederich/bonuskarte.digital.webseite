@@ -110,4 +110,4 @@ bonuskarte.digital ist 90 Tage kostenlos testbar. Danach liegt der Monatsbeitrag
 
 Berliner Yoga-Schülerinnen und -Schüler sind wählerisch, datenschutzbewusst – und loyal, wenn man sie richtig anspricht. Eine digitale Zehnerkarte gibt ihnen Anerkennung ohne Datensammelei. Für das Studio bedeutet das: mehr Planbarkeit, mehr Wiederkommer, weniger Papierkram.
 
-[Jetzt kostenlos für Ihr Berliner Yoga-Studio starten →](/berlin/prenzlauerberg/yoga)
+[Jetzt kostenlos für Ihr Berliner Yoga-Studio starten →](/berlin/prenzlauer-berg/yoga/)

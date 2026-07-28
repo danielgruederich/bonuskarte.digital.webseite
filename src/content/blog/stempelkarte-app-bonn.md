@@ -97,4 +97,4 @@ Die ersten 90 Tage sind kostenlos – ohne Kreditkarte, ohne automatische Verlä
 
 Die digitale Stempelkarte ohne App ist kein Zukunftsprojekt und kein technisches Experiment. Sie ist heute, in Bonn, für jede Café, jede Bäckerei und jedes Studio umsetzbar – in 15 Minuten, ohne IT-Kenntnisse, ohne Budget für Technik. Das Einzige, was gebraucht wird, ist die Entscheidung, es zu tun.
 
-**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/cafes](/bonn/innenstadt/cafes)
+**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/cafes](/bonn/innenstadt/cafes/)
