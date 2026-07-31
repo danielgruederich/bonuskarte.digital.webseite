@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
 import path from 'path'
+import { isIndexablePath } from './src/lib/indexability.ts'
 
 // Pages that must never end up in the sitemap.
 // Rule: if a page carries noindex, is a redirect stub or is internal-only,
@@ -29,6 +30,12 @@ const sitemapFilter = (page) => {
   const url = new URL(page)
   if (SITEMAP_EXCLUDE_SUBSTRINGS.some((s) => url.pathname.includes(s))) return false
   if (SITEMAP_EXCLUDE_PATHS.includes(url.pathname)) return false
+  // Zusätzlich: nur Seiten mit eigenem, einzigartigem Inhalt. Die Regel liegt in
+  // src/lib/indexability.ts und wird identisch von CityNichePage und der
+  // Köln-Route für das robots-Meta genutzt — so können Sitemap und Seiten-Meta
+  // nicht auseinanderlaufen. Erfasst zusätzlich den globalen Blog (noindex +
+  // canonical auf den Stadt-Blog) und die Nischenseiten ohne eigenen Inhalt.
+  if (!isIndexablePath(url.pathname)) return false
   return true
 }
 
