@@ -120,4 +120,4 @@ Der Umstieg von Plastik auf digital klingt nach einem großen Projekt – ist es
 
 Kein Vertrag, keine Einrichtungsgebühr. 90 Tage kostenlos testen, mit echten Mitgliedern, im echten Betrieb. Erst danach entscheiden.
 
-**[Jetzt kostenlos starten →](/koeln/ehrenfeld/fitnessstudio)**
+**[Jetzt kostenlos starten →](/koeln/ehrenfeld/fitnessstudio/)**

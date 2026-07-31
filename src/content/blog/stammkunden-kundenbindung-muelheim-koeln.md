@@ -50,7 +50,7 @@ Die gute Nachricht: Der Schwellenwert ist niedrig. Ein kleiner, greifbarer Anrei
 
 Eine digitale Stempelkarte ist kein Rabattsystem. Sie ist ein **stilles Versprechen zwischen dir und dem Kunden**: Komm wieder, es lohnt sich. In Mülheim, wo persönliche Beziehungen zählen, passt das genau.
 
-[Friseursalons in Mülheim](/koeln/muelheim/friseur) profitieren davon, weil der vierte Haarschnitt-Anreiz einen Kunden aus dem "ich probiere mal verschiedene" in "meinen Friseur" verwandelt. [Döner & Imbisse in Mülheim](/koeln/muelheim/doener) profitieren davon, weil zehn Mittagessen und das elfte gratis eine Mittagspause zur Gewohnheitsentscheidung machen.
+[Friseursalons in Mülheim](/koeln/muelheim/friseur/) profitieren davon, weil der vierte Haarschnitt-Anreiz einen Kunden aus dem "ich probiere mal verschiedene" in "meinen Friseur" verwandelt. [Döner & Imbisse in Mülheim](/koeln/muelheim/doener/) profitieren davon, weil zehn Mittagessen und das elfte gratis eine Mittagspause zur Gewohnheitsentscheidung machen.
 
 **Kundenbindung Mülheim Köln** heißt nicht: aufwendiges CRM mit Analyse-Dashboard. Es heißt: der Kunde zieht sein Handy raus, sammelt, kommt wieder.
 
@@ -88,4 +88,4 @@ Die Einrichtung dauert unter zehn Minuten. Du brauchst keine technischen Kenntni
 
 Schau dir mal deine letzten 20 Kunden an. Wie viele davon würdest du als echte Stammkunden bezeichnen – und was hast du bisher getan, damit der 21. es auch wird?
 
-[Restaurants in Mülheim](/koeln/muelheim/restaurant) und [Bäckereien in Mülheim](/koeln/muelheim/baeckerei) starten heute mit digitalen Stempelkarten – ohne Technik-Aufwand, in unter zehn Minuten eingerichtet. Wenn du weißt, dass deine Kunden wiederkommen wollen, gib ihnen einfach einen Grund.
+[Restaurants in Mülheim](/koeln/muelheim/restaurant/) und [Bäckereien in Mülheim](/koeln/muelheim/baeckerei/) starten heute mit digitalen Stempelkarten – ohne Technik-Aufwand, in unter zehn Minuten eingerichtet. Wenn du weißt, dass deine Kunden wiederkommen wollen, gib ihnen einfach einen Grund.

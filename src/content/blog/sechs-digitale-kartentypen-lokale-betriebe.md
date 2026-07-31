@@ -134,7 +134,7 @@ Sie wissen jetzt, welcher Kartentyp zu Ihrem Betrieb passt. Der nächste Schritt
 
 Mit bonuskarte.digital richten wir Ihre digitale Karte innerhalb von 24 Stunden ein. Kein Vertrag, keine Einrichtungsgebühr, keine Kreditkarte nötig. 90 Tage lang kostenlos testen – und erst danach entscheiden, ob es sich lohnt.
 
-**[Jetzt kostenlos starten →](/koeln/ehrenfeld/cafes)**
+**[Jetzt kostenlos starten →](/koeln/ehrenfeld/cafes/)**
 
 ## Häufig gestellte Fragen
 

@@ -43,12 +43,12 @@ const isCityCta = !ctaHref.startsWith('#')
         {[
           { href: '/#wie-es-funktioniert', label: 'Wie es funktioniert' },
           { href: '/#branchen',            label: 'Branchen' },
-          { href: '/funktionen',           label: 'Funktionen' },
-          { href: '/karten',               label: 'Karten' },
-          { href: '/preise',               label: 'Preise' },
-          { href: '/koeln/blog',           label: 'Blog' },
-          { href: '/faq',                  label: 'FAQ' },
-          { href: '/hilfe',                label: 'Hilfe' },
+          { href: '/funktionen/',           label: 'Funktionen' },
+          { href: '/karten/',               label: 'Karten' },
+          { href: '/preise/',               label: 'Preise' },
+          { href: '/koeln/blog/',           label: 'Blog' },
+          { href: '/faq/',                  label: 'FAQ' },
+          { href: '/hilfe/',                label: 'Hilfe' },
         ].map(link => (
           <a href={link.href}
             class="text-xs font-medium tracking-wider whitespace-nowrap uppercase transition-colors hover:text-amber"
@@ -93,12 +93,12 @@ const isCityCta = !ctaHref.startsWith('#')
     <div id="mobile-menu" class="xl:hidden hidden border-t border-ink/10 py-6 flex flex-col gap-5 bg-paper/98 backdrop-blur-md">
       <a href="/#wie-es-funktioniert" class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Wie es funktioniert</a>
       <a href="/#branchen"            class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Branchen</a>
-      <a href="/funktionen"           class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Funktionen</a>
-      <a href="/karten"               class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Karten</a>
-      <a href="/preise"               class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Preise</a>
-      <a href="/koeln/blog"           class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Blog</a>
-      <a href="/faq"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">FAQ</a>
-      <a href="/hilfe"                class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Hilfe</a>
+      <a href="/funktionen/"           class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Funktionen</a>
+      <a href="/karten/"               class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Karten</a>
+      <a href="/preise/"               class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Preise</a>
+      <a href="/koeln/blog/"           class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Blog</a>
+      <a href="/faq/"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">FAQ</a>
+      <a href="/hilfe/"                class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">Hilfe</a>
       <a href="/en/"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">🇬🇧 English version (EN)</a>
       <a href="/fr/"                  class="text-xs font-medium tracking-widest uppercase text-ink/70 hover:text-amber transition-colors">🇫🇷 Version française (FR)</a>
       <a href={ctaHref} data-city-cta={isCityCta ? '' : undefined} class="block w-full bg-amber hover:bg-amber-dark text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-full text-center transition-colors">

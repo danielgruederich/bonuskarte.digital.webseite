@@ -77,4 +77,4 @@ Ja. Die Wallet-Karte ist standortunabhängig. Wer z. B. im Sommer am Rheinufer u
 
 Düsseldorfs Altstadt bietet genug Lärm und Ablenkung. Wer als Café-Betreiber in diesem Umfeld echte Stammgäste aufbaut, hat etwas geschaffen, das keine Kette replizieren kann: Vertrautheit, Ritual, Zugehörigkeit. Die digitale Stempelkarte ist das Werkzeug, das diesem Gefühl ein Gesicht gibt – auf dem Sperrbildschirm, jedes Mal, wenn der Gast vorbeiläuft.
 
-Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/cafes](/duesseldorf/altstadt/cafes)
+Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/altstadt/cafes](/duesseldorf/altstadt/cafes/)

@@ -73,4 +73,4 @@ Ja. Die Karte ist mit der E-Mail-Adresse des Kunden verknüpft und kann jederzei
 
 Gerade dann. Bei einem kleinen Kundenstamm hat jeder Stammkunde ein hohes Gewicht. Wenn drei dieser 40 Kunden durch die Bonuskarte häufiger kommen und einen Freund mitbringen, ist das eine messbare Veränderung. Große Ketten brauchen Skalierung – kleine Hürther Salons brauchen Tiefe.
 
-Stammkunden, die nicht wechseln, sind der stärkste Wachstumshebel eines lokalen Hürther Salons. Digitale Bonuskarten schaffen die Infrastruktur dafür – ohne Aufwand, ohne Kosten im ersten Quartal: [bonuskarte.digital/huerth/huerth-mitte/friseur](/huerth/huerth-mitte/friseur)
+Stammkunden, die nicht wechseln, sind der stärkste Wachstumshebel eines lokalen Hürther Salons. Digitale Bonuskarten schaffen die Infrastruktur dafür – ohne Aufwand, ohne Kosten im ersten Quartal: [bonuskarte.digital/huerth/huerth-mitte/friseur](/huerth/huerth-mitte/friseur/)

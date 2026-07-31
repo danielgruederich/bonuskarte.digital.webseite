@@ -186,7 +186,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
         {nicheTeaser.map(n => (
-          <a href={`/fr/paris/1er/${n.slug}`}
+          <a href={`/fr/paris/1er/${n.slug}/`}
             class="group border border-ink/30 hover:border-amber hover:bg-amber/5 p-5 text-center transition-all hover:-translate-y-1">
             <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">{n.emoji}</div>
             <div class="text-xs font-semibold tracking-widest uppercase text-ink group-hover:text-amber transition-colors">{n.label}</div>
@@ -226,7 +226,7 @@ const nicheTeaser = nichesFr.slice(0, 6)
       <p class="text-ink/40 text-sm font-normal mb-10 max-w-lg mx-auto">
         Cartes illimitées, notifications push, statistiques en temps réel — tout inclus. Sans frais d'installation. Résiliable chaque mois.
       </p>
-      <a href="/fr/tarifs"
+      <a href="/fr/tarifs/"
         class="group inline-flex items-center gap-3 border border-amber/40 hover:border-amber text-amber px-8 py-4 text-xs font-bold tracking-widest uppercase transition-all">
         Voir les tarifs complets
         <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

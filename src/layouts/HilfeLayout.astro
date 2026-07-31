@@ -50,11 +50,11 @@ const htmlLocale = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_US' : 'de_DE'
     }
   })} />
   {lang === 'fr' ? (
-    <NavbarFr ctaHref={base} ctaLabel={ui.navLabel} />
+    <NavbarFr ctaHref={`${base}/`} ctaLabel={ui.navLabel} />
   ) : lang === 'en' ? (
-    <NavbarEn ctaHref={base} ctaLabel={ui.navLabel} />
+    <NavbarEn ctaHref={`${base}/`} ctaLabel={ui.navLabel} />
   ) : (
-    <Navbar ctaHref={base} ctaLabel={ui.navLabel} />
+    <Navbar ctaHref={`${base}/`} ctaLabel={ui.navLabel} />
   )}
 
   <main class="min-h-screen bg-ink pt-24 pb-16">
@@ -62,7 +62,7 @@ const htmlLocale = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_US' : 'de_DE'
 
       <!-- Breadcrumb -->
       <nav class="mb-8 text-xs text-paper/40">
-        <a href={base} class="hover:text-amber transition-colors">{ui.breadcrumb}</a>
+        <a href={`${base}/`} class="hover:text-amber transition-colors">{ui.breadcrumb}</a>
         <span class="mx-2">/</span>
         <span class="hover:text-amber transition-colors">{categoryLabel}</span>
         <span class="mx-2">/</span>

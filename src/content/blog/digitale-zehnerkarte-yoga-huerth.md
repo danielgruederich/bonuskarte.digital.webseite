@@ -73,4 +73,4 @@ Erfahrungsgemäß rund 15 Minuten für die Grundkonfiguration: Kartendesign, Ste
 
 Ja. Das System ist flexibel. Wer im Herbst auf eine Monatskarte wechseln will oder die Stempelanzahl anpassen möchte, kann das jederzeit in der Verwaltungsoberfläche ändern. Bestehende Karten der Schüler werden automatisch aktualisiert.
 
-Hürths Yoga-Szene wächst – und Stammschüler sind ihr wertvollstes Kapital. Wer dieses Kapital mit einem System sichert, das genauso unkompliziert ist wie das Leben im Vorort, hat einen echten Vorsprung. Mehr Infos und direkt starten: [bonuskarte.digital/huerth/huerth-mitte/yoga](/huerth/huerth-mitte/yoga)
+Hürths Yoga-Szene wächst – und Stammschüler sind ihr wertvollstes Kapital. Wer dieses Kapital mit einem System sichert, das genauso unkompliziert ist wie das Leben im Vorort, hat einen echten Vorsprung. Mehr Infos und direkt starten: [bonuskarte.digital/huerth/huerth-mitte/yoga](/huerth/huerth-mitte/yoga/)

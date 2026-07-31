@@ -88,7 +88,7 @@ Alle fünf Strategien haben eines gemeinsam: Sie kosten wenig bis nichts, aber s
 
 Eine digitale Stempelkarte ist dabei ein smarter erster Schritt. Sie liegt direkt im Smartphone deiner Gäste, erinnert sie an dich und belohnt ihre Treue – ohne Papier, ohne App-Download, ohne Aufwand für dich.
 
-**[Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes)** und finde heraus, wie schnell aus Gelegenheitsgästen echte Fans werden.
+**[Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes/)** und finde heraus, wie schnell aus Gelegenheitsgästen echte Fans werden.
 
 ## Häufig gestellte Fragen
 

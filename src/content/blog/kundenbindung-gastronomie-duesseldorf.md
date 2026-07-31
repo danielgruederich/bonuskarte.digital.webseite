@@ -115,4 +115,4 @@ In einer Stadt mit hoher Gastronomiedichte und kaufkräftigem Publikum macht Kun
 
 **bonuskarte.digital** hilft Düsseldorfer Gastronomiebetrieben, in 15 Minuten eine professionelle digitale Kundenkarte einzurichten – 90 Tage kostenlos, ohne IT-Kenntnisse.
 
-[Jetzt für Ihr Düsseldorfer Lokal starten →](/duesseldorf/altstadt/cafes)
+[Jetzt für Ihr Düsseldorfer Lokal starten →](/duesseldorf/altstadt/cafes/)

@@ -47,7 +47,7 @@ const niches = [
     }
   })} />
 
-  <Navbar ctaHref="/koeln/innenstadt/cafes" ctaLabel="Jetzt starten" />
+  <Navbar ctaHref="/koeln/innenstadt/cafes/" ctaLabel="Jetzt starten" />
 
   <!-- ── HERO ──────────────────────────────────────────── -->
   <section class="relative min-h-screen flex items-center bg-paper overflow-hidden">
@@ -77,7 +77,7 @@ const niches = [
       <div id="branchen" class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-14">
         {niches.map(n => (
           <a
-            href={`/koeln/innenstadt/${n.slug}`}
+            href={`/koeln/innenstadt/${n.slug}/`}
             class="group relative border border-ink/8 hover:border-amber bg-ink/2 hover:bg-amber/5 p-6 text-center transition-all hover:-translate-y-1"
           >
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{n.emoji}</div>
@@ -147,7 +147,7 @@ const niches = [
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {veedel.map(v => (
             <a
-              href={`/koeln/${v.slug}`}
+              href={`/koeln/${v.slug}/`}
               class="group relative border border-ink/30 hover:border-amber bg-ink/2 hover:bg-amber/5 p-4 text-center transition-all"
             >
               <div class="text-ink font-semibold text-xs tracking-wide group-hover:text-amber transition-colors">
@@ -198,7 +198,7 @@ const niches = [
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">Stammkunden in Köln?</h2>
       <p class="text-ink/55 text-sm tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
       <a
-        href="/koeln/innenstadt/cafes"
+        href="/koeln/innenstadt/cafes/"
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all"
       >
         Kostenlos starten

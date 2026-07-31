@@ -69,7 +69,7 @@ Das klingt erst mal bedrohlich: Kunden lassen sich nicht mehr binden. Aber für 
 
 Nicht durch Rabatte. Nicht durch Druck. Sondern durch Relevanz, Präsenz und echten Mehrwert.
 
-**Starte mit einer digitalen Stempelkarte, die deine Gäste im Alltag begleitet.** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes) – und werde Teil der Welt deiner Gäste.
+**Starte mit einer digitalen Stempelkarte, die deine Gäste im Alltag begleitet.** [Teste bonuskarte.digital 90 Tage kostenlos](/koeln/ehrenfeld/cafes/) – und werde Teil der Welt deiner Gäste.
 
 ## Häufig gestellte Fragen
 

@@ -77,4 +77,4 @@ Die Karte ist an die Wallet-App gebunden, nicht an ein Gerät. Bei einem Handywe
 
 Düsseldorfs Yoga-Szene ist dynamisch genug, dass gute Studios sich keine Kunden leisten können, die nach fünf Besuchen abwandern, weil sie keine sichtbare Bindung zur Gemeinschaft spüren. Die digitale Zehnerkarte ist keine technische Spielerei – sie ist ein einfaches, stilvolles Instrument, das zur Stadt und zur Zielgruppe passt.
 
-Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/flingern/yoga](/duesseldorf/flingern/yoga)
+Jetzt kostenlos starten: [bonuskarte.digital/duesseldorf/flingern/yoga](/duesseldorf/flingern/yoga/)

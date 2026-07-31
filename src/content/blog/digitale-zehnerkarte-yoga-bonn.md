@@ -93,4 +93,4 @@ Unter 30 Minuten. Das Template aufsetzen, anpassen, QR-Code generieren – ferti
 
 Die digitale Zehnerkarte ist kein Luxus für große Studios. Sie ist der einfachste Weg, aus Gelegenheitsgästen Stammschüler zu machen – in einer Stadt wie Bonn, wo die Zielgruppe jung, tech-affin und anspruchsvoll ist. Wer jetzt umstellt, baut sich einen Vorteil auf, der sich Monat für Monat auszahlt.
 
-**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/yoga](/bonn/innenstadt/yoga)
+**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/yoga](/bonn/innenstadt/yoga/)

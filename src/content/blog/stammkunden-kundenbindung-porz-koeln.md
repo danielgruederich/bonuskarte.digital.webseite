@@ -36,7 +36,7 @@ Das ist ein riesiger Vorteil. **Porzer Stammkunden sind loyaler als der Stadtdur
 
 Viele Inhaber in Porz kennen das: Stempelkarte ausgedruckt, Stempel besorgt, fertig. Das funktioniert. Aber **Papierkarten verschwinden in Jackentaschen, werden vergessen, gehen verloren** – und du weißt nicht, ob der Gast, den du vor drei Wochen zuletzt gesehen hast, bald wiederkommt oder weg ist.
 
-Eine digitale Karte löst genau das. Der Gast scannt einmal, die Karte landet auf seinem Handy – kein Druck, keine Logistik, kein "ich hab meine Karte nicht dabei". Für ein Café an der Hauptstraße Porz bedeutet das: Du erkennst auf einen Blick, wer kurz vor seiner Belohnung steht. Das ist kein Hexenwerk, das ist ein kleines System, das im Hintergrund läuft, während du Kaffee kochst. Wie das konkret aussieht, zeigen Beispiele von [Cafés in Porz](/koeln/porz/cafes).
+Eine digitale Karte löst genau das. Der Gast scannt einmal, die Karte landet auf seinem Handy – kein Druck, keine Logistik, kein "ich hab meine Karte nicht dabei". Für ein Café an der Hauptstraße Porz bedeutet das: Du erkennst auf einen Blick, wer kurz vor seiner Belohnung steht. Das ist kein Hexenwerk, das ist ein kleines System, das im Hintergrund läuft, während du Kaffee kochst. Wie das konkret aussieht, zeigen Beispiele von [Cafés in Porz](/koeln/porz/cafes/).
 
 ---
 
@@ -50,7 +50,7 @@ Drei Szenarien aus der Praxis:
 - **Döner-Imbiss am Marktplatz Porz**: Jeder zehnte Besuch, ein Gratis-Falafel. Simpel, merkbar, funktioniert. Aus Laufkunden werden Stammkunden – nicht durch Zufall, sondern durch ein System.
 - **Restaurant am Rhein in Zündorf**: Wer zum dritten Mal kommt, bekommt einen Aperitif aufs Haus. Der Gast fühlt sich gesehen, nicht nur abkassiert.
 
-Mehr Inspirationen für deinen Typ Laden findest du bei den [Friseuren in Porz](/koeln/porz/friseur) oder den [Döner & Imbissen in Porz](/koeln/porz/doener).
+Mehr Inspirationen für deinen Typ Laden findest du bei den [Friseuren in Porz](/koeln/porz/friseur/) oder den [Döner & Imbissen in Porz](/koeln/porz/doener/).
 
 ---
 

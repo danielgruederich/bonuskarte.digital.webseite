@@ -106,7 +106,7 @@ Du willst sehen, wie eine digitale Geschenkkarte für deinen Blumenladen aussieh
 
 Kein Vertrag. Keine Kreditkarte. Keine Verpflichtung.
 
-[Jetzt 90 Tage kostenlos testen →](/koeln/ehrenfeld/blumenladen)
+[Jetzt 90 Tage kostenlos testen →](/koeln/ehrenfeld/blumenladen/)
 
 ## Häufig gestellte Fragen
 

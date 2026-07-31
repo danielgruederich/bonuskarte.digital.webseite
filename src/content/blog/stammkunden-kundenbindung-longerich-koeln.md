@@ -30,7 +30,7 @@ Das Problem: Dieses persönliche Band ist fragiler als es aussieht. Sobald ein K
 
 Ein Kunde, der zwei Mal pro Woche bei dir einkauft, bringt dir in einem Jahr über 100 Besuche. **Das ist mehr als das Zehnfache eines einmaligen Laufkundschaft-Besuchs.** Und er empfiehlt dich weiter — nicht weil er muss, sondern weil er sich zugehörig fühlt.
 
-Wer die [Cafés in Longerich](/koeln/longerich/cafes) kennt, weiß: Stammgäste bleiben nicht wegen des Preises. Sie bleiben, weil der Inhaber weiß, wie ihr Cappuccino gemacht wird. **Für treue Kunden ist der Preis fast nie der entscheidende Faktor** — das Gefühl, erkannt zu werden, schlägt jeden Rabatt.
+Wer die [Cafés in Longerich](/koeln/longerich/cafes/) kennt, weiß: Stammgäste bleiben nicht wegen des Preises. Sie bleiben, weil der Inhaber weiß, wie ihr Cappuccino gemacht wird. **Für treue Kunden ist der Preis fast nie der entscheidende Faktor** — das Gefühl, erkannt zu werden, schlägt jeden Rabatt.
 
 ---
 
@@ -48,7 +48,7 @@ Stell dir vor, du führst einen Imbiss an der Sebastianstraße. Du weißt, dass 
 
 Was Longerich von der Kölner Innenstadt unterscheidet: Hier kaufen Menschen nicht anonym. **Die Neusser Straße nördlich ist kein Konsumband — sie ist ein Veedel mit Kölner Adresse.** Wer hier ein Geschäft betreibt, hat einen strukturellen Vorteil gegenüber jedem Online-Shop und jeder Kette.
 
-Dieser Vorteil ist aber nicht automatisch — er will gepflegt werden. Eine [Bäckerei in Longerich](/koeln/longerich/baeckerei), die weiß, dass Frau Müller jeden Freitag ihr Roggenbrot abholt, kann ihr zum zwanzigsten Mal ein kleines Extra geben und schafft damit eine Bindung, die keine Facebook-Anzeige replizieren kann.
+Dieser Vorteil ist aber nicht automatisch — er will gepflegt werden. Eine [Bäckerei in Longerich](/koeln/longerich/baeckerei/), die weiß, dass Frau Müller jeden Freitag ihr Roggenbrot abholt, kann ihr zum zwanzigsten Mal ein kleines Extra geben und schafft damit eine Bindung, die keine Facebook-Anzeige replizieren kann.
 
 **Digital und persönlich schließen sich nicht aus.** Eine digitale Stempelkarte ist kein Ersatz für den Handschlag an der Theke — sie ist das Werkzeug, das dafür sorgt, dass du weißt, wann der Handschlag besonders zählt.
 
@@ -58,7 +58,7 @@ Dieser Vorteil ist aber nicht automatisch — er will gepflegt werden. Eine [Bä
 
 Wenn du in Longerich einen Laden führst, hast du bereits das Wichtigste: eine Laufkundschaft mit Gewohnheiten. Die Frage ist nur, ob du diese Gewohnheiten aktiv verstärkst oder dem Zufall überlässt.
 
-**Am Tresen kostet dich das keine extra Zeit** — der Kunde scannt kurz, du siehst die Daten, das Programm läuft im Hintergrund. Für [Döner & Imbisse in Longerich](/koeln/longerich/doener) bedeutet das: Wenn du weißt, dass jemand bei Stempel 9 von 10 steht, kannst du ihn beim nächsten Besuch direkt ansprechen. Das ist echte **Kundenbindung Longerich Köln** — kein Konzept, sondern ein Gespräch.
+**Am Tresen kostet dich das keine extra Zeit** — der Kunde scannt kurz, du siehst die Daten, das Programm läuft im Hintergrund. Für [Döner & Imbisse in Longerich](/koeln/longerich/doener/) bedeutet das: Wenn du weißt, dass jemand bei Stempel 9 von 10 steht, kannst du ihn beim nächsten Besuch direkt ansprechen. Das ist echte **Kundenbindung Longerich Köln** — kein Konzept, sondern ein Gespräch.
 
 ---
 

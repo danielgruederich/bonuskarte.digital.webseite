@@ -75,4 +75,4 @@ Ja. Mehrere Standorte können über dasselbe System verwaltet werden. Die Kunden
 
 Nach dem Testzeitraum entscheidet der Betrieb, ob er weitermacht. Wenn die Ergebnisse überzeugen, läuft das System mit einem monatlichen Betrag weiter – vergleichbar mit einer Vereinsmitgliedschaft oder einem Streaming-Abo. Wenn nicht, ist nach 90 Tagen nichts verloren und nichts verpflichtet. Alle aufgebauten Kunden und Stempel gehören dem Betrieb.
 
-Digitale Stempelkarten sind kein Technikprojekt – sie sind ein einfaches Werkzeug für loyalere Stammkundschaft. Hürther Betriebe, die jetzt starten, haben 90 Tage Zeit, das selbst zu erleben: [bonuskarte.digital/huerth/huerth-mitte/cafes](/huerth/huerth-mitte/cafes)
+Digitale Stempelkarten sind kein Technikprojekt – sie sind ein einfaches Werkzeug für loyalere Stammkundschaft. Hürther Betriebe, die jetzt starten, haben 90 Tage Zeit, das selbst zu erleben: [bonuskarte.digital/huerth/huerth-mitte/cafes](/huerth/huerth-mitte/cafes/)

@@ -95,4 +95,4 @@ Analoge Programme – Visitenkarten einsammeln, Namen in Listen eintragen, manue
 
 Bonn hat eine Restaurant-Szene, die von treuen Stammgästen lebt. Die digitale Bonuskarte ist das Werkzeug, das diese Treue sichtbar macht, belohnt und verstärkt – ohne die Würde des Gastgebers oder des Gastes zu kompromittieren.
 
-**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/restaurant](/bonn/innenstadt/restaurant)
+**Jetzt kostenlos testen:** [bonuskarte.digital/bonn/innenstadt/restaurant](/bonn/innenstadt/restaurant/)

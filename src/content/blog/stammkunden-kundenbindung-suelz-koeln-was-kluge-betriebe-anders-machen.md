@@ -38,7 +38,7 @@ Menschen bleiben dort, wo sie sich erwartet fühlen. Nicht mit dem Namen auf dem
 
 Die Antwort ist keine Kampagne und kein Werbebudget. Sie ist ein Werkzeug, das passiv läuft. **Eine digitale Stempelkarte ist kein Treueprogramm im alten Sinne — sie ist ein Erkennungssystem, das mit jedem Besuch besser wird.** Der Gast scannt einmal, der Betrieb sieht: Besuch 12, letzter Besuch vor neun Tagen, Frequenz steigend.
 
-Kein Aufwand an der Kasse. Kein Plastik, das in der Jackentasche verschwindet. Kein CRM, das händisch befüllt werden muss — der Datenaufbau passiert im Hintergrund, Besuch für Besuch. Wer das in einem der [Cafés in Sülz](/koeln/suelz/cafes) oder einer lokalen [Bäckerei](/koeln/suelz/baeckerei) einsetzt, bekommt mit der Zeit ein echtes Bild seiner Gäste — ohne je aktiv gefragt zu haben.
+Kein Aufwand an der Kasse. Kein Plastik, das in der Jackentasche verschwindet. Kein CRM, das händisch befüllt werden muss — der Datenaufbau passiert im Hintergrund, Besuch für Besuch. Wer das in einem der [Cafés in Sülz](/koeln/suelz/cafes/) oder einer lokalen [Bäckerei](/koeln/suelz/baeckerei/) einsetzt, bekommt mit der Zeit ein echtes Bild seiner Gäste — ohne je aktiv gefragt zu haben.
 
 Das ist der Unterschied zwischen reaktiv und informiert. Wer weiß, dass ein Stammgast seit drei Wochen nicht mehr da war, kann gezielt reagieren. **Kundenbindung Sülz Köln** heißt: kein großes System bauen, sondern kleine Datenpunkte klug nutzen. Und das kostet in der Einrichtung weniger Zeit als das Auffüllen des Milchbehälters.
 
@@ -46,7 +46,7 @@ Das ist der Unterschied zwischen reaktiv und informiert. Wer weiß, dass ein Sta
 
 An Wochenenden bringt der Äußere Grüngürtel ein Publikum, das Sülz noch nicht kennt. Spaziergänger, Familien, Fahrradfahrer — die meisten kommen genau einmal. **Wer beim ersten Besuch eine digitale Karte ausgibt, macht aus einem Einmaligen einen potenziellen Wiederkommer** — mit einem einzigen Satz an der Kasse.
 
-Kleinstbetriebe mit System schlagen Ketten ohne System. Eine Kette hat Budget, eigene App und Marketingteam — und trotzdem weiß kein Mitarbeiter, wer Maria ist, die jeden Freitag um 8:30 Uhr einen Hafermilch-Cappuccino bestellt. Ein Betrieb an der Sülzburgstraße kann genau das wissen, wenn er ein einfaches Werkzeug nutzt. Dasselbe gilt für [Yoga-Studios in Sülz](/koeln/suelz/yoga) und [Blumenläden](/koeln/suelz/blumenladen) — Branchen, in denen Stammkunden den Großteil des Jahresumsatzes tragen.
+Kleinstbetriebe mit System schlagen Ketten ohne System. Eine Kette hat Budget, eigene App und Marketingteam — und trotzdem weiß kein Mitarbeiter, wer Maria ist, die jeden Freitag um 8:30 Uhr einen Hafermilch-Cappuccino bestellt. Ein Betrieb an der Sülzburgstraße kann genau das wissen, wenn er ein einfaches Werkzeug nutzt. Dasselbe gilt für [Yoga-Studios in Sülz](/koeln/suelz/yoga/) und [Blumenläden](/koeln/suelz/blumenladen/) — Branchen, in denen Stammkunden den Großteil des Jahresumsatzes tragen.
 
 ## Häufig gestellte Fragen
 
@@ -72,4 +72,4 @@ Fast keinen. Der Kunde scannt seinen QR-Code selbst, die Karte landet automatisc
 
 Weißt du heute, wer in drei Monaten noch bei dir kauft — und was dich von der Bäckerei zwei Straßen weiter unterscheidet?
 
-Mehr aus Sülz: [Cafés](/koeln/suelz/cafes) · [Yoga-Studios](/koeln/suelz/yoga) · [Blumenläden](/koeln/suelz/blumenladen) · [Bäckereien](/koeln/suelz/baeckerei)
+Mehr aus Sülz: [Cafés](/koeln/suelz/cafes/) · [Yoga-Studios](/koeln/suelz/yoga/) · [Blumenläden](/koeln/suelz/blumenladen/) · [Bäckereien](/koeln/suelz/baeckerei/)

@@ -6,12 +6,42 @@ import mdx from '@astrojs/mdx'
 import path from 'path'
 import { isIndexablePath } from './src/lib/indexability.ts'
 
+// Pages that must never end up in the sitemap.
+// Rule: if a page carries noindex, is a redirect stub or is internal-only,
+// it does not belong in the sitemap — otherwise GSC reports it as an error.
+const SITEMAP_EXCLUDE_SUBSTRINGS = [
+  '/preview-', // blog preview routes (internal)
+  '/gruender', // founder landing (noindex)
+  '/walkin', // iPad walk-in landing (noindex)
+]
+
+const SITEMAP_EXCLUDE_PATHS = [
+  '/v2/', // A/B variant, canonical points to /
+  '/preview/', // internal editorial overview
+  '/termin/', // noindex
+  '/danke/', // noindex
+  '/cafes-koeln/', // legacy, noindex + redirect stub
+  '/doener-koeln/', // legacy, noindex + redirect stub
+  '/pizza-koeln/', // legacy, noindex + redirect stub
+  '/restaurant-koeln/', // legacy, noindex + redirect stub
+]
+
+const sitemapFilter = (page) => {
+  const url = new URL(page)
+  if (SITEMAP_EXCLUDE_SUBSTRINGS.some((s) => url.pathname.includes(s))) return false
+  if (SITEMAP_EXCLUDE_PATHS.includes(url.pathname)) return false
+  // Zusätzlich: nur Seiten mit eigenem, einzigartigem Inhalt. Die Regel liegt in
+  // src/lib/indexability.ts und wird identisch von CityNichePage und der
+  // Köln-Route für das robots-Meta genutzt — so können Sitemap und Seiten-Meta
+  // nicht auseinanderlaufen. Erfasst zusätzlich den globalen Blog (noindex +
+  // canonical auf den Stadt-Blog) und die Nischenseiten ohne eigenen Inhalt.
+  if (!isIndexablePath(url.pathname)) return false
+  return true
+}
+
 export default defineConfig({
   site: 'https://bonuskarte.digital',
-  // Sitemap meldet ausschließlich indexierbare Seiten. Die Regel liegt in
-  // src/lib/indexability.ts und wird identisch von CityNichePage und der
-  // Köln-Route genutzt — so können Sitemap und Seiten-Meta nicht auseinanderlaufen.
-  integrations: [react(), tailwind(), sitemap({ filter: isIndexablePath }), mdx()],
+  integrations: [react(), tailwind(), sitemap({ filter: sitemapFilter }), mdx()],
   output: 'static',
   vite: {
     resolve: {

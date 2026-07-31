@@ -110,4 +110,4 @@ Du hast einen festen QR-Code an der Kasse. Der Gast zeigt seinen Karten-QR-Code,
 
 Berliner Kiez-Bäckereien haben einen Vorteil, den keine Kette kaufen kann: Vertrauen, Geschichte und Nachbarschaft. Eine digitale Stempelkarte macht diesen Vorteil sichtbar – für den Gast, der jeden Morgen kommt und verdient, dass das jemand wahrnimmt.
 
-[Jetzt kostenlos für Ihre Berliner Bäckerei starten →](/berlin/mitte/baeckerei)
+[Jetzt kostenlos für Ihre Berliner Bäckerei starten →](/berlin/mitte/baeckerei/)
