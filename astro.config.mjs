@@ -4,10 +4,14 @@ import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import mdx from '@astrojs/mdx'
 import path from 'path'
+import { isIndexablePath } from './src/lib/indexability.ts'
 
 export default defineConfig({
   site: 'https://bonuskarte.digital',
-  integrations: [react(), tailwind(), sitemap({ filter: (page) => !page.includes('/preview-') && !page.includes('/gruender') && !page.includes('/walkin') && !page.endsWith('/v2/') }), mdx()],
+  // Sitemap meldet ausschließlich indexierbare Seiten. Die Regel liegt in
+  // src/lib/indexability.ts und wird identisch von CityNichePage und der
+  // Köln-Route genutzt — so können Sitemap und Seiten-Meta nicht auseinanderlaufen.
+  integrations: [react(), tailwind(), sitemap({ filter: isIndexablePath }), mdx()],
   output: 'static',
   vite: {
     resolve: {

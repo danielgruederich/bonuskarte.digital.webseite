@@ -12,6 +12,7 @@ import { GooeyText } from '../../../components/ui/gooey-text-morphing'
 import Icon from '../../../components/icons/TrustIcons.astro'
 import { inStadtteil, InStadtteil } from '../../../lib/stadtteil-grammatik'
 import LandingFaq from '../../../components/LandingFaq.astro'
+import { hasUniqueContent } from '../../../lib/indexability'
 import StickyMobileCta from '../../../components/StickyMobileCta.astro'
 
 const emojiToIcon: Record<string, string> = {
@@ -48,6 +49,11 @@ const r = (s: string) =>
 
 const fomoCount = veedelData.fomoCount[nicheData.fomoKey]
 const showFomo  = fomoCount > 0
+
+// Ohne eigenen Veedel-Inhalt: nicht indexieren (Regel siehe src/lib/indexability.ts).
+// Der Fallback auf nicheData.contentBody ist Token-Swap und zählt nicht als Inhalt.
+const indexable = hasUniqueContent('koeln', veedelData.slug, nicheData.slug)
+
 const isEiscafe = nicheData.slug === 'eiscafe'
 const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Mehr Umsatz']
 ---
@@ -55,6 +61,7 @@ const gooeyTexts = ['Eiscafé', 'Digitale Stempelkarte', 'Mehr Stammkunden', 'Me
 <BaseLayout
   title={r(nicheData.seoTitle)}
   description={r(nicheData.seoDescription)}
+  noindex={!indexable}
   showStickyCta={false}
 >
   <script type="application/ld+json" set:html={JSON.stringify({

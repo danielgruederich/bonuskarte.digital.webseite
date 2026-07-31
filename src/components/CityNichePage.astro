@@ -19,6 +19,7 @@ import Icon from './icons/TrustIcons.astro'
 import type { NicheData } from '../data/niches'
 import { inStadtteil, InStadtteil } from '../lib/stadtteil-grammatik'
 import { getPremiumContent } from '../data/city-content'
+import { hasUniqueContent } from '../lib/indexability'
 
 interface StadtteilLike {
   name: string
@@ -66,11 +67,16 @@ const pageUrl   = `https://bonuskarte.digital/${citySlug}/${stadtteilData.slug}/
 const premium = getPremiumContent(citySlug, nicheData.slug, stadtteilData.slug)
 const metaTitle = premium?.metaTitle ?? r(nicheData.seoTitle).replace('Köln', cityName)
 const metaDescription = premium?.metaDescription ?? r(nicheData.seoDescription).replace('Köln', cityName)
+
+// Ohne eigenen Inhalt: nicht indexieren (Regel siehe src/lib/indexability.ts).
+// Die Seite bleibt für Besucher, Ads und Direktzugriffe voll funktionsfähig.
+const indexable = hasUniqueContent(citySlug, stadtteilData.slug, nicheData.slug)
 ---
 
 <BaseLayout
   title={metaTitle}
   description={metaDescription}
+  noindex={!indexable}
   showStickyCta={false}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
