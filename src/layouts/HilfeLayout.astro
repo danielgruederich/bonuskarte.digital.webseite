@@ -26,6 +26,16 @@ const base = hilfeBase(lang)
 const ui = HILFE_UI[lang]
 const articleUrl = `https://bonuskarte.digital${base}/${stripLang(slug)}`
 
+// Every help article exists in all three languages under the same slug, so the
+// language pairs can be derived — one entry per language plus x-default on DE.
+const pureSlug = stripLang(slug)
+const alternates = [
+  { hreflang: 'de', href: `https://bonuskarte.digital/hilfe/${pureSlug}/` },
+  { hreflang: 'en', href: `https://bonuskarte.digital/en/help/${pureSlug}/` },
+  { hreflang: 'fr', href: `https://bonuskarte.digital/fr/aide/${pureSlug}/` },
+  { hreflang: 'x-default', href: `https://bonuskarte.digital/hilfe/${pureSlug}/` },
+]
+
 // Localized title suffix + html lang/locale
 const titleSuffix = lang === 'fr' ? 'Aide' : lang === 'en' ? 'Help' : 'Hilfe'
 const htmlLocale = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_US' : 'de_DE'
@@ -36,6 +46,7 @@ const htmlLocale = lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_US' : 'de_DE'
   description={description}
   lang={lang}
   locale={htmlLocale}
+  alternates={alternates}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",

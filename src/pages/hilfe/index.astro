@@ -19,6 +19,12 @@ const categories = hilfeCategories.map(cat => ({
 <BaseLayout
   title="Hilfe & Tutorials — Digitale Stempelkarte einrichten | bonuskarte.digital"
   description="Anleitungen für deine digitale Stempelkarte: Onboarding, Scanner App, Kartentypen, Push-Nachrichten. Schritt für Schritt erklärt."
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/hilfe/' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/help/' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/aide/' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/hilfe/' },
+  ]}
 >
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
