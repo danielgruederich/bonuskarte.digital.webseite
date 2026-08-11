@@ -1,0 +1,18 @@
+# Verzeichnisaufruf ohne abschliessenden Schraegstrich.
+#
+# Ohne diese Regel uebernimmt Apaches mod_dir (DirectorySlash) den Redirect und
+# baut die Ziel-URL mit "http://", weil der Server hinter Cloudflare steht und
+# das Protokoll der Aussenverbindung nicht kennt. Cloudflare korrigiert das per
+# "Always Use HTTPS" — Ergebnis waren zwei Spruenge, einer davon unverschluesselt.
+# Diese Regel greift vor mod_dir und leitet direkt auf HTTPS um: ein Sprung.
+#
+# Bedingungen: Ziel ist ein echtes Verzeichnis, und die URL endet weder auf "/"
+# noch auf eine Dateiendung. Damit bleiben robots.txt, sitemap-0.xml,
+# /api/submit.php und alle Assets unberuehrt.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,5}$
+  RewriteRule ^(.*)$ https://bonuskarte.digital/$1/ [R=301,L]
+</IfModule>
