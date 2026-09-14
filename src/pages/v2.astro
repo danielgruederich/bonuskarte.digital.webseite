@@ -148,8 +148,10 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       .bk-sticky:not(.is-hidden) { display: flex; }
     }
 
-    /* Hero-Beiwerk (Papierkarte + Pfeil) nur ab Tablet — Mobile zeigt nur das Handy */
-    @media (max-width: 600px) {
+    /* Hero-Beiwerk (Papierkarte + Pfeil) steht neben dem Handy und braucht dafuer
+       rund 480px in der Bildspalte — die gibt es erst ab ca. 1080px Fensterbreite.
+       Darunter zeigt der Hero nur das Handy. */
+    @media (max-width: 1080px) {
       .bk-hero-aside { display: none !important; }
     }
 
@@ -228,14 +230,14 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             </div>
           </div>
 
-          <!-- product visual: Papier → Wallet → Smartphone -->
+          <!-- product visual: Papier → Pfeil → Smartphone, nebeneinander -->
           <div style="flex:1 1 380px;min-width:280px;display:flex;justify-content:center;align-items:center">
-            <div style="position:relative;width:240px;max-width:100%">
+            <div style="display:flex;align-items:center;justify-content:center;gap:clamp(6px,1.2vw,14px);width:100%">
 
-              <!-- Papier-Stempelkarte (dahinter, links) -->
-              <div class="bk-hero-aside" aria-hidden="true" style="position:absolute;left:-62px;bottom:36px;z-index:1;transform:rotate(-9deg);width:164px">
+              <!-- Papier-Stempelkarte (vollstaendig sichtbar, links) -->
+              <div class="bk-hero-aside" aria-hidden="true" style="flex:0 0 auto;transform:rotate(-6deg);width:138px">
                 <div style="background:#EFE7D6;border:1px solid var(--ink-14);border-radius:10px;padding:14px 14px 12px;box-shadow:var(--shadow-lg)">
-                  <div style="font-family:var(--font-hand);font-size:17px;color:var(--ink-72);margin-bottom:10px">Stammkarte</div>
+                  <div style="font-family:var(--font-hand);font-size:17px;line-height:1.15;color:var(--ink-72);margin-bottom:10px">Papier<br />Stempelkarte</div>
                   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">
                     <span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
                     <span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
@@ -244,13 +246,13 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               </div>
 
               <!-- oranger Pfeil Papier → Handy -->
-              <svg class="bk-hero-aside" aria-hidden="true" width="80" height="62" viewBox="0 0 80 62" style="position:absolute;left:-10px;top:32%;z-index:3">
-                <path d="M4 50 C 24 56, 46 40, 62 14" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round" />
-                <path d="M50 8 L70 9 L60 26 Z" fill="var(--accent)" />
+              <svg class="bk-hero-aside" aria-hidden="true" width="76" height="52" viewBox="0 0 76 52" style="flex:0 0 auto;overflow:visible">
+                <path d="M3 40 C 20 46, 40 40, 56 18" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" />
+                <path d="M47 8 L70 11 L58 30 Z" fill="var(--accent)" />
               </svg>
 
               <!-- iPhone mit Wallet-Karte -->
-              <div style="position:relative;z-index:2;margin-left:auto;width:240px;max-width:100%;aspect-ratio:9 / 19;background:#1A160F;border-radius:38px;padding:8px;box-shadow:0 30px 70px rgba(26,20,16,0.32)">
+              <div style="flex:0 0 auto;position:relative;width:240px;max-width:100%;aspect-ratio:9 / 19;background:#1A160F;border-radius:38px;padding:8px;box-shadow:0 30px 70px rgba(26,20,16,0.32)">
                 <div style="position:relative;width:100%;height:100%;background:#F6F1E8;border-radius:31px;overflow:hidden;box-sizing:border-box;padding:26px 13px 16px;display:flex;flex-direction:column">
                   <span aria-hidden="true" style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:76px;height:20px;background:#1A160F;border-radius:999px"></span>
                   <div style="background:#1A160F;border-radius:13px;padding:13px 12px 11px;box-shadow:0 8px 20px rgba(0,0,0,0.28)">
@@ -483,7 +485,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             <!-- worn paper card -->
             <div aria-hidden="true" style="flex:0 0 auto;position:relative;transform:rotate(-3deg)">
               <div style="width:230px;background:#EFE7D6;border:1px solid var(--ink-14);border-radius:8px;padding:18px 18px 16px;box-shadow:var(--shadow-sm);opacity:0.85">
-                <div style="font-family:var(--font-hand);font-size:19px;color:var(--ink-72);margin-bottom:12px">Stammkarte</div>
+                <div style="font-family:var(--font-hand);font-size:19px;line-height:1.15;color:var(--ink-72);margin-bottom:12px">Papier<br />Stempelkarte</div>
                 <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
                   <span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
                   <span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
