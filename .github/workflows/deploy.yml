@@ -30,6 +30,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Versionsmarker: Der Webhook-Schritt unten prueft anhand dieser Datei,
+      # ob der Server wirklich den aktuellen Stand ausliefert.
+      - name: Versionsmarker schreiben
+        run: echo "${GITHUB_SHA}" > dist/deploy-version.txt
+
       - name: ZIP dist
         run: |
           cd dist && zip -r ../site.zip . -q
@@ -46,13 +51,36 @@ jobs:
             --notes "Automated deploy" \
             --prerelease
 
+      # deploy.php laedt das ZIP, entpackt es und kopiert alle Dateien in einem
+      # einzigen Request. Das dauert oft laenger als die 100 Sekunden, nach denen
+      # Cloudflare die Verbindung mit 524 kappt — der Server arbeitet trotzdem
+      # weiter. Der HTTP-Status taugt deshalb nicht als Erfolgskriterium.
+      # Stattdessen: Webhook anstossen, dann deploy-version.txt pollen, bis sie
+      # den Commit dieses Runs zeigt. Erst wenn das in 10 Minuten nicht
+      # passiert, gilt der Deploy als gescheitert.
       - name: Trigger webhook
         run: |
           sleep 15
-          STATUS=$(curl -s -o /tmp/resp.json -w "%{http_code}" \
-            "https://bonuskarte.digital/deploy.php?token=${{ secrets.DEPLOY_TOKEN }}")
-          echo "Response: $(cat /tmp/resp.json)"
-          [ "$STATUS" = "200" ] || (echo "Webhook failed — HTTP $STATUS" && exit 1)
+          STATUS=$(curl -s --max-time 290 -o /tmp/resp.json -w "%{http_code}" \
+            "https://bonuskarte.digital/deploy.php?token=${{ secrets.DEPLOY_TOKEN }}" || true)
+          echo "Webhook HTTP $STATUS — Response: $(cat /tmp/resp.json 2>/dev/null)"
+          if [ "$STATUS" = "403" ]; then
+            echo "::error::Webhook abgelehnt (403) — DEPLOY_TOKEN pruefen"; exit 1
+          fi
+
+      - name: Auf Live-Stand warten
+        run: |
+          for i in $(seq 1 40); do
+            LIVE=$(curl -s --max-time 20 -H 'Cache-Control: no-cache' \
+              "https://bonuskarte.digital/deploy-version.txt?t=$(date +%s)" | tr -d '[:space:]')
+            if [ "$LIVE" = "${GITHUB_SHA}" ]; then
+              echo "Live: ${GITHUB_SHA} (nach $((i*15)) s)"; exit 0
+            fi
+            echo "Versuch $i/40 — live: '${LIVE:-<leer>}', erwartet: ${GITHUB_SHA}"
+            sleep 15
+          done
+          echo "::error::Server liefert nach 10 Minuten nicht den Commit ${GITHUB_SHA} aus — deploy.php auf dem Server pruefen"
+          exit 1
 
       # Nebenwirkungsfreier Formular-Check: POST ohne Kontaktdaten wird von
       # submit.php mit 400 abgelehnt — aber erst NACH dem Laden der Secrets-
