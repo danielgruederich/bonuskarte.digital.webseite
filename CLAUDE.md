@@ -6,7 +6,7 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
 ## Tech Stack
 - **Framework:** Astro + React (Islands) + Tailwind CSS
 - **Build:** Static Site (`astro build`)
-- **Deploy:** GitHub Actions → FTP auf Starthost (StackCP)
+- **Deploy:** GitHub Actions → Release-ZIP → Webhook `deploy.php` auf Starthost (StackCP). Details, Server-Dateien und Fehlerbilder: [`docs/deploy.md`](docs/deploy.md)
 - **Forms:** POST JSON → `/api/submit.php` (PHP) → Boomerang Cards API
 
 ## Lokaler Pfad
@@ -21,10 +21,11 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
 ## Hosting
 | | |
 |---|---|
-| SSH Server | ssh.gb.stackcp.com |
-| SSH User | fuerte.digital |
-| Deploy Path | bonuskarte/ (relativ zu Home) |
-| Deploy Methode | rsync über SSH (GitHub Actions Secret: SSH_PRIVATE_KEY) |
+| Hosting | Starthost / StackCP, Account `fuerte.digital`, Webroot `bonuskarte/` |
+| Deploy Methode | Release `deploy-latest` (site.zip) + Webhook `bonuskarte/deploy.php` (Secret `DEPLOY_TOKEN`) |
+| Zugang | kein SSH-Schlüssel auf dem Mac, kein SFTP im Workflow — Server-Dateien nur per StackCP-Dateimanager |
+| PHP | 8.5, **ohne FPM** — kein Hintergrund-Deploy möglich, siehe `docs/deploy.md` |
+| Erfolgskriterium | `https://bonuskarte.digital/deploy-version.txt` = Commit-SHA des Runs |
 
 ## Boomerang Cards API
 - Base URL: `https://api.digitalwallet.cards`
