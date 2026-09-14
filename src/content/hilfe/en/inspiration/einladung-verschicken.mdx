@@ -1,0 +1,96 @@
+---
+title: "Send an invitation"
+description: "Invite guests to an event with a card that lives in their wallet, reminds them automatically and carries the livestream link on the day itself."
+order: 3
+lang: "en"
+---
+
+import Callout from '@/components/hilfe/Callout.astro'
+
+An invitation by email is forgotten after two days. An invitation that lives as a card in **Apple Wallet or Google Wallet** isn't: it reappears on the lock screen whenever you send a reminder — and on the day of the event it carries the livestream link, the table code or the free drink right along with it.
+
+Here's the principle: you send your invitation the way you always do (newsletter, WhatsApp, Instagram), but instead of a sign-up form it contains one button: **"Add invitation to wallet"**. From that moment on you have a direct line to the guest — no app, no further emails.
+
+## What it's good for
+
+- **Online events** — webinar, live cooking, Q&A, product launch
+- **Events on site** — tasting, late-night shopping, grand opening, anniversary
+- **Recurring dates** — yoga class, regulars' table, running group
+
+## Step 1: Create the invitation card
+
+Use the **Coupon** card type for this. It fits an invitation best: redeemable once, with an expiry date, and after the event you can automatically offer the guest your stamp card.
+
+- **Offer** — what the guest gets at the event: "Your seat at the live cooking on 3 October" or "1 welcome drink at the opening"
+- **Expiry date** — the day of the event. After that, the coupon disappears from the wallet by itself
+- **Issue limit** — if seats are limited, e.g. "Only 50 seats"
+
+<Callout type="tipp">
+Your existing regulars already have the stamp card in their wallet. They don't need a second card: run a **Promotion** on the stamp card instead, covering the event period — with its own card image and the two push notifications before the start and before the end. The invitation card is for everyone who doesn't have your card yet.
+</Callout>
+
+## Step 2: Put the link on the back of the card
+
+In your card settings, the **Information** section holds the **active links**. They are always shown on the back of the card. Add:
+
+- **URL** — the link to the livestream, the Zoom room or the directions
+- **Address** — for events on site, so the guest opens navigation with one tap
+- **Phone** — in case someone needs to cancel or ask something at short notice
+
+<Callout type="info">
+The livestream link doesn't have to be final when you send the invitation. You can add or change it at any time — the card in the wallet updates. Send a push notification afterwards and the change arrives within seconds; without a push it can take a few minutes.
+</Callout>
+
+<Callout type="warnung">
+On iPhone, the links aren't always tappable in the card's quick view. If a guest reports this: open the card in the Wallet app and tap the small "…" or the info icon — the links are active there.
+</Callout>
+
+## Step 3: Send the invitation
+
+You'll find your install link in your dashboard next to the card. Build it into your newsletter as a button, and share it via WhatsApp or in your Instagram story:
+
+> **You're invited — live cooking on 3 October, 7 pm**
+> Add your invitation to your wallet. We'll remind you in time, and on the evening itself the link to the stream will be right on your card.
+> **[Add invitation to wallet]**
+
+The link leads to the install page, where the guest chooses between Apple Wallet and Google Wallet. Make sure the **Google Wallet button** is enabled in your card settings, otherwise you'll lose your Android users.
+
+<Callout type="tipp">
+Create a dedicated **UTM link** for the invitation. Then your statistics show exactly how many guests came via the newsletter and how many via WhatsApp — and at the next event you'll know where the effort pays off.
+</Callout>
+
+<Callout type="info">
+If you also want to offer a **calendar entry**, attach an .ics file to your email or link "Add to calendar". The wallet card doesn't create a calendar entry — it takes over the reminding via push instead.
+</Callout>
+
+## Step 4: Schedule the reminders
+
+Now for the real advantage. Go to **Mailings → New message**, choose the invitation card as your audience and **schedule** the messages:
+
+| When | Message |
+|---|---|
+| 3 days before | "3 days to go until the live cooking. We're looking forward to seeing you!" |
+| 1 hour before | "Tonight at 7 pm we're on — link is on your card." |
+| At the start | "We're live! Open your card, tap the link." |
+
+Keep to around **80 characters** per message — longer texts get cut off on the phone. A push notification itself contains no clickable link; the link lives on the card, and the message sends the guest there.
+
+<Callout type="warnung">
+Push notifications only arrive if the guest has allowed notifications for the card. So mention the point of the reminder in the invitation itself ("we'll remind you in time") — people who know what the notification is for will allow it.
+</Callout>
+
+## After the event: turn guests into regulars
+
+At an event on site, you scan the coupon with the scanner app — that redeems the invitation. Right afterwards, the guest is automatically offered your stamp or loyalty card. For an online event, send one last push notification the day after with a thank-you and a pointer to the stamp card.
+
+That's how an invitation becomes a guest, and a guest becomes a regular — and at the next event you won't need a newsletter at all, just a push notification.
+
+## For advanced users: personalised via the API
+
+If you have an email list with names, you can take it one step further. Via the API you create a customer and their card in advance for every contact. Each card then has its **own install link for Apple Wallet and one for Google Wallet** — so your newsletter shows two buttons, the guest taps the right one, and the card already carries their name.
+
+This also lets you send the livestream link **per guest**, say a personal access link or a seat code: write it to a card field on the individual card and send the push notification to exactly that card. Together, both arrive on the phone in around 30 seconds.
+
+<Callout type="info">
+The API documentation and the exact fields are available from us on request. If you're planning an invitation campaign and need help with the setup, just get in touch.
+</Callout>

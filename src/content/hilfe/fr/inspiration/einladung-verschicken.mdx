@@ -1,0 +1,96 @@
+---
+title: "Envoyer une invitation"
+description: "Invitez vos clients à un événement avec une carte qui reste dans leur wallet, les rappelle automatiquement et affiche le lien du direct le jour J."
+order: 3
+lang: "fr"
+---
+
+import Callout from '@/components/hilfe/Callout.astro'
+
+Une invitation par e-mail est oubliée au bout de deux jours. Une invitation qui vit sous forme de carte dans **Apple Wallet ou Google Wallet**, non : elle réapparaît sur l'écran de verrouillage dès que vous envoyez un rappel, et le jour de l'événement elle porte avec elle le lien du direct, le code de table ou la boisson offerte.
+
+Le principe : vous envoyez votre invitation comme d'habitude (newsletter, WhatsApp, Instagram), mais au lieu d'un formulaire d'inscription, elle contient un seul bouton : **« Ajouter l'invitation au wallet »**. À partir de là, vous avez un lien direct avec votre invité, sans application ni e-mail supplémentaire.
+
+## Pour quels événements
+
+- **Événements en ligne** — webinaire, cuisine en direct, questions-réponses, lancement de produit
+- **Événements sur place** — dégustation, nocturne, ouverture, anniversaire
+- **Rendez-vous réguliers** — cours de yoga, soirée des habitués, groupe de course à pied
+
+## Étape 1 : créer la carte d'invitation
+
+Utilisez pour cela le type de carte **Coupon**. C'est celui qui convient le mieux à une invitation : utilisable une seule fois, avec une date d'expiration, et après l'événement vous pouvez proposer automatiquement votre carte à tampons à l'invité.
+
+- **Offre** — ce que l'invité reçoit lors de l'événement : « Votre place à la cuisine en direct du 3 octobre » ou « 1 boisson de bienvenue pour l'ouverture »
+- **Date d'expiration** — le jour de l'événement. Ensuite, le coupon disparaît de lui-même du wallet
+- **Limite d'émission** — si les places sont limitées, par ex. « 50 places seulement »
+
+<Callout type="tipp">
+Vos habitués ont déjà la carte à tampons dans leur wallet. Ils n'ont pas besoin d'une deuxième carte : lancez plutôt une **promotion** sur la carte à tampons, couvrant la période de l'événement, avec son propre visuel et les deux notifications push avant le début et avant la fin. La carte d'invitation s'adresse à tous ceux qui n'ont pas encore votre carte.
+</Callout>
+
+## Étape 2 : placer le lien au dos de la carte
+
+Dans les paramètres de votre carte, la section **Information** contient les **liens actifs**. Ils s'affichent toujours au dos de la carte. Ajoutez-y :
+
+- **URL** — le lien vers le direct, la salle Zoom ou l'itinéraire
+- **Adresse** — pour les événements sur place, afin que l'invité lance la navigation d'un seul geste
+- **Téléphone** — si quelqu'un doit annuler ou poser une question à la dernière minute
+
+<Callout type="info">
+Le lien du direct n'a pas besoin d'être définitif au moment de l'invitation. Vous pouvez l'ajouter ou le modifier à tout moment : la carte dans le wallet se met à jour. Envoyez ensuite une notification push, et la modification arrive en quelques secondes ; sans push, cela peut prendre quelques minutes.
+</Callout>
+
+<Callout type="warnung">
+Sur iPhone, les liens ne sont pas toujours cliquables dans l'aperçu rapide de la carte. Si un invité vous le signale : ouvrir la carte dans l'application Wallet et appuyer sur le petit « … » ou sur l'icône d'information ; les liens y sont actifs.
+</Callout>
+
+## Étape 3 : envoyer l'invitation
+
+Vous trouvez votre lien d'installation dans votre tableau de bord, à côté de la carte. Intégrez-le sous forme de bouton dans votre newsletter, et partagez-le sur WhatsApp ou dans votre story Instagram :
+
+> **Vous êtes invité — cuisine en direct le 3 octobre à 19 h**
+> Ajoutez votre invitation à votre wallet. Nous vous rappellerons à temps, et le soir même, le lien du direct sera directement sur votre carte.
+> **[Ajouter l'invitation au wallet]**
+
+Le lien mène à la page d'installation, où l'invité choisit entre Apple Wallet et Google Wallet. Vérifiez que le **bouton Google Wallet** est activé dans les paramètres de la carte, sinon vous perdez vos utilisateurs Android.
+
+<Callout type="tipp">
+Créez un **lien UTM** dédié à l'invitation. Vos statistiques vous montreront alors précisément combien d'invités sont venus par la newsletter et combien par WhatsApp, et vous saurez, pour le prochain événement, où l'effort en vaut la peine.
+</Callout>
+
+<Callout type="info">
+Si vous souhaitez également proposer une **entrée dans l'agenda**, joignez un fichier .ics à votre e-mail ou ajoutez un lien « Ajouter à l'agenda ». La carte wallet ne crée pas d'entrée dans l'agenda : elle se charge à la place du rappel par notification push.
+</Callout>
+
+## Étape 4 : programmer les rappels
+
+C'est ici que réside le véritable avantage. Rendez-vous dans **Mailings → Nouveau message**, choisissez la carte d'invitation comme audience et **programmez** les messages :
+
+| Quand | Message |
+|---|---|
+| 3 jours avant | « Plus que 3 jours avant la cuisine en direct. On a hâte de vous voir ! » |
+| 1 heure avant | « Ce soir à 19 h, c'est parti — le lien est sur votre carte. » |
+| Au démarrage | « On est en direct ! Ouvrez votre carte, appuyez sur le lien. » |
+
+Restez autour de **80 caractères** par message : les textes plus longs sont coupés sur le téléphone. Une notification push ne contient pas de lien cliquable ; le lien se trouve sur la carte, et le message y conduit l'invité.
+
+<Callout type="warnung">
+Les notifications push n'arrivent que si l'invité a autorisé les notifications pour la carte. Expliquez donc l'intérêt du rappel dès l'invitation (« nous vous rappellerons à temps ») : qui sait à quoi sert la notification l'autorise.
+</Callout>
+
+## Après l'événement : transformer les invités en habitués
+
+Lors d'un événement sur place, vous scannez le coupon avec l'application scanner : l'invitation est ainsi utilisée. Juste après, votre carte à tampons ou carte de fidélité est automatiquement proposée à l'invité. Pour un événement en ligne, envoyez le lendemain une dernière notification push avec un remerciement et un mot sur la carte à tampons.
+
+C'est ainsi qu'une invitation devient un invité, et un invité un habitué. Et pour le prochain événement, plus besoin de newsletter : une notification push suffit.
+
+## Pour aller plus loin : personnaliser via l'API
+
+Si vous disposez d'une liste d'e-mails avec des noms, vous pouvez aller un cran plus loin. Via l'API, vous créez à l'avance un client et sa carte pour chaque contact. Chaque carte dispose alors de **son propre lien d'installation pour Apple Wallet et d'un autre pour Google Wallet** : votre newsletter affiche donc deux boutons, l'invité appuie sur le bon, et la carte porte déjà son nom.
+
+Cela permet aussi d'envoyer le lien du direct **par invité**, par exemple un lien d'accès personnel ou un code de place : à inscrire dans un champ de la carte individuelle, puis à accompagner d'une notification push adressée à cette seule carte. Les deux arrivent ensemble sur le téléphone en 30 secondes environ.
+
+<Callout type="info">
+La documentation de l'API et le détail des champs sont disponibles sur demande auprès de nous. Si vous préparez une campagne d'invitation et avez besoin d'aide pour la mise en place, écrivez-nous.
+</Callout>
