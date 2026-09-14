@@ -11,7 +11,7 @@ B2B Lead-Gen-Website für digitale Stempelkarten. Hyper-lokalisierte Landing Pag
 
 ## Lokaler Pfad
 ```
-/Users/danielgruederich/bonuskarte-digital/
+/Users/danielgruederich/Developer/Bonuskarte/bonuskarte-digital/
 ```
 
 ## GitHub
