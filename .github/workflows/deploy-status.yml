@@ -1,0 +1,21 @@
+name: Deploy-Status lesen
+
+# Liest das Deploy-Log von deploy.php (status=1) mit dem Secret DEPLOY_TOKEN.
+# Nur manuell (workflow_dispatch). Gibt keine Secrets aus, nur die Server-Antwort.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy.php status=1
+        run: |
+          curl -s --max-time 60 -o /tmp/status.txt -w "HTTP %{http_code}\n" \
+            "https://bonuskarte.digital/deploy.php?token=${{ secrets.DEPLOY_TOKEN }}&status=1" || true
+          echo "--- Antwort ---"
+          cat /tmp/status.txt | head -c 6000
+          echo
+          echo "--- live ---"
+          curl -s https://bonuskarte.digital/deploy-version.txt
