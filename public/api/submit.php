@@ -168,6 +168,50 @@ function salesflare(string $method, string $path, array $data = []): array
     ], $data);
 }
 
+// ── Salesflare Dubletten-Schutz ───────────────────────────────────────────────
+// Jede Anfrage legte bisher blind Account + Kontakt + Opportunity an (21.09.2026:
+// Alev zweimal innerhalb von zwei Minuten → "@alev.masterofhair (1)"). Jetzt wird
+// der Account exakt über seinen Namen gesucht und wiederverwendet; Kontakt und
+// Opportunity entstehen nur, wenn der Account noch keine hat bzw. keine offene.
+function salesflareFindOrCreateAccount(array $accountPayload): array
+{
+    $name = (string) ($accountPayload['name'] ?? '');
+    if ($name !== '') {
+        $found = salesflare('GET', '/accounts?name=' . rawurlencode($name) . '&limit=1');
+        $id    = $found['body'][0]['id'] ?? null;
+        if ($id) {
+            return [(int) $id, true];
+        }
+    }
+    $created = salesflare('POST', '/accounts', $accountPayload);
+    $id      = $created['body']['id'] ?? null;
+    return [$id ? (int) $id : null, false];
+}
+
+function salesflareAccountHasContact(?int $accountId): bool
+{
+    if (!$accountId) {
+        return false;
+    }
+    $res = salesflare('GET', '/contacts?account=' . $accountId . '&limit=1');
+    return !empty($res['body'][0]['id']);
+}
+
+function salesflareAccountHasOpenOpportunity(?int $accountId): bool
+{
+    if (!$accountId) {
+        return false;
+    }
+    $res = salesflare('GET', '/opportunities?account=' . $accountId . '&limit=50');
+    foreach ($res['body'] ?? [] as $opp) {
+        $stage = strtolower((string) ($opp['stage']['name'] ?? ''));
+        if ($stage !== 'won' && $stage !== 'lost') {
+            return true;
+        }
+    }
+    return false;
+}
+
 // ── Salesflare lead recorder ──────────────────────────────────────────────────
 // Speichert Account + Kontakt + Opportunity. Läuft VOR Boomerang, damit ein Fehler
 // bei der Demo-Karten-Erstellung den Lead nie mehr verschluckt. Fehler hier
@@ -222,8 +266,7 @@ function recordSalesflareLead(
             $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
         }
 
-        $accountRes = salesflare('POST', '/accounts', $accountPayload);
-        $accountId  = $accountRes['body']['id'] ?? null;
+        [$accountId, $accountExisted] = salesflareFindOrCreateAccount($accountPayload);
 
         // ── Contact (the person) ────────────────────────────────────────────────
         $contactPayload = [
@@ -240,10 +283,12 @@ function recordSalesflareLead(
             $contactPayload['account'] = $accountId;
         }
 
-        salesflare('POST', '/contacts', $contactPayload);
+        if (!$accountExisted || !salesflareAccountHasContact($accountId)) {
+            salesflare('POST', '/contacts', $contactPayload);
+        }
 
         // ── Opportunity ─────────────────────────────────────────────────────────
-        if ($accountId) {
+        if ($accountId && !salesflareAccountHasOpenOpportunity($accountId)) {
             salesflare('POST', '/opportunities', [
                 'name'    => $nicheLabel . ' · @' . ($instagram ?: $firstName) . ' · /' . $leadPage,
                 'account' => $accountId,
@@ -425,8 +470,7 @@ if (($body['mode'] ?? '') === 'ebook') {
         } elseif ($instagramUrl) {
             $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
         }
-        $accountRes = salesflare('POST', '/accounts', $accountPayload);
-        $accountId  = $accountRes['body']['id'] ?? null;
+        [$accountId, $accountExisted] = salesflareFindOrCreateAccount($accountPayload);
 
         // Contact (die Person)
         $contactPayload = ['firstname' => $firstName, 'tags' => $tags];
@@ -434,10 +478,12 @@ if (($body['mode'] ?? '') === 'ebook') {
         if ($phone)        $contactPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
         if ($instagramUrl) $contactPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
         if ($accountId)    $contactPayload['account']          = $accountId;
-        salesflare('POST', '/contacts', $contactPayload);
+        if (!$accountExisted || !salesflareAccountHasContact($accountId)) {
+            salesflare('POST', '/contacts', $contactPayload);
+        }
 
         // Opportunity
-        if ($accountId) {
+        if ($accountId && !salesflareAccountHasOpenOpportunity($accountId)) {
             salesflare('POST', '/opportunities', [
                 'name'    => 'E-Book · Café-Leitfaden Köln · @' . ($instagram ?: $firstName),
                 'account' => $accountId,
@@ -477,18 +523,19 @@ if (($body['mode'] ?? '') === 'lead' || ($body['lang'] ?? '') === 'fr') {
         } elseif ($instagramUrl) {
             $accountPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
         }
-        $accountRes = salesflare('POST', '/accounts', $accountPayload);
-        $accountId  = $accountRes['body']['id'] ?? null;
+        [$accountId, $accountExisted] = salesflareFindOrCreateAccount($accountPayload);
 
         // Contact
         $contactPayload = ['firstname' => $firstName, 'tags' => $tags];
         if ($phone)        $contactPayload['phone_numbers']   = [['number' => $phone, 'type' => 'mobile']];
         if ($instagramUrl) $contactPayload['social_profiles'] = [['type' => 'instagram', 'username' => $instagram, 'url' => $instagramUrl]];
         if ($accountId)    $contactPayload['account']          = $accountId;
-        salesflare('POST', '/contacts', $contactPayload);
+        if (!$accountExisted || !salesflareAccountHasContact($accountId)) {
+            salesflare('POST', '/contacts', $contactPayload);
+        }
 
         // Opportunity
-        if ($accountId) {
+        if ($accountId && !salesflareAccountHasOpenOpportunity($accountId)) {
             $leadPage = str_replace('-', '/', $utmCampaign);
             salesflare('POST', '/opportunities', [
                 'name'    => $nicheLabel . ' · ' . ($arrLabel ?: 'Paris') . ' · @' . ($instagram ?: $firstName),
