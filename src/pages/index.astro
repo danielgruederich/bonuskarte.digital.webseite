@@ -1,88 +1,70 @@
 ---
+// Startseite seit 22.09.2026 — vorher A/B-Variante unter /v2 ("Bestellzettel + Wallet-Demo", Juli 2026).
+// Portiert aus dem Design-Export (Homepage.dc.html); Formulare laufen über /api/submit.php
+// (Salesflare + Boomerang + Telegram + Sheets + MailerCloud).
+// SEO-/Conversion-Umbau 22.09.2026 nach zwei Gutachten (siehe Obsidian „Bonuskarte Website v2“).
+// Alte Startseite archiviert: _index-alt-2026-09.astro (Unterstrich = kein Routing). /v2/ → 301 auf / (.htaccess).
 import BaseLayout from '../layouts/BaseLayout.astro'
-import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.astro'
-import PhoneMockup from '../components/PhoneMockup.tsx'
-import RotatingWord from '../components/RotatingWord.tsx'
-import LeadForm from '../components/LeadForm.tsx'
-import StickyMobileCta from '../components/StickyMobileCta.astro'
-import Icon from '../components/icons/TrustIcons.astro'
-import { cardBranchPairs } from '../data/card-branch-pairs'
-import { niches } from '../data/niches'
+import StampGridV2 from '../components/StampGridV2.astro'
 
-const nicheOptions = niches.map((n) => ({ slug: n.slug, label: n.label }))
-const whatsappUrl = 'https://wa.me/491705594140'
-const bookingUrl = 'https://termin.bonuskarte.digital/15min'
+const whatsappUrl = 'https://wa.me/491705594140?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20bonuskarte.digital'
 
-const howItWorks = [
-  { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine digitale Karte mit deinem Branding in unter 24 Stunden.' },
-  { step: '02', title: 'Kunden einladen', desc: 'Kunden scannen einmal einen QR-Code und speichern die Karte im Wallet.' },
-  { step: '03', title: 'Punkte sammeln', desc: 'Ein Klick – der Punkt landet sofort auf dem Handy deines Kunden.' },
-  { step: '04', title: 'Kunden binden', desc: 'Push-Nachrichten, Geo-Push, Google-Bewertungen, Statistiken. Alles inklusive.' },
+// Anzeige-Label → Template-Key für submit.php (TEMPLATE_IDS)
+const branchen = [
+  { label: 'Café', value: 'cafe' },
+  { label: 'Bäckerei', value: 'baeckerei' },
+  { label: 'Döner / Imbiss', value: 'doener' },
+  { label: 'Pizzeria / Restaurant', value: 'pizza' },
+  { label: 'Eiscafé', value: 'eiscafe' },
+  { label: 'Friseur / Salon', value: 'friseur' },
+  { label: 'Fitness / Gym', value: 'fitnessstudio' },
+  { label: 'Yoga-Studio', value: 'yoga' },
+  { label: 'Anderes', value: 'cafe' },
 ]
 
-const cities = [
-  { label: 'Köln',        href: '/koeln/',        emoji: '🏙️', available: true  },
-  { label: 'Berlin',      href: '/berlin/',       emoji: '🐻', available: true  },
-  { label: 'Hamburg',     href: '/hamburg/',      emoji: '⚓', available: true  },
-  { label: 'München',     href: '/muenchen/',     emoji: '🏔️', available: true  },
-  { label: 'Frankfurt',   href: '/frankfurt/',    emoji: '🏦', available: true  },
-  { label: 'Stuttgart',   href: '/stuttgart/',    emoji: '🚗', available: true  },
-  { label: 'Düsseldorf',  href: '/duesseldorf/',  emoji: '🌉', available: true  },
-  { label: 'Dortmund',    href: '/dortmund/',     emoji: '⚽', available: true  },
-  { label: 'Essen',       href: '/essen/',        emoji: '🏭', available: true  },
-  { label: 'Leipzig',     href: '/leipzig/',      emoji: '🎵', available: true  },
-  { label: 'Dresden',     href: '/dresden/',      emoji: '🏛️', available: true  },
-  { label: 'Hannover',    href: '/hannover/',     emoji: '🌿', available: true  },
-  { label: 'Nürnberg',    href: '/nuernberg/',    emoji: '🏰', available: true  },
-  { label: 'Bonn',        href: '/bonn/',         emoji: '🎓', available: true  },
-  { label: 'Hürth',       href: '/huerth/',       emoji: '📍', available: true  },
+const faqs = [
+  { q: 'Brauchen meine Kund:innen eine App?', a: 'Nein. Die Karte liegt direkt in Apple Wallet oder Google Wallet – beides ist auf jedem Smartphone schon installiert. Ein Tipp, gespeichert. Kein Download, kein Plastik.' },
+  { q: 'Müssen sich meine Kund:innen registrieren?', a: 'Ja – aber in unter einer Minute und ohne App-Download. Der Gast scannt den QR-Code, gibt Name, E-Mail oder Handynummer und Geburtsdatum ein – fertig. Danach liegt die Karte direkt in Apple oder Google Wallet.' },
+  { q: 'Funktioniert das auch mit älteren Kund:innen?', a: 'Ja. Gerade weil keine neue App nötig ist: Apple und Google Wallet sind auf dem Handy vorinstalliert. Karte antippen, speichern, fertig – kein Technik-Wissen nötig.' },
+  { q: 'Was passiert nach den 90 Tagen?', a: 'Du entscheidest selbst. Keine automatische Verlängerung, kein versteckter Vertrag – wir melden uns vorher. Danach ab 29 € im Monat, monatlich kündbar.' },
+  { q: 'Wie schnell bin ich startklar?', a: 'In der Regel innerhalb von 24 Stunden. Du schickst uns Name, Branche und Kontakt – wir bauen dein Stammkunden-System mit deinem Logo und deiner Belohnung und melden uns.' },
+  { q: 'Ist das DSGVO-konform?', a: 'Ja. Server in Deutschland, Datenverarbeitung nach DSGVO. Die Daten gehören dir – nur du kannst sie für deine Marketing-Maßnahmen einsetzen, zum Beispiel für eine automatisierte Geburtstagsnachricht an deine Kund:innen.' },
 ]
 
-const problems = [
-  'Du weißt nicht, wie viele Stempelkarten aktiv genutzt werden',
-  'Kein direkter Kanal zu deinen Stammgästen',
-  'Gäste kommen unregelmäßig – ohne Anreiz zum Wiederkommen',
-  'Papier-Karten geben dir null Daten über dein Geschäft',
-  'Bewertungen und Empfehlungen bleiben dem Zufall überlassen',
-]
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'bonuskarte.digital',
+  url: 'https://bonuskarte.digital',
+  description: 'Digitale Bonuskarte und Stempelkarte für Apple Wallet und Google Wallet – für Cafés, Friseure, Fitnessstudios und andere lokale Betriebe in Deutschland.',
+  inLanguage: 'de-DE',
+}
+const softwareLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'bonuskarte.digital',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'iOS, Android',
+  description: 'Das einfache Stammkunden-System für lokale Betriebe – macht aus Erstbesuchern regelmäßige Kunden, direkt in Apple Wallet und Google Wallet, ohne App-Download.',
+  url: 'https://bonuskarte.digital/',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: '90 Tage kostenlos, danach ab 29 € pro Monat für bis zu 3 Standorte, monatlich kündbar' },
+  publisher: { '@type': 'Organization', name: 'fuerte.digital', brand: 'bonuskarte.digital' },
+}
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+}
 
-const solutions = [
-  'Karte immer beim Gast – direkt in Apple & Google Wallet',
-  'Echte Zahlen: aktive Karten, Stempel, Einlösungsrate',
-  'Push-Nachrichten bringen Gäste aktiv zurück in dein Lokal',
-  'Du siehst genau, welche Stammkunden du hast – und wer fehlt',
-  'Google-Bewertungen & Empfehlungen laufen automatisch mit',
-]
-
-const testimonials = [
-  {
-    quote: 'Wir haben von Anfang an auf eine digitale Stempelkarte gesetzt. Wir haben viele Schüler als Kunden und können über Push-Nachrichten viele direkt erreichen. Besonders die flexiblen Stempel während der frei konfigurierbaren Happy Hour haben uns einen echten Wettbewerbsvorteil verschafft. Seit wir über 1.000 aktive Karten draußen haben, kommen deutlich mehr Stammkunden wieder.',
-    name: 'Yussuf',
-    role: 'Inhaber, Dönermän',
-    location: 'Köln Braunsfeld',
-    logo: '/images/testimonials/donermacher.png',
-  },
-  {
-    quote: 'Daniel kam schon bei der Eröffnung von Erste Liebe auf uns zu. GoLive war 24 Stunden später. Keine Ausfälle, Kunden lieben es. Wir haben schon 200 Karten im Umlauf – und nutzen bisher nur 10 % der Plattform.',
-    name: 'Tim',
-    role: 'Inhaber, Café Erste Liebe',
-    location: 'Köln, Neustadt Süd',
-    logo: '/images/testimonials/erste-liebe.jpg',
-  },
-  {
-    quote: "We have been using Daniel's digital solution for 2 years now. Simple, effective – and despite our disbelief, even in a touristic village like Corralejo. We managed to configure a Coupon and 3 Stamp bonus cards for tourists and a VIP Card for locals. All within one system, same competitive price. Fully recommended.",
-    name: 'Jao',
-    role: 'ASAP Cafe Corralejo',
-    location: 'Fuerteventura',
-    logo: '/images/testimonials/ASAP.Brunch.jpg',
-  },
-]
+// Formularfeld-Unterstrich als wiederverwendbarer Style
+const fieldStyle = 'width:100%;box-sizing:border-box;border:none;border-bottom:1.5px solid var(--ink-24);background:transparent;padding:8px 2px;font-family:var(--font-sans);font-size:17px;color:var(--v2-ink);outline:none'
+const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2214%22 height=%2214%22 fill=%22none%22 stroke=%22%231A1410%22 stroke-width=%222.4%22 stroke-linecap=%22round%22%3E%3Cpath d=%22m6 9 6 6 6-6%22/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 2px center`
 ---
 
 <BaseLayout
-  title="Digitale Bonuskarte & Stempelkarte fürs Wallet | 90 Tage gratis"
-  description="Bonuskarte in Apple & Google Wallet – ohne App, ohne Plastik. Stempel per Scan, Push-Nachrichten und Google-Bewertungen inklusive. In 24 Stunden startklar, 90 Tage kostenlos testen."
+  title="Digitale Bonuskarte & Stempelkarte ohne App – fürs Wallet | 90 Tage gratis"
+  description="Digitale Bonuskarte für Cafés, Friseure, Döner & Co.: Stempel direkt in Apple Wallet und Google Wallet, ohne App-Download. Aus Köln, in 24 Stunden startklar, 90 Tage kostenlos, DSGVO-konform."
+  canonical="https://bonuskarte.digital/"
   alternates={[
     { hreflang: 'de', href: 'https://bonuskarte.digital/' },
     { hreflang: 'en', href: 'https://bonuskarte.digital/en/' },
@@ -91,400 +73,1065 @@ const testimonials = [
   ]}
   showStickyCta={false}
 >
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "bonuskarte.digital",
-    "url": "https://bonuskarte.digital",
-    "description": "Digitale Kundenkarten für Apple Wallet & Google Wallet. Stempelkarten, Punktekarten, Mitgliedskarten & mehr für lokale Betriebe in Deutschland.",
-    "inLanguage": "de-DE"
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "bonuskarte.digital",
-    "description": "Digitale Stempelkarte & Bonuskarte für lokale Betriebe – direkt in Apple Wallet & Google Wallet.",
-    "url": "https://bonuskarte.digital",
-    "image": "https://bonuskarte.digital/screens/phone-1.jpg",
-    "screenshot": "https://bonuskarte.digital/screens/phone-1.jpg",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "iOS, Android",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "description": "90 Tage kostenlos, danach ab 29 €/Monat – unter 1 € pro Tag"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "ratingCount": testimonials.length
-    },
-    "review": testimonials.map(t => ({
-      "@type": "Review",
-      "reviewBody": t.quote,
-      "author": { "@type": "Person", "name": t.name },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    }))
-  })} />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "Ist das wirklich 90 Tage kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar." } },
-      { "@type": "Question", "name": "Brauchen meine Kunden eine App?", "acceptedAnswer": { "@type": "Answer", "text": "Nein, keine App und kein Download. Beim ersten Scan meldet sich dein Gast in unter einer Minute an (Name, E-Mail oder Handynummer, Geburtstag) – danach liegt die Karte direkt in Apple oder Google Wallet, die auf jedem Smartphone vorinstalliert sind." } },
-      { "@type": "Question", "name": "Wie viel Aufwand habe ich bei der Einrichtung?", "acceptedAnswer": { "@type": "Answer", "text": "Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live." } },
-      { "@type": "Question", "name": "Was kostet es nach der Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ab 29 €/Monat – bis zu 3 Standorte inklusive, das sind unter 1 € pro Tag. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Kommt nur ein Gast pro Monat wegen der Karte einmal mehr, hat es sich schon bezahlt. Keine Setup-Gebühr, monatlich kündbar." } },
-      { "@type": "Question", "name": "Funktioniert das auch für Nicht-Gastro-Betriebe?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Neben Stempelkarten bieten wir Mitgliedskarten, 10er-Karten, Geschenkkarten und Guthabenkarten – für Friseure, Fitnessstudios, Yoga-Studios, Blumenläden und mehr." } },
-      { "@type": "Question", "name": "Ist das DSGVO-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden." } }
-    ]
-  })} />
-  <Navbar ctaHref="#demo" ctaLabel="Jetzt starten" />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(softwareLd)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
 
-  <!-- ── HERO ──────────────────────────────────────────────────── -->
-  <section class="relative flex items-center bg-paper overflow-hidden">
-    <div class="absolute inset-0 bg-grid-ink"></div>
-    <!-- Gold radial glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-amber rounded-full blur-[200px] opacity-5"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Caveat:wght@500;600;700&display=swap" />
 
-    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 md:pt-24 pb-8 md:pb-12 w-full">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-stretch">
-        <div class="text-center md:text-left">
-          <!-- Eyebrow (fills full width with branches from card-branch-pairs) -->
-          <div id="eyebrow-bar" class="w-full overflow-hidden border border-amber/50 px-4 py-2 mb-6 sm:mb-10">
-            <div class="flex items-center gap-3">
-              <span class="w-1 h-1 bg-amber animate-pulse-slow flex-shrink-0"></span>
-              <span id="eyebrow-text" class="text-amber text-xs font-normal tracking-[0.3em] uppercase whitespace-nowrap overflow-hidden">
-                {`Für ${cardBranchPairs.slice(0, 3).map(p => p.branch).join(' · ')}`}
-              </span>
-            </div>
-          </div>
-          <script is:inline define:vars={{ eyebrowBranches: cardBranchPairs.map(p => p.branch) }}>
-              var el = document.getElementById('eyebrow-text');
-              var shuffled = eyebrowBranches.sort(function() { return Math.random() - 0.5; });
-              el.textContent = 'Für ' + shuffled.slice(0, 3).join(' · ');
-          </script>
+  <style is:global>
+    /* ── Design-Tokens (Redesign Juli 2026) ─────────────────────────── */
+    .bk-v2 {
+      --amber: #F25C24;
+      --v2-ink: #1A1410;
+      --v2-paper: #F6F1E8;
+      --white: #FFFFFF;
+      --amber-press: #D44E1A;
+      --amber-hover: #E2531F;
+      --amber-tint: #FBE4D8;
+      --amber-ring: rgba(242, 92, 36, 0.35);
+      --ink-90: rgba(26,20,16,0.90); --ink-72: rgba(26,20,16,0.72); --ink-56: rgba(26,20,16,0.56);
+      --ink-40: rgba(26,20,16,0.40); --ink-24: rgba(26,20,16,0.24); --ink-14: rgba(26,20,16,0.14);
+      --ink-08: rgba(26,20,16,0.08); --ink-04: rgba(26,20,16,0.04);
+      --paper-72: rgba(246,241,232,0.72); --paper-56: rgba(246,241,232,0.56);
+      --paper-16: rgba(246,241,232,0.16); --paper-10: rgba(246,241,232,0.10);
+      --ink-raised: #241D17; --ink-line: #322A22;
+      --surface-sunken: #EFE8DB;
+      --accent: var(--amber); --border: var(--ink-14); --border-strong: var(--ink-24); --border-ink: var(--ink-line);
+      --radius-md: 14px; --radius-lg: 20px;
+      --shadow-sm: 0 2px 6px rgba(26,20,16,0.07);
+      --shadow-md: 0 6px 18px rgba(26,20,16,0.09);
+      --shadow-lg: 0 16px 40px rgba(26,20,16,0.12);
+      --shadow-amber: 0 8px 22px rgba(242,92,36,0.28);
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+      --font-serif: 'Zilla Slab', Georgia, serif;
+      --font-hand: 'Caveat', cursive;
+      font-family: var(--font-sans);
+      background: var(--v2-paper);
+      color: var(--v2-ink);
+    }
+    .bk-v2 ::selection { background: var(--amber-tint); }
 
-          <h1 class="text-5xl sm:text-6xl tracking-tighter mb-5 sm:mb-8">
-            <span class="font-normal text-ink block">Die digitale</span>
-            <RotatingWord client:idle />
-          </h1>
+    @keyframes bk-thunk { 0% { transform: scale(0.55) rotate(-8deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+    @keyframes bk-rise { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes bk-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+    @keyframes bk-stamp { 0% { transform: scale(2.1) rotate(-12deg); opacity: 0; } 55% { transform: scale(0.94) rotate(2deg); opacity: 1; } 75% { transform: scale(1.03); } 100% { transform: scale(1) rotate(0); } }
+    @keyframes bk-notif { from { transform: translateY(-130%); opacity: 0; } to { transform: none; opacity: 1; } }
 
-          <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-normal">
-            Mehr Stammkunden, mehr Umsatz. Deine Kunden
-            tragen deine Karte direkt im Handy –
-            kein Papier, keine App, kein Aufwand für dich.
-          </p>
+    /* Stempel: gefüllt/leer wird per Klasse getoggelt */
+    .bk-stamp .bk-stamp-on { display: none; }
+    .bk-stamp.is-filled .bk-stamp-on { display: block; animation: bk-stamp 0.38s var(--ease-out) both; }
+    .bk-stamp.is-filled .bk-stamp-off { display: none; }
 
-          <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2.5 mb-6 sm:mb-10">
-            <Icon name="diamond" class="w-3.5 h-3.5 text-amber" />
-            <span class="text-amber text-xs tracking-[0.15em] font-normal">
-              90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE
-            </span>
-          </div>
+    /* Buttons (Design-System "primary") */
+    .bk-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--accent); color: var(--v2-paper); border: none; cursor: pointer;
+      font-family: var(--font-sans); font-weight: 600; text-decoration: none;
+      border-radius: var(--radius-md); transition: background 0.15s ease;
+    }
+    .bk-btn:hover { background: var(--amber-hover); }
+    .bk-btn:active { background: var(--amber-press); }
+    .bk-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--amber-ring); }
+    .bk-btn--sm { height: 36px; padding: 0 16px; font-size: 14px; }
+    .bk-btn--md { height: 44px; padding: 0 20px; font-size: 15px; }
+    .bk-btn--lg { height: 54px; padding: 0 24px; font-size: 16.5px; width: 100%; box-shadow: var(--shadow-amber); }
 
-          <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <a href="#demo"
-              class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
-              Kostenlos testen
-              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
-            <a href="#staedte"
-              class="inline-flex items-center gap-1.5 text-ink/50 hover:text-amber text-xs font-medium tracking-[0.15em] uppercase transition-colors py-4">
-              Städte ansehen
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </a>
-          </div>
+    /* Hover/Focus aus dem Design (style-hover / style-focus) */
+    .bk-navlink { font-size: 15px; font-weight: 500; color: var(--ink-72); text-decoration: none; }
+    .bk-navlink:hover { color: var(--v2-ink); }
+    .bk-footlink { color: var(--paper-72); text-decoration: none; font-size: 14px; }
+    .bk-footlink:hover { color: var(--v2-paper); }
+    .bk-field:focus { border-bottom-color: var(--accent) !important; }
+    .bk-whatsapp:hover { background: var(--ink-04); }
+    .bk-faqlink:hover { text-decoration: underline; }
 
-          <!-- Trust -->
-          <div class="flex flex-wrap gap-6 mt-6 sm:mt-10 justify-center md:justify-start">
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
-              <Icon name="shield" class="w-4 h-4 text-amber" /> DSGVO
-            </span>
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
-              <Icon name="wallet" class="w-4 h-4 text-amber" /> Apple & Google Wallet
-            </span>
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
-              <Icon name="zap" class="w-4 h-4 text-amber" /> Live in 24h
-            </span>
-            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
-              <Icon name="check-circle" class="w-4 h-4 text-amber" /> Kein Risiko
-            </span>
-          </div>
-        </div>
+    .bk-v2 details > summary { list-style: none; }
+    .bk-v2 details > summary::-webkit-details-marker { display: none; }
+    .bk-v2 details[open] .bk-faq-plus { transform: rotate(45deg); }
+    .bk-faq-plus { display: inline-block; transition: transform 0.2s ease; }
 
-        <!-- Phone Mockup -->
-        <div class="flex justify-center md:justify-end items-center h-full">
-          <PhoneMockup client:visible />
-        </div>
-      </div>
-    </div>
+    /* Responsive: Nav-Links nur Desktop, Sticky-CTA nur Mobile */
+    .bk-sticky { display: none; }
+    @media (max-width: 819px) {
+      .bk-nav-links { display: none !important; }
+      .bk-sticky.is-ready:not(.is-hidden) { display: flex; }
+      .bk-v2 main { padding-bottom: 84px; }
+    }
 
-    <!-- Bottom fade to next section -->
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-paper to-transparent"></div>
-  </section>
+    /* Hero-Beiwerk (Papierkarte + Pfeil) steht neben dem Handy und braucht dafuer
+       rund 480px in der Bildspalte — die gibt es erst ab ca. 1080px Fensterbreite.
+       Darunter zeigt der Hero nur das Handy. */
+    @media (max-width: 1080px) {
+      .bk-hero-aside { display: none !important; }
+    }
 
-  <!-- ── PROBLEM / SOLUTION ────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
-    <div class="max-w-6xl mx-auto">
-      <!-- Divider label -->
-      <div class="flex items-center gap-4 mb-8 sm:mb-12">
-        <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Das Problem</span>
-        <div class="h-px flex-1 bg-ink/20"></div>
-      </div>
+    /* hidden-Attribut muss auch gegen Inline-display gewinnen */
+    .bk-v2 [hidden] { display: none !important; }
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="border border-ink/30 p-8">
-          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Papierstempelkarte</p>
-          <ul class="space-y-4">
-            {problems.map(t => (
-              <li class="flex items-start gap-3 text-base text-ink font-normal">
-                <span class="text-ink mt-0.5 flex-shrink-0">—</span>
-                {t}
-              </li>
-            ))}
-          </ul>
-        </div>
+    .bk-form-error { display: none; font-size: 13.5px; color: #B23A2B; margin: 12px 0 0; text-align: center; line-height: 1.5; }
+    .bk-form-error.is-visible { display: block; }
+    .bk-submitting { opacity: 0.65; pointer-events: none; }
 
-        <div class="border border-amber/50 bg-amber/3 p-8">
-          <p class="text-xs tracking-[0.3em] uppercase text-amber mb-6">bonuskarte.digital</p>
-          <ul class="space-y-4">
-            {solutions.map(t => (
-              <li class="flex items-start gap-3 text-base text-ink font-normal">
-                <Icon name="diamond" class="w-4 h-4 text-amber mt-1.5 flex-shrink-0" />
-                {t}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    @media (prefers-reduced-motion: reduce) {
+      .bk-v2 *, .bk-v2 *::before, .bk-v2 *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
 
-  <!-- ── HOW IT WORKS ──────────────────────────────────────────── -->
-  <section id="wie-es-funktioniert" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
-    <div class="relative max-w-6xl mx-auto">
-      <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Wie es funktioniert</span>
-        <div class="h-px flex-1 bg-ink/20"></div>
-      </div>
+  <div class="bk-v2" style="overflow-x:hidden;position:relative">
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-        {howItWorks.map((item, i) => (
-          <div class="group bg-paper border border-ink/30 hover:border-amber/50 shadow-sm p-4 sm:p-7 transition-all">
-            <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-3">{item.step}</div>
-            <h3 class="font-semibold text-ink tracking-wide mb-1 text-sm">{item.title}</h3>
-            <p class="text-ink text-sm leading-relaxed font-normal">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
-  <section id="demo" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber rounded-full blur-[180px] opacity-5"></div>
-    <div class="relative max-w-xl mx-auto">
-      <div class="text-center mb-10">
-        <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2 mb-8">
-          <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
-          <span class="text-amber text-xs tracking-[0.3em] uppercase">
-            90 Tage kostenlos testen
-          </span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">Demo-Karte</h2>
-        <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-6">direkt ins Wallet.</h2>
-        <p class="text-ink text-base font-normal leading-relaxed max-w-sm mx-auto">
-          Branche wählen, eintragen – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
-        </p>
-      </div>
-      <div class="relative border border-amber/20 bg-paper p-6 sm:p-10">
-        <LeadForm
-          client:load
-          niche=""
-          city=""
-          whatsappUrl={whatsappUrl}
-          bookingUrl={bookingUrl}
-          bookingType="15min"
-          source="homepage"
-          selectableNiche={true}
-          nicheOptions={nicheOptions}
-        />
-      </div>
-      <p class="text-center text-ink text-sm mt-5">
-        Nach 90 Tagen ab 29 €/Monat — unter 1 € pro Tag ·
-        <a href="/preise/" class="text-amber hover:text-amber underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ── SOCIAL PROOF ───────────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper-dark">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Das sagen unsere Kunden</span>
-        <div class="h-px flex-1 bg-ink/20"></div>
-      </div>
-
-      <!-- Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-        {[
-          { value: '23', label: 'Betriebe aktiv' },
-          { value: '2.400+', label: 'Karten im Umlauf' },
-          { value: '15', label: 'Städte live' },
-          { value: '24h', label: 'Setup-Zeit' },
-        ].map(stat => (
-          <div class="bg-paper border border-ink/30 shadow-sm p-6 text-center">
-            <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
-            <div class="text-xs tracking-[0.25em] uppercase text-ink">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-
-      <!-- Testimonials -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {testimonials.map(t => (
-          <div class="bg-paper border border-ink/30 hover:border-amber/50 shadow-sm p-6 transition-colors">
-            <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-amber/50 mb-4" />
-            <blockquote class="text-ink text-sm font-normal leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
-            <div>
-              <p class="text-ink text-sm font-semibold">{t.name}</p>
-              <p class="text-ink text-sm font-normal">{t.role}</p>
-              <p class="text-amber text-sm font-normal">{t.location}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ── STÄDTE ────────────────────────────────────────────────── -->
-  <section id="staedte" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Verfügbare Städte</span>
-        <div class="h-px flex-1 bg-ink/20"></div>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {cities.map(c => (
-          c.available ? (
-            <a href={c.href}
-              class="group border border-amber/50 hover:border-amber hover:bg-amber/5 p-6 text-center transition-all">
-              <svg class="w-4 h-4 text-amber/60 group-hover:text-amber mx-auto mb-2 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4-4-7-7.5-7-10.5a7 7 0 1114 0C19 13.5 16 17 12 21z"/><circle cx="12" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg>
-              <div class="text-xs font-semibold tracking-widest uppercase text-ink group-hover:text-amber">{c.label}</div>
-              <div class="mt-3 text-xs tracking-[0.2em] uppercase text-amber flex items-center justify-center gap-1">
-                Zur Stadt
-                <svg class="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
-                </svg>
-              </div>
-            </a>
-          ) : (
-            <div class="border border-ink/10 p-6 text-center">
-              <svg class="w-4 h-4 text-ink/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4-4-7-7.5-7-10.5a7 7 0 1114 0C19 13.5 16 17 12 21z"/><circle cx="12" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg>
-              <div class="text-xs font-semibold tracking-widest uppercase text-ink">{c.label}</div>
-              <div class="mt-3 text-xs tracking-[0.2em] uppercase text-ink">Bald verfügbar</div>
-            </div>
-          )
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FAQ ────────────────────────────────────────────────────── -->
-  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper-dark relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
-    <div class="relative max-w-3xl mx-auto">
-      <div class="flex items-center gap-4 mb-6 sm:mb-10">
-        <div class="h-px flex-1 bg-ink/20"></div>
-        <span class="text-xs tracking-[0.4em] uppercase text-ink">Häufige Fragen</span>
-        <div class="h-px flex-1 bg-ink/20"></div>
-      </div>
-
-      <div class="space-y-4">
-        {[
-          {
-            q: 'Ist das wirklich 90 Tage kostenlos?',
-            a: 'Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar.',
-          },
-          {
-            q: 'Brauchen meine Kunden eine App?',
-            a: 'Nein, keine App und kein Download. Beim ersten Scan meldet sich dein Gast in unter einer Minute an (Name, E-Mail oder Handynummer, Geburtstag) – danach liegt die Karte direkt in Apple oder Google Wallet, die auf jedem Smartphone vorinstalliert sind.',
-          },
-          {
-            q: 'Wie viel Aufwand habe ich bei der Einrichtung?',
-            a: 'Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live.',
-          },
-          {
-            q: 'Was kostet es nach der Testphase?',
-            a: 'Ab 29 €/Monat – bis zu 3 Standorte inklusive, das sind unter 1 € pro Tag. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Kommt nur ein Gast pro Monat wegen der Karte einmal mehr, hat es sich schon bezahlt. Keine Setup-Gebühr, monatlich kündbar.',
-          },
-          {
-            q: 'Funktioniert das auch für Nicht-Gastro-Betriebe?',
-            a: 'Ja. Neben Stempelkarten bieten wir Mitgliedskarten, 10er-Karten, Geschenkkarten und Guthabenkarten – für Friseure, Fitnessstudios, Yoga-Studios, Blumenläden und mehr.',
-          },
-          {
-            q: 'Ist das DSGVO-konform?',
-            a: 'Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden.',
-          },
-        ].map(faq => (
-          <details class="group border border-ink/30 hover:border-amber/20 transition-colors">
-            <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
-              <span class="text-ink text-sm font-medium pr-4">{faq.q}</span>
-              <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-              </svg>
-            </summary>
-            <div class="px-5 sm:px-6 pb-5 sm:pb-6">
-              <p class="text-ink text-sm leading-relaxed font-normal">{faq.a}</p>
-            </div>
-          </details>
-        ))}
-      </div>
-      <div class="text-center mt-8">
-        <a href="/faq/" class="inline-flex items-center gap-2 text-amber hover:text-amber text-xs tracking-[0.2em] uppercase transition-colors">
-          Alle Fragen ansehen
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
+    <!-- ======================= HEADER ======================= -->
+    <header style="position:sticky;top:0;z-index:60;background:rgba(246,241,232,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)">
+      <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+        <a href="/" aria-label="bonuskarte.digital – Startseite" style="display:flex;align-items:center;flex-shrink:0">
+          <img src="/images/v2/lockup-horizontal-primary.svg" alt="bonuskarte.digital" width="192" height="30" style="height:30px;width:auto;display:block" />
         </a>
+        <nav aria-label="Hauptnavigation" style="display:flex;align-items:center;gap:26px">
+          <span class="bk-nav-links" style="display:flex;align-items:center;gap:26px">
+            <a href="#ausprobieren" class="bk-navlink">Ausprobieren</a>
+            <a href="/karten/" class="bk-navlink">Karten</a>
+            <a href="/funktionen/" class="bk-navlink">Funktionen</a>
+            <a href="/preise/" class="bk-navlink">Preise</a>
+            <a href="/koeln/" class="bk-navlink">Köln</a>
+            <a href="#faq" class="bk-navlink">FAQ</a>
+          </span>
+          <button type="button" class="bk-btn bk-btn--sm" data-scroll-to-form>Demo-Karte ins Wallet holen</button>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
-  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
-    <div class="relative max-w-3xl mx-auto text-center">
-      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 Tage kostenlos</p>
-      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
-        Bereit für mehr
-      </h2>
-      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">
-        Stammkunden?
-      </h2>
-      <p class="text-ink text-xs tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
-      <a href="#demo"
-        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
-        Kostenlos starten
-        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
-    </div>
-  </section>
+    <main>
+      <!-- ======================= HERO ======================= -->
+      <section style="position:relative;padding:clamp(40px,7vw,84px) 24px clamp(56px,8vw,96px)">
+        <div aria-hidden="true" style="position:absolute;top:8%;right:6%;width:190px;height:190px;border-radius:50%;border:6px solid rgba(242,92,36,0.10);pointer-events:none"></div>
+        <div aria-hidden="true" style="position:absolute;bottom:10%;left:4%;width:120px;height:120px;border-radius:50%;border:2px dashed var(--ink-14);pointer-events:none"></div>
 
-  <StickyMobileCta label="Kostenlos testen" />
-  <Footer />
+        <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
+          <!-- copy column -->
+          <div style="flex:1 1 440px;min-width:300px">
+            <p id="hero-eyebrow" style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Digitale Stempelkarte &amp; Bonuskarte · Apple &amp; Google Wallet · aus Köln</p>
+            <h1 id="hero-h1" style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale <span style="color:var(--accent);position:relative;white-space:nowrap">Bonuskarte ohne App</span></h1>
+            <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:44ch">Direkt in Apple Wallet und Google Wallet. Kein Download, kein Plastik, in 24 Stunden startklar. Deine Kund:innen sammeln Stempel im Handy – aus Erstbesuchern werden Stammkunden.</p>
+
+            <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+              <button type="button" class="bk-btn bk-btn--lg" data-scroll-to-form style="width:auto;padding:0 30px">Demo-Karte ins Wallet holen</button>
+              <span style="font-family:var(--font-hand);font-size:20px;color:var(--accent);transform:rotate(-3deg)">in 60 Sekunden →</span>
+            </div>
+
+            <div style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--ink-56)">
+              <span>Einrichtung inklusive</span><span aria-hidden="true" style="color:var(--accent)">·</span>
+              <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--accent)">·</span>
+              <span>monatlich kündbar</span>
+            </div>
+          </div>
+
+          <!-- product visual: Papier → Pfeil → Smartphone, nebeneinander -->
+          <div style="flex:1 1 380px;min-width:280px;display:flex;justify-content:center;align-items:center">
+            <div style="display:flex;align-items:center;justify-content:center;gap:clamp(6px,1.2vw,14px);width:100%">
+
+              <!-- Papier-Stempelkarte (vollstaendig sichtbar, links) -->
+              <div class="bk-hero-aside" aria-hidden="true" style="flex:0 0 auto;transform:rotate(-6deg);width:138px">
+                <div style="background:#EFE7D6;border:1px solid var(--ink-14);border-radius:10px;padding:14px 14px 12px;box-shadow:var(--shadow-lg)">
+                  <div style="font-family:var(--font-hand);font-size:17px;line-height:1.15;color:var(--ink-72);margin-bottom:10px">Papier<br />Stempelkarte</div>
+                  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">
+                    <span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
+                    <span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- oranger Pfeil Papier → Handy -->
+              <svg class="bk-hero-aside" aria-hidden="true" width="76" height="52" viewBox="0 0 76 52" style="flex:0 0 auto;overflow:visible">
+                <path d="M3 40 C 20 46, 40 40, 56 18" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" />
+                <path d="M47 8 L70 11 L58 30 Z" fill="var(--accent)" />
+              </svg>
+
+              <!-- iPhone mit Wallet-Karte -->
+              <div style="flex:0 0 auto;position:relative;width:240px;max-width:100%;aspect-ratio:9 / 19;background:#1A160F;border-radius:38px;padding:8px;box-shadow:0 30px 70px rgba(26,20,16,0.32)">
+                <div style="position:relative;width:100%;height:100%;background:#F6F1E8;border-radius:31px;overflow:hidden;box-sizing:border-box;padding:26px 13px 16px;display:flex;flex-direction:column">
+                  <span aria-hidden="true" style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:76px;height:20px;background:#1A160F;border-radius:999px"></span>
+                  <div style="background:#1A160F;border-radius:13px;padding:13px 12px 11px;box-shadow:0 8px 20px rgba(0,0,0,0.28)">
+                    <img src="/images/v2/lockup-horizontal-on-dark.svg" alt="bonuskarte.digital" width="118" height="19" style="height:19px;width:auto;display:block" />
+                    <div style="font-size:9px;color:rgba(255,255,255,0.6);margin:3px 0 0 1px">Stammkunden-Karte</div>
+                    <StampGridV2 filled={8} gap="5px" />
+                    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px">
+                      <div><div style="font-size:7.5px;font-weight:600;letter-spacing:0.06em;color:rgba(255,255,255,0.65)">VORNAME</div><div style="font-size:15px;color:#fff;line-height:1.1;margin-top:2px">Daniel</div></div>
+                      <div style="text-align:right"><div style="font-size:7.5px;font-weight:600;letter-spacing:0.06em;color:rgba(255,255,255,0.65)">BIS GESCHENK</div><div style="font-size:15px;color:#fff;line-height:1.1;margin-top:2px">4 Stempel</div></div>
+                    </div>
+                    <div style="margin-top:11px;background:#fff;border-radius:6px;padding:6px 8px 4px">
+                      <img src="/images/v2/pass-barcode.png" alt="" width="706" height="212" style="width:100%;height:auto;display:block" />
+                    </div>
+                  </div>
+                  <div style="font-family:var(--font-hand);font-size:15px;color:var(--accent);text-align:center;margin-top:auto;padding-top:10px">wohnt im Handy</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= INTERACTIVE DEMO ======================= -->
+      <section id="ausprobieren" style="padding:clamp(56px,8vw,104px) 24px;border-top:1px solid var(--border)">
+        <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center">
+          <!-- iPhone mockup: die echte Karte, zum Antippen -->
+          <div style="flex:1 1 340px;min-width:300px;position:relative;display:flex;justify-content:center">
+            <div aria-hidden="true" style="position:absolute;top:-16px;left:-10px;width:150px;height:150px;border-radius:50%;border:5px solid rgba(242,92,36,0.10)"></div>
+            <!-- Device frame (portiert aus ios-frame.jsx) -->
+            <div style="display:inline-block;padding:6px;border-radius:66px;background:#E86A2E;box-shadow:0 40px 80px rgba(0,0,0,0.22), inset 0 1px 1px rgba(255,255,255,0.45), inset 0 -1px 1px rgba(0,0,0,0.28);max-width:100%">
+              <div style="padding:9px;border-radius:60px;background:#0A0A0A">
+                <div style="width:375px;max-width:calc(100vw - 80px);height:800px;border-radius:48px;overflow:hidden;position:relative;background:#000">
+                  <!-- dynamic island -->
+                  <div aria-hidden="true" style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:126px;height:37px;border-radius:24px;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,0.06);z-index:50"></div>
+                  <!-- status bar -->
+                  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;z-index:10;display:flex;padding:21px 24px 0;justify-content:space-between;color:#fff;font-size:15px;font-weight:600;font-family:-apple-system,system-ui,sans-serif">
+                    <span style="flex:1;text-align:center;padding-right:34px">9:41</span>
+                    <span style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding-left:28px">
+                      <svg width="18" height="12" viewBox="0 0 18 12" fill="#fff"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1" opacity="0.4"/></svg>
+                      <svg width="17" height="12" viewBox="0 0 17 12" fill="#fff"><path d="M8.5 9.5a2 2 0 0 1 1.7 1l-1.7 1.6L6.8 10.5a2 2 0 0 1 1.7-1Zm0-4.4c1.9 0 3.6.75 4.9 2l-1.5 1.5a4.9 4.9 0 0 0-6.8 0L3.6 7.1a6.9 6.9 0 0 1 4.9-2Zm0-4.3c3 0 5.8 1.2 7.9 3.2L15 5.4A9 9 0 0 0 2 5.4L.6 4A11.2 11.2 0 0 1 8.5.8Z"/></svg>
+                      <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3" stroke="#fff" stroke-opacity="0.5"/><rect x="2" y="2" width="16" height="8" rx="1.6" fill="#fff"/><path d="M23 4v4c0.8-0.2 1.4-1 1.4-2s-0.6-1.8-1.4-2Z" fill="#fff" fill-opacity="0.5"/></svg>
+                    </span>
+                  </div>
+                  <!-- screen content -->
+                  <div style="position:relative;height:100%;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 16px 40px;box-sizing:border-box">
+                    <div id="demo-notif" hidden style="position:absolute;top:64px;left:12px;right:12px;display:flex;gap:11px;align-items:center;background:rgba(44,40,36,0.94);border-radius:20px;padding:12px 14px;box-shadow:0 8px 24px rgba(0,0,0,0.5);animation:bk-notif 0.45s var(--ease-out) both;z-index:5">
+                      <img src="/images/v2/app-icon-amber.svg" alt="" width="38" height="38" style="width:38px;height:38px;border-radius:9px;flex-shrink:0" />
+                      <div style="min-width:0">
+                        <div style="font-size:13px;font-weight:600;color:#fff">bonuskarte.digital</div>
+                        <div style="font-size:13px;line-height:1.35;color:rgba(255,255,255,0.85)">Gratis Pizza freigeschaltet – zeig die Karte an der Theke.</div>
+                      </div>
+                    </div>
+                    <div id="demo-card" role="button" tabindex="0" aria-label="Stempel hinzufügen" style="cursor:pointer;user-select:none;width:100%;max-width:318px;background:#1A160F;border-radius:14px;padding:18px 16px 16px;box-shadow:0 18px 40px rgba(0,0,0,0.55)">
+                      <img src="/images/v2/lockup-horizontal-on-dark.svg" alt="bonuskarte.digital" width="150" height="24" style="height:24px;width:auto;display:block" />
+                      <div style="font-size:10px;color:rgba(255,255,255,0.6);margin:4px 0 0 2px">Stammkunden-Karte</div>
+                      <StampGridV2 gridId="demo-stamps" filled={7} />
+                      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:20px">
+                        <div>
+                          <div style="font-size:10.5px;font-weight:600;letter-spacing:0.07em;color:rgba(255,255,255,0.65)">VORNAME</div>
+                          <div style="font-size:26px;font-weight:400;color:#fff;line-height:1.15;margin-top:2px">Daniel</div>
+                        </div>
+                        <div style="text-align:right">
+                          <div style="font-size:10.5px;font-weight:600;letter-spacing:0.07em;color:rgba(255,255,255,0.65)">BIS GESCHENK</div>
+                          <div id="demo-left-label" style="font-size:26px;font-weight:400;color:#fff;line-height:1.15;margin-top:2px">5 Stempel</div>
+                        </div>
+                      </div>
+                      <div style="margin-top:20px;background:#fff;border-radius:9px;padding:10px 12px 8px">
+                        <img src="/images/v2/pass-barcode.png" alt="" width="706" height="212" style="width:100%;height:auto;display:block" />
+                        <div style="text-align:center;font-size:14px;color:#000;margin-top:4px">Deine Digitale Stempelkarte</div>
+                      </div>
+                    </div>
+                    <!-- ABM: echtes Boomerang-Kartenbild (nur bei ?card=… sichtbar, ersetzt die interaktive Demo-Karte) -->
+                    <img id="abm-card-img" alt="Deine Stempelkarte in Apple Wallet" hidden style="width:100%;max-width:318px;border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,0.55);display:block" />
+                  </div>
+                  <!-- home indicator -->
+                  <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;z-index:60;height:34px;display:flex;justify-content:center;align-items:flex-end;padding-bottom:8px;pointer-events:none">
+                    <div style="width:139px;height:5px;border-radius:100px;background:rgba(255,255,255,0.7)"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- copy -->
+          <div style="flex:1 1 360px;min-width:300px">
+            <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Selbst ausprobieren</p>
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 16px">Die digitale Stempelkarte zum Antippen – genau so liegt sie im Wallet.</h2>
+            <p id="demo-copy" style="font-size:19px;line-height:1.6;color:var(--ink-72);margin:0 0 26px;max-width:42ch">Die digitale Karte ist der Teil, den deine Kund:innen sehen – der sichtbare Teil deines Stammkunden-Systems. Tipp selbst drauf und stemple mit: genau so liegt sie in Apple oder Google Wallet. Kein Papier, kein Download – ein sichtbarer Grund, wiederzukommen, immer dabei im Handy.</p>
+
+            <p id="demo-hint" style="font-family:var(--font-hand);font-size:22px;color:var(--accent);margin:0;animation:bk-nudge 2s var(--ease-in-out) infinite">tipp auf die Karte – noch <span id="demo-taps-left">5</span>×</p>
+            <div id="demo-done" hidden style="display:flex;align-items:center;gap:12px;background:var(--amber-tint);border-radius:var(--radius-md);padding:14px 16px;animation:bk-rise 0.35s var(--ease-out) both;max-width:380px">
+              <span style="width:34px;height:34px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;animation:bk-thunk 0.35s var(--ease-out) both"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <div><div style="font-weight:600;font-size:16px;color:var(--v2-ink)">Gratis Pizza – freigeschaltet.</div><div style="font-size:14px;color:var(--ink-56)">Nochmal tippen für einen neuen Durchlauf.</div></div>
+            </div>
+
+            <div style="margin-top:30px">
+              <!-- ABM: Install-Link der echten Karte (nur bei ?pass=… sichtbar) -->
+              <a id="abm-pass-link" class="bk-btn bk-btn--md" hidden target="_blank" rel="noopener noreferrer" style="width:auto;margin-bottom:14px">Diese Karte ins Wallet laden</a>
+              <button type="button" class="bk-btn bk-btn--md" data-scroll-to-form style="width:auto">Erstelle deine eigene Karte – kostenlos</button>
+              <p style="font-size:15px;color:var(--ink-56);margin:12px 0 0">Mit deinem Logo, deiner Belohnung. Einrichtung inklusive, in unter 24 h live.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= DEMO-KARTE / LEAD-FORMULAR ======================= -->
+      <section style="padding:0 24px clamp(48px,7vw,88px)">
+        <div id="lead" style="max-width:460px;margin:0 auto;scroll-margin-top:90px">
+            <div style="position:relative;transform:rotate(-1.1deg)">
+              <div aria-hidden="true" style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:var(--accent);box-shadow:var(--shadow-md);z-index:2"></div>
+              <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:28px clamp(22px,4vw,34px) 30px;overflow:hidden">
+                <div aria-hidden="true" style="display:flex;justify-content:center;gap:9px;margin:-6px 0 18px">
+                  <span style="width:6px;height:6px;border-radius:50%;background:var(--surface-sunken)"></span><span style="width:6px;height:6px;border-radius:50%;background:var(--surface-sunken)"></span><span style="width:6px;height:6px;border-radius:50%;background:var(--surface-sunken)"></span><span style="width:6px;height:6px;border-radius:50%;background:var(--surface-sunken)"></span><span style="width:6px;height:6px;border-radius:50%;background:var(--surface-sunken)"></span>
+                </div>
+
+                <form data-bk-form="a" novalidate style="display:flex;flex-direction:column">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1.5px dashed var(--ink-24);padding-bottom:12px;margin-bottom:20px">
+                    <h2 style="font-family:var(--font-serif);font-size:22px;font-weight:600;margin:0;letter-spacing:-0.01em">Deine Demo-Karte – gleich im Wallet</h2>
+                    <span style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-40);text-align:right;flex-shrink:0;margin-left:16px;max-width:42%;line-height:1.5">Wir liefern innerhalb von 24 h</span>
+                  </div>
+                  <p style="font-family:var(--font-hand);font-size:20px;color:var(--ink-72);margin:-8px 0 20px">Betrieb, Branche, Name, Handy – eine Minute, wir machen den Rest.</p>
+
+                  <label style="display:block;margin-bottom:18px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Name des Betriebs</span>
+                    <input type="text" name="betrieb" required autocomplete="organization" placeholder="z. B. dein Café" class="bk-field" style={fieldStyle} />
+                  </label>
+
+                  <label style="display:block;margin-bottom:18px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Branche</span>
+                    <select name="branche" required class="bk-field" style={`${fieldStyle};appearance:none;-webkit-appearance:none;cursor:pointer;${selectChevron}`}>
+                      <option value="">Bitte wählen …</option>
+                      {branchen.map(b => <option value={b.value}>{b.label}</option>)}
+                    </select>
+                  </label>
+
+                  <label style="display:block;margin-bottom:18px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Dein Vorname</span>
+                    <input type="text" name="vorname" required autocomplete="given-name" placeholder="z. B. Alev" class="bk-field" style={fieldStyle} />
+                  </label>
+
+                  <label style="display:block;margin-bottom:24px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Handynummer oder E-Mail</span>
+                    <input type="text" name="kontakt" required autocomplete="tel" inputmode="email" placeholder="0176 … oder du@laden.de" class="bk-field" style={fieldStyle} />
+                  </label>
+
+                  <button type="submit" class="bk-btn bk-btn--lg">Demo-Karte ins Wallet holen</button>
+                  <p class="bk-form-error" role="alert">Das hat leider nicht geklappt. Versuch's nochmal – oder schreib uns direkt auf WhatsApp.</p>
+                  <p style="text-align:center;font-size:14px;color:var(--ink-56);margin:14px 0 0;line-height:1.5">Keine Kreditkarte. Demo-Karte sofort im Wallet, deine Version mit Logo in 24 h.</p>
+                </form>
+
+                <div data-bk-success="a" hidden style="text-align:center;padding:14px 0 6px;animation:bk-rise 0.4s var(--ease-out) both">
+                  <div style="width:64px;height:64px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:var(--shadow-amber);animation:bk-thunk 0.35s var(--ease-out) both">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </div>
+                  <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:600;margin:0 0 8px;letter-spacing:-0.01em">Angekommen.</h3>
+                  <p style="font-size:16px;color:var(--ink-72);line-height:1.55;margin:0 auto 20px;max-width:32ch">Danke! Deine Demo-Karte kannst du jetzt ins Wallet laden. Deine Karte mit eigenem Logo und Prämie bauen wir innerhalb von 24 Stunden.</p>
+                  <a class="bk-installlink bk-btn bk-btn--md" hidden target="_blank" rel="noopener noreferrer" style="width:auto;margin-bottom:16px">Demo-Karte ins Wallet laden</a>
+                  <p style="font-size:15px;color:var(--ink-56);margin:0 0 10px">Lieber sofort quatschen?</p>
+                  <a href={whatsappUrl} class="bk-whatsapp" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:14px;border:1px solid var(--border-strong);color:var(--v2-ink);text-decoration:none;font-weight:600;font-size:16px">Auf WhatsApp schreiben</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- ======================= PROOF / ZAHLEN ======================= -->
+      <section aria-label="Zahlen" style="padding:clamp(32px,5vw,52px) 24px;background:var(--v2-ink);color:var(--v2-paper)">
+        <div style="max-width:1000px;margin:0 auto">
+          <p style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 26px;text-align:center">Und es funktioniert – längst</p>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,5vw,28px)">
+            {[
+              { n: '23', l: 'Betriebe aktiv' },
+              { n: '2.400+', l: 'Karten im Umlauf' },
+              { n: '15', l: 'Städte live' },
+              { n: '24 h', l: 'bis deine Karte live ist' },
+            ].map(s => (
+              <div style="flex:1 1 160px;min-width:140px;max-width:230px;text-align:center;padding:8px 4px">
+                <div style="font-family:var(--font-serif);font-weight:600;font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:-0.02em;color:var(--v2-paper)">{s.n}</div>
+                <div style="font-size:14px;line-height:1.4;color:var(--paper-72);margin-top:8px">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= TESTIMONIAL ======================= -->
+      <section style="padding:clamp(56px,8vw,110px) 24px">
+        <div style="max-width:1100px;margin:0 auto">
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 30px">Echte Betriebe, echte Zahlen</p>
+
+          <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,52px);align-items:center">
+            <div style="flex:1 1 300px;min-width:260px;position:relative">
+              <img src="/images/testimonials/erste-liebe-cafe.jpg" alt="Café Erste Liebe in Köln – Team beim Aufbau kurz vor der Eröffnung" loading="lazy" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;box-shadow:var(--shadow-lg);transform:rotate(-1.4deg)" />
+            </div>
+            <blockquote style="flex:1 1 380px;min-width:300px;margin:0">
+              <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-56);margin:0 0 14px">Café Erste Liebe · Köln, Neustadt Süd</p>
+              <p style="font-family:var(--font-serif);font-weight:500;font-size:clamp(22px,3vw,34px);line-height:1.24;letter-spacing:-0.01em;color:var(--v2-ink);margin:0 0 22px;text-wrap:pretty">„Daniel kam schon bei der Eröffnung von Erste Liebe auf uns zu. GoLive war 24 Stunden später. Keine Ausfälle, Kunden lieben es. Wir haben schon 200 Karten im Umlauf – und nutzen bisher nur 10 % der Plattform.“</p>
+              <footer style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+                <img src="/images/testimonials/erste-liebe.jpg" alt="" width="44" height="44" loading="lazy" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0" />
+                <div><div style="font-weight:600;font-size:17px">Tim</div><div style="font-size:15px;color:var(--ink-56)">Inhaber, Café Erste Liebe</div></div>
+              </footer>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">
+                {[ 'Live in 24 h', '200 Karten im Umlauf', '0 Ausfälle' ].map(s => (
+                  <span style="display:inline-flex;align-items:center;gap:8px;background:var(--amber-tint);border-radius:999px;padding:8px 14px;font-size:15px;font-weight:600;color:var(--amber-press)">{s}</span>
+                ))}
+              </div>
+            </blockquote>
+          </article>
+
+          <!-- pinned clippings (echte Kundenstimmen von der Startseite) -->
+          <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:48px">
+            <div style="flex:1 1 300px;min-width:260px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:22px 24px;transform:rotate(-1deg)">
+              <p style="font-size:17px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„Seit wir über 1.000 aktive Karten draußen haben, kommen deutlich mehr Stammkunden wieder.“</p>
+              <div style="font-size:15px;color:var(--ink-56)">Yussuf · Der Dönermacher, Köln Braunsfeld</div>
+            </div>
+            <div style="flex:1 1 300px;min-width:260px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:22px 24px;transform:rotate(1.2deg)">
+              <p style="font-size:17px;line-height:1.55;color:var(--v2-ink);margin:0 0 14px">„Simple, effective – and despite our disbelief, even in a touristic village like Corralejo. … Fully recommended.“</p>
+              <div style="font-size:15px;color:var(--ink-56)">Jao · ASAP Cafe, Fuerteventura</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= PROBLEM ======================= -->
+      <section id="problem" style="padding:clamp(56px,8vw,104px) 24px;border-top:1px solid var(--border)">
+        <div style="max-width:840px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Jeder Betrieb kennt das</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,4vw,42px);line-height:1.12;letter-spacing:-0.01em;margin:0 auto;max-width:20ch;text-wrap:balance">Zufriedene Gäste kommen nicht automatisch zurück.</h2>
+
+          <div aria-hidden="true" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:38px 0">
+            <span style="display:inline-flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:10px 18px;box-shadow:var(--shadow-sm);font-size:16px;font-weight:600;color:var(--v2-ink)"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>Heute: ein Gast steht bei dir</span>
+            <svg width="20" height="26" viewBox="0 0 20 26" fill="none" stroke="var(--ink-40)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 1v20"/><path d="m3 15 7 8 7-8"/></svg>
+            <span style="display:inline-flex;align-items:center;gap:9px;background:transparent;border:1.5px dashed var(--border-strong);border-radius:999px;padding:10px 18px;font-size:16px;font-weight:600;color:var(--ink-56)">Nächste Woche: kommt er wieder? <span style="font-family:var(--font-hand);font-size:22px;color:var(--accent);line-height:1">?</span></span>
+          </div>
+
+          <p style="font-size:20px;line-height:1.65;color:var(--ink-72);margin:0 auto;max-width:54ch;text-wrap:pretty">Ein Gast kann deinen Laden lieben – und beim nächsten Mal trotzdem woanders landen. Nicht, weil es ihm nicht geschmeckt hat. Sondern weil <em style="font-style:normal;color:var(--v2-ink);font-weight:600">Alltag stärker ist als Erinnerung</em>. Genau da setzt ein Stammkunden-System an.</p>
+        </div>
+      </section>
+
+      <!-- ======================= VOM BESUCH ZUR ROUTINE ======================= -->
+      <section id="routine" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
+        <div style="max-width:1000px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 16px">Vom Besuch zur Routine</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0 auto 14px;max-width:22ch;text-wrap:balance">Der erste Besuch ist nur der Anfang.</h2>
+          <p style="font-size:20px;line-height:1.6;color:var(--ink-72);margin:0 auto 44px;max-width:50ch">Stammkunden entstehen nicht durch einen Rabatt. Sie entstehen, wenn Menschen einen Grund haben, wiederzukommen.</p>
+
+          <ol style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;justify-content:center">
+            {[
+              { n: '1', t: 'Erster Besuch', d: 'Der Gast entdeckt dich – und bekommt seine Karte in die Wallet.', fill: 0.10 },
+              { n: '2', t: 'Zweiter Besuch', d: 'Ein Stempel mehr. Ein sichtbarer Grund, wiederzukommen.', fill: 0.30 },
+              { n: '3', t: 'Regelmäßiger Gast', d: 'Die Karte erinnert – dein Laden wird zur Gewohnheit.', fill: 0.60 },
+              { n: '★', t: 'Stammkunde', d: 'Aus dem Besuch ist eine Beziehung geworden.', fill: 1 },
+            ].map((s, i) => (
+              <li style={`flex:1 1 200px;min-width:190px;max-width:260px;position:relative;background:var(--white);border:1px solid var(--border);border-top:3px solid rgba(242,92,36,${s.fill});border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:22px 20px;text-align:left`}>
+                <span style={`display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-weight:700;font-size:15px;margin-bottom:12px;${s.fill >= 1 ? 'background:var(--accent);color:var(--v2-paper)' : 'background:var(--amber-tint);color:var(--amber-press)'}`}>{s.n}</span>
+                <div style="font-family:var(--font-serif);font-weight:600;font-size:20px;color:var(--v2-ink);margin-bottom:6px">{s.t}</div>
+                <div style="font-size:15px;line-height:1.5;color:var(--ink-56)">{s.d}</div>
+                {i < 3 && <span aria-hidden="true" style="display:none"></span>}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <!-- ======================= SO LÄUFT'S (RECEIPT) ======================= -->
+      <section id="so-laeufts" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
+        <div style="max-width:760px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">In vier Schritten</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-0.01em;margin:0 0 44px">So funktioniert die digitale Bonuskarte – aufgedruckt.</h2>
+        </div>
+
+        <div style="max-width:420px;margin:0 auto;position:relative">
+          <div style="background:var(--white);box-shadow:var(--shadow-lg);padding:30px clamp(24px,5vw,38px);font-family:var(--font-mono);color:var(--v2-ink)">
+            <div style="text-align:center;border-bottom:1.5px dashed var(--ink-24);padding-bottom:16px;margin-bottom:8px">
+              <div style="font-size:15px;letter-spacing:0.18em;text-transform:uppercase;font-weight:600">bonuskarte.digital</div>
+              <div style="font-size:13px;letter-spacing:0.1em;color:var(--ink-40);margin-top:4px">BELEG · SO LÄUFT'S</div>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px dashed var(--ink-14)">
+              <div style="text-align:left"><div style="font-size:16px;font-weight:600;font-family:var(--font-sans)">1 · Du meldest dich</div><div style="font-size:15px;color:var(--ink-56);font-family:var(--font-sans);margin-top:3px">Drei Felder ausfüllen. Das war dein Teil.</div></div>
+              <span style="font-size:15px;color:var(--ink-72);white-space:nowrap">2 Min</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px dashed var(--ink-14)">
+              <div style="text-align:left"><div style="font-size:16px;font-weight:600;font-family:var(--font-sans)">2 · Wir bauen deine Karte</div><div style="font-size:15px;color:var(--ink-56);font-family:var(--font-sans);margin-top:3px">Logo, Farben, Belohnung – fertig eingerichtet.</div></div>
+              <span style="font-size:15px;color:var(--ink-72);white-space:nowrap">24 h</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px dashed var(--ink-14)">
+              <div style="text-align:left"><div style="font-size:16px;font-weight:600;font-family:var(--font-sans)">3 · Gäste speichern sie</div><div style="font-size:15px;color:var(--ink-56);font-family:var(--font-sans);margin-top:3px">Ein Tipp – ab in Apple oder Google Wallet.</div></div>
+              <span style="font-size:15px;color:var(--ink-72);white-space:nowrap">1 Tipp</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1.5px dashed var(--ink-24)">
+              <div style="text-align:left"><div style="font-size:16px;font-weight:600;font-family:var(--font-sans)">4 · Stempeln &amp; wiederkommen</div><div style="font-size:15px;color:var(--ink-56);font-family:var(--font-sans);margin-top:3px">Du vergibst Stempel, sie kommen zurück.</div></div>
+              <span style="font-size:15px;color:var(--ink-72);white-space:nowrap">∞</span>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:18px">
+              <span style="font-size:16px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600">Summe</span>
+              <span style="font-size:20px;font-weight:600;color:var(--accent)">mehr Stammkunden</span>
+            </div>
+            <div style="text-align:center;font-size:13px;color:var(--ink-40);margin-top:14px;letter-spacing:0.06em">* * * EIN BESUCH IST GUT. VIELE BESUCHE SIND NOCH BESSER. * * *</div>
+          </div>
+          <div aria-hidden="true" style="height:12px;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2212%22%3E%3Cpath d=%22M0 0 L12 12 L24 0 Z%22 fill=%22%23ffffff%22/%3E%3C/svg%3E') repeat-x top center"></div>
+        </div>
+      </section>
+
+      <!-- ======================= VORHER / NACHHER STORY ======================= -->
+      <section style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
+        <div style="max-width:920px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 16px">Vom Papier in die Hosentasche</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.2;letter-spacing:-0.01em;margin:0 auto 40px;max-width:24ch;text-wrap:balance">Die Papierkarte lag im Portemonnaie, bis sie durchweichte. Die neue wohnt im Handy.</h2>
+
+          <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,56px);align-items:center;justify-content:center">
+            <!-- worn paper card -->
+            <div aria-hidden="true" style="flex:0 0 auto;position:relative;transform:rotate(-3deg)">
+              <div style="width:230px;background:#EFE7D6;border:1px solid var(--ink-14);border-radius:8px;padding:18px 18px 16px;box-shadow:var(--shadow-sm);opacity:0.85">
+                <div style="font-family:var(--font-hand);font-size:19px;line-height:1.15;color:var(--ink-72);margin-bottom:12px">Papier<br />Stempelkarte</div>
+                <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+                  <span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px solid var(--ink-40);background:rgba(242,92,36,0.5)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
+                  <span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span><span style="aspect-ratio:1;border-radius:50%;border:1.5px dashed var(--ink-24)"></span>
+                </div>
+              </div>
+              <div style="position:absolute;bottom:-8px;right:-8px;width:60px;height:60px;border-radius:50%;border:3px solid rgba(26,20,16,0.12)"></div>
+            </div>
+
+            <span aria-hidden="true" style="font-family:var(--font-hand);font-size:26px;color:var(--accent);transform:rotate(-4deg)">wird zu →</span>
+
+            <!-- wallet pass -->
+            <div style="flex:0 0 auto;width:270px;background:#1A160F;border-radius:12px;padding:14px 13px 13px;box-shadow:var(--shadow-lg);transform:rotate(2deg);text-align:left">
+              <img src="/images/v2/lockup-horizontal-on-dark.svg" alt="bonuskarte.digital" width="120" height="19" style="height:19px;width:auto;display:block" />
+              <div style="font-size:8.5px;color:rgba(255,255,255,0.6);margin:3px 0 0 1px">Stammkunden-Karte</div>
+              <StampGridV2 filled={1} gap="7px" />
+              <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-top:14px">
+                <div>
+                  <div style="font-size:8.5px;font-weight:600;letter-spacing:0.07em;color:rgba(255,255,255,0.65)">VORNAME</div>
+                  <div style="font-size:19px;font-weight:400;color:#fff;line-height:1.15;margin-top:2px">Daniel</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:8.5px;font-weight:600;letter-spacing:0.07em;color:rgba(255,255,255,0.65)">BIS GESCHENK</div>
+                  <div style="font-size:19px;font-weight:400;color:#fff;line-height:1.15;margin-top:2px">11 Stempel</div>
+                </div>
+              </div>
+              <div style="margin-top:14px;background:#fff;border-radius:7px;padding:7px 9px 5px">
+                <img src="/images/v2/pass-barcode.png" alt="" width="706" height="212" style="width:100%;height:auto;display:block" />
+                <div style="text-align:center;font-size:9.5px;color:#000;margin-top:3px">Deine Digitale Stempelkarte</div>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size:19px;line-height:1.65;color:var(--ink-72);margin:44px auto 0;max-width:56ch;text-wrap:pretty">Kein Verlieren, kein Nachdrucken, kein „Ich hatte die Karte gerade nicht dabei“. Die Treuekarte ist immer da – und du siehst, wer wiederkommt.</p>
+        </div>
+      </section>
+
+      <!-- ======================= DARK WALLET / SCROLL-STAMP ======================= -->
+      <section style="background:var(--v2-ink);color:var(--v2-paper);padding:clamp(64px,9vw,120px) 24px;position:relative;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;top:-40px;right:-40px;width:260px;height:260px;border-radius:50%;border:2px solid var(--paper-10)"></div>
+        <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(36px,6vw,80px);align-items:center">
+          <div style="flex:1 1 380px;min-width:300px">
+            <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">In der Wallet, wo alle schon sind</p>
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(34px,5.5vw,60px);line-height:1.02;letter-spacing:-0.02em;margin:0 0 22px;color:var(--v2-paper)">Sammeln.<br />Belohnen.<br />Im Handy.</h2>
+            <p style="font-size:20px;line-height:1.6;color:var(--paper-72);margin:0 0 12px;max-width:44ch">Die Karte liegt neben Bordkarte und Bankkarte – dort, wo dein Gast jeden Tag ohnehin hinschaut. Jeder Stempel landet automatisch drin, jede volle Karte wird zur Einladung, wiederzukommen.</p>
+            <p style="font-family:var(--font-hand);font-size:22px;color:var(--accent);margin:22px 0 0">↓ scroll weiter – wir stempeln mit</p>
+          </div>
+          <div style="flex:0 0 auto;margin:0 auto" id="scroll-pass">
+            <div style="width:340px;max-width:100%;background:#1A160F;border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:18px 16px 16px;box-shadow:0 24px 60px rgba(0,0,0,0.45)">
+              <img src="/images/v2/lockup-horizontal-on-dark.svg" alt="bonuskarte.digital" width="150" height="24" style="height:24px;width:auto;display:block" />
+              <div style="font-size:10px;color:rgba(255,255,255,0.6);margin:4px 0 0 2px">Stammkunden-Karte</div>
+              <StampGridV2 gridId="scroll-stamps" filled={5} />
+              <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:20px">
+                <div>
+                  <div style="font-size:10.5px;font-weight:600;letter-spacing:0.07em;color:rgba(255,255,255,0.65)">VORNAME</div>
+                  <div style="font-size:26px;font-weight:400;color:#fff;line-height:1.15;margin-top:2px">Daniel</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:10.5px;font-weight:600;letter-spacing:0.07em;color:rgba(255,255,255,0.65)">BIS GESCHENK</div>
+                  <div id="scroll-left-label" style="font-size:26px;font-weight:400;color:#fff;line-height:1.15;margin-top:2px">7 Stempel</div>
+                </div>
+              </div>
+              <div style="margin-top:20px;background:#fff;border-radius:9px;padding:10px 12px 8px">
+                <img src="/images/v2/pass-barcode.png" alt="" width="706" height="212" style="width:100%;height:auto;display:block" />
+                <div style="text-align:center;font-size:14px;color:#000;margin-top:4px">Deine Digitale Stempelkarte</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= WAS DAS BEDEUTET (BENEFITS) ======================= -->
+      <section id="vorteile" style="padding:clamp(56px,8vw,104px) 24px">
+        <div style="max-width:1100px;margin:0 auto">
+          <div style="max-width:640px;margin:0 0 44px">
+            <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Was das für deinen Laden bedeutet</p>
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0;text-wrap:balance">Was das Bonuskartensystem für deinen Laden bedeutet: vier Gründe, warum Gäste wiederkommen.</h2>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:18px">
+            {[
+              { k: 'Bleib im Kopf deiner Kund:innen', d: 'Erinnere Gäste zum richtigen Zeitpunkt daran, wieder vorbeizukommen – mit einer Nachricht direkt aufs Handy, nicht im überfüllten Postfach.' },
+              { k: 'Keine App-Hürde', d: 'Deine Kund:innen brauchen keinen Download und kein Passwort. Die Karte liegt in Apple & Google Wallet – dort, wo alle schon sind.' },
+              { k: 'Gib einen Grund zurückzukommen', d: 'Sichtbarer Fortschritt motiviert Menschen, ihr Ziel zu erreichen. Jeder Stempel ist eine kleine Einladung für den nächsten Besuch.' },
+              { k: 'Verstehe deine Stammkunden', d: 'Sieh, welche Kund:innen aktiv sind und wer zurückkommt – statt zu raten, was funktioniert.' },
+            ].map((f, i) => (
+              <div style="flex:1 1 240px;min-width:230px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:26px 24px">
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--amber-tint);color:var(--amber-press);font-family:var(--font-mono);font-weight:600;font-size:15px;margin-bottom:16px">{`0${i + 1}`}</span>
+                <h3 style="font-family:var(--font-serif);font-weight:600;font-size:20px;line-height:1.2;color:var(--v2-ink);margin:0 0 8px">{f.k}</h3>
+                <p style="font-size:16px;line-height:1.6;color:var(--ink-56);margin:0">{f.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= PREIS ======================= -->
+      <section id="preis" style="padding:clamp(48px,7vw,88px) 24px;border-top:1px solid var(--border)">
+        <div style="max-width:760px;margin:0 auto;text-align:center">
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Ehrlicher Preis</p>
+          <p style="font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-0.015em;margin:0 0 12px">Ab <span style="color:var(--accent)">29 €</span> im Monat.</p>
+          <p style="font-size:20px;line-height:1.6;color:var(--ink-72);margin:0 auto;max-width:44ch">Die ersten 90 Tage kostenlos, ganz ohne Kreditkarte. Keine Einrichtungsgebühr, monatlich kündbar. Kein Kleingedrucktes.</p>
+        </div>
+      </section>
+
+      <!-- ======================= KÖLNER PILOTPROGRAMM ======================= -->
+      <section id="pilot" style="padding:clamp(56px,8vw,104px) 24px;background:var(--v2-ink);color:var(--v2-paper);position:relative;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;border:2px dashed var(--paper-16)"></div>
+        <div style="max-width:820px;margin:0 auto;text-align:center;position:relative">
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Kölner Pilotprogramm</p>
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4.4vw,48px);line-height:1.08;letter-spacing:-0.015em;margin:0 auto 16px;max-width:22ch;color:var(--v2-paper);text-wrap:balance">Wir bauen gerade Kölns Stammkunden-Netzwerk auf.</h2>
+          <p style="font-size:20px;line-height:1.6;color:var(--paper-72);margin:0 auto 32px;max-width:48ch">Dafür suchen wir Betriebe, die von Anfang an dabei sind – aus jedem Veedel, aus jeder Branche. Für die ersten 100 Kölner Betriebe gilt:</p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:36px">
+            {[
+              { t: 'Einmalig 99 €', d: 'statt 29 € jeden Monat' },
+              { t: 'Einrichtung inklusive', d: 'Logo, Belohnung, Setup – wir machen das' },
+              { t: 'Dauerhaft nutzbar', d: 'kein Abo, kein Ablaufdatum' },
+            ].map(b => (
+              <div style="flex:1 1 200px;min-width:190px;max-width:250px;background:var(--ink-raised);border:1px solid var(--border-ink);border-radius:var(--radius-md);padding:20px 18px;text-align:left">
+                <div style="font-family:var(--font-serif);font-weight:600;font-size:20px;color:var(--accent);margin-bottom:5px">{b.t}</div>
+                <div style="font-size:15px;line-height:1.5;color:var(--paper-72)">{b.d}</div>
+              </div>
+            ))}
+          </div>
+
+          <button type="button" class="bk-btn bk-btn--lg" data-scroll-to-form style="width:auto;padding:0 32px">Teil des Kölner Pilotprogramms werden</button>
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--paper-56);margin:16px 0 0">Begrenzt auf 100 Betriebe · wir melden uns innerhalb von 24 h</p>
+        </div>
+      </section>
+
+      <!-- ======================= BRANCHEN ======================= -->
+      <section id="branchen" style="padding:clamp(48px,7vw,88px) 24px">
+        <div style="max-width:820px;margin:0 auto;text-align:center">
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3.8vw,40px);line-height:1.1;letter-spacing:-0.01em;margin:0 auto 14px;max-width:24ch;text-wrap:balance">Digitale Stempelkarte für Cafés, Friseure, Döner &amp; Co. – für Betriebe, bei denen Wiederkommen zählt.</h2>
+          <p style="font-size:19px;line-height:1.6;color:var(--ink-72);margin:0 auto 32px;max-width:46ch">Ob Kaffee, Haarschnitt oder Yogastunde – wo Gäste regelmäßig kommen können, lohnt sich ein Grund, es auch zu tun.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+            {[
+              ['☕', 'Café'], ['🥐', 'Bäckerei'], ['🥙', 'Döner'], ['🍕', 'Pizza'], ['🍦', 'Eiscafé'], ['💇', 'Friseur'], ['💪', 'Fitness'], ['🧘', 'Yoga'],
+            ].map(([e, t]) => (
+              <span style="display:inline-flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:11px 20px;box-shadow:var(--shadow-sm);font-size:16px;font-weight:600;color:var(--v2-ink)"><span aria-hidden="true">{e}</span>{t}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= KARTENTYPEN + STÄDTE (SEO) ======================= -->
+      <section id="kartentypen" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
+        <div style="max-width:1100px;margin:0 auto">
+          <div style="max-width:640px;margin-bottom:36px">
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0 0 16px;text-wrap:balance">Stempelkarte, Bonuskarte oder Punktekarte?</h2>
+            <p style="font-size:18px;line-height:1.6;color:var(--ink-72);margin:0">Eine digitale Stempelkarte zählt Besuche: zehn Stempel, ein Kaffee gratis. Eine Bonuskarte mit Punkten belohnt den Umsatz: pro Euro ein Punkt, ab 100 Punkten eine Prämie. Beides liegt in Apple Wallet oder Google Wallet, beides stempelst du mit einem Scan. Welche Karte passt, hängt davon ab, ob deine Kund:innen oft für wenig Geld kommen oder selten für viel.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-bottom:40px">
+            {[
+              { href: '/karten/',     t: 'Alle Kartentypen',       d: 'Stempelkarte, Punktekarte, 10er-Karte, Gutschein, Mitgliedskarte, Cashback und Coupon im Vergleich.' },
+              { href: '/cafe/',       t: 'Stempelkarte fürs Café', d: 'Das klassische Modell: Stempel pro Besuch, Prämie nach der vollen Karte, direkt im Wallet.' },
+              { href: '/funktionen/', t: 'Funktionen',             d: 'Push-Nachrichten, Geo-Push am Laden, Google-Bewertungen sammeln, Empfehlungsprogramm, Statistik.' },
+              { href: '/preise/',     t: 'Preise',                 d: '29 € im Monat für bis zu drei Standorte, 90 Tage kostenlos, monatlich kündbar.' },
+            ].map(k => (
+              <a href={k.href} style="display:block;background:var(--v2-paper);border:1px solid var(--border);border-radius:var(--radius-md);padding:22px 22px 24px;text-decoration:none;color:var(--v2-ink)">
+                <h3 style="font-family:var(--font-serif);font-weight:600;font-size:20px;line-height:1.2;margin:0 0 8px">{k.t} <span aria-hidden="true" style="color:var(--accent)">→</span></h3>
+                <p style="font-size:16px;line-height:1.55;color:var(--ink-72);margin:0">{k.d}</p>
+              </a>
+            ))}
+          </div>
+          <h3 style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Digitale Stempelkarte in deiner Stadt</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            {[['Köln','/koeln/'],['Berlin','/berlin/'],['Bonn','/bonn/'],['Dortmund','/dortmund/'],['Dresden','/dresden/'],['Düsseldorf','/duesseldorf/'],['Essen','/essen/'],['Frankfurt','/frankfurt/'],['Hamburg','/hamburg/'],['Hannover','/hannover/'],['Hürth','/huerth/'],['Leipzig','/leipzig/'],['München','/muenchen/'],['Nürnberg','/nuernberg/'],['Stuttgart','/stuttgart/']].map(([n,h]) => (
+              <a href={h} style="display:inline-block;padding:9px 14px;border:1px solid var(--border-strong);border-radius:999px;font-size:15px;font-weight:600;color:var(--v2-ink);text-decoration:none;background:var(--v2-paper)">{n}</a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= FAQ ======================= -->
+      <section id="faq" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
+        <div style="max-width:760px;margin:0 auto">
+          <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0 0 36px">Häufige Fragen zur digitalen Stempelkarte</h2>
+
+          {faqs.map(f => (
+            <details style="border-bottom:1px solid var(--border);padding:6px 0">
+              <summary style="cursor:pointer;padding:16px 0;font-weight:600;font-size:20px;display:flex;justify-content:space-between;gap:16px;align-items:center">{f.q}<span aria-hidden="true" class="bk-faq-plus" style="color:var(--accent);font-weight:400;font-size:22px">+</span></summary>
+              <p style="font-size:17px;line-height:1.65;color:var(--ink-72);margin:0 0 16px">{f.a}</p>
+            </details>
+          ))}
+
+          <p style="font-size:16px;color:var(--ink-56);margin:28px 0 0">Noch eine Frage? <a href="/faq/" class="bk-faqlink" style="color:var(--accent);text-decoration:none;font-weight:600">Alle Antworten im FAQ →</a></p>
+        </div>
+      </section>
+
+      <!-- ======================= FINAL CTA ======================= -->
+      <section style="padding:clamp(56px,8vw,110px) 24px">
+        <div style="max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);align-items:center">
+          <div style="flex:1 1 340px;min-width:280px">
+            <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,4.6vw,50px);line-height:1.05;letter-spacing:-0.015em;margin:0 0 18px">Erzähl uns von deinem Laden.</h2>
+            <p style="font-size:20px;line-height:1.6;color:var(--ink-72);margin:0 0 20px;max-width:42ch">Drei Felder, zwei Minuten. Wir bauen deine Karte und du hast sie – kostenlos – noch morgen in der Hand.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px 18px;font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--ink-56)">
+              <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--accent)">·</span><span>keine Kreditkarte</span><span aria-hidden="true" style="color:var(--accent)">·</span><span>live in 24 h</span>
+            </div>
+          </div>
+
+          <div style="flex:1 1 360px;min-width:300px;max-width:460px">
+            <div style="position:relative;transform:rotate(1deg)">
+              <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:28px clamp(22px,4vw,34px) 30px">
+                <form data-bk-form="b" novalidate style="display:flex;flex-direction:column">
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1.5px dashed var(--ink-24);padding-bottom:12px;margin-bottom:20px">
+                    <h3 style="font-family:var(--font-serif);font-size:20px;font-weight:600;margin:0;letter-spacing:-0.01em">3 Felder, 2 Minuten</h3>
+                    <span style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-40);text-align:right;flex-shrink:0;margin-left:16px;max-width:42%;line-height:1.5">Wir liefern innerhalb von 24 h</span>
+                  </div>
+                  <label style="display:block;margin-bottom:18px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Name des Betriebs</span>
+                    <input type="text" name="betrieb" required autocomplete="organization" placeholder="z. B. dein Café" class="bk-field" style={fieldStyle} />
+                  </label>
+                  <label style="display:block;margin-bottom:18px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Branche</span>
+                    <select name="branche" required class="bk-field" style={`${fieldStyle};appearance:none;-webkit-appearance:none;cursor:pointer;${selectChevron}`}>
+                      <option value="">Bitte wählen …</option>
+                      {branchen.map(b => <option value={b.value}>{b.label}</option>)}
+                    </select>
+                  </label>
+                  <label style="display:block;margin-bottom:18px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Dein Vorname</span>
+                    <input type="text" name="vorname" required autocomplete="given-name" placeholder="z. B. Alev" class="bk-field" style={fieldStyle} />
+                  </label>
+
+                  <label style="display:block;margin-bottom:24px">
+                    <span style="display:block;font-size:15px;font-weight:600;color:var(--v2-ink);margin-bottom:2px">Handynummer oder E-Mail</span>
+                    <input type="text" name="kontakt" required autocomplete="tel" inputmode="email" placeholder="0176 … oder du@laden.de" class="bk-field" style={fieldStyle} />
+                  </label>
+                  <button type="submit" class="bk-btn bk-btn--lg">Meine Stammkunden-Karte erstellen</button>
+                  <p class="bk-form-error" role="alert">Das hat leider nicht geklappt. Versuch's nochmal – oder schreib uns direkt auf WhatsApp.</p>
+                  <p style="text-align:center;font-size:14px;color:var(--ink-56);margin:14px 0 0;line-height:1.5">Keine Kreditkarte. Demo-Karte sofort im Wallet, deine Version mit Logo in 24 h.</p>
+                </form>
+                <div data-bk-success="b" hidden style="text-align:center;padding:14px 0 6px;animation:bk-rise 0.4s var(--ease-out) both">
+                  <div style="width:64px;height:64px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:var(--shadow-amber);animation:bk-thunk 0.35s var(--ease-out) both">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </div>
+                  <h3 style="font-family:var(--font-serif);font-size:24px;font-weight:600;margin:0 0 8px;letter-spacing:-0.01em">Angekommen.</h3>
+                  <p style="font-size:16px;color:var(--ink-72);line-height:1.55;margin:0 auto 20px;max-width:32ch">Danke! Wir melden uns innerhalb von 24 Stunden – meist schneller.</p>
+                  <a class="bk-installlink bk-btn bk-btn--md" hidden target="_blank" rel="noopener noreferrer" style="width:auto;margin-bottom:16px">Demo-Karte ins Wallet laden</a>
+                  <a href={whatsappUrl} class="bk-whatsapp" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:14px;border:1px solid var(--border-strong);color:var(--v2-ink);text-decoration:none;font-weight:600;font-size:16px">Auf WhatsApp schreiben</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer style="background:var(--v2-ink);color:var(--v2-paper);padding:clamp(48px,7vw,80px) 24px clamp(32px,4vw,44px)">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
+          <div style="flex:1 1 260px;max-width:320px">
+            <img src="/images/v2/lockup-horizontal-on-dark.svg" alt="bonuskarte.digital" width="192" height="30" style="height:30px;width:auto;display:block;margin-bottom:16px" />
+            <p style="font-size:15px;line-height:1.6;color:var(--paper-72);margin:0">Das einfache Stammkunden-System für lokale Betriebe. Aus einem Besuch wird eine Routine – die Karte deiner Kund:innen wohnt in Apple &amp; Google Wallet, ohne App, ohne Papier.</p>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper-56);font-weight:500;margin:0 0 16px">Produkt</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <a href="/karten/" class="bk-footlink">Alle Kartentypen</a>
+              <a href="/cafe/" class="bk-footlink">Stempelkarte fürs Café</a>
+              <a href="/funktionen/" class="bk-footlink">Funktionen</a>
+              <a href="/preise/" class="bk-footlink">Preise</a>
+              <a href="/faq/" class="bk-footlink">FAQ</a>
+              <a href="/hilfe/" class="bk-footlink">Hilfe-Center</a>
+              <a href="/koeln/blog/" class="bk-footlink">Blog</a>
+            </div>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper-56);font-weight:500;margin:0 0 16px">Köln</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <a href="/koeln/" class="bk-footlink">Bonuskarte in Köln</a>
+              <a href="/koeln/innenstadt/cafes/" class="bk-footlink">Cafés</a>
+              <a href="/koeln/innenstadt/doener/" class="bk-footlink">Döner</a>
+              <a href="/koeln/innenstadt/pizza/" class="bk-footlink">Pizza</a>
+              <a href="/koeln/innenstadt/restaurant/" class="bk-footlink">Restaurants</a>
+              <a href="/koeln/innenstadt/eiscafe/" class="bk-footlink">Eiscafés</a>
+              <a href="/koeln/blog/was-ist-eine-digitale-stempelkarte/" class="bk-footlink">Was ist eine digitale Stempelkarte?</a>
+              <a href="/koeln/blog/digitale-vs-papier-stempelkarte/" class="bk-footlink">Digital vs. Papier</a>
+              <a href="/koeln/blog/apple-wallet-google-wallet/" class="bk-footlink">Apple Wallet &amp; Google Wallet</a>
+            </div>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper-56);font-weight:500;margin:0 0 16px">Städte</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              {[['Berlin','/berlin/'],['Bonn','/bonn/'],['Dortmund','/dortmund/'],['Dresden','/dresden/'],['Düsseldorf','/duesseldorf/'],['Essen','/essen/'],['Frankfurt','/frankfurt/'],['Hamburg','/hamburg/'],['Hannover','/hannover/'],['Hürth','/huerth/'],['Leipzig','/leipzig/'],['München','/muenchen/'],['Nürnberg','/nuernberg/'],['Stuttgart','/stuttgart/']].map(([n,h]) => <a href={h} class="bk-footlink">{n}</a>)}
+              <a href="/en/" class="bk-footlink" hreflang="en">English</a>
+              <a href="/fr/" class="bk-footlink" hreflang="fr">Français</a>
+            </div>
+          </div>
+          <div style="flex:1 1 150px">
+            <h3 style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper-56);font-weight:500;margin:0 0 16px">Rechtliches</h3>
+            <div style="display:flex;flex-direction:column;gap:11px">
+              <a href="/impressum/" class="bk-footlink">Impressum</a>
+              <a href="/datenschutz/" class="bk-footlink">Datenschutz</a>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--border-ink);margin-top:44px;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+          <span style="font-size:15px;color:var(--paper-56);font-family:var(--font-mono)">© 2026 bonuskarte.digital</span>
+          <span style="font-size:15px;color:var(--paper-56)">Ein Projekt von <a href="https://fuerte.digital" class="bk-footlink" style="font-size:15px">fuerte.digital</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ======================= STICKY MOBILE CTA ======================= -->
+    <div id="bk-sticky" class="bk-sticky" style="position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(246,241,232,0.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:12px 16px;align-items:center;gap:14px;box-shadow:0 -6px 20px rgba(26,20,16,0.10)">
+      <div style="flex:1;line-height:1.2">
+        <div style="font-weight:600;font-size:15px">90 Tage kostenlos</div>
+        <div style="font-size:14px;color:var(--ink-56)">keine Kreditkarte · live in 24 h</div>
+      </div>
+      <button type="button" class="bk-btn bk-btn--md" data-scroll-to-form>Demo-Karte ins Wallet holen</button>
+    </div>
+
+  </div>
+
+  <script>
+    import { analytics } from '../lib/analytics'
+
+    const TOTAL = 12
+    // ABM-Outreach läuft aktuell nur in Köln → Lead-Attribution fest auf Köln
+    const CITY = 'koeln'
+
+    // ── Interaktive Demo-Karte (tippen = stempeln) ─────────────────────────
+    let demoFilled = 7
+    const demoCard = document.getElementById('demo-card')
+    const demoStamps = document.querySelectorAll('#demo-stamps .bk-stamp')
+    const demoNotif = document.getElementById('demo-notif')
+    const demoHint = document.getElementById('demo-hint')
+    const demoDone = document.getElementById('demo-done')
+    const demoTapsLeft = document.getElementById('demo-taps-left')
+    const demoLeftLabel = document.getElementById('demo-left-label')
+
+    function renderDemo() {
+      demoStamps.forEach((el, i) => el.classList.toggle('is-filled', i < demoFilled))
+      const complete = demoFilled >= TOTAL
+      if (demoNotif) demoNotif.hidden = !complete
+      if (demoHint) demoHint.style.display = complete ? 'none' : ''
+      if (demoDone) demoDone.hidden = !complete
+      if (demoTapsLeft) demoTapsLeft.textContent = String(Math.max(0, TOTAL - demoFilled))
+      if (demoLeftLabel) demoLeftLabel.textContent = complete ? 'Geschenk frei' : `${TOTAL - demoFilled} Stempel`
+    }
+    function addStamp() {
+      demoFilled = demoFilled >= TOTAL ? 7 : demoFilled + 1
+      renderDemo()
+    }
+    if (demoCard) {
+      demoCard.addEventListener('click', addStamp)
+      demoCard.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); addStamp() }
+      })
+    }
+
+    // ── Scroll-Stempel-Sektion (füllt sich beim Reinscrollen) ──────────────
+    const SCROLL_START = 5
+    let scrollFilled = SCROLL_START
+    let stampAnimating = false
+    const scrollPass = document.getElementById('scroll-pass')
+    const scrollStamps = document.querySelectorAll('#scroll-stamps .bk-stamp')
+    const scrollLeftLabel = document.getElementById('scroll-left-label')
+
+    function renderScroll() {
+      scrollStamps.forEach((el, i) => el.classList.toggle('is-filled', i < scrollFilled))
+      if (scrollLeftLabel) scrollLeftLabel.textContent = scrollFilled >= TOTAL ? 'Geschenk frei' : `${TOTAL - scrollFilled} Stempel`
+    }
+    function runStamps() {
+      if (stampAnimating || scrollFilled >= TOTAL) return
+      stampAnimating = true
+      scrollFilled = SCROLL_START
+      renderScroll()
+      const step = () => {
+        scrollFilled = Math.min(scrollFilled + 1, TOTAL)
+        renderScroll()
+        if (scrollFilled < TOTAL) setTimeout(step, 240)
+        else stampAnimating = false
+      }
+      setTimeout(step, 200)
+    }
+    if (scrollPass && 'IntersectionObserver' in window) {
+      // Niedrige Schwelle + rootMargin: feuert auch auf kleinen Displays zuverlässig.
+      // Beim Verlassen wird zurückgesetzt → spielt beim Zurückscrollen erneut
+      // (auf Mobile scrollt man sonst am einmaligen Ablauf vorbei).
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            runStamps()
+          } else if (!stampAnimating) {
+            scrollFilled = SCROLL_START
+            renderScroll()
+          }
+        })
+      }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' })
+      io.observe(scrollPass)
+    } else {
+      scrollFilled = TOTAL
+      renderScroll()
+    }
+
+    // ── "Kostenlos testen" → zum Bestellzettel scrollen ─────────────────────
+    document.querySelectorAll('[data-scroll-to-form]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const el = document.getElementById('lead')
+        if (!el) return
+        const y = el.getBoundingClientRect().top + window.scrollY - 80
+        window.scrollTo({ top: y, behavior: 'smooth' })
+      })
+    })
+
+    // ── ABM-Personalisierung über URL-Parameter (Direct Outreach) ──
+    // ?laden=Café+Hügel    → Formular-Prefill + persönliche Ansprache (Hero-Eyebrow, Demo-Copy)
+    // ?color=e0654c        → Akzentfarbe (Hex ohne #) für Buttons/Stempel/Akzente
+    // ?card=https://…png   → echtes Boomerang-Kartenbild im iPhone statt interaktiver Demo-Karte
+    // ?pass=https://…      → Install-Link der echten Karte (Button unter der Demo + im Success)
+    // ?branche=cafe        → Branchen-Dropdown vorauswählen
+    const abm = new URLSearchParams(window.location.search)
+    const isHttpOrRel = (v: string) => /^(https?:\/\/|\/(?!\/))/i.test(v)
+
+    const laden = abm.get('laden')?.trim()
+    if (laden) {
+      document.querySelectorAll<HTMLInputElement>('input[name="betrieb"]').forEach((i) => { i.value = laden })
+      const eyebrow = document.getElementById('hero-eyebrow')
+      if (eyebrow) eyebrow.textContent = `Persönlich für ${laden}`
+      const demoCopy = document.getElementById('demo-copy')
+      if (demoCopy) demoCopy.textContent = `Genau so liegt die Karte von ${laden} bei deinen Kund:innen in Apple oder Google Wallet – ein sichtbarer Grund, wiederzukommen, der immer im Handy dabei ist.`
+    }
+
+    const brandColor = abm.get('color')
+    if (brandColor && /^[0-9a-f]{6}$/i.test(brandColor)) {
+      const root = document.querySelector<HTMLElement>('.bk-v2')
+      ;['--amber', '--accent', '--amber-hover', '--amber-press'].forEach((p) => root?.style.setProperty(p, `#${brandColor}`))
+    }
+
+    const cardUrl = abm.get('card')
+    if (cardUrl && isHttpOrRel(cardUrl)) {
+      const abmImg = document.getElementById('abm-card-img') as HTMLImageElement | null
+      if (abmImg) {
+        abmImg.addEventListener('load', () => {
+          // Interaktive Demo-Karte durch die ECHTE Karte des Betriebs ersetzen
+          document.getElementById('demo-card')?.setAttribute('hidden', '')
+          if (demoHint) demoHint.style.display = 'none'
+          abmImg.hidden = false
+        }, { once: true })
+        abmImg.addEventListener('error', () => { abmImg.hidden = true }, { once: true })
+        if (laden) abmImg.alt = `Stempelkarte von ${laden} in Apple Wallet`
+        abmImg.src = cardUrl
+      }
+    }
+
+    const passUrl = abm.get('pass')
+    if (passUrl && /^https?:\/\//i.test(passUrl)) {
+      const passLink = document.getElementById('abm-pass-link') as HTMLAnchorElement | null
+      if (passLink) {
+        passLink.href = passUrl
+        passLink.hidden = false
+        passLink.addEventListener('click', () => analytics.walletInstallClicked('v2-abm'))
+      }
+    }
+
+    const brancheParam = abm.get('branche')?.toLowerCase()
+    if (brancheParam) {
+      document.querySelectorAll<HTMLSelectElement>('select[name="branche"]').forEach((sel) => {
+        const opt = Array.from(sel.options).find((o) => o.value.toLowerCase() === brancheParam)
+        if (opt) sel.value = opt.value
+      })
+    }
+
+    // ── Sticky-CTA (mobil): erst nach 70 % Viewport, ausgeblendet solange ein Formular sichtbar ist ──
+    const sticky = document.getElementById('bk-sticky')
+    if (sticky) {
+      let formVisible = false
+      const io = new IntersectionObserver((entries) => {
+        formVisible = entries.some((e) => e.isIntersecting)
+        sticky.classList.toggle('is-ready', !formVisible && window.scrollY > window.innerHeight * 0.7)
+      }, { threshold: 0.15 })
+      document.querySelectorAll('form[data-bk-form]').forEach((f) => io.observe(f))
+      window.addEventListener('scroll', () => {
+        sticky.classList.toggle('is-ready', !formVisible && window.scrollY > window.innerHeight * 0.7)
+      }, { passive: true })
+    }
+
+    // ── Formulare → /api/submit.php (Salesflare + Boomerang + Telegram …) ──
+    const params = new URLSearchParams(window.location.search)
+    const utm: Record<string, string> = {
+      utm_source: params.get('utm_source') || 'bonuskarte.digital',
+      utm_medium: params.get('utm_medium') || 'landing-page',
+      utm_campaign: params.get('utm_campaign') || 'homepage',
+    }
+    if (params.get('utm_content')) utm.utm_content = params.get('utm_content')!
+    if (params.get('utm_term')) utm.utm_term = params.get('utm_term')!
+
+    document.querySelectorAll<HTMLFormElement>('form[data-bk-form]').forEach((form) => {
+      const key = form.dataset.bkForm!
+      const successEl = document.querySelector<HTMLElement>(`[data-bk-success="${key}"]`)
+      const errorEl = form.querySelector<HTMLElement>('.bk-form-error')
+      const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]')
+      let started = false
+      let nicheTracked = false
+
+      form.addEventListener('focusin', () => {
+        if (started) return
+        started = true
+        analytics.signupFormStart('', CITY, 'homepage')
+      })
+      form.querySelector('select[name="branche"]')?.addEventListener('change', (e) => {
+        const v = (e.target as HTMLSelectElement).value
+        if (!v || nicheTracked) return
+        nicheTracked = true
+        analytics.nicheSelected(v, CITY, 'homepage')
+      })
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        errorEl?.classList.remove('is-visible')
+
+        const business = (form.elements.namedItem('betrieb') as HTMLInputElement).value.trim()
+        const niche = (form.elements.namedItem('branche') as HTMLSelectElement).value
+        const kontakt = (form.elements.namedItem('kontakt') as HTMLInputElement).value.trim()
+        const vorname = ((form.elements.namedItem('vorname') as HTMLInputElement | null)?.value ?? '').trim()
+        if (!business || !niche || !kontakt || !vorname) {
+          form.reportValidity()
+          return
+        }
+
+        analytics.signupSubmitAttempt(niche, CITY, 'homepage')
+        form.classList.add('bk-submitting')
+        if (submitBtn) submitBtn.textContent = 'Einen Moment …'
+
+        try {
+          const res = await fetch('/api/submit.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ business, niche, kontakt, vorname, city: CITY, utm, mode: 'standard', source: `homepage-form-${key}` }),
+          })
+          const json = await res.json().catch(() => ({}))
+          if (res.ok && json.success) {
+            analytics.demoCardCreated(niche, CITY)
+            analytics.signupSubmit(niche, CITY, 'homepage')
+            form.hidden = true
+            if (successEl) {
+              successEl.hidden = false
+              // Bei ABM (?pass) die echte Karte verlinken, sonst die frisch erstellte Demo-Karte
+              const installEl = successEl.querySelector<HTMLAnchorElement>('.bk-installlink')
+              const installLink = passUrl ?? json.directInstallLink?.universal ?? json.installLink
+              if (installEl && installLink) {
+                installEl.href = installLink
+                installEl.hidden = false
+                installEl.addEventListener('click', () => analytics.walletInstallClicked(niche || 'homepage'), { once: true })
+              }
+            }
+            if (key === 'a') document.getElementById('bk-sticky')?.classList.add('is-hidden')
+          } else {
+            throw new Error(json.error || 'api_error')
+          }
+        } catch (err) {
+          analytics.signupSubmitError(niche, CITY, err instanceof TypeError ? 'network_error' : 'api_error', 'homepage')
+          errorEl?.classList.add('is-visible')
+        } finally {
+          form.classList.remove('bk-submitting')
+          if (submitBtn) submitBtn.textContent = 'Demo-Karte ins Wallet holen'
+        }
+      })
+    })
+  </script>
 </BaseLayout>

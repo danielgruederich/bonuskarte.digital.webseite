@@ -16,3 +16,7 @@
   RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,5}$
   RewriteRule ^(.*)$ https://bonuskarte.digital/$1/ [R=301,L]
 </IfModule>
+
+# /v2 war bis 22.09.2026 die A/B-Variante der Startseite und ist seitdem die Startseite selbst.
+Redirect 301 /v2/ https://bonuskarte.digital/
+Redirect 301 /v2 https://bonuskarte.digital/

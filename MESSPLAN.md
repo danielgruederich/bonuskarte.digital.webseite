@@ -149,7 +149,7 @@ In GA4-Berichten dann als sekundäre Dimension aktivieren → Daten lassen sich 
 
 ---
 
-## A/B-Test: Hero-Headline (`hero_variant`) — nur `/v2`
+## A/B-Test: Hero-Headline (`hero_variant`) — beendet 22.09.2026 (war nur `/v2`; v2 ist seit 22.09. die Startseite, H1 statisch)
 
 Seit 2026-07-21 läuft auf `/v2` ein Split-Test der Hero-Headline. Die Variante wird beim ersten Aufruf zufällig 50/50 zugelost, in `localStorage` (`v2_hero_variant`) fixiert (gleicher Besucher = immer dieselbe Variante) und als GA4-User-Property gesetzt.
 
@@ -259,3 +259,4 @@ Wenn ein Event-Schema sich ändert (neue Felder, andere Bedeutung), hier dokumen
 > **2026-05-27** — Initial-Spec (Daniel + Claude). Funnel-Events `signup_form_start`, `signup_submit`, `demo_card_view` live; `demo_booking` + `chatbot_open` als Stub angelegt.
 >
 > **2026-07-21** — A/B-Test Hero-Headline auf `/v2` live: User-Property `hero_variant` (A/B) + Event `experiment_impression`. Custom Dimension `hero_variant` (Bereich: Nutzer) in GA4 registrieren, siehe Abschnitt „A/B-Test: Hero-Headline".
+> **2026-09-22** — v2 wird Startseite (`/`). A/B-Test `hero_variant` beendet (H1 statisch „Die digitale Bonuskarte ohne App“). Quelle der Startseiten-Events: `'homepage'`, Formular-Source `homepage-form-a|b`, `utm_campaign` Standard `homepage`. `/v2/` → 301 auf `/`.

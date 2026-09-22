@@ -1,0 +1,490 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import PhoneMockup from '../components/PhoneMockup.tsx'
+import RotatingWord from '../components/RotatingWord.tsx'
+import LeadForm from '../components/LeadForm.tsx'
+import StickyMobileCta from '../components/StickyMobileCta.astro'
+import Icon from '../components/icons/TrustIcons.astro'
+import { cardBranchPairs } from '../data/card-branch-pairs'
+import { niches } from '../data/niches'
+
+const nicheOptions = niches.map((n) => ({ slug: n.slug, label: n.label }))
+const whatsappUrl = 'https://wa.me/491705594140'
+const bookingUrl = 'https://termin.bonuskarte.digital/15min'
+
+const howItWorks = [
+  { step: '01', title: 'Karte erstellen', desc: 'Wir erstellen deine digitale Karte mit deinem Branding in unter 24 Stunden.' },
+  { step: '02', title: 'Kunden einladen', desc: 'Kunden scannen einmal einen QR-Code und speichern die Karte im Wallet.' },
+  { step: '03', title: 'Punkte sammeln', desc: 'Ein Klick – der Punkt landet sofort auf dem Handy deines Kunden.' },
+  { step: '04', title: 'Kunden binden', desc: 'Push-Nachrichten, Geo-Push, Google-Bewertungen, Statistiken. Alles inklusive.' },
+]
+
+const cities = [
+  { label: 'Köln',        href: '/koeln/',        emoji: '🏙️', available: true  },
+  { label: 'Berlin',      href: '/berlin/',       emoji: '🐻', available: true  },
+  { label: 'Hamburg',     href: '/hamburg/',      emoji: '⚓', available: true  },
+  { label: 'München',     href: '/muenchen/',     emoji: '🏔️', available: true  },
+  { label: 'Frankfurt',   href: '/frankfurt/',    emoji: '🏦', available: true  },
+  { label: 'Stuttgart',   href: '/stuttgart/',    emoji: '🚗', available: true  },
+  { label: 'Düsseldorf',  href: '/duesseldorf/',  emoji: '🌉', available: true  },
+  { label: 'Dortmund',    href: '/dortmund/',     emoji: '⚽', available: true  },
+  { label: 'Essen',       href: '/essen/',        emoji: '🏭', available: true  },
+  { label: 'Leipzig',     href: '/leipzig/',      emoji: '🎵', available: true  },
+  { label: 'Dresden',     href: '/dresden/',      emoji: '🏛️', available: true  },
+  { label: 'Hannover',    href: '/hannover/',     emoji: '🌿', available: true  },
+  { label: 'Nürnberg',    href: '/nuernberg/',    emoji: '🏰', available: true  },
+  { label: 'Bonn',        href: '/bonn/',         emoji: '🎓', available: true  },
+  { label: 'Hürth',       href: '/huerth/',       emoji: '📍', available: true  },
+]
+
+const problems = [
+  'Du weißt nicht, wie viele Stempelkarten aktiv genutzt werden',
+  'Kein direkter Kanal zu deinen Stammgästen',
+  'Gäste kommen unregelmäßig – ohne Anreiz zum Wiederkommen',
+  'Papier-Karten geben dir null Daten über dein Geschäft',
+  'Bewertungen und Empfehlungen bleiben dem Zufall überlassen',
+]
+
+const solutions = [
+  'Karte immer beim Gast – direkt in Apple & Google Wallet',
+  'Echte Zahlen: aktive Karten, Stempel, Einlösungsrate',
+  'Push-Nachrichten bringen Gäste aktiv zurück in dein Lokal',
+  'Du siehst genau, welche Stammkunden du hast – und wer fehlt',
+  'Google-Bewertungen & Empfehlungen laufen automatisch mit',
+]
+
+const testimonials = [
+  {
+    quote: 'Wir haben von Anfang an auf eine digitale Stempelkarte gesetzt. Wir haben viele Schüler als Kunden und können über Push-Nachrichten viele direkt erreichen. Besonders die flexiblen Stempel während der frei konfigurierbaren Happy Hour haben uns einen echten Wettbewerbsvorteil verschafft. Seit wir über 1.000 aktive Karten draußen haben, kommen deutlich mehr Stammkunden wieder.',
+    name: 'Yussuf',
+    role: 'Inhaber, Dönermän',
+    location: 'Köln Braunsfeld',
+    logo: '/images/testimonials/donermacher.png',
+  },
+  {
+    quote: 'Daniel kam schon bei der Eröffnung von Erste Liebe auf uns zu. GoLive war 24 Stunden später. Keine Ausfälle, Kunden lieben es. Wir haben schon 200 Karten im Umlauf – und nutzen bisher nur 10 % der Plattform.',
+    name: 'Tim',
+    role: 'Inhaber, Café Erste Liebe',
+    location: 'Köln, Neustadt Süd',
+    logo: '/images/testimonials/erste-liebe.jpg',
+  },
+  {
+    quote: "We have been using Daniel's digital solution for 2 years now. Simple, effective – and despite our disbelief, even in a touristic village like Corralejo. We managed to configure a Coupon and 3 Stamp bonus cards for tourists and a VIP Card for locals. All within one system, same competitive price. Fully recommended.",
+    name: 'Jao',
+    role: 'ASAP Cafe Corralejo',
+    location: 'Fuerteventura',
+    logo: '/images/testimonials/ASAP.Brunch.jpg',
+  },
+]
+---
+
+<BaseLayout
+  title="Digitale Bonuskarte & Stempelkarte fürs Wallet | 90 Tage gratis"
+  description="Bonuskarte in Apple & Google Wallet – ohne App, ohne Plastik. Stempel per Scan, Push-Nachrichten und Google-Bewertungen inklusive. In 24 Stunden startklar, 90 Tage kostenlos testen."
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/' },
+    { hreflang: 'en', href: 'https://bonuskarte.digital/en/' },
+    { hreflang: 'fr', href: 'https://bonuskarte.digital/fr/' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/' },
+  ]}
+  showStickyCta={false}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "bonuskarte.digital",
+    "url": "https://bonuskarte.digital",
+    "description": "Digitale Kundenkarten für Apple Wallet & Google Wallet. Stempelkarten, Punktekarten, Mitgliedskarten & mehr für lokale Betriebe in Deutschland.",
+    "inLanguage": "de-DE"
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "bonuskarte.digital",
+    "description": "Digitale Stempelkarte & Bonuskarte für lokale Betriebe – direkt in Apple Wallet & Google Wallet.",
+    "url": "https://bonuskarte.digital",
+    "image": "https://bonuskarte.digital/screens/phone-1.jpg",
+    "screenshot": "https://bonuskarte.digital/screens/phone-1.jpg",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "90 Tage kostenlos, danach ab 29 €/Monat – unter 1 € pro Tag"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "ratingCount": testimonials.length
+    },
+    "review": testimonials.map(t => ({
+      "@type": "Review",
+      "reviewBody": t.quote,
+      "author": { "@type": "Person", "name": t.name },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    }))
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Ist das wirklich 90 Tage kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar." } },
+      { "@type": "Question", "name": "Brauchen meine Kunden eine App?", "acceptedAnswer": { "@type": "Answer", "text": "Nein, keine App und kein Download. Beim ersten Scan meldet sich dein Gast in unter einer Minute an (Name, E-Mail oder Handynummer, Geburtstag) – danach liegt die Karte direkt in Apple oder Google Wallet, die auf jedem Smartphone vorinstalliert sind." } },
+      { "@type": "Question", "name": "Wie viel Aufwand habe ich bei der Einrichtung?", "acceptedAnswer": { "@type": "Answer", "text": "Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live." } },
+      { "@type": "Question", "name": "Was kostet es nach der Testphase?", "acceptedAnswer": { "@type": "Answer", "text": "Ab 29 €/Monat – bis zu 3 Standorte inklusive, das sind unter 1 € pro Tag. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Kommt nur ein Gast pro Monat wegen der Karte einmal mehr, hat es sich schon bezahlt. Keine Setup-Gebühr, monatlich kündbar." } },
+      { "@type": "Question", "name": "Funktioniert das auch für Nicht-Gastro-Betriebe?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Neben Stempelkarten bieten wir Mitgliedskarten, 10er-Karten, Geschenkkarten und Guthabenkarten – für Friseure, Fitnessstudios, Yoga-Studios, Blumenläden und mehr." } },
+      { "@type": "Question", "name": "Ist das DSGVO-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden." } }
+    ]
+  })} />
+  <Navbar ctaHref="#demo" ctaLabel="Jetzt starten" />
+
+  <!-- ── HERO ──────────────────────────────────────────────────── -->
+  <section class="relative flex items-center bg-paper overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink"></div>
+    <!-- Gold radial glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-amber rounded-full blur-[200px] opacity-5"></div>
+
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-20 md:pt-24 pb-8 md:pb-12 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-stretch">
+        <div class="text-center md:text-left">
+          <!-- Eyebrow (fills full width with branches from card-branch-pairs) -->
+          <div id="eyebrow-bar" class="w-full overflow-hidden border border-amber/50 px-4 py-2 mb-6 sm:mb-10">
+            <div class="flex items-center gap-3">
+              <span class="w-1 h-1 bg-amber animate-pulse-slow flex-shrink-0"></span>
+              <span id="eyebrow-text" class="text-amber text-xs font-normal tracking-[0.3em] uppercase whitespace-nowrap overflow-hidden">
+                {`Für ${cardBranchPairs.slice(0, 3).map(p => p.branch).join(' · ')}`}
+              </span>
+            </div>
+          </div>
+          <script is:inline define:vars={{ eyebrowBranches: cardBranchPairs.map(p => p.branch) }}>
+              var el = document.getElementById('eyebrow-text');
+              var shuffled = eyebrowBranches.sort(function() { return Math.random() - 0.5; });
+              el.textContent = 'Für ' + shuffled.slice(0, 3).join(' · ');
+          </script>
+
+          <h1 class="text-5xl sm:text-6xl tracking-tighter mb-5 sm:mb-8">
+            <span class="font-normal text-ink block">Die digitale</span>
+            <RotatingWord client:idle />
+          </h1>
+
+          <p class="text-ink text-base leading-relaxed mb-6 max-w-md mx-auto md:mx-0 font-normal">
+            Mehr Stammkunden, mehr Umsatz. Deine Kunden
+            tragen deine Karte direkt im Handy –
+            kein Papier, keine App, kein Aufwand für dich.
+          </p>
+
+          <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2.5 mb-6 sm:mb-10">
+            <Icon name="diamond" class="w-3.5 h-3.5 text-amber" />
+            <span class="text-amber text-xs tracking-[0.15em] font-normal">
+              90 TAGE KOMPLETT KOSTENLOS — KEINE KREDITKARTE
+            </span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <a href="#demo"
+              class="group inline-flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
+              Kostenlos testen
+              <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="#staedte"
+              class="inline-flex items-center gap-1.5 text-ink/50 hover:text-amber text-xs font-medium tracking-[0.15em] uppercase transition-colors py-4">
+              Städte ansehen
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Trust -->
+          <div class="flex flex-wrap gap-6 mt-6 sm:mt-10 justify-center md:justify-start">
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
+              <Icon name="shield" class="w-4 h-4 text-amber" /> DSGVO
+            </span>
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
+              <Icon name="wallet" class="w-4 h-4 text-amber" /> Apple & Google Wallet
+            </span>
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
+              <Icon name="zap" class="w-4 h-4 text-amber" /> Live in 24h
+            </span>
+            <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ink">
+              <Icon name="check-circle" class="w-4 h-4 text-amber" /> Kein Risiko
+            </span>
+          </div>
+        </div>
+
+        <!-- Phone Mockup -->
+        <div class="flex justify-center md:justify-end items-center h-full">
+          <PhoneMockup client:visible />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom fade to next section -->
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-paper to-transparent"></div>
+  </section>
+
+  <!-- ── PROBLEM / SOLUTION ────────────────────────────────────── -->
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
+    <div class="max-w-6xl mx-auto">
+      <!-- Divider label -->
+      <div class="flex items-center gap-4 mb-8 sm:mb-12">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Das Problem</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="border border-ink/30 p-8">
+          <p class="text-xs tracking-[0.3em] uppercase text-ink mb-6">Papierstempelkarte</p>
+          <ul class="space-y-4">
+            {problems.map(t => (
+              <li class="flex items-start gap-3 text-base text-ink font-normal">
+                <span class="text-ink mt-0.5 flex-shrink-0">—</span>
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="border border-amber/50 bg-amber/3 p-8">
+          <p class="text-xs tracking-[0.3em] uppercase text-amber mb-6">bonuskarte.digital</p>
+          <ul class="space-y-4">
+            {solutions.map(t => (
+              <li class="flex items-start gap-3 text-base text-ink font-normal">
+                <Icon name="diamond" class="w-4 h-4 text-amber mt-1.5 flex-shrink-0" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ──────────────────────────────────────────── -->
+  <section id="wie-es-funktioniert" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
+    <div class="relative max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-6 sm:mb-10">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Wie es funktioniert</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+        {howItWorks.map((item, i) => (
+          <div class="group bg-paper border border-ink/30 hover:border-amber/50 shadow-sm p-4 sm:p-7 transition-all">
+            <div class="text-4xl font-black text-amber group-hover:text-amber transition-colors leading-none mb-3">{item.step}</div>
+            <h3 class="font-semibold text-ink tracking-wide mb-1 text-sm">{item.title}</h3>
+            <p class="text-ink text-sm leading-relaxed font-normal">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
+  <section id="demo" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber rounded-full blur-[180px] opacity-5"></div>
+    <div class="relative max-w-xl mx-auto">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-3 border border-amber/50 bg-amber/5 px-4 py-2 mb-8">
+          <Icon name="diamond" class="w-4 h-4 text-amber shrink-0" />
+          <span class="text-amber text-xs tracking-[0.3em] uppercase">
+            90 Tage kostenlos testen
+          </span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-2">Demo-Karte</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-ink tracking-tight mb-6">direkt ins Wallet.</h2>
+        <p class="text-ink text-base font-normal leading-relaxed max-w-sm mx-auto">
+          Branche wählen, eintragen – deine persönliche Demo-Karte liegt in Sekunden in deinem Wallet.
+        </p>
+      </div>
+      <div class="relative border border-amber/20 bg-paper p-6 sm:p-10">
+        <LeadForm
+          client:load
+          niche=""
+          city=""
+          whatsappUrl={whatsappUrl}
+          bookingUrl={bookingUrl}
+          bookingType="15min"
+          source="homepage"
+          selectableNiche={true}
+          nicheOptions={nicheOptions}
+        />
+      </div>
+      <p class="text-center text-ink text-sm mt-5">
+        Nach 90 Tagen ab 29 €/Monat — unter 1 € pro Tag ·
+        <a href="/preise/" class="text-amber hover:text-amber underline underline-offset-2 transition-colors">Alle Preise ansehen</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── SOCIAL PROOF ───────────────────────────────────────────── -->
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper-dark">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-6 sm:mb-10">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Das sagen unsere Kunden</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
+        {[
+          { value: '23', label: 'Betriebe aktiv' },
+          { value: '2.400+', label: 'Karten im Umlauf' },
+          { value: '15', label: 'Städte live' },
+          { value: '24h', label: 'Setup-Zeit' },
+        ].map(stat => (
+          <div class="bg-paper border border-ink/30 shadow-sm p-6 text-center">
+            <div class="text-4xl font-black text-amber mb-2">{stat.value}</div>
+            <div class="text-xs tracking-[0.25em] uppercase text-ink">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Testimonials -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {testimonials.map(t => (
+          <div class="bg-paper border border-ink/30 hover:border-amber/50 shadow-sm p-6 transition-colors">
+            <img src={t.logo} alt={t.role} class="w-12 h-12 rounded-full object-cover border border-amber/50 mb-4" />
+            <blockquote class="text-ink text-sm font-normal leading-relaxed mb-4 border-l-2 border-amber/40 pl-3">{t.quote}</blockquote>
+            <div>
+              <p class="text-ink text-sm font-semibold">{t.name}</p>
+              <p class="text-ink text-sm font-normal">{t.role}</p>
+              <p class="text-amber text-sm font-normal">{t.location}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STÄDTE ────────────────────────────────────────────────── -->
+  <section id="staedte" class="py-8 sm:py-16 px-5 sm:px-8 bg-paper">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-6 sm:mb-10">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Verfügbare Städte</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        {cities.map(c => (
+          c.available ? (
+            <a href={c.href}
+              class="group border border-amber/50 hover:border-amber hover:bg-amber/5 p-6 text-center transition-all">
+              <svg class="w-4 h-4 text-amber/60 group-hover:text-amber mx-auto mb-2 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4-4-7-7.5-7-10.5a7 7 0 1114 0C19 13.5 16 17 12 21z"/><circle cx="12" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg>
+              <div class="text-xs font-semibold tracking-widest uppercase text-ink group-hover:text-amber">{c.label}</div>
+              <div class="mt-3 text-xs tracking-[0.2em] uppercase text-amber flex items-center justify-center gap-1">
+                Zur Stadt
+                <svg class="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          ) : (
+            <div class="border border-ink/10 p-6 text-center">
+              <svg class="w-4 h-4 text-ink/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21c-4-4-7-7.5-7-10.5a7 7 0 1114 0C19 13.5 16 17 12 21z"/><circle cx="12" cy="10" r="2.5" fill="currentColor" stroke="none"/></svg>
+              <div class="text-xs font-semibold tracking-widest uppercase text-ink">{c.label}</div>
+              <div class="mt-3 text-xs tracking-[0.2em] uppercase text-ink">Bald verfügbar</div>
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ────────────────────────────────────────────────────── -->
+  <section class="py-8 sm:py-16 px-5 sm:px-8 bg-paper-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <div class="flex items-center gap-4 mb-6 sm:mb-10">
+        <div class="h-px flex-1 bg-ink/20"></div>
+        <span class="text-xs tracking-[0.4em] uppercase text-ink">Häufige Fragen</span>
+        <div class="h-px flex-1 bg-ink/20"></div>
+      </div>
+
+      <div class="space-y-4">
+        {[
+          {
+            q: 'Ist das wirklich 90 Tage kostenlos?',
+            a: 'Ja, komplett. Keine Kreditkarte, keine versteckten Kosten. Nach 90 Tagen entscheidest du, ob du weitermachst – ab 29 €/Monat. Monatlich kündbar.',
+          },
+          {
+            q: 'Brauchen meine Kunden eine App?',
+            a: 'Nein, keine App und kein Download. Beim ersten Scan meldet sich dein Gast in unter einer Minute an (Name, E-Mail oder Handynummer, Geburtstag) – danach liegt die Karte direkt in Apple oder Google Wallet, die auf jedem Smartphone vorinstalliert sind.',
+          },
+          {
+            q: 'Wie viel Aufwand habe ich bei der Einrichtung?',
+            a: 'Null. Du füllst ein kurzes Formular aus, wir erstellen deine Karte mit deinem Branding. In unter 24 Stunden bist du live.',
+          },
+          {
+            q: 'Was kostet es nach der Testphase?',
+            a: 'Ab 29 €/Monat – bis zu 3 Standorte inklusive, das sind unter 1 € pro Tag. Unbegrenzt Karten, Push-Nachrichten, Statistiken – alles inklusive. Kommt nur ein Gast pro Monat wegen der Karte einmal mehr, hat es sich schon bezahlt. Keine Setup-Gebühr, monatlich kündbar.',
+          },
+          {
+            q: 'Funktioniert das auch für Nicht-Gastro-Betriebe?',
+            a: 'Ja. Neben Stempelkarten bieten wir Mitgliedskarten, 10er-Karten, Geschenkkarten und Guthabenkarten – für Friseure, Fitnessstudios, Yoga-Studios, Blumenläden und mehr.',
+          },
+          {
+            q: 'Ist das DSGVO-konform?',
+            a: 'Ja. Alle Daten werden DSGVO-konform verarbeitet. Keine Tracking-Apps, keine Cookies auf dem Handy deiner Kunden.',
+          },
+        ].map(faq => (
+          <details class="group border border-ink/30 hover:border-amber/20 transition-colors">
+            <summary class="flex items-center justify-between cursor-pointer p-5 sm:p-6">
+              <span class="text-ink text-sm font-medium pr-4">{faq.q}</span>
+              <svg class="w-4 h-4 text-amber flex-shrink-0 group-open:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-5 sm:pb-6">
+              <p class="text-ink text-sm leading-relaxed font-normal">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/faq/" class="inline-flex items-center gap-2 text-amber hover:text-amber text-xs tracking-[0.2em] uppercase transition-colors">
+          Alle Fragen ansehen
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ─────────────────────────────────────────────── -->
+  <section class="py-16 sm:py-28 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5"></div>
+    <div class="relative max-w-3xl mx-auto text-center">
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">90 Tage kostenlos</p>
+      <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
+        Bereit für mehr
+      </h2>
+      <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-8">
+        Stammkunden?
+      </h2>
+      <p class="text-ink text-xs tracking-widest uppercase mb-10">Keine Kreditkarte. Monatlich kündbar. Kein Risiko.</p>
+      <a href="#demo"
+        class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+        Kostenlos starten
+        <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <StickyMobileCta label="Kostenlos testen" />
+  <Footer />
+</BaseLayout>

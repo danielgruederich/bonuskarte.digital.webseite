@@ -16,7 +16,6 @@ const SITEMAP_EXCLUDE_SUBSTRINGS = [
 ]
 
 const SITEMAP_EXCLUDE_PATHS = [
-  '/v2/', // A/B variant, canonical points to /
   '/preview/', // internal editorial overview
   '/termin/', // noindex
   '/danke/', // noindex
