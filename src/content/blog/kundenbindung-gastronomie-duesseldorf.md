@@ -4,6 +4,8 @@ description: "Die Düsseldorfer Altstadt gilt als längste Theke der Welt – do
 pubDate: 2026-04-15
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Gastro"
+coverCard: punktekarte
 readingTime: 8
 featured: false
 city: duesseldorf

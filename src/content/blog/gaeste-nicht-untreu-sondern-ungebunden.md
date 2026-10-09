@@ -4,6 +4,8 @@ description: "Warum Gäste abwandern hat oft nichts mit deinem Essen zu tun. Was
 pubDate: 2026-04-11
 heroImage: "/images/mockup-coffee.png"
 category: "Strategie"
+coverWord: "Unge­bunden"
+coverCard: punktekarte
 readingTime: 6
 featured: false
 city: koeln

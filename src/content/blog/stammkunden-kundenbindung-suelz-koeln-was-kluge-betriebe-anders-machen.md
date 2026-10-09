@@ -4,6 +4,7 @@ description: "Gewohnheit ist keine Bindung — und Betriebe in Sülz Köln, die 
 pubDate: 2026-06-19
 heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
+coverWord: "Sülz"
 readingTime: 3
 featured: false
 city: koeln

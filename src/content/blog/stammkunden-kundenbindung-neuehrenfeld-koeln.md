@@ -4,6 +4,7 @@ description: "Neuehrenfeld hat Ehrenfelds Charme, aber noch nicht dessen Konkurr
 pubDate: 2026-06-19
 heroImage: "/images/mockup-green.png"
 category: "Lokales"
+coverWord: "Neuehrenfeld"
 readingTime: 3
 featured: false
 city: koeln

@@ -4,6 +4,8 @@ description: "Effet Zeigarnik, motivation d'achèvement, aversion à la perte : 
 pubDate: 2026-02-11
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Psycho­logie"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: "fr"

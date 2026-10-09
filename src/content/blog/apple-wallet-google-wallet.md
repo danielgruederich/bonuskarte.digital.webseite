@@ -4,6 +4,8 @@ description: "Apple Wallet und Google Wallet sind auf jedem Kölner Smartphone v
 pubDate: 2026-02-24
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Wallet"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: koeln

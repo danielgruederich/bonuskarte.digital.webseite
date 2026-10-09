@@ -4,6 +4,8 @@ description: "Retention beats acquisition on almost every metric. Here is the da
 pubDate: 2026-04-23
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Does it pay?"
+coverCard: cashback
 readingTime: 8
 featured: false
 city: "en"

@@ -4,6 +4,8 @@ description: "Berliner Restaurant-Gäste sind anspruchsvoll und haben die Wahl. 
 pubDate: 2026-07-16
 heroImage: "/images/hero-restaurant.jpg"
 category: "Ratgeber"
+coverWord: "Restau­rant"
+coverCard: punktekarte
 readingTime: 7
 featured: false
 city: berlin

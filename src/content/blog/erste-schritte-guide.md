@@ -4,6 +4,8 @@ description: "Wie Kölner Cafés, Dönerläden und Restaurants in weniger als 10
 pubDate: 2026-03-10
 heroImage: "/images/mockup-coffee.png"
 category: "How-to"
+coverWord: "5 Schritte"
+coverCard: stempelkarte
 readingTime: 4
 featured: false
 city: koeln

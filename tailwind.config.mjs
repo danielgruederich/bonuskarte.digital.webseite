@@ -9,7 +9,15 @@ export default {
           DEFAULT: '#F25C24',
           light:   '#f47a4a',
           dark:    '#c94b1c',
+          // Orange als Schrift auf hellem Grund (5,2:1 auf paper, 5,8:1 auf weiß) –
+          // #F25C24 selbst nur für Flächen und Schrift auf dunklem Grund
+          text:    '#B23F12',
         },
+        // ── Blog-Palette: coolors.co/f25c24-2f4858-33658a-86bbd8-f6ae2d (09.10.2026) ──
+        'charcoal-blue':  '#2F4858',
+        'baltic-blue':    '#33658A',
+        'sky-reflection': '#86BBD8',
+        'honey-bronze':   '#F6AE2D',
         ink: {
           DEFAULT: '#1A1410',
           50:  '#f5f4f3',

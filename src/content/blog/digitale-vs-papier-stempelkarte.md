@@ -4,6 +4,8 @@ description: "Papier-Stempelkarten sind günstig – aber für Kölner Cafés, D
 pubDate: 2026-02-17
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Digital vs. Papier"
+coverCard: stempelkarte
 readingTime: 5
 featured: false
 city: koeln

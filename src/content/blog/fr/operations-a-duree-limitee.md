@@ -4,6 +4,8 @@ description: "Happy hours, offres du week-end, séries limitées : les opératio
 pubDate: 2026-06-09
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Durée limitée"
+coverCard: coupon
 readingTime: 6
 featured: false
 city: "fr"

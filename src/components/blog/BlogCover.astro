@@ -1,0 +1,49 @@
+---
+// Titelbild eines Blog-Artikels: Kategorie-Fläche, Schlagwort (coverWord) und
+// die passende echte Wallet-Karte. Lokales-Artikel bekommen ein Veedel-Titelbild.
+import type { CollectionEntry } from 'astro:content'
+import { categoryStyle, blogLabels } from '../../data/blog-style'
+import type { BlogLang } from '../../data/blog-i18n'
+import '../../styles/blog.css'
+
+interface Props {
+  post: CollectionEntry<'blog'>
+  fan?: boolean        // drei Karten statt einer (Hauptartikel)
+  class?: string       // Seitenverhältnis/Höhe kommt vom Aufrufer
+  eager?: boolean
+  lang?: BlogLang
+  place?: string     // Ortsname im Veedel-Titelbild
+}
+
+const { post, fan = false, class: className = 'aspect-[16/10]', eager = false, lang = 'de', place = 'Köln' } = Astro.props
+const t = blogLabels(lang)
+const { category, coverWord, coverCard } = post.data
+const word = coverWord ?? t.category(category)
+const isVeedel = category === 'Lokales'
+const cards = fan ? ['punktekarte', 'stempelkarte', 'coupon'] : [coverCard ?? 'stempelkarte']
+
+// Rhein-Kurve je Veedel leicht variiert, damit nicht alle Titelbilder gleich aussehen
+let seed = 0
+for (const ch of word) seed = (seed * 31 + ch.charCodeAt(0)) % 997
+const a = 200 + (seed % 90), b = 150 + ((seed >> 2) % 110), c = 220 + ((seed >> 3) % 90)
+const rhein = `M${a} -10 C ${a + 60} 60, ${b} 110, ${c} 160 S ${c + 50} 230, ${c + 10} 270`
+---
+
+<div class={`relative overflow-hidden isolate ${categoryStyle[category].surface} ${fan ? 'blog-cover--fan' : 'blog-cover--card'} ${className}`} aria-hidden="true">
+  {isVeedel ? (
+    <>
+      <svg class="blog-rhein absolute inset-0 w-full h-full" viewBox="0 0 400 250" preserveAspectRatio="none"><path d={rhein} /></svg>
+      <div class="blog-stamp absolute right-[7%] top-[11%] w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-current grid place-items-center text-center text-[9px] font-bold tracking-widest leading-tight">{place.toUpperCase()}<br />VEEDEL</div>
+    </>
+  ) : (
+    <div class="absolute inset-0">
+      {cards.map(card => (
+        <div class="blog-pass"><img src={`/images/karten/pass/${card}.webp`} alt="" width="584" height="815" loading={eager ? 'eager' : 'lazy'} decoding="async" /></div>
+      ))}
+    </div>
+  )}
+  <div class={`absolute left-[7%] bottom-[9%] font-black tracking-tight leading-[0.92] hyphens-manual ${fan ? 'max-w-[45%] text-4xl sm:text-5xl lg:text-6xl' : isVeedel ? 'max-w-[86%] text-3xl sm:text-4xl' : 'max-w-[52%] text-2xl sm:text-3xl lg:text-4xl'}`}>
+    <span class="block text-[11px] font-semibold tracking-[0.16em] uppercase mb-2.5">{isVeedel ? place : t.category(category)}</span>
+    {word}
+  </div>
+</div>

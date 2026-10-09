@@ -4,6 +4,7 @@ description: "Longerich lebt von treuer Laufkundschaft — aber hältst du diese
 pubDate: 2026-06-19
 heroImage: "/images/mockup-green.png"
 category: "Lokales"
+coverWord: "Longerich"
 readingTime: 4
 featured: false
 city: koeln

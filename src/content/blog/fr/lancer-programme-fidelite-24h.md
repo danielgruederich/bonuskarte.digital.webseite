@@ -4,6 +4,8 @@ description: "Pas besoin de semaines ni d'un développeur. Voici comment mettre 
 pubDate: 2026-03-18
 heroImage: "/images/mockup-coffee.png"
 category: "How-to"
+coverWord: "24 heures"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: "fr"

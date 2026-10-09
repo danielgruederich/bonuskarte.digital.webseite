@@ -17,6 +17,9 @@ const blog = defineCollection({
     approved: z.boolean().default(true), // false = Entwurf, true = freigegeben
     needsEdit: z.boolean().default(false), // true = Änderungen nötig
     faqItems: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+    // Titelbild (BlogCover): Schlagwort und gezeigte Wallet-Karte aus /images/karten/
+    coverWord: z.string().optional(),
+    coverCard: z.enum(['stempelkarte', 'punktekarte', '10er-karte', 'mitgliedskarte', 'coupon', 'cashback']).optional(),
   }),
 })
 

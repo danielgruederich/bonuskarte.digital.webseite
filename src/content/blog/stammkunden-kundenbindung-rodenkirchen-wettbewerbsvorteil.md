@@ -4,6 +4,7 @@ description: "Stammkunden sind in Rodenkirchen das Geschäftsmodell. Wer die Kun
 pubDate: 2026-06-19
 heroImage: "/images/mockup-green.png"
 category: "Lokales"
+coverWord: "Rodenkirchen"
 readingTime: 3
 featured: false
 city: koeln

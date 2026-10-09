@@ -4,6 +4,8 @@ description: "Wenn ein Stammgast drei Wochen nicht da war – wie Berliner Café
 pubDate: 2026-07-30
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Push"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: berlin

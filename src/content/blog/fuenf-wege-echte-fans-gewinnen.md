@@ -4,6 +4,8 @@ description: "Gelegenheitsgäste zu echten Fans machen: 5 praxisnahe Strategien 
 pubDate: 2026-04-09
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "5 Wege"
+coverCard: punktekarte
 readingTime: 7
 featured: false
 city: koeln

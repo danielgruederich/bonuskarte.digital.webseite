@@ -4,6 +4,8 @@ description: "Bonn hat eine der ältesten Universitäten Deutschlands – und ta
 pubDate: 2026-07-18
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Uni-Viertel"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: bonn

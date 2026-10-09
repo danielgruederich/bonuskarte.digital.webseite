@@ -4,6 +4,8 @@ description: "Viele Düsseldorfer Betriebe zögern bei digitalen Kundenkarten �
 pubDate: 2026-07-31
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Ohne App"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: duesseldorf

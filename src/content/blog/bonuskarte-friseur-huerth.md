@@ -4,6 +4,8 @@ description: "Hürther Friseursalons konkurrieren mit Kölner Ketten und günsti
 pubDate: 2026-07-26
 heroImage: "/images/hero-friseur.jpg"
 category: "Ratgeber"
+coverWord: "Friseur"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: huerth

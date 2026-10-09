@@ -4,6 +4,7 @@ description: "Mülheimer Stammkunden kommen täglich wieder – aber nur wenn du
 pubDate: 2026-06-19
 heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
+coverWord: "Mülheim"
 readingTime: 4
 featured: false
 city: koeln

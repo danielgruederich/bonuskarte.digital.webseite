@@ -4,6 +4,8 @@ description: "Wie Yoga- und Pilates-Studios mit der digitalen 10er-Karte im Wall
 pubDate: 2026-04-07
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "10er-Karte"
+coverCard: 10er-karte
 readingTime: 5
 featured: false
 city: koeln

@@ -4,6 +4,8 @@ description: "Wie Yoga-Studios in Hürth und Umgebung mit digitalen Zehnerkarten
 pubDate: 2026-07-05
 heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
+coverWord: "10er-Karte"
+coverCard: 10er-karte
 readingTime: 7
 featured: false
 city: huerth

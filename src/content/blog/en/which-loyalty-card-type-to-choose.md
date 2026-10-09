@@ -4,6 +4,8 @@ description: "Five digital loyalty card types compared for local businesses — 
 pubDate: 2026-06-10
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Card Types"
+coverCard: mitgliedskarte
 readingTime: 8
 featured: false
 city: "en"

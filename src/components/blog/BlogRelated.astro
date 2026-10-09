@@ -1,0 +1,30 @@
+---
+// „Weitere Artikel“ unter einem Blog-Artikel.
+import type { CollectionEntry } from 'astro:content'
+import BlogCard from './BlogCard.astro'
+import type { BlogLang } from '../../data/blog-i18n'
+
+interface Props {
+  posts: { post: CollectionEntry<'blog'>; href: string }[]
+  title: string
+  allLabel: string
+  allHref: string
+  lang?: BlogLang
+}
+
+const { posts, title, allLabel, allHref, lang = 'de' } = Astro.props
+---
+
+{posts.length > 0 && (
+  <section class="bg-paper py-14 sm:py-16 border-t border-ink-100">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="text-2xl font-extrabold text-ink tracking-tight">{title}</h2>
+        <a href={allHref} class="text-sm font-bold text-amber-text underline decoration-transparent underline-offset-4 hover:decoration-amber-text transition-colors">{allLabel}</a>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5">
+        {posts.map(p => <BlogCard post={p.post} href={p.href} lang={lang} compact />)}
+      </div>
+    </div>
+  </section>
+)}

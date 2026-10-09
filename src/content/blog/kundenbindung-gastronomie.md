@@ -4,6 +4,8 @@ description: "In Köln kämpfen Cafés, Restaurants und Dönerläden Viertel fü
 pubDate: 2026-03-03
 heroImage: "/images/mockup-coffee.png"
 category: "Strategie"
+coverWord: "Gastro"
+coverCard: stempelkarte
 readingTime: 8
 featured: false
 city: koeln

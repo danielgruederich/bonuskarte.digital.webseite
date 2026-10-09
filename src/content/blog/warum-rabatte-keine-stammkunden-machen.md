@@ -4,6 +4,8 @@ description: "Rabatte locken Schnäppchenjäger, keine Stammkunden. Warum echte 
 pubDate: 2026-04-07
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Rabatte?"
+coverCard: cashback
 readingTime: 6
 featured: false
 city: koeln

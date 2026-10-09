@@ -4,6 +4,8 @@ description: "Poste einen Coupon in deiner Insta-Story, setz ein 4-Stunden-Limit
 pubDate: 2026-04-03
 heroImage: "/images/mockup-green.png"
 category: "How-to"
+coverWord: "Insta-Coupon"
+coverCard: coupon
 readingTime: 6
 featured: false
 city: koeln

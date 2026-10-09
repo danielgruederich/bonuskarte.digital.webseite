@@ -4,6 +4,7 @@ description: "Volle Kasse am Samstag, leere Tische am Montag: Warum Frequenz nic
 pubDate: 2026-06-19
 heroImage: "/images/mockup-green.png"
 category: "Lokales"
+coverWord: "Innenstadt"
 readingTime: 3
 featured: false
 city: koeln

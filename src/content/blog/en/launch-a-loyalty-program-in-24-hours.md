@@ -4,6 +4,8 @@ description: "A realistic, hour-by-hour plan to take a digital stamp card from z
 pubDate: 2026-03-19
 heroImage: "/images/mockup-coffee.png"
 category: "How-to"
+coverWord: "24 Hours"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: "en"

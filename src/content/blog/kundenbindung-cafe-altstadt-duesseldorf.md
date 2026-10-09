@@ -4,6 +4,8 @@ description: "Düsseldorfs Altstadt ist die längste Theke der Welt – aber auc
 pubDate: 2026-07-17
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Altstadt"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: duesseldorf

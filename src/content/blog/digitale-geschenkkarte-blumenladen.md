@@ -4,6 +4,8 @@ description: "Wie Blumenläden mit digitalen Geschenkkarten neue Kunden gewinnen
 pubDate: 2026-04-07
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Geschenk­karte"
+coverCard: coupon
 readingTime: 5
 featured: false
 city: koeln

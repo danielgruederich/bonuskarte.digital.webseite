@@ -1,0 +1,28 @@
+---
+// Abschluss-Aufruf einer Blog-Übersicht: Marken-Orange, Schrift in ink (5,5:1).
+interface Props {
+  title: string
+  text?: string
+  button: string
+  href: string
+  note?: string
+}
+
+const { title, text, button, href, note } = Astro.props
+---
+
+<section class="bg-amber py-20">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-[1.4fr_1fr] gap-10 items-center">
+    <div>
+      <h2 class="text-3xl sm:text-5xl font-black text-ink leading-[1.02] tracking-tighter">{title}</h2>
+      {text && <p class="text-ink text-lg mt-4 max-w-[46ch]">{text}</p>}
+    </div>
+    <div>
+      <a href={href} class="group inline-flex items-center gap-3 bg-ink hover:bg-black text-paper font-bold text-sm tracking-wide px-7 py-4 rounded-full transition-colors">
+        {button}
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" /></svg>
+      </a>
+      {note && <p class="text-ink text-sm mt-3">{note}</p>}
+    </div>
+  </div>
+</section>

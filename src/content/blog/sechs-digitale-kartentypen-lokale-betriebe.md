@@ -4,6 +4,8 @@ description: "Stempelkarte, Punktekarte, Mitgliedskarte, Geschenkkarte, Guthaben
 pubDate: 2026-04-08
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "6 Karten­typen"
+coverCard: stempelkarte
 readingTime: 8
 featured: true
 city: koeln

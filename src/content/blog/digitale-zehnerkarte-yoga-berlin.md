@@ -4,6 +4,8 @@ description: "Wie Berliner Yoga-Studios mit digitalen Zehner- und Monatskarten i
 pubDate: 2026-07-02
 heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
+coverWord: "10er-Karte"
+coverCard: 10er-karte
 readingTime: 7
 featured: false
 city: berlin

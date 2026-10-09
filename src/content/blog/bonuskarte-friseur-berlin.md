@@ -4,6 +4,8 @@ description: "Berliner Friseursalons kämpfen gegen Großketten und Online-Buchu
 pubDate: 2026-07-23
 heroImage: "/images/hero-friseur.jpg"
 category: "Ratgeber"
+coverWord: "Friseur"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: berlin

@@ -4,6 +4,7 @@ description: "Kundenbindung Porz Köln: Wie Inhaber an Hauptstraße und Marktpla
 pubDate: 2026-06-19
 heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
+coverWord: "Porz"
 readingTime: 4
 featured: false
 city: koeln

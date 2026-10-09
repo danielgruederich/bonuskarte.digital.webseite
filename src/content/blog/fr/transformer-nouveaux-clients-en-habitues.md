@@ -4,6 +4,8 @@ description: "70 % des nouveaux clients ne reviennent jamais. Voici comment un c
 pubDate: 2026-03-25
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Habi­tués"
+coverCard: punktekarte
 readingTime: 8
 featured: false
 city: "fr"

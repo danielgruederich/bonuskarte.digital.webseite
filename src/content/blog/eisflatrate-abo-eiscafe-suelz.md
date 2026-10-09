@@ -4,6 +4,8 @@ description: "50 Abo-Kunden, 29 Euro im Monat, 6 Monate garantiert. Warum eine E
 pubDate: 2026-04-01
 heroImage: "/images/mockup-coffee.png"
 category: "Strategie"
+coverWord: "Eis-Flatrate"
+coverCard: mitgliedskarte
 readingTime: 7
 featured: false
 city: koeln

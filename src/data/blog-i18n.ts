@@ -30,14 +30,6 @@ export function getBlogCategoryLabel(category: string, lang: BlogLang): string {
   return lang === 'fr' ? entry.fr : entry.en
 }
 
-/** Light-theme category badge classes (bg-paper blog frontend) */
-export const blogCategoryColors: Record<string, string> = {
-  'Ratgeber':  'bg-amber/15 text-amber border border-amber/40',
-  'Strategie': 'bg-blue-100 text-blue-700 border border-blue-200',
-  'How-to':    'bg-emerald-100 text-emerald-700 border border-emerald-200',
-  'News':      'bg-ink/10 text-ink/60 border border-ink/15',
-  'Lokales':   'bg-ink/10 text-ink/60 border border-ink/15',
-}
 
 /** UI strings for the blog per language (FR/EN only used here) */
 export const BLOG_UI: Record<'fr' | 'en', {

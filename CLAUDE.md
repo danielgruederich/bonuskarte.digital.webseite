@@ -69,6 +69,10 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `public/api/submit.php` | PHP API Handler → Salesflare + Boomerang + Telegram + Sheets + MailerCloud |
 | `src/components/StampGridV2.astro` | Pizza-Stempel-Grid für die v2-Wallet-Karten |
 | `scripts/compose_karte.py` | Compositor für /karten-Mockups (Karten-Export → iPhone-Template → WebP); braucht AppScreens-Template in ~/Downloads |
+| `src/components/blog/` | Blog-Bausteine für alle Städte + EN/FR (Titelbild, Karte, Hauptartikel, Kopf, Artikelkopf, Weitere Artikel, CTA). Farben zentral in `src/data/blog-style.ts` (Coolors-Palette, alle Paare ≥ 4,5:1), Text-Styles in `src/styles/blog-article.css` |
+| Blog-Frontmatter `coverWord` / `coverCard` | Schlagwort und Wallet-Karte im Titelbild – bei jedem neuen Artikel setzen |
+| `npm run blog:og` | Erzeugt fehlende Vorschaubilder (og:image) nach `public/images/blog-og/<slug>.jpg` – nach jedem neuen Artikel laufen lassen und JPG mit committen (braucht Google Chrome lokal). Ohne Bild fällt der Artikel auf `heroImage` zurück |
+| `scripts/karten-pass.mjs` | Schneidet die Wallet-Karte aus `public/images/karten/*.webp` nach `karten/pass/` – nach Änderungen an den Karten-Mockups laufen lassen |
 
 ## Brand
 - **Farben:** Schwarz `#000000` + Gold `#8B7300` (Tailwind: `text-yellow-600` als Annäherung)

@@ -1,0 +1,57 @@
+---
+// Vorlage für die Vorschaubilder (og:image) der Blog-Artikel, 1200×630.
+// Existiert NUR beim Lauf von `npm run blog:og` (BLOG_OG=1) – im normalen Build
+// liefert getStaticPaths nichts, die Seite geht also nie live.
+import { getCollection } from 'astro:content'
+import { categoryStyle, blogLabels } from '../../data/blog-style'
+import { getLangFromSlug } from '../../data/hilfe-categories'
+import '../../styles/blog.css'
+import fs from 'node:fs'
+import path from 'node:path'
+
+export async function getStaticPaths() {
+  if (process.env.BLOG_OG !== '1') return []
+  const posts = await getCollection('blog')
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }))
+}
+
+const { post } = Astro.props
+const lang = getLangFromSlug(post.slug)
+const t = blogLabels(lang)
+const { title, category, coverCard, coverWord } = post.data
+const isVeedel = category === 'Lokales'
+const dark = ['Strategie', 'Lokales', 'News'].includes(category)
+// Original-Lockup aus public/images/v2 – bei der Dunkel-Variante nur die Hintergrundfläche entfernt
+const logoFile = dark ? 'lockup-horizontal-on-dark.svg' : 'lockup-horizontal-primary.svg'
+const logo = fs.readFileSync(path.join(process.cwd(), 'public/images/v2', logoFile), 'utf-8')
+  .replace(/<rect[^>]*><\/rect>/, '')
+  .replace('width="900" height="120"', 'height="34" width="255"')
+const size = title.length > 75 ? 'text-[50px]' : title.length > 55 ? 'text-[58px]' : 'text-[66px]'
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <style>@import '../../styles/fonts.css';</style>
+    <style is:global>html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; font-family: Geist, system-ui, sans-serif; } astro-dev-toolbar { display: none !important; }</style>
+  </head>
+  <body>
+    <div class={`relative w-[1200px] h-[630px] overflow-hidden ${categoryStyle[category].surface}`}>
+      {isVeedel ? (
+        <svg class="blog-rhein absolute inset-0 w-full h-full" viewBox="0 0 400 250" preserveAspectRatio="none"><path d="M300 -10 C 360 60, 250 110, 320 160 S 380 230, 340 270" /></svg>
+      ) : (
+        <div class="blog-pass" style="right:70px; top:70px; width:330px; transform: rotate(5deg)">
+          <img src={`/images/karten/pass/${coverCard ?? 'stempelkarte'}.webp`} alt="" />
+        </div>
+      )}
+      <div class="absolute left-[70px] top-[62px]" set:html={logo} />
+      <div class="absolute left-[70px] bottom-[70px] w-[660px]">
+        <div class="text-[18px] font-bold tracking-[0.16em] uppercase mb-5">
+          {isVeedel ? `Köln · ${coverWord ?? ''}` : t.category(category)}
+        </div>
+        <div class={`${size} font-black leading-[1.02] tracking-tight`}>{title}</div>
+      </div>
+    </div>
+  </body>
+</html>

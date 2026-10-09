@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "blog:og": "node scripts/blog-og.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",

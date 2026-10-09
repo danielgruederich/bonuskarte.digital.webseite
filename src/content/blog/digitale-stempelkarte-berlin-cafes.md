@@ -4,6 +4,8 @@ description: "Berlin ist die Hauptstadt der Cafés – und der Konkurrenz. Wie d
 pubDate: 2026-04-01
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Cafés"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: berlin

@@ -4,6 +4,8 @@ description: "Deine Eisdiele in Nippes ist voll — aber die Hälfte kommt nie w
 pubDate: 2026-03-25
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Eisdiele"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: koeln

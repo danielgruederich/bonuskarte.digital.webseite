@@ -4,6 +4,7 @@ description: "Büropendler mittags, Messe-Besucher am Wochenende, Stammkunden ab
 pubDate: 2026-06-19
 heroImage: "/images/mockup-green.png"
 category: "Lokales"
+coverWord: "Deutz"
 readingTime: 4
 featured: false
 city: koeln

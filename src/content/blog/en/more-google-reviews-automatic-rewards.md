@@ -4,6 +4,8 @@ description: "Google reviews decide who walks in. Here is how to ask at the righ
 pubDate: 2026-05-14
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Reviews"
+coverCard: punktekarte
 readingTime: 6
 featured: false
 city: "en"

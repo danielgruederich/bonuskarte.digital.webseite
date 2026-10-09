@@ -4,6 +4,8 @@ description: "Das Rhein-Center Hürth zieht Kunden aus der ganzen Region. Wie lo
 pubDate: 2026-07-19
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Einkaufs­zentrum"
+coverCard: punktekarte
 readingTime: 7
 featured: false
 city: huerth

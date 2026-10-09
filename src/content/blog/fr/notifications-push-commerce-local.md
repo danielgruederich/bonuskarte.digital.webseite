@@ -4,6 +4,8 @@ description: "Les notifications push sont le canal direct le plus sous-estimé d
 pubDate: 2026-05-20
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Push"
+coverCard: punktekarte
 readingTime: 7
 featured: false
 city: "fr"

@@ -4,6 +4,8 @@ description: "Retour sur investissement, rétention, dépense moyenne : les donn
 pubDate: 2026-04-22
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Rentable ?"
+coverCard: cashback
 readingTime: 8
 featured: false
 city: "fr"

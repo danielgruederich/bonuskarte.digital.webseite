@@ -4,6 +4,8 @@ description: "Hürther Bäckereien haben gegenüber Kölner Innenstadtlagen eine
 pubDate: 2026-07-12
 heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
+coverWord: "Bäckerei"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: huerth

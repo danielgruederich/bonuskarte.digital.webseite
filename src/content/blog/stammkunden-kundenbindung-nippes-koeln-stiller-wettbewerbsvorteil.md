@@ -4,6 +4,7 @@ description: "Kundenbindung in Nippes Köln: Wie Cafés und Bäckereien mit digi
 pubDate: 2026-06-19
 heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
+coverWord: "Nippes"
 readingTime: 3
 featured: false
 city: koeln

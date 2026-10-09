@@ -4,6 +4,8 @@ description: "Empfehlungsmarketing und automatische Google-Review-Anfragen: wie 
 pubDate: 2026-04-10
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Empfeh­lung"
+coverCard: punktekarte
 readingTime: 7
 featured: false
 city: koeln

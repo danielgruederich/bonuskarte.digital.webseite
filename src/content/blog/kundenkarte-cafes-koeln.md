@@ -4,6 +4,8 @@ description: "Viele Kölner Cafés versuchen Kundenbindung – und scheitern an 
 pubDate: 2026-03-15
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Cafés"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: koeln

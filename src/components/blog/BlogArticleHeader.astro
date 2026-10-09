@@ -1,0 +1,59 @@
+---
+// Kopf einer Artikelseite: Brotkrumen, Kategorie, Titel, Einleitung, Autor, Titelbild.
+// Bindet auch die gemeinsamen Text-Styles des Artikels ein (blog-article.css).
+import type { CollectionEntry } from 'astro:content'
+import BlogCover from './BlogCover.astro'
+import { categoryStyle, formatBlogDate, blogLabels } from '../../data/blog-style'
+import type { BlogLang } from '../../data/blog-i18n'
+import '../../styles/blog-article.css'
+
+interface Props {
+  post: CollectionEntry<'blog'>
+  crumbs: { label: string; href?: string }[]
+  place?: string      // Ort in der Meta-Zeile, z. B. „Köln“
+  lang?: BlogLang
+}
+
+const { post, crumbs, place, lang = 'de' } = Astro.props
+const t = blogLabels(lang)
+const { title, description, category, readingTime, pubDate } = post.data
+---
+
+<header class="bg-paper pt-28 pb-8 sm:pb-10">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <nav class="flex items-center flex-wrap gap-1.5 text-[13px] text-ink-500 mb-7" aria-label="Breadcrumb">
+      {crumbs.map((c, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true">›</span>}
+          {c.href
+            ? <a href={c.href} class="underline decoration-ink-200 underline-offset-[3px] hover:text-ink hover:decoration-amber-text">{c.label}</a>
+            : <span>{c.label}</span>}
+        </>
+      ))}
+    </nav>
+
+    <div class="flex flex-wrap items-center gap-2.5 mb-5 text-[13px] text-ink-500">
+      <span class={`text-[11px] font-bold tracking-[0.08em] uppercase px-2 py-1 rounded-md ${categoryStyle[category].tag}`}>{t.category(category)}</span>
+      <span>{t.readingTime(readingTime)}</span>
+      {place && <><span aria-hidden="true">·</span><span>{place}</span></>}
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-black text-ink leading-[1.08] tracking-tight mb-5">{title}</h1>
+
+    <p class="text-ink-500 text-lg sm:text-xl leading-relaxed mb-7">{description}</p>
+
+    <div class="flex items-center gap-3 pt-5 border-t border-ink-200">
+      <img src="/images/daniel-gruederich.png" alt="Daniel Grüderich" class="w-10 h-10 rounded-full object-cover object-top flex-shrink-0" />
+      <div class="text-sm text-ink-500">
+        <div class="text-ink font-semibold leading-none mb-1">Daniel Grüderich</div>
+        {t.authorRole} · <time datetime={pubDate.toISOString()}>{formatBlogDate(pubDate, lang)}</time>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="bg-paper pb-10 sm:pb-14">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <BlogCover post={post} lang={lang} place={place} class="aspect-[16/9] rounded-2xl" eager />
+  </div>
+</div>

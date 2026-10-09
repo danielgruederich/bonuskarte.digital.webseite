@@ -4,6 +4,8 @@ description: "Scarcity and a real deadline are among the strongest reasons to re
 pubDate: 2026-06-18
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Limited Time"
+coverCard: coupon
 readingTime: 6
 featured: false
 city: "en"

@@ -4,6 +4,8 @@ description: "Wie digitale Gutscheine und Rabattkarten Kölner Cafés, Dönerlä
 pubDate: 2026-03-05
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Gut­scheine"
+coverCard: coupon
 readingTime: 5
 featured: false
 city: koeln

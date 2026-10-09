@@ -4,6 +4,7 @@ description: "Ossendorf hat treue Stammkunden – aber hält dein Laden sie wirk
 pubDate: 2026-06-19
 heroImage: "/images/mockup-green.png"
 category: "Lokales"
+coverWord: "Ossendorf"
 readingTime: 3
 featured: false
 city: koeln

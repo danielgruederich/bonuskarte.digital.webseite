@@ -4,6 +4,8 @@ description: "Düsseldorf gilt als Modehauptstadt Deutschlands – und Friseursa
 pubDate: 2026-07-24
 heroImage: "/images/hero-friseur.jpg"
 category: "Ratgeber"
+coverWord: "Friseur"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: duesseldorf

@@ -4,6 +4,8 @@ description: "A practical, honest comparison of digital and paper loyalty cards 
 pubDate: 2026-02-24
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Digital vs. Paper"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: "en"

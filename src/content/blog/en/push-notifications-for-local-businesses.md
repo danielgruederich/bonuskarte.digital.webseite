@@ -4,6 +4,8 @@ description: "How local shops can use push notifications to bring customers back
 pubDate: 2026-05-13
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Push"
+coverCard: punktekarte
 readingTime: 7
 featured: false
 city: "en"

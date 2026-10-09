@@ -4,6 +4,8 @@ description: "Hürth ist eine Stadt der kurzen Wege und gewachsener Stammkundsch
 pubDate: 2026-05-15
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Cafés"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: huerth

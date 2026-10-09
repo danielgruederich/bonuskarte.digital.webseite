@@ -4,6 +4,7 @@ description: "Chorweiler ist kein Touristenviertel — hier kaufen Leute bei den
 pubDate: 2026-06-19
 heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
+coverWord: "Chorweiler"
 readingTime: 3
 featured: false
 city: koeln

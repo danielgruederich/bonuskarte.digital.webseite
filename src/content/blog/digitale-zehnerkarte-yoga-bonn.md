@@ -4,6 +4,8 @@ description: "Wie Bonner Yoga-Studios ihre Stammschüler mit digitalen Zehnerkar
 pubDate: 2026-07-04
 heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
+coverWord: "10er-Karte"
+coverCard: 10er-karte
 readingTime: 7
 featured: false
 city: bonn

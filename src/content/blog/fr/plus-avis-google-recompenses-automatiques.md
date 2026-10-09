@@ -4,6 +4,8 @@ description: "Les avis Google font venir de nouveaux clients, mais les demander 
 pubDate: 2026-05-14
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Avis Google"
+coverCard: punktekarte
 readingTime: 6
 featured: false
 city: "fr"

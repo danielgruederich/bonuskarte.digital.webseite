@@ -4,6 +4,8 @@ description: "Carte de fidélité numérique ou carte papier tamponnée ? Compar
 pubDate: 2026-02-05
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Numérique vs. papier"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: "fr"

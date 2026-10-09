@@ -4,6 +4,7 @@ description: "Lindenthal hat Studenten und Stammkunden – beide ticken anders. 
 pubDate: 2026-06-19
 heroImage: "/images/mockup-coffee.png"
 category: "Lokales"
+coverWord: "Lindenthal"
 readingTime: 3
 featured: false
 city: koeln

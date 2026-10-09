@@ -4,6 +4,8 @@ description: "Stamp cards work because of how the human brain handles unfinished
 pubDate: 2026-02-11
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Psycho­logy"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: "en"

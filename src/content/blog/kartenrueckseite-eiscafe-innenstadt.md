@@ -4,6 +4,8 @@ description: "Bis zu 9 Links auf der Rückseite deiner digitalen Kundenkarte —
 pubDate: 2026-04-08
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Rück­seite"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: koeln

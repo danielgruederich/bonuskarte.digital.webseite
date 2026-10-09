@@ -4,6 +4,8 @@ description: "Comment fonctionne une carte de fidélité dans Apple Wallet et Go
 pubDate: 2026-04-14
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Wallet"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: "fr"

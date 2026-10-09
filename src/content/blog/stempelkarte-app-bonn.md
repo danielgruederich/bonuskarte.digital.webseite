@@ -4,6 +4,8 @@ description: "Kein App-Download, kein Registrierungsformular: Wie Bonner Cafés,
 pubDate: 2026-08-01
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Ohne App"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: bonn

@@ -4,6 +4,8 @@ description: "Wie Düsseldorfer Yoga-Studios mit digitalen Zehner- und Monatskar
 pubDate: 2026-07-03
 heroImage: "/images/hero-yoga.jpg"
 category: "Ratgeber"
+coverWord: "10er-Karte"
+coverCard: 10er-karte
 readingTime: 7
 featured: false
 city: duesseldorf

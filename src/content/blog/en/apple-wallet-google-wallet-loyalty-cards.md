@@ -4,6 +4,8 @@ description: "A plain-English guide to how loyalty cards live in Apple Wallet an
 pubDate: 2026-04-15
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Wallet"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: "en"

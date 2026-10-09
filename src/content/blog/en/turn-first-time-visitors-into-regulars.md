@@ -4,6 +4,8 @@ description: "70% of first-time visitors never come back. This is a practical pl
 pubDate: 2026-03-18
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Regulars"
+coverCard: punktekarte
 readingTime: 8
 featured: false
 city: "en"

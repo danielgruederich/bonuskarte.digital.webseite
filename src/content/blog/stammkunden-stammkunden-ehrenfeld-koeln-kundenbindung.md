@@ -4,6 +4,7 @@ description: "Kundenbindung Ehrenfeld Köln: Warum Cafés und Betriebe nicht wis
 pubDate: 2026-06-19
 heroImage: "/images/mockup-green.png"
 category: "Lokales"
+coverWord: "Ehrenfeld"
 readingTime: 4
 featured: false
 city: koeln

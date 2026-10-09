@@ -4,6 +4,8 @@ description: "Wie digitale Stempelkarten für Cafés, Dönerläden und Restauran
 pubDate: 2026-02-10
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Stempel­karte"
+coverCard: stempelkarte
 readingTime: 7
 featured: true
 city: koeln

@@ -4,6 +4,8 @@ description: "Bonn hat eine stolze Gastro-Szene mit loyalen Stammgästen. Wie lo
 pubDate: 2026-07-25
 heroImage: "/images/hero-restaurant.jpg"
 category: "Ratgeber"
+coverWord: "Restau­rant"
+coverCard: punktekarte
 readingTime: 7
 featured: false
 city: bonn

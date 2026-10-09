@@ -4,6 +4,8 @@ description: "Düsseldorfer Traditionsbäcker gegen große Ketten: Wie digitale 
 pubDate: 2026-07-10
 heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
+coverWord: "Bäckerei"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: duesseldorf

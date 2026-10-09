@@ -4,6 +4,8 @@ description: "Warum die Bäckerei der perfekte Ort für eine digitale Stempelkar
 pubDate: 2026-04-06
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Bäckerei"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: koeln

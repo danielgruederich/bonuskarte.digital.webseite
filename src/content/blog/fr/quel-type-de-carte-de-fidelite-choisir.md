@@ -4,6 +4,8 @@ description: "Tampons, cashback, points, carte de membre ou carte cadeau : quel 
 pubDate: 2026-06-16
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Types de cartes"
+coverCard: mitgliedskarte
 readingTime: 8
 featured: false
 city: "fr"

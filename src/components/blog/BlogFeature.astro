@@ -1,0 +1,40 @@
+---
+// Hauptartikel oben auf einer Blog-Übersicht (Titelbild mit Kartenfächer + Text).
+import type { CollectionEntry } from 'astro:content'
+import BlogCover from './BlogCover.astro'
+import { categoryStyle, formatBlogDate, blogLabels } from '../../data/blog-style'
+import type { BlogLang } from '../../data/blog-i18n'
+
+interface Props {
+  post: CollectionEntry<'blog'>
+  href: string
+  lang?: BlogLang
+}
+
+const { post, href, lang = 'de' } = Astro.props
+const t = blogLabels(lang)
+const { title, description, category, readingTime, pubDate } = post.data
+---
+
+<a href={href} class="group grid md:grid-cols-[1.15fr_1fr] bg-white border-[1.5px] border-ink-200 rounded-2xl overflow-hidden mb-14 transition duration-300 hover:-translate-y-1 hover:border-ink hover:shadow-[0_18px_40px_-18px_rgba(26,20,16,0.35)] focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-[3px] focus-visible:outline-amber-text">
+  <BlogCover post={post} lang={lang} fan class="min-h-[300px] md:min-h-[420px]" eager />
+  <div class="flex flex-col justify-center gap-4 p-7 sm:p-11">
+    <div class="flex flex-wrap items-center gap-2.5 text-[13px] text-ink-500">
+      <span class={`text-[11px] font-bold tracking-[0.08em] uppercase px-2 py-1 rounded-md ${categoryStyle[category].tag}`}>{t.category(category)}</span>
+      <span>{t.readingTime(readingTime)}</span>
+      <span>· {t.featured}</span>
+    </div>
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-ink leading-tight tracking-tight">
+      <span class="blog-underline">{title}</span>
+    </h2>
+    <p class="text-ink-500 text-[17px] leading-relaxed line-clamp-4">{description}</p>
+    <div class="flex items-center gap-3 text-sm text-ink-500">
+      <img src="/images/daniel-gruederich.png" alt="" class="w-10 h-10 rounded-full object-cover object-top" />
+      <div><b class="block text-ink font-semibold">Daniel Grüderich</b>{t.authorRole} · {formatBlogDate(pubDate, lang)}</div>
+    </div>
+    <span class="inline-flex items-center gap-1.5 font-bold text-amber-text">
+      {t.readArticle}
+      <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" /></svg>
+    </span>
+  </div>
+</a>

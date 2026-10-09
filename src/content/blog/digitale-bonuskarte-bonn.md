@@ -4,6 +4,8 @@ description: "Bonn ist eine Stadt der kurzen Wege und treuen Gäste – wenn man
 pubDate: 2026-05-01
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Stamm­gäste"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: bonn

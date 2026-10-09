@@ -4,6 +4,8 @@ description: "Geburtstags-Grüße, Sonnenschein-Alerts, Freitags-Specials — wi
 pubDate: 2026-03-27
 heroImage: "/images/mockup-green.png"
 category: "Strategie"
+coverWord: "Geburts­tag"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: koeln

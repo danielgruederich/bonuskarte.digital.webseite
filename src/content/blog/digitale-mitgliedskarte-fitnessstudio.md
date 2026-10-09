@@ -4,6 +4,8 @@ description: "Warum immer mehr Fitnessstudios auf digitale Mitgliedsausweise in 
 pubDate: 2026-04-08
 heroImage: "/images/mockup-coffee.png"
 category: "Ratgeber"
+coverWord: "Mitglieds­karte"
+coverCard: mitgliedskarte
 readingTime: 6
 featured: false
 city: koeln

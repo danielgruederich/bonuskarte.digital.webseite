@@ -4,6 +4,8 @@ description: "Deine digitale Kundenkarte liegt im Wallet zwischen Bank-App und K
 pubDate: 2026-06-09
 heroImage: "/images/mockup-coffee.png"
 category: "How-to"
+coverWord: "3D-Icons"
+coverCard: stempelkarte
 readingTime: 6
 featured: false
 city: koeln

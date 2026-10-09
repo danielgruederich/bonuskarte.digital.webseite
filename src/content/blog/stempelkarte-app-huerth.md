@@ -4,6 +4,8 @@ description: "Viele Hürther Betriebsinhaber denken, digitale Kundenkarten sind 
 pubDate: 2026-08-02
 heroImage: "/images/mockup-green.png"
 category: "Ratgeber"
+coverWord: "Ohne App"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: huerth

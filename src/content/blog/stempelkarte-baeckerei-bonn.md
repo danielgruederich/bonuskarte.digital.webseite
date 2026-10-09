@@ -4,6 +4,8 @@ description: "Bonner Bäckereien haben eine treue Stammkundschaft – wenn sie d
 pubDate: 2026-07-11
 heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
+coverWord: "Bäckerei"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: bonn

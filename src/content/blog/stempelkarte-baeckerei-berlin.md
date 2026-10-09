@@ -4,6 +4,8 @@ description: "Wie Berliner Traditionsbäcker mit digitalen Stempelkarten gegen B
 pubDate: 2026-07-09
 heroImage: "/images/hero-baeckerei.jpg"
 category: "Ratgeber"
+coverWord: "Bäckerei"
+coverCard: stempelkarte
 readingTime: 7
 featured: false
 city: berlin
