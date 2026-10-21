@@ -15,12 +15,12 @@ export const koeln: GruenderCityConfig = {
       a: 'Wir melden uns innerhalb 24 h per WhatsApp und Telefon. Im Gespräch klären wir Branding (Logo, Farbe, Belohnung), Bezahlweg (Rechnung per E-Mail, SEPA oder klassische Überweisung) und den Setup-Termin. Deine Karte ist in unter 24 h nach Zahlungseingang live.',
     },
     {
-      q: 'Wie zahle ich die 100 €?',
+      q: 'Wie zahle ich die 99 €?',
       a: 'Nach unserem Telefonat schicken wir dir eine Rechnung per E-Mail. Du zahlst per SEPA-Überweisung oder klassischer Überweisung. Keine Kreditkarte nötig, kein Abo-Vertrag mit versteckten Klauseln.',
     },
     {
       q: 'Was bedeutet die 90-Tage-Geld-zurück-Garantie?',
-      a: 'Du startest mit dem vollen Funktionsumfang. Wenn du innerhalb von 90 Tagen ab Zahlungseingang merkst, dass die Karte für deinen Betrieb nicht das Richtige ist, schreibst du uns kurz — wir erstatten die 100 € ohne Rückfragen.',
+      a: 'Du startest mit dem vollen Funktionsumfang. Wenn du innerhalb von 90 Tagen ab Zahlungseingang merkst, dass die Karte für deinen Betrieb nicht das Richtige ist, schreibst du uns kurz — wir erstatten die 99 € ohne Rückfragen.',
     },
     {
       q: 'Was, wenn ich später Standorte dazunehme?',
