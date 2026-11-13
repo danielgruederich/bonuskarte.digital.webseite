@@ -64,6 +64,7 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `src/components/LandingFaq.astro` | FAQ-Sektion + FAQPage-Schema für Landing Pages |
 | `src/components/StickyMobileCta.astro` | Sticky CTA-Leiste auf Mobile (versteckt sich, solange `#demo` sichtbar ist) |
 | `src/components/LeadForm.tsx` | Hauptformular (Café, Restaurant, Pizza, Eiscafé) |
+| `src/components/LeadFormInline.astro` | Inline-Formular (4 Felder, gleicher `/api/submit.php`-Weg) auf `/preise/`, `/funktionen/`, `/karten/`, `/faq/`; löst die Stadt client-seitig aus `bkCity`/Pfad auf, `source='<seite>-inline'` |
 | `src/components/LeadFormDoener.tsx` | Vereinfachtes Formular für Döner (Props: `niche`, `city` für korrekte Lead-Attribution) |
 | `src/components/ui/gooey-text-morphing.tsx` | GooeyText-Animation (morphende Wörter, nur Eiscafé-Hero) |
 | `public/api/submit.php` | PHP API Handler → Salesflare + Boomerang + Telegram + Sheets + MailerCloud |

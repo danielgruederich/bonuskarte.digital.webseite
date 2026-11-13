@@ -1,0 +1,228 @@
+---
+/**
+ * Inline-Lead-Formular für Inhaltsseiten (Preise, Funktionen, Karten, FAQ).
+ *
+ * Gleiche vier Felder und derselbe API-Weg wie das Startseiten-Formular
+ * (/api/submit.php → Salesflare + Boomerang + Telegram + Sheets + MailerCloud).
+ * Die Seiten hatten bisher KEIN Formular; ihre CTAs schickten Besucher auf den
+ * Stadt-Hub (/{city}/), von dem aus erst über Nische und Veedel ein Formular
+ * erreichbar war.
+ *
+ * Die Stadt wird client-seitig aufgelöst — `bkCity` setzt BaseLayout beim
+ * Aufruf einer Stadtseite in der Session; sonst erstes Pfadsegment; sonst
+ * 'koeln'. Damit landet ein Berlin-Besucher nicht als Köln-Lead im CRM.
+ */
+interface Props {
+  /** Analytics-Quelle, z. B. 'preise' | 'funktionen' | 'karten' | 'faq' */
+  source: string
+  heading?: string
+  subline?: string
+  /** Anker-ID, auf die die CTAs der Seite scrollen */
+  anchorId?: string
+}
+
+const {
+  source,
+  heading = 'Deine Karte – 90 Tage kostenlos',
+  subline = 'Betrieb, Branche, Name, Kontakt. Wir bauen deine Karte mit deinem Logo und melden uns innerhalb von 24 Stunden.',
+  anchorId = 'lead-form',
+} = Astro.props
+
+// Anzeige-Label → Template-Key für submit.php (TEMPLATE_IDS)
+const branchen = [
+  { label: 'Café', value: 'cafe' },
+  { label: 'Bäckerei', value: 'baeckerei' },
+  { label: 'Döner / Imbiss', value: 'doener' },
+  { label: 'Pizzeria / Restaurant', value: 'pizza' },
+  { label: 'Eiscafé', value: 'eiscafe' },
+  { label: 'Friseur / Salon', value: 'friseur' },
+  { label: 'Fitness / Gym', value: 'fitnessstudio' },
+  { label: 'Yoga-Studio', value: 'yoga' },
+  { label: 'Anderes', value: 'cafe' },
+]
+
+const whatsappUrl = 'https://wa.me/491705594140?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20bonuskarte.digital'
+
+const fieldClass =
+  'w-full px-4 py-3 bg-white border border-ink/20 text-ink placeholder-ink/40 text-sm focus:outline-none focus:border-amber transition-colors'
+const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-ink/60 mb-2'
+---
+
+<section id={anchorId} class="py-12 sm:py-16 px-5 sm:px-8 bg-paper scroll-mt-24" data-lead-inline={source}>
+  <div class="max-w-xl mx-auto">
+    <div class="border border-ink/20 bg-white p-6 sm:p-8">
+      <p class="text-amber text-xs tracking-[0.3em] uppercase mb-3">Kostenlos testen</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-ink tracking-tight mb-2">{heading}</h2>
+      <p class="text-ink/70 text-sm leading-relaxed mb-6">{subline}</p>
+
+      <form data-lead-inline-form novalidate class="space-y-4">
+        <label class="block">
+          <span class={labelClass}>Name des Betriebs</span>
+          <input type="text" name="betrieb" required autocomplete="organization" placeholder="z. B. dein Café" class={fieldClass} />
+        </label>
+
+        <label class="block">
+          <span class={labelClass}>Branche</span>
+          <select name="branche" required class={fieldClass}>
+            <option value="">Bitte wählen …</option>
+            {branchen.map((b) => <option value={b.value}>{b.label}</option>)}
+          </select>
+        </label>
+
+        <label class="block">
+          <span class={labelClass}>Dein Vorname</span>
+          <input type="text" name="vorname" required autocomplete="given-name" placeholder="z. B. Alev" class={fieldClass} />
+        </label>
+
+        <label class="block">
+          <span class={labelClass}>Handynummer oder E-Mail</span>
+          <input type="text" name="kontakt" required autocomplete="on" inputmode="text" placeholder="0176 … oder du@laden.de" class={fieldClass} />
+        </label>
+
+        <button type="submit" class="w-full inline-flex items-center justify-center bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all">
+          Demo-Karte ins Wallet holen
+        </button>
+
+        <p data-lead-inline-error role="alert" class="hidden text-center text-sm text-[#B23A2B] leading-relaxed">
+          Das hat leider nicht geklappt. Versuch's nochmal – oder schreib uns direkt auf WhatsApp.
+        </p>
+        <p class="text-center text-xs text-ink/50 leading-relaxed">
+          Keine Kreditkarte. Demo-Karte sofort im Wallet, deine Version mit Logo in 24 h.
+        </p>
+      </form>
+
+      <div data-lead-inline-success class="hidden text-center py-2">
+        <p class="text-xl font-bold text-ink mb-2">Angekommen.</p>
+        <p class="text-ink/70 text-sm leading-relaxed mb-5">
+          Danke! Deine Demo-Karte kannst du jetzt ins Wallet laden. Deine Karte mit eigenem Logo und Prämie bauen wir innerhalb von 24 Stunden.
+        </p>
+        <a data-lead-inline-install class="hidden inline-flex items-center justify-center bg-amber hover:bg-amber-dark text-black px-6 py-3 text-xs font-bold tracking-[0.15em] uppercase mb-4" target="_blank" rel="noopener noreferrer">
+          Demo-Karte ins Wallet laden
+        </a>
+        <p class="text-sm text-ink/60 mb-2">Lieber sofort quatschen?</p>
+        <a href={whatsappUrl} class="inline-flex items-center justify-center border border-ink/30 hover:border-amber text-ink px-6 py-3 text-xs font-bold tracking-[0.15em] uppercase transition-colors">
+          Auf WhatsApp schreiben
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { analytics } from '../lib/analytics'
+
+  const CITIES = ['berlin', 'hamburg', 'duesseldorf', 'muenchen', 'frankfurt', 'koeln', 'bonn', 'essen', 'hannover', 'dortmund', 'dresden', 'nuernberg', 'leipzig', 'stuttgart', 'huerth']
+
+  function resolveCity(): string {
+    let city = ''
+    try {
+      city = sessionStorage.getItem('bkCity') || ''
+    } catch {
+      /* SessionStorage kann blockiert sein – dann Pfad-Fallback */
+    }
+    if (!city) {
+      const seg = window.location.pathname.split('/')[1] || ''
+      if (CITIES.includes(seg)) city = seg
+    }
+    return city || 'koeln'
+  }
+
+  const CITY = resolveCity()
+
+  document.querySelectorAll<HTMLElement>('[data-lead-inline]').forEach((section) => {
+    const source = section.dataset.leadInline || 'inline'
+
+    // Sticky-CTA ausblenden, solange das Formular sichtbar ist (wie auf der Startseite
+    // mit #demo) — sonst verdeckt die Leiste den Absende-Button.
+    const sticky = document.getElementById('sticky-cta')
+    if (sticky && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            sticky.style.transform = entry.isIntersecting ? 'translateY(100%)' : ''
+          })
+        },
+        { threshold: 0.2 },
+      )
+      io.observe(section)
+    }
+    const form = section.querySelector<HTMLFormElement>('[data-lead-inline-form]')
+    const success = section.querySelector<HTMLElement>('[data-lead-inline-success]')
+    const errorEl = section.querySelector<HTMLElement>('[data-lead-inline-error]')
+    const submitBtn = form?.querySelector<HTMLButtonElement>('button[type="submit"]')
+    if (!form || !success) return
+
+    let started = false
+    let nicheTracked = false
+
+    form.addEventListener('focusin', () => {
+      if (started) return
+      started = true
+      analytics.signupFormStart('', CITY, source)
+    })
+
+    form.querySelector('select[name="branche"]')?.addEventListener('change', (e) => {
+      const v = (e.target as HTMLSelectElement).value
+      if (!v || nicheTracked) return
+      nicheTracked = true
+      analytics.nicheSelected(v, CITY, source)
+    })
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      errorEl?.classList.add('hidden')
+
+      const business = (form.elements.namedItem('betrieb') as HTMLInputElement).value.trim()
+      const niche = (form.elements.namedItem('branche') as HTMLSelectElement).value
+      const kontakt = (form.elements.namedItem('kontakt') as HTMLInputElement).value.trim()
+      const vorname = (form.elements.namedItem('vorname') as HTMLInputElement).value.trim()
+      if (!business || !niche || !kontakt || !vorname) {
+        form.reportValidity()
+        return
+      }
+
+      analytics.signupSubmitAttempt(niche, CITY, source)
+      form.classList.add('opacity-60', 'pointer-events-none')
+      if (submitBtn) submitBtn.textContent = 'Einen Moment …'
+
+      const params = new URLSearchParams(window.location.search)
+      const utm: Record<string, string> = {
+        utm_source: params.get('utm_source') || 'bonuskarte.digital',
+        utm_medium: params.get('utm_medium') || 'landing-page',
+        utm_campaign: params.get('utm_campaign') || source,
+      }
+      if (params.get('utm_content')) utm.utm_content = params.get('utm_content')!
+      if (params.get('utm_term')) utm.utm_term = params.get('utm_term')!
+
+      try {
+        const res = await fetch('/api/submit.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ business, niche, kontakt, vorname, city: CITY, utm, mode: 'standard', source: `${source}-inline` }),
+        })
+        const json = await res.json().catch(() => ({}))
+        if (res.ok && json.success) {
+          analytics.demoCardCreated(niche, CITY)
+          analytics.signupSubmit(niche, CITY, source)
+          form.classList.add('hidden')
+          success.classList.remove('hidden')
+          const installEl = success.querySelector<HTMLAnchorElement>('[data-lead-inline-install]')
+          const installLink = json.directInstallLink?.universal ?? json.installLink
+          if (installEl && installLink) {
+            installEl.href = installLink
+            installEl.classList.remove('hidden')
+            installEl.addEventListener('click', () => analytics.walletInstallClicked(niche || source), { once: true })
+          }
+        } else {
+          throw new Error(json.error || 'api_error')
+        }
+      } catch (err) {
+        analytics.signupSubmitError(niche, CITY, err instanceof TypeError ? 'network_error' : 'api_error', source)
+        errorEl?.classList.remove('hidden')
+      } finally {
+        form.classList.remove('opacity-60', 'pointer-events-none')
+        if (submitBtn) submitBtn.textContent = 'Demo-Karte ins Wallet holen'
+      }
+    })
+  })
+</script>

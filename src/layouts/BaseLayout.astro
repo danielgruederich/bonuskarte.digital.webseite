@@ -8,12 +8,14 @@ interface Props {
   alternates?: { hreflang: string; href: string }[]   // hreflang pairs; default empty
   noindex?: boolean                                   // when true, emit <meta robots="noindex,follow">
   showStickyCta?: boolean                             // sticky mobile CTA bar (default true)
+  stickyCtaHref?: string                              // Ziel der Sticky-CTA; '#' = Anker, sonst Stadt-Hub (default '/koeln/')
   canonical?: string                                  // override canonical URL (e.g. A/B-Variante → Original)
 }
 
 import Zipchat from '../components/integrations/Zipchat.astro'
 
-const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false, showStickyCta = true, canonical } = Astro.props
+const { title, description, ogImage, lang = 'de', locale = 'de_DE', alternates = [], noindex = false, showStickyCta = true, stickyCtaHref = '/koeln/', canonical } = Astro.props
+const stickyIsCityCta = !stickyCtaHref.startsWith('#')
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, 'https://bonuskarte.digital').href
 const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuskarte.digital').href
 ---
@@ -109,8 +111,8 @@ const ogImageUrl   = new URL(ogImage ?? '/screens/phone-1.jpg', 'https://bonuska
           <p class="text-ink/50 text-xs leading-tight">wir machen den Rest.</p>
         </div>
         <a
-          href="/koeln/"
-          data-city-cta
+          href={stickyCtaHref}
+          data-city-cta={stickyIsCityCta ? '' : undefined}
           class="flex-shrink-0 inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-black px-5 py-3 text-xs font-bold tracking-[0.15em] uppercase transition-colors"
         >
           Kostenlos testen

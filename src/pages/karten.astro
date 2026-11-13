@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
+import LeadFormInline from '../components/LeadFormInline.astro'
 
 const cards = [
   {
@@ -135,6 +136,7 @@ const cards = [
 <BaseLayout
   title="Alle Kartentypen – Stempelkarte, Gutschein, Abo & mehr | bonuskarte.digital"
   description="7 digitale Loyalitätskarten für lokale Betriebe: Stempelkarte, 10er-Karte, Coupon, Gutscheinkarte, Mitgliedskarte, Cashback & Punktekarte – alle in Apple Wallet & Google Wallet."
+  stickyCtaHref="#lead-form"
   alternates={[
     { hreflang: 'de', href: 'https://bonuskarte.digital/karten/' },
     { hreflang: 'en', href: 'https://bonuskarte.digital/en/cards/' },
@@ -280,8 +282,7 @@ const cards = [
                   </a>
                 ) : (
                   <a
-                    href="/koeln/"
-                    data-city-cta
+                    href="#lead-form"
                     class="inline-flex items-center gap-2 text-ink/60 text-xs font-medium tracking-[0.15em] uppercase px-5 py-3 border border-ink/10 hover:border-ink/20 transition-colors"
                   >
                     Karte anfragen
@@ -323,6 +324,8 @@ const cards = [
     </div>
   </section>
 
+  <LeadFormInline source="karten" heading="Welche Karte es auch wird – wir bauen sie dir." />
+
   <!-- COMPARISON NOTE -->
   <section class="bg-paper py-10 px-5 sm:px-8 border-t border-ink/30">
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -333,8 +336,7 @@ const cards = [
         </p>
       </div>
       <a
-        href="/koeln/"
-        data-city-cta
+        href="#lead-form"
         class="flex-shrink-0 inline-flex items-center gap-2 bg-amber hover:bg-amber-dark text-black px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all"
       >
         Kostenlos starten

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import Icon from '../components/icons/TrustIcons.astro'
+import LeadFormInline from '../components/LeadFormInline.astro'
 
 const faq = [
   {
@@ -43,6 +44,7 @@ const faq = [
 <BaseLayout
   title="Preise – digitale Stempelkarte ab 29 €/Monat | bonuskarte.digital"
   description="Einfache, transparente Preise. Bis zu 3 Standorte für 29 €/Monat – unter 1 € pro Tag. 4–10 Standorte Flatrate für 100 €/Monat. 90 Tage kostenlos testen – keine Kreditkarte."
+  stickyCtaHref="#lead-form"
   alternates={[
     { hreflang: 'de', href: 'https://bonuskarte.digital/preise/' },
     { hreflang: 'en', href: 'https://bonuskarte.digital/en/pricing/' },
@@ -133,7 +135,7 @@ const faq = [
             ))}
           </div>
 
-          <a href="/koeln/" data-city-cta
+          <a href="#lead-form"
             class="w-full inline-flex items-center justify-center border border-ink/30 hover:border-amber/40 text-ink hover:text-ink px-6 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all">
             Kostenlos testen
           </a>
@@ -171,7 +173,7 @@ const faq = [
             ))}
           </div>
 
-          <a href="/koeln/" data-city-cta
+          <a href="#lead-form"
             class="w-full inline-flex items-center justify-center bg-amber hover:bg-amber-dark text-black px-6 py-4 text-xs font-bold tracking-[0.15em] uppercase transition-all">
             Jetzt starten
           </a>
@@ -253,6 +255,8 @@ const faq = [
     </div>
   </section>
 
+  <LeadFormInline source="preise" heading="Preis geklärt? Dann bauen wir deine Karte." />
+
   <!-- ── VERGLEICH ──────────────────────────────────────────── -->
   <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper relative overflow-hidden">
     <div class="absolute inset-0 bg-grid-ink opacity-50"></div>
@@ -329,7 +333,7 @@ const faq = [
       <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">
         ausprobieren.
       </h2>
-      <a href="/koeln/"
+      <a href="#lead-form"
         class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-dark text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
         Jetzt kostenlos starten
         <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
