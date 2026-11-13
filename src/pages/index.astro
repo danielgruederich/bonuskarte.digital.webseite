@@ -92,6 +92,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       --amber-hover: #E2531F;
       --amber-tint: #FBE4D8;
       --amber-ring: rgba(242, 92, 36, 0.35);
+      --accent-text: #B23F12; /* Schrift auf hellem Grund = amber.text (5,2:1 auf paper) */
       --ink-90: rgba(26,20,16,0.90); --ink-72: rgba(26,20,16,0.72); --ink-56: rgba(26,20,16,0.56);
       --ink-40: rgba(26,20,16,0.40); --ink-24: rgba(26,20,16,0.24); --ink-14: rgba(26,20,16,0.14);
       --ink-08: rgba(26,20,16,0.08); --ink-04: rgba(26,20,16,0.04);
@@ -131,7 +132,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
     /* Buttons (Design-System "primary") */
     .bk-btn {
       display: inline-flex; align-items: center; justify-content: center;
-      background: var(--accent); color: var(--v2-paper); border: none; cursor: pointer;
+      background: var(--accent); color: var(--v2-ink); border: none; cursor: pointer;
       font-family: var(--font-sans); font-weight: 600; text-decoration: none;
       border-radius: var(--radius-md); transition: background 0.15s ease;
     }
@@ -147,7 +148,9 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
     .bk-navlink:hover { color: var(--v2-ink); }
     .bk-footlink { color: var(--paper-72); text-decoration: none; font-size: 14px; }
     .bk-footlink:hover { color: var(--v2-paper); }
-    .bk-field:focus { border-bottom-color: var(--accent) !important; }
+    .bk-field:focus { border-bottom-color: var(--accent-text) !important; }
+    /* Sichtbarer Fokus für Tastaturbedienung: Ring statt nur 1,5-px-Unterstrich */
+    .bk-field:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
     .bk-whatsapp:hover { background: var(--ink-04); }
     .bk-faqlink:hover { text-decoration: underline; }
 
@@ -218,7 +221,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <!-- ======================= HERO ======================= -->
       <section style="position:relative;padding:clamp(40px,7vw,84px) 24px clamp(56px,8vw,96px)">
         <div aria-hidden="true" style="position:absolute;top:8%;right:6%;width:190px;height:190px;border-radius:50%;border:6px solid rgba(242,92,36,0.10);pointer-events:none"></div>
@@ -227,13 +230,13 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
           <!-- copy column -->
           <div class="bk-hero-copy" style="flex:1 1 440px;min-width:300px">
-            <p id="hero-eyebrow" style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Digitale Stempelkarte &amp; Bonuskarte · Apple &amp; Google Wallet · aus Köln</p>
-            <h1 id="hero-h1" style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale <span class="bk-h1-accent" style="color:var(--accent);position:relative;white-space:nowrap">Bonuskarte ohne App</span></h1>
+            <p id="hero-eyebrow" style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 22px">Digitale Stempelkarte &amp; Bonuskarte · Apple &amp; Google Wallet · aus Köln</p>
+            <h1 id="hero-h1" style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale <span class="bk-h1-accent" style="color:var(--accent-text);position:relative;white-space:nowrap">Bonuskarte ohne App</span></h1>
             <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:44ch">Direkt in Apple Wallet und Google Wallet. Kein Download, kein Plastik, in 24 Stunden startklar. Deine Kund:innen sammeln Stempel im Handy – aus Erstbesuchern werden Stammkunden.</p>
 
             <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
               <button type="button" class="bk-btn bk-btn--lg" data-scroll-to-form style="width:auto;padding:0 30px">Demo-Karte ins Wallet holen</button>
-              <span style="font-family:var(--font-hand);font-size:20px;color:var(--accent);transform:rotate(-3deg)">in 60 Sekunden →</span>
+              <span style="font-family:var(--font-hand);font-size:20px;color:var(--accent-text);transform:rotate(-3deg)">in 60 Sekunden →</span>
             </div>
 
             <div style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--ink-56)">
@@ -280,7 +283,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
                       <img src="/images/v2/pass-barcode.png" alt="" width="706" height="212" style="width:100%;height:auto;display:block" />
                     </div>
                   </div>
-                  <div style="font-family:var(--font-hand);font-size:15px;color:var(--accent);text-align:center;margin-top:auto;padding-top:10px">wohnt im Handy</div>
+                  <div style="font-family:var(--font-hand);font-size:15px;color:var(--accent-text);text-align:center;margin-top:auto;padding-top:10px">wohnt im Handy</div>
                 </div>
               </div>
 
@@ -352,11 +355,11 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
 
           <!-- copy -->
           <div style="flex:1 1 360px;min-width:300px">
-            <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Selbst ausprobieren</p>
+            <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 14px">Selbst ausprobieren</p>
             <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 16px">Die digitale Stempelkarte zum Antippen – genau so liegt sie im Wallet.</h2>
             <p id="demo-copy" style="font-size:19px;line-height:1.6;color:var(--ink-72);margin:0 0 26px;max-width:42ch">Die digitale Karte ist der Teil, den deine Kund:innen sehen – der sichtbare Teil deines Stammkunden-Systems. Tipp selbst drauf und stemple mit: genau so liegt sie in Apple oder Google Wallet. Kein Papier, kein Download – ein sichtbarer Grund, wiederzukommen, immer dabei im Handy.</p>
 
-            <p id="demo-hint" style="font-family:var(--font-hand);font-size:22px;color:var(--accent);margin:0;animation:bk-nudge 2s var(--ease-in-out) infinite">tipp auf die Karte – noch <span id="demo-taps-left">5</span>×</p>
+            <p id="demo-hint" style="font-family:var(--font-hand);font-size:22px;color:var(--accent-text);margin:0;animation:bk-nudge 2s var(--ease-in-out) infinite">tipp auf die Karte – noch <span id="demo-taps-left">5</span>×</p>
             <div id="demo-done" hidden style="display:flex;align-items:center;gap:12px;background:var(--amber-tint);border-radius:var(--radius-md);padding:14px 16px;animation:bk-rise 0.35s var(--ease-out) both;max-width:380px">
               <span style="width:34px;height:34px;border-radius:50%;background:var(--accent);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;animation:bk-thunk 0.35s var(--ease-out) both"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
               <div><div style="font-weight:600;font-size:16px;color:var(--v2-ink)">Gratis Pizza – freigeschaltet.</div><div style="font-size:14px;color:var(--ink-56)">Nochmal tippen für einen neuen Durchlauf.</div></div>
@@ -455,7 +458,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <!-- ======================= TESTIMONIAL ======================= -->
       <section style="padding:clamp(56px,8vw,110px) 24px">
         <div style="max-width:1100px;margin:0 auto">
-          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 30px">Echte Betriebe, echte Zahlen</p>
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 30px">Echte Betriebe, echte Zahlen</p>
 
           <article style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,52px);align-items:center">
             <div style="flex:1 1 300px;min-width:260px;position:relative">
@@ -470,7 +473,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               </footer>
               <div style="display:flex;flex-wrap:wrap;gap:10px">
                 {[ 'Live in 24 h', '200 Karten im Umlauf', '0 Ausfälle' ].map(s => (
-                  <span style="display:inline-flex;align-items:center;gap:8px;background:var(--amber-tint);border-radius:999px;padding:8px 14px;font-size:15px;font-weight:600;color:var(--amber-press)">{s}</span>
+                  <span style="display:inline-flex;align-items:center;gap:8px;background:var(--amber-tint);border-radius:999px;padding:8px 14px;font-size:15px;font-weight:600;color:#8A2E0D">{s}</span>
                 ))}
               </div>
             </blockquote>
@@ -493,7 +496,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <!-- ======================= PROBLEM ======================= -->
       <section id="problem" style="padding:clamp(56px,8vw,104px) 24px;border-top:1px solid var(--border)">
         <div style="max-width:840px;margin:0 auto;text-align:center">
-          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Jeder Betrieb kennt das</p>
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 18px">Jeder Betrieb kennt das</p>
           <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,4vw,42px);line-height:1.12;letter-spacing:-0.01em;margin:0 auto;max-width:20ch;text-wrap:balance">Zufriedene Gäste kommen nicht automatisch zurück.</h2>
 
           <div aria-hidden="true" style="display:flex;flex-direction:column;align-items:center;gap:10px;margin:38px 0">
@@ -509,7 +512,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <!-- ======================= VOM BESUCH ZUR ROUTINE ======================= -->
       <section id="routine" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
         <div style="max-width:1000px;margin:0 auto;text-align:center">
-          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 16px">Vom Besuch zur Routine</p>
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 16px">Vom Besuch zur Routine</p>
           <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0 auto 14px;max-width:22ch;text-wrap:balance">Der erste Besuch ist nur der Anfang.</h2>
           <p style="font-size:20px;line-height:1.6;color:var(--ink-72);margin:0 auto 44px;max-width:50ch">Stammkunden entstehen nicht durch einen Rabatt. Sie entstehen, wenn Menschen einen Grund haben, wiederzukommen.</p>
 
@@ -521,7 +524,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               { n: '★', t: 'Stammkunde', d: 'Aus dem Besuch ist eine Beziehung geworden.', fill: 1 },
             ].map((s, i) => (
               <li style={`flex:1 1 200px;min-width:190px;max-width:260px;position:relative;background:var(--white);border:1px solid var(--border);border-top:3px solid rgba(242,92,36,${s.fill});border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:22px 20px;text-align:left`}>
-                <span style={`display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-weight:700;font-size:15px;margin-bottom:12px;${s.fill >= 1 ? 'background:var(--accent);color:var(--v2-paper)' : 'background:var(--amber-tint);color:var(--amber-press)'}`}>{s.n}</span>
+                <span style={`display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-weight:700;font-size:15px;margin-bottom:12px;${s.fill >= 1 ? 'background:var(--accent);color:var(--v2-paper)' : 'background:var(--amber-tint);color:#8A2E0D'}`}>{s.n}</span>
                 <div style="font-family:var(--font-serif);font-weight:600;font-size:20px;color:var(--v2-ink);margin-bottom:6px">{s.t}</div>
                 <div style="font-size:15px;line-height:1.5;color:var(--ink-56)">{s.d}</div>
                 {i < 3 && <span aria-hidden="true" style="display:none"></span>}
@@ -534,7 +537,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <!-- ======================= SO LÄUFT'S (RECEIPT) ======================= -->
       <section id="so-laeufts" style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
         <div style="max-width:760px;margin:0 auto;text-align:center">
-          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">In vier Schritten</p>
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 14px">In vier Schritten</p>
           <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-0.01em;margin:0 0 44px">So funktioniert die digitale Bonuskarte – aufgedruckt.</h2>
         </div>
 
@@ -564,7 +567,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
 
             <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:18px">
               <span style="font-size:16px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600">Summe</span>
-              <span style="font-size:20px;font-weight:600;color:var(--accent)">mehr Stammkunden</span>
+              <span style="font-size:20px;font-weight:600;color:var(--accent-text)">mehr Stammkunden</span>
             </div>
             <div style="text-align:center;font-size:13px;color:var(--ink-40);margin-top:14px;letter-spacing:0.06em">* * * EIN BESUCH IST GUT. VIELE BESUCHE SIND NOCH BESSER. * * *</div>
           </div>
@@ -575,7 +578,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <!-- ======================= VORHER / NACHHER STORY ======================= -->
       <section style="padding:clamp(56px,8vw,104px) 24px;background:var(--surface-sunken)">
         <div style="max-width:920px;margin:0 auto;text-align:center">
-          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 16px">Vom Papier in die Hosentasche</p>
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 16px">Vom Papier in die Hosentasche</p>
           <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.2;letter-spacing:-0.01em;margin:0 auto 40px;max-width:24ch;text-wrap:balance">Die Papierkarte lag im Portemonnaie, bis sie durchweichte. Die neue wohnt im Handy.</h2>
 
           <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,56px);align-items:center;justify-content:center">
@@ -591,7 +594,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               <div style="position:absolute;bottom:-8px;right:-8px;width:60px;height:60px;border-radius:50%;border:3px solid rgba(26,20,16,0.12)"></div>
             </div>
 
-            <span aria-hidden="true" style="font-family:var(--font-hand);font-size:26px;color:var(--accent);transform:rotate(-4deg)">wird zu →</span>
+            <span aria-hidden="true" style="font-family:var(--font-hand);font-size:26px;color:var(--accent-text);transform:rotate(-4deg)">wird zu →</span>
 
             <!-- wallet pass -->
             <div style="flex:0 0 auto;width:270px;background:#1A160F;border-radius:12px;padding:14px 13px 13px;box-shadow:var(--shadow-lg);transform:rotate(2deg);text-align:left">
@@ -657,7 +660,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <section id="vorteile" style="padding:clamp(56px,8vw,104px) 24px">
         <div style="max-width:1100px;margin:0 auto">
           <div style="max-width:640px;margin:0 0 44px">
-            <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Was das für deinen Laden bedeutet</p>
+            <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 14px">Was das für deinen Laden bedeutet</p>
             <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;margin:0;text-wrap:balance">Was das Bonuskartensystem für deinen Laden bedeutet: vier Gründe, warum Gäste wiederkommen.</h2>
           </div>
 
@@ -669,7 +672,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               { k: 'Verstehe deine Stammkunden', d: 'Sieh, welche Kund:innen aktiv sind und wer zurückkommt – statt zu raten, was funktioniert.' },
             ].map((f, i) => (
               <div style="flex:1 1 240px;min-width:230px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:26px 24px">
-                <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--amber-tint);color:var(--amber-press);font-family:var(--font-mono);font-weight:600;font-size:15px;margin-bottom:16px">{`0${i + 1}`}</span>
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--amber-tint);color:#8A2E0D;font-family:var(--font-mono);font-weight:600;font-size:15px;margin-bottom:16px">{`0${i + 1}`}</span>
                 <h3 style="font-family:var(--font-serif);font-weight:600;font-size:20px;line-height:1.2;color:var(--v2-ink);margin:0 0 8px">{f.k}</h3>
                 <p style="font-size:16px;line-height:1.6;color:var(--ink-56);margin:0">{f.d}</p>
               </div>
@@ -681,8 +684,8 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
       <!-- ======================= PREIS ======================= -->
       <section id="preis" style="padding:clamp(48px,7vw,88px) 24px;border-top:1px solid var(--border)">
         <div style="max-width:760px;margin:0 auto;text-align:center">
-          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px">Ehrlicher Preis</p>
-          <p style="font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-0.015em;margin:0 0 12px">Ab <span style="color:var(--accent)">29 €</span> im Monat.</p>
+          <p style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 18px">Ehrlicher Preis</p>
+          <p style="font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,5vw,52px);line-height:1.1;letter-spacing:-0.015em;margin:0 0 12px">Ab <span style="color:var(--accent-text)">29 €</span> im Monat.</p>
           <p style="font-size:20px;line-height:1.6;color:var(--ink-72);margin:0 auto;max-width:44ch">Die ersten 90 Tage kostenlos, ganz ohne Kreditkarte. Keine Einrichtungsgebühr, monatlich kündbar. Kein Kleingedrucktes.</p>
         </div>
       </section>
@@ -722,7 +725,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
               </a>
             ))}
           </div>
-          <h3 style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px">Digitale Stempelkarte in deiner Stadt</h3>
+          <h3 style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);font-weight:500;margin:0 0 14px">Digitale Stempelkarte in deiner Stadt</h3>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
             {[['Köln','/koeln/'],['Berlin','/berlin/'],['Bonn','/bonn/'],['Dortmund','/dortmund/'],['Dresden','/dresden/'],['Düsseldorf','/duesseldorf/'],['Essen','/essen/'],['Frankfurt','/frankfurt/'],['Hamburg','/hamburg/'],['Hannover','/hannover/'],['Hürth','/huerth/'],['Leipzig','/leipzig/'],['München','/muenchen/'],['Nürnberg','/nuernberg/'],['Stuttgart','/stuttgart/']].map(([n,h]) => (
               <a href={h} style="display:inline-block;padding:9px 14px;border:1px solid var(--border-strong);border-radius:999px;font-size:15px;font-weight:600;color:var(--v2-ink);text-decoration:none;background:var(--v2-paper)">{n}</a>
@@ -743,7 +746,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             </details>
           ))}
 
-          <p style="font-size:16px;color:var(--ink-56);margin:28px 0 0">Noch eine Frage? <a href="/faq/" class="bk-faqlink" style="color:var(--accent);text-decoration:none;font-weight:600">Alle Antworten im FAQ →</a></p>
+          <p style="font-size:16px;color:var(--ink-56);margin:28px 0 0">Noch eine Frage? <a href="/faq/" class="bk-faqlink" style="color:var(--accent-text);text-decoration:none;font-weight:600">Alle Antworten im FAQ →</a></p>
         </div>
       </section>
 

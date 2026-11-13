@@ -9,6 +9,8 @@ export default {
           DEFAULT: '#F25C24',
           light:   '#f47a4a',
           dark:    '#c94b1c',
+          // Hover-Fläche, wenn die Schrift schwarz ist: #c94b1c gäbe mit Ink nur 3,91:1
+          hover:   '#E2531F',
           // Orange als Schrift auf hellem Grund (5,2:1 auf paper, 5,8:1 auf weiß) –
           // #F25C24 selbst nur für Flächen und Schrift auf dunklem Grund
           text:    '#B23F12',
