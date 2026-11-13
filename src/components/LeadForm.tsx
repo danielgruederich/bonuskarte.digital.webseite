@@ -35,7 +35,7 @@ interface CardLinks {
 type State = 'idle' | 'submitting' | 'success' | 'error'
 
 const inputClass =
-  'w-full px-4 py-3 bg-white border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus:bg-white transition-colors'
+  'w-full px-4 py-3 bg-white border border-ink/20 text-ink placeholder-ink/40 text-sm tracking-wide focus:outline-none focus:border-amber focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2 focus:bg-white transition-colors'
 
 const labelClass = 'block text-xs font-medium tracking-[0.2em] uppercase text-ink/60 mb-2'
 
@@ -206,13 +206,13 @@ export default function LeadForm({
               <div className="flex gap-3">
                 {appleLink && (
                   <a href={appleLink} target="_blank" rel="noopener noreferrer"
-                    className="flex-1 text-center border border-ink/10 hover:border-amber/50 text-ink/40 hover:text-ink/70 text-xs tracking-widest uppercase py-3 transition-all">
+                    className="flex-1 text-center border border-ink/10 hover:border-amber/50 text-ink/60 hover:text-ink text-xs tracking-widest uppercase py-3 transition-all">
                     Apple Wallet
                   </a>
                 )}
                 {googleLink && (
                   <a href={googleLink} target="_blank" rel="noopener noreferrer"
-                    className="flex-1 text-center border border-ink/10 hover:border-amber/50 text-ink/40 hover:text-ink/70 text-xs tracking-widest uppercase py-3 transition-all">
+                    className="flex-1 text-center border border-ink/10 hover:border-amber/50 text-ink/60 hover:text-ink text-xs tracking-widest uppercase py-3 transition-all">
                     Google Wallet
                   </a>
                 )}
@@ -330,7 +330,7 @@ export default function LeadForm({
       </div>
 
       <div>
-        <label htmlFor="email" className={labelClass}>E-Mail <span className="text-ink/30 font-normal normal-case tracking-normal">(optional)</span></label>
+        <label htmlFor="email" className={labelClass}>E-Mail <span className="text-ink/60 font-normal normal-case tracking-normal">(optional)</span></label>
         <input
           id="email"
           name="email"
@@ -366,7 +366,7 @@ export default function LeadForm({
       </div>
 
       {state === 'error' && (
-        <p className="text-sm text-red-400 border border-red-400/30 px-4 py-3">
+        <p role="alert" className="text-sm text-red-700 border border-red-700/30 px-4 py-3">
           {errorMsg || 'Etwas ist schiefgelaufen. Bitte versuche es erneut.'}
         </p>
       )}
@@ -401,7 +401,7 @@ export default function LeadForm({
       </p>
 
       {bookingUrl && (
-        <p className="text-center text-xs text-ink/40 pt-1">
+        <p className="text-center text-xs text-ink/60 pt-1">
           Lieber erst informieren?{' '}
           <a
             href={bookingUrl}
