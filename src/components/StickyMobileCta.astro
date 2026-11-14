@@ -18,7 +18,7 @@ const { label = 'Jetzt 90 Tage gratis testen', href = '#demo' } = Astro.props
     <a
       href={href}
       onclick="if(typeof gtag!=='undefined')gtag('event','cta_clicked',{location:'sticky_mobile'})"
-      class="flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black px-6 py-3.5 text-xs font-bold tracking-[0.2em] uppercase transition-all"
+      class="flex items-center justify-center gap-3 bg-amber hover:bg-amber-hover text-black px-6 py-3.5 text-xs font-bold tracking-[0.2em] uppercase transition-all"
     >
       {label}
       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

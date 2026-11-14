@@ -200,7 +200,7 @@ export default function LeadFormFr({ niche, arr }: Props) {
       <button
         type="submit"
         disabled={state === 'submitting'}
-        className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
+        className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-hover disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
       >
         {state === 'submitting' ? (
           <>
