@@ -119,7 +119,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener', city = '
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => analytics.walletInstallClicked(niche)}
-              className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark text-black font-black tracking-[0.1em] uppercase text-base py-5 transition-all"
+              className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-hover text-black font-black tracking-[0.1em] uppercase text-base py-5 transition-all"
             >
               Demo-Karte ins Wallet laden →
             </a>
@@ -214,7 +214,7 @@ export default function LeadFormDoener({ whatsappUrl, niche = 'doener', city = '
       <button
         type="submit"
         disabled={state === 'submitting'}
-        className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-dark disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
+        className="w-full group flex items-center justify-center gap-3 bg-amber hover:bg-amber-hover disabled:opacity-50 text-black font-bold tracking-[0.15em] uppercase text-sm py-4 transition-all"
       >
         {state === 'submitting' ? (
           <>
