@@ -160,8 +160,21 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
     .bk-sticky { display: none; }
     @media (max-width: 819px) {
       .bk-nav-links { display: none !important; }
+      /* Header-CTA passt auf dem Handy nicht in die 36-px-Pille: das Label
+         bricht um und wird abgeschnitten. Hero-CTA und Sticky-Leiste decken
+         den Absprung ab. */
+      .bk-header-cta { display: none !important; }
+      /* Trennpunkte zwischen den Trust-Items hängen beim Umbruch am Zeilenende. */
+      .bk-dot { display: none !important; }
       .bk-sticky.is-ready:not(.is-hidden) { display: flex; }
       .bk-v2 main { padding-bottom: 84px; }
+    }
+
+    /* Schmale Handys (320–379 px, z. B. iPhone SE): min-width der Hero-Spalten
+       und nowrap der H1-Zeile sprengen den Viewport, Text wird abgeschnitten. */
+    @media (max-width: 379px) {
+      .bk-hero-copy, .bk-hero-visual { min-width: 0 !important; }
+      .bk-h1-accent { white-space: normal !important; }
     }
 
     /* Hero-Beiwerk (Papierkarte + Pfeil) steht neben dem Handy und braucht dafuer
@@ -200,7 +213,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             <a href="/koeln/" class="bk-navlink">Köln</a>
             <a href="#faq" class="bk-navlink">FAQ</a>
           </span>
-          <button type="button" class="bk-btn bk-btn--sm" data-scroll-to-form>Demo-Karte ins Wallet holen</button>
+          <button type="button" class="bk-btn bk-btn--sm bk-header-cta" data-scroll-to-form>Demo-Karte ins Wallet holen</button>
         </nav>
       </div>
     </header>
@@ -213,9 +226,9 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
 
         <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
           <!-- copy column -->
-          <div style="flex:1 1 440px;min-width:300px">
+          <div class="bk-hero-copy" style="flex:1 1 440px;min-width:300px">
             <p id="hero-eyebrow" style="font-family:var(--font-mono);font-size:14px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 22px">Digitale Stempelkarte &amp; Bonuskarte · Apple &amp; Google Wallet · aus Köln</p>
-            <h1 id="hero-h1" style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale <span style="color:var(--accent);position:relative;white-space:nowrap">Bonuskarte ohne App</span></h1>
+            <h1 id="hero-h1" style="font-family:var(--font-serif);font-weight:600;font-size:clamp(38px,6.2vw,72px);line-height:1.02;letter-spacing:-0.02em;margin:0;color:var(--v2-ink);text-wrap:balance">Die digitale <span class="bk-h1-accent" style="color:var(--accent);position:relative;white-space:nowrap">Bonuskarte ohne App</span></h1>
             <p style="font-size:clamp(17px,2.2vw,21px);line-height:1.5;color:var(--ink-72);margin:22px 0 0;max-width:44ch">Direkt in Apple Wallet und Google Wallet. Kein Download, kein Plastik, in 24 Stunden startklar. Deine Kund:innen sammeln Stempel im Handy – aus Erstbesuchern werden Stammkunden.</p>
 
             <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
@@ -224,14 +237,14 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             </div>
 
             <div style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--ink-56)">
-              <span>Einrichtung inklusive</span><span aria-hidden="true" style="color:var(--accent)">·</span>
-              <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--accent)">·</span>
+              <span>Einrichtung inklusive</span><span class="bk-dot" aria-hidden="true" style="color:var(--accent)">·</span>
+              <span>90 Tage kostenlos</span><span class="bk-dot" aria-hidden="true" style="color:var(--accent)">·</span>
               <span>monatlich kündbar</span>
             </div>
           </div>
 
           <!-- product visual: Papier → Pfeil → Smartphone, nebeneinander -->
-          <div style="flex:1 1 380px;min-width:280px;display:flex;justify-content:center;align-items:center">
+          <div class="bk-hero-visual" style="flex:1 1 380px;min-width:280px;display:flex;justify-content:center;align-items:center">
             <div style="display:flex;align-items:center;justify-content:center;gap:clamp(6px,1.2vw,14px);width:100%">
 
               <!-- Papier-Stempelkarte (vollstaendig sichtbar, links) -->
@@ -741,7 +754,7 @@ const selectChevron = `background-image:url('data:image/svg+xml,%3Csvg xmlns=%22
             <h2 style="font-family:var(--font-serif);font-weight:600;font-size:clamp(30px,4.6vw,50px);line-height:1.05;letter-spacing:-0.015em;margin:0 0 18px">Erzähl uns von deinem Laden.</h2>
             <p style="font-size:20px;line-height:1.6;color:var(--ink-72);margin:0 0 20px;max-width:42ch">Drei Felder, zwei Minuten. Wir bauen deine Karte und du hast sie – kostenlos – noch morgen in der Hand.</p>
             <div style="display:flex;flex-wrap:wrap;gap:10px 18px;font-family:var(--font-mono);font-size:14px;letter-spacing:0.04em;color:var(--ink-56)">
-              <span>90 Tage kostenlos</span><span aria-hidden="true" style="color:var(--accent)">·</span><span>keine Kreditkarte</span><span aria-hidden="true" style="color:var(--accent)">·</span><span>live in 24 h</span>
+              <span>90 Tage kostenlos</span><span class="bk-dot" aria-hidden="true" style="color:var(--accent)">·</span><span>keine Kreditkarte</span><span class="bk-dot" aria-hidden="true" style="color:var(--accent)">·</span><span>live in 24 h</span>
             </div>
           </div>
 
