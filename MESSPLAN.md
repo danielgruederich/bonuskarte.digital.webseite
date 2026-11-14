@@ -39,7 +39,7 @@ page_view  →  demo_card_view  →  niche_selected  →  signup_form_start  →
 ### `signup_form_start`
 - **Bedeutet:** Nutzer fokussiert das erste Pflicht-Feld im Lead-Formular.
 - **Trigger:** `onFocus` des Vorname/Prénom-Inputs (einmal pro Session).
-- **Parameter:** `niche`, `city`, `source` (z.B. `'gruender'`, `'standard'`, `'doener'`, `'fr_paris'`).
+- **Parameter:** `niche`, `city`, `source` (z.B. `'gruender'`, `'standard'`, `'doener'`, `'fr_paris'`, `'preise'`, `'funktionen'`, `'karten'`, `'faq'`).
 - **Status:** ✅ Live.
 
 ### `niche_selected`
@@ -60,6 +60,7 @@ page_view  →  demo_card_view  →  niche_selected  →  signup_form_start  →
 - **Trigger:** Im success-Zweig von `handleSubmit` (alle drei Forms).
 - **Parameter:** `niche`, `city`, `source`, `value: 1.0`, `currency: 'EUR'`.
 - **Doppel-Tracking:** Feuert parallel `gtag('event', 'conversion', {send_to: 'AW-18176373682/jWsvCIyIj7AcELLnldtD'})` für Google Ads.
+- **Neue Quellen seit 14.11.2026:** `preise`, `funktionen`, `karten`, `faq` — Inline-Formular auf den vier Inhaltsseiten (`LeadFormInline.astro`, Lead-Source `<seite>-inline`). Vorher hatten diese Seiten kein Formular; ihre CTAs führten auf den Stadt-Hub. Auswertung: `signup_submit` nach `source` filtern, Basis 15.08.–12.11.2026 = 11 Signups.
 - **Status:** ✅ Live.
 
 ### `signup_submit_error`
