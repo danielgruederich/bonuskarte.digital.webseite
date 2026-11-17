@@ -1,0 +1,45 @@
+---
+title: "Scanner startet nicht: Kamera im Browser freigeben"
+description: "Der Scan-Button reagiert nicht, weil der Browser keinen Zugriff auf die Kamera hat. So gibst du die Kamera auf dem iPhone frei — einmal, dann dauerhaft."
+order: 5
+---
+
+import Callout from '@/components/hilfe/Callout.astro'
+import AudioPlayer from '@/components/hilfe/AudioPlayer.astro'
+import VideoEmbed from '@/components/hilfe/VideoEmbed.astro'
+
+Die Scanner App ist eine Webseite, die die Kamera deines Handys benutzt. Blockiert der Browser den Zugriff, passiert beim Tippen auf **Scan** nichts — es öffnet sich keine Kamera, und es erscheint auch keine Fehlermeldung.
+
+Das ist keine Störung im System, sondern eine Sicherheitseinstellung des Browsers. Du gibst die Kamera einmal frei, danach startet der Scanner direkt.
+
+## Kamera in Safari freigeben (iPhone)
+
+1. Öffne die **Scanner App** im Browser
+2. Tippe links in der Adressleiste auf das **aA**-Symbol (oder auf das **Schloss**)
+3. Wähle **Website-Einstellungen**
+4. Stelle **Kamera** von „Fragen“ auf **Erlauben**
+5. Lade die Seite neu
+
+Danach öffnet der **Scan**-Button sofort die Kamera.
+
+<Callout type="info">
+Die Freigabe gilt pro Webseite. Wenn du die Scanner App über eine andere Adresse öffnest, fragt der Browser erneut — dann den Schritt einmal wiederholen.
+</Callout>
+
+## Wenn der Eintrag fehlt
+
+Fehlt „Kamera“ in den Website-Einstellungen, hat die Seite noch nie danach gefragt. Tippe in der Scanner App einmal auf **Scan** und lehne die Nachfrage nicht ab — danach erscheint der Eintrag und lässt sich dauerhaft auf **Erlauben** stellen.
+
+<Callout type="warnung">
+Ohne Kamerazugriff lässt sich keine Karte scannen. Prüfe bei „Scan reagiert nicht“ immer zuerst diese Einstellung, bevor du nach anderen Ursachen suchst.
+</Callout>
+
+## Hören statt lesen
+
+<AudioPlayer src="/hilfe/scanner-app/kamera-freigeben.mp3" title="Kamera im Browser freigeben — als Audio" caption="Gesprochene Fassung dieses Artikels, 39 Sekunden." />
+
+## Video: Kamerazugriff im Browser freigeben
+
+Im Video siehst du die Einstellung einmal durchgeklickt:
+
+<VideoEmbed url="https://share.fuerte.digital/018cdf4c-6f0a-7e7b-8875-12b14ee76ef0" title="Kamerazugriff im Browser freigeben" />

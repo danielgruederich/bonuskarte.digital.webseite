@@ -1,0 +1,18 @@
+---
+interface Props {
+  src: string
+  title?: string
+  caption?: string
+}
+
+const { src, title, caption } = Astro.props
+---
+
+<div class="my-8 rounded-lg border border-paper/10 bg-paper/5 p-4">
+  {title && <p class="mb-3 text-sm font-semibold text-paper/80">{title}</p>}
+  <audio controls preload="metadata" class="w-full">
+    <source src={src} type="audio/mpeg" />
+    Dein Browser kann diese Audiodatei nicht abspielen.
+  </audio>
+  {caption && <p class="mt-2 text-sm text-paper/40">{caption}</p>}
+</div>

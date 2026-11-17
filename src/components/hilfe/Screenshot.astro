@@ -3,13 +3,18 @@ interface Props {
   src: string
   alt: string
   caption?: string
+  /** Maximale Breite in Pixeln. Ohne Angabe nimmt das Bild die volle Textbreite ein. */
+  width?: number
 }
 
-const { src, alt, caption } = Astro.props
+const { src, alt, caption, width } = Astro.props
 ---
 
 <figure class="my-8">
-  <div class="overflow-hidden rounded-lg border border-paper/10">
+  <div
+    class:list={['overflow-hidden rounded-lg border border-paper/10', width && 'mx-auto']}
+    style={width ? `max-width:${width}px` : undefined}
+  >
     <img
       src={src}
       alt={alt}

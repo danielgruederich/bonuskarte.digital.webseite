@@ -1,0 +1,69 @@
+---
+title: "Scan schlägt fehl: Karte als gelöscht markiert"
+description: "Der Scan funktioniert nicht und die Karte wird als gelöscht angezeigt? Das liegt an den automatischen Updates im Wallet — so ist die Karte in zwei Schritten wieder aktiv."
+order: 4
+---
+
+import Callout from '@/components/hilfe/Callout.astro'
+import Screenshot from '@/components/hilfe/Screenshot.astro'
+
+Manchmal steht in der Scanner App oder im Dashboard bei einer Karte **„Deleted"**, und der Scan lässt sich nicht abschließen. Für den Gast sieht es aus, als wäre seine Karte weg — sie ist aber noch da, mit allen Stempeln.
+
+<Screenshot src="/hilfe/scanner-app/karte-nicht-gefunden.jpg" width={320} alt="Scanner App mit der Meldung „Card not found“ nach dem Scan" caption="Die Scanner App meldet „Card not found“, weil die Karte im System als gelöscht markiert ist." />
+
+## Was dahintersteckt
+
+Die Karte im Wallet meldet sich bei jeder Änderung beim System zurück. Bleibt diese Rückmeldung aus — zum Beispiel weil die **automatischen Updates** auf dem Gerät ausgeschaltet sind oder die Karte vom Handy entfernt wurde — markiert das System die Karte als **gelöscht**. Ab dann werden Scans abgelehnt, weil die Karte nicht mehr als gültig gilt.
+
+Wichtig: Es ist **kein Datenverlust**. Stempelstand, Belohnungen und die gesamte Historie bleiben erhalten.
+
+## So aktiviert der Gast seine Karte wieder
+
+1. **Karte in der Wallet öffnen** — Apple Wallet oder Google Wallet
+2. Auf der **Rückseite der Karte** (beim iPhone: das Symbol oben rechts) den Schalter **„Automatische Updates"** einschalten
+3. **Karte kurz schließen und wieder öffnen**, damit sie sich neu synchronisiert
+
+<Screenshot src="/hilfe/scanner-app/automatische-updates.jpg" width={420} alt="Rückseite der Wallet-Karte mit dem eingeschalteten Schalter „Automatic Updates“" caption="Der Schalter „Automatic Updates“ auf der Rückseite der Karte — er muss eingeschaltet sein." />
+
+Danach steht der Status wieder auf **„installed"** und der Scan funktioniert wie gewohnt.
+
+<Callout type="tipp">
+Der ganze Vorgang dauert unter einer Minute und kann vom Gast selbst erledigt werden — du musst nichts im Dashboard ändern.
+</Callout>
+
+## Wenn die Karte nicht mehr in der Wallet ist
+
+Wurde die Karte vom Handy gelöscht, hilft der Schalter nicht. Dann braucht der Gast seinen **persönlichen Installationslink**:
+
+- Im Dashboard unter **Kunden** den Kunden suchen und den Installationslink kopieren
+- Oder den **QR-Code** im Laden scannen lassen — er führt zur Karte des Gastes
+
+Nach dem Installieren ist die Karte wieder aktiv, mit unverändertem Stempelstand.
+
+<Callout type="warnung">
+Bitte den Gast **nicht** über die Startseite neu anmelden. Dabei kann eine **zweite Karte** entstehen, und die gesammelten Stempel der alten Karte bleiben auf der alten Karte liegen.
+</Callout>
+
+## Was das Team am Tresen tun kann
+
+- Bei „Deleted" im Scanner: den Gast bitten, die automatischen Updates einzuschalten
+- Danach **erneut scannen** — erst dann wird der Vorgang gebucht
+- Klappt es weiterhin nicht, den Kunden im Dashboard aufrufen und den Installationslink schicken
+
+<Callout type="info">
+Ein fehlgeschlagener Scan wird nicht als Vorgang gespeichert. Fehlt in der Historie ein Eintrag, wurde also nichts gebucht — der Stempel muss nach der Reaktivierung neu vergeben werden.
+</Callout>
+
+## Häufige Fragen
+
+### Verliert der Gast seine Stempel?
+
+Nein. Stempel, eingelöste Belohnungen und die Besuchshistorie hängen am Kundendatensatz, nicht am Gerät.
+
+### Warum passiert das überhaupt?
+
+Meistens nach einem Handywechsel, nach dem Zurücksetzen der Wallet oder wenn die automatischen Updates bewusst oder versehentlich abgeschaltet wurden. Das System erkennt dann keine Rückmeldung mehr und setzt die Karte auf „gelöscht".
+
+### Muss ich die Karte im Dashboard neu anlegen?
+
+Nein. Die Karte wird nie neu angelegt — sie wird nur wieder aktiviert. Ein zweites Anlegen würde eine zusätzliche Karte erzeugen und den Stempelstand splitten.

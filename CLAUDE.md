@@ -75,6 +75,26 @@ Beispiel: bonuskarte.digital/koeln/nippes/cafes
 | `npm run blog:og` | Erzeugt fehlende Vorschaubilder (og:image) nach `public/images/blog-og/<slug>.jpg` – nach jedem neuen Artikel laufen lassen und JPG mit committen (braucht Google Chrome lokal). Ohne Bild fällt der Artikel auf `heroImage` zurück |
 | `scripts/karten-pass.mjs` | Schneidet die Wallet-Karte aus `public/images/karten/*.webp` nach `karten/pass/` – nach Änderungen an den Karten-Mockups laufen lassen |
 
+## Hilfe-Center (`/hilfe`)
+- **Inhalte:** `src/content/hilfe/<kategorie>/<slug>.mdx` — Schema in `src/content/config.ts` (`title`, `description`, `order`, optional `video`, `lang`). `order` bestimmt die Reihenfolge in der Sidebar und welche Seite die Kategorie auf `/hilfe/` verlinkt.
+- **Kategorien:** `erste-schritte`, `kartentypen`, `scanner-app`, `push-nachrichten`, `automatisierungen`, `inspiration`, `support` — zentral in `src/data/hilfe-categories.ts`. Es gibt **keine** Kategorie-Übersichtsseiten; `/hilfe/` verlinkt je Kategorie auf den ersten Artikel, der Rest läuft über die Sidebar.
+- **Bilder:** `public/hilfe/<kategorie>/<name>.jpg`, eingebunden über `src/components/hilfe/Screenshot.astro`.
+- **`Screenshot`-Komponente:** Props `src`, `alt`, `caption?`, `width?`. `width` ist die maximale Breite in px und zentriert das Bild; **ohne `width` nimmt das Bild die volle Textbreite ein** (Bestandsartikel unverändert). Für Telefon-/Wallet-Screenshots: **320–420 px**, sonst wirken sie erschlagend.
+- **Sprachen:** `src/content/hilfe/en/…` und `…/fr/…` spiegeln die deutsche Struktur. Neue Artikel auf Deutsch anlegen; Übersetzungen separat.
+- **Callouts:** `<Callout type="info|tipp|warnung">` aus `src/components/hilfe/Callout.astro`.
+- **Audio:** `src/components/hilfe/AudioPlayer.astro` — Props `src`, `title?`, `caption?`. MP3s liegen unter `public/hilfe/<kategorie>/<slug>.mp3`. Vertonung wird mit ElevenLabs erzeugt (Stimme: „Toni – Klar & Engagiert Bildungsstimme", `eleven_multilingual_v2`); Skript = Kurzfassung des Artikels, 30–60 s. Kosten pro Artikel ca. 600 Credits.
+- **Videos:** `<VideoEmbed url="…" title="…" />`. YouTube → nocookie-Embed, Loom → loom-Embed, **Zight** (`share.zight.com`, `share.fuerte.digital`) → URL **plus `?embed=true`** (genau die Variante aus dem Embed-Tab), Rahmen 4:3. Voraussetzung: Der Share-Link steht auf „Anyone with the link can view" / Open access und läuft nicht ab — sonst bleibt das iframe leer. Alle anderen URLs werden unverändert eingebettet (16:9).
+- Deploy wie der Rest der Seite: Push auf `main` → GitHub Actions → `deploy.php`.
+
+### Neuen Hilfe-Artikel anlegen (Checkliste)
+1. Datei `src/content/hilfe/<kategorie>/<slug>.mdx` — `<slug>` wird die URL: klein, Bindestriche, keine Umlaute
+2. Frontmatter setzen: `title`, `description` (1 Satz, erscheint als Teaser), `order` = nächste freie Zahl der Kategorie
+3. `import Callout from '@/components/hilfe/Callout.astro'` und bei Bildern zusätzlich `Screenshot`
+4. Screenshots nach `public/hilfe/<kategorie>/` legen (JPG), im Text mit `width={320}`–`{420}` für Telefon-/Wallet-Aufnahmen
+5. `npm run build` laufen lassen und prüfen: Seite existiert unter `/hilfe/<kategorie>/<slug>/` und steht in der Sidebar
+6. Optional Übersetzungen unter `src/content/hilfe/en|fr/<kategorie>/` (gleicher Slug)
+7. Deploy per Push auf `main`
+
 ## Brand
 - **Farben:** Schwarz `#000000` + Gold `#8B7300` (Tailwind: `text-yellow-600` als Annäherung)
 - **Stil:** Geometrisch, minimal, thin Typography, all-caps

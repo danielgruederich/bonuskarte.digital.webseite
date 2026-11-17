@@ -19,16 +19,26 @@ function getLoomId(url: string): string | null {
 const youtubeId = getYouTubeId(url)
 const loomId = getLoomId(url)
 
+// Zight (share.zight.com / eigene Share-Domain): offizieller Embed braucht diese Parameter
+const isZight = /share\.zight\.com|share\.fuerte\.digital/.test(url)
+
 let embedUrl = url
 if (youtubeId) {
   embedUrl = `https://www.youtube-nocookie.com/embed/${youtubeId}`
 } else if (loomId) {
   embedUrl = `https://www.loom.com/embed/${loomId}`
+} else if (isZight) {
+  // Exakt die Variante aus dem Embed-Tab von Zight: nur embed=true
+  const sep = url.includes('?') ? '&' : '?'
+  embedUrl = `${url}${sep}embed=true`
 }
+
+// Zight-Player ist 4:3, YouTube/Loom 16:9
+const ratio = isZight ? '75%' : '56.25%'
 ---
 
 <div class="my-8">
-  <div class="relative w-full overflow-hidden rounded-lg border border-paper/10" style="padding-bottom: 56.25%;">
+  <div class="relative w-full overflow-hidden rounded-lg border border-paper/10" style={`padding-bottom:${ratio};`}>
     <iframe
       src={embedUrl}
       title={title}
