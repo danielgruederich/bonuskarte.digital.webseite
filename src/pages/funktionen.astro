@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import LeadFormInline from '../components/LeadFormInline.astro'
 import Icon from '../components/icons/TrustIcons.astro'
+import VideoEmbed from '../components/hilfe/VideoEmbed.astro'
 
 const groups = [
   {
@@ -123,6 +124,7 @@ const groups = [
         Push-Nachrichten, Geo-Push, Google-Bewertungen, Empfehlungsprogramm, Automatisierungen,
         Live-Statistiken – die Plattform hinter bonuskarte.digital wird laufend weiterentwickelt.
         Neue Funktionen erscheinen automatisch in deinem Konto, ohne Aufpreis.
+        <a href="/neuigkeiten/" class="text-amber hover:text-amber-dark transition-colors">Was ist neu? →</a>
       </p>
     </div>
   </section>
@@ -166,6 +168,20 @@ const groups = [
         <a href="/preise/" class="text-amber hover:text-amber-dark transition-colors">Preise-Seite</a>.
         Push-Nachrichten, Statistiken und unbegrenzte Karten sind in jedem Paket inklusive.
       </p>
+    </div>
+  </section>
+
+  <!-- VIDEO: Designs und App-Funktionen -->
+  <section class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-amber text-xs tracking-[0.4em] uppercase mb-4">Kurz gezeigt</p>
+      <h2 class="text-3xl sm:text-4xl font-normal text-ink tracking-tight mb-8">
+        So sieht das auf dem Handy aus
+      </h2>
+      <VideoEmbed
+        url="https://share.fuerte.digital/0194461d-28ab-7717-ba61-de59c6b7cbc7"
+        title="Vorgefertigte Designs und App-Funktionen"
+      />
     </div>
   </section>
 

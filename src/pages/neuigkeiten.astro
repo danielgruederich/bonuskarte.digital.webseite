@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import { releases, KIND_LABEL } from '../data/changelog'
+
+const latest = releases[0]
+
+const counts = releases
+  .flatMap(r => r.items)
+  .reduce<Record<string, number>>((acc, i) => {
+    acc[i.kind] = (acc[i.kind] ?? 0) + 1
+    return acc
+  }, {})
+const total = releases.reduce((n, r) => n + r.items.length, 0)
+
+const filters = [
+  { key: 'alle', label: 'Alles', count: total },
+  { key: 'neu', label: 'Neu', count: counts.neu ?? 0 },
+  { key: 'verbessert', label: 'Verbessert', count: counts.verbessert ?? 0 },
+  { key: 'behoben', label: 'Behoben', count: counts.behoben ?? 0 },
+]
+---
+
+<BaseLayout
+  title="Was ist neu – alle Updates für deine Bonuskarte | bonuskarte.digital"
+  description="Alle Neuerungen der digitalen Bonuskarte: Buttons unter der Wallet-Karte, Karten ohne Barcode, Empfehlungsbedingungen auf der Kartenrückseite und Zuverlässigkeits-Fixes. Chronologisch, auf Deutsch."
+  stickyCtaHref="#lead-form"
+  alternates={[
+    { hreflang: 'de', href: 'https://bonuskarte.digital/neuigkeiten/' },
+    { hreflang: 'x-default', href: 'https://bonuskarte.digital/neuigkeiten/' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Was ist neu",
+    "description": "Chronologische Übersicht aller Updates der digitalen Bonuskarte.",
+    "url": "https://bonuskarte.digital/neuigkeiten/",
+    "dateModified": latest.iso,
+    "isPartOf": { "@type": "WebSite", "name": "bonuskarte.digital", "url": "https://bonuskarte.digital" },
+    "publisher": { "@type": "Organization", "name": "bonuskarte.digital", "url": "https://bonuskarte.digital" }
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "bonuskarte.digital", "item": "https://bonuskarte.digital/" },
+      { "@type": "ListItem", "position": 2, "name": "Was ist neu" }
+    ]
+  })} />
+
+  <Navbar ctaHref="#lead-form" ctaLabel="Gratis testen" />
+
+  <!-- HERO -->
+  <main>
+    <section class="bg-paper pt-28 pb-12 px-5 sm:px-8 border-b border-ink/30">
+      <div class="max-w-4xl mx-auto">
+        <nav class="flex items-center gap-1.5 text-xs text-ink/40 mb-8 tracking-wide" aria-label="Brotkrümelnavigation">
+          <a href="/" class="hover:text-ink/60 transition-colors">Home</a>
+          <span aria-hidden="true">›</span>
+          <span class="text-ink/60">Was ist neu</span>
+        </nav>
+        <div class="inline-flex items-center gap-3 border border-amber/50 px-4 py-2 mb-6">
+          <span class="w-1 h-1 bg-amber animate-pulse-slow"></span>
+          <span class="text-amber text-xs font-normal tracking-[0.3em] uppercase">Changelog · November 2026</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-4">
+          Jede Woche<br />
+          <span class="font-bold text-amber">ein Stück besser.</span>
+        </h1>
+        <p class="text-ink/60 text-base leading-relaxed max-w-2xl">
+          Die Plattform hinter bonuskarte.digital wird laufend weiterentwickelt. Neue Funktionen
+          erscheinen automatisch in deinem Konto, ohne Aufpreis. Hier steht chronologisch, was
+          dazugekommen ist, was besser wurde und welche Fehler wir behoben haben — nur die
+          Änderungen, die du im Alltag siehst.
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTER -->
+    <div class="sticky top-16 z-30 bg-paper/95 backdrop-blur-md border-b border-ink/20">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8 py-3 flex flex-wrap items-center gap-2">
+        <span class="text-[10px] tracking-[0.3em] uppercase text-ink/40 whitespace-nowrap mr-2">Filter</span>
+        {filters.map(f => (
+          <button
+            type="button"
+            data-filter={f.key}
+            aria-pressed={f.key === 'alle' ? 'true' : 'false'}
+            class="filter-chip whitespace-nowrap border px-3 py-1.5 text-[10px] font-bold tracking-[0.18em] uppercase transition-colors border-ink/20 text-ink/60 hover:border-amber hover:text-ink aria-pressed:bg-amber aria-pressed:border-amber aria-pressed:text-black"
+          >
+            {f.label}
+            <span class="ml-1.5 font-normal opacity-60">{f.count}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- RELEASES -->
+    <section class="bg-paper py-14 px-5 sm:px-8">
+      <div class="max-w-4xl mx-auto">
+        <ol class="flex flex-col gap-14">
+          {releases.map((release, idx) => (
+            <li class="release" data-release>
+              <div class="grid grid-cols-1 md:grid-cols-[150px_1fr] gap-4 md:gap-10">
+              <div class="md:sticky md:top-32 md:self-start">
+                <div class="flex items-center gap-3 md:block">
+                  <span class="text-[10px] tracking-[0.3em] uppercase text-amber whitespace-nowrap">
+                    {idx === 0 ? 'Aktuell' : 'Update'}
+                  </span>
+                  <div class="h-px flex-1 bg-ink/20 md:hidden"></div>
+                </div>
+                <time datetime={release.iso} class="block text-ink text-sm font-bold tracking-tight mt-1 md:mt-2">
+                  {release.date}
+                </time>
+              </div>
+
+              <div class="border-t border-ink/20">
+                {release.items.map(item => (
+                  <article
+                    class="change border-b border-ink/10 py-6 first:pt-5"
+                    data-kind={item.kind}
+                  >
+                    <div class="flex items-start gap-4">
+                      <span
+                        class:list={[
+                          'badge flex-shrink-0 mt-0.5 w-auto md:w-[92px] text-center px-2 py-0.5 text-[9px] font-bold tracking-[0.18em] uppercase',
+                          item.kind === 'neu' && 'bg-amber text-black',
+                          item.kind === 'verbessert' && 'border border-ink/30 text-ink/70',
+                          item.kind === 'behoben' && 'border border-ink/20 text-ink/60',
+                        ]}
+                      >
+                        {KIND_LABEL[item.kind]}
+                      </span>
+                      <div class="min-w-0">
+                        <h2 class="text-ink text-base font-semibold leading-snug mb-1.5">{item.title}</h2>
+                        <p class="text-ink/60 text-sm leading-relaxed">{item.text}</p>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <p class="text-ink/40 text-xs leading-relaxed mt-12 max-w-2xl">
+          Wir listen hier die Änderungen, die Händler im Konto sehen. Reine Entwickler- und
+          Agentur-Themen lassen wir weg. Fragen zu einer Funktion? Schreib uns — wir richten sie
+          dir ein.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="lead-form" class="py-12 sm:py-16 px-5 sm:px-8 bg-paper border-t border-ink/30 relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber rounded-full blur-[150px] opacity-5" aria-hidden="true"></div>
+      <div class="relative max-w-2xl mx-auto text-center">
+        <p class="text-amber text-xs tracking-[0.4em] uppercase mb-6">Alles inklusive</p>
+        <h2 class="text-4xl sm:text-5xl font-normal text-ink tracking-tight mb-2">
+          Neue Funktionen
+        </h2>
+        <h2 class="text-4xl sm:text-5xl font-bold text-ink tracking-tight mb-10">
+          ohne neuen Preis.
+        </h2>
+        <p class="text-ink/60 text-sm leading-relaxed mb-8 max-w-xl mx-auto">
+          Jede Verbesserung landet automatisch auf deiner Karte. 90 Tage kostenlos testen,
+          danach ab 29 € im Monat.
+        </p>
+        <a href="/preise/"
+          class="group inline-flex items-center gap-3 bg-amber hover:bg-amber-hover text-black px-10 py-5 text-xs font-bold tracking-[0.25em] uppercase transition-all">
+          Pakete ansehen
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'))
+  const changes = Array.from(document.querySelectorAll<HTMLElement>('[data-kind]'))
+  const releaseNodes = Array.from(document.querySelectorAll<HTMLElement>('[data-release]'))
+
+  function applyFilter(key: string) {
+    chips.forEach(c => c.setAttribute('aria-pressed', String(c.dataset.filter === key)))
+    changes.forEach(el => {
+      const show = key === 'alle' || el.dataset.kind === key
+      el.hidden = !show
+    })
+    // Ganze Release-Blöcke ausblenden, wenn kein Eintrag übrig ist
+    releaseNodes.forEach(block => {
+      const visible = Array.from(block.querySelectorAll<HTMLElement>('[data-kind]')).some(el => !el.hidden)
+      block.hidden = !visible
+    })
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => applyFilter(chip.dataset.filter ?? 'alle'))
+  })
+</script>
